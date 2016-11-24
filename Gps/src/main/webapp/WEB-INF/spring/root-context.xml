@@ -10,8 +10,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 
 	<!-- mybatis / DataBase -->
-	<bean id="dataSource"
-		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="username" value="user02"></property>
 		<property name="password" value="user02"></property>
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
@@ -28,8 +27,7 @@
 	</bean>
 	
 	<!-- transaction -->
-	<bean id="transactionManager"
-		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
 
