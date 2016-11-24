@@ -42,7 +42,12 @@
 	
 	<!-- section -->
 	<section>
-		
+		<div id="advertisement">
+			
+		</div>
+		<div id="index_story">
+			
+		</div>
 	</section>
 	
 	
