@@ -7,14 +7,35 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<c:import url="${pageContext.request.contextPath }/css/common/index.css"></c:import>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/index.css">
 <title>Insert title here</title>
 </head>
 <body>
 	<!-- header -->
 	<header>
 		<div id="first_div">
-			
+			<div id="first_div_1">
+				<div id="second_div">
+					<!-- rogo image -->
+				</div>
+				<div id="third_div">
+					<!-- menu list -->
+					<ul>
+						<li>menu</li>
+						<li>menu</li>
+						<li>menu</li>
+						<li>menu</li>
+						<li>menu</li>
+					</ul>
+				</div>
+				<div id="four_div">
+					<!-- login, join button -->
+					<button id="login">로그인</button>
+					<!-- <button id="logout">로그아웃</button> -->
+					<button id="join">회원가입</button>
+					<!-- <button id="information">My Page</button> -->
+				</div>
+			</div>
 		</div>
 	</header>
 	
