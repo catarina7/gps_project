@@ -51,6 +51,10 @@
 			</div>
 			
 		</div>
+		<div id="menu_bar">
+			<!-- move menu -->
+			
+		</div>
 	</section>
 	
 	

@@ -129,7 +129,15 @@ section #decoration {
 	height: 20px;
 	background-color: #777777;
 }
-
+section #menu_bar {
+	width: 200px;
+	height: 420px;
+	bottom: 200px;
+	left: 130px;
+	background-color: #aaaaaa;
+	z-index: 99;
+	position: fixed;
+}
 
 
 
