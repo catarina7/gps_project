@@ -22,11 +22,11 @@
 		<property name="dataSource" ref="dataSource"></property>
 		<property name="mapperLocations" value="classpath:mappers/**/*Mapper.xml"></property>
 	</bean>
-
+	
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory"></constructor-arg>
 	</bean>
-
+	
 	<!-- transaction -->
 	<bean id="transactionManager"
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
