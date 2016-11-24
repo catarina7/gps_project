@@ -46,6 +46,9 @@
 			
 		</div>
 		<div id="index_story">
+			<div id="decoration">
+				<!-- decoration image -->
+			</div>
 			
 		</div>
 	</section>
