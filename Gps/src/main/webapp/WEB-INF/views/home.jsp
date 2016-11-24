@@ -11,5 +11,6 @@
 
 <P>  The time on the server is ${serverTime}. </P>
 <a href="index">main</a>
+<a href="member/join">join</a>
 </body>
 </html>
