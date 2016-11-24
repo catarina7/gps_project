@@ -42,7 +42,19 @@
 	
 	<!-- section -->
 	<section>
-		
+		<div id="advertisement">
+			
+		</div>
+		<div id="index_story">
+			<div id="decoration">
+				<!-- decoration image -->
+			</div>
+			
+		</div>
+		<div id="menu_bar">
+			<!-- move menu -->
+			
+		</div>
 	</section>
 	
 	
