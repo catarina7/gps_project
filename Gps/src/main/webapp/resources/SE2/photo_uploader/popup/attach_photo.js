@@ -476,6 +476,7 @@
  	/**
  	 * jindo에 파일 업로드 사용.(iframe에 Form을 Submit하여 리프레시없이 파일을 업로드하는 컴포넌트)
  	 */
+    //사용시 이부분 수정 !!!!
  	function callFileUploader (){
  		oFileUploader = new jindo.FileUploader(jindo.$("uploadInputBox"),{
  			sUrl  : '/t5/board/fileupload',	//샘플 URL입니다.
