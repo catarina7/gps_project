@@ -284,6 +284,7 @@ section #game_list {
 	margin-left: 30px;
 	height: 91%;
 	border: 2px solid #aaaaaa;
+	border-radius: 8px;
 	float: left;
 	padding: 18px 0px;
 }
