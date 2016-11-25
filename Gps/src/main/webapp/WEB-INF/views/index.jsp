@@ -14,6 +14,50 @@
 		$(window).scroll(function(){
 			
 		});
+		
+		$("#pack_1").click(function(){
+			$(this).css("background-color","#777777");
+			$(this).css("border","2px solid #777777");
+			$("#pack_2").css("background-color","#666666");
+			$("#pack_3").css("background-color","#666666");
+			$("#pack_4").css("background-color","#666666");
+			$("#pack_2").css("border","2px solid #666666");
+			$("#pack_3").css("border","2px solid #666666");
+			$("#pack_4").css("border","2px solid #666666");
+		});
+		
+		$("#pack_2").click(function(){
+			$(this).css("background-color","#777777");
+			$(this).css("border","2px solid #777777");
+			$("#pack_1").css("background-color","#666666");
+			$("#pack_3").css("background-color","#666666");
+			$("#pack_4").css("background-color","#666666");
+			$("#pack_1").css("border","2px solid #666666");
+			$("#pack_3").css("border","2px solid #666666");
+			$("#pack_4").css("border","2px solid #666666");
+		});
+		
+		$("#pack_3").click(function(){
+			$(this).css("background-color","#777777");
+			$(this).css("border","2px solid #777777");
+			$("#pack_1").css("background-color","#666666");
+			$("#pack_2").css("background-color","#666666");
+			$("#pack_4").css("background-color","#666666");
+			$("#pack_1").css("border","2px solid #666666");
+			$("#pack_2").css("border","2px solid #666666");
+			$("#pack_4").css("border","2px solid #666666");
+		});
+		
+		$("#pack_4").click(function(){
+			$(this).css("background-color","#777777");
+			$(this).css("border","2px solid #777777");
+			$("#pack_1").css("background-color","#666666");
+			$("#pack_2").css("background-color","#666666");
+			$("#pack_3").css("background-color","#666666");
+			$("#pack_1").css("border","2px solid #666666");
+			$("#pack_2").css("border","2px solid #666666");
+			$("#pack_3").css("border","2px solid #666666");
+		});
 	});
 </script>
 </head>
@@ -163,35 +207,33 @@
 									
 								</div>
 							</div>
-							<div class="product">
-								<input type="text" readonly="readonly" class="discount" value="할인률 %">
-								<div class="img">
-									
-								</div>
-							</div>
 					<button>▷</button>
 				</div>
-				<h3>카테고리 별 초특가 할인 게임</h3>
+				<h3>할인 게임</h3>
 				<div id="main_third">
+					<button id="pack_1">초특가</button>
+					<button id="pack_2">인기</button>
+					<button id="pack_3">예약</button>
+					<button id="pack_4">패키지</button>
 					<!-- category discount game -->
-					<div>
-						<table>
-							<c:forEach begin="1" end="7">
-								<tr>
-									<td>
-										
-									</td>
-								</tr>
-							</c:forEach>
-						</table>
-					</div>
-					<div>
-						<!-- image -->
-						<c:forEach begin="1" end="3">
+					<div id="sub_cate">
 							<div>
-								
+								<table>
+										<tr>
+											<td>
+												
+											</td>
+										</tr>
+								</table>
 							</div>
-						</c:forEach>
+							<div>
+								<!-- image -->
+								<c:forEach begin="1" end="3">
+									<div>
+										
+									</div>
+								</c:forEach>
+							</div>
 					</div>
 				</div>
 			</div>
