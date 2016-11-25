@@ -92,35 +92,51 @@
 			</div>
 			
 			<div id="game_list">
-				<div>
+				<h3>추천 게임</h3>
+				<div id="main_first">
 					<!-- best game -->
+					<button>◁</button>
 					<table>
 						<tr>
 							<td rowspan="2">
-								<div>
-									<!-- discount -->
+								<!-- discount -->
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
 								</div>
 							</td>
 							<td>
-								
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
 							</td>
 							<td>
-								
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
 							</td>
 							<td>
-								
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
 							</td>
 						</tr>
 					</table>
+					<button>▷</button>
 				</div>
-				<button></button>
-				<button></button>
-				<div>
+				<h3>신작 게임</h3>
+				<div id="main_second">
 					<!-- new game -->
 					<button></button>
 						<c:forEach begin="1" end="5">
@@ -130,18 +146,18 @@
 						</c:forEach>
 					<button></button>
 				</div>
-				
-				<div>
+				<h3>카테고리 별 초특가 할인 게임</h3>
+				<div id="main_third">
 					<!-- category discount game -->
 					<div>
 						<table>
-						<c:forEach begin="1" end="7">
-							<tr>
-								<td>
-									
-								</td>
-							</tr>
-						</c:forEach>
+							<c:forEach begin="1" end="7">
+								<tr>
+									<td>
+										
+									</td>
+								</tr>
+							</c:forEach>
 						</table>
 					</div>
 					<div>
@@ -153,7 +169,6 @@
 						</c:forEach>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</section>

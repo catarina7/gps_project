@@ -161,11 +161,73 @@ section #menu_bar {
 }
 
 section #game_list {
+	width: 870px;
 	float: left;
-	margin: 30px 70px;
+	margin: 50px 70px;
+}
+#game_list h3 {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 10px 5px;
+	text-shadow: 3px 3px #32435c;
+}
+#game_list #main_first {
+	width: 99%;
+	height: 290px;
+	padding: 5px 0px;
+}
+#main_first .discount {
+	background:linear-gradient(to top, #43596b, #bee0fe);
+	width: 70px;
+	padding: 5px 7px;
+	border: 2px solid #aaaaaa;
+	border-radius: 8px;
+	text-align: center;
+	font-weight: bold;
+	position: absolute;
+	z-index: 500;
+}
+#main_first .img {
+	width: 100%;
+	height: 94%;
+	border: 1px solid #aaaaaa;
+	border-radius: 8px;
+}
+#main_first button {
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 2px 2px #32435c;
+	background-color: #666666;
+	border: 0px;
+	padding: 20px 10px;
+	float: left;
+	margin-top: 90px;
+	cursor: pointer;
+}
+#main_first table {
+	float: left;
+}
+#main_first td {
+	width: 220px;
+	padding: 10px 10px;
+	height: 115px;
+	z-index: 1;
+}
+#game_list #main_second {
+	width: 97.5%;
+	height: 190px;
+	background-color: #aaaaaa;
+	padding: 5px 10px;
 }
 
-
+#game_list #main_third {
+	width: 97.5%;
+	height: 520px;
+	background-color: #aaaaaa;
+	padding: 5px 10px;
+}
 
 
 
