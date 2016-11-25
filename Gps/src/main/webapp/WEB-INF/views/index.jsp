@@ -9,6 +9,13 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/index.css">
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(function(){
+		$(window).scroll(function(){
+			
+		});
+	});
+</script>
 </head>
 <body>
 	<!-- header -->
@@ -46,13 +53,105 @@
 			
 		</div>
 		<div id="index_story">
+		
 			<div id="decoration">
 				<!-- decoration image -->
 			</div>
 			
-		</div>
-		<div id="menu_bar">
-			<!-- move menu -->
+			<div id="menu_bar">
+				<!-- menu -->
+				<p>RECOMMENDED</p>
+				<ul>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+				</ul>
+				<p>BEST/NEW</p>
+				<ul>
+					<li>list</li>
+					<li>list</li>
+				</ul>
+				<p>GATEGORY</p>
+				<ul>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+					<li>list</li>
+				</ul>
+				<p>USER SERVICE</p>
+				<ul>
+					<li>list</li>
+					<li>list</li>
+				</ul>
+			</div>
+			
+			<div>
+				<!-- best game -->
+				<table>
+					<tr>
+						<td rowspan="2">
+							<div>
+								<!-- discount -->
+							</div>
+						</td>
+						<td>
+							
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+					<tr>
+						<td>
+							
+						</td>
+						<td>
+							
+						</td>
+					</tr>
+				</table>
+			</div>
+			<button></button>
+			<button></button>
+			<div>
+				<!-- new game -->
+				<button></button>
+					<c:forEach begin="1" end="5">
+					<div>
+						
+					</div>
+					</c:forEach>
+				<button></button>
+			</div>
+			
+			<div>
+				<!-- category discount game -->
+				<div>
+					<table>
+					<c:forEach begin="1" end="7">
+						<tr>
+							<td>
+								
+							</td>
+						</tr>
+					</c:forEach>
+					</table>
+				</div>
+				<div>
+					<!-- image -->
+					<c:forEach begin="1" end="3">
+						<div>
+							
+						</div>
+					</c:forEach>
+				</div>
+			</div>
 			
 		</div>
 	</section>
