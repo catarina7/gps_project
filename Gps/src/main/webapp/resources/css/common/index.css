@@ -108,6 +108,7 @@ section {
 	width: 100%;
 	height: 1600px;
 	padding-top: 105px;
+	min-width: 1423px;
 }
 section #advertisement {
 	width: 100%;
@@ -177,7 +178,7 @@ section #game_list {
 	height: 290px;
 	padding: 5px 0px;
 }
-#main_first .discount {
+.discount {
 	background:linear-gradient(to top, #43596b, #bee0fe);
 	width: 70px;
 	padding: 5px 7px;
@@ -188,9 +189,9 @@ section #game_list {
 	position: absolute;
 	z-index: 500;
 }
-#main_first .img {
+.img {
 	width: 100%;
-	height: 94%;
+	height: 100%;
 	border: 1px solid #aaaaaa;
 	border-radius: 8px;
 }
@@ -210,7 +211,7 @@ section #game_list {
 	float: left;
 }
 #main_first td {
-	width: 220px;
+	width: 230px;
 	padding: 10px 10px;
 	height: 115px;
 	z-index: 1;
@@ -218,10 +219,27 @@ section #game_list {
 #game_list #main_second {
 	width: 97.5%;
 	height: 190px;
-	background-color: #aaaaaa;
 	padding: 5px 10px;
 }
-
+#main_second button {
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 3px 3px #32435c;
+	background-color: #666666;
+	border: 0px;
+	padding: 20px 10px;
+	float: left;
+	margin-top: 50px;
+	cursor: pointer;
+}
+#main_second .product {
+	width: 137.3px;
+	float: left;
+	height: 85%;
+	padding: 10px 5px;
+	z-index: 1;
+}
 #game_list #main_third {
 	width: 97.5%;
 	height: 520px;

@@ -138,13 +138,38 @@
 				<h3>신작 게임</h3>
 				<div id="main_second">
 					<!-- new game -->
-					<button></button>
-						<c:forEach begin="1" end="5">
-						<div>
-							
-						</div>
-						</c:forEach>
-					<button></button>
+					<button>◁</button>
+							<div class="product">
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
+							</div>
+							<div class="product">
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
+							</div>
+							<div class="product">
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
+							</div>
+							<div class="product">
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
+							</div>
+							<div class="product">
+								<input type="text" readonly="readonly" class="discount" value="할인률 %">
+								<div class="img">
+									
+								</div>
+							</div>
+					<button>▷</button>
 				</div>
 				<h3>카테고리 별 초특가 할인 게임</h3>
 				<div id="main_third">
