@@ -91,68 +91,70 @@
 				</ul>
 			</div>
 			
-			<div>
-				<!-- best game -->
-				<table>
-					<tr>
-						<td rowspan="2">
-							<div>
-								<!-- discount -->
-							</div>
-						</td>
-						<td>
-							
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-					<tr>
-						<td>
-							
-						</td>
-						<td>
-							
-						</td>
-					</tr>
-				</table>
-			</div>
-			<button></button>
-			<button></button>
-			<div>
-				<!-- new game -->
-				<button></button>
-					<c:forEach begin="1" end="5">
-					<div>
-						
-					</div>
-					</c:forEach>
-				<button></button>
-			</div>
-			
-			<div>
-				<!-- category discount game -->
+			<div id="game_list">
 				<div>
+					<!-- best game -->
 					<table>
-					<c:forEach begin="1" end="7">
 						<tr>
+							<td rowspan="2">
+								<div>
+									<!-- discount -->
+								</div>
+							</td>
+							<td>
+								
+							</td>
 							<td>
 								
 							</td>
 						</tr>
-					</c:forEach>
+						<tr>
+							<td>
+								
+							</td>
+							<td>
+								
+							</td>
+						</tr>
 					</table>
 				</div>
+				<button></button>
+				<button></button>
 				<div>
-					<!-- image -->
-					<c:forEach begin="1" end="3">
+					<!-- new game -->
+					<button></button>
+						<c:forEach begin="1" end="5">
 						<div>
 							
 						</div>
-					</c:forEach>
+						</c:forEach>
+					<button></button>
 				</div>
+				
+				<div>
+					<!-- category discount game -->
+					<div>
+						<table>
+						<c:forEach begin="1" end="7">
+							<tr>
+								<td>
+									
+								</td>
+							</tr>
+						</c:forEach>
+						</table>
+					</div>
+					<div>
+						<!-- image -->
+						<c:forEach begin="1" end="3">
+							<div>
+								
+							</div>
+						</c:forEach>
+					</div>
+				</div>
+				
 			</div>
-			
 		</div>
 	</section>
 	
