@@ -263,14 +263,37 @@ section #game_list {
 	background-color: #777777;
 }
 #main_third #sub_cate {
-	width: 100%;
-	height: 477px;
+	width: 97.5%;
+	height: 457px;
 	margin-top: 40px;
 	background-color: #777777;
+	padding: 10px 10px;
 }
-
-
-
+#sub_cate #sub_first {
+	width: 69%;
+	height: 100%;
+	float: left;
+}
+#sub_first td {
+	border: 2px solid #aaaaaa;
+	width: 568px;
+	height: 70px;
+}
+#sub_cate #sub_second {
+	width: 26%;
+	margin-left: 30px;
+	height: 91%;
+	border: 2px solid #aaaaaa;
+	float: left;
+	padding: 18px 0px;
+}
+#sub_second .sub_secon_img {
+	width: 170px;
+	height: 90px;
+	margin: 0 auto;
+	border: 1px solid #474747;
+	margin-top: 10px;
+}
 
 
 

@@ -217,8 +217,33 @@
 					<button id="pack_4">패키지</button>
 					<!-- category discount game -->
 					<div id="sub_cate">
-							<div>
+							<div id="sub_first">
 								<table>
+										<tr>
+											<td>
+												
+											</td>
+										</tr>
+										<tr>
+											<td>
+												
+											</td>
+										</tr>
+										<tr>
+											<td>
+												
+											</td>
+										</tr>
+										<tr>
+											<td>
+												
+											</td>
+										</tr>
+										<tr>
+											<td>
+												
+											</td>
+										</tr>
 										<tr>
 											<td>
 												
@@ -226,13 +251,20 @@
 										</tr>
 								</table>
 							</div>
-							<div>
+							<div id="sub_second">
 								<!-- image -->
-								<c:forEach begin="1" end="3">
-									<div>
+									<div class="sub_secon_img">
 										
 									</div>
-								</c:forEach>
+									<div class="sub_secon_img">
+										
+									</div>
+									<div class="sub_secon_img">
+										
+									</div>
+									<div class="sub_secon_img">
+										
+									</div>
 							</div>
 					</div>
 				</div>
