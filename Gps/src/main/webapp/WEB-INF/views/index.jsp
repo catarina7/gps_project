@@ -62,34 +62,8 @@
 </script>
 </head>
 <body>
-	<!-- header -->
-	<header>
-		<div id="first_div">
-			<div id="first_div_1">
-				<div id="second_div">
-					<!-- rogo image -->
-				</div>
-				<div id="third_div">
-					<!-- menu list -->
-					<ul>
-						<li>menu</li>
-						<li>menu</li>
-						<li>menu</li>
-						<li>menu</li>
-						<li>menu</li>
-					</ul>
-				</div>
-				<div id="four_div">
-					<!-- login, join button -->
-					<button id="login">로그인</button>
-					<!-- <button id="logout">로그아웃</button> -->
-					<button id="join">회원가입</button>
-					<!-- <button id="information">My Page</button> -->
-				</div>
-			</div>
-		</div>
-	</header>
 	
+	<c:import url="/header" />
 	
 	<!-- section -->
 	<section>
@@ -272,43 +246,7 @@
 		</div>
 	</section>
 	
+	<c:import url="/footer" />
 	
-	<!-- footer -->
-	<footer>
-		<div id="first_footer">
-			<div id="first_footer_1">
-				<div id="second_footer">
-					<div id="footer_logo">
-						<!-- logo_image -->						
-					</div>
-					<div id="footer_info">
-						<p>
-							© 2016 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries.
-						</p>
-						<p>
-							VAT included in all prices where applicable.
-						</p>
-						<ul>
-							<li class="design">link</li>
-							<li class="design">link</li>
-							<li class="design">link</li>
-							<li>link</li>
-						</ul>
-					</div>
-				</div>
-				<div id="third_footer">
-					<ul>
-						<li class="design">value</li>
-						<li class="design">value</li>
-						<li class="design">value</li>
-						<li class="design" id="import">개인정보취급방침</li>
-						<li class="design">value</li>
-						<li class="design">value</li>
-						<li>value</li>
-					</ul>
-				</div>
-			</div>
-		</div>
-	</footer>
 </body>
 </html>

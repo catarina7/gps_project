@@ -39,5 +39,14 @@ public class HomeController {
 	@RequestMapping(value="/index")
 	public void index(){}
 	
+	@RequestMapping(value="/header")
+	public String header(){
+		return "/common/header";
+	}
+	
+	@RequestMapping(value="/footer")
+	public String footer(){
+		return "/common/footer";
+	}
 }
 
