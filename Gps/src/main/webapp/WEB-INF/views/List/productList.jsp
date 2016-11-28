@@ -12,7 +12,28 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/productList.css">
 <title>Insert title here</title>
 <script type="text/javascript">
-	
+	$(function(){
+		$("#user_tx").mouseenter(function(){
+			$("#user").show();
+			$("#product").hide();
+			$("#software").hide();
+			
+		});
+		
+		$("#product_tx").mouseenter(function(){
+			$("#product").show();
+			$("#user").hide();
+			$("#software").hide();
+			
+		});
+		
+		$("#software_tx").mouseenter(function(){
+			$("#software").show();
+			$("#product").hide();
+			$("#user").hide();
+			
+		});
+	});
 </script>
 </head>
 <body>
@@ -24,9 +45,63 @@
 		<!-- 내용 넣기 -->
 		<!-- easy user menu bar -->
 		<div id="sub_header">
-			
+			<div class="h_menu" id="user_tx">
+				<span>My Store</span>
+				<span class="h_icon">▼</span>
+			</div>
+			<div class="h_menu" id="product_tx">
+				<span>Games</span>
+				<span class="h_icon">▼</span>
+			</div>
+			<div class="h_menu" id="software_tx">
+				<span>SoftWare</span>
+				<span class="h_icon">▼</span>
+			</div>
+			<div class="h_menu">
+				<span>menu</span>
+			</div>
+			<div class="h_menu">
+				<span>Notice</span>
+			</div>
+			<div id="search_input">
+				<input id="search_area" type="text" placeholder="검색어를 입력하세요">
+				<div id="search_btn">
+					<button>
+						<img src="${pageContext.request.contextPath}/resources/css/common/img/search_icon.png">
+					</button>
+				</div>
+			</div>
 		</div>
-		
+		<div id="sub_header_menu">
+				<div class="H_list" id="user">
+					<ul>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+					</ul>
+				</div>
+				<div class="H_list" id="product">
+					<ul>
+						<li><a href="#">관심게임</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+					</ul>
+				</div>
+				<div class="H_list" id="software">
+					<ul>
+						<li><a href="#">한글패치</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+					</ul>
+				</div>
+		</div>
 		
 		
 	</section>
