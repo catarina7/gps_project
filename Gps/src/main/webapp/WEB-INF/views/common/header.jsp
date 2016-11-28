@@ -18,6 +18,15 @@
 				$("#first_div_1").hover(function(){
 					$("#Store_list").hide();
 				});
+				$("second_div").hover(function(){
+					$("#Store_list").hide();
+				});
+				$("#first_div").hover(function(){
+					$("#Store_list").hide();
+				});
+				$("#four_div").hover(function(){
+					$("#Store_list").hide();
+				});
 			});
 		});
 		
@@ -27,6 +36,15 @@
 			
 			$(".M_list").mouseout(function(){
 				$("#first_div_1").hover(function(){
+					$("#S_list").hide();
+				});
+				$("second_div").hover(function(){
+					$("#S_list").hide();
+				});
+				$("#first_div").hover(function(){
+					$("#S_list").hide();
+				});
+				$("#four_div").hover(function(){
 					$("#S_list").hide();
 				});
 			});
@@ -46,7 +64,7 @@
 				<div id="third_div">
 					<!-- menu list -->
 					<ul id="main_list">
-						<li class="store"><a class="store" href="/productList">STORE</a></li>
+						<li class="store"><a class="store" href="${pageContext.request.contextPath}/productList">STORE</a></li>
 						<li class="s_list"><a class="s_list" href="#">menu</a></li>
 						<li><a href="#">menu</a></li>
 						<li><a href="#">menu</a></li>
