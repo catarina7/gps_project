@@ -19,7 +19,6 @@ public class NoticeDAO {
 		return sqlSession.selectOne(namespace+"noticeView", n_num);
 	}
 	
-	
 	public int noticeWrite(NoticeDTO noticeDTO) throws Exception{
 		return sqlSession.insert(namespace+"noticeWrite", noticeDTO);
 				
@@ -37,7 +36,6 @@ public class NoticeDAO {
 	
 	
 	public List<NoticeDTO> noticeList(PageMaker pageMaker) throws Exception{
-		System.out.println();
 		return sqlSession.selectList(namespace+"noticeList", pageMaker);
 	} 
 	
