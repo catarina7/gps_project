@@ -64,8 +64,8 @@
 				<div id="third_div">
 					<!-- menu list -->
 					<ul id="main_list">
-						<li class="store"><a class="store" href="${pageContext.request.contextPath}/productList">STORE</a></li>
-						<li class="s_list"><a class="s_list" href="#">menu</a></li>
+						<li><a class="store" href="${pageContext.request.contextPath}/productList">STORE</a></li>
+						<li><a class="s_list" href="#">menu</a></li>
 						<li><a href="#">menu</a></li>
 						<li><a href="#">menu</a></li>
 						<li><a href="#">menu</a></li>

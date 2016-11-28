@@ -22,8 +22,10 @@
 	<!-- section -->
 	<section>
 		<!-- 내용 넣기 -->
-		<!-- 따라다니는 메뉴바 -->
-		
+		<!-- easy user menu bar -->
+		<div id="sub_header">
+			
+		</div>
 		
 		
 		
