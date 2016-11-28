@@ -45,7 +45,9 @@
 			<div id="search_input">
 				<input id="search_area" type="text" placeholder="검색어를 입력하세요">
 				<div id="search_btn">
-					
+					<button>
+						<img src="${pageContext.request.contextPath}/resources/css/common/img/search_icon.png">
+					</button>
 				</div>
 			</div>
 		</div>
