@@ -7,6 +7,51 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript">
+	$(function(){
+		
+		$(".store").mouseenter(function(){
+			$("#Store_list").show();
+			$("#S_list").hide();
+			
+			$(".M_list").mouseout(function(){
+				$("#first_div_1").hover(function(){
+					$("#Store_list").hide();
+				});
+				$("second_div").hover(function(){
+					$("#Store_list").hide();
+				});
+				$("#first_div").hover(function(){
+					$("#Store_list").hide();
+				});
+				$("#four_div").hover(function(){
+					$("#Store_list").hide();
+				});
+			});
+		});
+		
+		$(".s_list").mouseenter(function(){
+			$("#S_list").show();
+			$("#Store_list").hide();
+			
+			$(".M_list").mouseout(function(){
+				$("#first_div_1").hover(function(){
+					$("#S_list").hide();
+				});
+				$("second_div").hover(function(){
+					$("#S_list").hide();
+				});
+				$("#first_div").hover(function(){
+					$("#S_list").hide();
+				});
+				$("#four_div").hover(function(){
+					$("#S_list").hide();
+				});
+			});
+		});
+		
+	});
+</script>
 </head>
 <body>
 	<!-- header -->
@@ -18,13 +63,29 @@
 				</div>
 				<div id="third_div">
 					<!-- menu list -->
-					<ul>
-						<li>menu</li>
-						<li>menu</li>
-						<li>menu</li>
-						<li>menu</li>
-						<li>menu</li>
+					<ul id="main_list">
+						<li><a class="store" href="${pageContext.request.contextPath}/productList">STORE</a></li>
+						<li><a class="s_list" href="#">menu</a></li>
+						<li><a href="#">menu</a></li>
+						<li><a href="#">menu</a></li>
+						<li><a href="#">menu</a></li>
 					</ul>
+					<div class="M_list" id="Store_list">
+						<ul>
+							<li><a href="#">list</a></li>
+							<li><a href="#">list</a></li>
+							<li><a href="#">list</a></li>
+							<li><a href="#">list</a></li>
+						</ul>
+					</div>
+					<div class="M_list" id="S_list">
+						<ul>
+							<li><a href="#">list</a></li>
+							<li><a href="#">list</a></li>
+							<li><a href="#">list</a></li>
+							<li><a href="#">list</a></li>
+						</ul>
+					</div>
 				</div>
 				<div id="four_div">
 					<!-- login, join button -->

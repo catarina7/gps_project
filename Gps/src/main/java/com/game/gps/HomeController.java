@@ -48,5 +48,10 @@ public class HomeController {
 	public String footer(){
 		return "/common/footer";
 	}
+	
+	@RequestMapping(value="/productList")
+	public String productList(){
+		return "/List/productList";
+	}
 }
 
