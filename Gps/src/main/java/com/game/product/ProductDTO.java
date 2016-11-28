@@ -12,6 +12,7 @@ public class ProductDTO {
 	private String sub_category;
 	private String patch;
 	private int millage;
+	private String company;
 	
 	public int getPro_num() {
 		return pro_num;
@@ -78,6 +79,12 @@ public class ProductDTO {
 	}
 	public void setMillage(int millage) {
 		this.millage = millage;
+	}
+	public String getCompany() {
+		return company;
+	}
+	public void setCompany(String company) {
+		this.company = company;
 	}
 	
 }

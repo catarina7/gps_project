@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ProductMapper">
+	<!-- product 기본 글쓰기 -->
+	<insert id="productWrite" parameterType="com.game.product.ProductDTO">
+		insert into product values(product_seq.nextval, #{pro_title}, #{pro_contents}, 0, #{price}, 0, 0, #{top_category}, #{sub_category}, 'empty', #{millage}, #{company})	
+		
+		 <!-- pro_num 가져오기 (Pro_file TABLE) -->
+		<selectKey keyProperty="pro_num" resultType="int" order="AFTER">
+			select product_seq.currval from dual
+		</selectKey>
+	</insert>
+	
+	
+	<!-- pro_file 글쓰기(사진넣기) -->
+	<insert id="pro_fileWrite" parameterType="java.util.Map">
+		insert into pro_file values(pro_file_seq.nextval, #{pro_num}, #{file_name}, '1', '1')
+	</insert>
+</mapper>
