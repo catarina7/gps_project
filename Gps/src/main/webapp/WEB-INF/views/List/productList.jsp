@@ -24,7 +24,24 @@
 		<!-- 내용 넣기 -->
 		<!-- easy user menu bar -->
 		<div id="sub_header">
-			
+			<div class="h_menu">
+				<span>My Store</span>
+				<span class="h_icon">▼</span>
+			</div>
+			<div class="h_menu">
+				<span>Games</span>
+				<span class="h_icon">▼</span>
+			</div>
+			<div class="h_menu">
+				<span>SoftWare</span>
+				<span class="h_icon">▼</span>
+			</div>
+			<div class="h_menu">
+				<span>menu</span>
+			</div>
+			<div class="h_menu">
+				<span>Notice</span>
+			</div>
 		</div>
 		
 		
