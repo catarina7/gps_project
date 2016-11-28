@@ -7,15 +7,18 @@ section {
 	background-color: #1b7098;
 }
 
-/* easy user menu */
 
+
+
+
+
+/* easy user menu */
 #sub_header {
 	width: 70%;
 	height: 30px;
 	background-color: #41475f;
 	margin: 0 auto;
 	margin-top: 35px;
-	opacity: 0.8;
 	border: 2px solid #cfc5c5;
 	border-radius: 5px;
 }
@@ -25,6 +28,7 @@ section {
 	padding: 3px 30px;
 	border-right: 1px solid  #cfc5c5;
 	cursor: pointer;
+	opacity: 0.8;
 }
 
 #sub_header .h_menu:hover {
@@ -79,3 +83,49 @@ section {
 	width: 16px;
 	height: 16px;
 }
+/* east user drop down menu */
+#sub_header_menu {
+	width: 70%;
+	margin: 0 auto;
+}
+#sub_header_menu .H_list {
+	float: left;
+	padding: 0px 3px;
+	display: none;
+}
+.H_list ul {
+	border: 1px solid #41475f;
+}
+.H_list li {
+	padding: 5px 24px;
+	background-color: white;
+	border-bottom: 1px solid #41475f;
+	opacity: 0.9;
+}
+.H_list a {
+	color: black;
+	font-size: 14px;
+}
+.H_list a:hover {
+	color: #154473;
+}
+#sub_header_menu #user {
+	margin-left: 6px;
+}
+#sub_header_menu #product {
+	margin-left: 8px;
+}
+#sub_header_menu #software {
+	margin-left: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+

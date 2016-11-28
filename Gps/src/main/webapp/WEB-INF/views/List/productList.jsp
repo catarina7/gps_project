@@ -12,7 +12,9 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/productList.css">
 <title>Insert title here</title>
 <script type="text/javascript">
-	
+	$(function(){
+		
+	});
 </script>
 </head>
 <body>
@@ -51,7 +53,36 @@
 				</div>
 			</div>
 		</div>
-		
+		<div id="sub_header_menu">
+				<div class="H_list" id="user">
+					<ul>
+						<li><a href="#">마이페이지</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+					</ul>
+				</div>
+				<div class="H_list" id="product">
+					<ul>
+						<li><a href="#">관심게임</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+					</ul>
+				</div>
+				<div class="H_list" id="software">
+					<ul>
+						<li><a href="#">한글패치</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+						<li><a href="#">list</a></li>
+					</ul>
+				</div>
+		</div>
 		
 		
 	</section>
