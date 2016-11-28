@@ -12,5 +12,7 @@ public class MemberController {
 	public void join(){}
 	
 	
+	
+	
 
 }
