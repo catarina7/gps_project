@@ -13,7 +13,41 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
+		$("#user_tx").mouseenter(function(){
+			$("#user").show();
+			$("#product").hide();
+			$("#software").hide();
+			
+			$(".H_list").mouseout(function(){
+				$("#sub_header").hover(function(){
+					$("#user").hide();
+				});
+			});
+		});
 		
+		$("#product_tx").mouseenter(function(){
+			$("#product").show();
+			$("#user").hide();
+			$("#software").hide();
+			
+			$(".H_list").mouseout(function(){
+				$("#sub_header").hover(function(){
+					$("#product").hide();
+				});
+			});
+		});
+		
+		$("#software_tx").mouseenter(function(){
+			$("#software").show();
+			$("#product").hide();
+			$("#user").hide();
+			
+			$(".H_list").mouseout(function(){
+				$("#sub_header").hover(function(){
+					$("#software").hide();
+				});
+			});
+		});
 	});
 </script>
 </head>
@@ -26,15 +60,15 @@
 		<!-- 내용 넣기 -->
 		<!-- easy user menu bar -->
 		<div id="sub_header">
-			<div class="h_menu">
+			<div class="h_menu" id="user_tx">
 				<span>My Store</span>
 				<span class="h_icon">▼</span>
 			</div>
-			<div class="h_menu">
+			<div class="h_menu" id="product_tx">
 				<span>Games</span>
 				<span class="h_icon">▼</span>
 			</div>
-			<div class="h_menu">
+			<div class="h_menu" id="software_tx">
 				<span>SoftWare</span>
 				<span class="h_icon">▼</span>
 			</div>

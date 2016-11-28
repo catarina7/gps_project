@@ -92,6 +92,7 @@ section {
 	float: left;
 	padding: 0px 3px;
 	display: none;
+	position: absolute;
 }
 .H_list ul {
 	border: 1px solid #41475f;
@@ -113,10 +114,10 @@ section {
 	margin-left: 6px;
 }
 #sub_header_menu #product {
-	margin-left: 8px;
+	margin-left: 140px;
 }
 #sub_header_menu #software {
-	margin-left: 14px;
+	margin-left: 265px;
 }
 
 
