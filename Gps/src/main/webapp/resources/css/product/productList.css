@@ -12,28 +12,57 @@ section {
 #sub_header {
 	width: 70%;
 	height: 30px;
-	background-color: #49506b;
+	background-color: #41475f;
 	margin: 0 auto;
 	margin-top: 35px;
 	opacity: 0.8;
-	border: 2px solid #262937;
+	border: 2px solid #cfc5c5;
 	border-radius: 5px;
 }
 #sub_header .h_menu{
 	float: left;
 	height: 80%;
 	padding: 3px 30px;
-	border-right: 1px solid  #262937;
+	border-right: 1px solid  #cfc5c5;
+	cursor: pointer;
 }
+
+#sub_header .h_menu:hover {
+	background-color: #313548;
+}
+
 .h_menu span {
 	color: white;
 	text-align: center;
 	font-weight: bold;
 	text-shadow: -1px -1px 0px #0b233c;
-	cursor: pointer;
 	font-size: 13px;
 }
 .h_menu .h_icon {
 	font-size: 8px;
 	padding-left:2px;
 }
+
+#sub_header #search_input{
+	float: right;
+	width: 25%;
+	height: 98%;
+	padding: 2px 2px;
+}
+#search_input #search_area {
+	width: 75%;
+	height: 80%;
+	border: 1px solid #0b233c;
+	border-radius: 3px; 
+	float: left;
+	padding: 0px 5px;
+}
+#search_input #search_btn {
+	width: 15%;
+	height: 90%;
+	background: white;
+	float: left;
+	border-radius: 3px; 
+	margin-left: 3px;
+}
+

@@ -42,6 +42,12 @@
 			<div class="h_menu">
 				<span>Notice</span>
 			</div>
+			<div id="search_input">
+				<input id="search_area" type="text" placeholder="검색어를 입력하세요">
+				<div id="search_btn">
+					
+				</div>
+			</div>
 		</div>
 		
 		
