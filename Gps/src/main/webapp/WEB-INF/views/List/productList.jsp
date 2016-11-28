@@ -18,11 +18,6 @@
 			$("#product").hide();
 			$("#software").hide();
 			
-			$(".H_list").mouseout(function(){
-				$("#sub_header").hover(function(){
-					$("#user").hide();
-				});
-			});
 		});
 		
 		$("#product_tx").mouseenter(function(){
@@ -30,11 +25,6 @@
 			$("#user").hide();
 			$("#software").hide();
 			
-			$(".H_list").mouseout(function(){
-				$("#sub_header").hover(function(){
-					$("#product").hide();
-				});
-			});
 		});
 		
 		$("#software_tx").mouseenter(function(){
@@ -42,11 +32,6 @@
 			$("#product").hide();
 			$("#user").hide();
 			
-			$(".H_list").mouseout(function(){
-				$("#sub_header").hover(function(){
-					$("#software").hide();
-				});
-			});
 		});
 	});
 </script>
