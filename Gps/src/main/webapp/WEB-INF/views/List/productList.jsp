@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/productList.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 	
@@ -22,7 +22,7 @@
 	<!-- section -->
 	<section>
 		<!-- 내용 넣기 -->
-		
+		<!-- 따라다니는 메뉴바 -->
 		
 		
 		

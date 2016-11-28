@@ -40,28 +40,33 @@
 #third_div {
 	width: 58%;
 	height: 65%;
-	padding: 11px 0px;
+	padding: 20px 0px;
 	float: left;
 	margin-top: 5px;
 }
 
-#third_div ul {
+#third_div #main_list {
 	width: 88%;
-	height: 100%;
+	height: 70%;
+	margin: 0 auto;
 }
 
-#third_div li {
+#main_list li{
 	margin-left: 5px;
 	float: left;
 	width: 18%;
 	height: 100%;
-	color: white;
-	text-align: center;
 	cursor: pointer;
-	font-weight: bold;
 }
 
-#third_div li:hover{
+#third_div a {
+	color: white;
+	text-align: center;
+	font-weight: bold;
+	text-align: center;
+}
+
+#third_div a:hover{
 	color: #bfceff;
 }
 
@@ -86,7 +91,21 @@
 #four_div button:hover {
 	background-color: #374957;
 }
+#third_div .M_list { 
+	background-color: #43596b;
+	border: 2px solid #43596b;
+	position: absolute;
+	margin-left: 40px;
+	display: none;
+}
+.M_list li {
+	padding: 10px 20px;
+}
 
+#third_div #S_list {
+	
+	margin-left: 135px;
+}
 /* header ---------------------------- */
 
 
