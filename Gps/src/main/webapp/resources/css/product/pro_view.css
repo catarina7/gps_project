@@ -151,6 +151,7 @@ section #pro_view {
 	height: 150px;
 	border: 1px solid #aaaaaa;
 	border-radius: 4px;
+	overflow: auto;
 }
 #five_pro .five_btn {
 	width: 100%;
@@ -177,6 +178,7 @@ section #pro_view {
 	border-radius: 8px;
 	cursor: pointer;
 	margin-bottom: 3px;
+	margin-top: 3px;
 }
 #five_pro button:hover {
 	background-color: #232f41;

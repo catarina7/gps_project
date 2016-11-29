@@ -113,7 +113,39 @@
 					</table>
 				</div>
 				<div id="patch">
-					
+					<table>
+						<colgroup>
+							<col style="width:70%;">
+							<col style="width:30%;">
+						</colgroup>
+						<tr>
+							<td class="com_title" colspan="2">업데이트 및 패치 파일</td>
+						</tr>
+						<tr>
+							<td class="com_name"></td>
+							<td>
+								<button>Download</button>
+							</td>
+						</tr>
+						<tr>
+							<td class="com_name"></td>
+							<td>
+								<button>Download</button>
+							</td>
+						</tr>
+						<tr>
+							<td class="com_name"></td>
+							<td>
+								<button>Download</button>
+							</td>
+						</tr>
+						<tr>
+							<td class="com_name"></td>
+							<td>
+								<button>Download</button>
+							</td>
+						</tr>
+					</table>
 				</div>
 				<button class="five_btn" id="favorite">관심상품</button>
 				<button class="five_btn" id="cart">장바구니</button>
