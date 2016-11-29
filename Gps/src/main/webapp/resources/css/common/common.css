@@ -9,8 +9,8 @@
 
 @font-face {
 	font-family: "Nanum Gothic", ng , NanumGothic ,나눔고딕, 나눔 고딕, sans-serif;
-	src: url("/vitanature/font/NanumGothic.eot");
-	src: local(※), url("/vitanature/font/NanumGothic.woff") format('woff');
+	/* src: url("/vitanature/font/NanumGothic.eot"); */
+	/* src: local(※), url("/vitanature/font/NanumGothic.woff") format('woff'); */
 	
 }
 

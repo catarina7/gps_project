@@ -22,7 +22,9 @@
 	<!-- section -->
 	<section>
 			<!-- 내용 넣기 -->
-			<c:import url="/user_menu_bar" />
+			<div id="user_menu">				
+				<c:import url="/user_menu_bar" />
+			</div>
 			
 			<div id="pro_view">
 				<!-- game name -->
