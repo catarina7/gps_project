@@ -201,6 +201,8 @@ $(function(){
 			alert("비밀번호 확인을 진행해 주세요.");
 		}else if(dayDiff<=13){
 			alert("엄마 젖이나 더 먹고와라 애송이");
+		}else if($("#gender").val() == "" || $("#gender").val() == null){
+			alert("성별 체크 확인해 주세요.");
 		}else{
 			$.ajax({
 				url : "join",
@@ -210,7 +212,7 @@ $(function(){
 					m_name : $("#name_input").val(),
 					m_tel : $("#tel_option").val()+"="+$("#tel_input").val(),
 					m_birth: $("#birth_input").val(),
-					m_gender : $("#gender").val(),
+					m_gender : $("input:radio[name=m_gender]:checked").val(),
 					m_email : $("#email_input").val()
 				},
 				type : "post",
