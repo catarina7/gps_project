@@ -25,6 +25,7 @@ section #pro_view {
 	width: 66%;
 	margin: 0 auto;
 	padding: 70px 15px;
+	overflow: none;
 }
 
 #pro_view #first_pro {
@@ -34,6 +35,7 @@ section #pro_view {
 	border: 2px solid #aaaaaa;
 	padding: 10px 10px;
 	border-radius : 4px;
+	overflow: none;
 }
 #first_pro #main_img {
 	width: 100%;
@@ -49,6 +51,7 @@ section #pro_view {
 	width: 37%;
 	height: 410px;
 	float: right;
+	overflow: none;
 }
 
 #second_pro #title_img {
@@ -76,6 +79,7 @@ section #pro_view {
 	float: left;
 	margin-top: 20px;
 	margin-left: 4px;
+	overflow: none;
 }
 
 #third_pro ul {
@@ -127,6 +131,7 @@ section #pro_view {
 	width: 63%;
 	float: left;
 	padding: 40px 10px;
+	overflow: none;
 }
 #pro_view #pakage {
 	width: 100%;
@@ -184,6 +189,7 @@ section #pro_view {
 	width: 28%;
 	float: left;
 	margin-left: 46px;
+	overflow: none;
 }
 
 #five_pro #computer {
@@ -262,6 +268,7 @@ section #pro_view {
 	height: 200px;
 	float: left;
 	background-color: #b3b3d9;
+	overflow: none;
 }
 
 
