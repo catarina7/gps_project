@@ -72,11 +72,12 @@
 			
 		</div>
 		<div id="index_story">
-		
+			
 			<div id="decoration">
 				<!-- decoration image -->
+				
 			</div>
-			
+			<c:import url="/user_menu_bar" />
 			<div id="menu_bar">
 				<!-- menu -->
 				<p>RECOMMENDED</p>
@@ -111,6 +112,7 @@
 			</div>
 			
 			<div id="game_list">
+				
 				<h3>추천 게임</h3>
 				<div id="main_first">
 					<!-- best game -->
@@ -120,7 +122,7 @@
 							<td rowspan="2">
 								<!-- discount -->
 								<input type="text" readonly="readonly" class="discount" value="할인률 %">
-								<div class="img">
+								<div class="img" onclick="location.href='${pageContext.request.contextPath}/product/pro_view'">
 									
 								</div>
 							</td>

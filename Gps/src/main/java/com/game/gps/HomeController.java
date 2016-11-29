@@ -49,9 +49,15 @@ public class HomeController {
 		return "/common/footer";
 	}
 	
+	@RequestMapping(value="/user_menu_bar")
+	public String user_menu_bar(){
+		return "/common/user_menu_bar";
+	}
+	
 	@RequestMapping(value="/productList")
 	public String productList(){
 		return "/List/productList";
 	}
+	
 }
 

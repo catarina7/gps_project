@@ -6,7 +6,7 @@
 
 section {
 	width: 100%;
-	height: 1750px;
+	height: 1850px;
 	padding-top: 105px;
 	min-width: 1423px;
 }
@@ -19,7 +19,7 @@ section #advertisement {
 }
 section #index_story {
 	width: 100%;
-	height: 1400px;
+	height: 1500px;
 	background-color: #666666;
 	z-index: 9;
 	margin-top: 300px;
@@ -33,7 +33,7 @@ section #decoration {
 }
 section #menu_bar {
 	width: 170px;
-	margin-top: 30px;
+	margin-top: 70px;
 	margin-left: 130px;
 	border: 2px solid #32435c;
 	border-radius: 15px; 
@@ -64,7 +64,7 @@ section #menu_bar {
 section #game_list {
 	width: 870px;
 	float: left;
-	margin: 50px 70px;
+	margin: 80px 70px;
 }
 #game_list h3 {
 	color: white;
@@ -88,7 +88,7 @@ section #game_list {
 	text-align: center;
 	font-weight: bold;
 	position: absolute;
-	z-index: 500;
+	z-index: 50;
 }
 .img {
 	width: 100%;
