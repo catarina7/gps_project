@@ -10,19 +10,25 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
-<title>공지사항 수정</title>
+<title>${noticeView.n_title}</title>
 <script type="text/javascript">
 	$(function (){
 		$("#listBtn").click(function(){ //목록버튼
-			
+			location.href="${pageContext.request.contextPath}/notice/noticeList";
 		});
 		
 		$("#delBtn").click(function(){ //삭제버튼
-			
+			var check = confirm("삭제하시겠습니까?");
+			if(check == true){
+				
+			}
 		});
 		
 		$("#modBtn").click(function(){ //수정버튼
-	
+			var check = confirm("수정하시겠습니까?");
+			if(check == true){
+				
+			}
 		});
 		
 	});
