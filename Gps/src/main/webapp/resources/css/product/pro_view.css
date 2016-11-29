@@ -54,18 +54,18 @@ section #pro_view {
 }
 
 #second_pro #title_img {
-	width: 100%;
+	width: 99%;
 	height: 145px;
 	border: 1px solid #aaaaaa;
 }
 #second_pro #game_info {
-	width: 100%;
+	width: 99%;
 	height: 200px;
 	border: 1px solid #aaaaaa;
 }
 #second_pro #game_evalution {
-	width: 100%;
-	height: 60px;
+	width: 99%;
+	height: 59px;
 	border: 1px solid #aaaaaa;
 }
 
