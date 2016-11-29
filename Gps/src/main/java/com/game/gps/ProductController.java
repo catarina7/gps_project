@@ -36,4 +36,9 @@ public class ProductController {
 	public String productList(){
 		return "product/pro_list";
 	}
+	
+	@RequestMapping(value="/pro_view")
+	public String productView(){
+		return "product/pro_view";
+	}
 }

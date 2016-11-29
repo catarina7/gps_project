@@ -121,7 +121,7 @@
 							<td rowspan="2">
 								<!-- discount -->
 								<input type="text" readonly="readonly" class="discount" value="할인률 %">
-								<div class="img">
+								<div class="img" onclick="location.href='${pageContext.request.contextPath}/product/pro_view'">
 									
 								</div>
 							</td>
