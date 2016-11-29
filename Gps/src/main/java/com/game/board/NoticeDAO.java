@@ -44,4 +44,7 @@ public class NoticeDAO {
 		return sqlSession.selectOne(namespace+"noticeCount");
 	}
 	
+	public int noticeMod(NoticeDTO noticeDTO) throws Exception{
+		return sqlSession.update(namespace+"noticeMod", noticeDTO);
+	}
 }

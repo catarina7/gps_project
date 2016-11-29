@@ -47,11 +47,33 @@ public class NoticeController {
 	@RequestMapping(value="/noticeWrite", method=RequestMethod.GET)
 	public void noticeWrite(){}
 	
-	@RequestMapping(value="noticeWrite", method=RequestMethod.POST)
+	@RequestMapping(value="/noticeWrite", method=RequestMethod.POST)
 	public String noticeWrite(NoticeDTO noticeDTO){
 		
 		try {
 			noticeService.noticeWrite(noticeDTO);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/notice/noticeList";
+	}
+	
+	//Delete
+	@RequestMapping(value="/noticeDelete")
+	public String noticeDelete(@RequestParam("n_num") int n_num){
+		try {
+			noticeService.noticeDelete(n_num);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/notice/noticeList";
+	}
+	//Mod
+	public String noticeMod(NoticeDTO noticeDTO){
+		try {
+			noticeService.noticeMod(noticeDTO);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
