@@ -133,11 +133,11 @@
 				$("#idchk").show();
 			}else{
 				$.ajax({
-					url : "idcheck",
+					url : "idCheck",
 					data : {id : $("#id_input").val()},
 					type : "post",
 					success : function(result){
-						if(result==0){
+						if(result == 0){
 							alert("사용가능한 아이디입니다");
 							idchk=1;
 						}else{
@@ -168,8 +168,6 @@
 				alert("필수 입력정보를 모두 입력해주세요");
 			}else if(idchk!=1){
 				alert("아이디를 중복체크 해주세요");
-			}else if(pwchk!=0){
-				alert("비밀번호 제대로 확인 해주세요");
 			}else{
 					 /* $.ajax({
 						url : "",
