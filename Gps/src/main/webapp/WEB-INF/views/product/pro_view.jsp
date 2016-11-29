@@ -67,23 +67,53 @@
 			</div>
 			<!-- product menu -->
 			<div id="four_pro">
-				<div>
-				
+				<div id="pakage">
+					<div></div>
 				</div>
-				<div>
-				
+				<div id="relationship">
+					
 				</div>
 			</div>
 			<!-- game software -->
 			<div id="five_pro">
-				<div>
+				<div id="computer">
+					<button>내 사양비교</button>
+					<table>
+						<colgroup>
+							<col style="width: 40%;">
+							<col style="width: 60%;">
+						</colgroup>
+						<tr>
+							<td class="com_name">운영체제</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="com_name">CPU</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="com_name">메모리(RAM)</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="com_name">그래픽 카드</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="com_name">Direct X버전</td>
+							<td></td>
+						</tr>
+						<tr>
+							<td class="com_name">하드디스크 <br> 여유공간</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div id="patch">
 					
 				</div>
-				<div>
-					
-				</div>
-				<button></button>
-				<button></button>
+				<button class="five_btn" id="favorite">관심상품</button>
+				<button class="five_btn" id="cart">장바구니</button>
 			</div>
 			<!-- review -->
 			<div id="six_pro">
