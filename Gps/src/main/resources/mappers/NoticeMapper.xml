@@ -22,5 +22,13 @@
 		<select id="noticeCount" resultType="int">
 			select count(n_num) from notice
 		</select>
+		
+		<delete id="noticeDelete" parameterType="int" >
+			delete notice where n_num=#{n_num}
+		</delete>
+		
+		<update id="noticeMod" parameterType="com.game.board.NoticeDTO">
+			update notice set n_title=#{n_title}, n_writer=#{n_writer}, n_contents=#{n_contents} where n_num=#{n_num}
+		</update>
 	
 	</mapper>

@@ -40,4 +40,8 @@ public class NoticeService {
 		model.addAttribute("noticeList", noticeDAO.noticeList(pageMaker));
 		model.addAttribute("pageMaker", pageMaker); 
 	}
+	
+	public int noticeMod(NoticeDTO noticeDTO) throws Exception{
+		return noticeDAO.noticeMod(noticeDTO);
+	}
 }
