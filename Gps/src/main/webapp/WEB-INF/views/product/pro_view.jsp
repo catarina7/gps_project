@@ -77,12 +77,15 @@
 			<!-- game software -->
 			<div id="five_pro">
 				<div id="computer">
-					<button>내 사양비교</button>
+					<button>내 사양보기</button>
 					<table>
 						<colgroup>
 							<col style="width: 40%;">
 							<col style="width: 60%;">
 						</colgroup>
+						<tr>
+							<td class="com_title" colspan="2">권장 사양</td>
+						</tr>
 						<tr>
 							<td class="com_name">운영체제</td>
 							<td></td>

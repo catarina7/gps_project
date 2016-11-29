@@ -201,6 +201,13 @@ section #pro_view {
 #five_pro .com_name {
 	font-weight: bold;
 }
+#five_pro .com_title {
+	font-size: 13px;
+	font-weight: bold;
+	border-bottom: 2px solid black;
+}
+
+
 
 #pro_view #six_pro {
 	width: 99.8%;
