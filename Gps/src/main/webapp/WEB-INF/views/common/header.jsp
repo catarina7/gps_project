@@ -60,6 +60,7 @@
 			<div id="first_div_1">
 				<div id="second_div">
 					<!-- rogo image -->
+					<a href="${pageContext.request.contextPath}/index"><img src=""></a>
 				</div>
 				<div id="third_div">
 					<!-- menu list -->

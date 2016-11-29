@@ -72,11 +72,11 @@
 			
 		</div>
 		<div id="index_story">
-		
+			
 			<div id="decoration">
 				<!-- decoration image -->
+				
 			</div>
-			
 			<div id="menu_bar">
 				<!-- menu -->
 				<p>RECOMMENDED</p>
@@ -111,6 +111,7 @@
 			</div>
 			
 			<div id="game_list">
+				
 				<h3>추천 게임</h3>
 				<div id="main_first">
 					<!-- best game -->
