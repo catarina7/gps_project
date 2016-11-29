@@ -12,6 +12,9 @@ public class MemberDAO {
 	private String namespace = "memberMapper.";
 	
 	//회원가입
+	public int join(MemberDTO mDto) throws Exception{
+		return sqlSession.insert(namespace+"Join", mDto);
+	}
 	
 	//로그인
 	
@@ -20,7 +23,7 @@ public class MemberDAO {
 	//회원탈퇴
 	
 	//id중복체크
-	public MemberDTO idcheck(String id){
+	public MemberDTO idcheck(String id) throws Exception{
 		
 		return sqlSession.selectOne(namespace+"idCheck", id);
 	}
