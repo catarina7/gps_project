@@ -77,6 +77,7 @@
 				<!-- decoration image -->
 				
 			</div>
+			<c:import url="/user_menu_bar" />
 			<div id="menu_bar">
 				<!-- menu -->
 				<p>RECOMMENDED</p>
