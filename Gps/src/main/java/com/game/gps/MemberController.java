@@ -21,8 +21,26 @@ public class MemberController {
 	private MemberService memberService;
 	
 	
-	@RequestMapping(value="/join")
+	@RequestMapping(value="/join" , method = RequestMethod.GET)
 	public void join(){}
+	
+	
+	//회원가입(ajax)
+	@RequestMapping(value="/join" , method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<Integer> join(MemberDTO mDto, Model model){
+		int result=0;
+		
+		try {
+			result = memberService.join(mDto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			result = 0;
+		}
+		
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
 	
 	
 	
@@ -33,12 +51,18 @@ public class MemberController {
 	public ResponseEntity<Integer> idcheck(@RequestParam(defaultValue="") String id, Model model){
 		
 		MemberDTO mDto = new MemberDTO();
-		mDto = memberService.idcheck(id);
+		try {
+			mDto = memberService.idcheck(id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			mDto = null;
+		}
 		int result = 0;
 		if(mDto != null){
-			result = 0;
-		}else{
 			result = 1;
+		}else{
+			result = 2;
 		}		
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
