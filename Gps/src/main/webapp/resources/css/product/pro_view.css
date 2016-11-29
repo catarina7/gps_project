@@ -88,8 +88,8 @@ section #pro_view {
 }
 #third_pro .sub_btn {
 	position: absolute;
-	opacity: 0.6;
-	background-color: black;
+	opacity: 0.5;
+	background-color: white;
 	color: white;
 	border: 1px solid black;
 	z-index: 99;
@@ -97,16 +97,17 @@ section #pro_view {
 	height: 50px;
 	margin-top: 35px;
 	cursor: pointer;
-	border-radius : 5px;
+	border-radius : 30px;
 }
 #third_pro #before {
 	background-image: url("/gps/resources/css/product/img/icon_left.png");
-	background-size: 50px 50px;
+	background-size: 48px 48px;
+	margin-left: 1px;
 }
 #third_pro #next {
 	margin-left: 511px;
 	background-image: url("/gps/resources/css/product/img/icon_right.png");
-	background-size: 50px 50px;
+	background-size: 48px 48px;
 }
 
 
