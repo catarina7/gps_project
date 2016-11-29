@@ -84,6 +84,19 @@
 							</div>
 							
 						</div>
+						<div class="item">
+							<div class="tag">
+								
+							</div>
+							
+						</div>
+						<div class="item">
+							<div class="tag">
+								
+							</div>
+							
+						</div>
+						
 					</div>
 					<div id="relationship">
 						<span>연관 추천 게임</span>
