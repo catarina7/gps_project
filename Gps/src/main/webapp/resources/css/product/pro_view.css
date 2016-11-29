@@ -2,6 +2,196 @@
 
 section {
 	width: 100%;
-	height: 800px;
+	height: 1370px;
 	padding-top: 105px;
-	background-color: #1b7098;
+	padding-bottom: 100px;
+	background-color: #5297b1;
+}
+
+section #pro_view {
+	width: 66%;
+	margin: 0 auto;
+	padding: 70px 15px;
+}
+
+#pro_view #first_pro {
+	width: 58%;
+	height: 250px;
+	float: left;
+	border: 2px solid #aaaaaa;
+	background-color: #253561;
+	padding: 10px 10px;
+	border-radius : 4px;
+}
+#first_pro #main_img {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+}
+
+
+
+
+#pro_view #second_pro { 
+	width: 37%;
+	height: 410px;
+	float: right;
+	background-color: #6666b3;
+}
+
+#second_pro #title_img {
+	width: 100%;
+	height: 145px;
+	border: 1px solid #aaaaaa;
+}
+#second_pro #game_info {
+	width: 100%;
+	height: 200px;
+	border: 1px solid #aaaaaa;
+}
+#second_pro #game_evalution {
+	width: 100%;
+	height: 60px;
+	border: 1px solid #aaaaaa;
+}
+
+
+
+
+#pro_view #third_pro {
+	width: 60%;
+	height: 120px;
+	float: left;
+	margin-top: 20px;
+	background-color: #5151a4;
+	margin-left: 2px;
+}
+
+#third_pro ul {
+	width: 97.8%;
+	height: 90%;
+	padding: 5px 5px;
+	border: 1px solid #aaaaaa;
+}
+#third_pro li {
+	width: 17.5%;
+	height: 90%;
+	padding: 5px 6.7px;
+	float: left;
+}
+#third_pro img {
+	width: 98%;
+	height: 98%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+}
+#third_pro .sub_btn {
+	position: absolute;
+	opacity: 0.6;
+	background-color: black;
+	color: white;
+	border: 1px solid black;
+	z-index: 99;
+	width: 50px;
+	height: 50px;
+	margin-top: 35px;
+	cursor: pointer;
+	border-radius : 5px;
+}
+#third_pro #before {
+	background-image: url("/gps/resources/css/product/img/icon_left.png");
+	background-size: 50px 50px;
+}
+#third_pro #next {
+	margin-left: 511px;
+	background-image: url("/gps/resources/css/product/img/icon_right.png");
+	background-size: 50px 50px;
+}
+
+
+
+#pro_view #four_pro {
+	margin-top: 40px;
+	width: 67%;
+	height: 500px;
+	float: left;
+	background-color: #494994;
+}
+
+#pro_view #five_pro {
+	margin-top: 40px;
+	width: 28%;
+	height: 500px;
+	float: left;
+	margin-left: 46px;
+	background-color: #35356a;
+}
+
+#pro_view #six_pro {
+	width: 99.8%;
+	margin-top: 40px;
+	height: 200px;
+	float: left;
+	background-color: #b3b3d9;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
