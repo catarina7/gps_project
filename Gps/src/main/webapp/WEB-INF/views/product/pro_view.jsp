@@ -329,9 +329,31 @@
 				</div>
 				<!-- review -->
 				<div id="six_pro">
-					<div id="pro_grade"></div>
-					<div id="reply_write"></div>
-					<div id="reply_contents"></div>
+					<div id="pro_grade">
+						
+					</div>
+					<div id="reply_write">
+						<div class="re_title">
+							
+						</div>
+						<div class="re_contents">
+							<textarea></textarea>
+						</div>
+						<div class="re_sub">
+							
+						</div>
+					</div>
+					<div id="reply_contents">
+						<div class="re_title">
+							
+						</div>
+						<div class="re_contents">
+							
+						</div>
+						<div class="re_sub">
+							
+						</div>
+					</div>
 				</div>
 			</div>
 	</section>

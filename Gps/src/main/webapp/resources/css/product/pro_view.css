@@ -383,16 +383,37 @@ section #pro_view {
 }
 #six_pro #reply_write {
 	width: 98%;
-	height: 100px;
 	padding: 5px 5px;
 	border: 2px solid #aaaaaa;
 	margin-bottom: 5px;
+	margin: 0 auto;
 }
+.re_title {
+	width: 99.5%;
+	height: 25px;
+}
+.re_contents {
+	width: 98.4%;
+	border: 2px solid #aaaaaa;
+	border-bottom: 1px dashed #aaaaaa;
+	padding: 5px 5px;
+}
+.re_contents textarea {
+	width: 99.8%;
+	height: 90px;
+}
+.re_sub {
+	width: 99.5%;
+	height: 40px;
+	border: 2px solid #aaaaaa;
+	border-top: 1px dashed #aaaaaa;
+}
+
+
 #six_pro #reply_contents {
 	width: 98%;
-	height: 100px;
-	padding: 5px 5px;
-	border: 2px solid #aaaaaa;
+	padding: 15px 5px;
+	margin: 0 auto;
 }
 
 
