@@ -8,7 +8,7 @@ section {
 	width: 100%;
 	height: 1850px;
 	padding-top: 105px;
-	min-width: 1423px;
+	min-width: 1208px;
 }
 section #advertisement {
 	width: 100%;
@@ -32,13 +32,14 @@ section #decoration {
 	background-color: #777777;
 }
 section #menu_bar {
-	width: 170px;
+	width: 11.5%;
 	margin-top: 70px;
-	margin-left: 130px;
+	margin-left: 10%;
 	border: 2px solid #32435c;
 	border-radius: 15px; 
 	padding: 15px 10px;
 	float: left;
+	overflow: hidden;
 }
 #menu_bar p {
 	width: 100%;
@@ -62,9 +63,10 @@ section #menu_bar {
 }
 
 section #game_list {
-	width: 870px;
+	width: 63.5%;
 	float: left;
 	margin: 80px 70px;
+	overflow: hidden;
 }
 #game_list h3 {
 	color: white;
@@ -73,6 +75,10 @@ section #game_list {
 	padding: 10px 5px;
 	text-shadow: 3px 3px #32435c;
 }
+
+
+
+
 #game_list #main_first {
 	width: 99%;
 	height: 290px;
@@ -81,7 +87,7 @@ section #game_list {
 }
 .discount {
 	background:linear-gradient(to top, #43596b, #bee0fe);
-	width: 70px;
+	width: 6.5%;
 	padding: 5px 7px;
 	border: 2px solid #aaaaaa;
 	border-radius: 8px;
@@ -107,12 +113,14 @@ section #game_list {
 	float: left;
 	margin-top: 90px;
 	cursor: pointer;
+	overflow: hidden;
 }
 #main_first table {
 	float: left;
+	width: 86%;
 }
 #main_first td {
-	width: 230px;
+	width: 25%;
 	padding: 10px 10px;
 	height: 115px;
 	z-index: 1;
@@ -136,14 +144,14 @@ section #game_list {
 	cursor: pointer;
 }
 #main_second .product {
-	width: 151px;
+	width: 17.5%;
 	float: left;
 	height: 85%;
 	padding: 10px 18px;
 	z-index: 1;
 }
 #game_list #main_third {
-	width: 97.5%;
+	width: 97%;
 	height: 520px;
 	padding: 5px 10px;
 	border: 2px solid #373e48;
@@ -157,6 +165,7 @@ section #game_list {
 	color: white;
 	font-weight: bold;
 	cursor: pointer;
+	overflow: hidden;
 }
 #main_third #pack_1 {
 	border: 2px solid #777777;
@@ -174,9 +183,12 @@ section #game_list {
 	height: 100%;
 	float: left;
 }
+#sub_first table {
+	width: 100%;
+}
 #sub_first td {
 	border: 2px solid #aaaaaa;
-	width: 568px;
+	width: 99.8%;
 	height: 70px;
 }
 #sub_cate #sub_second {
@@ -189,7 +201,7 @@ section #game_list {
 	padding: 18px 0px;
 }
 #sub_second .sub_secon_img {
-	width: 170px;
+	width: 80%;
 	height: 90px;
 	margin: 0 auto;
 	border: 1px solid #474747;
