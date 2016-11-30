@@ -399,6 +399,9 @@ section #pro_view {
 	padding: 0px 10px;
 	font-size: 18px;
 }
+.re_title #review_count {
+	font-size: 12px;
+}
 .re_contents {
 	width: 98.4%;
 	border: 2px solid #aaaaaa;
@@ -413,8 +416,13 @@ section #pro_view {
 	padding: 5px 5px;
 }
 .re_contents textarea {
-	width: 99.8%;
+	width: 97.8%;
 	height: 90px;
+	color: white;
+	padding: 5px 5px;
+	border: 1px solid #aaaaaa;
+	background-color: #3f3f3f;
+	resize: none;
 }
 .re_sub {
 	width: 98.4%;

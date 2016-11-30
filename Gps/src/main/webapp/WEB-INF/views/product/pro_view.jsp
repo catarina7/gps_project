@@ -334,7 +334,8 @@
 					</div>
 					<div id="reply_write">
 						<div class="re_title">
-							<span>의견 쓰기</span>
+							<span>의견 쓰기</span> 
+							<span id="review_count">0</span>
 						</div>
 						<div class="re_contents">
 							<div class="re_user">user name</div>
@@ -349,7 +350,8 @@
 							
 						</div>
 						<div class="re_contents">
-							
+							<div class="re_user">user name</div>
+							<textarea readonly="readonly"></textarea>
 						</div>
 						<div class="re_sub">
 							
