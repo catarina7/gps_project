@@ -115,10 +115,10 @@ section #pro_view {
 #third_pro #before {
 	background-image: url("/gps/resources/css/product/img/icon_left.png");
 	background-size: 48px 48px;
-	margin-left: 1px;
+	left: 17.4%;
 }
 #third_pro #next {
-	margin-left: 511px;
+	right: 43.3%;
 	background-image: url("/gps/resources/css/product/img/icon_right.png");
 	background-size: 48px 48px;
 }
