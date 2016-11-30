@@ -84,13 +84,14 @@ section #pro_view {
 #third_pro ul {
 	width: 97.8%;
 	height: 90%;
-	padding: 5px 5px;
+	padding: 5px 4px;
 	border: 1px solid #aaaaaa;
 }
 #third_pro li {
 	width: 17.5%;
 	height: 90%;
-	padding: 5px 6.7px;
+	padding: 5px 0px;
+	margin-left: 2.2%;
 	float: left;
 }
 #third_pro img {
@@ -115,13 +116,17 @@ section #pro_view {
 #third_pro #before {
 	background-image: url("/gps/resources/css/product/img/icon_left.png");
 	background-size: 48px 48px;
-	margin-left: 1px;
+	left: 17.4%;
 }
 #third_pro #next {
-	margin-left: 511px;
+	right: 43.3%;
 	background-image: url("/gps/resources/css/product/img/icon_right.png");
 	background-size: 48px 48px;
 }
+
+
+
+
 
 
 
@@ -137,7 +142,6 @@ section #pro_view {
 }
 #pro_view #relationship {
 	width: 100%;
-	height: 150px;
 	margin-top: 50px;
 }
 #relationship span {
@@ -154,33 +158,124 @@ section #pro_view {
 #relationship li {
 	width: 17.5%;
 	float: left;
-	height: 100px;
-	margin-left: 12px;
-	border: 1px solid #aaaaaa;
+	margin-left: 8.5px;
+	border: 2px solid #aaaaaa;
 	border-radius : 4px;
 }
-
+#relationship dl {
+	width: 100%;
+	height: 100%;
+}
+#relationship dt {
+	width: 100%;
+	padding-top: 65px;
+	padding-bottom: 5px;
+}
+#relationship .rel_name {
+	border-bottom: 1px solid #aaaaaa;
+	border-top: 2px solid #aaaaaa;
+	font-weight: bold;
+}
+#relationship dd {
+	width: 100%;
+	font-size: 12px;
+	color: white;
+	padding: 3px 0px;
+	text-align: center;
+	background-color: #474747;
+	border-radius: 4px;
+}
 
 
 #pakage .item {
 	width: 98%;
 	height: 94px;
-	background-color: #939393;
+	background-color: #474747;
 	margin-top: 7px;
 	margin-bottom: 35px;
 	border: 3px solid #aaaaaa;
 	border-radius: 5px;
 }
+#pakage .item .four_contents {
+	width: 95%;
+	margin: 0 auto;
+	height: 60px;
+	padding: 5px 0px;
+}
+#pakage .four_contents .f_g_name {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+#pakage .four_contents .f_g_ex {
+	color: silver;
+	font-size: 14px;
+}
 #pakage .tag {
 	position: absolute;
 	background-color: black;
-	width: 20%;
-	height: 37px;
-	margin-top: 75px;
-	margin-left: 290px;
+	margin-top: 5px;
 	border: 2px solid #aaaaaa;
-	border-radius: 7px; 
+	border-radius: 7px;
+	right: 42%;
 }
+.tag .discount {
+	background-color: #32435c;
+	border-radius : 4px;
+	padding: 9px 10px;
+	border-right: 1px dashed white;
+}
+.tag .price {
+	border-right: 1px dashed white;
+	padding: 2px 10px;
+}
+.tag .price span{
+	font-size: 12px;
+	line-height: 3px;
+}
+.tag .price .nomal_p {
+	font-size: 9px;
+	color: silver;
+	text-decoration: line-through;
+	font-style: italic;
+}
+.tag li {
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+}
+.tag input {
+	padding: 5px 12px;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 3px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: -1px -1px 0px #1f2938;
+	border: 0px;
+}
+.tag input:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #pro_view #five_pro {
@@ -214,6 +309,9 @@ section #pro_view {
 	font-size: 15px;
 	cursor: pointer;
 	margin-top: 20px;
+}
+#five_pro #favorite {
+	margin-top: 60px;
 }
 #five_pro .five_btn:hover {
 	background-color: #232f41;
@@ -264,14 +362,30 @@ section #pro_view {
 #pro_view #six_pro {
 	width: 99.8%;
 	margin-top: 40px;
-	height: 200px;
 	float: left;
-	background-color: #b3b3d9;
 	overflow: hidden;
 }
-
-
-
+#six_pro #pro_grade {
+	width: 50%;
+	height: 20px;
+	margin: 0 auto;
+	padding: 10px 20px;
+	border: 2px solid #aaaaaa;
+	margin-bottom: 10px;
+}
+#six_pro #reply_write {
+	width: 98%;
+	height: 100px;
+	padding: 5px 5px;
+	border: 2px solid #aaaaaa;
+	margin-bottom: 5px;
+}
+#six_pro #reply_contents {
+	width: 98%;
+	height: 100px;
+	padding: 5px 5px;
+	border: 2px solid #aaaaaa;
+}
 
 
 
