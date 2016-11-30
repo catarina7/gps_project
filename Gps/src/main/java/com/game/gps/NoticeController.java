@@ -1,11 +1,13 @@
 package com.game.gps;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+
 
 import com.game.board.NoticeDTO;
 import com.game.board.NoticeService;
@@ -71,6 +73,7 @@ public class NoticeController {
 		return "redirect:/notice/noticeList";
 	}
 	//Mod
+	@RequestMapping(value="/noticeMod")
 	public String noticeMod(NoticeDTO noticeDTO){
 		try {
 			noticeService.noticeMod(noticeDTO);
@@ -78,7 +81,10 @@ public class NoticeController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "redirect:/notice/noticeList";
+		return "notice/noticeMod";
 	}
+	
+	//Pageing
+	
 	
 }
