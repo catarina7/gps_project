@@ -17,6 +17,9 @@ public class MemberDAO {
 	}
 	
 	//로그인
+	public MemberDTO login(MemberDTO mDto) throws Exception{
+		return mDto;
+	}
 	
 	//회원정보 수정
 	
