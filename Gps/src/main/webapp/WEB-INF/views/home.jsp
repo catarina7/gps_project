@@ -12,6 +12,7 @@
 <P>  The time on the server is ${serverTime}. </P>
 <a href="index">main</a>
 <a href="member/join">join</a>
-<a href="product/pro_write">product</a>
+
+<a href="product/pro_list">Product List</a>
 </body>
 </html>

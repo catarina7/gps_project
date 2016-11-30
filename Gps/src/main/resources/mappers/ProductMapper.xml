@@ -6,7 +6,7 @@
 <mapper namespace="ProductMapper">
 	<!-- product 기본 글쓰기 -->
 	<insert id="productWrite" parameterType="com.game.product.ProductDTO">
-		insert into product values(product_seq.nextval, #{pro_title}, #{pro_contents}, 0, #{price}, 0, 0, #{top_category}, #{sub_category}, 'empty', #{millage}, #{company})	
+		insert into product values(product_seq.nextval, #{pro_title}, #{pro_contents}, 0, #{price}, 0, 0, #{top_category}, #{sub_category}, 'empty', #{millage}, #{company},#{mainimg})	
 		
 		 <!-- pro_num 가져오기 (Pro_file TABLE) -->
 		<selectKey keyProperty="pro_num" resultType="int" order="AFTER">
@@ -17,6 +17,25 @@
 	
 	<!-- pro_file 글쓰기(사진넣기) -->
 	<insert id="pro_fileWrite" parameterType="java.util.Map">
-		insert into pro_file values(pro_file_seq.nextval, #{pro_num}, #{file_name}, '1', '1')
+		insert into pro_file values(pro_file_seq.nextval, #{pro_num}, #{file_name}, #{origine}, '1')
 	</insert>
+	
+	<!-- pro_list 글리스트 -->
+	<select id="pro_list" resultType="com.game.product.ProductDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product order by pro_num desc) F) 
+		where R between 1 and 10
+	</select>
+	
+	<!-- pro_list 글전체 갯수 가져오기 -->
+	<select id="pro_boardCount" resultType="int">
+		select count(pro_num) from product
+	</select>
+	
+	<!-- pro_list에 들어갈 대표사진 가져오기  -->
+	<select id="pro_main_Img" resultType="com.game.product.ProductFileDTO" parameterType="int">
+		select file_name from pro_file
+    	where file_num=(select min(file_num) from pro_file where pro_num=#{pro_num}) 
+	</select>
 </mapper>
