@@ -334,13 +334,14 @@
 					</div>
 					<div id="reply_write">
 						<div class="re_title">
-							
+							<span>의견 쓰기</span>
 						</div>
 						<div class="re_contents">
+							<div class="re_user">user name</div>
 							<textarea></textarea>
 						</div>
 						<div class="re_sub">
-							
+							<button id="save">등록</button>
 						</div>
 					</div>
 					<div id="reply_contents">

@@ -390,7 +390,13 @@ section #pro_view {
 }
 .re_title {
 	width: 99.5%;
-	height: 25px;
+	padding: 7px 0px;
+}
+.re_title span {
+	color: white;
+	font-weight: bold;
+	padding: 0px 10px;
+	font-size: 18px;
 }
 .re_contents {
 	width: 98.4%;
@@ -398,17 +404,38 @@ section #pro_view {
 	border-bottom: 1px dashed #aaaaaa;
 	padding: 5px 5px;
 }
+.re_contents .re_user {
+	width: 70.4%;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 5px 5px;
+}
 .re_contents textarea {
 	width: 99.8%;
 	height: 90px;
 }
 .re_sub {
-	width: 99.5%;
-	height: 40px;
+	width: 98.4%;
+	padding: 5px 5px;
 	border: 2px solid #aaaaaa;
 	border-top: 1px dashed #aaaaaa;
+	height: 37px;
 }
-
+.re_sub #save {
+	font-weight: bold;
+	color: white;
+	padding: 8px 27px;
+	border-radius: 8px;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	text-shadow: -1px -1px 0px #222d3e;
+	border: 2px solid #aaaaaa;
+	cursor: pointer;
+	float: right;
+}
+.re_sub #save:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
 
 #six_pro #reply_contents {
 	width: 98%;
