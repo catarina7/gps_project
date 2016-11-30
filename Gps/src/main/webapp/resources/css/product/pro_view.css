@@ -387,6 +387,7 @@ section #pro_view {
 	border: 2px solid #aaaaaa;
 	margin-bottom: 5px;
 	margin: 0 auto;
+	border-radius : 4px;
 }
 .re_title {
 	width: 99.5%;
