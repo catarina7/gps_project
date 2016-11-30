@@ -216,7 +216,7 @@ section #pro_view {
 	margin-top: 5px;
 	border: 2px solid #aaaaaa;
 	border-radius: 7px;
-	right: 600px;
+	right: 42%;
 }
 .tag .discount {
 	background-color: #32435c;
@@ -361,14 +361,30 @@ section #pro_view {
 #pro_view #six_pro {
 	width: 99.8%;
 	margin-top: 40px;
-	height: 200px;
 	float: left;
-	background-color: #b3b3d9;
 	overflow: hidden;
 }
-
-
-
+#six_pro #pro_grade {
+	width: 50%;
+	height: 20px;
+	margin: 0 auto;
+	padding: 10px 20px;
+	border: 2px solid #aaaaaa;
+	margin-bottom: 10px;
+}
+#six_pro #reply_write {
+	width: 98%;
+	height: 100px;
+	padding: 5px 5px;
+	border: 2px solid #aaaaaa;
+	margin-bottom: 5px;
+}
+#six_pro #reply_contents {
+	width: 98%;
+	height: 100px;
+	padding: 5px 5px;
+	border: 2px solid #aaaaaa;
+}
 
 
 

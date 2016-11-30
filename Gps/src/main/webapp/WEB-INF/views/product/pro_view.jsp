@@ -285,9 +285,9 @@
 				</div>
 				<!-- review -->
 				<div id="six_pro">
-					<div></div>
-					<div></div>
-					<div></div>
+					<div id="pro_grade"></div>
+					<div id="reply_write"></div>
+					<div id="reply_contents"></div>
 				</div>
 			</div>
 	</section>
