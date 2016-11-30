@@ -57,7 +57,7 @@ $(function(){
 						$("#pw_input").val("");
 					}else{
 						alert("환영합니다.");
-						location.href="../";
+						location.href="/gps/index";
 					}
 				}
 			});

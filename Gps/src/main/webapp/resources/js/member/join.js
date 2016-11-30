@@ -221,7 +221,7 @@ $(function(){
 						alert("회원가입에 실패했습니다. 관리자에게 문의해주세요");
 					}else{
 						alert("회원가입에 성공했습니다. 환영합니다.");
-						location.href="../"; 
+						location.href="/gps/index"; 
 					}
 				}
 			});  

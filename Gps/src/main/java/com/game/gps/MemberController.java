@@ -71,7 +71,7 @@ public class MemberController {
 		if(mDto != null){
 			result = 1;
 		}else{
-			result = 2;
+			result = 0;
 		}		
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}

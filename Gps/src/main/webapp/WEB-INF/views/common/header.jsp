@@ -50,6 +50,14 @@
 			});
 		});
 		
+		$("#join").click(function(){
+			location.href="member/join"
+		});
+		
+		$("#login").click(function(){
+			location.href="member/login"
+		});
+		
 	});
 </script>
 </head>
