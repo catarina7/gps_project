@@ -157,8 +157,8 @@ section #pro_view {
 #relationship li {
 	width: 17.5%;
 	float: left;
-	margin-left: 12px;
-	border: 1px solid #aaaaaa;
+	margin-left: 10px;
+	border: 2px solid #aaaaaa;
 	border-radius : 4px;
 }
 #relationship dl {
@@ -172,7 +172,7 @@ section #pro_view {
 }
 #relationship .rel_name {
 	border-bottom: 1px solid #aaaaaa;
-	border-top: 1px solid #aaaaaa;
+	border-top: 2px solid #aaaaaa;
 	font-weight: bold;
 }
 #relationship dd {
@@ -181,6 +181,8 @@ section #pro_view {
 	color: white;
 	padding: 3px 0px;
 	text-align: center;
+	background-color: #474747;
+	border-radius: 4px;
 }
 
 
