@@ -84,13 +84,14 @@ section #pro_view {
 #third_pro ul {
 	width: 97.8%;
 	height: 90%;
-	padding: 5px 5px;
+	padding: 5px 4px;
 	border: 1px solid #aaaaaa;
 }
 #third_pro li {
 	width: 17.5%;
 	height: 90%;
-	padding: 5px 6.7px;
+	padding: 5px 0px;
+	margin-left: 2.2%;
 	float: left;
 }
 #third_pro img {
@@ -157,7 +158,7 @@ section #pro_view {
 #relationship li {
 	width: 17.5%;
 	float: left;
-	margin-left: 10px;
+	margin-left: 8.5px;
 	border: 2px solid #aaaaaa;
 	border-radius : 4px;
 }
