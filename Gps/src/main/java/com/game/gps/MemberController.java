@@ -42,8 +42,17 @@ public class MemberController {
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
 	
+	//로그인	
+	@RequestMapping(value="/login", method = RequestMethod.GET)
+	public void login(){}
 	
 	
+	//로그인 ajax
+	@RequestMapping(value="/login", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public void login(MemberDTO mDto){
+		
+	}
 	
 	//회원id체크
 	@RequestMapping(value="/idCheck", produces="application/json; charset=utf-8", method=RequestMethod.POST)

@@ -24,6 +24,8 @@
 
 </head>
 <body>
+	
+	<h2>JOIN</h2>
 
 	<textarea rows="" cols="">
 		<!-- 약정 첨부 예정 -->
@@ -37,9 +39,9 @@
 			id: <input type="text" name="m_id" id="id_input" class="input">
 			<input type="button" id="id_check" value="id_check"><br> 
 			
-			pw: <input type="text" name="m_pw" id="pw_input" class="input">
+			pw: <input type="password" name="m_pw" id="pw_input" class="input">
 			<input type="text" id="pw_check" readonly="readonly" value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다."><br>
-			pwcheck: <input type="text" id="pw_set" >
+			pwcheck: <input type="password" id="pw_set" >
 			<input type="text" id="pw_confirm" readonly="readonly" value="비밀번호가 일치하지 않습니다. 다시 입력해주세요.">
 			<br>
 			
