@@ -73,39 +73,137 @@
 				<div id="four_pro">
 					<div id="pakage">
 						<div class="item">
-							<div class="tag">
-								
+							<div class="four_contents">
+								<table>
+									<colgroup>
+										<col style="width:450px;">
+										<col style="width:100px;">
+									</colgroup>
+									<tr>
+										<td class="f_g_name">GAME PAKAGE NAME</td>
+										<td>
+											
+										</td>
+									</tr>
+									<tr>
+										<td class="f_g_ex" colspan="2">game explanation</td>
+									</tr>
+								</table>
 							</div>
-							
+							<div class="tag">
+								<ul>
+									<li class="discount">-20%</li>
+									<li class="price">
+										<p class="nomal_p">₩ 17000</p>
+										<span>₩ 15000</span>
+									</li>
+									<li>
+										<input type="button" value="장바구니 담기">
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div class="item">
-							<div class="tag">
-								
+							<div class="four_contents">
+								<table>
+									<colgroup>
+										<col style="width:450px;">
+										<col style="width:100px;">
+									</colgroup>
+									<tr>
+										<td class="f_g_name">GAME PAKAGE NAME</td>
+										<td>
+											
+										</td>
+									</tr>
+									<tr>
+										<td class="f_g_ex" colspan="2">game explanation</td>
+									</tr>
+								</table>
 							</div>
-							
+							<div class="tag">
+								<ul>
+									<li class="discount">할인률</li>
+									<li class="price">
+										<p class="nomal_p">기존 가격</p>
+										<span>판매 가격</span>
+									</li>
+									<li>
+										<input type="button" value="장바구니 담기">
+									</li>
+								</ul>
+							</div>
 						</div>
 						<div class="item">
-							<div class="tag">
-								
+							<div class="four_contents">
+								<table>
+									<colgroup>
+										<col style="width:450px;">
+										<col style="width:100px;">
+									</colgroup>
+									<tr>
+										<td class="f_g_name">GAME PAKAGE NAME</td>
+										<td>
+											
+										</td>
+									</tr>
+									<tr>
+										<td class="f_g_ex" colspan="2">game explanation</td>
+									</tr>
+								</table>
 							</div>
-							
-						</div>
-						<div class="item">
 							<div class="tag">
-								
+								<ul>
+									<li class="discount">-50%</li>
+									<li class="price">
+										<p class="nomal_p">₩ 20000000</p>
+										<span>₩ 10000000</span>
+									</li>
+									<li>
+										<input type="button" value="장바구니 담기">
+									</li>
+								</ul>
 							</div>
-							
 						</div>
-						
 					</div>
 					<div id="relationship">
 						<span>연관 추천 게임</span>
 						<ul>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
-							<li></li>
+							<li>
+								<dl>
+									<dt></dt>
+									<dd class="rel_name">게임 이름</dd>
+									<dd>가격</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt></dt>
+									<dd class="rel_name">게임 이름</dd>
+									<dd>가격</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt></dt>
+									<dd class="rel_name">게임 이름</dd>
+									<dd>가격</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt></dt>
+									<dd class="rel_name">게임 이름</dd>
+									<dd>가격</dd>
+								</dl>
+							</li>
+							<li>
+								<dl>
+									<dt></dt>
+									<dd class="rel_name">게임 이름</dd>
+									<dd>가격</dd>
+								</dl>
+							</li>
 						</ul>
 					</div>
 				</div>
