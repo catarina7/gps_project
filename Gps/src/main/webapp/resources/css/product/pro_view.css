@@ -356,7 +356,15 @@ section #pro_view {
 	font-weight: bold;
 	border-bottom: 2px solid black;
 }
-
+#five_pro #my_pc {
+	width: 18.5%;
+	background-color: white;
+	position: absolute;
+	right: 36.7%;
+	margin-top: 32px;
+	opacity: 0.9;
+	display: none;
+}
 
 
 #pro_view #six_pro {
