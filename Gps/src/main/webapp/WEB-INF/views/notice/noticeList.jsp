@@ -5,9 +5,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
+<!-- css 넣는 태그 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
 <title>공지사항</title>
 <style type="text/css">
-	.listTable{
+	.listTable {
 		width: 600px;
 	}
 	
@@ -21,6 +24,12 @@
 </style>
 </head>
 <body>
+<c:import url="/header" />
+	
+		<!-- section -->
+			<section>
+			<!-- 내용 넣기 -->
+	<center>
 	<form action="noticeList" method="get">
 	<table class="listTable" border="1" cellpadding="0" cellspacing="0">
 		<tr>
@@ -52,5 +61,10 @@
 		</c:if>
 		<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/notice/noticeWrite';">
 	</form>
+	</center>
+	
+	</section>
+	
+		<c:import url="/footer" />
 </body>
 </html>
