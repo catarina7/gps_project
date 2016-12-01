@@ -8,5 +8,17 @@
 			insert into reply values(reply_seq.nextval ,#{pro_num},#{r_writer},#{r_contents},sysdate,0,0,0)
 		]]>
 	</insert>
-	
+	<delete id="replyDelete" parameterType="int">
+		<![CDATA[
+			delete from reply where r_num = #{num}
+		]]>
+	</delete>
+	<select id="replyList" resultType="com.game.product.ReplyDTO" parameterType="com.game.util.PageMaker">
+		<![CDATA[
+			select * from 
+			(select rownum R, T.* from
+			(select * from reply order by r_num desc) T)
+			where R between #{startRowNum} and #{lastRowNum}
+		]]>
+	</select>
 </mapper>
