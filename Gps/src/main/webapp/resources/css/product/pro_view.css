@@ -438,7 +438,7 @@ section #pro_view {
 	border-radius: 8px;
 	background: linear-gradient(to bottom, #5977a4, #32435c);
 	text-shadow: -1px -1px 0px #222d3e;
-	border: 2px solid #aaaaaa;
+	border: 2px solid black;
 	cursor: pointer;
 	float: right;
 }
@@ -446,7 +446,7 @@ section #pro_view {
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
 }
 .reply_contents .re_sub div {
-	border: 2px solid #aaaaaa;
+	border: 2px solid black;
 	border-radius : 8px;
 	background: linear-gradient(to bottom, #5977a4, #32435c);
 	padding: 3px 15px;
