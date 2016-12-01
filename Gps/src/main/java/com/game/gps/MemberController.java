@@ -1,5 +1,7 @@
 package com.game.gps;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +24,9 @@ public class MemberController {
 	
 	
 	@RequestMapping(value="/join" , method = RequestMethod.GET)
-	public void join(){}
+	public String join(){ 
+		return "/member/join";
+	}
 	
 	
 	//회원가입(ajax)
@@ -42,22 +46,10 @@ public class MemberController {
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
 	
-	//로그인	
-	@RequestMapping(value="/login", method = RequestMethod.GET)
-	public void login(){}
-	
-	
-	//로그인 ajax
-	@RequestMapping(value="/login", method = RequestMethod.POST, produces="application/json; charset=utf-8")
-	@ResponseBody
-	public void login(MemberDTO mDto){
-		
-	}
-	
 	//회원id체크
 	@RequestMapping(value="/idCheck", produces="application/json; charset=utf-8", method=RequestMethod.POST)
 	@ResponseBody
-	public ResponseEntity<Integer> idcheck(@RequestParam(defaultValue="") String id, Model model){
+	public ResponseEntity<Integer> idcheck(@RequestParam(defaultValue="") String id){
 		
 		MemberDTO mDto = new MemberDTO();
 		try {
@@ -76,5 +68,58 @@ public class MemberController {
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
 	
+	//로그인	
+		@RequestMapping(value="/login", method = RequestMethod.GET)
+		public String login(){
+			return "/member/login";
+		}
+	
+	//로그인 ajax
+	@RequestMapping(value="/login", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<Integer> login(MemberDTO mDto, HttpSession session){
+		
+		try {
+			mDto = memberService.login(mDto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		int result = 0;
+		if(mDto != null){
+			result = 1;
+			session.setAttribute("member", mDto);		
+		}else{
+			result = 0;
+		}
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
+	
+	//로그아웃
+	@RequestMapping(value="/logout")
+	public String logout(HttpSession session){
+		session.invalidate();
+		return "redirect:/index";
+	}
+	
+	
+	//약정넣기1
+	@RequestMapping(value="/contract")
+	public String contract(){
+		return "/member/contract";
+	}
+	
+	//약정넣기2
+	@RequestMapping(value="/license")
+	public String license(){
+		return "/member/license";
+	}
+	
+	
+	//id찾기
+	@RequestMapping(value="/searchid")
+	public String searchid(){
+		return "/member/searchid";
+	}
 
 }

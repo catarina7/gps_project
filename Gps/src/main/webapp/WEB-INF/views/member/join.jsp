@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<!-- text 넙는 태그 -->
 <style type="text/css">
 #joinform {
 	display: none;
@@ -40,11 +41,17 @@
 
 		<h2>JOIN</h2>
 
-		<textarea rows="" cols="">
-		<!-- 약정 첨부 예정 -->
-	</textarea>
-		<br> <input type="checkbox" id="check"> 위 약정을 동의하고 13세
-		이상임을 확인합니다.
+		<textarea rows="" cols="" id="contract" readonly="readonly">
+			<c:import url="/member/contract"></c:import>
+		</textarea><br>
+		<input type="checkbox" id="checkcon"> 위 약정을 동의하고 13세
+		이상임을 확인합니다.<br>
+
+		<textarea rows="" cols="" id="license" readonly="readonly">
+			<c:import url="/member/license"></c:import>			
+		</textarea>	<br> 
+		<input type="checkbox" id="checkli"> 아이디 보호에 대한 약정을 확인합니다.
+			
 		<button id="checkbox">동의합니다.</button>
 
 		<div id="joinform">

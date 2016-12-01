@@ -47,8 +47,8 @@ $(function(){
 			$.ajax({
 				url : "login",
 				data : {
-					id : $("#id_input").val(), 
-					pw : $("#pw_input").val()},
+					m_id : $("#id_input").val(), 
+					m_pw : $("#pw_input").val()},
 				type : "post",
 				success : function(result){
 					if(result==0){
@@ -68,4 +68,8 @@ $(function(){
 		location.href="join";
 	});
 	
+	
+	$("#findid_btn").click(function(){
+		location.href="searchid";
+	});
 });
