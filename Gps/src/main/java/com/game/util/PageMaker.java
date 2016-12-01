@@ -2,32 +2,32 @@ package com.game.util;
 
 public class PageMaker {
 	private int startRowNum;
-	private int lastLowNum;
+	private int lastRowNum;
 	private int curBlock;
-	private int totalBlock;
-	private int startNum;
-	private int lastNum;
-	private int curPage;
-	private int perPage;
+	private int totalBlock; 
+	private int startNum; 
+	private int lastNum;  
+	private int curPage; 
+	private int perPage; 
 	
 	//rownum
 	public void makeRow(){
 		this.startRowNum= (curPage-1)*perPage+1;
-		this.lastLowNum = curPage*perPage;
+		this.lastRowNum = curPage*perPage;
 	}
 	
 	//pageing
 	public void makePage(int totalCount){
-		//1. ��ü �Խù� ��-�Ű�����
+		//1. 전체 게시물 수 - 매개변수
 		
-		//2. ��ü page
+		//2. 전체Page
 		int totalPage=0;
 		if(totalCount%perPage==0){
 			totalPage=totalCount/perPage;
 		}else {
 			totalPage=totalCount/perPage+1;
 		}
-		//3. ��ü Block
+		//3. 전체Block
 		int perBlock=5;
 		totalBlock=0;
 		if(totalPage%perBlock==0){
@@ -53,8 +53,6 @@ public class PageMaker {
 	}
 	
 	
-	
-	
 	public int getCurPage() {
 		return curPage;
 	}
@@ -66,17 +64,14 @@ public class PageMaker {
 	}
 
 
-
 	public int getPerPage() {
 		return perPage;
 	}
 
 
-
 	public void setPerPage(int perPage) {
 		this.perPage = perPage;
 	}
-
 
 
 	public int getStartRowNum() {
@@ -85,11 +80,11 @@ public class PageMaker {
 	public void setStartRowNum(int startRowNum) {
 		this.startRowNum = startRowNum;
 	}
-	public int getLastLowNum() {
-		return lastLowNum;
+	public int getLastRowNum() {
+		return lastRowNum;
 	}
-	public void setLastLowNum(int lastLowNum) {
-		this.lastLowNum = lastLowNum;
+	public void setLastRowNum(int lastLowNum) {
+		this.lastRowNum = lastLowNum;
 	}
 	public int getCurBlock() {
 		return curBlock;

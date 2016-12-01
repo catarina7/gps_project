@@ -22,15 +22,8 @@
 	</beans:bean>
 	
 	<context:component-scan base-package="com.game.gps" />
-
 	<context:component-scan base-package="com.game.board"/> 
-	
-
 	<context:component-scan base-package="com.game.product" />
-
-	
 	<context:component-scan base-package="com.game.member"></context:component-scan>
 
-	
-	
 </beans:beans>

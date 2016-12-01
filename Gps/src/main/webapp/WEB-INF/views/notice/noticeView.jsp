@@ -37,7 +37,7 @@
 		$("#modBtn").click(function(){ //수정버튼
 			var check = confirm("수정하시겠습니까?");
 			if(check == true){
-				location.href="${pageContext.request.contextPath}/notice/noticeMod";
+				location.href="${pageContext.request.contextPath}/notice/noticeMod?n_num=${noticeView.n_num}&n_writer=${noticeView.n_writer}&n_title=${noticeView.n_title}&n_contents=${noticeView.n_contents}";
 			}
 		});
 		
@@ -52,7 +52,7 @@
 			<!-- 내용 넣기 -->
 				<center>
 				<h1>공지사항</h1><hr>
-				<form action="noticeView" method="get">
+				<form action="noticeView" method="post">
 				<table class="WriteTable" border="1" cellpadding="0" cellspacing="0">
 					<tr>
 						<td>작성자</td>
