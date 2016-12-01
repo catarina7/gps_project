@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
+<script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
@@ -21,6 +22,38 @@
 			}
 			$("#my_pc").toggle();
 		});
+		
+		
+		/* 1. smarteditor 시작 */
+	    //전역변수선언
+	    var editor_object = [];
+	     
+	    nhn.husky.EZCreator.createInIFrame({
+	        oAppRef: editor_object,
+	        elPlaceHolder: "smarteditor",
+	        sSkinURI: "/gps/resources/SE2/SmartEditor2Skin.html",
+	        htParams : {
+	            // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
+	            bUseToolbar : false,             
+	            // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
+	            bUseVerticalResizer : false,     
+	            // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
+	            bUseModeChanger : true, 
+	        }
+	    
+	    	
+	    });
+	     
+	    //전송버튼 클릭이벤트
+	    $("#save").click(function(){
+	        //id가 smarteditor인 textarea에 에디터에서 대입
+	        editor_object.getById["smarteditor"].exec("UPDATE_CONTENTS_FIELD", []);
+	         
+	        // 이부분에 에디터 validation 검증
+	         
+	    });
+	    /* smarteditor 끝 */
+		
 	});
 </script>
 </head>
@@ -339,13 +372,14 @@
 						</div>
 						<div class="re_contents">
 							<div class="re_user">user name</div>
-							<textarea></textarea>
+							<!-- textarea -->
+							<textarea id="smarteditor"></textarea>
 						</div>
 						<div class="re_sub">
 							<button id="save">등록</button>
 						</div>
 					</div>
-					<div id="reply_contents">
+					<div class="reply_contents">
 						<div class="re_title">
 							
 						</div>
@@ -354,7 +388,41 @@
 							<textarea readonly="readonly"></textarea>
 						</div>
 						<div class="re_sub">
+							<div class="hate">
+								<span>
+									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
+								</span>
+								<strong>0</strong>
+							</div>
+							<div class="like">
+								<span>
+									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
+								</span>
+								<strong>0</strong>
+							</div>
+						</div>
+					</div>
+					<div class="reply_contents">
+						<div class="re_title">
 							
+						</div>
+						<div class="re_contents">
+							<div class="re_user">user name</div>
+							<textarea readonly="readonly"></textarea>
+						</div>
+						<div class="re_sub">
+							<div class="hate">
+								<span>
+									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
+								</span>
+								<strong>100</strong>
+							</div>
+							<div class="like">
+								<span>
+									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
+								</span>
+								<strong>100</strong>
+							</div>
 						</div>
 					</div>
 				</div>
