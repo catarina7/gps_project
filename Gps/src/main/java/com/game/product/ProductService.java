@@ -27,9 +27,9 @@ public class ProductService {
 		List<MultipartFile> file = mr.getFiles("file");
 		
 		//실제 저장된 파일네임
-		ArrayList<String> fileNames = new ArrayList<>();
+		ArrayList<String> fileNames = new ArrayList<String>();
 		//올릴때 파일네임
-		ArrayList<String> origineNames=new ArrayList<>();
+		ArrayList<String> origineNames=new ArrayList<String>();
 		
 		for(int i=0;i<file.size();i++){
 			MultipartFile mf = file.get(i);
@@ -57,7 +57,7 @@ public class ProductService {
 		pageMaker.makePage(totalCount);
 
 		List<ProductDTO> ar = productDAO.productList(pageMaker);
-		ArrayList<ProductFileDTO> ar1 = new ArrayList<>();
+		ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
 		
 		for(int i=0;i<ar.size();i++){
 			productDAO.productImgList(ar.get(i).getPro_num());
