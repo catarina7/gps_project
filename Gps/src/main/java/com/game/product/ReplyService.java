@@ -7,7 +7,13 @@ import org.springframework.stereotype.Service;
 public class ReplyService {
 	
 	@Autowired
-	private ReplyDTO replyDTO;
+	private ReplyDAO replyDAO;
 	
+	public int replyWrite(ReplyDTO replyDTO){
+		return replyDAO.replyWrite(replyDTO);
+	}
 	
+	public int replyDelete(int r_num){
+		return replyDAO.replyDelete(r_num);
+	}
 }
