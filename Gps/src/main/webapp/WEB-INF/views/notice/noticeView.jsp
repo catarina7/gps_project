@@ -75,7 +75,7 @@
 				<table class="WriteTable">
 					<tr>
 						<td colspan="2" id="Btn">
-						<input type="button" value="수정" onclick="location.href='${pageContext.request.contextPath}/notice/noticeMod';">
+						<input type="button" value="수정" id="modBtn">
 						<input type="button" value="삭제" >
 						<input type="button" value="목록" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList';">
 						</td>

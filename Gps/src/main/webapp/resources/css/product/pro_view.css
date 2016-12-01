@@ -356,7 +356,15 @@ section #pro_view {
 	font-weight: bold;
 	border-bottom: 2px solid black;
 }
-
+#five_pro #my_pc {
+	width: 18.5%;
+	background-color: white;
+	position: absolute;
+	right: 36.7%;
+	margin-top: 32px;
+	opacity: 0.9;
+	display: none;
+}
 
 
 #pro_view #six_pro {
@@ -375,16 +383,73 @@ section #pro_view {
 }
 #six_pro #reply_write {
 	width: 98%;
-	height: 100px;
 	padding: 5px 5px;
 	border: 2px solid #aaaaaa;
 	margin-bottom: 5px;
+	margin: 0 auto;
+	border-radius : 4px;
 }
-#six_pro #reply_contents {
-	width: 98%;
-	height: 100px;
+.re_title {
+	width: 99.5%;
+	padding: 7px 0px;
+}
+.re_title span {
+	color: white;
+	font-weight: bold;
+	padding: 0px 10px;
+	font-size: 18px;
+}
+.re_title #review_count {
+	font-size: 12px;
+}
+.re_contents {
+	width: 98.4%;
+	border: 2px solid #aaaaaa;
+	border-bottom: 1px dashed #aaaaaa;
+	padding: 5px 5px;
+}
+.re_contents .re_user {
+	width: 70.4%;
+	color: white;
+	font-weight: bold;
+	font-size: 15px;
+	padding: 5px 5px;
+}
+.re_contents textarea {
+	width: 97.8%;
+	height: 90px;
+	color: white;
+	padding: 5px 5px;
+	border: 1px solid #aaaaaa;
+	background-color: #3f3f3f;
+	resize: none;
+}
+.re_sub {
+	width: 98.4%;
 	padding: 5px 5px;
 	border: 2px solid #aaaaaa;
+	border-top: 1px dashed #aaaaaa;
+	height: 37px;
+}
+.re_sub #save {
+	font-weight: bold;
+	color: white;
+	padding: 8px 27px;
+	border-radius: 8px;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	text-shadow: -1px -1px 0px #222d3e;
+	border: 2px solid #aaaaaa;
+	cursor: pointer;
+	float: right;
+}
+.re_sub #save:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+#six_pro #reply_contents {
+	width: 98%;
+	padding: 15px 5px;
+	margin: 0 auto;
 }
 
 

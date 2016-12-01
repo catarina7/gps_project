@@ -12,7 +12,16 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
 <title>Insert title here</title>
 <script type="text/javascript">
-	
+	$(function(){
+		$("#my_pc_btn").click(function(){
+			if($(this).html() == "내 사양보기"){
+				$(this).html("내 사양닫기");
+			}else {
+				$(this).html("내 사양보기");
+			}
+			$("#my_pc").toggle();
+		});
+	});
 </script>
 </head>
 <body>
@@ -210,7 +219,42 @@
 				<!-- game software -->
 				<div id="five_pro">
 					<div id="computer">
-						<button>내 사양보기</button>
+						<button id="my_pc_btn">내 사양보기</button>
+						<div id="my_pc">
+							<table>
+							<colgroup>
+								<col style="width: 40%;">
+								<col style="width: 60%;">
+							</colgroup>
+							<tr>
+								<td class="com_title" colspan="2">내 사양</td>
+							</tr>
+							<tr>
+								<td class="com_name">운영체제</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="com_name">CPU</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="com_name">메모리(RAM)</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="com_name">그래픽 카드</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="com_name">Direct X버전</td>
+								<td></td>
+							</tr>
+							<tr>
+								<td class="com_name">하드디스크 <br> 여유공간</td>
+								<td></td>
+							</tr>
+						</table>
+						</div>
 						<table>
 							<colgroup>
 								<col style="width: 40%;">
@@ -285,9 +329,34 @@
 				</div>
 				<!-- review -->
 				<div id="six_pro">
-					<div id="pro_grade"></div>
-					<div id="reply_write"></div>
-					<div id="reply_contents"></div>
+					<div id="pro_grade">
+						
+					</div>
+					<div id="reply_write">
+						<div class="re_title">
+							<span>의견 쓰기</span> 
+							<span id="review_count">0</span>
+						</div>
+						<div class="re_contents">
+							<div class="re_user">user name</div>
+							<textarea></textarea>
+						</div>
+						<div class="re_sub">
+							<button id="save">등록</button>
+						</div>
+					</div>
+					<div id="reply_contents">
+						<div class="re_title">
+							
+						</div>
+						<div class="re_contents">
+							<div class="re_user">user name</div>
+							<textarea readonly="readonly"></textarea>
+						</div>
+						<div class="re_sub">
+							
+						</div>
+					</div>
 				</div>
 			</div>
 	</section>
