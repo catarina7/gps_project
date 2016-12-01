@@ -28,23 +28,23 @@
 			<section>
 			<!-- 내용 넣기 -->
 	<center>
-	<h1>공지사항</h1><hr>
+	<h1>공지사항 수정하기</h1><hr>
 	<form action="noticeMod" method="post">
 		<table class="WriteTable" border="1" cellpadding="0" cellspacing="0">
 			<tr>
 				<td>작성자</td>
-				<td><input type="text" value="${noticeView.n_writer}" name="n_writer" value="test" size="50"></td>
+				<td><input type="text" value="${param.n_writer}" name="n_writer" value="test" size="50"></td>
 			</tr>
 			
 			<tr>
 				<td>제목</td>
-				<td><input type="text" name="n_title" size="50" value="${noticeView.n_title}"></td>
+				<td><input type="text" name="n_title" size="50" value="${param.n_title}"></td>
 				
 			</tr>
 			
 			<tr>
 				<td colspan="2">
-					<textarea rows="20" cols="60" name="n_contents" >${noticeView.n_contents}</textarea>
+					<textarea rows="20" cols="60" name="n_contents" >${param.n_contents}</textarea>
 				</td>
 			</tr>
 		</table>
@@ -52,7 +52,7 @@
 		<table class="WriteTable">
 			<tr>
 				<td colspan="2" id="Btn">
-					<input type="hidden" value="${noticeView.n_num}" name="n_num">
+					<input type="hidden" value="${param.n_num}" name="n_num">
 					<input type="submit" value="작성완료">
 					<input type="button" value="목록" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList';">
 				</td>
@@ -64,6 +64,6 @@
 	
 	</section>
 	
-		<c:import url="/footer" />
+		<c:import url="/footer"/>
 </body>
 </html>
