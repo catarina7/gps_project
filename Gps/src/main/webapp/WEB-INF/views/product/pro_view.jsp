@@ -345,7 +345,7 @@
 							<button id="save">등록</button>
 						</div>
 					</div>
-					<div id="reply_contents">
+					<div class="reply_contents">
 						<div class="re_title">
 							
 						</div>
@@ -354,7 +354,41 @@
 							<textarea readonly="readonly"></textarea>
 						</div>
 						<div class="re_sub">
+							<div class="hate">
+								<span>
+									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
+								</span>
+								<strong>0</strong>
+							</div>
+							<div class="like">
+								<span>
+									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
+								</span>
+								<strong>0</strong>
+							</div>
+						</div>
+					</div>
+					<div class="reply_contents">
+						<div class="re_title">
 							
+						</div>
+						<div class="re_contents">
+							<div class="re_user">user name</div>
+							<textarea readonly="readonly"></textarea>
+						</div>
+						<div class="re_sub">
+							<div class="hate">
+								<span>
+									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
+								</span>
+								<strong>100</strong>
+							</div>
+							<div class="like">
+								<span>
+									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
+								</span>
+								<strong>100</strong>
+							</div>
 						</div>
 					</div>
 				</div>

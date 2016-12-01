@@ -445,8 +445,30 @@ section #pro_view {
 .re_sub #save:hover {
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
 }
+.reply_contents .re_sub div {
+	border: 2px solid #aaaaaa;
+	border-radius : 8px;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	padding: 3px 15px;
+	cursor: pointer;
+	float: right;
+	margin-right: 5px;
+	margin-top: 4px;
+}
+.reply_contents .re_sub div:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+.reply_contents img {
+	width: 15px;
+	height: 15px;
+}
+.reply_contents strong {
+	color: white;
+	font-size: 12px;
+	padding: 0px 5px;
+}
 
-#six_pro #reply_contents {
+#six_pro .reply_contents {
 	width: 98%;
 	padding: 15px 5px;
 	margin: 0 auto;
