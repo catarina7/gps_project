@@ -10,15 +10,12 @@
 	</insert>
 	<delete id="replyDelete" parameterType="int">
 		<![CDATA[
-			delete from reply where r_num = #{num}
+			delete from reply where r_num = #{r_num}
 		]]>
 	</delete>
-	<select id="replyList" resultType="com.game.product.ReplyDTO" parameterType="com.game.util.PageMaker">
+	<select id="replyList" resultType="com.game.product.ReplyDTO" parameterType="int">
 		<![CDATA[
-			select * from 
-			(select rownum R, T.* from
-			(select * from reply order by r_num desc) T)
-			where R between #{startRowNum} and #{lastRowNum}
+			select * from reply where pro_num = #{pro_num} order by r_num desc
 		]]>
 	</select>
 </mapper>

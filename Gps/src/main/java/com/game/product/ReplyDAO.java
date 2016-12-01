@@ -20,11 +20,11 @@ public class ReplyDAO {
 		return sqlSession.insert(namespace+"replyWrite", replyDTO);
 	}
 	//댓글 삭제
-	public int replyDelete(int num){
-		return sqlSession.delete(namespace+"replyDelete", num);
+	public int replyDelete(int r_num){
+		return sqlSession.delete(namespace+"replyDelete", r_num);
 	}
-	//댓글 리스트 불러오기
-	public List<ReplyDTO> replyList(PageMaker pageMaker){
-		return sqlSession.selectList(namespace+"replyList", pageMaker);
+	//해당 게임의 댓글 리스트 불러오기
+	public List<ReplyDTO> replyList(int pro_num){
+		return sqlSession.selectList(namespace+"replyList", pro_num);
 	}
 }
