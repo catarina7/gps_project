@@ -17,6 +17,7 @@ public class MemberService {
 	
 		//로그인
 		public MemberDTO login(MemberDTO mDto) throws Exception{
+			System.out.println("service");
 			return memberDao.login(mDto);
 		}
 		

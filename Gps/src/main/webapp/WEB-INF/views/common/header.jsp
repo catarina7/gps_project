@@ -51,11 +51,15 @@
 		});
 		
 		$("#join").click(function(){
-			location.href="member/join"
+			location.href="${pageContext.request.contextPath}/member/join"
 		});
 		
 		$("#login").click(function(){
-			location.href="member/login"
+			location.href="${pageContext.request.contextPath}/member/login"
+		});
+		
+		$("#logout").click(function(){
+			location.href="member/logout"
 		});
 		
 	});
@@ -98,10 +102,18 @@
 				</div>
 				<div id="four_div">
 					<!-- login, join button -->
-					<button id="login">로그인</button>
-					<!-- <button id="logout">로그아웃</button> -->
-					<button id="join">회원가입</button>
-					<!-- <button id="information">My Page</button> -->
+					<c:if test="${member.m_id == null}">
+						<button id="login">로그인</button>
+					</c:if>
+					<c:if test="${member.m_id != null}">
+						<button id="logout">로그아웃</button>
+					</c:if>
+					<c:if test="${member.m_id == null}">
+						<button id="join">회원가입</button>
+					</c:if>
+					<c:if test="${member.m_id != null}">
+						<button id="information">My Page</button>
+					</c:if>
 				</div>
 			</div>
 		</div>

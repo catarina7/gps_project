@@ -1,12 +1,17 @@
-//약정 체크 여부 확인용 
-$(function(){		
+$(function(){	
+	
+	//약정 체크 여부 확인용 
 	$("#checkbox").click(function(){
-		if($("#check").prop("checked")){
+		if($("#checkcon").prop("checked") && $("#checkli").prop("checked")){
 			$("#joinform").css({"display" : "block"});
 		}
 	});
 
-	$("#check").click(function(){
+	$("#checkcon").click(function(){
+		$("#joinform").css({"display":"none"});
+	});
+	
+	$("#checkli").click(function(){
 		$("#joinform").css({"display":"none"});
 	});
 
@@ -119,6 +124,7 @@ $(function(){
 						alert("이미 사용 중인 아이디입니다");
 						$("#id_input").val("");
 						$("#idchk").show();
+						$("#id_input").focus();
 						idchk=0;
 					}else{							
 						alert("사용가능한 아이디입니다");
