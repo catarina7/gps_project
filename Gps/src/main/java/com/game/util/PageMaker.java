@@ -2,32 +2,31 @@ package com.game.util;
 
 public class PageMaker {
 	private int startRowNum;
-	private int lastLowNum;
+	private int lastRowNum;
 	private int curBlock;
 	private int totalBlock;
 	private int startNum;
 	private int lastNum;
 	private int curPage;
 	private int perPage;
-	
+
 	//rownum
 	public void makeRow(){
 		this.startRowNum= (curPage-1)*perPage+1;
-		this.lastLowNum = curPage*perPage;
+		this.lastRowNum = curPage*perPage;
 	}
-	
+
 	//pageing
 	public void makePage(int totalCount){
-		//1. ��ü �Խù� ��-�Ű�����
-		
-		//2. ��ü page
+		//1. 전체 게시물 수-매개변수
+		//2. 전체 page
 		int totalPage=0;
 		if(totalCount%perPage==0){
 			totalPage=totalCount/perPage;
 		}else {
 			totalPage=totalCount/perPage+1;
 		}
-		//3. ��ü Block
+		//3. 전체 Block
 		int perBlock=5;
 		totalBlock=0;
 		if(totalPage%perBlock==0){
@@ -45,39 +44,12 @@ public class PageMaker {
 		//5. startNum, lastNum
 		startNum=(curBlock-1)*perBlock+1;
 		lastNum = curBlock*perBlock;
-		
+
 		//
 		if(curBlock==totalBlock){
 			lastNum = totalPage;
 		}
 	}
-	
-	
-	
-	
-	public int getCurPage() {
-		return curPage;
-	}
-
-
-
-	public void setCurPage(int curPage) {
-		this.curPage = curPage;
-	}
-
-
-
-	public int getPerPage() {
-		return perPage;
-	}
-
-
-
-	public void setPerPage(int perPage) {
-		this.perPage = perPage;
-	}
-
-
 
 	public int getStartRowNum() {
 		return startRowNum;
@@ -85,11 +57,11 @@ public class PageMaker {
 	public void setStartRowNum(int startRowNum) {
 		this.startRowNum = startRowNum;
 	}
-	public int getLastLowNum() {
-		return lastLowNum;
+	public int getLastRowNum() {
+		return lastRowNum;
 	}
-	public void setLastLowNum(int lastLowNum) {
-		this.lastLowNum = lastLowNum;
+	public void setLastRowNum(int lastRowNum) {
+		this.lastRowNum = lastRowNum;
 	}
 	public int getCurBlock() {
 		return curBlock;
@@ -115,6 +87,16 @@ public class PageMaker {
 	public void setLastNum(int lastNum) {
 		this.lastNum = lastNum;
 	}
-	
-
+	public int getCurPage() {
+		return curPage;
+	}
+	public void setCurPage(int curPage) {
+		this.curPage = curPage;
+	}
+	public int getPerPage() {
+		return perPage;
+	}
+	public void setPerPage(int perPage) {
+		this.perPage = perPage;
+	}
 }

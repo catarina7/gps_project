@@ -111,7 +111,8 @@ $(function(){
 	<tr>
 		<td>이미지 추가</td>
 		<td>
-			<input type="button" id="imgPlus" value="추가하기">
+			[대표사진등록] <input type="file" name="file"> <br>
+			[세부사진등록] <input type="button" id="imgPlus" value="추가하기">
 			<div id="fileinput"></div>
 		</td>
 	</tr>
