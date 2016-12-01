@@ -3,6 +3,10 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="ReplyMapper">
-	
+	<insert id="replyWrite" parameterType="com.game.product.ReplyDTO">
+		<![CDATA[
+			insert into reply values(reply_seq.nextval ,#{pro_num},#{r_writer},#{r_contents},sysdate,0,0,0)
+		]]>
+	</insert>
 	
 </mapper>
