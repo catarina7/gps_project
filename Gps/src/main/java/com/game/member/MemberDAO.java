@@ -30,5 +30,11 @@ public class MemberDAO {
 		
 		return sqlSession.selectOne(namespace+"idCheck", id);
 	}
+	
+	//id찾기
+	public MemberDTO searchid(MemberDTO mDto) throws Exception{
+		
+		return sqlSession.selectOne(namespace+"searchId", mDto);
+	} 
 
 }

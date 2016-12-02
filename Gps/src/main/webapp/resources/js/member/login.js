@@ -72,4 +72,10 @@ $(function(){
 	$("#findid_btn").click(function(){
 		location.href="searchid";
 	});
+	
+	$("#findpw_btn").click(function(){
+		location.href="searchPw";
+	});
+	
+	
 });

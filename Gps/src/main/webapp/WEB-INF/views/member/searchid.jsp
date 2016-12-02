@@ -11,9 +11,15 @@
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
 <title>Insert title here</title>
-<script type="text/javascript">
-	
-</script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/member/searchid.js"></script>
+<style type="text/css">
+	#namechk{
+		display: none;
+	}
+	#emailchk{
+		display: none;
+	}
+</style>
 </head>
 <body>
 	
@@ -24,8 +30,14 @@
 		<!-- 내용 넣기 -->
 		<h2>아이디 찾기</h2>
 		
+		name: <input type="text" name="m_name" id="name_input" class="input">
+				<p id="namechk">이름을 입력해주세요.</p>	<br> 
+		e-mail: <input type="text" name="m_email" id="email_input" placeholder="이메일을 입력해주세요." class="input">
+				<p id="emailchk">이메일을 정확하게 입력해주세요.</p><br>
 		
+		<button id="searchid">search</button>
 		
+		<div id="result"></div>
 		
 	</section>
 	
