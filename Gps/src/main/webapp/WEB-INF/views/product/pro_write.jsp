@@ -44,9 +44,13 @@
 					editor_object.getById["smarteditor"].exec("UPDATE_CONTENTS_FIELD", []);
 
 					// 이부분에 에디터 validation 검증
-
-					//폼 submit
-					$("#frm").submit();
+	
+					if($(".pro_in_num").val() < 0){
+						$(".pro_in_num").val(0);
+					}else {						
+						//폼 submit
+						$("#frm").submit();
+					}
 				});
 		/* smarteditor 끝 */
 
@@ -69,6 +73,25 @@
 
 						});
 		/* file Tag 추가 및 삭제 끝*/
+		
+		/* input number 부분 숫자 정수로만 제한  */
+		$("#p_price").change(function(){
+			if($(this).val() < 0){
+				$("#p_price").val(0);
+			}else {
+				var price = $("#p_price").val();
+				var millage = ((price*1)/100)*5;
+				millage = millage.toFixed(2);
+				$("#p_millage").val(millage);
+			}
+		});
+		
+		
+		$("#p_millage").change(function(){
+			if($(this).val() < 0){
+				$("#p_millage").val(0);
+			}
+		});
 	})
 </script>
 </head>
@@ -95,15 +118,20 @@
 					</tr>
 					<tr>
 						<td class="title">게임설명 :</td>
-						<td><textarea id="smarteditor" name="pro_contents"></textarea></td>
+						<td>
+							<div id="pro_textarea">
+								<textarea id="smarteditor" name="pro_contents"></textarea>
+							</div>
+						</td>
 					</tr>
 					<tr>
 						<td class="title">게임가격</td>
-						<td><input type="number" class="pro_in_num" name="price" value="0"></td>
+						<td><input type="number" class="pro_in_num" id="p_price" name="price" value="0"></td>
 					</tr>
 					<tr>
 						<td class="title">카테고리</td>
-						<td><select name="top_category">
+						<td>
+							<select name="top_category">
 								<option value="action">Action</option>
 								<option value="rpg">RPG</option>
 								<option value="simulation">Simulation</option>
@@ -114,7 +142,8 @@
 								<option value="casual">Casual</option>
 								<option value="indi">INDI</option>
 								<option value="etc">MMO/ETC</option>
-						</select></td>
+							</select>
+						</td>
 					</tr>
 					<tr>
 						<td class="title">하위 카테고리</td>
@@ -122,7 +151,7 @@
 					</tr>
 					<tr>
 						<td class="title">마일리지</td>
-						<td><input type="number" class="pro_in_num" name="millage" value="0"></td>
+						<td><input type="number" class="pro_in_num" name="millage" id="p_millage"></td>
 					</tr>
 					<tr>
 						<td class="title">이미지 추가</td>
