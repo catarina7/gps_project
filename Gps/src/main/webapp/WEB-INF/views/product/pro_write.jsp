@@ -81,7 +81,7 @@
 			}else {
 				var price = $("#p_price").val();
 				var millage = ((price*1)/100)*5;
-				millage = millage.toFixed(2);
+				millage = millage.toFixed(0);
 				$("#p_millage").val(millage);
 			}
 		});
