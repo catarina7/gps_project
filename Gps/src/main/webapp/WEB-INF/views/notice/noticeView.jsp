@@ -7,13 +7,14 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>${noticeView.n_title}</title>
 <style type="text/css">
 	.WriteTable{
-		width: 400px;
+		width: 600px;
 	}
 	
 	#Btn{
@@ -54,20 +55,21 @@
 				<h1>공지사항</h1><hr>
 				<form action="noticeView" method="post">
 				<table class="WriteTable" border="1" cellpadding="0" cellspacing="0">
+					
 					<tr>
 						<td>작성자</td>
-						<td><input type="text"  name="n_writer" size="50" value="${noticeView.n_writer}"></td>
+						<td>${noticeView.n_writer}</td>
 					</tr>
 			
 					<tr>
 						<td>제목</td>
-						<td><input type="text" name="n_title" size="50" value="${noticeView.n_title}"></td>
+						<td >${noticeView.n_title}</td>
 				
 					</tr>
 			
 					<tr>
-						<td colspan="2">
-						<textarea rows="20" cols="60" name="n_contents" >${noticeView.n_contents}</textarea>
+						<td>
+						<p>${noticeView.n_contents}</p>
 						</td>
 					</tr>
 				</table>
@@ -91,3 +93,5 @@
 	
 </body>
 </html>
+
+

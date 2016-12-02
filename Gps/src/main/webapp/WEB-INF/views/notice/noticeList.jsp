@@ -50,17 +50,17 @@
 		</c:forEach>
 	</table>
 	
-		<c:if test="${PageMaker.curBlock>1}">
-		<a href="/notice/noticeList?curPage=${PageMaker.startNum-1}">[이전]</a>
+		<c:if test="${pageMaker.curBlock>1}">
+		<a href="/notice/noticeList?curPage=${pageMaker.startNum-1}">[이전]</a>
 		</c:if>
-		<c:forEach begin="${PageMaker.startNum}" end="${PageMaker.lastNum}" var="i">
+		<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
 		<a href="/notice/noticeList?curPage=${i}">${i}</a>
 		</c:forEach>
-		<c:if test="${PageMaker.curBlock<PageMaker.totalBlock}">
-		<a href="/notice/noticeList?curPage=${PageMaker.lastNum+1}">[다음]</a>
+		<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">
+		<a href="/notice/noticeList?curPage=${pageMaker.lastNum+1}">[다음]</a>
 		</c:if>
-		<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/notice/noticeWrite';">
 	</form>
+		<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/notice/noticeWrite';">
 	</center>
 	
 	</section>
