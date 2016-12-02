@@ -1,0 +1,103 @@
+@CHARSET "UTF-8";
+
+section {
+	width: 100%;
+	padding-top: 155px;
+	padding-bottom: 100px;
+	background-color: #666666;
+}
+
+section #pro_w {
+	width: 70%;
+	margin: 0 auto;
+	padding: 20px 10px;
+}
+#pro_w h2 {
+	width: 78%;
+	margin: 0 auto;
+	padding: 30px 5px;
+	color: white;
+	text-shadow: -1px -1px 0px #454545;
+}
+#pro_w table {
+	width: 80%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 2px solid #aaaaaa;
+}
+#pro_w td {
+	padding: 15px 10px;
+	background-color: #595959;
+}
+#pro_w .title {
+	font-weight: bold;
+	color: white;
+}
+#pro_w .pro_in {
+	width: 40%;
+	height: 21px;
+	border-radius: 5px;
+	border: 1px solid #aaaaaa;
+	padding: 2px 3px;
+}
+#pro_w .pro_in_num {
+	width: 10%;
+	height: 21px;
+	border-radius: 5px;
+	border: 2px solid #aaaaaa;
+	padding: 2px 3px;
+	text-align: center;
+	font-weight: bold;
+	color: white;
+	background-color: #595959;
+}
+#pro_w #pro_w_btn {
+	width: 78.5%;
+	padding: 15px 5px;
+	margin: 0 auto;
+	height: 50px;
+}
+#pro_w #files {
+	padding: 10px 0px;
+}
+#pro_w_btn #savebutton {
+	float: right;
+	padding: 8px 25px;
+	border: 2px solid black;
+	background-color: #32435c;
+	color: white;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #232f41;
+	overflow: hidden;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#pro_w_btn #savebutton:hover {
+	background-color: #222e40;
+}
+#pro_w .files_import {
+	padding: 5px 5px;
+}
+#pro_w .btn {
+	padding: 5px 10px;
+	border: 1px solid black;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	color: white;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #232f41;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#pro_w .btn:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+
+
+
+
+
+
+
+
+
