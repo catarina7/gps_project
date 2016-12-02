@@ -6,7 +6,7 @@
 <mapper namespace="ProductMapper">
 	<!-- product 기본 글쓰기 -->
 	<insert id="productWrite" parameterType="com.game.product.ProductDTO">
-		insert into product values(product_seq.nextval, #{pro_title}, #{pro_contents}, 0, #{price}, 0, 0, #{top_category}, #{sub_category}, 'empty', #{millage}, #{company},#{mainimg})	
+		insert into product values(product_seq.nextval, #{pro_title}, #{pro_contents}, 0, #{price}, 0, 0, #{top_category}, #{sub_category}, 'empty', #{millage}, #{company})	
 		
 		 <!-- pro_num 가져오기 (Pro_file TABLE) -->
 		<selectKey keyProperty="pro_num" resultType="int" order="AFTER">
@@ -37,5 +37,20 @@
 	<select id="pro_main_Img" resultType="com.game.product.ProductFileDTO" parameterType="int">
 		select file_name from pro_file
     	where file_num=(select min(file_num) from pro_file where pro_num=#{pro_num}) 
+	</select>
+	
+	<!-- pro_view -->
+	<select id="productView" resultType="com.game.product.ProductDTO" parameterType="int">
+		select * from product where pro_num=#{pro_num}
+	</select>
+	
+	<!-- pro_view에 들어갈 사진 -->
+	<select id="pro_view_img" resultType="com.game.product.ProductFileDTO" parameterType="com.game.util.PageMaker">
+		select FILE_NAME from PRO_FILE where pro_num=#{pro_num}
+	</select>
+	
+	<!-- pro_view에 들어갈 사진 갯수 -->
+	<select id="pro_view_img_count" resultType="int" parameterType="int">
+		select count(File_name) from pro_file where pro_num=#{pro_num}
 	</select>
 </mapper>

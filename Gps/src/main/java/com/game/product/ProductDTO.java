@@ -13,7 +13,6 @@ public class ProductDTO {
 	private String patch;
 	private int millage;
 	private String company;
-	private String mainimg;
 	
 	public int getPro_num() {
 		return pro_num;
@@ -87,11 +86,4 @@ public class ProductDTO {
 	public void setCompany(String company) {
 		this.company = company;
 	}
-	public String getMainimg() {
-		return mainimg;
-	}
-	public void setMainimg(String mainimg) {
-		this.mainimg = mainimg;
-	}
-	
 }
