@@ -17,7 +17,6 @@ public class MemberService {
 	
 		//로그인
 		public MemberDTO login(MemberDTO mDto) throws Exception{
-			System.out.println("service");
 			return memberDao.login(mDto);
 		}
 		
@@ -28,6 +27,12 @@ public class MemberService {
 		//id중복체크
 		public MemberDTO idcheck(String id) throws Exception{			
 			return memberDao.idcheck(id);
+		}
+		
+		//id찾기
+		public MemberDTO searchid(MemberDTO mDto) throws Exception{
+			
+			return memberDao.searchid(mDto);
 		}
 
 }

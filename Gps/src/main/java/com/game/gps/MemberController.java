@@ -121,5 +121,31 @@ public class MemberController {
 	public String searchid(){
 		return "/member/searchid";
 	}
+	
+	//id찾기(ajax)
+	@RequestMapping(value="/searchId", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<MemberDTO> searchid(MemberDTO mDto){
+		
+		MemberDTO result = null;
+		
+		try {
+			result = memberService.searchid(mDto);
+			System.out.println(result.getM_id());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return new ResponseEntity<MemberDTO>(result, HttpStatus.OK);
+	}
+	
+	//pw찾기
+	@RequestMapping(value="/searchpw")
+	public String searchpw(){
+		return "/member/searchpw";
+	}
+	
+	
 
 }

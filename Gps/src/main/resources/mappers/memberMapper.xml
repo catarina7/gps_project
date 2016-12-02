@@ -16,7 +16,13 @@
 	<!-- 회원탈퇴 -->
 	<!-- 회원검색/관리자용 -->
 	<!-- id찾기 -->
+	<select id="searchId" parameterType="com.game.member.MemberDTO" resultType="com.game.member.MemberDTO">
+		select * from member where m_name=#{m_name} and m_email=#{m_email}
+	</select>
 	<!-- pw찾기 -->
+	<select id="searchPw" parameterType="com.game.member.MemberDTO" resultType="com.game.member.MemberDTO">
+		select * from member where m_id=#{m_id} and m_name=#{m_name} and m_email=#{m_email}
+	</select>
 	<!-- id 체크 -->
 	<select id="idCheck" parameterType="java.lang.String" resultType="com.game.member.MemberDTO">
 		select * from member where m_id = #{id}
