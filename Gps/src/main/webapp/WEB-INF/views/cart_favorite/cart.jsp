@@ -12,7 +12,9 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/cart_favorite/cart_favorite.css">
 <title>Insert title here</title>
 <script type="text/javascript">
-	
+	$(function(){
+		$("#e_cart").css("background-color","#2b394f");
+	});
 </script>
 </head>
 <body>
@@ -25,17 +27,22 @@
 		<!-- 내용 넣기 -->
 			<div id="else_list">
 				<div id="first_else">
-					<a href="/cart">장바구니</a>
-					<a href="#">관심상품</a>
-					<a href="#">구매내역</a>
+					<div id="uu_menu">
+						<a id="e_cart" href="${pageContext.request.contextPath}/cart">장바구니</a>
+						<a id="e_favorite" href="${pageContext.request.contextPath}/favorite">관심상품</a>
+						<a id="e_puchase" href="#">구매내역</a>
+					</div>
 				</div>
 				<div id="second_else">
 					<div class="item">
 							<div class="four_contents">
+								<div class="f_g_img">
+									
+								</div>
 								<table>
 									<colgroup>
-										<col style="width:450px;">
-										<col style="width:100px;">
+										<col style="width:80%;">
+										<col style="width:20%;">
 									</colgroup>
 									<tr>
 										<td class="f_g_name">GAME PAKAGE NAME</td>
@@ -56,17 +63,20 @@
 										<span>₩ 15000</span>
 									</li>
 									<li>
-										<input type="button" value="구매하기">
+										<input type="button" value="구매하러 가기">
 									</li>
 								</ul>
 							</div>
 						</div>
 						<div class="item">
 							<div class="four_contents">
+								<div class="f_g_img">
+									
+								</div>
 								<table>
 									<colgroup>
-										<col style="width:450px;">
-										<col style="width:100px;">
+										<col style="width:80%;">
+										<col style="width:20%;">
 									</colgroup>
 									<tr>
 										<td class="f_g_name">GAME PAKAGE NAME</td>
@@ -87,7 +97,7 @@
 										<span>₩ 15000</span>
 									</li>
 									<li>
-										<input type="button" value="구매하기">
+										<input type="button" value="구매하러 가기">
 									</li>
 								</ul>
 							</div>

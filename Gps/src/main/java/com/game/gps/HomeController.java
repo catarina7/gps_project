@@ -54,6 +54,11 @@ public class HomeController {
 		return "/cart_favorite/cart";
 	}
 	
+	@RequestMapping(value="/favorite")
+	public String favorite(){
+		return "/cart_favorite/favorite";
+	}
+	
 	@RequestMapping(value="/user_menu_bar")
 	public String user_menu_bar(){
 		return "/common/user_menu_bar";

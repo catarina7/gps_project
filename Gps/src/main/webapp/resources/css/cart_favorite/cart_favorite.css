@@ -10,23 +10,57 @@ section {
 section #else_list {
 	width: 65%;
 	margin: 0 auto;
-	background-color: #ff5555;
 	padding: 60px 30px;
 }
 #else_list #first_else {
-	width: 100%;
-	
+	width: 98%;
+	padding: 15px 5px;
+	margin: 0 auto;
+	margin-bottom: 35px;
+	overflow: hidden;
 }
+#first_else #uu_menu {
+	width: 100%;
+}
+#uu_menu a {
+	width: 33%;
+	padding: 10px 0px;
+	border: 2px solid #aaaaaa;
+	border-left: 1px solid #aaaaaa;
+	background-color: #415676;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #353535;
+	color: white;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+}
+#uu_menu a:hover {
+	color: #aaaaaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #else_list #second_else {
 	width: 95%;
 	border: 2px solid #aaaaaa;
 	border-radius : 5px;
 	padding: 20px 10px;
-	margin-top: 15px;
+	margin: 0 auto;
 }
-
-
-
 #second_else .item {
 	width: 98%;
 	height: 94px;
@@ -41,6 +75,20 @@ section #else_list {
 	margin: 0 auto;
 	height: 60px;
 	padding: 5px 0px;
+}
+#second_else .four_contents .f_g_img {
+	background-color: white;
+	height: 100%;
+	width: 20%;
+	float: left;
+	overflow: hidden;
+	margin-right: 2%;
+	margin-top: 5px;
+	border: 1px solid #aaaaaa;
+	border-radius: 4px;
+}
+#second_else .four_contents table {
+	width: 68%;
 }
 #second_else .four_contents .f_g_name {
 	color: white;
@@ -57,7 +105,7 @@ section #else_list {
 	margin-top: 5px;
 	border: 3px solid #aaaaaa;
 	border-radius: 7px;
-	right: 23%;
+	right: 21%;
 }
 .tag .discount {
 	background-color: #32435c;
