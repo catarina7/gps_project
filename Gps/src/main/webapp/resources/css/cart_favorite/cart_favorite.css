@@ -1,0 +1,161 @@
+@CHARSET "UTF-8";
+
+section {
+	width: 100%;
+	padding-top: 155px;
+	padding-bottom: 100px;
+	background-color: #666666;
+}
+
+section #else_list {
+	width: 65%;
+	margin: 0 auto;
+	padding: 60px 30px;
+}
+#else_list #first_else {
+	width: 98%;
+	padding: 15px 5px;
+	margin: 0 auto;
+	margin-bottom: 35px;
+	overflow: hidden;
+}
+#first_else #uu_menu {
+	width: 100%;
+}
+#uu_menu a {
+	width: 33%;
+	padding: 10px 0px;
+	border: 2px solid #aaaaaa;
+	border-left: 1px solid #aaaaaa;
+	background-color: #415676;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #353535;
+	color: white;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+}
+#uu_menu a:hover {
+	color: #aaaaaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#else_list #second_else {
+	width: 95%;
+	border: 2px solid #aaaaaa;
+	border-radius : 5px;
+	padding: 20px 10px;
+	margin: 0 auto;
+}
+#second_else .item {
+	width: 98%;
+	height: 94px;
+	background-color: #474747;
+	margin-top: 7px;
+	margin-bottom: 55px;
+	border: 3px solid #aaaaaa;
+	border-radius: 5px;
+}
+#second_else .item .four_contents {
+	width: 95%;
+	margin: 0 auto;
+	height: 60px;
+	padding: 5px 0px;
+}
+#second_else .four_contents .f_g_check {
+	width: 4%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+#second_else .four_contents .f_g_img {
+	background-color: white;
+	height: 100%;
+	width: 15%;
+	float: left;
+	overflow: hidden;
+	margin-right: 2%;
+	margin-top: 5px;
+	border: 1px solid #aaaaaa;
+	border-radius: 4px;
+}
+#second_else .four_contents table {
+	width: 68%;
+}
+#second_else .four_contents .f_g_name {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+#second_else .four_contents .f_g_ex {
+	color: silver;
+	font-size: 14px;
+}
+#second_else .tag {
+	position: absolute;
+	background-color: black;
+	margin-top: 5px;
+	border: 3px solid #aaaaaa;
+	border-radius: 7px;
+	right: 21%;
+}
+.tag .discount {
+	background-color: #32435c;
+	border-radius : 4px;
+	padding: 9px 10px;
+	border-right: 1px dashed white;
+	font-size: 20px;
+}
+.tag .price {
+	border-right: 1px dashed white;
+	padding: 2px 10px;
+}
+.tag .price span{
+	font-size: 18px;
+	line-height: 3px;
+}
+.tag .price .nomal_p {
+	font-size: 14px;
+	color: silver;
+	text-decoration: line-through;
+	font-style: italic;
+}
+.tag li {
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+}
+.tag input {
+	padding: 5px 12px;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: -1px -1px 0px #1f2938;
+	border: 0px;
+	font-weight: bold;
+	font-size: 17px;
+}
+.tag input:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}

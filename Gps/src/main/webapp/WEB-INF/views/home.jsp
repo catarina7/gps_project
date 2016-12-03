@@ -21,5 +21,6 @@
 
 <a href="product/pro_list">Product List</a>
 
+<a href="cart">cart</a>
 </body>
 </html>
