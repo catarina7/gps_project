@@ -36,6 +36,9 @@ $(function(){
 				<div id="second_else">
 					<div class="item">
 							<div class="four_contents">
+								<div class="f_g_check">
+									<input type="checkbox">
+								</div>
 								<div class="f_g_img">
 									
 								</div>
@@ -70,6 +73,9 @@ $(function(){
 						</div>
 						<div class="item">
 							<div class="four_contents">
+								<div class="f_g_check">
+									<input type="checkbox">
+								</div>
 								<div class="f_g_img">
 									
 								</div>
