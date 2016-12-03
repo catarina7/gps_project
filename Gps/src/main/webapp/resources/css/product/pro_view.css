@@ -37,14 +37,21 @@ section #pro_view {
 	overflow: hidden;
 }
 #first_pro #main_img {
-	width: 100%;
+	width: 99.5%;
 	height: 100%;
 	border: 1px solid #aaaaaa;
 	border-radius : 4px;
+	padding: 5px 5px;
 }
 
+#main_img img{
+	width: 99%;
+	height: 100%;
+}
 
-
+<!-- Slides -->
+.mySlides {display:none}
+.demo {cursor:pointer}
 
 #pro_view #second_pro { 
 	width: 37%;
@@ -54,9 +61,14 @@ section #pro_view {
 }
 
 #second_pro #title_img {
-	width: 99%;
-	height: 145px;
+	width: 97.5%;
+	height: 135px;
 	border: 1px solid #aaaaaa;
+	padding: 5px 5px;
+}
+#title_img img {
+	width: 99%;
+	height: 100%;
 }
 #second_pro #game_info {
 	width: 99%;

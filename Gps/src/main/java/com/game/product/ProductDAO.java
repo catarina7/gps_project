@@ -49,4 +49,19 @@ public class ProductDAO {
 	public ProductFileDTO productImgList(int pro_num) throws Exception{
 		return sqlSession.selectOne(namespace+"pro_main_Img", pro_num);
 	}
+	
+	//product View 부분
+	public ProductDTO productView(int pro_num) throws Exception{
+		return sqlSession.selectOne(namespace+"productView", pro_num);
+	}
+	
+	//product View 이미지 부분
+	public List<ProductFileDTO> productViewImg(PageMaker pageMaker, int pro_num) throws Exception{
+		return sqlSession.selectList(namespace+"pro_view_img", pro_num);
+	}
+	
+	//product View 이미지 갯수 가져오기
+	public int productViewImgCount(int pro_num) throws Exception{
+		return sqlSession.selectOne(namespace+"pro_view_img_count", pro_num);
+	}
 }
