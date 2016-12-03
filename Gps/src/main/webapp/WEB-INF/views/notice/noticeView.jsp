@@ -31,7 +31,8 @@
 		$("#delBtn").click(function(){ //삭제버튼
 			var check = confirm("삭제하시겠습니까?");
 			if(check == true){
-				
+				alert("삭제가 완료되었습니다!");
+				location.href="${pageContext.request.contextPath}/notice/noticeDelete?n_num=${noticeView.n_num}";
 			}
 		});
 		
@@ -78,8 +79,8 @@
 					<tr>
 						<td colspan="2" id="Btn">
 						<input type="button" value="수정" id="modBtn">
-						<input type="button" value="삭제" >
-						<input type="button" value="목록" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList';">
+						<input type="button" value="삭제" id="delBtn" >
+						<input type="button" value="목록" id="listBtn">
 						</td>
 					</tr>
 			
@@ -93,5 +94,3 @@
 	
 </body>
 </html>
-
-

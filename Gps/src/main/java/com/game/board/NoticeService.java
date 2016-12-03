@@ -1,4 +1,4 @@
-	package com.game.board;
+package com.game.board;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -44,4 +44,5 @@ public class NoticeService {
 	public int noticeMod(NoticeDTO noticeDTO) throws Exception{
 		return noticeDAO.noticeMod(noticeDTO);
 	}
+
 }
