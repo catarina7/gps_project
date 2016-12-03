@@ -71,8 +71,12 @@ public class NoticeController {
 		}
 		return "redirect:/notice/noticeList";
 	}
+	
 	//Mod
-	@RequestMapping(value="/noticeMod")
+	@RequestMapping(value="/noticeMod", method=RequestMethod.GET)
+	public void noticeMod(){}
+	
+	@RequestMapping(value="/noticeMod" , method=RequestMethod.POST)
 	public String noticeMod(NoticeDTO noticeDTO){
 		try {
 			noticeService.noticeMod(noticeDTO);
@@ -80,10 +84,6 @@ public class NoticeController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "notice/noticeMod";
+		return "redirect:/notice/noticeList";
 	}
-	
-	
-	
-	
 }
