@@ -49,6 +49,11 @@ public class HomeController {
 		return "/common/footer";
 	}
 	
+	@RequestMapping(value="/cart")
+	public String cart(){
+		return "/cart_favorite/cart";
+	}
+	
 	@RequestMapping(value="/user_menu_bar")
 	public String user_menu_bar(){
 		return "/common/user_menu_bar";
