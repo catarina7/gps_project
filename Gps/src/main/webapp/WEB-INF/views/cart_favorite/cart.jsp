@@ -14,6 +14,8 @@
 <script type="text/javascript">
 	$(function(){
 		$("#e_cart").css("background-color","#2b394f");
+		/* 체크박스 체크 */
+		$(".check_box").prop("checked",true);
 	});
 </script>
 </head>
@@ -37,7 +39,8 @@
 					<div class="item">
 							<div class="four_contents">
 								<div class="f_g_check">
-									<input type="checkbox">
+									<input class="check_box" id="checkbox1" type="checkbox">
+									<label for="checkbox1"></label>
 								</div>
 								<div class="f_g_img">
 									
@@ -74,7 +77,8 @@
 						<div class="item">
 							<div class="four_contents">
 								<div class="f_g_check">
-									<input type="checkbox">
+									<input class="check_box" id="checkbox2" type="checkbox">
+									<label for="checkbox2"></label>
 								</div>
 								<div class="f_g_img">
 									
