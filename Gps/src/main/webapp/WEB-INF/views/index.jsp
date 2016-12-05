@@ -59,6 +59,14 @@
 			$("#pack_2").css("border","2px solid #666666");
 			$("#pack_3").css("border","2px solid #666666");
 		});
+		
+		$(".img").mouseenter(function(){
+			$(this).css("cursor","pointer");
+			$(this).css("border","2px solid #aaaaaa");
+			$(".img").mouseout(function(){
+				$(this).css("border","1px solid #aaaaaa");
+			});
+		});
 	});
 </script>
 </head>
@@ -122,7 +130,7 @@
 							<td rowspan="2">
 								<!-- discount -->
 								<input type="text" readonly="readonly" class="discount" value="할인률 %">
-								<div class="img" onclick="#">
+								<div class="img">
 									
 								</div>
 							</td>
