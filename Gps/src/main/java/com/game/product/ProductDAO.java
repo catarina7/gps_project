@@ -32,7 +32,7 @@ public class ProductDAO {
 			data.put("origine", origineNames.get(i));
 			sqlSession.insert(namespace+"pro_fileWrite", data);
 		}
-		return 1;
+		return 1; 
 	}
 	
 	//Product 글 리스트

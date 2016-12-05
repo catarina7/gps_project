@@ -7,12 +7,37 @@
 	<!-- 회원가입 -->
 	<insert id="Join" parameterType="com.game.member.MemberDTO">
 		insert into member values(member_seq.nextval, #{m_id}, #{m_pw}, #{m_name}, #{m_tel}, #{m_birth}, #{m_gender}, #{m_email}, 1, 0)
+		<!-- m_num 가져오기(m_num in computer table) -->
+		<selectKey keyProperty="m_num" resultType="int" order="AFTER">
+			select member_seq.currval from dual
+		</selectKey> 
 	</insert>
+	
+	<!-- 컴퓨터 정보 입력 -->
+	<insert id="comInfo" parameterType="com.game.computer.ComputerDTO">
+		insert into computer values( computer_seq.nextval, #{m_num}, #{com_os}, 	#{com_process}, #{com_memory}, #{com_graphic}, #{com_directx}, #{com_space})
+	</insert>
+	
 	<!-- 로그인 -->    
 	<select id="Login" parameterType="com.game.member.MemberDTO" resultType="com.game.member.MemberDTO">
 		select * from member where m_id=#{m_id} and m_pw=#{m_pw}	
 	</select>
 	<!-- 회원수정 -->
+	<update id="idMod" parameterType="com.game.member.MemberDTO">
+		update member 
+		<trim prefix="set" suffixOverrides=",">
+			<if test="m_pw != null">
+				m_pw = #{m_pw}
+			</if>
+			<if test="m_tel != null">
+				m_tel = #{m_tel}
+			</if>
+			<if test="m_email != null">
+				m_email = #{m_email}
+			</if>
+		</trim>
+		where m_id = #{m_id}
+	</update>
 	<!-- 회원탈퇴 -->
 	<!-- 회원검색/관리자용 -->
 	<!-- id찾기 -->
@@ -22,10 +47,11 @@
 	<!-- pw찾기 -->
 	<select id="searchPw" parameterType="com.game.member.MemberDTO" resultType="com.game.member.MemberDTO">
 		select * from member where m_id=#{m_id} and m_name=#{m_name} and m_email=#{m_email}
-	</select>
+	</select> 
 	<!-- id 체크 -->
 	<select id="idCheck" parameterType="java.lang.String" resultType="com.game.member.MemberDTO">
 		select * from member where m_id = #{id}
 	</select>
+	
 
 </mapper>

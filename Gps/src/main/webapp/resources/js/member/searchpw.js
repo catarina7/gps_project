@@ -1,8 +1,24 @@
 $(function(){
 	
 	//name 입력확인	
+	var idChk=0;	//id입력 여부 확인
 	var namechk=0;	 //이름 입력 여부 확인
 	var emailchk=0;	//전화번호 입력 체크
+	
+	//id input에 한글 불가 및 미입력 경고 메세지
+	$("#id_input").keyup(function(event){
+		if (!(event.keyCode >=37 && event.keyCode<=40)) {
+			var inputVal = $(this).val();
+			$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
+		}
+		if($(this).val() == ""){
+			$("#idchk").hide();
+			idChk++;
+		}else{
+			$("#idchk").show();
+		}
+		
+	});
 	
 	//이름 입력 여부 체크 경고 메세지
 	$("#name_input").keyup(function(){
@@ -29,15 +45,18 @@ $(function(){
 	});
 	
 	//id 중복체크 ajax
-	$("#searchid").click(function(){
-		if(namechk == 0){
+	$("#searchpw").click(function(){
+		if(idChk == 0){
+			alert("아이디를 입력해 주세요.");
+		}else if(namechk == 0){
 			alert("이름을 입력해 주세요.");
 		}else if(emailchk == 0){
 			alert("email을 입력해 주세요.");
 		}else{
 			$.ajax({
-				url : "searchId",
+				url : "",
 				data : {
+					m_id: $("#id_input").val(),
 					m_name : $("#name_input").val(),
 					m_email : $("#email_input").val()
 					},				
@@ -53,8 +72,5 @@ $(function(){
 			});
 		}
 	});
-	
-	
-	
 	
 });
