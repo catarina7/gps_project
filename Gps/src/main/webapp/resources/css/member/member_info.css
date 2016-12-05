@@ -48,6 +48,8 @@ section #mem_info_all {
 	height: 180px;
 	padding: 1.4% 1.4%;
 	margin: 0 auto;
+	background-color: #2d3c4d;
+	border-radius: 7px;
 }
 #mem_info_menu #member_information{
 	width: 30.2%;
@@ -93,7 +95,7 @@ section #mem_info_all {
 	height: 91%;
 	overflow: hidden;
 	padding: 1.4% 2.8%;
-	margin-left: 33%;
+	margin-left: 11%;
 }
 
 #mem_info_category .mem_game {

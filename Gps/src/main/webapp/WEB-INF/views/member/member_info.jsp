@@ -59,8 +59,8 @@
 					<div class="information">
 						<dl>
 							<dt></dt>
-							<dd class="title">마일리지</dd>
-							<dd>마일리지 내역을 확인하세요!</dd>
+							<dd class="title">마일리지&사양</dd>
+							<dd>마일리지와 컴퓨터사양을 확인하세요!</dd>
 						</dl>
 					</div>
 				</div>
@@ -115,6 +115,15 @@
 							<dt></dt>
 							<dd class="title">내 마일리지</dd>
 							<dd>마일리지를 확인하세요.</dd>
+						</dl>
+					</div>
+				</div>
+				<div class="mem_mill">
+					<div class="information">
+						<dl>
+							<dt></dt>
+							<dd class="title">내 컴퓨터</dd>
+							<dd>내 컴퓨터 사양을 수정하세요.</dd>
 						</dl>
 					</div>
 				</div>
