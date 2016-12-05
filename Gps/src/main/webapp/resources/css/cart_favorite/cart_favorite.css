@@ -25,7 +25,7 @@ section #else_list {
 #uu_menu a {
 	width: 33%;
 	padding: 10px 0px;
-	border: 2px solid #aaaaaa;
+	border: 1px solid #aaaaaa;
 	border-left: 1px solid #aaaaaa;
 	background-color: #415676;
 	font-size: 15px;
@@ -136,7 +136,7 @@ section #else_list {
 	position: absolute;
 	background-color: black;
 	margin-top: 5px;
-	border: 3px solid #aaaaaa;
+	border: 2px solid #aaaaaa;
 	border-radius: 7px;
 	right: 21%;
 }
