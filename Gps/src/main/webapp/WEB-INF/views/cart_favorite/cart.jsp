@@ -132,7 +132,7 @@
 						</div>
 				</div>
 				<div id="third_else">
-					<button>모두 구매</button>
+					<button>선택 구매</button>
 					<button>모두 빼기</button>
 				</div>
 			</div>

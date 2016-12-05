@@ -132,7 +132,7 @@ $(function(){
 						</div>
 				</div>
 				<div id="third_else">
-					<button>모두 장바구니 넣기</button>
+					<button>선택 장바구니 넣기</button>
 					<button>모두 빼기</button>
 				</div>
 			</div>
