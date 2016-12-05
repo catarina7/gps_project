@@ -48,16 +48,25 @@
 								<table>
 									<colgroup>
 										<col style="width:80%;">
-										<col style="width:20%;">
+										<col style="width:10%;">
+										<col style="width:10%;">
 									</colgroup>
 									<tr>
 										<td class="f_g_name">GAME PAKAGE NAME</td>
 										<td>
-											
+											<span class="window">
+												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
+											</span>
+											<span class="mac">
+												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_mac.png">
+											</span>
+										</td>
+										<td>
+											<input class="pro_delete" type="button" value="X">
 										</td>
 									</tr>
 									<tr>
-										<td class="f_g_ex" colspan="2">game explanation</td>
+										<td class="f_g_ex" colspan="3">game explanation</td>
 									</tr>
 								</table>
 							</div>
@@ -86,16 +95,25 @@
 								<table>
 									<colgroup>
 										<col style="width:80%;">
-										<col style="width:20%;">
+										<col style="width:10%;">
+										<col style="width:10%;">
 									</colgroup>
 									<tr>
 										<td class="f_g_name">GAME PAKAGE NAME</td>
 										<td>
-											
+											<span class="window">
+												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
+											</span>
+											<span class="mac">
+												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_mac.png">
+											</span>
+										</td>
+										<td>
+											<input class="pro_delete" type="button" value="X">
 										</td>
 									</tr>
 									<tr>
-										<td class="f_g_ex" colspan="2">game explanation</td>
+										<td class="f_g_ex" colspan="3">game explanation</td>
 									</tr>
 								</table>
 							</div>
@@ -112,6 +130,10 @@
 								</ul>
 							</div>
 						</div>
+				</div>
+				<div id="third_else">
+					<button>모두 구매</button>
+					<button>모두 빼기</button>
 				</div>
 			</div>
 	</section>

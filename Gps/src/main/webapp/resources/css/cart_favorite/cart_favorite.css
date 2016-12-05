@@ -121,7 +121,7 @@ section #else_list {
 	border-radius: 4px;
 }
 #second_else .four_contents table {
-	width: 68%;
+	width: 78.5%;
 }
 #second_else .four_contents .f_g_name {
 	color: white;
@@ -131,6 +131,19 @@ section #else_list {
 #second_else .four_contents .f_g_ex {
 	color: silver;
 	font-size: 14px;
+}
+#second_else .pro_delete {
+	color: white;
+	font-weight: bold;
+	background-color: #474747;
+	border: 0px;
+	font-size: 20px;
+	cursor: pointer;
+	float: right;
+	overflow: hidden;
+}
+#second_else .pro_delete:hover {
+	color: #aaaaaa;
 }
 #second_else .tag {
 	position: absolute;
@@ -186,3 +199,43 @@ section #else_list {
 .tag input:hover {
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
 }
+
+
+#else_list #third_else {
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+#third_else button {
+	border: 2px solid #747474;
+	border-radius: 5px;
+	background-color: #454545;
+	color: white;
+	text-shadow: -1px -1px 0px #222222;
+	padding: 5px 15px;
+	float: right;
+	overflow: hidden;
+	margin-right: 10px;
+	font-size: 15px;
+	cursor: pointer;
+}
+#third_else button:hover {
+	background-color: #111111;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
