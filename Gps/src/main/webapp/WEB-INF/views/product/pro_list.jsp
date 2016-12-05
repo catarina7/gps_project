@@ -21,11 +21,11 @@
 		</c:forEach>
 	</div>
 	
-	<div>
+	<div style="width:200px; height:200px; board:1px solid red;">
 		<c:if test="${pageMaker.curBlock>1}">
 			<a href="pro_list?curPage=${pageMaker.startNum-1}">[이전]</a>
 		</c:if>
-		<c:forEach begin="${pageMaker.startNum}" end="${pagMakere.lastNum}" var="i">
+		<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
 			<a href="pro_list?curPage=${i}">${i}</a>
 		</c:forEach>
 		<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">

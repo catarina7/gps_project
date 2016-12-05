@@ -25,7 +25,7 @@
 		select * from 
 		(select rownum R, F.* from 
 		(select * from product order by pro_num desc) F) 
-		where R between 1 and 10
+		where R between #{startRowNum} and #{lastRowNum}
 	</select>
 	
 	<!-- pro_list 글전체 갯수 가져오기 -->
@@ -44,10 +44,14 @@
 		select * from product where pro_num=#{pro_num}
 	</select>
 	
-	<!-- pro_view에 들어갈 사진 -->
-	<select id="pro_view_img" resultType="com.game.product.ProductFileDTO" parameterType="com.game.util.PageMaker">
-		select FILE_NAME from PRO_FILE where pro_num=#{pro_num}
+	<!-- pro_view에 들어갈 사진 PageMaker까지-->
+	<select id="pro_view_img" resultType="com.game.product.ProductFileDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum r, F.* from 
+		(select FILE_NAME from PRO_FILE where pro_num=#{pro_num}) F) 
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}+4
 	</select>
+	
 	
 	<!-- pro_view에 들어갈 사진 갯수 -->
 	<select id="pro_view_img_count" resultType="int" parameterType="int">

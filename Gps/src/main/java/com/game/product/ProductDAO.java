@@ -55,9 +55,17 @@ public class ProductDAO {
 		return sqlSession.selectOne(namespace+"productView", pro_num);
 	}
 	
+	public List<ProductFileDTO> productViewImgList(int pro_num) throws Exception{
+		
+		return sqlSession.selectList(namespace+"pro_view_img_list", pro_num);
+	}
+	
 	//product View 이미지 부분
 	public List<ProductFileDTO> productViewImg(PageMaker pageMaker, int pro_num) throws Exception{
-		return sqlSession.selectList(namespace+"pro_view_img", pro_num);
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pro_num", pro_num);
+		data.put("pageMaker", pageMaker);
+		return sqlSession.selectList(namespace+"pro_view_img", data);
 	}
 	
 	//product View 이미지 갯수 가져오기

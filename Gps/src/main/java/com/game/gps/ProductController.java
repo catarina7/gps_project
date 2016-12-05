@@ -37,6 +37,7 @@ public class ProductController {
 	@RequestMapping(value="/pro_list")
 	public String productList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="10") int perPage, Model model){
 		try {
+			System.out.println("(control)curPage : "+ curPage);
 			productService.productList(curPage, perPage, model);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -46,7 +47,7 @@ public class ProductController {
 	}
 		
 	@RequestMapping(value="/pro_view")
-	public String productView(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="5") int perPage, @RequestParam("pro_num") int pro_num, Model model){
+	public String productView(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="1") int perPage, @RequestParam("pro_num") int pro_num, Model model){
 		try {
 			productService.productView(curPage, perPage, pro_num, model);
 		} catch (Exception e) {
