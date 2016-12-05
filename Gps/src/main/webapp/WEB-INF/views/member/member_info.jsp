@@ -39,39 +39,42 @@
 	<c:import url="/header" />
 	
 	<!-- section -->
-	<section>
+	<section id="my_page">
 		
 		<c:import url="/user_menu_bar" />
+		<h3>마이페이지</h3>
 		<div id="mem_info_all">
 			<div id="mem_info_menu">
-				<!-- 회원 -->
-				<div id="member_information">
-					<div class="information">
-						<dl>
-							<dt></dt>
-							<dd class="title">회원정보</dd>
-							<dd>회원 정보를 확인하세요!</dd>
-						</dl>
+				<div id="lineline">
+					<!-- 회원 -->
+					<div id="member_information">
+						<div class="information">
+							<dl>
+								<dt></dt>
+								<dd class="title">회원정보</dd>
+								<dd>회원 정보를 확인하세요!</dd>
+							</dl>
+						</div>
 					</div>
-				</div>
-				<!-- 마일리지 -->
-				<div id="member_millage">
-					<div class="information">
-						<dl>
-							<dt></dt>
-							<dd class="title">마일리지&사양</dd>
-							<dd>마일리지와 컴퓨터사양을 확인하세요!</dd>
-						</dl>
+					<!-- 마일리지 -->
+					<div id="member_millage">
+						<div class="information">
+							<dl>
+								<dt></dt>
+								<dd class="title">마일리지&사양</dd>
+								<dd>마일리지와 컴퓨터사양을 확인하세요!</dd>
+							</dl>
+						</div>
 					</div>
-				</div>
-				<!-- 내 게임 -->
-				<div id="member_product">
-					<div class="information">
-						<dl>
-							<dt></dt>
-							<dd class="title">내 게임정보</dd>
-							<dd>내 게임을 관리해보세요!</dd>
-						</dl>
+					<!-- 내 게임 -->
+					<div id="member_product">
+						<div class="information">
+							<dl>
+								<dt></dt>
+								<dd class="title">내 게임정보</dd>
+								<dd>내 게임을 관리해보세요!</dd>
+							</dl>
+						</div>
 					</div>
 				</div>
 			</div>
