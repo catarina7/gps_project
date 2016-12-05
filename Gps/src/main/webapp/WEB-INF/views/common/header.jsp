@@ -59,7 +59,7 @@
 		});
 		
 		$("#logout").click(function(){
-			location.href="member/logout"
+			location.href="${pageContext.request.contextPath}/member/logout"
 		});
 		
 	});
@@ -112,7 +112,7 @@
 						<button id="join">회원가입</button>
 					</c:if>
 					<c:if test="${member.m_id != null}">
-						<button id="information">My Page</button>
+						<button id="information" onclick="location.href='${pageContext.request.contextPath}/member/member_info'">My Page</button>
 					</c:if>
 				</div>
 			</div>

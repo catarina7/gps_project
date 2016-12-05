@@ -23,6 +23,13 @@ public class MemberController {
 	private MemberService memberService;
 	
 	
+	//회원정보 페이지 링크
+	@RequestMapping(value="/member_info")
+	public String member_info(){
+		return "/member/member_info";
+	}
+	
+	
 	@RequestMapping(value="/join" , method = RequestMethod.GET)
 	public String join(){ 
 		return "/member/join";
