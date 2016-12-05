@@ -8,3 +8,125 @@ section {
 }
 
 
+section #mem_info_all {
+	width: 65%;
+	margin: 0 auto;
+	padding: 10px 5px;
+	margin-top: 10px;
+}
+#my_page h3 {
+	color: white;
+	width: 57%;
+	margin: 0 auto;
+	padding: 20px 1.4%;
+	margin-top: 30px;
+	font-size: 25px;
+	text-shadow: -1px -1px 0px #353535;
+}
+#mem_info_all .information {
+	width: 98%;
+	border: 1px solid #aaaaaa;
+	border-radius : 7px;
+	background-color: #555555;
+	margin: 0 auto;
+	cursor: pointer;
+}
+#mem_info_all .information:hover {
+	border: 3px solid #32435c;
+}
+#mem_info_all .information dt{
+	width: 100%;
+	margin-top: 46%;
+}
+#mem_info_all .information .title {
+	font-weight: bold;
+	font-size: 13px
+}
+#mem_info_all .information dd {
+	width: 100%;
+	text-align: center;
+	color: white;
+	border-top: 1px dashed #aaaaaa;
+	padding: 3px 0px;
+	font-size: 11px;
+}
+
+
+#mem_info_all #mem_info_menu {
+	width: 80%;
+	height: 180px;
+	padding: 1.4% 1.4%;
+	margin: 0 auto;
+	background-color: #2d3c4d;
+	border-radius: 7px;
+	border: 1px solid white;
+}
+#mem_info_menu #lineline {
+	width: 99%;
+	height: 96%;
+	border: 2px dotted #666666;
+	border-radius: 7px;
+	padding-top: 5px;
+	padding-left: 0.5%;
+}
+#mem_info_menu #member_information{
+	width: 30.2%;
+	height: 87%;
+	float: left;
+	overflow: hidden;
+	padding: 1.4% 1.4%;
+}
+#mem_info_menu #member_millage {
+	width: 30.2%;
+	height: 87%;
+	float: left;
+	overflow: hidden;
+	padding: 1.4% 1.4%;
+}
+#mem_info_menu #member_product {
+	width: 30.2%;
+	height: 87%;
+	float: left;
+	overflow: hidden;
+	padding: 1.4% 1.4%;
+}
+#mem_info_all #mem_info_category {
+	width: 94%;
+	height: 180px;
+	margin: 0 auto;
+	margin-top: 40px;
+}
+
+#mem_info_category .mem_in {
+	width: 27.6%;
+	height: 91%;
+	padding: 1.4% 2.8%;
+	float: left;
+	overflow: hidden;
+	display: none;
+}
+
+#mem_info_category .mem_mill {
+	display: none;
+	float: left;
+	width: 27.6%;
+	height: 91%;
+	overflow: hidden;
+	padding: 1.4% 2.8%;
+	margin-left: 11%;
+}
+
+#mem_info_category .mem_game {
+	display: none;
+	float: left;
+	width: 27.6%;
+	height: 91%;
+	overflow: hidden;
+	padding: 1.4% 2.8%;
+	margin-left: 11%;
+}
+
+
+
+
+

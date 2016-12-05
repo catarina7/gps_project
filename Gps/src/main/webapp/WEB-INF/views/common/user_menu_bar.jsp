@@ -81,7 +81,7 @@
 		<div id="sub_header_menu">
 				<div class="H_list" id="user">
 					<ul>
-						<li><a href="#">마이페이지</a></li>
+						<li><a href="${pageContext.request.contextPath}/member/member_info">마이페이지</a></li>
 						<li><a href="${pageContext.request.contextPath}/cart">장바구니</a></li>
 						<li><a href="${pageContext.request.contextPath}/favorite">관심상품</a></li>
 						<li><a href="#">구매내역</a></li>
