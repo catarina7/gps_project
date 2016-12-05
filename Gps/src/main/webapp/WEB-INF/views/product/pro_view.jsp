@@ -61,6 +61,14 @@
 	    });
 	    /* smarteditor 끝 */
 		
+	    $("#before").click(function(){
+	    	location.href="pro_view?pro_num=${pro_view.pro_num}&curPage=${pageImg.startNum-5}";
+	    });
+	    
+	    $("#next").click(function(){
+	    	location.href="pro_view?pro_num=${pro_view.pro_num}&curPage=${pageImg.lastNum+1}";
+	    });
+	    
 	});
 </script>
 
@@ -98,8 +106,13 @@
 			</div>
 			<!-- sub images -->
 			<div id="third_pro">
-				<button class="sub_btn" id="before"></button>
-				<button class="sub_btn" id="next"></button>
+				<c:if test="${pageImg.curBlock>1}">
+					<button class="sub_btn" id="before"></button>
+				</c:if>
+
+				<c:if test="${pageImg.curBlock<pageImg.totalBlock}">
+					<button class="sub_btn" id="next"></button>
+				</c:if>
 				<ul>
 					<c:forEach items="${pro_img}" var="img" varStatus="status">
 						<li><img
@@ -382,11 +395,7 @@
 						<span>의견 쓰기</span> <span id="review_count">0</span>
 					</div>
 
-					<div id="reply_write">
-						<div class="re_title">
-							<span>의견 쓰기</span> 
-							<span id="review_count">0</span>
-						</div>
+		
 						<div class="re_contents">
 							<div class="re_user">user name</div>
 							<!-- textarea -->
@@ -461,6 +470,7 @@
 				</div>
 			</div>
 		</div>
+	</div>
 	</section>
 
 

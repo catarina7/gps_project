@@ -50,12 +50,13 @@ public class ProductService {
 		//product 글 갯수 가져오기
 		int totalCount=productDAO.productCount();
 		PageMaker pageMaker = new PageMaker();
-		//System.out.println(totalCount);
+		System.out.println("(service)curPage : " + curPage);
 		pageMaker.setCurPage(curPage);
+		System.out.println("(service)curPage : " + pageMaker.getCurPage());
 		pageMaker.setPerPage(perPage);
 		pageMaker.makeRow();
 		pageMaker.makePage(totalCount);
-		
+		//System.out.println(pageMaker.getStartRowNum());
 		List<ProductDTO> ar = productDAO.productList(pageMaker);
 		ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
 		
@@ -78,18 +79,20 @@ public class ProductService {
 		pageMaker.setPerPage(perPage);
 		pageMaker.makeRow();
 		pageMaker.makePage(totalCount);
-		
 		//productView 일반
 		ProductDTO productDTO = productDAO.productView(pro_num);
 		//productView 사진들
 		List<ProductFileDTO> ar = productDAO.productViewImg(pageMaker, pro_num);
 		//productView 대표사진
 		ProductFileDTO pro_main = productDAO.productImgList(pro_num);
-			
-		for(int i=0; i<ar.size();i++){
-			System.out.println(ar.get(i).getFile_name());
-		}
 		
+		System.out.println("ar : " + ar.size());
+			
+		/*for(int i=0; i<ar.size();i++){
+			System.out.println(ar.get(i).getFile_name());
+		}*/
+		
+		model.addAttribute("pageImg", pageMaker);
 		model.addAttribute("pro_view", productDTO);
 		model.addAttribute("pro_main", pro_main);
 		model.addAttribute("pro_img", ar);

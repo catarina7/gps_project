@@ -17,6 +17,8 @@ public class PageMaker {
 	public void makeRow(){
 		this.startRowNum= (curPage-1)*perPage+1;
 		this.lastRowNum = curPage*perPage;
+		System.out.println(startRowNum);
+		System.out.println(lastRowNum);
 	}
 
 	//pageing
@@ -32,29 +34,31 @@ public class PageMaker {
 		}else {
 			totalPage=totalCount/perPage+1;
 		}
-
+		System.out.println("토탈페이지 : "+totalPage);
 		//3. 전체 Block
 
 		//3. 전체Block
 
 		int perBlock=5;
-		totalBlock=0;
+		this.totalBlock=0;
 		if(totalPage%perBlock==0){
 			totalBlock=totalPage/perBlock;
 		}else {
 			totalBlock=totalPage/perBlock+1;
 		}
+		System.out.println("토탈 블럭 : " + totalBlock);
 		//4. curBlock
-		curBlock=0;
+		this.curBlock=0;
 		if(curPage%perBlock==0){
 			curBlock=curPage/perBlock;
 		}else {
 			curBlock=curPage/perBlock+1;
 		}
+		System.out.println("curBlock : " +curBlock);
 		//5. startNum, lastNum
-		startNum=(curBlock-1)*perBlock+1;
-		lastNum = curBlock*perBlock;
-
+		this.startNum=(curBlock-1)*perBlock+1;
+		this.lastNum = curBlock*perBlock;
+		System.out.println("startNum"+startNum+"lastNum"+lastNum);
 		//
 		if(curBlock==totalBlock){
 			lastNum = totalPage;
