@@ -7,11 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.AlternativeJdkIdGenerator;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.game.computer.ComputerDTO;
 import com.game.member.MemberDTO;
 import com.game.member.MemberService;
 
@@ -138,7 +140,6 @@ public class MemberController {
 		
 		try {
 			result = memberService.searchid(mDto);
-			System.out.println(result.getM_id());
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -148,10 +149,42 @@ public class MemberController {
 	}
 	
 	//pw찾기
-	@RequestMapping(value="/searchpw")
+	@RequestMapping(value="/searchPw")
 	public String searchpw(){
 		return "/member/searchpw";
 	}
+	
+	
+	//pw찾기 
+	@RequestMapping(value="/searchPw", method = RequestMethod.POST)
+	public void searchpw(MemberDTO mDto){
+		
+	}
+	
+	//컴퓨터 사양 넣기폼
+	@RequestMapping(value="/comInfo" )
+	public String comInfo(@RequestParam int m_num, Model model){
+		model.addAttribute("m_num", m_num);
+		return "/member/comInfo";
+	}
+	
+	//컴퓨터 사양 넣기 
+	@RequestMapping(value="/ComInfo", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<Integer> comInfo(ComputerDTO com){
+		
+		int result = 0;
+		System.out.println(com.getM_num());
+		try {
+			result = memberService.cominfo(com);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
+	
+	
 	
 	
 

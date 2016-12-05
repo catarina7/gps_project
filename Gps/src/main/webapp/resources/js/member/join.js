@@ -226,8 +226,8 @@ $(function(){
 					if(result==0){
 						alert("회원가입에 실패했습니다. 관리자에게 문의해주세요");
 					}else{
-						alert("회원가입에 성공했습니다. 환영합니다.");
-						location.href="/gps/index"; 
+						alert("회원가입에 성공했습니다. 컴퓨터 사양 입력 으로 이동합니다.");
+						location.href="comInfo?m_num="+result; 
 					}
 				}
 			});  

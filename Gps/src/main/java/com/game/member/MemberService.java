@@ -3,6 +3,8 @@ package com.game.member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.game.computer.ComputerDTO;
+
 @Service
 public class MemberService {
 	
@@ -13,6 +15,12 @@ public class MemberService {
 		//회원가입
 		public int join(MemberDTO mDto) throws Exception{
 			return memberDao.join(mDto);
+		}
+		
+		//computer 정보입력
+		public int cominfo(ComputerDTO com) throws Exception{
+			
+			return memberDao.cominfo(com);
 		}
 	
 		//로그인
