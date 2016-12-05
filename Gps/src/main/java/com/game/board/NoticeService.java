@@ -13,6 +13,7 @@ public class NoticeService {
 	private NoticeDAO noticeDAO;	
 	
 	public NoticeDTO noticeView(int n_num) throws Exception{
+		noticeDAO.updateCounts(n_num);
 		return noticeDAO.noticeView(n_num);
 	}
 	
@@ -20,8 +21,8 @@ public class NoticeService {
 		return noticeDAO.noticeWrite(noticeDTO);
 	}
 	
-	public int noticeUpdate(NoticeDTO noticeDTO) throws Exception{
-		return noticeDAO.noticeUpdate(noticeDTO);
+	public int updateCounts(int n_num) throws Exception{
+		return noticeDAO.updateCounts(n_num);
 	}
 	
 	public int noticeDelete(int n_num) throws Exception{
