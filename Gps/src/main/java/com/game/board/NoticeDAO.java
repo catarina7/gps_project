@@ -25,8 +25,8 @@ public class NoticeDAO {
 	}
 	
 	
-	public int noticeUpdate(NoticeDTO noticeDTO) throws Exception{
-		return sqlSession.update(namespace+"noticeUpdate", noticeDTO);
+	public int updateCounts(int n_num) throws Exception{
+		return sqlSession.update(namespace+"updateCounts", n_num);
 	}
 	
 	

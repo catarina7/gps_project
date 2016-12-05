@@ -89,7 +89,7 @@ $(function(){
 			<tr>
 				<td colspan="2" id="Btn">
 					<input type="hidden" value="${param.n_num}" name="n_num">
-					<input type="submit" id="savebutton" value="작성완료">
+					<input type="submit" id="savebutton" value="수정완료">
 					<input type="button" value="목록" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList';">
 				</td>
 			</tr>

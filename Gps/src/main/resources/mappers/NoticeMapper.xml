@@ -3,32 +3,43 @@
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 	
 	<mapper namespace="NoticeMapper">
+	
+		<!--View  -->	
 		<select id="noticeView" parameterType="int" resultType="com.game.board.NoticeDTO">
 			select * from notice where n_num=#{n_num}
 		</select>
 		
+		<!--Write  -->
 		<insert id="noticeWrite" parameterType="com.game.board.NoticeDTO">
 			insert into notice values(notice_seq.nextval, #{n_writer}, #{n_title}, #{n_contents}, sysdate, 0)
 		</insert>
 		
+		<!--List  -->
 	 	<select id="noticeList" parameterType="com.game.util.PageMaker" resultType="com.game.board.NoticeDTO">
 			select * from 
 			(select rownum R, F.* from 
 			(select * from notice order by n_num desc ) F) 
-			where R between #{startRowNum} and #{lastRowNum}
-			
+			where R between #{startRowNum} and #{lastRowNum}		
 		</select> 
 		
+		<!--TotalCount  -->
 		<select id="noticeCount" resultType="int">
 			select count(n_num) from notice
 		</select>
 		
+		<!--Delete  -->
 		<delete id="noticeDelete" parameterType="int" >
 			delete notice where n_num=#{n_num}
 		</delete>
 		
+		<!--Mod  -->
 		<update id="noticeMod" parameterType="com.game.board.NoticeDTO">
 			update notice set n_contents=#{n_contents} where n_num=#{n_num}
+		</update>
+		
+		<!--조회수증가  -->
+		<update id="updateCounts" parameterType="int">
+			update notice set counts=counts+1 where n_num=#{n_num}
 		</update>
 		
 		
