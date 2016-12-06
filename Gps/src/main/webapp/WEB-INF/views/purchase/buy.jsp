@@ -84,7 +84,9 @@
 								<span id="pro_price"></span>
 							</td>
 							<td>
-								<p class="minus"></p>
+								<p class="minus">
+									<img src="${pageContext.request.contextPath }/resources/css/purchase/img/remove.png">
+								</p>
 							</td>
 							<td>
 								<!-- 마일리지 적용 -->
@@ -92,14 +94,18 @@
 								<button id="mill_in">전부 적용</button>
 							</td>
 							<td>
-								<p class="plus"></p>
+								<p class="plus">
+									<img src="${pageContext.request.contextPath }/resources/css/purchase/img/add.png">
+								</p>
 							</td>
 							<td>
 								<!-- 전자결제 수수료 (VAT) -->
 								<span id="vat"></span>
 							</td>
 							<td>
-								<p class="complete"></p>
+								<p class="complete">
+									<img src="${pageContext.request.contextPath }/resources/css/purchase/img/chat.png">
+								</p>
 							</td>
 							<td>
 								<!-- 최종 합계 가격 -->

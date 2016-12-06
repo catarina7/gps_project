@@ -90,22 +90,28 @@ section .minus {
 	width: 36.3%;
 	height: 25px;
 	margin: 0 auto;
-	background-image: url("/gps/resources/css/purchase/img/remove.png");
-	background-size: 25px 25px;
+}
+.minus img {
+	width: 100%;
+	height: 100%;
 }
 section .plus {
 	width: 36.3%;
 	height: 25px;
 	margin: 0 auto;
-	background-image: url("/gps/resources/css/purchase/img/add.png");
-	background-size: 25px 25px;
+}
+.plus img {
+	width: 100%;
+	height: 100%;
 }
 section .complete {
 	width: 36.3%;
 	height: 25px;
 	margin: 0 auto;
-	background-image: url("/gps/resources/css/purchase/img/chat.png");
-	background-size: 25px 25px;
+}
+.complete img {
+	width: 100%;
+	height: 100%;
 }
 #th_contents td {
 	padding: 10px 0px;
@@ -150,6 +156,7 @@ section .complete {
 #four_buy input[type="text"] {
 	width: 98%;
 	padding: 5px 0.7%;
+	border: 1px solid #aaaaaa;
 }
 
 
