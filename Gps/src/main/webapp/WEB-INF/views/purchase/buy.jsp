@@ -36,7 +36,10 @@
 		<!-- 내용 넣기 -->
 		<div id="buy_progress">
 			<!-- 결제단계 만들기 -->
-			<div><!-- icon --></div>
+			<div>
+				<!-- icon -->
+				<img src="${pageContext.request.contextPath }/resources/css/purchase/img/list.png">
+			</div>
 			<p id="titi">
 				<!-- title -->
 				주문서
@@ -125,9 +128,21 @@
 			<div id="five_buy">
 				<div id="pay_way">
 					<!-- 결제 수단 -->
+					<div>
+						<!-- 선택 -->
+					</div>
+					<div>
+						<!-- 상세 설명 -->
+					</div>
 				</div>
 				<div id="pay_check">
 					<!-- 최종 결제 확인 -->
+					<div>
+						<!-- 변동 가격 -->
+					</div>
+					<div>
+						<!-- 최종 결제 가격 -->
+					</div>
 				</div>
 			</div>
 		</div>
