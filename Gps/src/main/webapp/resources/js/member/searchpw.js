@@ -12,10 +12,10 @@ $(function(){
 			$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
 		}
 		if($(this).val() == ""){
+			$("#idchk").show();
+		}else{
 			$("#idchk").hide();
 			idChk++;
-		}else{
-			$("#idchk").show();
 		}
 		
 	});
@@ -54,7 +54,7 @@ $(function(){
 			alert("email을 입력해 주세요.");
 		}else{
 			$.ajax({
-				url : "",
+				url : "SearchPw",
 				data : {
 					m_id: $("#id_input").val(),
 					m_name : $("#name_input").val(),
@@ -62,9 +62,9 @@ $(function(){
 					},				
 				type : "post",
 				success : function(result){
-					 if(result.m_num != null){
-						 alert(result.m_id+"입니다.( >..0 ) ok");
-						 location.href="login";
+					 if(result != 0){
+						 alert("변경된 pw가 email로 보내 졌습니다.");
+						 location.href="/gps/index";
 					 }else{
 						 alert("입력 정보를 확인해 주세요.");
 					 }

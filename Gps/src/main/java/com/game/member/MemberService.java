@@ -1,7 +1,12 @@
 package com.game.member;
 
+import java.util.Random;
+
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.ModelMap;
 
 import com.game.computer.ComputerDTO;
 
@@ -41,6 +46,38 @@ public class MemberService {
 		public MemberDTO searchid(MemberDTO mDto) throws Exception{
 			
 			return memberDao.searchid(mDto);
+		}
+		
+		//pw찾기
+		public int searchpw(MemberDTO mDto, HttpServletRequest request)throws Exception{
+			
+			int result=0;
+			String password = "";
+			
+			mDto = memberDao.searchpw(mDto);
+			
+			if(mDto.getM_pw() != null){
+				
+				Random r = new Random();
+				for(int i =0; i<8; i++){
+					if(i==1 || i==4 || i==6 || i==7){
+						int rand = r.nextInt(26)+65;
+						password += (char)rand;
+					}else{
+						int rand = r.nextInt(10);
+						password += rand;
+					}
+				}
+				mDto.setM_pw(password);
+				mDto.setM_kind(10);
+				
+				memberDao.idMod(mDto);
+				memberDao.mailSender(request,  mDto);				
+				
+				result = 1;
+			}
+			
+			return result;
 		}
 
 }

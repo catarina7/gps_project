@@ -1,5 +1,6 @@
 package com.game.gps;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +8,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.util.AlternativeJdkIdGenerator;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -155,10 +157,25 @@ public class MemberController {
 	}
 	
 	
-	//pw찾기 
-	@RequestMapping(value="/searchPw", method = RequestMethod.POST)
-	public void searchpw(MemberDTO mDto){
+	//pw찾기 (ajax)
+	@RequestMapping(value="/SearchPw", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<Integer> searchpw(MemberDTO mDto,  HttpServletRequest request){
+		int result = 0;
 		
+		try {
+			result = memberService.searchpw(mDto, request);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(result == 0 ){
+			result = 0;
+		}else{
+			result = 1;
+		}
+		
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
 	
 	//컴퓨터 사양 넣기폼
