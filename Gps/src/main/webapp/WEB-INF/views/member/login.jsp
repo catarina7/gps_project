@@ -24,7 +24,7 @@
 			
 			<form action="#" method="post">
 			id <input type="text" name="m_id" id="id_input" class="input"><br>
-			pw <input type="text" name="m_pw" id="pw_input" class="input"><br>
+			pw <input type="password" name="m_pw" id="pw_input" class="input"><br>
 			<input type="button" id="log_btn" value="login">
 			</form>
 			

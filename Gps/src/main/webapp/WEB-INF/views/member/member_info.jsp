@@ -82,7 +82,7 @@
 				<!-- 회원 -->
 					<!-- 회원정보 수정 -->
 				<div class="mem_in">
-					<div class="information">
+					<div class="information" id="meminfo_mod">
 						<dl>
 							<dt></dt>
 							<dd class="title">회원정보 수정</dd>
@@ -92,7 +92,7 @@
 				</div>
 					<!-- 비밀번호 변경 -->
 				<div class="mem_in">
-					<div class="information">
+					<div class="information" id="mempw_mod">
 						<dl>
 							<dt></dt>
 							<dd class="title">비밀번호 변경</dd>
@@ -102,7 +102,7 @@
 				</div>
 					<!-- 회원 탈퇴 -->
 				<div class="mem_in">
-					<div class="information">
+					<div class="information" id="">
 						<dl>
 							<dt></dt>
 							<dd class="title">회원 탈퇴</dd>
