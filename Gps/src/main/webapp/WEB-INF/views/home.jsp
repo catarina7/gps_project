@@ -23,11 +23,11 @@
 
 <a href="product/pro_list">Product List</a>
 
-<<<<<<< HEAD
+
 <a href="cart_favorite/cartList?m_id=${member.m_id}">cart</a>
-=======
+
 <a href="cart">cart</a>
 
->>>>>>> refs/heads/12.05(2)
+
 </body>
 </html>
