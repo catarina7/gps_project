@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="CartMapper">
+	<!-- cart에 추가하기 -->
+	<insert id="cartAdd" parameterType="java.util.Map">
+		insert into cart values(cart_seq.nextval, #{m_id}, #{pro_num})
+	</insert>
+	
+	<!-- cart에 pro_num 뽑아오기 -->
+	<select id="cartNumFind" resultType="com.game.mart.CartDTO" parameterType="com.game.member.MemberDTO">
+		select * from cart where m_id=#{m_id}
+	</select>
+	
+	<!-- cart에 List 일반(제목, 내용, 가격) -->
+	<select id="cart_list" resultType="com.game.product.ProductDTO" parameterType="java.util.List">
+		select * from product where pro_num=#{pro_num}
+	</select>
+	
+	<!-- cart에 대표사진만 가져와 List -->
+	<select id="cart_list_img" resultType="com.game.product.ProductFileDTO" parameterType="java.util.List">
+		select file_name from pro_file
+    	where file_num=(select min(file_num) from pro_file where pro_num=#{pro_num})
+	</select>
+</mapper>

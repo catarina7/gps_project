@@ -35,15 +35,19 @@
 						<a id="e_puchase" href="#">구매내역</a>
 					</div>
 				</div>
+				
+				<!-- 장바구니 리스트 -->
+				
 				<div id="second_else">
-					<div class="item">
+					<c:forEach items="${cart_list}" var="cart" varStatus="status">
+						<div class="item">
 							<div class="four_contents">
 								<div class="f_g_check">
 									<input class="check_box" id="checkbox1" type="checkbox">
 									<label for="checkbox1"></label>
 								</div>
 								<div class="f_g_img">
-									
+									<img src="../resources/upload/${cart_list_img[status.index].file_name}">
 								</div>
 								<table>
 									<colgroup>
@@ -52,7 +56,7 @@
 										<col style="width:10%;">
 									</colgroup>
 									<tr>
-										<td class="f_g_name">GAME PAKAGE NAME</td>
+										<td class="f_g_name">${cart.pro_title}</td>
 										<td>
 											<span class="window">
 												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
@@ -66,7 +70,7 @@
 										</td>
 									</tr>
 									<tr>
-										<td class="f_g_ex" colspan="3">game explanation</td>
+										<td class="f_g_ex" colspan="3">${cart.pro_contents}</td>
 									</tr>
 								</table>
 							</div>
@@ -74,7 +78,7 @@
 								<ul>
 									<li class="discount">-20%</li>
 									<li class="price">
-										<p class="nomal_p">₩ 17000</p>
+										<p class="nomal_p">${cart.price}</p>
 										<span>₩ 15000</span>
 									</li>
 									<li>
@@ -83,53 +87,7 @@
 								</ul>
 							</div>
 						</div>
-						<div class="item">
-							<div class="four_contents">
-								<div class="f_g_check">
-									<input class="check_box" id="checkbox2" type="checkbox">
-									<label for="checkbox2"></label>
-								</div>
-								<div class="f_g_img">
-									
-								</div>
-								<table>
-									<colgroup>
-										<col style="width:80%;">
-										<col style="width:10%;">
-										<col style="width:10%;">
-									</colgroup>
-									<tr>
-										<td class="f_g_name">GAME PAKAGE NAME</td>
-										<td>
-											<span class="window">
-												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
-											</span>
-											<span class="mac">
-												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_mac.png">
-											</span>
-										</td>
-										<td>
-											<input class="pro_delete" type="button" value="X">
-										</td>
-									</tr>
-									<tr>
-										<td class="f_g_ex" colspan="3">game explanation</td>
-									</tr>
-								</table>
-							</div>
-							<div class="tag">
-								<ul>
-									<li class="discount">-20%</li>
-									<li class="price">
-										<p class="nomal_p">₩ 17000</p>
-										<span>₩ 15000</span>
-									</li>
-									<li>
-										<input type="button" value="구매하러 가기">
-									</li>
-								</ul>
-							</div>
-						</div>
+					</c:forEach>
 				</div>
 				<div id="third_else">
 					<button>선택 구매</button>
