@@ -84,7 +84,7 @@
 						<li><a href="${pageContext.request.contextPath}/member/member_info">마이페이지</a></li>
 						<li><a href="${pageContext.request.contextPath}/cart">장바구니</a></li>
 						<li><a href="${pageContext.request.contextPath}/favorite">관심상품</a></li>
-						<li><a href="#">구매내역</a></li>
+						<li><a href="${pageContext.request.contextPath}/purchase/purchase">구매내역</a></li>
 						<li><a href="#">list</a></li>
 						<li><a href="#">list</a></li>
 					</ul>
@@ -102,7 +102,7 @@
 				<div class="H_list" id="software">
 					<ul>
 						<li><a href="#">한글패치</a></li>
-						<li><a href="#">list</a></li>
+						<li><a href="${pageContext.request.contextPath}/purchase/buy">결제창</a></li>
 						<li><a href="#">list</a></li>
 						<li><a href="#">list</a></li>
 					</ul>
