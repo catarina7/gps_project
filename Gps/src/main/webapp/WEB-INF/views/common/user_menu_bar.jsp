@@ -46,6 +46,10 @@
 				clicks = true;
 			}
 		});
+		
+		$("#notice_tx").click(function(){
+			location.href="${pageContext.request.contextPath}/notice/noticeList";
+		});
 	});
 </script>
 </head>
@@ -66,7 +70,7 @@
 			<div class="h_menu">
 				<span>menu</span>
 			</div>
-			<div class="h_menu">
+			<div class="h_menu" id="notice_tx">
 				<span>Notice</span>
 			</div>
 			<div id="search_input">

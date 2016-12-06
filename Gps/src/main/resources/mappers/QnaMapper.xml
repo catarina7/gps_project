@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+	<mapper namespace="QnaMapper">
+		<!-- View -->
+		<select id="qnaView" resultType="com.game.board.QnaDTO" parameterType="int">
+			select * from qna where q_num=#{q_num}
+		</select>
+		<!-- View에 들어갈 이미지 -->
+		<select id="qnaView_img" resultType="com.game.board.QnaFileDTO" parameterType="java.util.Map">
+			select * from
+			(select rownum r, F.* from
+			(select qfile_name from qna_file where q_num=#{q_num}) F)
+			where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+		</select>
+		
+		<!-- qnaView에 들어갈 사진 갯수 -->
+		<select id="qnaView_img_count" resultType="int" parameterType="int">
+			select count(qfile_name) from qna_file where q_num=#{q_num}
+		</select>
+		
+		<!-- Write -->
+		<!-- 이미지 없이 글 쓰기 -->
+		<insert id="qnaWrite" parameterType="com.game.board.QnaDTO">
+			insert into qna values(qna_seq.nextval,#{q_writer}, #{q_title}, #{q_contents}, sysdate, 0, qna_seq.currval, 0, 0 )
+			
+			<!-- q_num 가져오기 (qna_file table) -->
+			<selectKey keyProperty="q_num" resultType="int" order="AFTER">
+				select qna_seq.currval from dual
+			</selectKey>
+		</insert>
+		
+		<!-- qna_file 글쓰기(사진넣기) -->
+		<insert id="qna_fileWrite" parameterType="java.util.Map">
+			insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name}, #{qorigine_name})
+		</insert>
+		<!-- List -->
+		<select id="qnaList" resultType="com.game.board.QnaDTO" parameterType="com.game.util.PageMaker">
+			select * from
+			(select rownum R, F.* from
+			(select * from qna order by q_num desc) F)
+			where R between #{startRowNum} and #{lastRowNum}
+		</select>
+		<!-- Delete -->
+		<delete id="qnaDelete" parameterType="int">
+			delete qna where q_num=#{q_num}
+		</delete>
+		<!-- Mod -->
+		<update id="qnaMod" parameterType="com.game.board.QnaDTO">
+			update qna set q_contents=#{q_contents} where q_num=#{q_num}
+		</update>
+		
+		<!-- 조회수 -->
+		<update id="qnaCounts" parameterType="int">
+			update qna set counts=counts+1 where q_num=#{q_num}
+		</update>
+		
+	</mapper>

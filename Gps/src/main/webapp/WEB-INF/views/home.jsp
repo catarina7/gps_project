@@ -14,6 +14,7 @@
 <a href="member/join">join</a>
 
 <a href="notice/noticeList">Notice</a>
+<a href="qna/qnaList">QnA</a>
 <a href="product/pro_write">product</a>
 
 
@@ -22,5 +23,6 @@
 <a href="product/pro_list">Product List</a>
 
 <a href="cart">cart</a>
+
 </body>
 </html>
