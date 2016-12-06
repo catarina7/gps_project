@@ -32,7 +32,7 @@
 					<div id="uu_menu">
 						<a id="e_cart" href="${pageContext.request.contextPath}/cart">장바구니</a>
 						<a id="e_favorite" href="${pageContext.request.contextPath}/favorite">관심상품</a>
-						<a id="e_puchase" href="#">구매내역</a>
+						<a id="e_puchase" href="${pageContext.request.contextPath}/purchase/purchase">구매내역</a>
 					</div>
 				</div>
 				<div id="second_else">

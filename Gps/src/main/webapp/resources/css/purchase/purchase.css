@@ -7,7 +7,7 @@ section {
 	background-color: #666666;
 }
 
-section h3 {
+/* section h3 {
 	color: white;
 	width: 63%;
 	margin: 0 auto;
@@ -15,19 +15,60 @@ section h3 {
 	margin-top: 30px;
 	font-size: 25px;
 	text-shadow: -1px -1px 0px #353535;
-}
+} */
 section #first_purchase {
-	width: 65%;
+	width: 62.5%;
 	margin: 0 auto;
 	padding: 15px 5px;
-	border: 1px solid #aaaaaa;
-	background-color: #505050;
+	border: 2px solid #aaaaaa;
+	border-radius : 5px;
 }
+
+
+
+
+section #else_list {
+	width: 65%;
+	margin: 0 auto;
+	padding: 0px 30px;
+	padding-top: 60px;
+	padding-bottom: 40px;
+}
+#else_list #first_else {
+	width: 98%;
+	padding: 15px 5px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#first_else #uu_menu {
+	width: 100%;
+}
+#uu_menu a {
+	width: 33%;
+	padding: 10px 0px;
+	border: 1px solid #aaaaaa;
+	border-left: 1px solid #aaaaaa;
+	background-color: #415676;
+	font-size: 15px;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #353535;
+	color: white;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+}
+#uu_menu a:hover {
+	color: #aaaaaa;
+}
+
+
+
+
 
 #first_purchase .second_purchase{
 	width: 99.8%;
 	margin: 0 auto;
-	padding: 5px 1.4%;
+	padding: 10px 1.4%;
 }
 
 .second_purchase .purchase_day {
