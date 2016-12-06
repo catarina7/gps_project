@@ -6,3 +6,242 @@ section {
 	padding-bottom: 100px;
 	background-color: #666666;
 }
+/* buy progress */
+section #buy_progress {
+	width: 63%;
+	margin: 0 auto;
+	padding: 15px 1.4%;
+	background-color: #32435c;
+	margin-top: 80px;
+	overflow: hidden;
+	border: 1px solid #aaaaaa;
+}
+#buy_progress div {
+	float: left;
+	overflow: hidden;
+	width: 4.4%;
+	height: 40px;
+	margin-right: 1.4%;
+}
+#buy_progress img {
+	width: 100%;
+	height: 100%;
+}
+#buy_progress p {
+	color: white;
+	font-weight: bold;
+	font-size: 17px;
+	float: right;
+	overflow: hidden;
+}
+#buy_progress #titi {
+	font-size: 25px;
+	float: left;
+	overflow: hidden;
+}
+#buy_progress #sub {
+	margin-top: 9px;
+}
+
+
+section #first_buy {
+	width: 63%;
+	margin: 0 auto;
+	padding: 20px 1.4%;
+	border: 1px solid #aaaaaa;
+	border-top: 1px dotted #aaaaaa;
+	overflow: hidden;
+}
+#first_buy .title {
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	padding: 20px 0px;
+	text-shadow: -1px -1px 0px black;
+}
+#first_buy .title span {
+	font-size: 25px;
+}
+
+
+#first_buy #second_buy {
+	width: 95%;
+	margin: 0 auto;
+	padding: 10px 1.4%;
+	border: 1px solid #ffa5a5;
+	margin-bottom: 15px;
+}
+#first_buy #third_buy {
+	width: 95%;
+	margin: 0 auto;
+	padding: 30px 1.4%;
+	margin-bottom: 15px;
+	border: 1px solid #ffa5a5;
+}
+#third_buy #th_contents {
+	width: 97.5%;
+	margin: 0 auto;
+	padding: 10px 1.4%;
+	overflow: hidden;
+}
+#th_contents table {
+	width: 100%;
+	overflow: hidden;
+}
+section .minus {
+	width: 36.3%;
+	height: 25px;
+	margin: 0 auto;
+}
+.minus img {
+	width: 100%;
+	height: 100%;
+}
+section .plus {
+	width: 36.3%;
+	height: 25px;
+	margin: 0 auto;
+}
+.plus img {
+	width: 100%;
+	height: 100%;
+}
+section .complete {
+	width: 36.3%;
+	height: 25px;
+	margin: 0 auto;
+}
+.complete img {
+	width: 100%;
+	height: 100%;
+}
+#th_contents td {
+	padding: 10px 0px;
+}
+#th_contents .th_title {
+	border-bottom: 1px dotted #aaaaaa;
+	font-weight: bold;
+	color: white;
+	font-size: 14px;
+	text-shadow: -1px -1px 0px black;
+}
+#th_contents #mill_in {
+	padding: 3px 7px;
+	border: 1px solid black;
+	color: white;
+	text-align: -1px -1px 0px black;
+	border-radius : 5px;
+	cursor: pointer;
+	float: right;
+	overflow: hidden;
+	font-size: 12px;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+}
+#th_contents #mill_in:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+
+
+
+
+
+
+
+#first_buy #four_buy {
+	width: 95%;
+	margin: 0 auto;
+	padding: 10px 1.4%;
+	margin-bottom: 15px;
+	border: 1px solid #ffa5a5;
+}
+#four_buy input[type="text"] {
+	width: 98%;
+	padding: 5px 0.7%;
+	border: 1px solid #aaaaaa;
+}
+
+
+
+
+
+#first_buy #five_buy {
+	width: 95%;
+	margin: 0 auto;
+	padding: 10px 1.4%;
+	margin-bottom: 20px;
+	border: 1px solid #ffa5a5;
+	overflow: hidden;
+}
+
+#five_buy #pay_way {
+	width: 57.1%;
+	height: 230px;
+	padding: 10px 1.4%;
+	float: left;
+	overflow: hidden;
+}
+#five_buy #pay_check {
+	width: 35.3%;
+	height: 230px;
+	padding: 10px 1.4%;
+	margin-left: 1.7%;
+	float: left;
+	overflow: hidden;
+	border-left: 1px dashed #aaaaaa;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
