@@ -16,6 +16,13 @@
 		$(".pg_cart").css("color","#666666");
 		$(".pg_buy").css("color","white");
 		$("#pg_comple").css("color","#666666");
+		
+		$("#coments").keyup(function(){
+			if($(this).val().length > 50){
+				alert("50자 이하로 작성해주세요");
+				$("#coments").val("");
+			}
+		});
 	});
 </script>
 </head>
@@ -105,7 +112,7 @@
 			<!-- 남기고자 하는 말 -->
 			<div class="title"><span>◎</span> 구매 코멘트</div>
 			<div id="four_buy">
-				
+				<input id="coments" type="text" placeholder="남기고자 하는 글을 작성해 주세요 (최대: 50자)">
 			</div>
 			<!-- 결제 -->
 			<div class="title"><span>◎</span> 결제 수단</div>

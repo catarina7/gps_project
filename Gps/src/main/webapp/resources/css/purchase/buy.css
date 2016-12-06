@@ -71,9 +71,8 @@ section #first_buy {
 }
 #first_buy #third_buy {
 	width: 95%;
-	height: 130px;
 	margin: 0 auto;
-	padding: 10px 1.4%;
+	padding: 30px 1.4%;
 	margin-bottom: 15px;
 	border: 1px solid #ffa5a5;
 }
@@ -88,22 +87,25 @@ section #first_buy {
 	overflow: hidden;
 }
 section .minus {
-	width: 37%;
+	width: 36.3%;
 	height: 25px;
 	margin: 0 auto;
-	background-color: #ffe5e5;
+	background-image: url("/gps/resources/css/purchase/img/remove.png");
+	background-size: 25px 25px;
 }
 section .plus {
-	width: 37%;
+	width: 36.3%;
 	height: 25px;
 	margin: 0 auto;
-	background-color: #ffe5e5;
+	background-image: url("/gps/resources/css/purchase/img/add.png");
+	background-size: 25px 25px;
 }
 section .complete {
-	width: 37%;
+	width: 36.3%;
 	height: 25px;
 	margin: 0 auto;
-	background-color: #ffe5e5;
+	background-image: url("/gps/resources/css/purchase/img/chat.png");
+	background-size: 25px 25px;
 }
 #th_contents td {
 	padding: 10px 0px;
@@ -113,6 +115,7 @@ section .complete {
 	font-weight: bold;
 	color: white;
 	font-size: 14px;
+	text-shadow: -1px -1px 0px black;
 }
 #th_contents #mill_in {
 	padding: 3px 7px;
@@ -139,12 +142,20 @@ section .complete {
 
 #first_buy #four_buy {
 	width: 95%;
-	height: 80px;
 	margin: 0 auto;
 	padding: 10px 1.4%;
 	margin-bottom: 15px;
 	border: 1px solid #ffa5a5;
 }
+#four_buy input[type="text"] {
+	width: 98%;
+	padding: 5px 0.7%;
+}
+
+
+
+
+
 #first_buy #five_buy {
 	width: 95%;
 	height: 250px;
