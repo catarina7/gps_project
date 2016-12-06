@@ -27,13 +27,19 @@
 		update member 
 		<trim prefix="set" suffixOverrides=",">
 			<if test="m_pw != null">
-				m_pw = #{m_pw}
+				m_pw = #{m_pw},
 			</if>
 			<if test="m_tel != null">
-				m_tel = #{m_tel}
+				m_tel = #{m_tel},
 			</if>
+			<if test="m_gender != null">
+				m_gender = #{m_gender},
+			</if>			
 			<if test="m_email != null">
-				m_email = #{m_email}
+				m_email = #{m_email},
+			</if>			
+			<if test="m_kind != 1">
+				m_kind = #{m_kind}
 			</if>
 		</trim>
 		where m_id = #{m_id}
