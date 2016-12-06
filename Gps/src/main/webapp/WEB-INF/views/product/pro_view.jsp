@@ -69,12 +69,19 @@
 	    	location.href="pro_view?pro_num=${pro_view.pro_num}&curPage=${pageImg.lastNum+1}";
 	    });
 	    
+	    $("#cart").click(function() {
+	    	if(confirm("장바구니에 담으시겠습니까?") == true){
+				location.href="../cart_favorite/cartAdd?m_id=${member.m_id}&pro_num=${pro_view.pro_num}";
+	    	}else{
+	    		return;
+	    	}
+		});
 	});
 </script>
 
 </head>
 <body>
-
+	
 	<c:import url="/header" />
 
 	<!-- section -->
@@ -386,6 +393,7 @@
 				</div>
 				<button class="five_btn" id="favorite">관심상품</button>
 				<button class="five_btn" id="cart">장바구니</button>
+				
 			</div>
 			<!-- review -->
 			<div id="six_pro">

@@ -22,6 +22,6 @@
 
 <a href="product/pro_list">Product List</a>
 
-<a href="cart">cart</a>
+<a href="cart_favorite/cartList?m_id=${member.m_id}">cart</a>
 </body>
 </html>

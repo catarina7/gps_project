@@ -56,7 +56,6 @@ public class ProductDAO {
 	}
 	
 	public List<ProductFileDTO> productViewImgList(int pro_num) throws Exception{
-		
 		return sqlSession.selectList(namespace+"pro_view_img_list", pro_num);
 	}
 	

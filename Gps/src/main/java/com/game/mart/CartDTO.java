@@ -3,7 +3,7 @@ package com.game.mart;
 public class CartDTO {
 	private int c_num;
 	private String m_id;
-	private String pro_num;
+	private int pro_num;
 	
 	public int getC_num() {
 		return c_num;
@@ -17,10 +17,10 @@ public class CartDTO {
 	public void setM_id(String m_id) {
 		this.m_id = m_id;
 	}
-	public String getPro_num() {
+	public int getPro_num() {
 		return pro_num;
 	}
-	public void setPro_num(String pro_num) {
+	public void setPro_num(int pro_num) {
 		this.pro_num = pro_num;
 	}
 	
