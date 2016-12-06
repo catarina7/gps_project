@@ -165,15 +165,29 @@ section .complete {
 
 #first_buy #five_buy {
 	width: 95%;
-	height: 250px;
 	margin: 0 auto;
 	padding: 10px 1.4%;
 	margin-bottom: 20px;
 	border: 1px solid #ffa5a5;
+	overflow: hidden;
 }
 
-
-
+#five_buy #pay_way {
+	width: 57.1%;
+	height: 230px;
+	padding: 10px 1.4%;
+	float: left;
+	overflow: hidden;
+}
+#five_buy #pay_check {
+	width: 35.3%;
+	height: 230px;
+	padding: 10px 1.4%;
+	margin-left: 1.7%;
+	float: left;
+	overflow: hidden;
+	border-left: 1px dashed #aaaaaa;
+}
 
 
 

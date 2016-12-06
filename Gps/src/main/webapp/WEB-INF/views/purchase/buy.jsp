@@ -123,7 +123,12 @@
 			<!-- 결제 -->
 			<div class="title"><span>◎</span> 결제 수단</div>
 			<div id="five_buy">
-				
+				<div id="pay_way">
+					<!-- 결제 수단 -->
+				</div>
+				<div id="pay_check">
+					<!-- 최종 결제 확인 -->
+				</div>
 			</div>
 		</div>
 	</section>
