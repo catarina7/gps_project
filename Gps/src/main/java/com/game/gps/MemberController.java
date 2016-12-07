@@ -109,8 +109,55 @@ public class MemberController {
 	//로그아웃
 	@RequestMapping(value="/logout")
 	public String logout(HttpSession session){
-		session.invalidate();
+		session.removeAttribute("member");;
 		return "redirect:/index";
+	}
+	
+	
+	//pw 확인
+	@RequestMapping(value="pw_check")
+	public String pw_chk(@RequestParam int category, Model model){
+		
+		model.addAttribute("category", category);		
+		return "/member/pw_check";
+	}
+	
+	//회원정보 보기
+	@RequestMapping(value="mem_Info")
+	public String mem_info(){
+		return "/member/mem_info";
+	}
+	
+	
+	//회원정보 수정
+	@RequestMapping(value="/mem_Mod")
+	public String meminfo_mod(){
+		return "/member/mem_mod";
+	}
+	
+	//회원정보 수정 (ajax)
+	@RequestMapping(value="/MemMod", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<Integer> mem_mod(MemberDTO mDto, HttpSession session){
+		
+		int result = 0;
+		
+		try {
+			result = memberService.memMod(mDto);
+			mDto = memberService.idcheck(mDto.getM_id());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(result == 0){
+			result = 0;
+		}else {
+			session.removeAttribute("member");
+			session.setAttribute("member", mDto);
+		}
+		
+		
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
 	
 	

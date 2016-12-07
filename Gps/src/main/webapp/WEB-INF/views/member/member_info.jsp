@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/member/member_info.css">
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/member/member_info.js"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
@@ -85,8 +86,8 @@
 					<div class="information" id="meminfo_mod">
 						<dl>
 							<dt></dt>
-							<dd class="title">회원정보 수정</dd>
-							<dd>회원 정보를 수정합니다.</dd>
+							<dd class="title">회원정보 관리</dd>
+							<dd>회원 정보를 관리합니다.</dd>
 						</dl>
 					</div>
 				</div>
@@ -102,7 +103,7 @@
 				</div>
 					<!-- 회원 탈퇴 -->
 				<div class="mem_in">
-					<div class="information" id="">
+					<div class="information" id="mem_dropout">
 						<dl>
 							<dt></dt>
 							<dd class="title">회원 탈퇴</dd>

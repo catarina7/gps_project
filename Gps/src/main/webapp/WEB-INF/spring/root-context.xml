@@ -15,7 +15,7 @@
 		<property name="username" value="gps"></property>
 		<property name="password" value="gps"></property>
 		<!-- <property name="username" value="user01"></property> -->
-		<!-- <property name="password" value="user01"></property> -->
+	<!-- 	<property name="password" value="user01"></property> -->
 
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 		<property name="url" value="jdbc:oracle:thin:@192.168.30.8:1521:xe"></property>
