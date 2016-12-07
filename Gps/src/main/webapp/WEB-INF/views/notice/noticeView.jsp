@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_write.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>${noticeView.n_title}</title>
 <style type="text/css">
@@ -52,47 +52,46 @@
 		<!-- section -->
 			<section>
 			<!-- 내용 넣기 -->
+			<c:import url="/user_menu_bar" />
+			<div id="pro_w">
 				<center>
-				<h1>공지사항</h1><hr>
-				<form action="noticeView" method="post">
-				<table class="WriteTable" border="1" cellpadding="0" cellspacing="0">
-					
-					<tr>
-						<td>작성자</td>
-						<td>${noticeView.n_writer}</td>
-					</tr>
-			
-					<tr>
-						<td>제목</td>
-						<td >${noticeView.n_title}</td>
-				
-					</tr>
-			
-					<tr>
-						<td>
-						<p>${noticeView.n_contents}</p>
-						</td>
-					</tr>
-				</table>
-		
-				<table class="WriteTable">
-					<tr>
-						<td colspan="2" id="Btn">
-						<%-- <c:if test="${sessionScope.m_kind==2}"> --%>
-						<input type="button" value="수정" id="modBtn">
-						<input type="button" value="삭제" id="delBtn" >
-						<%-- </c:if> --%>
-						<input type="button" value="목록" id="listBtn">
-						</td>
-					</tr>
-			
-				</table>
-			</form>
-			</center>
-			
-			</section>
-	
-		<c:import url="/footer" />
+					<h1>공지사항</h1>
+						<form action="noticeView" method="post">
+							<table>
+							<colgroup>
+								<col style="width:20%;">
+								<col style="width:80%;">	
+							</colgroup>
+							
+							<tr>
+								<td class="title">작성자</td>
+								<td><span class="pro_in">${noticeView.n_writer}</span></td>
+							</tr>
+							
+							<tr>
+								<td class="title">제목</td>
+								<td><span class="pro_in">${noticeView.n_title}</span></td>
+							</tr>
+							
+							<tr>
+								<td class="title">내용</td>
+								<td>
+									<div id="n_textarea">
+										${noticeView.n_contents}
+									</div>
+								</td>
+							</tr>
+							</table>
+							<div id="pro_w_btn">
+								<input type="button" value="수정" id="modBtn" class="btn">
+								<input type="button" value="삭제" id="delBtn" class="btn"> 
+								<input type="button" value="목록" id="listBtn" class="btn">
+							</div>
+						</form>
+				</center>
+			</div>
+			</section>	
+			<c:import url="/footer" />
 	
 </body>
 </html>

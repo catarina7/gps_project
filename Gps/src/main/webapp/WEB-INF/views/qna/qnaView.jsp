@@ -61,6 +61,7 @@
 		<center>
 			<h1>제 질문이요!</h1>
 			<form action="qnaView" method="post">
+			
 				<table class="WriteTable" border="1" cellpadding="0" cellspacing="0">
 					<tr>
 						<td>작성자</td>
@@ -78,8 +79,10 @@
 						<p>${qnaView.q_contents}</p>
 						</td>
 					</tr>
+					
+					
 				</table>
-		
+						
 				<table class="WriteTable">
 					<tr>
 						<td colspan="2" id="Btn">

@@ -9,18 +9,10 @@
 <title>공지사항</title>
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_write.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
-<style type="text/css">
-	.WriteTable{
-		width: 600px;
-	}
-	
-	#Btn{
-		text-align: right;
-	}
-</style>
+
 <script type="text/javascript">
 $(function(){
 	
@@ -58,47 +50,44 @@ $(function(){
 </head>
 <body>
 	
-	<c:import url="/header" />
-	
-		<!-- section -->
-			<section>
-			<!-- 내용 넣기 -->
-	<center>
-	<h1>공지사항</h1><hr>
-	<form action="noticeWrite" method="post" id="frm">
-		<table class="WriteTable" border="1" cellpadding="0" cellspacing="0">
-			<tr>
-				<td>작성자</td>
-				<td><input type="text" readonly="readonly" name="n_writer" value="test" size="50"></td>
-			</tr>
-			
-			<tr>
-				<td>제목</td>
-				<td><input type="text" name="n_title" size="50" placeholder="제목을 입력하세요."></td>
-				
-			</tr>
-			
-			<tr>
-				<td colspan="2">
-					<textarea id="smarteditor" rows="20" cols="60" name="n_contents" ></textarea>
-				</td>
-			</tr>
-		</table>
-		
-		<table class="WriteTable">
-			<tr>
-				<td colspan="2" id="Btn">
-					<input type="button" value="작성완료" id="savebutton">
-					<input type="button" value="목록" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList';">
-				</td>
-			</tr>
-			
-		</table>
-	</form>
-	</center>
-	
+		<c:import url="/header" />
+		<section>
+		<c:import url="/user_menu_bar"/>
+		<div id="pro_w">
+		<h2 style="text-align: center;">※공지사항※</h2>
+			<form action="noticeWrite" method="post" id="frm">
+				<table>
+					<colgroup>
+						<col style="width:20%;">
+						<col style="width:80%;">
+					</colgroup>
+					<tr>
+						<td class="title">작성자</td>
+						<td><input type="text" class="pro_in" name="n_writer" value="test" readonly="readonly" ></td>
+					</tr>
+					
+					<tr>
+						<td class="title">제목</td>
+						<td><input type="text" class="pro_in" name="n_title" placeholder="제목을 입력하세요."></td>
+					</tr>
+					
+					<tr>
+						<td class="title">내용</td>					
+						<td>
+							<div id="n_textarea">
+								<textarea id="smarteditor" name="n_contents"></textarea>
+							</div>
+						</td>
+					</tr>
+					
+				</table>
+				<div id="pro_w_btn">
+					<input type="button" value="작성완료" class="btn" id="savebutton">
+					<input type="button" class="btn" value="목록" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList';">
+				</div>
+			</form>
+			</div>
 	</section>
-	
-		<c:import url="/footer" />
+	<c:import url="/footer" />
 </body>
 </html>
