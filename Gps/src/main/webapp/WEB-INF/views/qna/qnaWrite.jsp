@@ -2,25 +2,16 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>QnA</title>
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_write.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
-<style type="text/css">
-	.WriteTable{
-		width: 600px;
-	}
-	
-	#Btn{
-		text-align: right;
-	}
-</style>
 <script type="text/javascript">
 $(function(){
 	
@@ -52,53 +43,80 @@ $(function(){
         //폼 submit
         $("#frm").submit();
     });
+    
+    /* file Tag 추가 및 삭제 시작*/
+    var num=0;
+    $("#imgPlus").click(function(){
+    	if(num >=0){
+    		num=num*1+1;
+    	}
+    	//file Tag 생성
+    	$("#fileinput")
+    			.append('<div id="btn'+num+'" class="files_import"><input type="file" name="file" id="btn'+num+'"> <input type="button" id="btn'+num+'" class="butn btn" value="삭제"> <br id="btn'+num+'"></div>');
+    	
+    	//삭제 버튼 클릭
+    	$(".butn").click(function(){
+    		var n = $(this).attr("id");
+    		$("#"+n).remove();
+    		$(this).remove();
+    	});
+    });
+    /* file Tag 추가 및 삭제 끝*/
     /* smarteditor 끝 */
 });
 </script>
 </head>
 <body>
-	
 	<c:import url="/header" />
-	
-		<!-- section -->
-			<section>
-			<!-- 내용 넣기 -->
-	<center>
-	<h1>운영진에게 물어봐!</h1><hr>
-	<form action="qnaWrite" method="post" id="frm">
-		<table class="WriteTable" border="1" cellpadding="0" cellspacing="0">
-			<tr>
-				<td>작성자</td>
-				<td><input type="text" readonly="readonly" name="q_writer" value="test" size="50"></td>
-			</tr>
-			
-			<tr>
-				<td>제목</td>
-				<td><input type="text" name="q_title" size="50" placeholder="제목을 입력하세요."></td>
+	<section>
+		<c:import url="/user_menu_bar"/>
+		<div id="pro_w">
+		<h2 style="text-align: center;">※운영진에게 물어봐※</h2>
+			<form action="qnaWrite" method="post" id="frm" enctype="multipart/form-data">
+				<table>
+					<colgroup>
+						<col style="width:20%;">
+						<col style="width:80%;">
+					</colgroup>
+					<tr>
+						<td class="title">작성자</td>
+						<td><input type="text" class="pro_in" name="q_writer" value="test" readonly="readonly" ></td>
+					</tr>
+					
+					<tr>
+						<td class="title">제목</td>
+						<td><input type="text" class="pro_in" name="q_title"></td>
+					</tr>
+					
+					<tr>
+						<td class="title">내용</td>					
+						<td>
+							<div id="q_textarea">
+								<textarea id="smarteditor" name="q_contents"></textarea>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="title">이미지등록</td>
+						<td>
+							<div>
+								<span class="title">[이미지 등록]</span> <input type="button" id="imgPlus" class="btn" value="추가하기">
+								<div id="fileinput"></div>
+							</div>
+						</td>
 				
-			</tr>
-			
-			<tr>
-				<td colspan="2">
-					<textarea id="smarteditor" rows="20" cols="60" name="q_contents" ></textarea>
-				</td>
-			</tr>
-		</table>
-		
-		<table class="WriteTable">
-			<tr>
-				<td colspan="2" id="Btn">
-					<input type="button" value="작성완료" id="savebutton">
-					<input type="button" value="목록" onclick="location.href='${pageContext.request.contextPath}/qna/qnaList';">
-				</td>
-			</tr>
-			
-		</table>
-	</form>
-	</center>
-	
+					</tr>
+				</table>
+				<div id="pro_w_btn">
+					<input type="button" value="작성완료" class="btn" id="savebutton">
+					<input type="button" class="btn" value="목록" onclick="location.href='${pageContext.request.contextPath}/qna/qnaList';">
+				</div>
+			</form>
+			</div>
 	</section>
+	<c:import url="/footer" />
 	
-		<c:import url="/footer" />
+	
 </body>
 </html>

@@ -56,4 +56,9 @@
 			update qna set counts=counts+1 where q_num=#{q_num}
 		</update>
 		
+		<!-- pro_list 글전체 갯수 가져오기 -->
+		<select id="qnaCount" resultType="int">
+			select count(q_num) from qna
+		</select>
+		
 	</mapper>

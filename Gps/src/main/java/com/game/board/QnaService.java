@@ -26,9 +26,9 @@ public class QnaService {
 		List<MultipartFile> file = mr.getFiles("file");
 		
 		//실제 저장 파일
-		ArrayList<String> qfileName = new ArrayList<String>();
+		ArrayList<String> qfile_name = new ArrayList<String>();
 		//올릴 때 파일
-		ArrayList<String> origineName = new ArrayList<String>();
+		ArrayList<String> qorigine_name = new ArrayList<String>();
 		
 		for(int i=0;i<file.size();i++){
 			MultipartFile mf = file.get(i);
@@ -39,10 +39,10 @@ public class QnaService {
 			//UUID 붙은 file
 			mf.transferTo(f);
 			
-			qfileName.add(fileName);
-			origineName.add(origineNames);
+			qfile_name.add(fileName);
+			qorigine_name.add(origineNames);
 		}
-		return qnaDAO.qnaWrite(qnaDTO, qfileName, origineName);
+		return qnaDAO.qnaWrite(qnaDTO, qfile_name, qorigine_name);
 	}
 	
 	//qna리스트

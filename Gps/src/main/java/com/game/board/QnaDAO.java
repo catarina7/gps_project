@@ -22,6 +22,11 @@ public class QnaDAO {
 	public QnaDTO qnaView(int q_num) throws Exception{
 		return sqlSession.selectOne(namespace+"qnaView", q_num);
 	}
+	
+	public List<QnaFileDTO> qnaViewImgList(int q_num) throws Exception{
+		return sqlSession.selectList(namespace+"qnaView_imgList", q_num);
+	}
+	
 	public List<QnaFileDTO> qnaViewImg(PageMaker pageMaker, int q_num) throws Exception{
 		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("q_num", q_num);
@@ -29,26 +34,28 @@ public class QnaDAO {
 		return sqlSession.selectList(namespace +"qnaView_img", data);
 	}
 	
-	//List
+	//이미지 갯수 가져오기
+	public int qnaViewImgCount(int q_num) throws Exception{
+		return sqlSession.selectOne(namespace+"qnaView_imgCount", q_num);
+	}
+	
+	//글List
 	public List<QnaDTO> qnaList(PageMaker pageMaker) throws Exception{
 		return sqlSession.selectList(namespace+"qnaList", pageMaker);
 	}
-	public List<QnaFileDTO> qnaViewImgList(int q_num) throws Exception{
-		return sqlSession.selectList(namespace+"qnaView_imgList", q_num);
-	}
 	
 	//Write
-	public int qnaWrite(QnaDTO qnaDTO, ArrayList<String> qfileName, ArrayList<String> origineName) throws Exception{
+	public int qnaWrite(QnaDTO qnaDTO, ArrayList<String> qfile_name, ArrayList<String> qorigine_name) throws Exception{
 		//일반 글
 		sqlSession.insert(namespace +"qnaWrite", qnaDTO);
 		//q_num가져오기
 		int q_num = Integer.valueOf(qnaDTO.getQ_num());
 		
 		Map<String, Object> data = new HashMap<String, Object>();
-		for(int i=0;i<qfileName.size();i++){
+		for(int i=0;i<qfile_name.size();i++){
 			data.put("q_num",q_num);
-			data.put("qfile_name", qfileName.get(i));
-			data.put("origine_name", origineName.get(i));
+			data.put("qfile_name", qfile_name.get(i));
+			data.put("qorigine_name", qorigine_name.get(i));
 			sqlSession.insert(namespace+"qna_fileWrite", data);
 		}
 		return 1;
@@ -62,12 +69,8 @@ public class QnaDAO {
 		return sqlSession.update(namespace+"qnaCounts", q_num);
 	}
 	
-	//이미지 갯수 가져오기
-	public int qnaViewImgCount(int q_num) throws Exception{
-		return sqlSession.selectOne(namespace+"qnaView_imgCount", q_num);
-	}
 	//글 전체 갯수 가져오기
 	public int qnaCount() throws Exception{
-		return sqlSession.selectOne(namespace+"qna_boadrCount");
+		return sqlSession.selectOne(namespace+"qnaCount");
 	}
 }
