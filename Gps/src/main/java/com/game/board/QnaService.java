@@ -65,25 +65,9 @@ public class QnaService {
 		}
 	
 	//View
-	public void qnaView(int curPage, int perPage, int q_num, Model model) throws Exception{
+	public QnaDTO qnaView(int q_num) throws Exception{
 		qnaDAO.qnaCounts(q_num);
-		int totalCount = qnaDAO.qnaViewImgCount(q_num);
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCurPage(curPage);
-		pageMaker.setPerPage(perPage);
-		pageMaker.makeRow();
-		pageMaker.makePage(totalCount);
-		
-		//qnaView 일반
-		QnaDTO qnaDTO = qnaDAO.qnaView(q_num);
-		List<QnaFileDTO> ar = qnaDAO.qnaViewImg(pageMaker, q_num);
-		
-		System.out.println("ar : "+ ar.size());
-		
-		model.addAttribute("pageImg", pageMaker);
-		model.addAttribute("qnaView", qnaDTO);
-		model.addAttribute("qnaImg", ar);
-		
+		return qnaDAO.qnaView(q_num);	
 	}
 	
 	//Delete
