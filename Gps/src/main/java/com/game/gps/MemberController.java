@@ -154,11 +154,16 @@ public class MemberController {
 		}else {
 			session.removeAttribute("member");
 			session.setAttribute("member", mDto);
-		}
-		
-		
+		}		
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
+	
+	//비밀번호 수정하기 
+	@RequestMapping(value="/pw_Mod")
+	public String pwmod(){
+		return "/member/pw_mod";
+	}
+	
 	
 	
 	//약정넣기1

@@ -25,7 +25,8 @@
 					<button class="x_div">X</button>
 				</div>
 				<div class="div_contents">
-				
+					<!-- id -->
+					<c:import url="/member/searchid" /> 
 				</div>
 			</div>
 			<div id="first_pw_div">
@@ -33,7 +34,8 @@
 					<button class="x_div">X</button>
 				</div>
 				<div class="div_contents">
-				
+					<!-- pw -->
+					<c:import url="/member/searchPw" /> 
 				</div>
 			</div>
 			<h2>LOGIN</h2>

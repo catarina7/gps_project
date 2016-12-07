@@ -29,27 +29,27 @@
 </head>
 <body>
 	
-	<c:import url="/header" />
-	
+
 	<!-- section -->
 	<section>
+	
 		<!-- 내용 넣기 -->
 		<h2>비밀번호 찾기</h2>
 		
-		id: <input type="text" name="m_id" id="id_input" class="input">
+		id: <input type="text" name="m_id" id="sp_id_input" class="input">
 				<p id="idchk">id를 정확하게 입력해주세요.</p><br>
 		
-		name: <input type="text" name="m_name" id="name_input" class="input">
+		name: <input type="text" name="m_name" id="sp_name_input" class="input">
 				<p id="namechk">이름을 입력해주세요.</p>	<br> 
 		
-		e-mail: <input type="text" name="m_email" id="email_input" placeholder="이메일을 입력해주세요." class="input">
+		e-mail: <input type="text" name="m_email" id="sp_email_input" placeholder="이메일을 입력해주세요." class="input">
 				<p id="emailchk">이메일을 정확하게 입력해주세요.</p>
 		
 		<button id="searchpw">찾기</button>
 		
-	</section>
+	</section> 
+
 	
-	<c:import url="/footer" />
 	
 </body>
 </html>

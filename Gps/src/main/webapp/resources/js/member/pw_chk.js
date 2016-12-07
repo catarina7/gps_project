@@ -33,9 +33,9 @@ $(function(){
 			if($("#category").val() == 1){
 				location.href="mem_Info";
 			}else if($("#category").val() == 2){
-				location.href="";
+				location.href="pw_Mod";
 			}else if($("#category").val() == 3){
-				location.href="";
+				location.href="mem_Out";
 			}
 		}else{
 			alert("비밀번호를 체크해 주세요.");

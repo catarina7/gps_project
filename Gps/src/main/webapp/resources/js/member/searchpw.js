@@ -1,4 +1,4 @@
-$(function(){
+ $(function(){
 	
 	//name 입력확인	
 	var idChk=0;	//id입력 여부 확인
@@ -6,7 +6,7 @@ $(function(){
 	var emailchk=0;	//전화번호 입력 체크
 	
 	//id input에 한글 불가 및 미입력 경고 메세지
-	$("#id_input").keyup(function(event){
+	$("#sp_id_input").keyup(function(event){
 		if (!(event.keyCode >=37 && event.keyCode<=40)) {
 			var inputVal = $(this).val();
 			$(this).val(inputVal.replace(/[^a-z0-9]/gi,''));
@@ -21,7 +21,7 @@ $(function(){
 	});
 	
 	//이름 입력 여부 체크 경고 메세지
-	$("#name_input").keyup(function(){
+	$("#sp_name_input").keyup(function(){
 		if($(this).val()==""){
 			$("#namechk").show();
 			 
@@ -33,7 +33,7 @@ $(function(){
 	
 	
 	//email 입력 여부 체크 경고메세지
-	$("#email_input").keyup(function(){
+	$("#sp_email_input").keyup(function(){
 		//이메일 유효성 검사 정규표현식
 		var reg=/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 		if($(this).val()=="" || !(reg.test($(this).val()))){
@@ -56,9 +56,9 @@ $(function(){
 			$.ajax({
 				url : "SearchPw",
 				data : {
-					m_id: $("#id_input").val(),
-					m_name : $("#name_input").val(),
-					m_email : $("#email_input").val()
+					m_id: $("#sp_id_input").val(),
+					m_name : $("#sp_name_input").val(),
+					m_email : $("#sp_email_input").val()
 					},				
 				type : "post",
 				success : function(result){
