@@ -179,15 +179,7 @@ section .complete {
 	padding: 10px 1.4%;
 	float: left;
 	overflow: hidden;
-}
-#five_buy #pay_check {
-	width: 35.3%;
-	padding: 10px 1.4%;
-	margin-left: 1.7%;
-	float: left;
-	overflow: hidden;
-	border-left: 1px dashed #aaaaaa;
-	background-color: #ffe5e5;
+	border-right: 1px dashed #aaaaaa;
 }
 
 /* 결제  */
@@ -212,7 +204,6 @@ section .complete {
 	overflow: hidden;
 	display: none;
 }
-
 #pay_way .opinion input[type="button"]{
 	color: white;
 	padding: 3px 15px;
@@ -266,19 +257,115 @@ section .complete {
 	width: 30%;
 	padding: 3px 0.7%;
 }
+#bank_c p{
+	width: 100%;
+	text-shadow: -1px -1px 0px #134053;
+	color: #57e9ec;
+	font-size: 15px;
+	padding: 15px 0px;
+	text-align: center;
+}
+#bank_c #titi {
+	color: #b2b2b2;
+	font-weight: bold;
+}
+#bank_c div {
+	padding: 5px 0.7%;
+	border: 2px solid #aaaaaa;
+}
+#bank_c #text {
+	width: 100%;
+	text-shadow: none;
+	color: white;
+}
+#bank_c ul {
+	width: 70%;
+}
+#bank_c li{
+	width: 100%;
+	font-weight: bold;
+	padding: 0px 2.4%;
+	font-size: 15px;
+	padding: 2px 20%;
+	color: white;
+	font-size: 13px;
+	text-align: center;
+}
+
+#five_buy #pay_check {
+	width: 35.3%;
+	padding: 10px 1.4%;
+	margin-left: 1.7%;
+	float: left;
+	overflow: hidden;
+}
+
+#pay_check #pay_check_1 {
+	width: 100%;
+	padding: 5px 0px;
+	border-bottom: 1px solid #aaaaaa;
+}
+#pay_check div {
+	padding: 15px 1.4%;
+}
+#pay_check_1 dl {
+	width: 100%;
+	margin: 0 auto;
+}
+#pay_check_1 dt {
+	color: white;
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	font-weight: bold;
+}
+#pay_check_1 dd{
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+#pay_check_1 dd span {
+	font-size: 12px;
+}
+#pay_check #pay_check_2 {
+	width: 100%;
+	padding: 5px 0px;
+}
+#pay_check #pay_check_2 h3 {
+	color: #63a2e0;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	text-shadow: -1px -1px 0px #113355;
+	padding: 2px 0px;
+}
+#pay_check #pay_check_2 #pri {
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	float: right;
+	overflow: hidden;
+}
 
 
+#first_buy #last_buy {
+	padding: 5px 15px;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-weight: bold;
+	color: white;
+	font-size: 20px;
+	text-shadow: -1px -1px 0px #2a2a2a;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	float: right;
+	overflow: hidden;
+	cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
+#first_buy #last_buy:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
 
 
 
