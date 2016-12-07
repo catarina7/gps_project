@@ -10,6 +10,7 @@ section #first_login{
 	width: 30%;
 	margin: 0 auto;
 	padding: 72.5px 1.4%;
+	min-width: 432px;
 }
 #first_login h2 {
 	width: 97%;
@@ -91,12 +92,50 @@ section #first_login{
 	background-color: #1e2837;
 }
 
+/* 아이디 찾기 */
+section #first_id_div {
+	display: none;
+	position: absolute;
+	background-color: #666666;
+	width: 27.2%;
+	height: 230px;
+	min-width: 432px;
+	border: 2px solid #aaaaaa;
+	border-radius: 4px;
+	overflow: hidden;
+	padding: 10px 1.4%;
+}
+#first_login .x_div {
+	color: white;
+	font-weight: bold;
+	font-size: 20px;
+	background-color: #666666;
+	border: 0px;
+	float: right;
+	overflow: hidden;
+	cursor: pointer;
+	padding: 3px 0px;
+}
+#first_login .div_down {
+	width: 100%;
+}
+#first_login .div_contents {
+	width: 100%;
+}
 
-
-
-
-
-
+/* 비밀번호 찾기 */
+section #first_pw_div {
+	display: none;
+	position: absolute;
+	background-color: #666666;
+	width: 27.2%;
+	height: 230px;
+	min-width: 432px;
+	border: 2px solid #aaaaaa;
+	border-radius: 4px;
+	overflow: hidden;
+	padding: 10px 1.4%;
+}
 
 
 

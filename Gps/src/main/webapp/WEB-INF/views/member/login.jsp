@@ -20,6 +20,22 @@
 	<section>
 		<!-- 내용 넣기 -->
 		<div id="first_login">
+			<div id="first_id_div">
+				<div class="div_down">
+					<button class="x_div">X</button>
+				</div>
+				<div class="div_contents">
+				
+				</div>
+			</div>
+			<div id="first_pw_div">
+				<div class="div_down">
+					<button class="x_div">X</button>
+				</div>
+				<div class="div_contents">
+				
+				</div>
+			</div>
 			<h2>LOGIN</h2>
 			
 			<div id="second_login">
