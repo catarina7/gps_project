@@ -206,7 +206,7 @@ $(function(){
 		}else if(pwchk==0){
 			alert("비밀번호 확인을 진행해 주세요.");
 		}else if(dayDiff<=13){
-			alert("엄마 젖이나 더 먹고와라 애송이");
+			alert("13세 이하는 가입이 제한됩니다.");
 		}else if($("#gender").val() == "" || $("#gender").val() == null){
 			alert("성별 체크 확인해 주세요.");
 		}else{

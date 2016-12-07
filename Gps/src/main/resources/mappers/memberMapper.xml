@@ -38,7 +38,7 @@
 			<if test="m_email != null">
 				m_email = #{m_email},
 			</if>			
-			<if test="m_kind != 1">
+			<if test="m_kind != 0">
 				m_kind = #{m_kind}
 			</if>
 		</trim>

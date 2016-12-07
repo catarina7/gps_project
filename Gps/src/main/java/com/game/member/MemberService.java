@@ -34,6 +34,9 @@ public class MemberService {
 		}
 		
 		//회원정보 수정
+		public int memMod(MemberDTO mDto) throws Exception{
+			return memberDao.idMod(mDto);
+		}
 		
 		//회원탈퇴
 		
