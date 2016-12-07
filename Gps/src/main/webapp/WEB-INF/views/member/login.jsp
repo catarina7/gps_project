@@ -55,7 +55,7 @@
 				</div>
 			</div>
 		</div>
-	</section>
+	</section> 
 
 	<c:import url="/footer" />
 
