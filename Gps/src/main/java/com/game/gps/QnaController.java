@@ -49,11 +49,11 @@ public class QnaController {
 		return "qna/qnaList";
 	}
 	
-	@RequestMapping(value="/qnaView")
-	public String qnaView(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="1") int perPage, @RequestParam("q_num") int q_num, Model model){
+	@RequestMapping(value="/qnaView" )
+	public String qnaView(@RequestParam("q_num") int q_num, Model model){
 		
 		try {
-			qnaService.qnaView(curPage, perPage, q_num, model);
+			model.addAttribute("qnaView", qnaService.qnaView(q_num));
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

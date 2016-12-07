@@ -9,18 +9,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_write.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>${qnaView.q_title}</title>
-<style type="text/css">
-	.WriteTable{
-		width: 600px;
-	}
-	
-	#Btn{
-		text-align: right;
-	}
-</style>
+
 <script type="text/javascript">
 	$(function (){
 		$("#listBtn").click(function(){ //목록버튼
@@ -54,48 +46,52 @@
 </head>
 <body>
 	<c:import url="/header" />
-	
 	<!-- section -->
 	<section>
-		<!-- 내용 넣기 -->
+	<!-- section 내용 -->
+	<c:import url="/user_menu_bar"/>
+	<div id="pro_w">
 		<center>
-			<h1>제 질문이요!</h1>
-			<form action="qnaView" method="post">
-			
-				<table class="WriteTable" border="1" cellpadding="0" cellspacing="0">
-					<tr>
-						<td>작성자</td>
-						<td>${qnaView.q_writer}</td>
-					</tr>
-			
-					<tr>
-						<td>제목</td>
-						<td >${qnaView.q_title}</td>
-				
-					</tr>
-			
-					<tr>
-						<td>
-						<p>${qnaView.q_contents}</p>
-						</td>
-					</tr>
-					
-					
-				</table>
+			<h1>보여주기</h1>
+				<form action="qnaView" method="post">
+					<table>
+						<colgroup>
+							<col style="width:20%;">
+							<col style="width:80%;">
+						</colgroup>
 						
-				<table class="WriteTable">
-					<tr>
-						<td colspan="2" id="Btn">
-						<input type="button" value="답글" id="reBtn">
-						<input type="button" value="수정" id="modBtn">
-						<input type="button" value="삭제" id="delBtn" >
-						<input type="button" value="목록" id="listBtn">
-						</td>
-					</tr>
-				</table>
-			</form>
+							<tr>
+								<td class="title">작성자</td>
+								<td><span class="pro_in">${qnaView.q_writer}</span></td>
+							</tr>
+							
+							<tr>
+								<td class="title">제목</td>
+								<td><span class="pro_in">${qnaView.q_title}</span></td>
+							</tr>
+							
+							<tr>
+								<td class="title">내용</td>
+								<td>
+									<div id="n_textarea">
+										${qnaView.q_contents}
+									</div>
+								</td>
+							</tr>
+							
+							<!-- 이미지 View 해야함 -->	
+					</table>
+					<div id="pro_w_btn">
+						<input type="button" value="답글" id="reBtn" class="btn">
+						<input type="button" value="수정" id="modBtn" class="btn">
+						<input type="button" value="삭제" id="delBtn" class="btn">
+						<input type="button" value="목록" id="listBtn" class="btn">
+					</div>
+				</form>
 		</center>
+	</div>
 	</section>
-
+	<c:import url="/footer"/>
+	
 </body>
 </html>
