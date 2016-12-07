@@ -70,11 +70,20 @@ $(function(){
 	
 	
 	$("#findid_btn").click(function(){
-		location.href="searchid";
+		/*location.href="searchid";*/
+		$("#first_id_div").show();
+		$("#first_pw_div").hide();
 	});
 	
 	$("#findpw_btn").click(function(){
-		location.href="searchPw";
+		/*location.href="searchPw";*/
+		$("#first_pw_div").show();
+		$("#first_id_div").hide();
+	});
+	
+	$(".x_div").click(function(){
+		$("#first_id_div").hide();
+		$("#first_pw_div").hide();
 	});
 	
 	

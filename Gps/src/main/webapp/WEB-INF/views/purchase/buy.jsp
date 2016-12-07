@@ -23,6 +23,46 @@
 				$("#coments").val("");
 			}
 		});
+		
+		$(".c_login").click(function(){
+			$(".c").hide();
+			$(".cc").show();
+		});
+		
+		
+		$("#phone").click(function(){
+			$(".opinion").hide();
+			$("#phone_c").show();
+		});
+		$("#culture").click(function(){
+			$(".opinion").hide();
+			$("#culture_c").show();
+			$(".c").show();
+			$(".cc").hide();
+		});
+		$("#book").click(function(){
+			$(".opinion").hide();
+			$("#book_c").show();
+			$(".c").show();
+			$(".cc").hide();
+		});
+		$("#happy").click(function(){
+			$(".opinion").hide();
+			$("#happy_c").show();
+			$(".c").show();
+			$(".cc").hide();
+		});
+		$("#bank").click(function(){
+			$(".opinion").hide();
+			$("#bank_c").show();
+		});
+		$("#pin").click(function(){
+			$(".opinion").hide();
+			$("#pin_c").show();
+			$(".c").show();
+			$(".cc").hide();
+		});
+		
 	});
 </script>
 </head>
@@ -128,23 +168,125 @@
 			<div id="five_buy">
 				<div id="pay_way">
 					<!-- 결제 수단 -->
-					<div>
+					<div id="choice">
 						<!-- 선택 -->
+						<input type="radio" id="phone" name="choice"> <label for="phone">핸드폰 결제</label><!-- 핸드폰 결제 --> <br>
+						<input type="radio" id="culture" name="choice"> <label for="culture">문화상품권 결제</label> <!-- 문화상품권 결제 --><br>
+						<input type="radio" id="happy" name="choice"> <label for="happy">해피머니 결제</label> <!-- 해피머니 --><br>
+						<input type="radio" id="book" name="choice"> <label for="book">북앤라이프 결제</label> <!-- 북앤라이프 --><br>
+						<input type="radio" id="bank" name="choice"> <label for="bank">무통장 입금 (계좌이체, 인터넷뱅킹, 폰뱅킹)</label> <!-- 무통장입금(계좌이체, 인터넷뱅킹, 폰뱅킹) --><br>
+						<input type="radio" id="pin" name="choice"> <label for="pin">상품권 핀 번호 입력 결제</label> <!-- 핀 번호 직접 입력 -->
 					</div>
-					<div>
-						<!-- 상세 설명 -->
+					<div class="opinion" id="phone_c">
+						<!-- 상세 설명 : 핸드폰 결제-->
+						<div>
+							<select>
+								<option>KT</option>
+								<option>SKT</option>
+								<option>LGT</option>
+							</select>
+							<input type="text"> - <input type="text"> - <input type="text">
+						</div>
+						<input type="button" value="결제">
+					</div>
+					<div class="opinion coupon" id="culture_c">
+						<!-- 상세 설명 : 문화상품권 결제 -->
+						<div class="c">
+							<span>아이디 : </span><input type="text"><!-- 아이디 -->
+							<span>비밀번호 : </span> <input type="password"><!-- 비밀번호 -->
+							<input type="button" class="c_login" value="로그인">
+						</div>
+						<div class="cc">
+							<input type="text" class="c_price" readonly="readonly"> <span> 원</span><!-- 잔액 금액 -->
+						</div>
+					</div>
+					<div class="opinion coupon" id="happy_c">
+						<!-- 상세 설명 : 해피머니 -->
+						<div class="c">
+							<span>아이디 : </span><input type="text"><!-- 아이디 -->
+							<span>비밀번호 : </span> <input type="password"><!-- 비밀번호 -->
+							<input type="button" class="c_login" value="로그인">
+						</div>
+						<div class="cc">
+							<input type="text" class="c_price" readonly="readonly"> <span> 원</span><!-- 잔액 금액 -->
+						</div>
+					</div>
+					<div class="opinion coupon" id="book_c">
+						<!-- 상세 설명 : 북앤라이프 -->
+						<div class="c">
+							<span>아이디 : </span><input type="text"><!-- 아이디 -->
+							<span>비밀번호 : </span> <input type="password"><!-- 비밀번호 -->
+							<input type="button" class="c_login" value="로그인">
+						</div>
+						<div class="cc">
+							<input type="text" class="c_price" readonly="readonly"><span> 원</span> <!-- 잔액 금액 -->
+						</div>
+					</div>
+					<div class="opinion" id="bank_c">
+						<!-- 상세 설명  : 무통장입금 (계좌이체, 인터넷뱅킹, 폰뱅킹)-->
+						<div>
+							<p id="titi">BANK INFO</p>
+							<ul>
+								<li>
+									<span class="title">우 리</span> : 023-1254-1253
+								</li>
+								<li>
+									<span class="title">농 협</span> : 254-5482-5482-77
+								</li>
+								<li>
+									<span class="title">신 한</span> : 952-1852-2255
+								</li>
+								<li>
+									<span class="title">국 민</span> : 5-2557-5486-58
+								</li>
+								<li>
+									<span class="title">우체국</span> : 512358-12-101253
+								</li>
+							</ul>
+							<p> 예금주 : 안지성 </p>
+						</div>
+							<p id="text"> 
+								무통장 입금의 경우<br> 
+							       입금이 확인 된 후 최종 결제가 이루어지기에<br>
+							       게임을 받는 데 시간이 소요될 수 있음을 유의해주시기 바랍니다. 
+							</p>
+					</div>
+					<div class="opinion" id="pin_c">
+						<!-- 상세 설명 : 핀 번호 입력-->
+						<div class="c">
+							<input type="text"> - <input type="text"> - <input type="text"> - <input type="text"> - <input type="text">
+							<input type="button" class="c_login" value="등록">
+						</div>
+						<div class="cc">
+							<input type="text" class="c_price" readonly="readonly"> <span> 원</span> <!-- 등록한 상품권의 금액 -->
+						</div>
 					</div>
 				</div>
 				<div id="pay_check">
 					<!-- 최종 결제 확인 -->
-					<div>
+					<div id="pay_check_1">
 						<!-- 변동 가격 -->
+						<div>
+							<dl>
+								<dt>적립 될 마일리지</dt>
+								<dd> <span>point</span></dd>
+							</dl>
+						</div>	
+						<div>
+							<dl>
+								<dt>전자결제 수수료</dt>
+								<dd> <span>원</span></dd>
+							</dl>
+						</div>	
 					</div>
-					<div>
+					<div id="pay_check_2">
 						<!-- 최종 결제 가격 -->
+						<h3>최종결제 가격</h3><br>
+						<span></span><span id="pri">원</span>
 					</div>
 				</div>
 			</div>
+			<button id="last_buy">결제하기</button>
 		</div>
 	</section>
 	

@@ -176,50 +176,196 @@ section .complete {
 
 #five_buy #pay_way {
 	width: 57.1%;
-	height: 230px;
 	padding: 10px 1.4%;
 	float: left;
 	overflow: hidden;
+	border-right: 1px dashed #aaaaaa;
 }
+
+/* 결제  */
+
+#pay_way #choice {
+	width: 97%;
+	margin: 0 auto;
+	padding: 10px 1.4%;
+	overflow: hidden;
+	border-bottom: 1px dashed #aaaaaa;
+}
+#pay_way #choice label {
+	color: white;
+	font-size: 12px;
+ 	cursor:pointer;
+}
+
+#pay_way .opinion {
+	width: 97%;
+	margin: 0 auto;
+	padding: 15px 1.4%;
+	overflow: hidden;
+	display: none;
+}
+#pay_way .opinion input[type="button"]{
+	color: white;
+	padding: 3px 15px;
+	border: 1px solid black;
+	border-radius : 7px;
+	background:linear-gradient(to bottom, #165c8f, #34345c);
+	float: right;
+	text-shadow : -1px -1px 0px #00006a;
+	overflow: hidden;
+	cursor: pointer;
+	margin-top: 5px;
+}
+
+#pay_way .opinion span {
+	color: white;
+	font-size: 12px;
+}
+#pay_way #phone_c select {
+	width: 15%;
+	margin-right: 1.4%;
+	padding: 3px 0.7%;
+}
+#pay_way #phone_c input[type="text"] {
+	width: 15%;
+	padding: 3px 0.7%;
+}
+#pay_way .opinion input[type="password"]{
+	width: 30%;
+	padding: 3px 0.7%;
+}
+#pay_way .c {
+	display: none;
+}
+#pay_way .cc {
+	display: none;
+}
+#pin_c .c input[type="text"]{
+	width: 7%;
+	padding: 3px 0.7%;
+}
+
+#pay_way .cc .c_price {
+	text-align: center;
+	font-weight: bold;
+	border: 0px;
+	background-color: #666666;
+	color: white;
+	margin: 0 auto;
+}
+#pay_way .coupon input[type="text"] {
+	width: 30%;
+	padding: 3px 0.7%;
+}
+#bank_c p{
+	width: 100%;
+	text-shadow: -1px -1px 0px #134053;
+	color: #57e9ec;
+	font-size: 15px;
+	padding: 15px 0px;
+	text-align: center;
+}
+#bank_c #titi {
+	color: #b2b2b2;
+	font-weight: bold;
+}
+#bank_c div {
+	padding: 5px 0.7%;
+	border: 2px solid #aaaaaa;
+}
+#bank_c #text {
+	width: 100%;
+	text-shadow: none;
+	color: white;
+}
+#bank_c ul {
+	width: 70%;
+}
+#bank_c li{
+	width: 100%;
+	font-weight: bold;
+	padding: 0px 2.4%;
+	font-size: 15px;
+	padding: 2px 20%;
+	color: white;
+	font-size: 13px;
+	text-align: center;
+}
+
 #five_buy #pay_check {
 	width: 35.3%;
-	height: 230px;
 	padding: 10px 1.4%;
 	margin-left: 1.7%;
 	float: left;
 	overflow: hidden;
-	border-left: 1px dashed #aaaaaa;
+}
+
+#pay_check #pay_check_1 {
+	width: 100%;
+	padding: 5px 0px;
+	border-bottom: 1px solid #aaaaaa;
+}
+#pay_check div {
+	padding: 15px 1.4%;
+}
+#pay_check_1 dl {
+	width: 100%;
+	margin: 0 auto;
+}
+#pay_check_1 dt {
+	color: white;
+	width: 100%;
+	font-size: 14px;
+	text-align: center;
+	font-weight: bold;
+}
+#pay_check_1 dd{
+	width: 100%;
+	text-align: center;
+	color: white;
+}
+#pay_check_1 dd span {
+	font-size: 12px;
+}
+#pay_check #pay_check_2 {
+	width: 100%;
+	padding: 5px 0px;
+}
+#pay_check #pay_check_2 h3 {
+	color: #63a2e0;
+	width: 100%;
+	text-align: center;
+	font-weight: bold;
+	font-size: 20px;
+	text-shadow: -1px -1px 0px #113355;
+	padding: 2px 0px;
+}
+#pay_check #pay_check_2 #pri {
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+	float: right;
+	overflow: hidden;
 }
 
 
+#first_buy #last_buy {
+	padding: 5px 15px;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-weight: bold;
+	color: white;
+	font-size: 20px;
+	text-shadow: -1px -1px 0px #2a2a2a;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	float: right;
+	overflow: hidden;
+	cursor: pointer;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+#first_buy #last_buy:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
 
 
 
