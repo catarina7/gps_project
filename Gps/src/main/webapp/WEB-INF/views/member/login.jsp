@@ -51,6 +51,7 @@
 					</div>
 				</form>
 				<div id="five_login">
+					<input type="checkbox" id="id_save"><label for="id_save">아이디 저장</label>
 					<input type="button" id="join_btn" value="회원가입">
 					<input type="button" id="findpw_btn" value="비밀번호찾기">
 					<input type="button" id="findid_btn" value="아이디찾기">

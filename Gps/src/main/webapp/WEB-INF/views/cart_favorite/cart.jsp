@@ -68,6 +68,21 @@
 		});
 	});
 		
+	//하나만 구매하기 
+	function one_bye(i){
+		var c_num = $("#c_num"+i).val();
+		$.ajax({
+			url: '/gps/purchase/buy' ,
+			type: 'POST',
+			data:{
+				c_num : c_num
+			},
+			success:function(data){
+				location.href="/gps/purchase/buy";
+			}
+		});
+	}
+	
 
 </script>
 </head>
@@ -137,7 +152,7 @@
 										<span>₩ 15000</span>
 									</li>
 									<li>
-										<input type="button" value="구매하러 가기">
+										<input type="button" value="구매하러 가기" onclick="one_bye(${status.index})">
 									</li>
 								</ul>
 							</div>
