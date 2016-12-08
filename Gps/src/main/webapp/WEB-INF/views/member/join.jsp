@@ -48,9 +48,9 @@
 				<form action="#" id="frm">
 					<table>
 						<colgroup>
-							<col style="width:15%;">
+							<col style="width:23%;">
 							<col style="width:40%;">
-							<col style="width:40%;">
+							<col style="width:37%;">
 						</colgroup>
 						<tr>
 							<td class="m_titles">
@@ -60,7 +60,7 @@
 								<input type="text" name="m_id" id="id_input" class="input">
 							</td>
 							<td>
-								<input type="button" id="id_check" value="id_check">
+								<input type="button" id="id_check" value="중복체크">
 							</td>
 						</tr>
 						<tr>
@@ -71,7 +71,7 @@
 								<input type="password" name="m_pw" id="pw_input" class="input">
 							</td>
 							<td>
-								<input type="text" id="pw_check" readonly="readonly" value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다.">
+								<span id="pw_check">비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다.</span>
 							</td>
 						</tr>
 						<tr>
@@ -82,7 +82,7 @@
 								<input type="password" id="pw_set"> 
 							</td>
 							<td>
-								<input type="text" id="pw_confirm" readonly="readonly" value="비밀번호가 일치하지 않습니다. 다시 입력해주세요.">
+								<span id="pw_confirm">비밀번호가 일치하지 않습니다. 다시 입력해주세요.</span>
 							</td>
 						</tr>
 						<tr>
@@ -93,7 +93,7 @@
 								<input type="text" name="m_name" id="name_input" class="input">
 							</td>
 							<td>
-								<input type="button" id="id_check" value="id_check">
+								<span id="namechk">이름을 입력해주세요.</span>
 							</td>
 						</tr>
 						<tr>
@@ -125,7 +125,7 @@
 								성별 :
 							</td>
 							<td colspan="2">
-								남성 <input type="radio" name="m_gender" id="gender" value="male"> 
+								남성 <input type="radio" checked="checked" name="m_gender" id="gender" value="male"> 
 								여성 <input type="radio" name="m_gender" id="gender" value="female">
 							</td>
 						</tr>

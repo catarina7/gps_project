@@ -98,17 +98,82 @@ section #first_join {
 	width: 97%;
 	margin-top: 60px;
 	display: none;
-	border: 1px solid #aaaaaa;
+	border: 2px solid #aaaaaa;
 	padding: 20px 1.4%;
+	overflow: hidden;
 }
-
-
-
-
-
-
-
-
+#joinform table {
+	width: 100%;
+	overflow: hidden;
+}
+#joinform td {
+	padding: 5px 1.4%;
+	color: #ffe5e5;
+	font-weight: bold;
+	overflow: hidden;
+}
+#joinform .m_titles {
+	color: white;
+	font-weight: bold;
+	text-align: right;
+	padding: 7px 0.7%;
+	text-shadow: -1px -1px 0px #444444;
+}
+#joinform input[type="password"] {
+	padding: 3px 1.4%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+	width: 90%;
+}
+#joinform input[type="text"] {
+	padding: 3px 1.4%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+	width: 90%;
+}
+#joinform input[type="date"] {
+	border: 1px solid #666666;
+	border-radius : 4px;
+	background-color: #666666;
+	margin-top: 2px;
+	padding: 3px 1.4%;
+	color: white;
+	font-weight: bold;
+}
+#joinform input[type="radio"] {
+	margin-right: 2%;
+}
+#joinform select {
+	padding: 2px 0.5%;
+}
+#joinform input[type="button"] {
+	padding: 7px 6%;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border: 1px solid black;
+	border-radius: 7px;
+	text-shadow: -1px -1px 0px #444444;
+	cursor: pointer;
+	font-weight: bold;
+	float: right;
+	overflow: hidden;
+}
+#joinform input[type="button"]:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+} 
+#joinform #id_check {
+	float: left;
+}
+#joinform #submit_btn {
+	margin-top: 30px;
+	margin-right: 3%;
+	font-size: 16px;
+}
+#joinform span {
+	color: #ff6262;
+	font-size: 12px;
+	text-shadow: -1px -1px 0px #840003;
+}
 
 
 
