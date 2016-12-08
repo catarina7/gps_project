@@ -61,4 +61,16 @@
 			select count(q_num) from qna
 		</select>
 		
+		<update id="qnaUpdate" parameterType="com.game.board.QnaDTO">
+			update qna set q_title=#{q_title}, q_contents=#{q_contents} where q_num=#{q_num}
+		</update>
+		
+		<update id="qnaStep" parameterType="com.game.board.QnaDTO">
+			update qna set step=step +1 where ref=#{ref} and step &gt; #{step} 
+		</update>
+		
+		<insert id="qnaReply" parameterType="com.game.board.QnaDTO">
+			insert into qna values(qna_seq.nextval, #{q_writer}, #{q_title}, #{q_contents}, sysdate, #{ref}, #{step}+1, #{depth}+1)
+		</insert>
+		
 	</mapper>
