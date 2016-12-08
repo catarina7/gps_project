@@ -1,0 +1,87 @@
+@CHARSET "UTF-8";
+
+section {
+	width: 100%;
+	padding-top: 155px;
+	padding-bottom: 100px;
+	background-color: #666666;
+}
+
+section h2 {
+	width: 40%;
+	margin: 0 auto;
+	color: white;
+	text-shadow: -1px -1px 0px #444444;
+	padding: 30px 1.4%;
+	font-size: 30px;
+	text-align: center;
+}
+
+section #first_com {
+	width: 40%;
+	padding: 20px 1.4%;
+	margin: 0 auto;
+	border: 2px solid #aaaaaa;
+	border-radius: 8px;
+	background-color: #494949;
+}
+#first_com table {
+	width: 100%;
+	overflow: hidden;
+}
+#first_com td {
+	padding: 7px 1.4%;
+}
+#first_com .c_title {
+	text-align: right;
+	font-weight: bold;
+	color: white;
+	text-shadow: -1px -1px 0px #444444;
+	font-size: 15px;
+}
+#first_com input[type="text"] {
+	width: 60%;
+	padding: 3px 1.4%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+}
+#first_com #c_btn {
+	padding: 0px 1.4%;
+	padding-top: 30px;
+	overflow: hidden;
+}
+#c_btn button {
+	float: right;
+	overflow: hidden;
+	padding: 7px 4%;
+	color:  white;
+	cursor: pointer;
+	text-shadow: -1px -1px 0px #444444;
+	border: 1px solid black;
+	border-radius: 4px;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+}
+#c_btn button:hover{
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+#c_btn #cominfo_btn{
+	display: none;
+	font-weight: bold;
+	margin-left: 3%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

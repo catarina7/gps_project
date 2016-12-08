@@ -12,10 +12,8 @@
 	<!-- mybatis / DataBase -->
 	<bean id="dataSource"
 		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<!-- <property name="username" value="gps"></property> -->
-		<!-- <property name="password" value="gps"></property> -->
-		<property name="username" value="user01"></property>
-		<property name="password" value="user01"></property>
+		<property name="username" value="gps"></property>
+		<property name="password" value="gps"></property>
 
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
 
