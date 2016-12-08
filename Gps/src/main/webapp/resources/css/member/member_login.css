@@ -12,7 +12,7 @@ section #first_login{
 	padding: 72.5px 1.4%;
 	min-width: 432px;
 }
-#first_login h2 {
+#first_login #login_tt {
 	width: 97%;
 	color: white;
 	text-align: center;
@@ -98,7 +98,6 @@ section #first_id_div {
 	position: absolute;
 	background-color: #666666;
 	width: 27.2%;
-	height: 230px;
 	min-width: 432px;
 	border: 2px solid #aaaaaa;
 	border-radius: 4px;
@@ -129,7 +128,6 @@ section #first_pw_div {
 	position: absolute;
 	background-color: #666666;
 	width: 27.2%;
-	height: 230px;
 	min-width: 432px;
 	border: 2px solid #aaaaaa;
 	border-radius: 4px;

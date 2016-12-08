@@ -38,7 +38,7 @@
 					<c:import url="/member/searchPw" /> 
 				</div>
 			</div>
-			<h2>LOGIN</h2>
+			<h2 id="login_tt">LOGIN</h2>
 
 			<div id="second_login">
 				<form action="#" method="post">

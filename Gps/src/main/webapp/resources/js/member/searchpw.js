@@ -13,6 +13,7 @@
 		}
 		if($(this).val() == ""){
 			$("#idchk").show();
+			idChk--;
 		}else{
 			$("#idchk").hide();
 			idChk++;
@@ -24,7 +25,7 @@
 	$("#sp_name_input").keyup(function(){
 		if($(this).val()==""){
 			$("#namechk").show();
-			 
+			 namechk--;
 		}else{
 			$("#namechk").hide();
 			namechk++;
@@ -38,6 +39,7 @@
 		var reg=/^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
 		if($(this).val()=="" || !(reg.test($(this).val()))){
 			$("#emailchk").show();
+			emailchk--;
 		}else{
 			$("#emailchk").hide();
 			emailchk++;
