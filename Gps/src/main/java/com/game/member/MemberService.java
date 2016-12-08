@@ -39,6 +39,12 @@ public class MemberService {
 		}
 		
 		//회원탈퇴
+		public int memOut(MemberDTO mDto) throws Exception{
+			
+			memberDao.comOut(mDto.getM_num());
+			return memberDao.memOut(mDto);
+			
+		}
 		
 		//id중복체크
 		public MemberDTO idcheck(String id) throws Exception{			

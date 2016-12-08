@@ -45,6 +45,15 @@
 		where m_id = #{m_id}
 	</update>
 	<!-- 회원탈퇴 -->
+	<delete id="memOut" parameterType="com.game.member.MemberDTO">
+		delete member where m_id = #{m_id}
+	</delete>
+	
+	<!-- computerout -->
+	<delete id="comOut" parameterType="java.lang.Integer">
+		delete computer where m_num = #{m_num}
+	</delete>
+	    
 	<!-- 회원검색/관리자용 -->
 	<!-- id찾기 -->
 	<select id="searchId" parameterType="com.game.member.MemberDTO" resultType="com.game.member.MemberDTO">

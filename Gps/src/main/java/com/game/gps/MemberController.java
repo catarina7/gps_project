@@ -164,6 +164,33 @@ public class MemberController {
 		return "/member/pw_mod";
 	}
 	
+	//탈퇴하기
+	@RequestMapping(value="mem_Out")
+	public String mem_out(){
+		return "/member/mem_Out";
+	}
+	
+	//탈퇴하기(ajax)
+	@RequestMapping(value="/memOut", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<Integer> mem_out(MemberDTO mDto, HttpSession session){
+		int result =0;
+		
+		try {
+			result = memberService.memOut(mDto);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(result == 0){
+			result = 0;
+		}else {
+			session.removeAttribute("member");
+		}
+		
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
+	
 	
 	
 	//약정넣기1

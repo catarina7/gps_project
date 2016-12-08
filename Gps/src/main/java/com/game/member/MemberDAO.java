@@ -51,7 +51,15 @@ public class MemberDAO {
 		
 	}
 	
-	//회원탈퇴
+	//회원탈퇴(member)
+	public int memOut(MemberDTO mDto) throws Exception{
+		return sqlSession.delete(namespace+"memOut", mDto);
+	}
+	
+	//회원탈퇴(computer)
+	public int comOut(int m_num) throws Exception{
+		return sqlSession.delete(namespace+"comOut", m_num);
+	}
 	
 	
 	//id중복체크
