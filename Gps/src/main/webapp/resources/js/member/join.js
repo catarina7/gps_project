@@ -19,7 +19,8 @@ $(function(){
 	var pwchk=0;	//비밀번호, 비밀번호 확인 일치여부
 	var namechk=0;	 //이름 입력 여부 확인
 	var dayDiff=0;	//나이 체크
-
+	
+	
 
 	//id input에 한글 불가 및 미입력 경고 메세지
 	$("#id_input").keyup(function(event){

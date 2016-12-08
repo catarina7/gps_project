@@ -27,15 +27,15 @@ section h2 {
 	color: white;
 	font-size: 33px;
 	text-shadow: -1px -1px 0px black;
-	padding: 30px 0px;
+	padding: 20px 0px;
 	text-align: center;
 	
 }
 section #first_join {
 	width: 43%;
 	margin: 0 auto;
-	background-color: #ffe5e5;
-	padding: 40px 1.4%;
+	padding: 20px 1.4%;
+	overflow: hidden;
 }
 #first_join #agreement {
 	width: 97%;
@@ -46,11 +46,14 @@ section #first_join {
 #agreement textarea {
 	width: 99%;
 	height: 150px;
-	margin: 10px 0px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	border: 2px solid #aaaaaa;
+	resize: none;
 }
 #agreement input[type="checkbox"] {
 	width:1px; 
- 	 height:1px; 
+ 	height:1px; 
   	padding:0; 
   	border:0 none; 
   	margin:0; 
@@ -62,24 +65,42 @@ section #first_join {
 }
 #agreement label {
 	height:15px; 
- 	 line-height:15px; 
+ 	line-height:15px; 
   	padding-left:20px; 
   	display:inline-block; 
-  	background:url(http://csscheckbox.com/checkboxes/lite-plus.png) no-repeat 0 0; 
+  	background:url(http://csscheckbox.com/checkboxes/lite-red-check.png) no-repeat 0 0; 
   	font-size:15px; 
   	vertical-align:middle; 
   	cursor:pointer;
+  	color: white;
 }
 #agreement input[type="checkbox"]:checked + label {
 	background-position: 0 -15px;
 }
-#first_join #joinform {
-	width: 100%;
-	margin-top: 10px;
-	display: none;
+#first_join button {
+	float: right;
+	overflow: hidden;
+	padding: 6px 2.4%;
+	color: white;
+	text-shadow: -1px -1px 0px #24316f;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border: 1px solid black;
+	border-radius: 5px;
+	margin:  20px 0px;
 }
 
+#first_join button:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
 
+#first_join #joinform {
+	width: 97%;
+	margin-top: 60px;
+	display: none;
+	border: 1px solid #aaaaaa;
+	padding: 20px 1.4%;
+}
 
 
 

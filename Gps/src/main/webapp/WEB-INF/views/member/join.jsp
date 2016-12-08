@@ -25,7 +25,7 @@
 		<div id="first_join">
 			<div id="agreement">
 				<!-- 미성년자 확인 -->
-				<textarea rows="" cols="" id="contract" readonly="readonly">
+				<textarea id="contract" readonly="readonly">
 					<c:import url="/member/contract"></c:import>
 				</textarea><br>
 				<input type="checkbox" id="checkcon">
@@ -33,53 +33,114 @@
 					 위 약정을 동의하고 13세이상임을 확인합니다.
 				</label> 
 				<!-- 개정보호 -->
-				<textarea rows="" cols="" id="license" readonly="readonly">
+				<textarea id="license" readonly="readonly">
 					<c:import url="/member/license"></c:import>			
 				</textarea>	<br> 
 				<input type="checkbox" id="checkli">
 				<label for="checkli">
 					 아이디 보호에 대한 약정을 확인합니다.
 				</label>
+				<button id="checkbox">동의합니다.</button>
 			</div>
 				
-			<button id="checkbox">동의합니다.</button>
 
 			<div id="joinform">
 				<form action="#" id="frm">
-					<!-- id -->
-					id: <input type="text" name="m_id" id="id_input" class="input">
-					<input type="button" id="id_check" value="id_check"><br>
-					
-					<!-- pw -->
-					pw: <input type="password" name="m_pw" id="pw_input" class="input">
-					<input type="text" id="pw_check" readonly="readonly"
-						value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다."><br>
-					<!-- pw 확인용 -->
-					pwcheck: <input type="password" id="pw_set"> <input
-						type="text" id="pw_confirm" readonly="readonly"
-						value="비밀번호가 일치하지 않습니다. 다시 입력해주세요."> <br> 
-					
-					<!-- 이름 넣기 -->
-					name: <input type="text" name="m_name" id="name_input" class="input">
-					<p id="namechk">이름을 입력해주세요.</p>	<br> 
-					<!-- 전화번호 -->
-					tel: <select id="tel_option" name="m_tel">
-						<option value="SKT" selected>SKT</option>
-						<option value="LGT">LGT</option>
-						<option value="KT">KT</option>
-					</select> <input type="text" name="m_tel" id="tel_input"
-						placeholder=" '-'를 포함하여 입력해주세요." class="input">
-					<p id="telchk">전화번호를 '-'를 포함하여 정확하게 입력해주세요.</p>	<br> 
-					<!-- 생일 -->
-					birth: <input type="date" name="m_birth" id="birth_input" class="input"><br> 
-					<!-- 성별 -->
-					gender: 
-					male <input type="radio" name="m_gender" id="gender" value="male"> 
-					female <input type="radio" name="m_gender" id="gender" value="female"> <br>
-					<!-- email -->
-					e-mail: <input type="text" name="m_email" id="email_input" placeholder="이메일을 입력해주세요." class="input">
-					<p id="emailchk">이메일을 정확하게 입력해주세요.</p>
-					<br> 
+					<table>
+						<colgroup>
+							<col style="width:15%;">
+							<col style="width:40%;">
+							<col style="width:40%;">
+						</colgroup>
+						<tr>
+							<td class="m_titles">
+								아이디 :
+							</td>
+							<td>
+								<input type="text" name="m_id" id="id_input" class="input">
+							</td>
+							<td>
+								<input type="button" id="id_check" value="id_check">
+							</td>
+						</tr>
+						<tr>
+							<td class="m_titles">
+								비밀번호 :
+							</td>
+							<td>
+								<input type="password" name="m_pw" id="pw_input" class="input">
+							</td>
+							<td>
+								<input type="text" id="pw_check" readonly="readonly" value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다.">
+							</td>
+						</tr>
+						<tr>
+							<td class="m_titles">
+								비밀번호 확인 :
+							</td>
+							<td>
+								<input type="password" id="pw_set"> 
+							</td>
+							<td>
+								<input type="text" id="pw_confirm" readonly="readonly" value="비밀번호가 일치하지 않습니다. 다시 입력해주세요.">
+							</td>
+						</tr>
+						<tr>
+							<td class="m_titles">
+								이름 :
+							</td>
+							<td>
+								<input type="text" name="m_name" id="name_input" class="input">
+							</td>
+							<td>
+								<input type="button" id="id_check" value="id_check">
+							</td>
+						</tr>
+						<tr>
+							<td class="m_titles">
+								전화번호 :
+							</td>
+							<td>
+								 <select id="tel_option" name="m_tel">
+									<option value="SKT" selected>SKT</option>
+									<option value="LGT">LGT</option>
+									<option value="KT">KT</option>
+								</select> 
+								<input type="text" name="m_tel" id="tel_input" placeholder=" '-'를 포함하여 입력해주세요." class="input">
+							</td>
+							<td>
+								<span id="telchk">전화번호를 '-'를 포함하여 정확하게 입력해주세요.</span>
+							</td>
+						</tr>
+						<tr>
+							<td class="m_titles">
+								생일 :
+							</td>
+							<td colspan="2">
+								<input type="date" name="m_birth" id="birth_input" class="input">
+							</td>
+						</tr>
+						<tr>
+							<td class="m_titles">
+								성별 :
+							</td>
+							<td colspan="2">
+								남성 <input type="radio" name="m_gender" id="gender" value="male"> 
+								여성 <input type="radio" name="m_gender" id="gender" value="female">
+							</td>
+						</tr>
+						<tr>
+							<td class="m_titles">
+								이메일 :
+							</td>
+							<td>
+								<input type="text" name="m_email" id="email_input" placeholder="이메일을 입력해주세요." class="input">
+							</td>
+							<td>
+								<span id="emailchk">이메일을 정확하게 입력해주세요.</span>
+							</td>
+						</tr>
+					</table>
 					<!-- 실행버튼  -->
 					<input type="button" id="submit_btn" value="회원가입">
 	
