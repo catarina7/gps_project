@@ -254,10 +254,13 @@
 					</div>
 				</div>
 			</div>
+			<div id="main_four">
+				
+			</div>
+			<c:import url="/footer" />
 		</div>
 	</section>
 	
-	<c:import url="/footer" />
 	
 </body>
 </html>
