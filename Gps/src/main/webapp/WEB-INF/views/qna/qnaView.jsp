@@ -79,7 +79,15 @@
 								</td>
 							</tr>
 							
-							<!-- 이미지 View 해야함 -->	
+							<!-- 이미지 View 해야함 -->
+							<tr>
+								<td class="title">이미지</td>
+								<c:forEach items="${qnaImg}" var="img">
+								<td>
+									<img alt="" src="/resources/upload/${qnaImg.qfile_name}">
+								</td>
+								</c:forEach>
+							</tr>	
 					</table>
 					<div id="pro_w_btn">
 						<input type="button" value="답글" id="reBtn" class="btn">

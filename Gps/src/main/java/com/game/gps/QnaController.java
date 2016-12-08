@@ -50,15 +50,42 @@ public class QnaController {
 	}
 	
 	@RequestMapping(value="/qnaView" )
-	public String qnaView(@RequestParam("q_num") int q_num, Model model){
+	public String qnaView(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="1") int perPage, @RequestParam("q_num") int q_num, Model model){
 		
 		try {
-			model.addAttribute("qnaView", qnaService.qnaView(q_num));
+			qnaService.qnaView(curPage, perPage, q_num, model);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "qna/qnaView";
+	}
+	
+	@RequestMapping(value="/qnaDelete")
+	public String qnaDelete(@RequestParam("q_num") int q_num){
+		
+		try {
+			qnaService.qnaDelete(q_num);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/qna/qnaList";
+	}
+	
+	@RequestMapping(value="/qnaMod", method=RequestMethod.GET)
+	public void qnaMod(){}
+	
+	@RequestMapping(value="/qnaMod", method=RequestMethod.POST)
+	public String qnaMod(QnaDTO qnaDTO){
+		
+		try {
+			qnaService.qnaMod(qnaDTO);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/qna/qnaList";
 	}
 	
 }

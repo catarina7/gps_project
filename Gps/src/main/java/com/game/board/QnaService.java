@@ -65,9 +65,24 @@ public class QnaService {
 		}
 	
 	//View
-	public QnaDTO qnaView(int q_num) throws Exception{
+	public void qnaView(int curPage, int perPage, int q_num, Model model) throws Exception{
 		qnaDAO.qnaCounts(q_num);
-		return qnaDAO.qnaView(q_num);	
+		int totalCount = qnaDAO.qnaViewImgCount(q_num);
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		
+		//View 일반
+		QnaDTO qnaDTO = qnaDAO.qnaView(q_num);
+		//View 사진
+		List<QnaFileDTO> ar = qnaDAO.qnaViewImg(pageMaker, q_num);
+		
+		model.addAttribute("pageImg", pageMaker);
+		model.addAttribute("qnaView", qnaDTO);
+		model.addAttribute("qnaImg", ar);
+		
 	}
 	
 	//Delete
@@ -78,6 +93,11 @@ public class QnaService {
 	//조회수
 	public int qnaCounts(int q_num) throws Exception{
 		return qnaDAO.qnaCounts(q_num);
+	}
+	
+	//수정
+	public int qnaMod(QnaDTO qnaDTO) throws Exception{
+		return qnaDAO.qnaMod(qnaDTO);
 	}
 
 }

@@ -73,4 +73,9 @@ public class QnaDAO {
 	public int qnaCount() throws Exception{
 		return sqlSession.selectOne(namespace+"qnaCount");
 	}
+	
+	public int qnaMod(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.update(namespace+"qnaMod", qnaDTO);
+	}
+
 }
