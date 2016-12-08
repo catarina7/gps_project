@@ -1,0 +1,220 @@
+@CHARSET "UTF-8";
+
+section {
+	width: 100%;
+	padding-top: 155px;
+	padding-bottom: 100px;
+	background-color: #666666;
+}
+/* hide/show */
+
+#id_check {
+	display: none;
+}
+
+#pw_confirm {
+	display: none;
+}
+
+#pw_check {
+	display: none;
+}
+
+
+section h2 {
+	width: 43%;
+	margin: 0 auto;
+	color: white;
+	font-size: 33px;
+	text-shadow: -1px -1px 0px black;
+	padding: 20px 0px;
+	text-align: center;
+	
+}
+section #first_join {
+	width: 43%;
+	margin: 0 auto;
+	padding: 20px 1.4%;
+	overflow: hidden;
+}
+#first_join #agreement {
+	width: 97%;
+	margin: 0 auto;
+	margin-bottom: 10px;
+	padding: 0px 1.4%;
+}
+#agreement textarea {
+	width: 99%;
+	height: 150px;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	border: 2px solid #aaaaaa;
+	resize: none;
+}
+#agreement input[type="checkbox"] {
+	width:1px; 
+ 	height:1px; 
+  	padding:0; 
+  	border:0 none; 
+  	margin:0; 
+  	position:absolute; 
+  	left:0; 
+  	top:0; 
+  	overflow:hidden;
+  	clip:rect(0 0 0 0);
+}
+#agreement label {
+	height:15px; 
+ 	line-height:15px; 
+  	padding-left:20px; 
+  	display:inline-block; 
+  	background:url(http://csscheckbox.com/checkboxes/lite-red-check.png) no-repeat 0 0; 
+  	font-size:15px; 
+  	vertical-align:middle; 
+  	cursor:pointer;
+  	color: white;
+}
+#agreement input[type="checkbox"]:checked + label {
+	background-position: 0 -15px;
+}
+#first_join button {
+	float: right;
+	overflow: hidden;
+	padding: 6px 2.4%;
+	color: white;
+	text-shadow: -1px -1px 0px #24316f;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border: 1px solid black;
+	border-radius: 5px;
+	margin:  20px 0px;
+}
+
+#first_join button:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+#first_join #joinform {
+	width: 97%;
+	margin-top: 60px;
+	display: none;
+	border: 2px solid #aaaaaa;
+	padding: 20px 1.4%;
+	overflow: hidden;
+}
+#joinform table {
+	width: 100%;
+	overflow: hidden;
+}
+#joinform td {
+	padding: 5px 1.4%;
+	color: #ffe5e5;
+	font-weight: bold;
+	overflow: hidden;
+}
+#joinform .m_titles {
+	color: white;
+	font-weight: bold;
+	text-align: right;
+	padding: 7px 0.7%;
+	text-shadow: -1px -1px 0px #444444;
+}
+#joinform input[type="password"] {
+	padding: 3px 1.4%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+	width: 90%;
+}
+#joinform input[type="text"] {
+	padding: 3px 1.4%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+	width: 90%;
+}
+#joinform input[type="date"] {
+	border: 1px solid #666666;
+	border-radius : 4px;
+	background-color: #666666;
+	margin-top: 2px;
+	padding: 3px 1.4%;
+	color: white;
+	font-weight: bold;
+}
+#joinform input[type="radio"] {
+	margin-right: 2%;
+}
+#joinform select {
+	padding: 2px 0.5%;
+}
+#joinform input[type="button"] {
+	padding: 7px 6%;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border: 1px solid black;
+	border-radius: 7px;
+	text-shadow: -1px -1px 0px #444444;
+	cursor: pointer;
+	font-weight: bold;
+	float: right;
+	overflow: hidden;
+}
+#joinform input[type="button"]:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+} 
+#joinform #id_check {
+	float: left;
+}
+#joinform #submit_btn {
+	margin-top: 30px;
+	margin-right: 3%;
+	font-size: 16px;
+}
+#joinform span {
+	color: #ff6262;
+	font-size: 12px;
+	text-shadow: -1px -1px 0px #840003;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
