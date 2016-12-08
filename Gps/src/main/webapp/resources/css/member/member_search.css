@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+.s_titi {
+	width: 97%;
+	color: white;
+	text-align: center;
+	font-size: 25px;
+	text-shadow: -1px -1px 0px #444444;
+	padding: 20px 1.4%;
+}
+
+section table {
+	width: 100%;
+	overflow: hidden;
+}
+
+section .sh_titi {
+	color: white;
+	font-weight: bold;
+	text-align: right;
+	padding: 5px 1.4%;
+}
+
+section table input[type="text"]{
+	padding: 3px 1.4%;
+	width: 70%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+}
+
+section table p {
+	width: 50%;
+	float: right;
+	overflow: hidden;
+	color: #ff8c8c;
+	font-size: 12px;
+	text-shadow: -1px -1px 0px #aa0004;
+}
+
+section .ss_btn {
+	border: 1px solid #000000;
+	border-radius: 8px;
+	color: white;
+	float: right;
+	overflow: hidden;
+	margin-right: 1.4%;
+	font-size: 15px;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	cursor: pointer;
+	text-shadow: -1px -1px 0px #32435c;
+	padding: 5px 5%;
+	margin-top: 20px;
+}
+
+section .ss_btn:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+} 
+
+
