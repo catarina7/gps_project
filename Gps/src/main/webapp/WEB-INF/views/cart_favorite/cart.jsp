@@ -16,7 +16,59 @@
 		$("#e_cart").css("background-color","#2b394f");
 		/* 체크박스 체크 */
 		$(".check_box").prop("checked",true);
+
 	});
+	
+	//하나만 장바구니 삭제할때 (X표로 삭제할때)
+	function one_delete(i){
+		var c_num = $("#c_num"+i).val();
+		var m_id = $("#m_id"+i).val();
+		
+		$.ajax({
+			url: 'cartDel' ,
+			type: 'POST',
+			data:{
+				c_num : c_num,
+				m_id : m_id
+			},
+			success:function(data){
+				alert(data);
+				data=data.trim();
+				$("#second_else").html(data);
+			}
+		});
+
+	}
+	
+	
+	//checked 된 것만 삭제 할때
+	$(document).ready(function(){
+		$("#all_delete").on("click", function(){
+			var checkArr = [];
+			
+			$("input[name='c_num']:checked").each(function() {
+				checkArr.push($(this).val());
+			});
+			
+			$.ajax({
+				url: 'cartDelList' ,
+				type: 'POST',
+				dataType: 'text',
+				data:{
+					valueArr : checkArr,
+					m_id : $("#check_m_id").val()
+				},
+				success:function(data){
+					alert(data);
+					data=data.trim();
+					$("#second_else").html(data);
+				}
+			});
+			
+		});
+	});
+		
+
 </script>
 </head>
 <body>
@@ -30,7 +82,7 @@
 			<div id="else_list">
 				<div id="first_else">
 					<div id="uu_menu">
-						<a id="e_cart" href="${pageContext.request.contextPath}/cart">장바구니</a>
+						<a id="e_cart" href="${pageContext.request.contextPath}/cart_favorite/cartList?m_id=${member.m_id}">장바구니</a>
 						<a id="e_favorite" href="${pageContext.request.contextPath}/favorite">관심상품</a>
 						<a id="e_puchase" href="${pageContext.request.contextPath}/purchase/purchase">구매내역</a>
 					</div>
@@ -43,8 +95,9 @@
 						<div class="item">
 							<div class="four_contents">
 								<div class="f_g_check">
-									<input class="check_box" id="checkbox1" type="checkbox">
-									<label for="checkbox1"></label>
+									<input type="hidden" name="m_id" id="check_m_id" value="${member.m_id}">
+									<input class="check_box" id="checkbox${status.index}" name="c_num" value="${cDTO[status.index].c_num}" type="checkbox">
+									<label for="checkbox${status.index}"></label>
 								</div>
 								<div class="f_g_img">
 									<img src="../resources/upload/${cart_list_img[status.index].file_name}">
@@ -66,7 +119,9 @@
 											</span>
 										</td>
 										<td>
-											<input class="pro_delete" type="button" value="X">
+											<input type="hidden" name="c_num" id="c_num${status.index}" value="${cDTO[status.index].c_num}">
+											<input type="hidden" name="m_id" id="m_id${status.index}" value="${member.m_id}">
+											<input class="pro_delete" type="button" value="X" id="one_delete_${status.index}" onclick="one_delete(${status.index})">
 										</td>
 									</tr>
 									<tr>
@@ -91,7 +146,7 @@
 				</div>
 				<div id="third_else">
 					<button>선택 구매</button>
-					<button>모두 빼기</button>
+					<button id="all_delete">모두 빼기</button>
 				</div>
 			</div>
 	</section>
