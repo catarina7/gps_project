@@ -30,16 +30,21 @@ public class CartDAO {
 	}
 	
 	//cart에 m_id로 pro_num 뽑아오기
-	public List<CartDTO> cartNumFind(MemberDTO memberDTO){
+	public List<CartDTO> cartNumFind(MemberDTO memberDTO) throws Exception{
 		List<CartDTO> ar = sqlSession.selectList(namespace+"cartNumFind", memberDTO);
-		for(int i=0;i<ar.size();i++){
-			System.out.println(ar.get(i).getC_num());
-			System.out.println(ar.get(i).getPro_num());
-		}
 		return ar;
 	}
 	
-	public ArrayList<ProductDTO> productList(List<CartDTO> ar){
+	/*int [] arr = new int[ar.size()];
+	for(int j=0; j<ar.size(); j++){
+	System.out.println(ar.size());
+	arr[j]=ar.get(j).getC_num();
+	System.out.println(arr[j]);
+	}
+	Arrays.sort(arr);*/
+	
+	//장바구니 글부분
+	public ArrayList<ProductDTO> productList(List<CartDTO> ar) throws Exception{
 		ArrayList<ProductDTO> ar1=new ArrayList<ProductDTO>();
 		
 		for(int i=0; i<ar.size();i++){
@@ -51,15 +56,31 @@ public class CartDAO {
 		return ar1;
 	}
 	
-	public ArrayList<ProductFileDTO> productListImg(List<CartDTO> ar){
+	//장바구니 사진부분
+	public ArrayList<ProductFileDTO> productListImg(List<CartDTO> ar) throws Exception{
 		ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
 		
 		for(int i=0; i<ar.size();i++){
+
 			int pro_num=ar.get(i).getPro_num();
 			ProductFileDTO p = sqlSession.selectOne(namespace+"cart_list_img", pro_num);
 			ar1.add(p);
 		}
 		
 		return ar1;
+	}
+	
+	//장바구니 하나만 삭제할때
+	public int cartDel(int c_num) throws Exception{
+		return sqlSession.delete(namespace+"cart_del", c_num);
+	}
+	
+	//여러개 삭제할때
+	public void cartDeleteList(List<Integer> valueArr){	
+		Map<String, Object> data = new HashMap<String, Object>();
+		for(int i=0;i<valueArr.size();i++){
+			data.put("c_num", valueArr.get(i));
+			sqlSession.delete(namespace+"cart_del_list", data);
+		}
 	}
 }

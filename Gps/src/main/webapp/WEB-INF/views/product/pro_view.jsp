@@ -71,7 +71,7 @@
 	    
 	    $("#cart").click(function() {
 	    	if(confirm("장바구니에 담으시겠습니까?") == true){
-				location.href="../cart_favorite/cartAdd?m_id=${member.m_id}&pro_num=${pro_view.pro_num}";
+	    		$("#frm").submit();
 	    	}else{
 	    		return;
 	    	}
@@ -392,8 +392,12 @@
 					</table>
 				</div>
 				<button class="five_btn" id="favorite">관심상품</button>
-				<button class="five_btn" id="cart">장바구니</button>
 				
+				<form action="../cart_favorite/cartAdd" method="get" id="frm">
+					<input type="text" name="m_id" value="${member.m_id}">
+					<input type="text" name="pro_num" value="${pro_view.pro_num}">
+					<button class="five_btn" id="cart">장바구니</button>
+				</form>
 			</div>
 			<!-- review -->
 			<div id="six_pro">

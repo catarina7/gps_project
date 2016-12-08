@@ -22,6 +22,16 @@
 	<!-- cart에 대표사진만 가져와 List -->
 	<select id="cart_list_img" resultType="com.game.product.ProductFileDTO" parameterType="java.util.List">
 		select file_name from pro_file
-    	where file_num=(select min(file_num) from pro_file where pro_num=#{pro_num})
+    	where file_num=(select min(file_num) from pro_file product where pro_num=#{pro_num})
 	</select>
+	
+	<!-- cart에 하나만 삭제할 때 -->
+	<delete id="cart_del" parameterType="int">
+		delete cart where c_num=#{c_num}
+	</delete>
+	
+	<!-- cart 여러개 삭제 할 때 -->
+	<delete id="cart_del_list" parameterType="java.util.Map">
+		delete cart where c_num=#{c_num}
+	</delete>
 </mapper>
