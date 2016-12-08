@@ -124,7 +124,10 @@
 						<tr>
 							<td>
 								<!-- 상품의 합계가격 -->
-								<span id="pro_price"></span>
+								<span id="pro_price">
+								<!-- pre_price -->
+									<input type="text">
+								</span>
 							</td>
 							<td>
 								<p class="minus">
@@ -133,7 +136,11 @@
 							</td>
 							<td>
 								<!-- 마일리지 적용 -->
-								<span id="pro_millage"></span>
+								<span id="pro_millage">
+								<!-- milage -->
+									<input type="text" placeholder="millage (히든으로 들어갈 예정)" value="${member.millage}">
+									<input type="text">
+								</span>
 								<button id="mill_in">전부 적용</button>
 							</td>
 							<td>
@@ -143,7 +150,11 @@
 							</td>
 							<td>
 								<!-- 전자결제 수수료 (VAT) -->
-								<span id="vat"></span>
+								<span id="vat">
+								<!-- bill -->
+									<input type="text">
+								</span>
+								
 							</td>
 							<td>
 								<p class="complete">
@@ -152,7 +163,11 @@
 							</td>
 							<td>
 								<!-- 최종 합계 가격 -->
-								<span id="total_price"></span>
+								<span id="total_price">
+								<!-- post_price -->
+									<input type="text">	
+								</span>
+								
 							</td>
 						</tr>
 					</table>

@@ -30,6 +30,7 @@
 			<mapping path="/member/pw_check"/>
 			<mapping path="/member/mem_Info"/>
 			<mapping path="/member/pw_Mod"/>
+			<mapping path="/member/mem_Out"/>
 			<beans:ref bean="memberCheck"/>
 		</interceptor>
 	</interceptors>
