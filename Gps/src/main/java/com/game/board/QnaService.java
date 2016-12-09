@@ -22,7 +22,7 @@ public class QnaService {
 	private QnaDAO qnaDAO;
 	
 	public int qnaWrite(QnaDTO qnaDTO, MultipartHttpServletRequest mr, HttpSession session ) throws Exception{
-		String path = session.getServletContext().getRealPath("resources/upload");
+		String path = session.getServletContext().getRealPath("/resources/upload");
 		List<MultipartFile> file = mr.getFiles("file");
 		
 		//실제 저장 파일
@@ -67,7 +67,7 @@ public class QnaService {
 	//View
 	public void qnaView(int curPage, int perPage, int q_num, Model model) throws Exception{
 		qnaDAO.qnaCounts(q_num);
-		int totalCount = qnaDAO.qnaViewImgCount(q_num);
+		int totalCount = qnaDAO.qnaView_imgCount(q_num);
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCurPage(curPage);
 		pageMaker.setPerPage(perPage);
@@ -98,6 +98,10 @@ public class QnaService {
 	//수정
 	public int qnaMod(QnaDTO qnaDTO) throws Exception{
 		return qnaDAO.qnaMod(qnaDTO);
+	}
+	
+	public int qnaReply(QnaDTO qnaDTO) throws Exception{
+		return qnaDAO.qnaReply(qnaDTO);
 	}
 
 }

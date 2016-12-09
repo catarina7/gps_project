@@ -48,7 +48,7 @@
 							<td>${q.q_num}</td>
 							<td>
 								<c:forEach begin="1" end="${q.depth}">
-										&nbsp;&nbsp;&nbsp;ㄴ 답글:&nbsp;
+										&nbsp;&nbsp;&nbsp;ㄴ Re:&nbsp;
 								</c:forEach>
 								<a href="qnaView?q_num=${q.q_num}">${q.q_title}</a>
 							</td>
@@ -67,13 +67,13 @@
 				</table>
 				
 					<c:if test="${pageMaker.curBlock>1}">
-					<a href="/notice/noticeList?curPage=${pageMaker.startNum-1}">[이전]</a>
+					<a href="qnaList?curPage=${pageMaker.startNum-1}">[이전]</a>
 					</c:if>
 					<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
-					<a href="/notice/noticeList?curPage=${i}">${i}</a>
+					<a href="qnaList?curPage=${i}">${i}</a>
 					</c:forEach>
 					<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">
-					<a href="/notice/noticeList?curPage=${pageMaker.lastNum+1}">[다음]</a>
+					<a href="qnaList?curPage=${pageMaker.lastNum+1}">[다음]</a>
 					</c:if>
 			</form>
 				<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/qna/qnaWrite';">

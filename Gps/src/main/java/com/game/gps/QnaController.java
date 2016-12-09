@@ -88,4 +88,19 @@ public class QnaController {
 		return "redirect:/qna/qnaList";
 	}
 	
+	@RequestMapping(value="/qnaReply", method=RequestMethod.GET)
+	public void qnaReply(){}
+	
+	@RequestMapping(value="/qnaReply", method=RequestMethod.POST)
+	public String qnaReply(QnaDTO qnaDTO){
+		
+		try {
+			qnaService.qnaReply(qnaDTO);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/qna/qnaList";
+	}
+	
 }
