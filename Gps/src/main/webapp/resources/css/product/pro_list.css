@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+
+section {
+	width: 100%;
+	padding-top: 155px;
+	padding-bottom: 100px;
+	background-color: #666666;
+}
+
+
+section #pro_list_first {
+	width: 65%;
+	margin: 0 auto;
+	padding: 10px 1.4%;
+}
