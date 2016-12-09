@@ -18,15 +18,15 @@
 	<section>
 			<div id="pro_list_first">
 				<h2>Product List</h2>
-					<div>
 						<c:forEach items="${pro_list}" var="pro" varStatus="status">
-							<a href="pro_view?pro_num=${pro.pro_num}"><img src="../resources/upload/${pro_main_img[status.index].file_name}"></a>
-							<p>글 번호 : ${pro.pro_num} </p> 
-							<p>게임 이름 : ${pro.pro_title}</p> 		
-							<p>가격 : ${pro.price}</p>
-						    <p>회사명 :  ${pro.company}</p>  
+							<div class="g_games">
+								<a href="pro_view?pro_num=${pro.pro_num}"><img class="game_img" src="../resources/upload/${pro_main_img[status.index].file_name}"></a>
+								<p>글 번호 : ${pro.pro_num} </p> 
+								<p>게임 이름 : ${pro.pro_title}</p> 		
+								<p>가격 : ${pro.price}</p>
+							    <p>회사명 :  ${pro.company}</p>  
+							</div>
 						</c:forEach>
-					</div>
 					
 					<div style="width:200px; height:200px; board:1px solid red;">
 						<c:if test="${pageMaker.curBlock>1}">

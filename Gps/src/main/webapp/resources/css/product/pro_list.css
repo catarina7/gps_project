@@ -12,4 +12,14 @@ section #pro_list_first {
 	width: 65%;
 	margin: 0 auto;
 	padding: 10px 1.4%;
+	overflow: hidden;
+}
+#pro_list_first .g_games {
+	float: left;
+	overflow: hidden;
+}
+#pro_list_first .game_img {
+	width: 20%;
+	border: 1px solid #aaaaaa;
+	height: 120px;
 }
