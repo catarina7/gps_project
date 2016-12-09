@@ -219,11 +219,11 @@ section #game_list {
 
 #index_story #main_four {
 	float: left;
-	width: 75%;
+	width: 80%;
 	height: 250px;
-	background-color: #ffe5e5;
+	background-color: #414141;
 	overflow: hidden;
-	margin-left: 12.5%;
+	margin-left: 10%;
 	margin-bottom: 50px;
 }
 #first_footer {

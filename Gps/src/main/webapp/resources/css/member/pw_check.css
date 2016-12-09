@@ -6,3 +6,61 @@ section {
 	padding-bottom: 100px;
 	background-color: #666666;
 }
+
+section #pw_check_first {
+	width: 40%;
+	margin: 0 auto;
+	padding: 50px 1.4%;
+	overflow: hidden;
+}
+#pw_check_first h2 {
+	width: 100%;
+	text-align: center;
+	padding: 30px 1.4%;
+	color: white;
+	font-weight: bold;
+	font-size: 30px;
+	text-shadow: -1px -1px 0px #414141;
+}
+#pw_check_first #pw_check_second{
+	color: white;
+	width: 60%;
+	margin: 0 auto;
+	font-size : 20px;
+	font-weight: bold;
+}
+#pw_check_first input[type="password"] {
+	border: 1px solid #aaaaaa;
+	border-radius: 7px;
+	padding: 5px 1.4%; 
+	width: 60%;
+}
+
+#pw_check_second span {
+	color: #ff9797;
+	font-size: 12px;
+	text-shadow: -1px -1px 0px #840003;
+}
+
+#pw_check_first button {
+	float: right;
+	overflow: hidden;
+	padding: 5px 1.4%;
+	color: white;
+	font-size: 15px;
+	text-shadow: -1px -1px 0px #414141;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	margin: 15px 5%;
+	border: 1px solid #414141;
+	border-radius : 5px;
+	cursor: pointer;
+}
+#pw_check_first button:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+
+
+
+
+

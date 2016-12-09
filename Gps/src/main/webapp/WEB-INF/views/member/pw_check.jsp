@@ -26,18 +26,21 @@
 	<!-- section -->
 	<section>
 		<!-- 내용 넣기 -->
-		
-		<!-- 구분항목 -->
-		<input type="hidden" readonly="readonly" id="category" value="${category}"> <br>
-		
-		<!-- pw확인용 -->
-		<input type="hidden" readonly="readonly" id="pw_set" value="${member.m_pw}"> <br>
-		
-		<h2>비밀번호 확인</h2>
-		pw <input type="password" name="m_pw" id="pw_input" class="input"><br>
-		<input type="text" id="pw_check" readonly="readonly"
-					value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다."><br>
-		<button id="pwbtn">확인하기</button>
+		<div id="pw_check_first">
+			<!-- 구분항목 -->
+			<input type="hidden" readonly="readonly" id="category" value="${category}"> <br>
+			
+			<!-- pw확인용 -->
+			<input type="hidden" readonly="readonly" id="pw_set" value="${member.m_pw}"> <br>
+			
+			<h2>비밀번호 확인</h2>
+			<div id="pw_check_second">
+				비밀번호 : 
+				<input type="password" name="m_pw" id="pw_input" class="input"><br>
+				<span id="pw_check">비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다</span>
+			</div>
+			<button id="pwbtn">확인하기</button>
+		</div>
 		
 		
 		
