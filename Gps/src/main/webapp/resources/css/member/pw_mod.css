@@ -7,4 +7,86 @@ section {
 	background-color: #666666;
 }
 
+section #first_pw {
+}
+section #second_pw {
+	width: 39%;
+	margin: 0 auto;
+	padding: 30px 3%;
+}
+#second_pw table {
+	border-collapse: collapse;
+	width: 100%;
+	overflow: hidden;
+}
+#second_pw td {
+	padding: 5px 1.4%;
+	overflow: hidden;
+}
+#second_pw .p_title {
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 17px;
+	font-weight: bold;
+	text-align: right;
+}
+#second_pw h2 {
+	width: 100%;
+	padding: 20px 3%;
+	color: white;
+	font-size: 27px;
+	text-shadow: -1px -1px 0px #414141;
+	
+}
+
+#second_pw input[type="password"]{
+	width: 50%;
+	border: 1px solid #aaaaaa;
+	border-radius : 5px;
+	padding: 3px 1.4%;
+}
+
+#second_pw span {
+	color: #ff6060;
+	font-size: 13px;
+	text-shadow: -1px -1px 0px #840003;
+}
+
+#second_pw #pwmod_btn {
+	padding: 5px 2.4%;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	border: 1px solid black;
+	border-radius : 5px;
+	cursor: pointer;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	float: right;
+	overflow: hidden;
+	margin-top: 20px;
+	margin-right: 20%;
+}
+#second_pw #pwmod_btn:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
