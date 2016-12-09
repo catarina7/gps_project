@@ -1,0 +1,99 @@
+@CHARSET "UTF-8";
+
+section {
+	width: 100%;
+	padding-top: 155px;
+	padding-bottom: 100px;
+	background-color: #666666;
+}
+section #second_mem {
+	width: 100%;
+	padding: 10px 0px;
+}
+section #first_mem {
+	width: 45%;
+	margin: 0 auto;
+	overflow: hidden;
+	padding: 20px 1.4%;
+}
+#first_mem h2 {
+	width: 75%;
+	margin: 0 auto;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 28px;
+	font-weight: bold;
+	padding: 35px 1.4%;
+}
+#first_mem table {
+	width: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+	border-collapse: collapse;
+}
+#first_mem .title_m {
+	font-size: 17px;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	font-weight: bold;
+	text-align: right;
+}
+#first_mem td {
+	padding: 13px 1.4%;
+	border-top: 1px dashed #aaaaaa;
+}
+#first_mem label {
+	color: white;
+	font-size: 14px;
+	margin-left: 2.4%;
+}
+#first_mem input[type="text"] {
+	border: 0px;
+	background-color: #666666;
+	color: white;
+	font-size: 15px;
+	padding: 3px 1.4%;
+}
+#first_mem input[type="date"] {
+	border: 0px;
+	background-color: #666666;
+	color: white;
+	font-size: 15px;
+	padding: 3px 1.4%;
+	letter-spacing: 1.5px;
+}
+#first_mem select {
+	background-color: #666666;
+	border: 0px;
+	color: white;
+	padding: 2px 0.7%;
+}
+#first_mem button {
+	padding: 7px 4%;
+	border: 1px solid #000000;
+	border-radius : 5px;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	cursor: pointer;
+}
+#first_mem button:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+#first_mem #mod_btn {
+	float: right;
+	overflow: hidden;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
