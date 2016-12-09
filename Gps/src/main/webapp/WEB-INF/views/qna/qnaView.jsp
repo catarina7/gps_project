@@ -73,7 +73,7 @@
 							<tr>
 								<td class="title">내용</td>
 								<td>
-									<div id="n_textarea">
+									<div id="q_textarea">
 										${qnaView.q_contents}
 									</div>
 								</td>
@@ -84,7 +84,7 @@
 								<td class="title">이미지</td>
 								<c:forEach items="${qnaImg}" var="img">
 								<td>
-									<img alt="" src="/resources/upload/${qnaImg.qfile_name}">
+									<img alt="" src="../resources/upload/${img.qfile_name}">
 								</td>
 								</c:forEach>
 							</tr>	

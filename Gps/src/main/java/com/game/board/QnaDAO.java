@@ -35,7 +35,7 @@ public class QnaDAO {
 	}
 	
 	//이미지 갯수 가져오기
-	public int qnaViewImgCount(int q_num) throws Exception{
+	public int qnaView_imgCount(int q_num) throws Exception{
 		return sqlSession.selectOne(namespace+"qnaView_imgCount", q_num);
 	}
 	
@@ -76,6 +76,10 @@ public class QnaDAO {
 	
 	public int qnaMod(QnaDTO qnaDTO) throws Exception{
 		return sqlSession.update(namespace+"qnaMod", qnaDTO);
+	}
+	
+	public int qnaReply(QnaDTO qnaDTO) throws Exception{
+		return sqlSession.insert(namespace+"qnaReply", qnaDTO);
 	}
 
 }

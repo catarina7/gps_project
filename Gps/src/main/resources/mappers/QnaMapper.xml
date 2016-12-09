@@ -16,7 +16,7 @@
 		</select>
 		
 		<!-- qnaView에 들어갈 사진 갯수 -->
-		<select id="qnaView_img_count" resultType="int" parameterType="int">
+		<select id="qnaView_imgCount" resultType="int" parameterType="int">
 			select count(qfile_name) from qna_file where q_num=#{q_num}
 		</select>
 		
@@ -39,7 +39,7 @@
 		<select id="qnaList" resultType="com.game.board.QnaDTO" parameterType="com.game.util.PageMaker">
 			select * from
 			(select rownum R, F.* from
-			(select * from qna order by q_num desc) F)
+			(select * from qna order by ref desc, step asc) F)
 			where R between #{startRowNum} and #{lastRowNum}
 		</select>
 		<!-- Delete -->
@@ -70,7 +70,7 @@
 		</update>
 		
 		<insert id="qnaReply" parameterType="com.game.board.QnaDTO">
-			insert into qna values(qna_seq.nextval, #{q_writer}, #{q_title}, #{q_contents}, sysdate, #{ref}, #{step}+1, #{depth}+1)
+			insert into qna(q_num, q_writer, q_title, q_contents, reg_date, counts, ref, step, depth) values(qna_seq.nextval, #{q_writer}, #{q_title}, #{q_contents}, sysdate, 0, #{ref}, #{step}+1, #{depth}+1)
 		</insert>
 		
 	</mapper>
