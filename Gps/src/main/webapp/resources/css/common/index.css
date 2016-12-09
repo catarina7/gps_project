@@ -67,7 +67,9 @@ section #menu_bar {
 section #game_list {
 	width: 63.5%;
 	float: left;
-	margin: 80px 70px;
+	margin: 0px 70px;
+	margin-top: 80px;
+	margin-bottom: 30px;
 	overflow: hidden;
 }
 #game_list h3 {
@@ -227,13 +229,28 @@ section #game_list {
 	margin-bottom: 50px;
 }
 
-
-
-
-
-
-
-
+#main_four #main_notice {
+	width: 33.3%;
+	float: left;
+	overflow: hidden;
+	height: 100%;
+	background-color: #332123;
+}
+#main_four #main_company {
+	width: 32%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	margin-left: 0.8%;
+	background-color: #5f3d40;
+}
+#main_four #main_reply {
+	width: 33.3%;
+	height: 100%;
+	float: right;
+	overflow: hidden;
+	background-color: #a26f74;
+}
 
 #first_footer {
 	float: left;

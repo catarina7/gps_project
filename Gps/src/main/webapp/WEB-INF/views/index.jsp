@@ -255,7 +255,15 @@
 				</div>
 			</div>
 			<div id="main_four">
-				
+				<div id="main_notice">
+					
+				</div>
+				<div id="main_company">
+					
+				</div>
+				<div id="main_reply">
+					
+				</div>
 			</div>
 			<c:import url="/footer" />
 		</div>
