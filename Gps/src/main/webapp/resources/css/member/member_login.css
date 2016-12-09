@@ -91,7 +91,11 @@ section #first_login{
 #first_login #five_login input[type="button"]:hover {
 	background-color: #1e2837;
 }
-
+#five_login label {
+	color: white;
+	font-size: 14px;
+	margin-left: 0.7%;
+}
 /* 아이디 찾기 */
 section #first_id_div {
 	display: none;
@@ -134,7 +138,6 @@ section #first_pw_div {
 	overflow: hidden;
 	padding: 10px 1.4%;
 }
-
 
 
 

@@ -47,14 +47,14 @@
 						<span>비밀번호 : </span><input type="password" name="m_pw" id="pw_input" class="input"><br>
 					</div>
 					<div id="four_login">
-						<input type="button" id="log_btn" value="로그인">
+						<input type="button" id="log_btn" value="로그인"> 
 					</div>
 				</form>
 				<div id="five_login">
-					<input type="checkbox" id="id_save"><label for="id_save">아이디 저장</label>
 					<input type="button" id="join_btn" value="회원가입">
 					<input type="button" id="findpw_btn" value="비밀번호찾기">
 					<input type="button" id="findid_btn" value="아이디찾기">
+					<input type="checkbox" id="id_save"><label for="id_save">아이디 저장</label>
 				</div>
 			</div>
 		</div>
