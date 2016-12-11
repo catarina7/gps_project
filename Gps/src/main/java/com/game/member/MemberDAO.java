@@ -44,6 +44,11 @@ public class MemberDAO {
 		return sqlSession.selectOne(namespace+"Login", mDto);
 	}
 	
+	//computerinfo set
+	public ComputerDTO cominfo(int m_num) throws Exception{
+		return sqlSession.selectOne(namespace+"LoCominfo", m_num);
+	}
+	
 	//회원정보 수정
 	public int idMod(MemberDTO mDto) throws Exception{
 		

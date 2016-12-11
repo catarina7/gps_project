@@ -4,7 +4,7 @@ $(function(){
 	var pwinchk = 0;
 	
 	//새로운 비밀번호 확인
-	$("#new_pw_input").keyup(function(){
+	$("se_#new_pw_input").keyup(function(){
 		var reg1=/[a-z]+/;
 		var reg2=/[A-Z]+/;
 		var reg3=/\d+/;
@@ -32,8 +32,8 @@ $(function(){
 	});
 	
 	//비밀번호 확인 일치 체크 경고 메세지
-	$("#pw_set").keyup(function(){
-		if($(this).val()==$("#new_pw_input").val()){
+	$("#se_pw_set").keyup(function(){
+		if($(this).val()==$("#se_new_pw_input").val()){
 			$("#pw_confirm").hide();
 			pwchk++;
 		}else{
@@ -43,7 +43,7 @@ $(function(){
 	});
 	
 	//현재 비밀번호 확인용
-	$("#pw_input").keyup(function(){
+	$("#se_pw_input").keyup(function(){
 		if($(this).val()==$("#pas_pw").val()){
 			pwinchk++;
 		}else{
@@ -63,7 +63,7 @@ $(function(){
 				url : "MemMod",
 				data : {			
 					m_id : $("#pas_id").val(),
-					m_pw : $("#new_pw_input").val(),
+					m_pw : $("#se_new_pw_input").val(),
 					m_kind : 1
 				},
 				type : "post",

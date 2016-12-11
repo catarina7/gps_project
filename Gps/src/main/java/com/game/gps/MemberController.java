@@ -91,7 +91,7 @@ public class MemberController {
 	public ResponseEntity<Integer> login(MemberDTO mDto, HttpSession session){
 		
 		try {
-			mDto = memberService.login(mDto);
+			mDto = memberService.login(mDto, session);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -109,7 +109,8 @@ public class MemberController {
 	//로그아웃
 	@RequestMapping(value="/logout")
 	public String logout(HttpSession session){
-		session.removeAttribute("member");;
+		session.removeAttribute("member");
+		session.removeAttribute("cominfo");
 		return "redirect:/index";
 	}
 	

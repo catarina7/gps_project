@@ -22,12 +22,20 @@
 	<select id="Login" parameterType="com.game.member.MemberDTO" resultType="com.game.member.MemberDTO">
 		select * from member where m_id=#{m_id} and m_pw=#{m_pw}	
 	</select>
+	<!-- 로그인 computerinfo set용 -->
+	<select id="LoCominfo" parameterType="java.lang.Integer" resultType="com.game.computer.ComputerDTO">
+		select * from computer where m_num = #{m_num}
+	</select>
+	
 	<!-- 회원수정 -->
 	<update id="idMod" parameterType="com.game.member.MemberDTO">
 		update member 
 		<trim prefix="set" suffixOverrides=",">
 			<if test="m_pw != null">
 				m_pw = #{m_pw},
+			</if>
+			<if test="m_name != null">
+				m_name = #{m_name}, 
 			</if>
 			<if test="m_tel != null">
 				m_tel = #{m_tel},

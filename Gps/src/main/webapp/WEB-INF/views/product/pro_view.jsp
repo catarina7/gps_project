@@ -296,28 +296,28 @@
 							</tr>
 							<tr>
 								<td class="com_name">운영체제</td>
-								<td></td>
+								<td><span>'${cominfo.com_os}'</span></td>
 							</tr>
 							<tr>
 								<td class="com_name">CPU</td>
-								<td></td>
+								<td><span>'${cominfo.com_process}'</span></td>
 							</tr>
 							<tr>
 								<td class="com_name">메모리(RAM)</td>
-								<td></td>
+								<td><span>'${cominfo.com_memory}'</span></td>
 							</tr>
 							<tr>
 								<td class="com_name">그래픽 카드</td>
-								<td></td>
+								<td><span>'${cominfo.com_graphic}'</span></td>
 							</tr>
 							<tr>
 								<td class="com_name">Direct X버전</td>
-								<td></td>
+								<td><span>'${cominfo.com_directx}'</span></td>
 							</tr>
 							<tr>
 								<td class="com_name">하드디스크 <br> 여유공간
 								</td>
-								<td></td>
+								<td><span>'${cominfo.com_space}'</span></td>
 							</tr>
 						</table>
 					</div>

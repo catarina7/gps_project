@@ -39,6 +39,7 @@
 			<c:import url="/user_menu_bar"/>
 		</div>
 		<!-- 내용 넣기 -->
+
 		<div id="second_pw">
 			<h2>비밀번호 수정</h2>
 			
@@ -86,6 +87,22 @@
 					</td>
 				</tr>
 			</table>
+
+		<div>
+		<h2>비밀번호 수정</h2>
+		
+		현재 비밀번호
+		<input type="password" id="se_pw_input"><br>
+		새로운 비밀번호 
+		<input type="password" id="se_new_pw_input"><br>
+		<input type="text" id="pw_check" readonly="readonly" value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다."><br>
+		새로운 비밀번호 확인
+		<input type="password" id="se_pw_set"><br>
+		<input type="text" id="pw_confirm" readonly="readonly" value="비밀번호가 일치 하지 않습니다."><br>
+		<button id="pwmod_btn">수정하기</button>	  
+		
+		
+
 		</div>	
 		
 	</section>
