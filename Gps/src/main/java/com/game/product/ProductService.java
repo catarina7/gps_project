@@ -85,8 +85,6 @@ public class ProductService {
 		List<ProductFileDTO> ar = productDAO.productViewImg(pageMaker, pro_num);
 		//productView 대표사진
 		ProductFileDTO pro_main = productDAO.productImgList(pro_num);
-		
-		System.out.println("ar : " + ar.size());
 			
 		/*for(int i=0; i<ar.size();i++){
 			System.out.println(ar.get(i).getFile_name());

@@ -35,7 +35,7 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/pro_list")
-	public String productList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="10") int perPage, Model model){
+	public String productList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model){
 		try {
 			System.out.println("(control)curPage : "+ curPage);
 			productService.productList(curPage, perPage, model);
