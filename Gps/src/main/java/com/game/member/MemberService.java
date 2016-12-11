@@ -33,12 +33,14 @@ public class MemberService {
 		public MemberDTO login(MemberDTO mDto, HttpSession session) throws Exception{
 			
 			ComputerDTO comDto = new ComputerDTO();
+			mDto = memberDao.login(mDto);  
 			
-			mDto = memberDao.login(mDto);
-			comDto = memberDao.cominfo(mDto.getM_num());
-			
-			session.setAttribute("cominfo", comDto);
-			
+			try {
+				comDto = memberDao.cominfo(mDto.getM_num());	
+				session.setAttribute("cominfo", comDto);
+			} catch (Exception e) {
+				// TODO: handle exception
+			}						
 			return mDto;
 		}
 		

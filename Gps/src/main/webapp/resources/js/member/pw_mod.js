@@ -4,7 +4,7 @@ $(function(){
 	var pwinchk = 0;
 	
 	//새로운 비밀번호 확인
-	$("se_#new_pw_input").keyup(function(){
+	$("#se_new_pw_input").keyup(function(){
 		var reg1=/[a-z]+/;
 		var reg2=/[A-Z]+/;
 		var reg3=/\d+/;
@@ -41,7 +41,7 @@ $(function(){
 			pwchk=0;
 		}
 	});
-	
+	  
 	//현재 비밀번호 확인용
 	$("#se_pw_input").keyup(function(){
 		if($(this).val()==$("#pas_pw").val()){
@@ -53,9 +53,9 @@ $(function(){
 	
 	
 	$("#pwmod_btn").click(function(){
-		if(pwinchk ==0 ){
+		/*if(pwinchk ==0 ){
 			alert("비밀번호가 일치 하지 않습니다.");
-		}else if(pwchk == 0){
+		}else*/ if(pwchk == 0){
 			alert("새로운 비밀번호를 확인해 주세요.");
 		}else {
 			
@@ -71,8 +71,8 @@ $(function(){
 					if(result==0){
 						alert("회원 수정에 실패했습니다. 입력정보를 확인해 주세요.");
 					}else{
-						alert("회원정보 수정에 성공했습니다. 로그인 페이지로 이동하겠습니다.");
-						location.href="login";
+						alert("회원정보 수정에 성공했습니다. ");
+						location.href="mem_Info";
 					}
 				}
 			});  

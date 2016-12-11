@@ -89,19 +89,21 @@ public class MemberController {
 	@RequestMapping(value="/login", method = RequestMethod.POST, produces="application/json; charset=utf-8")
 	@ResponseBody
 	public ResponseEntity<Integer> login(MemberDTO mDto, HttpSession session){
-		
+		MemberDTO mDto2 = new MemberDTO();
+		int result = 0; 
 		try {
-			mDto = memberService.login(mDto, session);
+			mDto2 = memberService.login(mDto, session);
+			if(mDto2 != null){
+				result = 1;
+			}else {
+				result =0;
+			}
+			session.setAttribute("member", mDto2);		
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
+			result=0;
 			e.printStackTrace();
-		}
-		int result = 0;
-		if(mDto != null){
-			result = 1;
-			session.setAttribute("member", mDto);		
-		}else{
-			result = 0;
 		}
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}

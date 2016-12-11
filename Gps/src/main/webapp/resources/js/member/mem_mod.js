@@ -10,7 +10,7 @@ $(function(){
 	
 	
 	//전화번호 
-	var tel = $("#pas_tel").val();
+	/*var tel = $("#pas_tel").val();
 	
 	tel_split = tel.split("=");
 	
@@ -22,15 +22,15 @@ $(function(){
 	}else if(tel_split[0] == "KT"){
 		$("select > option[value = KT]").attr("selected","true");
 	}	
-	$("#pu_tel_input").val(tel_split[1]);
+	$("#pu_tel_input").val(tel_split[1]);*/
 	
 	
-	//성별
+	/*//성별
 	if($("#pas_gender").val() == "male"){		
 		$("input:radio[value=male]").prop("checked","checked");
 	}else{		
 		$("input:radio[value=female]").prop("checked","checked");
-	}
+	}*/
 	
 	
 	/*전화번호*/
