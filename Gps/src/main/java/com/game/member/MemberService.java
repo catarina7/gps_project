@@ -3,6 +3,7 @@ package com.game.member;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -29,8 +30,16 @@ public class MemberService {
 		}
 	
 		//로그인
-		public MemberDTO login(MemberDTO mDto) throws Exception{
-			return memberDao.login(mDto);
+		public MemberDTO login(MemberDTO mDto, HttpSession session) throws Exception{
+			
+			ComputerDTO comDto = new ComputerDTO();
+			
+			mDto = memberDao.login(mDto);
+			comDto = memberDao.cominfo(mDto.getM_num());
+			
+			session.setAttribute("cominfo", comDto);
+			
+			return mDto;
 		}
 		
 		//회원정보 수정

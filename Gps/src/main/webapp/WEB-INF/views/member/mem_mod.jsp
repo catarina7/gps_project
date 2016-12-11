@@ -43,26 +43,28 @@
 		
 		<div>
 		<h2>회원정보 수정</h2>
-		
+		<div>
+		name: <input type="text" id="pu_name_input" value="${member.m_name}"><br>
+		</div>
 		<div>
 		<!-- 전화번호 -->
-		tel: <select id="tel_option" name="m_tel">
+		tel: <select id="pu_tel_option" >
 					<option value="SKT">SKT</option>
 					<option value="LGT">LGT</option>
 					<option value="KT">KT</option>
-				</select> <input type="text" name="m_tel" id="tel_input"
-					placeholder=" '-'를 포함하여 입력해주세요." class="input">
+				</select> 
+				<input type="text" id="pu_tel_input" placeholder=" '-'를 포함하여 입력해주세요." >
 				<p id="telchk">전화번호를 '-'를 포함하여 정확하게 입력해주세요.</p>	<br> 
 		</div>
 		<div>
 		<!-- 성별 -->
 		gender: 
-				male <input type="radio" name="m_gender" id="gender" value="male"> 
-				female <input type="radio" name="m_gender" id="gender" value="female"> <br>
+				male <input type="radio" name="pu_m_gender"  value="male"> 
+				female <input type="radio" name="pu_m_gender" value="female"> <br>
 		</div>
 		<div>
 		<!-- email -->
-		e-mail: <input type="text" name="m_email" id="email_input" placeholder="이메일을 입력해주세요." class="input" value="${member.m_email}">
+		e-mail: <input type="text" id="pu_email_input" placeholder="이메일을 입력해주세요." class="input" value="${member.m_email}">
 				<p id="emailchk">이메일을 정확하게 입력해주세요.</p><br>
 		
 		</div>
