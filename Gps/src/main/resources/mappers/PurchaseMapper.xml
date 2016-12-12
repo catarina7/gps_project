@@ -5,7 +5,7 @@
 <mapper namespace="PurchaseMapper">
 
 	<!-- 구매목록 가져오기  -->
-	<select id="cartList" parameterType="com.game.mart.CartDTO" resultType="java.util.Arrylist">
+	<select id="cartList" parameterType="com.game.mart.CartDTO" resultType="java.util.ArrayList">
 		select * from cart where c_num = #{c_num} and pro_num = #{pro_num}	
 	</select>
 
