@@ -70,7 +70,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="p_title">새로운 비밀번호 확인 : </td>
+					<td class="p_title">새로운 비밀번호 확인 </td>
 					<td>
 						<input type="password" name="m_pw" id="pw_set" class="input"><br>
 					</td>
@@ -87,7 +87,7 @@
 					</td>
 				</tr>
 			</table>
-
+		</div>
 		<div>
 		<h2>비밀번호 수정</h2>
 		
@@ -103,7 +103,7 @@
 		
 		
 
-		</div>	
+		</div>
 		
 	</section>
 	
