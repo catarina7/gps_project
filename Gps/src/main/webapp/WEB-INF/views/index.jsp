@@ -268,15 +268,45 @@
 				</div>
 			</div>
 			<div id="main_four">
-				<div id="main_notice">
-					
+				<div id="main_menu">
+					<span>사용자 메뉴</span>
+					<div id="main_notice">
+						<div class="main_step1">
+							<div class="titi">
+								<span>자주하는 질문</span>
+							</div>
+							<div class="other line">
+								<a href="#">모두보기</a>
+							</div>
+						</div>
+						<div class="main_step2">
+							
+						</div>
+					</div>
+					<div id="main_reply">
+						<div class="main_step1">
+							<div class="other">
+								<a href="#">모두보기</a>
+							</div>
+							<div class="titi line">
+								<span>공지사항</span>
+							</div>
+						</div>
+						<div class="main_step2">
+							
+						</div>
+					</div>
 				</div>
-				<div id="main_company">
-					
-				</div>
-				<div id="main_reply">
-					
-				</div>
+					<div id="main_company">
+						<div id="main_company_step1">
+						
+						</div>
+						<div id="main_company_step2">
+							<div id="step2">
+								
+							</div>
+						</div>
+					</div>
 			</div>
 			<c:import url="/footer" />
 		</div>

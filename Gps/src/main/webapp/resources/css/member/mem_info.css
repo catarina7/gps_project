@@ -38,6 +38,18 @@ section #first_mem {
 	font-weight: bold;
 	text-align: right;
 }
+#first_mem .title_p {
+	font-size: 13px;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	font-weight: bold;
+	text-align: right;
+}
+.pw_modform input[type="text"] {
+	padding: 2px 1.4%;
+	border: 1px solid #aaaaaa;
+	border-radius : 8px;
+}
 #first_mem td {
 	padding: 13px 1.4%;
 	border-top: 1px dashed #aaaaaa;
