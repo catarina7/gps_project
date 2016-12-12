@@ -98,7 +98,9 @@
 			<div class="title"><span>◎</span> 구매 게임</div>
 			<div id="second_buy">
 				<div>
+					<c:forEach items="productList" var="product" varStatus="status">
 					
+					</c:forEach>					
 				</div>
 			</div>
 			<!-- 구매하고자 하는 상품들의 가격 합계(최종 구매 가격) -->

@@ -69,11 +69,13 @@
 	//하나만 구매하기 
 	function one_bye(i){
 		var c_num = $("#c_num"+i).val();
+		var pro_num = $("pro_num"+i).val();
 		$.ajax({
 			url: '/gps/purchase/buy' ,
 			type: 'POST',
 			data:{
-				c_num : c_num
+				c_num : c_num,
+				pro_num : pro_num
 			},
 			success:function(data){
 				alert("구매를 진행합니다.");
@@ -134,6 +136,7 @@
 										</td>
 										<td>
 											<input type="hidden" name="c_num" id="c_num${status.index}" value="${cDTO[status.index].c_num}">
+											<input type="hidden" name="pro_num" id="pro_num${status.index}" value="${cDTO[status.index].pro_num}">
 											<input type="hidden" name="m_id" id="m_id${status.index}" value="${member.m_id}">
 											<input class="pro_delete" type="button" value="X" id="one_delete_${status.index}" onclick="one_delete(${status.index})">
 										</td>

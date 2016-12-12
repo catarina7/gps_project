@@ -13,18 +13,28 @@ import com.game.mart.PurchaseSurvice;
 public class PurchaseController {
 	
 	@Autowired
-	private PurchaseSurvice purcaseservice;
+	private PurchaseSurvice purchaseservice;
 	
+	
+	//구매내역
 	@RequestMapping(value="/purchase")
-	public String purchaseList(CartDTO carDto, Model model){		
+	public String purchaseList(){		
 		
 		
 		
 		return "/purchase/purchase";
 	}
 	
+	//구매하기 
 	@RequestMapping(value="/buy")
-	public String buy(){
+	public String buy(CartDTO cartDto, Model model){
+		
+		try {
+			purchaseservice.purchaseList(cartDto, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 		return "/purchase/buy";
 	}

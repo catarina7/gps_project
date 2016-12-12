@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="PurchaseMapper">
+
+	<!-- 구매목록 가져오기  -->
+	<select id="cartList" parameterType="com.game.mart.CartDTO" resultType="java.util.Arrylist">
+		select * from cart where c_num = #{c_num} and pro_num = #{pro_num}	
+	</select>
+
+</mapper>

@@ -15,7 +15,7 @@
 		
 		if($("#pas_kind").val() == 10){
 			alert("비밀번호 변경을 바로 진행 합니다.");
-			location.href="pw_check?category=2";
+			location.href="member/pw_check?category=2";
 		}
 		
 		$(window).scroll(function(){
@@ -85,7 +85,7 @@
 	<c:import url="/header" />
 	
 	<!-- session 정리용 -->
-	<input type="text" id="pas_kind" value="${member.m_kind}">
+	<input type="hidden" id="pas_kind" value="${member.m_kind}">
 	
 	<!-- section -->
 	<section>
