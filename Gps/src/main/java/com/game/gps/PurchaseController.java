@@ -16,13 +16,16 @@ public class PurchaseController {
 	private PurchaseSurvice purcaseservice;
 	
 	@RequestMapping(value="/purchase")
-	public String purchase(CartDTO carDto, Model model){		
+	public String purchaseList(CartDTO carDto, Model model){		
+		
+		
 		
 		return "/purchase/purchase";
 	}
 	
 	@RequestMapping(value="/buy")
 	public String buy(){
+		
 		return "/purchase/buy";
 	}
 }
