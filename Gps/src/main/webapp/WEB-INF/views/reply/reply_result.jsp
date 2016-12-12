@@ -14,12 +14,8 @@
 		<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents}</textarea>
 	</div>
 	<div class="re_sub">
-		<div class="hate" onclick="reply_hate(${status.index})">
-			<span> <img
-				src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
-			</span> <strong>0</strong>
-		</div>
 		<div class="like" onclick="reply_like(${status.index})">
+			<input type="hidden" name="m_id" id="m_id_like_${status.index}" value="${member.m_id}">
 			<span> <img
 				src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
 			</span>

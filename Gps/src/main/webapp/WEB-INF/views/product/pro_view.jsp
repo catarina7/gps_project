@@ -133,27 +133,10 @@
 	//좋아요
 	function reply_like(i){
 		var r_num = $("#r_num_"+i).val();
-		var m_id = $("#m_id_"+i).val();
+		var m_id = $("#m_id_like_"+i).val();
+		
 		$.ajax({
 			url: '../reply/reply_like',
-			type: 'POST',
-			data:{
-				pro_num: $("#pro_num").val(),
-				r_num: r_num,
-				m_id: m_id
-			},
-			success: function(data){
-				data=data.trim();
-				$("#reply_contents").html(data);
-			}
-		});
-	}
-	//싫어요
-	function reply_hate(i){
-		var r_num = $("#r_num_"+i).val();
-		var m_id = $("#m_id_"+i).val();
-		$.ajax({
-			url: '../reply/reply_hate',
 			type: 'POST',
 			data:{
 				pro_num: $("#pro_num").val(),
@@ -527,13 +510,8 @@
 								<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents}</textarea>
 							</div>
 							<div class="re_sub">
-								<div class="hate" onclick="reply_hate(${status.index})">
-									<span>
-										<img src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
-									</span>
-									<strong>0</strong>
-								</div>
 								<div class="like" onclick="reply_like(${status.index})">
+									<input type="hidden" name="m_id" id="m_id_like_${status.index}" value="${member.m_id}">
 									<span>
 										<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
 									</span>
@@ -552,10 +530,6 @@
 							</div>
 						</c:forEach>	
 					</div>
-					<div class="re_sub">
-						<button id="save">등록</button>
-					</div>
-
 				</div>
 				
 			</div>
