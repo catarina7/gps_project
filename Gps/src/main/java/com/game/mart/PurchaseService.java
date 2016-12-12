@@ -10,7 +10,7 @@ import org.springframework.ui.Model;
 import com.game.product.ProductDTO;
 
 @Service
-public class PurchaseSurvice {
+public class PurchaseService {
 	
 	@Autowired
 	private PurchaseDAO purchasedao;

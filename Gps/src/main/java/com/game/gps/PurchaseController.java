@@ -6,14 +6,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.game.mart.CartDTO;
-import com.game.mart.PurchaseSurvice;
+import com.game.mart.PurchaseService;
 
 @Controller
 @RequestMapping(value="/purchase")
 public class PurchaseController {
 	
 	@Autowired
-	private PurchaseSurvice purchaseservice;
+	private PurchaseService purchaseservice;
 	
 	
 	//구매내역
