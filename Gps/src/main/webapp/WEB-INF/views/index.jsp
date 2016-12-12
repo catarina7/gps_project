@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -273,10 +274,10 @@
 					<div id="main_notice">
 						<div class="main_step1">
 							<div class="titi">
-								<span>자주하는 질문</span>
+								<span>공지사항</span>
 							</div>
 							<div class="other line">
-								<a href="#">모두보기</a>
+								<a href="${pageContext.request.contextPath}/notice/noticeList">모두보기</a>
 							</div>
 						</div>
 						<div class="main_step2">
@@ -289,7 +290,7 @@
 								<a href="#">모두보기</a>
 							</div>
 							<div class="titi line">
-								<span>공지사항</span>
+								<span>자주하는질문</span>
 							</div>
 						</div>
 						<div class="main_step2">
