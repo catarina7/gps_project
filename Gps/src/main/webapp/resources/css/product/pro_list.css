@@ -9,17 +9,95 @@ section {
 
 
 section #pro_list_first {
-	width: 65%;
+	width: 68%;
 	margin: 0 auto;
-	padding: 10px 1.4%;
+	padding: 20px 1.4%;
+	overflow: hidden;
+}
+#pro_list_first h2 {
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	padding: 20px 1.4%;
+}
+#pro_list_first #pro_list_product {
+	width: 96%;
+	margin: 0 auto;
 	overflow: hidden;
 }
 #pro_list_first .g_games {
+	width: 22%;
+	padding: 20px 1.4%;
 	float: left;
 	overflow: hidden;
 }
 #pro_list_first .game_img {
-	width: 20%;
+	width: 98%;
 	border: 1px solid #aaaaaa;
 	height: 120px;
 }
+#pro_list_first .game_img:hover {
+	border: 1px solid #ff6666;
+}
+.g_games p {
+	width: 100%;
+	padding: 2px 0px;
+	color: white;
+	font-size: 13px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.g_games p span {
+	color: #d0d0d0;
+	text-shadow: -1px -1px 0px #414141;
+}
+#pro_list_first #pro_list_paging {
+	padding: 25px 1.4%;
+	width: 74%;
+	margin: 0 auto;
+	float: left;
+	overflow: hidden;
+}
+#pro_list_first #pro_list_paging a {
+	text-align: center;
+	color: white;
+	padding: 2px 1.4%;
+	background-color: #414141;
+	border: 1px solid #aaaaaa;
+	border-radius : 5px;
+}
+#pro_list_first #pro_list_paging a:hover {
+	color: #ff8c8c;
+}
+#pro_list_first .margins {
+	width: 45%;
+	float: right;
+	overflow: hidden;
+	margin: 0 auto;
+}
+#pro_list_first #pro_list_write {
+	padding: 25px 1.4%;
+	width: 20%;
+	margin: 0 auto;
+	float: left;
+	overflow: hidden;
+}
+#pro_list_first #pro_list_write a {
+	width: 100%;
+	color: white;
+	font-weight: bold;
+}
+#pro_list_first #pro_list_write a:hover {
+	color: #32435c;
+}
+
+
+
+
+
+
+
+
+
+
+

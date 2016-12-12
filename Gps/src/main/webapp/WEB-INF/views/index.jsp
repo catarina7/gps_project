@@ -73,6 +73,10 @@
 				$(this).css("border","1px solid #aaaaaa");
 			});
 		});
+		
+		$("#all_list").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list";
+		});
 	});
 </script>
 </head>
@@ -110,7 +114,7 @@
 				</ul>
 				<p>GATEGORY</p>
 				<ul>
-					<li>list</li>
+					<li id="all_list">전체 상품</li>
 					<li>list</li>
 					<li>list</li>
 					<li>list</li>

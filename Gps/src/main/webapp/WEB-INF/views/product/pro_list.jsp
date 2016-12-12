@@ -16,30 +16,40 @@
 	
 	<c:import url="/header" />
 	<section>
+			<div>
+				<c:import url="/user_menu_bar" />
+			</div>
 			<div id="pro_list_first">
-				<h2>Product List</h2>
+				<h2>전체 상품</h2>
+					<div id="pro_list_product">
 						<c:forEach items="${pro_list}" var="pro" varStatus="status">
 							<div class="g_games">
 								<a href="pro_view?pro_num=${pro.pro_num}"><img class="game_img" src="../resources/upload/${pro_main_img[status.index].file_name}"></a>
-								<p>글 번호 : ${pro.pro_num} </p> 
-								<p>게임 이름 : ${pro.pro_title}</p> 		
-								<p>가격 : ${pro.price}</p>
-							    <p>회사명 :  ${pro.company}</p>  
+								<p><span>글 번호 : </span> ${pro.pro_num} </p> 
+								<p><span>게임명 : </span> ${pro.pro_title}</p> 		
+								<p><span>가격 : </span> ${pro.price}</p>
+							    <p><span>회사명 : </span>  ${pro.company}</p>  
 							</div>
 						</c:forEach>
-					
-					<div style="width:200px; height:200px; board:1px solid red;">
-						<c:if test="${pageMaker.curBlock>1}">
-							<a href="pro_list?curPage=${pageMaker.startNum-1}">[이전]</a>
-						</c:if>
-						<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
-							<a href="pro_list?curPage=${i}">${i}</a>
-						</c:forEach>
-						<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">
-							<a href="pro_list?curPage=${pageMaker.lastNum+1}">[다음]</a>
-						</c:if>
 					</div>
-				<a href="pro_write">Product Write</a>
+					<div id="pro_list_paging">
+						<div class="margins">
+							<c:if test="${pageMaker.curBlock>1}">
+								<a href="pro_list?curPage=${pageMaker.startNum-1}">[이전]</a>
+							</c:if>
+							<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
+								<a href="pro_list?curPage=${i}">${i}</a>
+							</c:forEach>
+							<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">
+								<a href="pro_list?curPage=${pageMaker.lastNum+1}">[다음]</a>
+							</c:if>
+						</div>
+					</div>
+				<div id="pro_list_write">
+					<div>
+						<a href="pro_write">Product Write</a>
+					</div>
+				</div>
 			</div>
 	</section>
 	<c:import url="/footer" />
