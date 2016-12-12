@@ -7,9 +7,10 @@
 section {
 	width: 100%;
 	/* height: 2150px; */
-	padding-top: 105px;
+	padding-top: 83px;
 	min-width: 1208px;
 	overflow: hidden;
+	top: 0;
 }
 section #advertisement {
 	width: 100%;
