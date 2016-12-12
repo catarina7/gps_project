@@ -25,24 +25,48 @@
 		]]>
 	</delete>
 	
-	<!-- 좋아요 기능 -->
-	<insert id="replyLike" parameterType="java.util.Map">
-		insert into like_hate values(like_hate_seq.nextval , #{r_num}, #{pro_num}, #{m_id}, 1)
-	</insert>
-	<!-- 좋아요 갯수 -->
-	<select id="replyLike_count" resultType="int" parameterType="int">
-		select count(ROWNUM) from like_hate where r_num=#{r_num} and choice=1
-	</select>
-	<insert id="replyLike_insert" parameterType="java.util.Map">
-		insert into like_count values(like_count_seq.nextval, #{pro_num}, #{r_num}, #{like_count})
-	</insert>
+	<!-- 좋아요 갯수  [like_count] TABLE -->
 	<select id="replyLike_select" resultType="com.game.product.Like_countDTO" parameterType="int">
 		select * from like_count where LHC_NUM=(select max(lhc_num) from like_count where r_num=#{r_num})
 	</select>
 	
+	<!-- 좋아요 버튼을 누르면 id 검색한다. -->
+	<select id="like_id_search" resultType="com.game.product.Like_hateDTO" parameterType="java.util.Map">
+		select * from like_hate where r_num=#{r_num} and m_id=#{m_id} and choice=1
+	</select>
 	
-	<!-- 싫어요 기능 -->
-	<insert id="replyHate" parameterType="java.util.Map">
-		insert into like_hate values(like_hate_seq.nextval , #{r_num}, #{pro_num}, #{m_id}, 2)
+	<!-- like_hate 테이블에 추가 됨 -->
+	<insert id="replyLike_insert" parameterType="java.util.Map">
+		insert into like_hate values(like_hate_seq.nextval , #{r_num}, #{pro_num}, #{m_id}, 1)
 	</insert>
+	
+	<!-- like_count 테이블에서 r_num으로 좋아요수 검색-->
+	<select id="count_search" resultType="com.game.product.Like_countDTO" parameterType="int">
+		select * from like_count where r_num=#{r_num}
+	</select>
+	
+	<!-- like_count insert -->
+	<insert id="like_count_insert" parameterType="java.util.Map">
+		insert into like_count values(like_count_seq.nextval, #{pro_num}, #{r_num}, #{like_count})
+	</insert>
+	
+	<!-- like_count 테이블에 like_count 값 -->
+	<select id="replyLike_count" resultType="int" parameterType="int">
+		select count(ROWNUM) from like_hate where r_num=#{r_num} and choice=1
+	</select>
+	
+	<!-- like_count 테이블에 like_count 값 수정 -->
+	<update id="replyLike_update_plus" parameterType="com.game.product.Like_countDTO">
+		update like_count set like_count=#{like_count}+1 where r_num=#{r_num}
+	</update>
+	
+	<!-- like_count 테이블에 like_count 값 수정 -->
+	<update id="replyLike_update_minus" parameterType="com.game.product.Like_countDTO">
+		update like_count set like_count=#{like_count}-1 where r_num=#{r_num}
+	</update>
+	
+	<!-- 좋아요 취소 -->
+	<delete id="replyLike_cancel" parameterType="java.util.Map">
+		delete from like_hate where r_num=#{r_num} and m_id=#{m_id}
+	</delete>
 </mapper>

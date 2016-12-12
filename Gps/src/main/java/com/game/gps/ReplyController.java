@@ -64,16 +64,4 @@ public class ReplyController {
 		}
 		return "reply/reply_result";
 	}
-	
-	//싫어요 버튼
-	@RequestMapping(value="/reply_hate")
-	public String replyHate(int pro_num, int r_num, String m_id, Model model){
-		try {
-			replyService.replyHate(pro_num, r_num, m_id, model);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "reply/reply_result";
-	}
 }
