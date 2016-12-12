@@ -57,4 +57,6 @@
 	<select id="pro_view_img_count" resultType="int" parameterType="int">
 		select count(File_name) from pro_file where pro_num=#{pro_num}
 	</select>
+	
 </mapper>
+

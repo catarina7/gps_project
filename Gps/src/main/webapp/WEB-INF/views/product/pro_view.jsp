@@ -41,7 +41,7 @@
 	        sSkinURI: "/gps/resources/SE2/SmartEditor2Skin.html",
 	        htParams : {
 	            // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
-	            bUseToolbar : false,             
+	            bUseToolbar : true,             
 	            // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
 	            bUseVerticalResizer : false,     
 	            // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
@@ -50,14 +50,40 @@
 	    
 	    	
 	    });
-	     
-	    //전송버튼 클릭이벤트
-	    $("#save").click(function(){
+	    
+	    //댓글 리스트
+	    $.ajax({
+	    	url: '../reply/reply_list',
+	    	type: 'POST',
+	    	data:{
+	    		pro_num:$("#pro_num").val()
+	    	},
+	    	success: function(data) {
+				data=data.trim();
+				$("#reply_contents").html(data);
+			}
+	    });
+	    
+	    //전송버튼 클릭이벤트 (댓글 작성)
+		$("#save").click(function(){
 	        //id가 smarteditor인 textarea에 에디터에서 대입
 	        editor_object.getById["smarteditor"].exec("UPDATE_CONTENTS_FIELD", []);
 	         
 	        // 이부분에 에디터 validation 검증
-	         
+	        $.ajax({
+    			url: '../reply/reply_write',
+    			type: 'POST',
+    			data:{
+    				pro_num: $("#pro_num").val(),
+    				r_writer: $("#r_writer").val(),
+    				r_contents: $("#smarteditor").val(),
+    				r_score: $("#r_score").val()
+    			},
+    			success:function(data){
+    				data=data.trim();
+    				$("#reply_contents").html(data);
+    			}
+    		});
 	    });
 	    /* smarteditor 끝 */
 		
@@ -69,6 +95,17 @@
 	    	location.href="pro_view?pro_num=${pro_view.pro_num}&curPage=${pageImg.lastNum+1}";
 	    });
 	    
+	    
+	    //장바구니 담기 (클래스)
+	    $(".cart").click(function() {
+	    	if(confirm("장바구니에 담으시겠습니까?") == true){
+	    		$("#frm").submit();
+	    	}else{
+	    		return;
+	    	}
+		});
+	    
+	    //장바구니 담기 (아이디)
 	    $("#cart").click(function() {
 	    	if(confirm("장바구니에 담으시겠습니까?") == true){
 	    		$("#frm").submit();
@@ -77,6 +114,58 @@
 	    	}
 		});
 	});
+	//댓글 삭제
+	function reply_delete(i){
+	  	var r_num = $("#r_num_"+i).val();
+	   	$.ajax({
+	  		url: '../reply/reply_delete',
+	   		type: 'POST',
+	   		data:{
+	   			pro_num: $("#pro_num").val(),
+	   			r_num: r_num
+	  		},
+	   		success: function(data){
+	   			data=data.trim();
+    			$("#reply_contents").html(data);
+	   		}
+	   	});
+	}
+	//좋아요
+	function reply_like(i){
+		var r_num = $("#r_num_"+i).val();
+		var m_id = $("#m_id_"+i).val();
+		$.ajax({
+			url: '../reply/reply_like',
+			type: 'POST',
+			data:{
+				pro_num: $("#pro_num").val(),
+				r_num: r_num,
+				m_id: m_id
+			},
+			success: function(data){
+				data=data.trim();
+				$("#reply_contents").html(data);
+			}
+		});
+	}
+	//싫어요
+	function reply_hate(i){
+		var r_num = $("#r_num_"+i).val();
+		var m_id = $("#m_id_"+i).val();
+		$.ajax({
+			url: '../reply/reply_hate',
+			type: 'POST',
+			data:{
+				pro_num: $("#pro_num").val(),
+				r_num: r_num,
+				m_id: m_id
+			},
+			success: function(data){
+				data=data.trim();
+				$("#reply_contents").html(data);
+			}
+		});
+	}
 </script>
 
 </head>
@@ -169,11 +258,11 @@
 									<col style="width: 100px;">
 								</colgroup>
 								<tr>
-									<td class="f_g_name">GAME PAKAGE NAME</td>
+									<td class="f_g_name">${pro_view.pro_title }</td>
 									<td></td>
 								</tr>
 								<tr>
-									<td class="f_g_ex" colspan="2">game explanation</td>
+									<td class="f_g_ex" colspan="2">${pro_view.pro_contents }</td>
 								</tr>
 							</table>
 						</div>
@@ -183,7 +272,7 @@
 								<li class="price">
 									<p class="nomal_p">₩ ${pro_view.price}</p> <span>₩ 15000</span>
 								</li>
-								<li><input type="button" value="장바구니 담기"></li>
+								<li><input type="button" class="cart" value="장바구니 담기"></li>
 							</ul>
 						</div>
 					</div>
@@ -394,11 +483,12 @@
 				<button class="five_btn" id="favorite">관심상품</button>
 				
 				<form action="../cart_favorite/cartAdd" method="get" id="frm">
-					<input type="text" name="m_id" value="${member.m_id}">
-					<input type="text" name="pro_num" value="${pro_view.pro_num}">
-					<button class="five_btn" id="cart">장바구니</button>
+					<input type="hidden" name="m_id" value="${member.m_id}">
+					<input type="hidden" name="pro_num" value="${pro_view.pro_num}">
+					<button class="five_btn" class="cart" id="cart">장바구니</button>
 				</form>
 			</div>
+			
 			<!-- review -->
 			<div id="six_pro">
 				<div id="pro_grade"></div>
@@ -409,87 +499,68 @@
 
 		
 						<div class="re_contents">
-							<div class="re_user">user name</div>
+							<div class="re_user"> ${member.m_id} </div>
 							<!-- textarea -->
-							<textarea id="smarteditor"></textarea>
+							<input type="hidden" name="pro_num" id="pro_num" value="${param.pro_num}">
+							<input type="hidden" name="r_writer" id="r_writer" value="${member.m_id}">
+							<textarea id="smarteditor" name="r_contents"></textarea>
+							평점 : <input type="number" id="r_score" name="r_score">
 						</div>
 						<div class="re_sub">
 							<button id="save">등록</button>
 						</div>
 
-					<div class="re_contents">
-						<div class="re_user">user name</div>
-						<textarea></textarea>
-					</div>
 
-					<div class="reply_contents">
-						<div class="re_title">
-							
-						</div>
-						<div class="re_contents">
-							<div class="re_user">user name</div>
-							<textarea readonly="readonly"></textarea>
-						</div>
-						<div class="re_sub">
-							<div class="hate">
-								<span>
-									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
-								</span>
-								<strong>0</strong>
-							</div>
-							<div class="like">
-								<span>
-									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
-								</span>
-								<strong>0</strong>
-							</div>
-						</div>
-					</div>
-					<div class="reply_contents">
-						<div class="re_title">
-							
-						</div>
-						<div class="re_contents">
-							<div class="re_user">user name</div>
-							<textarea readonly="readonly"></textarea>
-						</div>
-						<div class="re_sub">
-							<div class="hate">
-								<span>
-									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
-								</span>
-								<strong>100</strong>
-							</div>
-							<div class="like">
-								<span>
-									<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
-								</span>
-								<strong>100</strong>
-							</div>
-						</div>
 
+					<div class="reply_contents" id="reply_contents">
+						<c:forEach items="${replyList}" var="rep" varStatus="status">
+							<div class="re_title">
+								
+							</div>
+							<div class="re_contents">
+								<div class="re_user"> 
+									${rep.r_writer} 
+									<input type="hidden" name="m_id" id="m_id_${status.index}" value="${rep.r_writer}">
+									<input type="hidden" name="r_num" id="r_num_${status.index}" value="${rep.r_num}">
+									<input type="button" onclick="reply_delete(${status.index})" value="삭제">
+								</div>
+								<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents}</textarea>
+							</div>
+							<div class="re_sub">
+								<div class="hate" onclick="reply_hate(${status.index})">
+									<span>
+										<img src="${pageContext.request.contextPath}/resources/css/product/img/thumb-down.png">
+									</span>
+									<strong>0</strong>
+								</div>
+								<div class="like" onclick="reply_like(${status.index})">
+									<span>
+										<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
+									</span>
+									<strong>
+										<c:choose>
+											<c:when test="${empty reply_like_count[status.index].like_count}">
+												0
+											</c:when>
+											<c:otherwise>
+												${reply_like_count[status.index].like_count}			
+											</c:otherwise>
+										</c:choose>
+									</strong>
+								</div>
+								
+							</div>
+						</c:forEach>	
+					</div>
 					<div class="re_sub">
 						<button id="save">등록</button>
 					</div>
+
 				</div>
-				<div id="reply_contents">
-					<div class="re_title"></div>
-					<div class="re_contents">
-						<div class="re_user">user name</div>
-						<textarea readonly="readonly"></textarea>
-					</div>
-					<div class="re_sub"></div>
-				</div>
+				
 			</div>
 		</div>
-	</div>
 	</section>
-
-
-
-
-
-
 
 
 

@@ -32,7 +32,6 @@
 				m_id : m_id
 			},
 			success:function(data){
-				alert(data);
 				data=data.trim();
 				$("#second_else").html(data);
 			}
@@ -59,7 +58,6 @@
 					m_id : $("#check_m_id").val()
 				},
 				success:function(data){
-					alert(data);
 					data=data.trim();
 					$("#second_else").html(data);
 				}

@@ -9,8 +9,6 @@ public class ReplyDTO {
 	private String r_contents;
 	private Date reg_date;
 	private int r_score;
-	private int r_likes;
-	private int r_hate;
 	
 	public int getR_num() {
 		return r_num;
@@ -47,18 +45,6 @@ public class ReplyDTO {
 	}
 	public void setR_score(int r_score) {
 		this.r_score = r_score;
-	}
-	public int getR_likes() {
-		return r_likes;
-	}
-	public void setR_likes(int r_likes) {
-		this.r_likes = r_likes;
-	}
-	public int getR_hate() {
-		return r_hate;
-	}
-	public void setR_hate(int r_hate) {
-		this.r_hate = r_hate;
 	}
 	
 }

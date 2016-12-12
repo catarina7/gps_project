@@ -3,19 +3,46 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="ReplyMapper">
+	
+	<!-- 댓글 글 작성 -->
 	<insert id="replyWrite" parameterType="com.game.product.ReplyDTO">
 		<![CDATA[
-			insert into reply values(reply_seq.nextval ,#{pro_num},#{r_writer},#{r_contents},sysdate,0,0,0)
+			insert into reply values(reply_seq.nextval ,#{pro_num},#{r_writer},#{r_contents},sysdate,#{r_score})
 		]]>
 	</insert>
-	<delete id="replyDelete" parameterType="int">
-		<![CDATA[
-			delete from reply where r_num = #{r_num}
-		]]>
-	</delete>
+	
+	<!-- 댓글 리스트 -->
 	<select id="replyList" resultType="com.game.product.ReplyDTO" parameterType="int">
 		<![CDATA[
 			select * from reply where pro_num = #{pro_num} order by r_num desc
 		]]>
 	</select>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="replyDelete" parameterType="int">
+		<![CDATA[
+			delete from reply where r_num = #{r_num}
+		]]>
+	</delete>
+	
+	<!-- 좋아요 기능 -->
+	<insert id="replyLike" parameterType="java.util.Map">
+		insert into like_hate values(like_hate_seq.nextval , #{r_num}, #{pro_num}, #{m_id}, 1)
+	</insert>
+	<!-- 좋아요 갯수 -->
+	<select id="replyLike_count" resultType="int" parameterType="int">
+		select count(ROWNUM) from like_hate where r_num=#{r_num} and choice=1
+	</select>
+	<insert id="replyLike_insert" parameterType="java.util.Map">
+		insert into like_count values(like_count_seq.nextval, #{pro_num}, #{r_num}, #{like_count})
+	</insert>
+	<select id="replyLike_select" resultType="com.game.product.Like_countDTO" parameterType="int">
+		select * from like_count where LHC_NUM=(select max(lhc_num) from like_count where r_num=#{r_num})
+	</select>
+	
+	
+	<!-- 싫어요 기능 -->
+	<insert id="replyHate" parameterType="java.util.Map">
+		insert into like_hate values(like_hate_seq.nextval , #{r_num}, #{pro_num}, #{m_id}, 2)
+	</insert>
 </mapper>

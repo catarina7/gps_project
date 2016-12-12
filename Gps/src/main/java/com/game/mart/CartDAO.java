@@ -76,7 +76,7 @@ public class CartDAO {
 	}
 	
 	//여러개 삭제할때
-	public void cartDeleteList(List<Integer> valueArr){	
+	public void cartDeleteList(List<Integer> valueArr) throws Exception{	
 		Map<String, Object> data = new HashMap<String, Object>();
 		for(int i=0;i<valueArr.size();i++){
 			data.put("c_num", valueArr.get(i));

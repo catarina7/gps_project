@@ -13,11 +13,11 @@ import com.game.util.PageMaker;
 
 @Repository
 public class ProductDAO {
-	
+
 	@Autowired
 	private SqlSession sqlSession;
 	private String namespace="ProductMapper.";
-	
+
 	//Product_글 작성
 	public int productWrite(ProductDTO productDTO, ArrayList<String> fileNames, ArrayList<String> origineNames) throws Exception{
 		//일반 글 쓰기
@@ -34,31 +34,31 @@ public class ProductDAO {
 		}
 		return 1; 
 	}
-	
+
 	//Product 글 리스트
 	public List<ProductDTO> productList(PageMaker pageMaker) throws Exception{
 		return sqlSession.selectList(namespace+"pro_list", pageMaker);
 	}
-	
+
 	//Product 글 전체 갯수 가져오기
 	public int productCount() throws Exception{
 		return sqlSession.selectOne(namespace+"pro_boardCount");
 	}
-	
+
 	//product 메인사진
 	public ProductFileDTO productImgList(int pro_num) throws Exception{
 		return sqlSession.selectOne(namespace+"pro_main_Img", pro_num);
 	}
-	
+
 	//product View 부분
 	public ProductDTO productView(int pro_num) throws Exception{
 		return sqlSession.selectOne(namespace+"productView", pro_num);
 	}
-	
+
 	public List<ProductFileDTO> productViewImgList(int pro_num) throws Exception{
 		return sqlSession.selectList(namespace+"pro_view_img_list", pro_num);
 	}
-	
+
 	//product View 이미지 부분
 	public List<ProductFileDTO> productViewImg(PageMaker pageMaker, int pro_num) throws Exception{
 		Map<String, Object> data = new HashMap<String, Object>();
@@ -66,7 +66,7 @@ public class ProductDAO {
 		data.put("pageMaker", pageMaker);
 		return sqlSession.selectList(namespace+"pro_view_img", data);
 	}
-	
+
 	//product View 이미지 갯수 가져오기
 	public int productViewImgCount(int pro_num) throws Exception{
 		return sqlSession.selectOne(namespace+"pro_view_img_count", pro_num);
