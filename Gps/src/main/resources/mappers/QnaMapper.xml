@@ -70,7 +70,11 @@
 		</update>
 		
 		<insert id="qnaReply" parameterType="com.game.board.QnaDTO">
-			insert into qna(q_num, q_writer, q_title, q_contents, reg_date, counts, ref, step, depth) values(qna_seq.nextval, #{q_writer}, #{q_title}, #{q_contents}, sysdate, 0, #{ref}, #{step}+1, #{depth}+1)
+			insert into qna values(qna_seq.nextval, #{q_writer}, #{q_title}, #{q_contents}, sysdate, 0, #{ref}, #{step}+1, #{depth}+1)
 		</insert>
+		
+		<!-- <select id="qnaSearch">
+		
+		</select> -->
 		
 	</mapper>

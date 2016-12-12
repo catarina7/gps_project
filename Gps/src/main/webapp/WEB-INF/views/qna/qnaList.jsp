@@ -30,9 +30,8 @@
 		<!-- section -->
 		<section>
 		<!-- 내용 넣기 -->
-		<center>
 			<form action="qnaList" method="get">
-				<table class="listTable" border="1" cellpadding="0" cellspacing="0">
+				<table class="listTable" border="1" cellpadding="0" cellspacing="0" style="text-align: center;" >
 					<tr>
 						<td>번호</td>
 						<td>제목</td>
@@ -64,6 +63,7 @@
 						</tr>
 					</c:otherwise>
 					</c:choose>
+					
 				</table>
 				
 					<c:if test="${pageMaker.curBlock>1}">
@@ -76,8 +76,17 @@
 					<a href="qnaList?curPage=${pageMaker.lastNum+1}">[다음]</a>
 					</c:if>
 			</form>
+			<form action="qnaSearch" method="get" name="frm2">
+				<select name="type">
+					<option value="q_writer">작성자</option>
+					<option value="q_title">제목</option>
+					<option value="q_contents">내용</option>
+				</select>
+				<input type="text" placeholder="검색어를 입력하세요" id="q_search" name="str">
+				<input type="button" value="검색" id="serBtn">
+			</form>
 				<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/qna/qnaWrite';">
-		</center>
+		
 		</section>
 		
 		<c:import url="/footer" />
