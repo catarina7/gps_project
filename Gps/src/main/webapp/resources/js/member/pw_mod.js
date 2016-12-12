@@ -53,9 +53,9 @@ $(function(){
 	
 	
 	$("#pwmod_btn").click(function(){
-		/*if(pwinchk ==0 ){
+		if(pwinchk ==0 ){
 			alert("비밀번호가 일치 하지 않습니다.");
-		}else*/ if(pwchk == 0){
+		}else if(pwchk == 0){
 			alert("새로운 비밀번호를 확인해 주세요.");
 		}else {
 			
