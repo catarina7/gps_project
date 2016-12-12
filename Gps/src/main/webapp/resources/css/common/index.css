@@ -220,38 +220,134 @@ section #game_list {
 	margin-top: 10px;
 }
 
+
+
+
+
+
+
+
+
+
+
 #index_story #main_four {
 	float: left;
-	width: 80%;
-	height: 250px;
-	background-color: #414141;
+	width: 75%;
+	height: 245px;
+	padding: 7px 0.3%;
+	border: 1px solid #aaaaaa;
 	overflow: hidden;
-	margin-left: 10%;
-	margin-bottom: 50px;
+	margin-left: 13.5%;
+	margin-bottom: 30px;
 }
 
+#main_four #main_menu {
+	width: 99.6%;
+	padding: 5px 0px;
+	background-color: #414141;
+	text-align: center;
+	color: white;
+	z-index: -1;
+	border: 1px solid #aaaaaa;
+}
+#main_four #main_menu span {
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #414141;
+}
 #main_four #main_notice {
-	width: 33.3%;
+	width: 33%;
+	float: left;
+	height: 220px;
+	margin-top: 15px;
+	background-color: #464646;
+	z-index: 1;
+	border: 1px solid #333333;
+}
+#main_four .main_step1 {
+	width: 100%;
+	padding: 3px 0px;
+	height: 13%;
+	border-bottom: 2px solid #aaaaaa;
+}
+#main_four .main_step2 {
+	width: 100%;
+}
+#main_four .titi {
+	width: 74%;
+	padding: 5px 0px;
+	height: 70%;
 	float: left;
 	overflow: hidden;
-	height: 100%;
-	background-color: #332123;
+	text-align: center;
+}
+#main_four .titi span {
+	color: #ffffff;
+	text-shadow: -1px -1px 0px #525252;
+}
+#main_four .other {
+	width: 25%;
+	padding: 5px 0px;
+	height: 70%;
+	float: left;
+	overflow: hidden;
+}
+#main_four .other a {
+	color: #d5d5d5;
+	font-size: 13px;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #414141;
+}
+#main_four .other a:hover {
+	color: #ff8c8c;
+}
+#main_four .line {
+	border-left: 2px solid #aaaaaa;
 }
 #main_four #main_company {
-	width: 32%;
-	height: 100%;
+	width: 31.6%;
+	margin: 0 auto;
+	height: 80%;
 	float: left;
-	overflow: hidden;
 	margin-left: 0.8%;
-	background-color: #5f3d40;
+	background-color: #414141;
+	border: 1px solid #666666;
 }
+#main_company #main_company_step1 {
+	width: 98.7%;
+	padding: 5px 0.7%;
+	height: 58%;
+}
+#main_company #main_company_step2 {
+	width: 98.7%;
+	padding: 10px 0.7%;
+	height: 30%;
+	border-top: 2px solid #666666;
+}
+#main_company #main_company_step2 #step2 {
+	width: 92%;
+	margin: 0 auto;
+	height: 80%;
+	background-color: #333333;
+	border: 1px solid #666666;
+}
+
+
 #main_four #main_reply {
-	width: 33.3%;
-	height: 100%;
+	width: 33%;
+	height: 220px;
 	float: right;
-	overflow: hidden;
-	background-color: #a26f74;
+	margin-top: 15px;
+	background-color: #464646;
+	z-index: 1;
+	border: 1px solid #333333;
 }
+
+
+
+
+
+
+
 
 #first_footer {
 	float: left;
