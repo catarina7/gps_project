@@ -58,5 +58,26 @@
 		select count(File_name) from pro_file where pro_num=#{pro_num}
 	</select>
 	
+	<!-- pro_mod에서 뿌리는 모든 사진 (PageMaker X) -->
+	<select id="pro_mod_img" resultType="com.game.product.ProductFileDTO" parameterType="int">
+		select * from PRO_FILE where pro_num=#{pro_num} order by file_num asc
+	</select>
+	
+	<!-- check된거 삭제할 때 -->
+	<delete id="pro_mod_del_img" parameterType="java.util.Map">
+		delete pro_file where file_num=#{file_num}
+	</delete>
+	
+	<!-- Mod에서 이미지 추가 -->
+	<insert id="pro_mod_add_img" parameterType="java.util.Map">
+		insert into pro_file values(pro_file_seq.nextval, #{pro_num}, #{file_name}, #{origine}, '1')
+	</insert>
+	
+	<!-- Mod에서 내용 수정 -->
+	<update id="pro_mod" parameterType="com.game.product.ProductDTO">
+		update product set pro_title=#{pro_title}, pro_contents=#{pro_contents}, price=#{price}, total_price=#{total_price}, 
+		discount=#{discount}, top_category=#{top_category}, sub_category=#{sub_category}, millage=#{millage},company=#{company}  where pro_num=#{pro_num}
+	</update>
+	
 </mapper>
 
