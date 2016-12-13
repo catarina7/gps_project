@@ -27,28 +27,60 @@ section #compu_first {
 	padding: 20px 1.5%;
 	background-color: #666666;
 	border: 1px solid #aaaaaa;
+	overflow: hidden;
 }
 
 #compu_deco table {
-	width: 100%;
+	width: 90%;
+	margin: 0 auto;
 	border-collapse: collapse;
+	overflow: hidden;
 }
 #compu_first .title {
 	padding: 7px 2%;
 	font-family:helvetica, sans-serif;
-	color: white;
+	color: #cecece;
 	text-shadow: -1px -1px 0px #414141;
 	font-weight: bold;
 	text-align: right;
-	border-right: 1px solid #aaaaaa;
+	border-right: 2px solid #aaaaaa;
+	border-radius : 10px;
+	
 }
 #compu_first td {
 	padding: 7px 3%;
 	color: white;
 	text-shadow: -1px -1px 0px #414141;
 }
-
-
+#compu_first input[type="text"]{
+	padding: 3px 1.4%;
+	border: 1px solid #aaaaaa;
+	border-radius : 4px;
+}
+#compu_first #btn_in {
+	width: 97%;
+	padding: 5px 1.4%;
+}
+#btn_in input[type="button"]{
+	padding: 5px 12px;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border-radius: 5px;
+	float: right;
+	overflow: hidden;
+	cursor: pointer;
+	text-shadow: -1px -1px 0px #414141;
+	border: 0px;
+	font-weight: bold;
+	border: 1px solid black;
+	margin-right: 2%;
+}
+#btn_in input[type="button"]:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+#compu_first .com_mod {
+	display: none;
+}
 
 
 

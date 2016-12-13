@@ -12,7 +12,28 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/member/computer_info.css">
 <title>Insert title here</title>
 <script type="text/javascript">
-	
+	$(function(){
+		
+		$(".com_if").show();
+		
+		$("#c_mod").click(function(){
+			if($("#c_mod").val() == "정보 수정"){
+				$(this).val("수정 완료");
+				$(".com_if").hide();
+				$(".com_mod").show();
+			}else{
+				$("#c_mod").val("정보 수정");
+				$(".com_if").show();
+				$(".com_mod").hide();
+			}
+		});
+		
+		$("#c_cancel").click(function(){
+			$("#c_mod").val("정보 수정");
+			$(".com_if").show();
+			$(".com_mod").hide();
+		});
+	});
 </script>
 </head>
 <body>
@@ -45,51 +66,73 @@
 						<td class="title">
 							운영체제
 						</td>
-						<td>
+						<td class="com_if">
 							${cominfo.com_os }
+						</td>
+						<td class="com_mod">
+							<input id="com_os" type="text" value="${cominfo.com_os }">
 						</td>
 					</tr>
 					<tr>
 						<td class="title">
 							CPU
 						</td>
-						<td>
+						<td class="com_if">
 							${cominfo.com_process }
+						</td>
+						<td class="com_mod">
+							<input id="com_process" type="text" value="${cominfo.com_process }">
 						</td>
 					</tr>
 					<tr>
 						<td class="title">
 							메모리(RAM)
 						</td>
-						<td>
+						<td class="com_if">
 							${cominfo.com_memory }
+						</td>
+						<td class="com_mod">
+							<input id="com_memory" type="text" value="${cominfo.com_memory }">
 						</td>
 					</tr>
 					<tr>
 						<td class="title">
 							그래픽 카드
 						</td>
-						<td>
+						<td class="com_if">
 							${cominfo.com_graphic }
+						</td>
+						<td class="com_mod">
+							<input id="com_graphic" type="text" value="${cominfo.com_graphic }">
 						</td>
 					</tr>
 					<tr>
 						<td class="title">
 							DirectX 버전
 						</td>
-						<td>
+						<td class="com_if">
 							${cominfo.com_directx }
+						</td>
+						<td class="com_mod">
+							<input id="com_directx" type="text" value="${cominfo.com_directx }">
 						</td>
 					</tr>
 					<tr>
 						<td class="title">
 							하드디스크 여유공간
 						</td>
-						<td>
+						<td class="com_if">
 							${cominfo.com_space }
+						</td>
+						<td class="com_mod">
+							<input id="com_space" type="text" value="${cominfo.com_space }">
 						</td>
 					</tr>
 				</table>
+				<div id="btn_in">
+					<input id="c_mod" type="button" value="정보 수정">
+					<input id="c_cancel" class="com_mod" type="button" value="취소">
+				</div>
 			</div>
 		</div>
 	</section>
