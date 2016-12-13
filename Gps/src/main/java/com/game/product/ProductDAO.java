@@ -71,4 +71,34 @@ public class ProductDAO {
 	public int productViewImgCount(int pro_num) throws Exception{
 		return sqlSession.selectOne(namespace+"pro_view_img_count", pro_num);
 	}
+	
+	//pro_mod에다가 이미지 가져오기
+	public List<ProductFileDTO> productModImg(int pro_num) throws Exception{
+		return sqlSession.selectList(namespace+"pro_mod_img", pro_num);
+	}
+	
+	//pro_mod에 이미지 삭제
+	public void productModDeleteList(List<Integer> valueArr) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		for(int i=0; i<valueArr.size();i++){
+			data.put("file_num", valueArr.get(i));
+			sqlSession.delete(namespace+"pro_mod_del_img", data);
+		}
+	}
+	
+	//pro_mod에 이미지 추가
+	public void productModAddImg(int pro_num, ArrayList<String> fileNames, ArrayList<String> origineNames) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		for(int i=0; i<fileNames.size();i++){
+			data.put("pro_num", pro_num);
+			data.put("file_name", fileNames.get(i));
+			data.put("origine", origineNames.get(i));
+			sqlSession.insert(namespace+"pro_mod_add_img", data);
+		}
+	}
+	
+	//pro_mod 내용
+	public void productMod(ProductDTO productDTO){
+		sqlSession.update(namespace+"pro_mod", productDTO);
+	}
 }

@@ -31,7 +31,6 @@ public class ReplyService {
 
 	//댓글 리스트
 	public void replyList(int pro_num, Model model) throws Exception{
-		
 		List<ReplyDTO> ar = replyDAO.replyList(pro_num);
 		ArrayList<Like_countDTO> ar1 = new ArrayList<Like_countDTO>();
 		for(int i=0; i<ar.size();i++){

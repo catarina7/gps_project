@@ -113,6 +113,12 @@
 	    		return;
 	    	}
 		});
+	    
+	    //상품 수정하기
+	    $("#product_mod").click(function() {
+	    	location.href="pro_mod?pro_num=${pro_view.pro_num}";
+	    });
+	    
 	});
 	//댓글 삭제
 	function reply_delete(i){
@@ -471,6 +477,8 @@
 					<input type="hidden" name="pro_num" value="${pro_view.pro_num}">
 					<button class="five_btn" class="cart" id="cart">장바구니</button>
 				</form>
+				
+				<input type="button" id="product_mod" value="수정">
 			</div>
 			
 			<!-- review -->

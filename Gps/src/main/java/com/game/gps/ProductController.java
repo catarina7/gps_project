@@ -1,5 +1,7 @@
 package com.game.gps;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,5 +57,39 @@ public class ProductController {
 			e.printStackTrace();
 		}
 		return "product/pro_view";
+	}
+	
+	//get방식 product 수정
+	@RequestMapping(value="/pro_mod", method=RequestMethod.GET)
+	public void productMod(int pro_num, Model model){
+		try {
+			productService.productMod(pro_num, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	//post방식 product 수정
+	@RequestMapping(value="/pro_mod", method=RequestMethod.POST)
+	public String productMod(ProductDTO productDTO, int pro_num, MultipartHttpServletRequest mr, HttpSession session, Model model){
+		try {
+			productService.productModify(productDTO, pro_num, mr, session);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/product/pro_list";
+	}
+	
+	//pro_mod에서 이미지 삭제할때 check 된거
+	@RequestMapping(value="/pro_mod_img_del", method=RequestMethod.POST)
+	public String productModDeleteList(@RequestParam(value="valueArr[]") List<Integer> valueArr, int pro_num , Model model){
+		try {
+			productService.productModDeleteList(valueArr, pro_num, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "product/pro_mod_img";
 	}
 }
