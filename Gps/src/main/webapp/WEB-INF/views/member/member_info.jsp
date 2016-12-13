@@ -32,6 +32,17 @@
 			$(".mem_mill").hide();
 			$(".mem_in").hide();
 		});
+		
+		$("#purchase_buy").click(function(){
+			location.href="${pageContext.request.contextPath}/purchase/purchase";
+		});
+		
+		$("#mem_millage").click(function(){
+			location.href="${pageContext.request.contextPath}/member/millage";
+		});
+		$("#mem_computer").click(function(){
+			location.href="${pageContext.request.contextPath}/member/computer_info";
+		});
 	});
 </script>
 </head>
@@ -113,7 +124,7 @@
 				</div>
 				<!-- 마일리지 -->
 					<!-- 마일리지 내역 -->
-				<div class="mem_mill">
+				<div id="mem_millage" class="mem_mill">
 					<div class="information">
 						<dl>
 							<dt></dt>
@@ -122,7 +133,7 @@
 						</dl>
 					</div>
 				</div>
-				<div class="mem_mill">
+				<div id="mem_computer" class="mem_mill">
 					<div class="information">
 						<dl>
 							<dt></dt>
@@ -143,7 +154,7 @@
 					</div>
 				</div>
 					<!-- 구매내역 -->
-				<div class="mem_game">
+				<div id="purchase_buy" class="mem_game">
 					<div class="information">
 						<dl>
 							<dt></dt>

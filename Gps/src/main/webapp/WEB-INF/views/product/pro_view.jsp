@@ -146,6 +146,7 @@
 			success: function(data){
 				data=data.trim();
 				$("#reply_contents").html(data);
+				
 			}
 		});
 	}
@@ -513,7 +514,7 @@
 								<div class="like" onclick="reply_like(${status.index})">
 									<input type="hidden" name="m_id" id="m_id_like_${status.index}" value="${member.m_id}">
 									<span>
-										<img src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
+										<img id="liked_check" src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
 									</span>
 									<strong>
 										<c:choose>

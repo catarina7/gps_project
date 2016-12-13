@@ -33,6 +33,10 @@ public class MemberController {
 		return "/member/member_info";
 	}
 	
+	@RequestMapping(value="/computer_info")
+	public String computer_info(){
+		return "/member/computer_info";
+	}
 	
 	@RequestMapping(value="/join" , method = RequestMethod.GET)
 	public String join(){ 
@@ -137,6 +141,12 @@ public class MemberController {
 	public String meminfo_mod(){
 		return "/member/mem_mod";
 	}
+	
+	@RequestMapping(value="/millage")
+	public String mem_millage(){
+		return "/member/mem_millage";
+	}
+	
 	
 	//회원정보 수정 (ajax)
 	@RequestMapping(value="/MemMod", method = RequestMethod.POST, produces="application/json; charset=utf-8")

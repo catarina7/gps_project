@@ -68,7 +68,7 @@
 				<span id="software_tag" class="h_icon">▼</span>
 			</div>
 			<div class="h_menu">
-				<span>menu</span>
+				<span></span>
 			</div>
 			<div class="h_menu" id="notice_tx">
 				<span>Notice</span>
