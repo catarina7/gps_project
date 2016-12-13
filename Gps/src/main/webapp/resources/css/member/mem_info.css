@@ -45,10 +45,15 @@ section #first_mem {
 	font-weight: bold;
 	text-align: right;
 }
-.pw_modform input[type="text"] {
+.pw_modform input[type="password"] {
 	padding: 2px 1.4%;
 	border: 1px solid #aaaaaa;
-	border-radius : 8px;
+	border-radius : 5px;
+}
+#first_mem span {
+	color: #ff8080;
+	font-size: 12px;
+	text-shadow: -1px -1px 0px #840003;
 }
 #first_mem td {
 	padding: 13px 1.4%;

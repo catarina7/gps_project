@@ -183,7 +183,7 @@
 			<!-- 일반회원 정보(전화번호) -->
 						<tr  class="modform">
 							<td  class="title_p">전화번호: </td>
-							<td>
+							<td colspan="2">
 								 <select id="pu_tel_option" >
 									<option value="SKT" name="chskt">SKT</option>
 									<option value="LGT" name="chslgt">LGT</option>
@@ -191,7 +191,12 @@
 								</select> 
 								<input type="text" id="pu_tel_input" placeholder=" '-'를 포함하여 입력해주세요." >
 							</td>
-							<td><p id="telchk">전화번호를 '-'를 포함하여 정확하게 입력해주세요.</p>	</td>
+						</tr>
+						<tr id="telchk">
+							<td></td>
+							<td colspan="2">
+								<span>전화번호를 '-'를 포함하여 정확하게 입력해주세요.</span>
+							</td>
 						</tr>
 			<!-- 일반회원 정보(성별) -->
 						<tr  class="modform">
@@ -205,8 +210,13 @@
 			<!-- 일반회원 정보(email) -->
 						<tr  class="modform">
 							<td  class="title_p">이메일:</td>
-							<td><input type="text" id="pu_email_input" placeholder="이메일을 입력해주세요." class="input"></td>
-							<td><p id="emailchk">이메일을 정확하게 입력해주세요.</p></td>
+							<td colspan="2"><input type="text" id="pu_email_input" placeholder="이메일을 입력해주세요." class="input"></td>
+						</tr>
+						<tr id="emailchk">
+							<td></td>
+							<td colspan="2">
+								<span>이메일을 정확하게 입력해주세요. </span>
+							</td>
 						</tr>
 						<tr  class="modform">
 							<td></td>
