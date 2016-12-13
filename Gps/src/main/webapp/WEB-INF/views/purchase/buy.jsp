@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/purchase/buy.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/cart_favorite/cart_favorite.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
@@ -61,10 +62,12 @@
 			$("#pin_c").show();
 			$(".c").show();
 			$(".cc").hide();
-		});
+		});	
 		
 	});
 </script>
+<!-- 결재 스트립트 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/purchase/purchase.js"></script>
 </head>
 <body>
 	
@@ -98,9 +101,41 @@
 			<div class="title"><span>◎</span> 구매 게임</div>
 			<div id="second_buy">
 				<div>
-					<c:forEach items="productList" var="product" varStatus="status">
 					
-					</c:forEach>					
+						<div class="item">
+							<div class="four_contents">
+								<div class="f_g_img">
+									<img src="../resources/upload/${proFileOne.file_name}">
+								</div>
+								<table>
+									<colgroup>
+										<col style="width:80%;">
+										<col style="width:10%;">
+										<col style="width:10%;">
+									</colgroup>
+									<tr>
+										<td class="f_g_name">${productOne.pro_title}</td>
+										<td>
+											<span class="window">
+												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
+											</span>
+											<span class="mac">
+												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_mac.png">
+											</span>
+										</td>
+										<td>
+											<%-- <input type="hidden" name="c_num" id="c_num${status.index}" value="${cDTO[status.index].c_num}">
+											<input type="hidden" name="pro_num" id="pro_num${status.index}" value="${cDTO[status.index].pro_num}">
+											<input type="hidden" name="m_id" id="m_id${status.index}" value="${member.m_id}">	 --%>										
+										</td>
+									</tr>
+									<tr>
+										<td class="f_g_ex" colspan="3">${productOne.pro_contents}</td>
+									</tr>
+								</table>
+							</div>							
+						</div>
+							
 				</div>
 			</div>
 			<!-- 구매하고자 하는 상품들의 가격 합계(최종 구매 가격) -->
@@ -127,8 +162,8 @@
 							<td>
 								<!-- 상품의 합계가격 -->
 								<span id="pro_price">
-								<!-- pre_price -->
-									<input type="text">
+								<!-- price_input -->
+									<input type="text" id="price_input" value="${productOne.price}">  
 								</span>
 							</td>
 							<td>
@@ -139,10 +174,12 @@
 							<td>
 								<!-- 마일리지 적용 -->
 								<span id="pro_millage">
-								<!-- milage -->
-									<input type="text" placeholder="millage (히든으로 들어갈 예정)" value="${member.millage}">
-									<input type="text">
+								<!-- milage_count -->
+									<input type="number" id="m_millage" placeholder="millage (히든으로 들어갈 예정)" value="${member.millage}">
+									<input type="number" id="millage_count" >
 								</span>
+								<!-- 마이리지 적용 버튼 -->
+								<button id="mill_cancle">적용 취소</button>
 								<button id="mill_in">전부 적용</button>
 							</td>
 							<td>
@@ -153,8 +190,8 @@
 							<td>
 								<!-- 전자결제 수수료 (VAT) -->
 								<span id="vat">
-								<!-- bill -->
-									<input type="text">
+								<!-- vat_input -->
+									<input type="text" id="vat_input">
 								</span>
 								
 							</td>
@@ -167,7 +204,7 @@
 								<!-- 최종 합계 가격 -->
 								<span id="total_price">
 								<!-- post_price -->
-									<input type="text">	
+									<input type="text" id="total_price">	
 								</span>
 								
 							</td>
@@ -286,7 +323,7 @@
 						<div>
 							<dl>
 								<dt>적립 될 마일리지</dt>
-								<dd> <span>point</span></dd>
+								<dd> <span> ${productOne.millage} point</span></dd>
 							</dl>
 						</div>	
 						<div>

@@ -69,19 +69,8 @@
 	//하나만 구매하기 
 	function one_bye(i){
 		var c_num = $("#c_num"+i).val();
-		var pro_num = $("pro_num"+i).val();
-		$.ajax({
-			url: '/gps/purchase/buy' ,
-			type: 'POST',
-			data:{
-				c_num : c_num,
-				pro_num : pro_num
-			},
-			success:function(data){
-				alert("구매를 진행합니다.");
-				location.href="/gps/purchase/buy";
-			}
-		});
+		var pro_num = $("#pro_num"+i).val();
+		location.href="/gps/purchase/buy?c_num="+c_num+"&pro_num="+pro_num;
 	}
 	
 

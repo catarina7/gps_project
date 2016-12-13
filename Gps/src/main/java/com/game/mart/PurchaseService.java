@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.game.product.ProductDTO;
+import com.game.product.ProductFileDTO;
 
 @Service
 public class PurchaseService {
@@ -17,18 +18,19 @@ public class PurchaseService {
 	
 	
 	//구매항목 list
-	public List<CartDTO> purchaseList(CartDTO cartDto, Model model) throws Exception {
+	public void purchaseList(CartDTO cartDto, Model model) throws Exception {
 		
-		List<CartDTO> cartar = purchasedao.purchaseList(cartDto);
-		ProductDTO proDto = new ProductDTO();
-		List<ProductDTO> proList = null;
-		for(int i=0;i<cartar.size();i++){
-			
-		}
+		//구매상품 정보 
+		ProductDTO proDto = new ProductDTO();		
+		proDto = purchasedao.product(cartDto);
 		
-		model.addAttribute("productList", cartar);
+		//구매 상품 사진 가져오기
+		ProductFileDTO pFileDto = new ProductFileDTO();
+		pFileDto = purchasedao.profile(cartDto);
 		
-		return cartar;
+		model.addAttribute("productOne", proDto);
+		model.addAttribute("proFileOne", pFileDto);
+		
 		
 	}
 
