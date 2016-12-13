@@ -18,6 +18,32 @@
 		insert into computer values( computer_seq.nextval, #{m_num}, #{com_os}, 	#{com_process}, #{com_memory}, #{com_graphic}, #{com_directx}, #{com_space})
 	</insert>
 	
+	<!-- 컴퓨터 정보 수정 -->
+	<update id="comMod" parameterType="com.game.computer.ComputerDTO">
+		update computer
+			<trim prefix="set" suffixOverrides=",">
+			<if test="com_os != null">
+				com_os = #{com_os},
+			</if>
+			<if test="com_process != null">
+				com_process = #{com_process}, 
+			</if>
+			<if test="com_memory != null">
+				com_memory = #{com_memory},
+			</if>
+			<if test="com_graphic != null">
+				com_graphic = #{com_graphic},
+			</if>			
+			<if test="com_directx != null">
+				com_directx = #{com_directx},
+			</if>			
+			<if test="com_space != null">
+				com_space = #{com_space}
+			</if>
+		</trim>
+		where m_num = #{m_num}
+	</update>
+	
 	<!-- 로그인 -->    
 	<select id="Login" parameterType="com.game.member.MemberDTO" resultType="com.game.member.MemberDTO">
 		select * from member where m_id=#{m_id} and m_pw=#{m_pw}	

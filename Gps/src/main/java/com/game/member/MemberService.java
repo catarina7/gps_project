@@ -28,6 +28,11 @@ public class MemberService {
 			
 			return memberDao.cominfo(com);
 		}
+		
+		//computer 정보 수정
+		public int comMod(ComputerDTO com) throws Exception{
+			return memberDao.comMod(com);
+		}
 	
 		//로그인
 		public MemberDTO login(MemberDTO mDto, HttpSession session) throws Exception{

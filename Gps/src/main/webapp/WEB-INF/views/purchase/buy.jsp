@@ -67,7 +67,7 @@
 	});
 </script>
 <!-- 결재 스트립트 -->
-<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/purchase/purchase.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/purchase/buy.js"></script>
 </head>
 <body>
 	
@@ -184,7 +184,7 @@
 							</td>
 							<td>
 								<p class="plus">
-									<img src="${pageContext.request.contextPath }/resources/css/purchase/img/add.png">
+									<img src="${pageContext.request.contextPath}/resources/css/purchase/img/add.png">
 								</p>
 							</td>
 							<td>

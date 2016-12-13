@@ -33,11 +33,14 @@ public class MemberController {
 		return "/member/member_info";
 	}
 	
+	//컴퓨터 정보 수정 폼
 	@RequestMapping(value="/computer_info")
 	public String computer_info(){
 		return "/member/computer_info";
 	}
 	
+	
+	//회원가입
 	@RequestMapping(value="/join" , method = RequestMethod.GET)
 	public String join(){ 
 		return "/member/join";
@@ -282,8 +285,7 @@ public class MemberController {
 	@ResponseBody
 	public ResponseEntity<Integer> comInfo(ComputerDTO com){
 		
-		int result = 0;
-		System.out.println(com.getM_num());
+		int result = 0;		
 		try {
 			result = memberService.cominfo(com);
 		} catch (Exception e) {
@@ -293,6 +295,26 @@ public class MemberController {
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
 	
+	//컴퓨터 사양 수정하기 
+	@RequestMapping(value="/ComMod", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<Integer> comMod(ComputerDTO com, HttpSession session){
+		
+		int result = 0;		
+		try {
+			result = memberService.comMod(com);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(result == 0){
+			result = 0;
+		}else {
+			session.removeAttribute("cominfo");
+			session.setAttribute("cominfo", com);
+		}
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
+	}
 	
 	
 	

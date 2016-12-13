@@ -8,6 +8,7 @@ $(function(){
 	$("#vat_input").val((price_input*0.1));
 	
 	//마일리지 입력하기
+	//유효성 검사
 	$("#millage_count").keyup(function(){
 		if($("#m_millage").val() < $("#millage_count").val()){
 			

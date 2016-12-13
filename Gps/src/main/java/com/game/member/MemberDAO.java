@@ -39,6 +39,11 @@ public class MemberDAO {
 		return sqlSession.insert(namespace+"comInfo", com);
 	}
 	
+	//computer 정보수정
+	public int comMod(ComputerDTO com) throws Exception{
+		return sqlSession.update(namespace+"comMod", com);
+	}
+	
 	//로그인
 	public MemberDTO login(MemberDTO mDto) throws Exception{
 		return sqlSession.selectOne(namespace+"Login", mDto);

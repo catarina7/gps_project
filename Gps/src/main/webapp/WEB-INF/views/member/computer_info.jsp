@@ -14,19 +14,7 @@
 <script type="text/javascript">
 	$(function(){
 		
-		$(".com_if").show();
-		
-		$("#c_mod").click(function(){
-			if($("#c_mod").val() == "정보 수정"){
-				$(this).val("수정 완료");
-				$(".com_if").hide();
-				$(".com_mod").show();
-			}else{
-				$("#c_mod").val("정보 수정");
-				$(".com_if").show();
-				$(".com_mod").hide();
-			}
-		});
+		$(".com_if").show();		
 		
 		$("#c_cancel").click(function(){
 			$("#c_mod").val("정보 수정");
@@ -35,6 +23,8 @@
 		});
 	});
 </script>
+<!-- 수정 스크립트 -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/member/computer_info.js"></script>
 </head>
 <body>
 	
@@ -46,6 +36,8 @@
 			<c:import url="/user_menu_bar" />
 		</div>
 		<h2>내 컴퓨터 정보</h2>
+		<!-- session 정리용 -->
+			<input type="hidden" id="m_num" value="${member.m_num}">
 		<!-- 내용 넣기 -->
 		<div id="compu_first">
 			<div id="compu_deco">
@@ -67,10 +59,10 @@
 							운영체제
 						</td>
 						<td class="com_if">
-							${cominfo.com_os }
+							${cominfo.com_os}
 						</td>
 						<td class="com_mod">
-							<input id="com_os" type="text" value="${cominfo.com_os }">
+							<input id="com_os" type="text" value="${cominfo.com_os }" class="input">
 						</td>
 					</tr>
 					<tr>
@@ -78,10 +70,10 @@
 							CPU
 						</td>
 						<td class="com_if">
-							${cominfo.com_process }
+							${cominfo.com_process}
 						</td>
 						<td class="com_mod">
-							<input id="com_process" type="text" value="${cominfo.com_process }">
+							<input id="com_process" type="text" value="${cominfo.com_process }" class="input">
 						</td>
 					</tr>
 					<tr>
@@ -89,10 +81,10 @@
 							메모리(RAM)
 						</td>
 						<td class="com_if">
-							${cominfo.com_memory }
+							${cominfo.com_memory}
 						</td>
 						<td class="com_mod">
-							<input id="com_memory" type="text" value="${cominfo.com_memory }">
+							<input id="com_memory" type="text" value="${cominfo.com_memory }" class="input">
 						</td>
 					</tr>
 					<tr>
@@ -103,7 +95,7 @@
 							${cominfo.com_graphic }
 						</td>
 						<td class="com_mod">
-							<input id="com_graphic" type="text" value="${cominfo.com_graphic }">
+							<input id="com_graphic" type="text" value="${cominfo.com_graphic }" class="input">
 						</td>
 					</tr>
 					<tr>
@@ -114,18 +106,18 @@
 							${cominfo.com_directx }
 						</td>
 						<td class="com_mod">
-							<input id="com_directx" type="text" value="${cominfo.com_directx }">
+							<input id="com_directx" type="text" value="${cominfo.com_directx }" class="input">
 						</td>
 					</tr>
 					<tr>
 						<td class="title">
 							하드디스크 여유공간
-						</td>
+						</td> 
 						<td class="com_if">
 							${cominfo.com_space }
 						</td>
 						<td class="com_mod">
-							<input id="com_space" type="text" value="${cominfo.com_space }">
+							<input id="com_space" type="text" value="${cominfo.com_space }" class="input">
 						</td>
 					</tr>
 				</table>
