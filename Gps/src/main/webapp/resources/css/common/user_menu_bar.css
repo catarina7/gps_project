@@ -18,6 +18,13 @@
 	cursor: pointer;
 	opacity: 0.8;
 }
+#sub_header #blink_tx {
+	float: left;
+	width: 5%;
+	border-right: 1px solid  #cfc5c5;
+	height: 100%;
+	opacity: 0.8;
+}
 #sub_header .h_menu:hover {
 	background-color: #313548;
 }
@@ -107,3 +114,7 @@
 #sub_header_menu #software {
 	margin-left: 265px;
 }
+
+
+
+
