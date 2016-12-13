@@ -95,17 +95,16 @@
 #third_div .M_list { 
 	background-color: #43596b;
 	border: 2px solid #43596b;
+	margin-left: 3%;
 	position: absolute;
-	margin-left: 40px;
 	display: none;
 }
 .M_list li {
 	padding: 10px 20px;
+	font-size: 13px;
 }
-
 #third_div #S_list {
-	
-	margin-left: 135px;
+	margin-left: 10%;
 }
 /* header ---------------------------- */
 

@@ -84,7 +84,7 @@
 					</ul>
 					<div class="M_list" id="Store_list">
 						<ul>
-							<li><a href="#">list</a></li>
+							<li><a href="#">전체상품</a></li>
 							<li><a href="#">list</a></li>
 							<li><a href="#">list</a></li>
 							<li><a href="#">list</a></li>
@@ -92,7 +92,7 @@
 					</div>
 					<div class="M_list" id="S_list">
 						<ul>
-							<li><a href="#">list</a></li>
+							<li><a href="#">빈메뉴</a></li>
 							<li><a href="#">list</a></li>
 							<li><a href="#">list</a></li>
 							<li><a href="#">list</a></li>
