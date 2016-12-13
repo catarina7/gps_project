@@ -5,8 +5,19 @@
 <mapper namespace="PurchaseMapper">
 
 	<!-- 구매목록 가져오기  -->
-	<select id="cartList" parameterType="com.game.mart.CartDTO" resultType="java.util.ArrayList">
-		select * from cart where c_num = #{c_num} and pro_num = #{pro_num}	
+	
+	
+	<!-- 상품정보 가져오기 -->
+	<select id="productSet" parameterType="com.game.mart.CartDTO" resultType="com.game.product.ProductDTO">
+		select * from product where pro_num = #{pro_num}
 	</select>
+	
+	<!-- 상품 대표사진 가져오기 -->
+	<select id="Pro_list_img" resultType="com.game.product.ProductFileDTO"  parameterType="com.game.mart.CartDTO">
+		select file_name from pro_file
+    	where file_num=(select min(file_num) from pro_file product where pro_num=#{pro_num})
+	</select>
+	
+	
 
 </mapper>

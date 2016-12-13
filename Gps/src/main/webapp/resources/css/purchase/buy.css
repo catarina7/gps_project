@@ -140,6 +140,21 @@ section .complete {
 #th_contents #mill_in:hover {
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
 }
+#th_contents #mill_cancle {
+	padding: 3px 7px;
+	border: 1px solid black;
+	color: white;
+	text-align: -1px -1px 0px black;
+	border-radius : 5px;
+	cursor: pointer;
+	float: right;
+	overflow: hidden;
+	font-size: 12px;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+}
+#th_contents #mill_cancle:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
 
 
 
