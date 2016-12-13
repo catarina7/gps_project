@@ -36,6 +36,10 @@
 		$("#purchase_buy").click(function(){
 			location.href="${pageContext.request.contextPath}/purchase/purchase";
 		});
+		
+		$("#mem_millage").click(function(){
+			location.href="${pageContext.request.contextPath}/member/millage";
+		});
 	});
 </script>
 </head>
@@ -117,7 +121,7 @@
 				</div>
 				<!-- 마일리지 -->
 					<!-- 마일리지 내역 -->
-				<div class="mem_mill">
+				<div id="mem_millage" class="mem_mill">
 					<div class="information">
 						<dl>
 							<dt></dt>

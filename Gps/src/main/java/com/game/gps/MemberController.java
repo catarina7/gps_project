@@ -138,6 +138,12 @@ public class MemberController {
 		return "/member/mem_mod";
 	}
 	
+	@RequestMapping(value="/millage")
+	public String mem_millage(){
+		return "/member/mem_millage";
+	}
+	
+	
 	//회원정보 수정 (ajax)
 	@RequestMapping(value="/MemMod", method = RequestMethod.POST, produces="application/json; charset=utf-8")
 	@ResponseBody
