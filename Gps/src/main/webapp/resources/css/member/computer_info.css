@@ -6,3 +6,78 @@ section {
 	padding-bottom: 100px;
 	background-color: #666666;
 }
+
+section h2 {
+	width: 50%;
+	margin: 0 auto;
+	padding: 20px 0px;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+}
+section #compu_first {
+	width: 50%;
+	margin: 0 auto;
+	padding: 8px 0.8%;
+	margin-top: 30px;
+	overflow: hidden;
+	border: 2px solid #414141;
+	background: linear-gradient(to top, #414141, #aaaaaa);
+}
+#compu_first #compu_deco {
+	width: 97.2%;
+	padding: 20px 1.5%;
+	background-color: #666666;
+	border: 1px solid #aaaaaa;
+}
+
+#compu_deco table {
+	width: 100%;
+	border-collapse: collapse;
+}
+#compu_first .title {
+	padding: 7px 2%;
+	font-family:helvetica, sans-serif;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	font-weight: bold;
+	text-align: right;
+	border-right: 1px solid #aaaaaa;
+}
+#compu_first td {
+	padding: 7px 3%;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -21,11 +21,76 @@
 	
 	<!-- section -->
 	<section>
+		<div>
+			<c:import url="/user_menu_bar" />
+		</div>
+		<h2>내 컴퓨터 정보</h2>
 		<!-- 내용 넣기 -->
 		<div id="compu_first">
-			
-			
-			
+			<div id="compu_deco">
+				<table>
+					<colgroup>
+						<col style="width:28%;">
+						<col style="width:68%;">
+					</colgroup>
+					<tr>
+						<td class="title">
+							<span>아이디 </span>
+						</td>
+						<td>
+							${member.m_id }
+						</td>
+					</tr>
+					<tr>
+						<td class="title">
+							운영체제
+						</td>
+						<td>
+							${cominfo.com_os }
+						</td>
+					</tr>
+					<tr>
+						<td class="title">
+							CPU
+						</td>
+						<td>
+							${cominfo.com_process }
+						</td>
+					</tr>
+					<tr>
+						<td class="title">
+							메모리(RAM)
+						</td>
+						<td>
+							${cominfo.com_memory }
+						</td>
+					</tr>
+					<tr>
+						<td class="title">
+							그래픽 카드
+						</td>
+						<td>
+							${cominfo.com_graphic }
+						</td>
+					</tr>
+					<tr>
+						<td class="title">
+							DirectX 버전
+						</td>
+						<td>
+							${cominfo.com_directx }
+						</td>
+					</tr>
+					<tr>
+						<td class="title">
+							하드디스크 여유공간
+						</td>
+						<td>
+							${cominfo.com_space }
+						</td>
+					</tr>
+				</table>
+			</div>
 		</div>
 	</section>
 	

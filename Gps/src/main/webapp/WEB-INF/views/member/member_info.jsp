@@ -40,6 +40,9 @@
 		$("#mem_millage").click(function(){
 			location.href="${pageContext.request.contextPath}/member/millage";
 		});
+		$("#mem_computer").click(function(){
+			location.href="${pageContext.request.contextPath}/member/computer_info";
+		});
 	});
 </script>
 </head>
@@ -130,7 +133,7 @@
 						</dl>
 					</div>
 				</div>
-				<div class="mem_mill">
+				<div id="mem_computer" class="mem_mill">
 					<div class="information">
 						<dl>
 							<dt></dt>

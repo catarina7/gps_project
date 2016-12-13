@@ -33,6 +33,10 @@ public class MemberController {
 		return "/member/member_info";
 	}
 	
+	@RequestMapping(value="/computer_info")
+	public String computer_info(){
+		return "/member/computer_info";
+	}
 	
 	@RequestMapping(value="/join" , method = RequestMethod.GET)
 	public String join(){ 
