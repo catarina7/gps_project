@@ -32,6 +32,10 @@
 			$(".mem_mill").hide();
 			$(".mem_in").hide();
 		});
+		
+		$("#purchase_buy").click(function(){
+			location.href="${pageContext.request.contextPath}/purchase/purchase";
+		});
 	});
 </script>
 </head>
@@ -143,7 +147,7 @@
 					</div>
 				</div>
 					<!-- 구매내역 -->
-				<div class="mem_game">
+				<div id="purchase_buy" class="mem_game">
 					<div class="information">
 						<dl>
 							<dt></dt>
