@@ -20,7 +20,8 @@ public class EchoHandler extends TextWebSocketHandler {
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		// TODO Auto-generated method stub
 		logger.info("{0}로 부터 {1} 받음", session.getId(), message.getPayload());
-		session.sendMessage(new TextMessage("echo"+ message.getPayload()));
+		// text 내용 뿌릴때 사용
+		session.sendMessage(new TextMessage("UserID:"+ message.getPayload()));
 	}
 	
 	@Override
