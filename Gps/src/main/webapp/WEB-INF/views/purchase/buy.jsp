@@ -155,7 +155,7 @@
 						<tr>
 							<td class="th_title" colspan="2">결제 금액</td>
 							<td class="th_title" colspan="2">마일리지</td>
-							<td class="th_title" colspan="2">전자결제 수수료</td>
+							<td class="th_title" colspan="2">부가세</td>
 							<td class="th_title">최종결제 금액</td>
 						</tr>
 						<tr>
@@ -163,7 +163,7 @@
 								<!-- 상품의 합계가격 -->
 								<span id="pro_price">
 								<!-- price_input -->
-									<input type="text" id="price_input" value="${productOne.price}">  
+									<input type="text" id="price_input" value="${productOne.total_price}">  
 								</span>
 							</td>
 							<td>
@@ -175,7 +175,8 @@
 								<!-- 마일리지 적용 -->
 								<span id="pro_millage">
 								<!-- milage_count -->
-									<input type="number" id="m_millage" placeholder="millage (히든으로 들어갈 예정)" value="${member.millage}">
+									<span>(마일리지): ${member.millage}</span>
+									<input type="hidden" id="m_millage" placeholder="millage (히든으로 들어갈 예정)" value="${member.millage}">
 									<input type="number" id="millage_count" >
 								</span>
 								<!-- 마이리지 적용 버튼 -->
@@ -328,8 +329,8 @@
 						</div>	
 						<div>
 							<dl>
-								<dt>전자결제 수수료</dt>
-								<dd> <span>원</span></dd>
+								<dt>디지털 콘텐츠 부가세</dt>
+								<dd> <span><span id="span_vat"></span> 원</span></dd>
 							</dl>
 						</div>	
 					</div>
