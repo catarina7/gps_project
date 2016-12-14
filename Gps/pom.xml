@@ -23,7 +23,7 @@
 	</repositories>
 
 	<dependencies>
-
+      
 		<!-- mailling 메일 보내기 -->
 		<dependency>
 			<groupId>javax.mail</groupId>
@@ -222,6 +222,11 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>4.1.6.RELEASE</version>
 		</dependency>
 	</dependencies>
 	<build>

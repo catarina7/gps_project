@@ -32,7 +32,7 @@
 
 <a href="purchase/buy">buy</a>
 <a href="purchase/purchase">구매내역</a>
-
+<a href="chat/chat">실시간 채팅</a>
 
 </body>
 </html>

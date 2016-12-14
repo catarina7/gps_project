@@ -287,10 +287,10 @@
 					<div id="main_reply">
 						<div class="main_step1">
 							<div class="other">
-								<a href="#">모두보기</a>
+								<a href="#">창으로보기</a>
 							</div>
 							<div class="titi line">
-								<span>자주하는질문</span>
+								<span>운영자와 1:1 상담</span>
 							</div>
 						</div>
 						<div class="main_step2">
