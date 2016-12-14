@@ -9,7 +9,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/jquery/sockjs-0.3.4.js"></script>
 <script type="text/javascript">
+	var sock = null;
+	
 	$(document).ready(function(){
+		
+		sock = new SockJS("<c:url value="/echo"/>");
+		sock.onopen = function() {
+			sock.send("1:1 상담방입니다.");
+		}
+		
 		/* 채팅 버튼 */
 		$("#sendBtn").click(function(){
 			if($("#message").val() != ""){				
@@ -21,16 +29,13 @@
 		/* 채팅 끄기 버튼 */
 		$("#closes").click(function(){
 			closeMessage();
+			location.href="/";
 		});
 		
-		var sock;
 		/* 전송 메소드 */
 		function sendMessage() {
-			sock = new SockJS("<c:url value="/echo"/>");
 			sock.onmessage = onMessage;
-			sock.onopen = function() {
-				sock.send($("#message").val()+"<br/>");
-			};
+			sock.send($("#message").val()+"<br/>");
 		};
 		/* 닫는 메소드 */
 		function closeMessage() {
@@ -40,8 +45,7 @@
 		
 		function onMessage(evt) {
 			var data = evt.data;
-			$("#data").append("나 :" + data + "<br/>");
-			$("message").val("");
+			$("#data").append(data + "<br/>");
 		};
 		
 		function onClose(evt) {

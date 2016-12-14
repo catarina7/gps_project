@@ -32,13 +32,13 @@ public class EchoHandler extends TextWebSocketHandler {
 	protected void handleTextMessage(WebSocketSession session, TextMessage message) throws Exception {
 		// TODO Auto-generated method stub
 		logger.info("{0}로 부터 {1} 받음", session.getId(), message.getPayload());
-		// text 내용 뿌릴때 사용
-		session.sendMessage(new TextMessage(session.getId() +"님이 전송:"+ message.getPayload()));
+		// 사용자의 메세지
+		session.sendMessage(new TextMessage(session.getId() +" 님이 전송:"+ message.getPayload()));
 		
 		for (WebSocketSession webSocketSession : connectedUsers){
 			//보낸 사용자는 받지 않기 위한 조건문
 			if(!session.getId().equals(webSocketSession)){
-				webSocketSession.sendMessage(new TextMessage(session.getRemoteAddress().getHostName() + "->" + message.getPayload()));
+				webSocketSession.sendMessage(new TextMessage(session.getRemoteAddress().getHostName() + " -> " + message.getPayload()));
 			}
 		}
 	}
