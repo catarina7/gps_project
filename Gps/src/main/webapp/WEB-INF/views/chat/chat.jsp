@@ -9,29 +9,47 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/jquery/sockjs-0.3.4.js"></script>
 <script type="text/javascript">
+	var sock = null;
+	
 	$(document).ready(function(){
-		$("#sendBtn").click(function(){
-			sendMessage();
-		});	
 		
-		var sock;
+		sock = new SockJS("<c:url value="/echo"/>");
+		sock.onopen = function() {
+			sock.send("사용자가 접속했습니다. <br/>");
+		}
+		
+		/* 채팅 버튼 */
+		$("#sendBtn").click(function(){
+			if($("#message").val() != ""){				
+				sendMessage();
+			}else {
+				alert("내용을 입력해주세요!");
+			}
+		});	
+		/* 채팅 끄기 버튼 */
+		$("#closes").click(function(){
+			closeMessage();
+			location.href="/";
+		});
+		
+		/* 전송 메소드 */
 		function sendMessage() {
-			sock = new SockJS("<c:url value="/echo"/>");
 			sock.onmessage = onMessage;
-			sock.onclose = onClose;
-			sock.onopen = function() {
-				sock.send($("#message").val());
-			};
+			sock.send($("#message").val()+"<br/>");
 		};
+		/* 닫는 메소드 */
+		function closeMessage() {
+			sock.onclose = onClose;
+			sock.close();
+		}
 		
 		function onMessage(evt) {
 			var data = evt.data;
-			$("#data").append(data);
-			sock.close();
+			$("#data").append(data + "<br/>");
 		};
 		
 		function onClose(evt) {
-			$("#data").append("연결 끊김");
+			$("#data").append("사용자가 나갔습니다.");
 		};
 	});
 </script>
@@ -39,6 +57,7 @@
 <body>
 	<input type="text" id="message">
 	<input type="button" id="sendBtn" value="전송">
+	<input type="button" id="closes" value="나오기">
 	<div id="data"></div>
 </body>
 </html>
