@@ -27,6 +27,5 @@ public class EchoHandler extends TextWebSocketHandler {
 	public void afterConnectionClosed(WebSocketSession session, CloseStatus status) throws Exception {
 		// TODO Auto-generated method stub
 		logger.info("{0} 연결 끊김", session.getId());
-		super.afterConnectionClosed(session, status);
 	}
 }
