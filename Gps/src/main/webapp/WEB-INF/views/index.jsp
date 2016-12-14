@@ -78,6 +78,10 @@
 		$("#all_list").click(function(){
 			location.href = "${pageContext.request.contextPath}/product/pro_list";
 		});
+		
+		$("#openChat").click(function(){
+			window.open("${pageContext.request.contextPath}/chat/chat");
+		});
 	});
 </script>
 </head>
@@ -287,7 +291,7 @@
 					<div id="main_reply">
 						<div class="main_step1">
 							<div class="other">
-								<a href="#">창으로보기</a>
+								<a id="openChat" href="${pageContext.request.contextPath}/index">창으로보기</a>
 							</div>
 							<div class="titi line">
 								<span>운영자와 1:1 상담</span>
