@@ -16,7 +16,7 @@
 		
 		sock = new SockJS("<c:url value="/echo"/>");
 		sock.onopen = function() {
-			sock.send("사용자가 접속했습니다. <br/>");
+			sock.send("사용자가 접속했습니다.");
 		}
 		
 		/* 채팅 버튼 */
@@ -52,7 +52,7 @@
 		};
 		
 		function onClose(evt) {
-			$("#data").append("사용자가 나갔습니다.");
+			$("#data").append("상담이 종료되었습니다.");
 		};
 		
 	});
