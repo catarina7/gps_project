@@ -93,9 +93,45 @@ public class QnaService {
 		return qnaDAO.qnaCounts(q_num);
 	}
 	
-	//수정
-	public int qnaMod(QnaDTO qnaDTO) throws Exception{
-		return qnaDAO.qnaMod(qnaDTO);
+	//mod에서 가져오는 것
+	public void qnaMod(int q_num, Model model) throws Exception{
+		QnaDTO qnaDTO = qnaDAO.qnaView(q_num);
+		List<QnaFileDTO> modImg = qnaDAO.qnaModImg(q_num);
+		model.addAttribute("qnaView", qnaDTO);
+		model.addAttribute("qna_mod_img", modImg);
+	}
+	
+	//mod에 넣는 것
+	public void qnaModify(QnaDTO qnaDTO, int q_num, MultipartHttpServletRequest mr, HttpSession session) throws Exception{
+		String path = session.getServletContext().getRealPath("resources/upload");
+		List<MultipartFile> file = mr.getFiles("file");
+		
+		//실제 저장된 파일
+		ArrayList<String> fileNames = new ArrayList<String>();
+		//올릴 때 파일
+		ArrayList<String> origineNames = new ArrayList<String>();
+		
+		for(int i=0;i<file.size();i++){
+			MultipartFile mf = file.get(i);
+			String fileName = UUID.randomUUID().toString()+"_"+mf.getOriginalFilename();
+			String origineName = mf.getOriginalFilename();
+			File f = new File(path, fileName);
+			
+			mf.transferTo(f);
+			
+			fileNames.add(fileName);
+			origineNames.add(origineName);	
+		}
+		qnaDAO.qnaMod(qnaDTO);
+		qnaDAO.qnaModAddImg(q_num, fileNames, origineNames);
+	}
+	
+	//체크 이미지 삭제
+	public void qnaModDeleteList(List<Integer> valueArr, int q_num, Model model) throws Exception{
+		qnaDAO.qnaModDeleteList(valueArr);
+		
+		List<QnaFileDTO> modImg = qnaDAO.qnaModImg(q_num);
+		model.addAttribute("qna_mod_img", modImg);
 	}
 	
 	public int qnaReply(QnaDTO qnaDTO) throws Exception{

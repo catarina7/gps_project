@@ -38,6 +38,10 @@ public class QnaDAO {
 		return sqlSession.selectOne(namespace+"qnaView_imgCount", q_num);
 	}
 	
+	//mod에 이미지 가져오기
+	public List<QnaFileDTO> qnaModImg(int q_num) throws Exception{
+		return sqlSession.selectList(namespace+"qna_mod_img", q_num);
+	}
 	//글List
 	public List<QnaDTO> qnaList(PageMaker pageMaker) throws Exception{
 		return sqlSession.selectList(namespace+"qnaList", pageMaker);
@@ -73,8 +77,30 @@ public class QnaDAO {
 		return sqlSession.selectOne(namespace+"qnaCount");
 	}
 	
-	public int qnaMod(QnaDTO qnaDTO) throws Exception{
-		return sqlSession.update(namespace+"qnaMod", qnaDTO);
+	//qna 이미지 삭제
+	public void qnaModDeleteList(List<Integer> valueArr) throws Exception{
+		
+		Map<String, Object> data = new HashMap<String, Object>();
+		for(int i=0;i<valueArr.size();i++){
+			data.put("qfile_num", valueArr.get(i));
+			sqlSession.delete(namespace+"qna_mod_del_img", data);
+		}
+	}
+	
+	//qna 이미지 추가
+	public void qnaModAddImg(int q_num, ArrayList<String> fileNames,  ArrayList<String> origineNames) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		for(int i=0;i<fileNames.size();i++){
+			data.put("q_num", q_num);
+			data.put("qfile_name", fileNames.get(i));
+			data.put("qorigine_name", origineNames.get(i));
+			sqlSession.insert(namespace+"qna_mod_add_img", data);
+		}
+	}
+	
+	//qna 내용 수정
+	public void qnaMod(QnaDTO qnaDTO){
+		sqlSession.update(namespace+"qna_mod", qnaDTO);
 	}
 	
 	public int qnaReply(QnaDTO qnaDTO) throws Exception{

@@ -1,5 +1,7 @@
 package com.game.gps;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -73,19 +75,41 @@ public class QnaController {
 		return "redirect:/qna/qnaList";
 	}
 	
-	@RequestMapping(value="/qnaMod", method=RequestMethod.GET)
-	public void qnaMod(){}
+	//GET qna 수정
+	@RequestMapping(value="/qna_mod", method=RequestMethod.GET)
+	public void qnaMod(int q_num, Model model){
+		try {
+			qnaService.qnaMod(q_num, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	
-	@RequestMapping(value="/qnaMod", method=RequestMethod.POST)
-	public String qnaMod(QnaDTO qnaDTO){
+	//post qna 수정
+	@RequestMapping(value="/qna_mod", method=RequestMethod.POST)
+	public String qnaMod(QnaDTO qnaDTO, int q_num, MultipartHttpServletRequest mr, HttpSession session, Model model){
 		
 		try {
-			qnaService.qnaMod(qnaDTO);
+			qnaService.qnaModify(qnaDTO, q_num, mr, session);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return "redirect:/qna/qnaList";
+	}
+	
+	//체크된 이미지 삭제
+	@RequestMapping(value="/qna_mod_img_del", method= {RequestMethod.GET, RequestMethod.POST})
+	public String qnaModDeleteList(@RequestParam(value="valueArr[]") List<Integer> valueArr, int q_num, Model model){
+		
+		try {
+			qnaService.qnaModDeleteList(valueArr, q_num, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "qna/qna_mod_img";
 	}
 	
 	@RequestMapping(value="/qnaReply", method=RequestMethod.GET)
