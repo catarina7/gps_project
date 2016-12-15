@@ -47,4 +47,8 @@ public class NoticeDAO {
 	public int noticeMod(NoticeDTO noticeDTO) throws Exception{
 		return sqlSession.update(namespace+"noticeMod", noticeDTO);
 	}
+	
+	public List<NoticeDTO> mainList(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"mainList", pageMaker);
+	}
 }

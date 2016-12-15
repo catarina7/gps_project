@@ -45,5 +45,18 @@ public class NoticeService {
 	public int noticeMod(NoticeDTO noticeDTO) throws Exception{
 		return noticeDAO.noticeMod(noticeDTO);
 	}
+	
+	public void mainList(int curPage, int perPage, Model model) throws Exception{
+		
+		int totalCount = noticeDAO.noticeCount();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		
+		model.addAttribute("mainList", noticeDAO.mainList(pageMaker));
+		model.addAttribute("pageMaker", pageMaker);
+	}
 
 }

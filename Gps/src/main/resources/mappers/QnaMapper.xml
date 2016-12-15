@@ -35,6 +35,7 @@
 		<insert id="qna_fileWrite" parameterType="java.util.Map">
 			insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name}, #{qorigine_name})
 		</insert>
+		
 		<!-- List -->
 		<select id="qnaList" resultType="com.game.board.QnaDTO" parameterType="com.game.util.PageMaker">
 			select * from
@@ -73,8 +74,6 @@
 			insert into qna values(qna_seq.nextval, #{q_writer}, #{q_title}, #{q_contents}, sysdate, 0, #{ref}, #{step}+1, #{depth}+1)
 		</insert>
 		
-		<!-- <select id="qnaSearch">
 		
-		</select> -->
 		
 	</mapper>

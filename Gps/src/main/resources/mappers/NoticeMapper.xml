@@ -42,6 +42,14 @@
 			update notice set counts=counts+1 where n_num=#{n_num}
 		</update>
 		
+		<!-- 메인 리스트 -->
+		<select id="mainList" parameterType="com.game.util.PageMaker" resultType="com.game.board.NoticeDTO">
+			select * from
+			(select rownum R, F.* from 
+			(select * from notice order by n_num desc) F)
+			where R &lt; 6 
+		</select>
+		
 		
 	
 	</mapper>
