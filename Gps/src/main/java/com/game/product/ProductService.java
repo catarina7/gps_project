@@ -137,4 +137,9 @@ public class ProductService {
 		List<ProductFileDTO> modImg = productDAO.productModImg(pro_num);
 		model.addAttribute("pro_mod_img", modImg);
 	}
+	
+	//product 삭제
+	public int productDelete(int pro_num) throws Exception{
+		return productDAO.productDelete(pro_num);
+	}
 }

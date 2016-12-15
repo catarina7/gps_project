@@ -119,6 +119,10 @@
 	    	location.href="pro_mod?pro_num=${pro_view.pro_num}";
 	    });
 	    
+	    $("#product_del").click(function() {
+	    	location.href="pro_del?pro_num=${pro_view.pro_num}";
+	    });
+	    
 	});
 	//댓글 삭제
 	function reply_delete(i){
@@ -479,6 +483,8 @@
 				</form>
 				
 				<input type="button" id="product_mod" value="수정">
+				<input type="button" id="product_del" value="삭제">
+				
 			</div>
 			
 			<!-- review -->

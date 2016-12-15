@@ -92,4 +92,16 @@ public class ProductController {
 		}
 		return "product/pro_mod_img";
 	}
+	
+	//product_delete
+	@RequestMapping(value="/pro_del")
+	public String productDelete(int pro_num){
+		try {
+			productService.productDelete(pro_num);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "redirect:/product/pro_list";
+	}
 }

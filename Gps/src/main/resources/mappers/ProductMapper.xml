@@ -79,5 +79,9 @@
 		discount=#{discount}, top_category=#{top_category}, sub_category=#{sub_category}, millage=#{millage},company=#{company}  where pro_num=#{pro_num}
 	</update>
 	
+	<!-- product 삭제 -->
+	<delete id="pro_del" parameterType="int">
+		delete from product where pro_num=#{pro_num}
+	</delete>
 </mapper>
 
