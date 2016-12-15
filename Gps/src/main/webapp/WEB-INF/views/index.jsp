@@ -94,8 +94,14 @@
 			}
 		});
 		
-		$("#openChat").click(function(){
-			window.open("${pageContext.request.contextPath}/chat/chat");
+		 $("#chat_open_click").click(function(){
+			 $("#chat_open").show();
+		 });
+		$("#chat_closes").click(function(){
+			$("#chat_open").hide();
+		});
+		$("#chat_top").click(function(){
+			$("#chat_open").scrollTop(0);
 		});
 	});
 </script>
@@ -283,7 +289,7 @@
 					<div id="main_reply">
 						<div class="main_step1">
 							<div class="other">
-								<a id="openChat" href="${pageContext.request.contextPath}/index">창으로보기</a>
+								<button id="chat_open_click">창으로보기</button>
 							</div>
 							<div class="titi line">
 								<span>운영자와 1:1 상담</span>
@@ -297,6 +303,18 @@
 					<div id="main_company_step2">
 						<div id="step2"></div>
 					</div>
+				</div>
+			</div>
+			<div id="chat_open">
+				<div id="chat_title">
+					<h2>실시간 상담창</h2>
+				</div>
+				<div id="chat_contents">
+					<c:import url="/chat/chat" />
+				</div>
+				<div id="chat_btn">
+					<button id="chat_closes">닫기</button>
+					<button id="chat_top">위로 올리기</button>
 				</div>
 			</div>
 			<c:import url="/footer" />
