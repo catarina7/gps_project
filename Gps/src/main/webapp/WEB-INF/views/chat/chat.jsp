@@ -8,6 +8,7 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/static/js/jquery/sockjs-0.3.4.js"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/chat/chat.css">
 <script type="text/javascript">
 	var sock = null;
 	
@@ -29,7 +30,7 @@
 		/* 채팅 끄기 버튼 */
 		$("#closes").click(function(){
 			closeMessage();
-			location.href="/";
+			location.href="${pageContext.request.contextPath}/index";
 		});
 		
 		/* 전송 메소드 */
@@ -55,9 +56,13 @@
 </script>
 </head>
 <body>
-	<input type="text" id="message">
-	<input type="button" id="sendBtn" value="전송">
-	<input type="button" id="closes" value="나오기">
-	<div id="data"></div>
+	<section>
+		<div>		
+			<input type="text" id="message">
+			<input type="button" id="sendBtn" value="전송">
+			<input type="button" id="closes" value="나오기">
+			<div id="data"></div>
+		</div>	
+	</section>
 </body>
 </html>
