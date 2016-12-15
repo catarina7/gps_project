@@ -33,12 +33,12 @@ public class EchoHandler extends TextWebSocketHandler {
 		// TODO Auto-generated method stub
 		logger.info("{0}로 부터 {1} 받음", session.getId(), message.getPayload());
 		// 사용자의 메세지
-		session.sendMessage(new TextMessage(message.getPayload()));
+		session.sendMessage(new TextMessage("<p id="+ "\"mine\">"+"나 : "+message.getPayload()+"</p>"));
 		
 		for (WebSocketSession webSocketSession : connectedUsers){
 			//보낸 사용자는 받지 않기 위한 조건문
 			if( !session.getId().equals(webSocketSession.getId())){
-				webSocketSession.sendMessage(new TextMessage(session.getRemoteAddress().getHostName() + " -> " + message.getPayload()));
+				webSocketSession.sendMessage(new TextMessage("<p id="+ "\"customer\">"+session.getRemoteAddress().getHostName() + " : " + message.getPayload()+"</p>"));
 			}
 		}
 	}
