@@ -90,7 +90,6 @@ public class QnaController {
 	
 	@RequestMapping(value="/qnaReply", method=RequestMethod.GET)
 	public void qnaReply(){}
-	
 	@RequestMapping(value="/qnaReply", method=RequestMethod.POST)
 	public String qnaReply(QnaDTO qnaDTO){
 		

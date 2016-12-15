@@ -87,5 +87,17 @@ public class NoticeController {
 		return "redirect:/notice/noticeList";
 	}
 	
+	@RequestMapping(value="/mainList")
+	public String mainList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="10") int perPage, Model model){
+		try {
+			noticeService.mainList(curPage, perPage, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "notice/mainList";
+	}
+	
+	
 	
 }

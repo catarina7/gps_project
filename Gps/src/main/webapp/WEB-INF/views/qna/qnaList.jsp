@@ -31,7 +31,7 @@
 		<section>
 		<!-- 내용 넣기 -->
 			<form action="qnaList" method="get">
-				<table class="listTable" border="1" cellpadding="0" cellspacing="0" style="text-align: center;" >
+				<table class="listTable" border="1" cellpadding="0" cellspacing="0" " >
 					<tr>
 						<td>번호</td>
 						<td>제목</td>
