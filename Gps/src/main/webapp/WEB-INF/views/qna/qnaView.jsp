@@ -30,7 +30,7 @@
 		$("#modBtn").click(function(){ //수정버튼
 			var check = confirm("수정하시겠습니까?");
 			if(check == true){
-				location.href="${pageContext.request.contextPath}/qna/qnaMod?q_num=${qnaView.q_num}&q_writer=${qnaView.q_writer}&q_title=${qnaView.q_title}&q_contents=${qnaView.q_contents}";
+				location.href="${pageContext.request.contextPath}/qna/qna_mod?q_num=${qnaView.q_num}";
 			}
 		});
 		
@@ -84,8 +84,8 @@
 								<td class="title">이미지</td>
 								<c:forEach items="${qnaImg}" var="img">
 								<td>
-									<img alt="" src="../resources/upload/${img.qfile_name}">
-								</td>
+									<img style="width: 100px; height: 100px;c" alt="" src="../resources/upload/${img.qfile_name}">
+								</td> 
 								</c:forEach>
 							</tr>	
 					</table>

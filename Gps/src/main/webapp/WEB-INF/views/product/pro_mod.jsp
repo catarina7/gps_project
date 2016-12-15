@@ -101,7 +101,7 @@
 		$("#img_delete").on("click", function(){
 			var checkArr = [];
 			
-			$("input[name='file_num']:checked").each(function() {
+			$("#input[name='file_num']:checked").each(function() {
 				checkArr.push($(this).val());
 			});
 			
