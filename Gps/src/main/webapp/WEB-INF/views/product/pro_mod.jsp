@@ -134,16 +134,16 @@
 			<form action="pro_mod" method="post" id="frm" enctype="multipart/form-data">
 				<table>
 					<colgroup>
-						<col style="width:18%;">
-						<col style="width:65%;">
-						<col style="width:8%;">
+						<col style="width:20%;">
+						<col style="width:66%;">
+						<col style="width:10%;">
 					</colgroup>
 					<tr>
 						<td class="mod_titi"> 게임명 : </td>
 						<td colspan="2"> <input type="text" name="pro_title" value="${pro_view.pro_title}"> </td>
 					</tr>
 					<tr>
-						<td class="mod_titi"> 게임설명 : </td>
+						<td class="mod_titi"> 게임설명 </td>
 						<td colspan="2">
 							<div id="pro_textarea">
 								<textarea id="smarteditor" name="pro_contents"> ${pro_view.pro_contents} </textarea>
@@ -156,8 +156,10 @@
 					</tr>
 					<tr>
 						<td class="mod_titi"> 게임가격 : </td>
-						<td> <input type="number" class="pro_in_num" id="p_price" name="price" value="${pro_view.price}"> </td>
-						<td> <input type="button" id="calculate" value="최종가격계산">
+						<td colspan="2"> 
+							<input type="number" class="pro_in_num" id="p_price" name="price" value="${pro_view.price}">
+							<input type="button" id="calculate" value="최종가격계산">
+						</td>
 					</tr>
 					<tr>
 						<td class="mod_titi"> 최종가격 : </td>
@@ -201,14 +203,13 @@
 										<div id="pro_mod_images">
 											<input class="check_box" id="checkbox${status.index}" name="file_num" value="${img.file_num}" type="checkbox">
 											<input type="hidden" name="file_name" id="img_${status.index}" value="${img.file_name}">
-											<img src="../resources/upload/${img.file_name}">
+											<label for="checkbox${status.index}"><img src="../resources/upload/${img.file_name}"></label>
 										</div>
 									</c:forEach>
-								<input type="button" id="img_delete" value="이미지 삭제">
 							</div>
+								<input type="button" id="img_delete" value="이미지 삭제">
 						</td>
 					</tr>
-					
 					<tr>
 						<td class="mod_titi"> 이미지 추가 </td>
 						<td colspan="2"> 
