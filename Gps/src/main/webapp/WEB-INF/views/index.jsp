@@ -82,6 +82,36 @@
 		$("#openChat").click(function(){
 			window.open("${pageContext.request.contextPath}/chat/chat");
 		});
+		
+		//카테고리 url 시작
+		$("#action").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=action";
+		});
+		$("#rpg").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=rpg";
+		});
+		$("#simulation").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=simulation";
+		});
+		$("#adventure").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=adventure";
+		});
+		$("#sports").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=sports";
+		});
+		$("#racing").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=racing";
+		});
+		$("#casual").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=casual";
+		});
+		$("#indi").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=indi";
+		});
+		$("#etc").click(function(){
+			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=etc";
+		});
+		//카테고리 url 끝
 	});
 </script>
 </head>
@@ -117,18 +147,19 @@
 					<li>list</li>
 					<li>list</li>
 				</ul>
-				<p>GATEGORY</p>
+				<p>CATEGORY</p>
 				<ul>
 					<li id="all_list">전체 상품</li>
-					<li>list</li>
-					<li>list</li>
-					<li>list</li>
-					<li>list</li>
-					<li>list</li>
-					<li>list</li>
-					<li>list</li>
-					<li>list</li>
-					<li>list</li>
+					<li id="action">Action</li>
+					<li id="rpg">RPG</li>
+					<li id="simulation">Simulation</li>
+					<li id="strategy">Strategy</li>
+					<li id="adventure">Adventure</li>
+					<li id="sports">Sports</li>
+					<li id="racing">Racing</li>
+					<li id="casual">Casual</li>
+					<li id="indi">INDI</li>
+					<li id="etc">MMO/ETC</li>
 				</ul>
 				<p>USER SERVICE</p>
 				<ul>

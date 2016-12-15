@@ -20,7 +20,14 @@
 				<c:import url="/user_menu_bar" />
 			</div>
 			<div id="pro_list_first">
+				<c:choose>
+				<c:when test="${param.top_category eq null}">
 				<h2>전체 상품</h2>
+				</c:when>
+				<c:otherwise>
+					<h2 style="text-transform: uppercase;">${param.top_category}</h2>
+				</c:otherwise>
+				</c:choose>
 					<div id="pro_list_product">
 						<c:forEach items="${pro_list}" var="pro" varStatus="status">
 							<div class="g_games">
@@ -47,7 +54,9 @@
 					</div>
 				<div id="pro_list_write">
 					<div>
+						<c:if test="${member.m_id eq 'admin'}">
 						<a href="pro_write">Product Write</a>
+						</c:if>
 					</div>
 				</div>
 			</div>

@@ -44,6 +44,8 @@
 		select * from product where pro_num=#{pro_num}
 	</select>
 	
+
+	
 	<!-- pro_view에 들어갈 사진 PageMaker까지-->
 	<select id="pro_view_img" resultType="com.game.product.ProductFileDTO" parameterType="java.util.Map">
 		select * from 
@@ -83,5 +85,41 @@
 	<delete id="pro_del" parameterType="int">
 		delete from product where pro_num=#{pro_num}
 	</delete>
+	
+	<!-- 카테고리별 리스트 뿌리기 시작 -->
+	<select id="pro_list_category" resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product where top_category=#{top_category} order by pro_num desc) F) 
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	
+	<!-- 카테고리 글 갯수 -->
+	<select id="pro_boardCount_category" resultType="int" parameterType="java.lang.String">
+		select count(pro_num) from product where top_category=#{top_category}
+	</select>
+	<!-- 카테고리별 리스트 뿌리기 끝 -->
+	
+	<!-- 평점 평균 나오게 하기-->
+	<select id="score" resultType="com.game.product.ReplyDTO" parameterType="int">
+		<![CDATA[
+			select r_score from reply where pro_num = #{pro_num} order by r_num desc
+		]]>
+	</select>
+	
+	<!-- 제목 검색하기 시작 -->
+	<!-- 제목 검색 리스트 뿌리기 -->
+	<select id="productList_search" resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product where pro_title like '%'||#{pro_title}||'%' order by pro_num desc) F) 
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	
+	<!-- 제목 검색 글 갯수 -->
+	<select id="pro_boardCount_search" resultType="int" parameterType="java.lang.String">
+		select count(pro_num) from product where pro_title like '%'||#{pro_title}||'%'
+	</select>
+	<!-- 제목 검색하기 끝 -->
 </mapper>
 

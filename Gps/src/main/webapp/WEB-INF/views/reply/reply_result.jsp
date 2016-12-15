@@ -10,6 +10,7 @@
 			<input type="hidden" name="m_id" id="m_id_${status.index}"	value="${rep.r_writer}">
 			<input type="hidden" name="r_num" id="r_num_${status.index}" value="${rep.r_num}">
 			<input type="button" onclick="reply_delete(${status.index})" value="삭제">
+			평점 : <input type="text" value="${rep.r_score}" id="score_${status.index}">
 		</div>
 		<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents}</textarea>
 	</div>

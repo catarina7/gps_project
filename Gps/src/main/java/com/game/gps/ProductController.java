@@ -39,7 +39,7 @@ public class ProductController {
 	@RequestMapping(value="/pro_list")
 	public String productList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model){
 		try {
-			System.out.println("(control)curPage : "+ curPage);
+			//System.out.println("(control)curPage : "+ curPage);
 			productService.productList(curPage, perPage, model);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -103,5 +103,28 @@ public class ProductController {
 			e.printStackTrace();
 		}
 		return "redirect:/product/pro_list";
+	}
+	
+	//카테고리별 리스트 뿌리기
+	@RequestMapping(value="/pro_list_category")
+	public String productCategory(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, String top_category, Model model){
+		try {
+			productService.productCategory(curPage, perPage, top_category, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "product/pro_list";
+	}
+	
+	@RequestMapping(value="/pro_list_search")
+	public String productSearch(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, String pro_title, Model model){
+		try {
+			productService.productListSearch(curPage, perPage, pro_title, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "product/pro_list";
 	}
 }
