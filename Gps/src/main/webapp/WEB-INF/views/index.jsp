@@ -324,7 +324,7 @@
 					<h2>실시간 상담창</h2>
 				</div>
 				<div id="chat_contents">
-					<c:import url="${pageContext.request.contextPath}/chat/chat" />
+					<c:import url="/chat/chat" />
 				</div>
 				<div id="chat_btn">
 					<button id="chat_closes">닫기</button>

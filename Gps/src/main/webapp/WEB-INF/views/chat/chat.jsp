@@ -23,20 +23,20 @@
 		$("#sendBtn").click(function(){
 			if($("#message").val() != ""){				
 				sendMessage();
+				$("#message").val("");
 			}else {
 				alert("내용을 입력해주세요!");
 			}
 		});	
 		/* 채팅 끄기 버튼 */
-		$("#closes").click(function(){
+		$("#chat_closes").click(function(){
 			closeMessage();
-			location.href="${pageContext.request.contextPath}/index";
 		});
 		
 		/* 전송 메소드 */
 		function sendMessage() {
 			sock.onmessage = onMessage;
-			sock.send($("#message").val()+"<br/>");
+			sock.send($("#message").val());
 		};
 		/* 닫는 메소드 */
 		function closeMessage() {
@@ -57,10 +57,11 @@
 </head>
 <body>
 	<div id="chat_form">		
-		<input type="text" id="message">
-		<input type="button" id="sendBtn" value="전송">
-		<input type="button" id="closes" value="나오기">
 		<div id="data"></div>
+		<div id="write">
+			<input type="text" id="message">
+			<input type="button" id="sendBtn" value="전송">
+		</div>
 	</div>	
 </body>
 </html>
