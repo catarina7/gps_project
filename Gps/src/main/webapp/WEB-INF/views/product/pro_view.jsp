@@ -118,12 +118,14 @@
 	    $("#product_mod").click(function() {
 	    	location.href="pro_mod?pro_num=${pro_view.pro_num}";
 	    });
-	    
+	    //상품 삭제하기
 	    $("#product_del").click(function() {
 	    	location.href="pro_del?pro_num=${pro_view.pro_num}";
 	    });
 	    
 	});
+	
+	
 	//댓글 삭제
 	function reply_delete(i){
 	  	var r_num = $("#r_num_"+i).val();
@@ -192,7 +194,7 @@
 					<img src="../resources/upload/${pro_main.file_name}">
 				</div>
 				<div id="game_info">${pro_view.pro_contents}</div>
-				<div id="game_evalution"></div>
+				<div id="game_evalution"> <h3>평점 :  ${score_avg} </h3> </div>
 			</div>
 			<!-- sub images -->
 			<div id="third_pro">
@@ -482,8 +484,10 @@
 					<button class="five_btn" class="cart" id="cart">장바구니</button>
 				</form>
 				
+				<c:if test="${member.m_id eq 'admin'}">
 				<input type="button" id="product_mod" value="수정">
 				<input type="button" id="product_del" value="삭제">
+				</c:if>
 				
 			</div>
 			
@@ -521,6 +525,7 @@
 									<input type="hidden" name="m_id" id="m_id_${status.index}" value="${rep.r_writer}">
 									<input type="hidden" name="r_num" id="r_num_${status.index}" value="${rep.r_num}">
 									<input type="button" onclick="reply_delete(${status.index})" value="삭제">
+									<input type="text" value="${rep.r_score }" id="score_${status.index}">
 								</div>
 								<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents}</textarea>
 							</div>

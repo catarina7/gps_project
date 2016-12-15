@@ -33,11 +33,13 @@ public class ReplyService {
 	public void replyList(int pro_num, Model model) throws Exception{
 		List<ReplyDTO> ar = replyDAO.replyList(pro_num);
 		ArrayList<Like_countDTO> ar1 = new ArrayList<Like_countDTO>();
+
 		for(int i=0; i<ar.size();i++){
 			replyDAO.replyLikeCountSelect(ar.get(i).getR_num());
 			//System.out.println(ar.get(i).getR_num());
 			ar1.add(replyDAO.replyLikeCountSelect(ar.get(i).getR_num()));
 		}
+		//System.out.println("평점:"+score_avg);
 		model.addAttribute("replyList", ar);
 		model.addAttribute("reply_like_count", ar1);
 	}

@@ -106,4 +106,34 @@ public class ProductDAO {
 	public int productDelete(int pro_num) throws Exception{
 		return sqlSession.delete(namespace+"pro_del", pro_num);
 	}
+	
+	//category별 List
+	public List<ProductDTO> productListCategory(PageMaker pageMaker, String top_category) throws Exception{
+		Map<String, Object> data  = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("top_category", top_category);
+		return sqlSession.selectList(namespace+"pro_list_category", data);
+	}
+	//category별 글갯수
+	public int productCountCategory(String top_category) throws Exception{
+		return sqlSession.selectOne(namespace+"pro_boardCount_category", top_category);
+	}
+	
+	//평점
+	public List<ReplyDTO> scored(int pro_num){
+		return sqlSession.selectList(namespace+"score", pro_num);
+	}
+	
+	//search별 List
+	public List<ProductDTO> productListSearch(PageMaker pageMaker, String pro_title) throws Exception{
+		Map<String, Object> data  = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("pro_title", pro_title);
+		return sqlSession.selectList(namespace+"productList_search", data);
+	}
+	
+	//search별 글 갯수
+	public int productCountSearch(String pro_title) throws Exception{
+		return sqlSession.selectOne(namespace+"pro_boardCount_search", pro_title);
+	}
 }

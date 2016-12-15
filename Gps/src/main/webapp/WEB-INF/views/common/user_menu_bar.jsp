@@ -50,6 +50,11 @@
 		$("#notice_tx").click(function(){
 			location.href="${pageContext.request.contextPath}/notice/noticeList";
 		});
+		
+		$("#search_button").click(function (){
+			var search = $("#search_area").val();
+			location.href="${pageContext.request.contextPath}/product/pro_list_search?pro_title="+search;
+		});
 	});
 </script>
 </head>
@@ -76,7 +81,7 @@
 			<div id="search_input">
 				<input id="search_area" type="text" placeholder="검색어를 입력하세요">
 				<div id="search_btn">
-					<button>
+					<button id="search_button">
 						<img src="${pageContext.request.contextPath}/resources/css/common/img/search_icon.png">
 					</button>
 				</div>
@@ -96,11 +101,15 @@
 				<div class="H_list" id="product">
 					<ul>
 						<li><a href="#">관심게임</a></li>
-						<li><a href="#">list</a></li>
-						<li><a href="#">list</a></li>
-						<li><a href="#">list</a></li>
-						<li><a href="#">list</a></li>
-						<li><a href="#">list</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=action">Action</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=rpg">RPG</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=simulation">Simulation</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=adventure">Adventure</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=sports">Sports</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=racing">Racing</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=casual">Casual</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=indi">INDI</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=etc">MMO/ETC</a></li>
 					</ul>
 				</div>
 				<div class="H_list" id="software">
