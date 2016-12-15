@@ -101,4 +101,9 @@ public class ProductDAO {
 	public void productMod(ProductDTO productDTO){
 		sqlSession.update(namespace+"pro_mod", productDTO);
 	}
+	
+	//product 삭제
+	public int productDelete(int pro_num) throws Exception{
+		return sqlSession.delete(namespace+"pro_del", pro_num);
+	}
 }
