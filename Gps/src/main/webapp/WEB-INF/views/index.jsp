@@ -101,7 +101,7 @@
 			$("#chat_open").hide();
 		});
 		$("#chat_top").click(function(){
-			$("#chat_open").scrollTop(0);
+			$("#data").scrollTop(0);
 		});
 	});
 </script>
@@ -289,13 +289,15 @@
 					<div id="main_reply">
 						<div class="main_step1">
 							<div class="other">
-								<button id="chat_open_click">창으로보기</button>
+								<button id="chat_open_click">상담하기</button>
 							</div>
 							<div class="titi line">
 								<span>운영자와 1:1 상담</span>
 							</div>
 						</div>
-						<div class="main_step2"></div>
+						<div class="main_step2">
+							<%-- <c:import url="/chat/chat" /> --%>
+						</div>
 					</div>
 				</div>
 				<div id="main_company">

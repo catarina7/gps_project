@@ -6,10 +6,10 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script type="text/javascript"
-	src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_mod.css">
 <script type="text/javascript">
 	$(function() {
 		/* 1. smarteditor 시작 */
@@ -123,89 +123,105 @@
 </script>
 </head>
 <body>
-<h2> 수정 </h2>
-<form action="pro_mod" method="post" id="frm" enctype="multipart/form-data">
-	<table>
-		<tr>
-			<td> 게임명 </td>
-			<td> <input type="text" name="pro_title" value="${pro_view.pro_title}"> </td>
-		</tr>
-		<tr>
-			<td> 게임설명 </td>
-			<td>
-				<div id="pro_textarea">
-					<textarea id="smarteditor" name="pro_contents"> ${pro_view.pro_contents} </textarea>
-				</div>
-			</td>
-		</tr>
-		<tr>
-			<td> 할인율 </td>
-			<td> <input type="number" class="pro_in_num" id="p_discount" name="discount" value="${pro_view.discount}"> </td>
-		</tr>
-		<tr>
-			<td> 게임가격 </td>
-			<td> <input type="number" class="pro_in_num" id="p_price" name="price" value="${pro_view.price}"> </td>
-			<td> <input type="button" id="calculate" value="최종가격계산">
-		</tr>
-		<tr>
-			<td> 최종가격 </td>
-			<td> <input type="number" class="pro_in_num" id="p_total_price" name="total_price" value="${pro_view.total_price }"> </td>
-		</tr>
-		<tr>
-			<td class="title"> 마일리지 </td>
-			<td><input type="number" class="pro_in_num" name="millage" id="p_millage" value="${pro_view.millage }"></td>
-		</tr>
-		<tr>
-			<td> 카테고리 </td>
-			<td>
-				<select name="top_category">
-					<option value="action">Action</option>
-					<option value="rpg">RPG</option>
-					<option value="simulation">Simulation</option>
-					<option value="strategy">Strategy</option>
-					<option value="adventure">Adventure</option>
-					<option value="sports">Sports</option>
-					<option value="racing">Racing</option>
-					<option value="casual">Casual</option>
-					<option value="indi">INDI</option>
-					<option value="etc">MMO/ETC</option>
-				</select>
-			</td>
-		</tr>
-		<tr>
-			<td class="title">하위 카테고리</td>
-			<td><input type="text" class="pro_in" name="sub_category" value="${pro_view.sub_category}"></td>
-		</tr>
-		<tr>
-			<td> 게임회사 </td>
-			<td> <input type="text" name="company" value="${pro_view.company}"> </td>
-		</tr>
-		<tr>
-			<td> 이미지 삭제 </td>
-			<td>
-				<div id="img_delete_div">
-				<input type="hidden" name="pro_num" id="pro_num" value="${pro_view.pro_num}">
-				<c:forEach items="${pro_mod_img}" var="img" varStatus="status">
-					<div>
-						<input class="check_box" id="checkbox${status.index}" name="file_num" value="${img.file_num}" type="checkbox">
-						<input type="hidden" name="file_name" id="img_${status.index}" value="${img.file_name}">
-						<img src="../resources/upload/${img.file_name}">
-					</div>
-				</c:forEach>
-				<input type="button" id="img_delete" value="이미지 삭제">
-				</div>
-			</td>
-		</tr>
-		
-		<tr>
-			<td> 이미지 추가 </td>
-			<td> 
-				<span class="title"></span> <input type="button" id="imgPlus" class="btn" value="추가하기">
-				<div id="fileinput"></div>
-			</td>
-		</tr>
-	</table>
-</form>
-<input type="button" class="btn" id="savebutton" value="글수정">
+<c:import url="/header" />
+<section>
+	<div>
+		<c:import url="/user_menu_bar" />
+	</div>
+	<div id="pro_mod_first">
+		<h2>게임 상품 수정 </h2>
+		<div id="pro_mod_second">
+			<form action="pro_mod" method="post" id="frm" enctype="multipart/form-data">
+				<table>
+					<colgroup>
+						<col style="width:18%;">
+						<col style="width:65%;">
+						<col style="width:8%;">
+					</colgroup>
+					<tr>
+						<td class="mod_titi"> 게임명 : </td>
+						<td colspan="2"> <input type="text" name="pro_title" value="${pro_view.pro_title}"> </td>
+					</tr>
+					<tr>
+						<td class="mod_titi"> 게임설명 : </td>
+						<td colspan="2">
+							<div id="pro_textarea">
+								<textarea id="smarteditor" name="pro_contents"> ${pro_view.pro_contents} </textarea>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td class="mod_titi"> 할인율 : </td>
+						<td colspan="2"> <input type="number" class="pro_in_num" id="p_discount" name="discount" value="${pro_view.discount}"> </td>
+					</tr>
+					<tr>
+						<td class="mod_titi"> 게임가격 : </td>
+						<td> <input type="number" class="pro_in_num" id="p_price" name="price" value="${pro_view.price}"> </td>
+						<td> <input type="button" id="calculate" value="최종가격계산">
+					</tr>
+					<tr>
+						<td class="mod_titi"> 최종가격 : </td>
+						<td colspan="2"> <input type="number" class="pro_in_num" id="p_total_price" name="total_price" value="${pro_view.total_price }"> </td>
+					</tr>
+					<tr>
+						<td class="title mod_titi"> 마일리지 : </td>
+						<td colspan="2"><input type="number" class="pro_in_num" name="millage" id="p_millage" value="${pro_view.millage }"></td>
+					</tr>
+					<tr>
+						<td class="mod_titi"> 카테고리 : </td>
+						<td colspan="2">
+							<select name="top_category">
+								<option value="action">Action</option>
+								<option value="rpg">RPG</option>
+								<option value="simulation">Simulation</option>
+								<option value="strategy">Strategy</option>
+								<option value="adventure">Adventure</option>
+								<option value="sports">Sports</option>
+								<option value="racing">Racing</option>
+								<option value="casual">Casual</option>
+								<option value="indi">INDI</option>
+								<option value="etc">MMO/ETC</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="title mod_titi">하위 카테고리 : </td>
+						<td colspan="2"><input type="text" class="pro_in" name="sub_category" value="${pro_view.sub_category}"></td>
+					</tr>
+					<tr>
+						<td class="mod_titi"> 게임회사 : </td>
+						<td colspan="2"> <input type="text" name="company" value="${pro_view.company}"> </td>
+					</tr>
+					<tr>
+						<td class="mod_titi"> 이미지 삭제 </td>
+						<td colspan="2">
+							<div id="img_delete_div">
+								<input type="hidden" name="pro_num" id="pro_num" value="${pro_view.pro_num}">
+									<c:forEach items="${pro_mod_img}" var="img" varStatus="status">
+										<div id="pro_mod_images">
+											<input class="check_box" id="checkbox${status.index}" name="file_num" value="${img.file_num}" type="checkbox">
+											<input type="hidden" name="file_name" id="img_${status.index}" value="${img.file_name}">
+											<img src="../resources/upload/${img.file_name}">
+										</div>
+									</c:forEach>
+								<input type="button" id="img_delete" value="이미지 삭제">
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="mod_titi"> 이미지 추가 </td>
+						<td colspan="2"> 
+							<span class="title"></span> <input type="button" id="imgPlus" class="btn" value="추가하기">
+							<div id="fileinput"></div>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<input type="button" class="btn" id="savebutton" value="글수정">
+		</div>
+	</div>
+</section>
+<c:import url="/footer" />
 </body>
 </html>

@@ -24,9 +24,11 @@
 			if($("#message").val() != ""){				
 				sendMessage();
 				$("#message").val("");
+				$("#message").focus();
 			}else {
 				alert("내용을 입력해주세요!");
 			}
+			$("#data").scrollTop($("#data")[0].scrollHeight);
 		});	
 		/* 채팅 끄기 버튼 */
 		$("#chat_closes").click(function(){
@@ -52,6 +54,7 @@
 		function onClose(evt) {
 			$("#data").append("사용자가 나갔습니다.");
 		};
+		
 	});
 </script>
 </head>

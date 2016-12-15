@@ -270,7 +270,8 @@ section #game_list {
 	border-bottom: 2px solid #aaaaaa;
 }
 #main_four .main_step2 {
-	width: 100%;
+	width: 96.5%;
+	padding: 5px 2%;
 }
 #main_four .titi {
 	width: 74%;
@@ -362,7 +363,7 @@ section #game_list {
 	bottom: 0;
 	width: 20%;
 	height: 430px;
-	background-color: #ffe5e5;
+	background-color: #464646;
 	display: none;
 	border: 2px solid #aaaaaa;
 	border-radius: 5px;
@@ -378,8 +379,8 @@ section #game_list {
 #chat_title h2 {
 	width: 100%;
 	text-align: center;
-	color: #32435c;
-	text-shadow: -1px -1px 0px white;
+	color: #ffffff;
+	text-shadow: -1px -1px 0px black;
 }
 #chat_open #chat_contents {
 	width: 96%;
@@ -393,33 +394,19 @@ section #game_list {
 #chat_btn button {
 	padding: 3px 7px;
 	cursor: pointer;
-	border: 1px solid #32435c;
+	border: 1px solid #aaaaaa;
 	border-radius: 4px;
 	font-weight: bold;
 	float: right;
 	overflow: hidden;
 	margin-right: 1.4%;
-}
-#chat_btn #chat_top {
+	text-shadow: -1px -1px 0px #414141;
 	background-color: #32435c;
 	color: white;
 }
-#chat_btn #chat_top:hover {
-	background-color: #cacaca;
-	color: #32435c;
+#chat_btn button:hover {
+	background-color: #1c1d33;
 }
-#chat_btn #chat_closes {
-	background-color: white;
-	color: #32435c;
-}
-#chat_btn #chat_closes:hover {
-	background-color: #1b2330;
-	color: white;
-}
-
-
-
-
 
 
 
