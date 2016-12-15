@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/member/mem_out.css">
 <title>Insert title here</title>
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/member/mem_out.js"></script>
 <script type="text/javascript">
@@ -40,20 +40,24 @@
 		<input type="hidden" readonly="readonly" id="pas_pw" value="${member.m_pw}"><br>
 	
 		<!-- 내용 넣기 -->
-		<div>
-		<h2>회원탈퇴 하기</h2>
-			
-			<div>
-				<p>마지막으로 비밀번호를 입력하시면 탈퇴가 진행 됩니다.</p>
-			</div>
-			
-			<!-- pw -->
-			pw <input type="text" name="m_pw" id="pw_input" class="input"><br>
-			
-			<input type="text" id="pw_check" readonly="readonly"
-					value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다."><br>
-			
-			<button id="out_btn">탈퇴합니다.</button>
+		<div id="mem_out_first">
+			<h2>회원탈퇴 하기</h2>
+				
+				<div id="mem_out_second">
+					<p>마지막으로 비밀번호를 입력하시면 탈퇴가 진행 됩니다.</p>
+				</div>
+				
+				<div id="mem_out_third">
+					<!-- pw -->
+					<span>pw : </span> <input type="password" name="m_pw" id="pw_input" class="input"><br>
+					
+					<input type="text" id="pw_check" readonly="readonly"
+							value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다."><br>
+					
+				</div>
+				<div id="mem_out_four">
+					<button id="out_btn">탈퇴합니다.</button>
+				</div>
 			
 		</div>
 		
