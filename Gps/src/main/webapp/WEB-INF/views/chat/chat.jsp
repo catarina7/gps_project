@@ -56,13 +56,11 @@
 </script>
 </head>
 <body>
-	<section>
-		<div>		
-			<input type="text" id="message">
-			<input type="button" id="sendBtn" value="전송">
-			<input type="button" id="closes" value="나오기">
-			<div id="data"></div>
-		</div>	
-	</section>
+	<div id="chat_form">		
+		<input type="text" id="message">
+		<input type="button" id="sendBtn" value="전송">
+		<input type="button" id="closes" value="나오기">
+		<div id="data"></div>
+	</div>	
 </body>
 </html>
