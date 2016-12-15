@@ -74,6 +74,7 @@
 	<c:import url="/header" />
 	
 	<!-- section -->
+	
 	<section>
 		<c:import url="/user_menu_bar" />
 		<!-- 내용 넣기 -->
@@ -155,7 +156,7 @@
 						<tr>
 							<td class="th_title" colspan="2">결제 금액</td>
 							<td class="th_title" colspan="2">마일리지</td>
-							<td class="th_title" colspan="2">부가세</td>
+							<td class="th_title" colspan="2">디지털 콘텐츠부가세</td>
 							<td class="th_title">최종결제 금액</td>
 						</tr>
 						<tr>
@@ -177,7 +178,7 @@
 								<!-- milage_count -->
 									<span>(마일리지): ${member.millage}</span>
 									<input type="hidden" id="m_millage" placeholder="millage (히든으로 들어갈 예정)" value="${member.millage}">
-									<input type="number" id="millage_count" >
+									<input type="number" id="millage_count" value="0">
 								</span>
 								<!-- 마이리지 적용 버튼 -->
 								<button id="mill_cancle">적용 취소</button>
@@ -204,8 +205,10 @@
 							<td>
 								<!-- 최종 합계 가격 -->
 								<span id="total_price">
-								<!-- post_price -->
-									<input type="text" id="total_price">	
+								<!-- post_total -->
+									<!-- 결제금액 -->
+									<input type="hidden" id="total_input">	
+									<input type="text" id="post_total"> 
 								</span>
 								
 							</td>
@@ -302,7 +305,7 @@
 						</div>
 							<p id="text"> 
 								무통장 입금의 경우<br> 
-							       입금이 확인 된 후 최종 결제가 이루어지기에<br>
+							       입금이 확인 된 후 최종 결제가 이루어지기에<br>  
 							       게임을 받는 데 시간이 소요될 수 있음을 유의해주시기 바랍니다. 
 							</p>
 					</div>
@@ -322,8 +325,10 @@
 					<div id="pay_check_1">
 						<!-- 변동 가격 -->
 						<div>
+							<input type="hidden" id="pro_millage" value="${productOne.millage}">
 							<dl>
 								<dt>적립 될 마일리지</dt>
+								
 								<dd> <span> ${productOne.millage} point</span></dd>
 							</dl>
 						</div>	
@@ -337,7 +342,7 @@
 					<div id="pay_check_2">
 						<!-- 최종 결제 가격 -->
 						<h3>최종결제 가격</h3><br>
-						<span></span><span id="pri">원</span>
+						<span id="span_total"></span><span id="pri">원</span>
 					</div>
 				</div>
 			</div>
