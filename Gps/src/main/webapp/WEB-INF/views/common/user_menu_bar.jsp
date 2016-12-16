@@ -94,8 +94,6 @@
 						<li><a href="${pageContext.request.contextPath}/cart_favorite/cartList?m_id=${member.m_id}">장바구니</a></li>
 						<li><a href="${pageContext.request.contextPath}/favorite">관심상품</a></li>
 						<li><a href="${pageContext.request.contextPath}/purchase/purchase">구매내역</a></li>
-						<li><a href="#">list</a></li>
-						<li><a href="#">list</a></li>
 					</ul>
 				</div>
 				<div class="H_list" id="product">
