@@ -264,9 +264,9 @@
 						</div>
 						<div class="tag">
 							<ul>
-								<li class="discount">-20%</li>
+								<li class="discount">${pro_view.discount } %</li>
 								<li class="price">
-									<p class="nomal_p">₩ ${pro_view.price}</p> <span>₩ 15000</span>
+									<p class="nomal_p">₩ ${pro_view.price}</p> <span>₩ ${pro_view.total_price} </span>
 								</li>
 								<li><input type="button" class="cart" value="장바구니 담기"></li>
 							</ul>
