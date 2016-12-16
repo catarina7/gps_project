@@ -13,6 +13,7 @@ section #mem_info_all {
 	margin: 0 auto;
 	padding: 10px 5px;
 	margin-top: 10px;
+	overflow: hidden;
 }
 #my_page h3 {
 	color: white;
@@ -30,13 +31,14 @@ section #mem_info_all {
 	background-color: #555555;
 	margin: 0 auto;
 	cursor: pointer;
+	overflow: hidden;
 }
 #mem_info_all .information:hover {
 	border: 3px solid #32435c;
 }
 #mem_info_all .information dt{
 	width: 100%;
-	margin-top: 46%;
+	margin-top: 44%;
 }
 #mem_info_all .information .title {
 	font-weight: bold;
@@ -54,52 +56,48 @@ section #mem_info_all {
 
 #mem_info_all #mem_info_menu {
 	width: 80%;
-	height: 180px;
 	padding: 1.4% 1.4%;
 	margin: 0 auto;
 	background-color: #2d3c4d;
 	border-radius: 7px;
 	border: 1px solid white;
+	overflow: hidden;
 }
 #mem_info_menu #lineline {
 	width: 99%;
-	height: 96%;
 	border: 2px dotted #666666;
 	border-radius: 7px;
 	padding-top: 5px;
 	padding-left: 0.5%;
+	overflow: hidden;
 }
 #mem_info_menu #member_information{
 	width: 30.2%;
-	height: 87%;
 	float: left;
 	overflow: hidden;
 	padding: 1.4% 1.4%;
 }
 #mem_info_menu #member_millage {
 	width: 30.2%;
-	height: 87%;
 	float: left;
 	overflow: hidden;
 	padding: 1.4% 1.4%;
 }
 #mem_info_menu #member_product {
 	width: 30.2%;
-	height: 87%;
 	float: left;
 	overflow: hidden;
 	padding: 1.4% 1.4%;
 }
 #mem_info_all #mem_info_category {
 	width: 94%;
-	height: 180px;
 	margin: 0 auto;
 	margin-top: 40px;
+	overflow: hidden;
 }
 
 #mem_info_category .mem_in {
 	width: 27.6%;
-	height: 91%;
 	padding: 1.4% 2.8%;
 	float: left;
 	overflow: hidden;
@@ -110,7 +108,6 @@ section #mem_info_all {
 	display: none;
 	float: left;
 	width: 27.6%;
-	height: 91%;
 	overflow: hidden;
 	padding: 1.4% 2.8%;
 	margin-left: 11%;
@@ -120,7 +117,6 @@ section #mem_info_all {
 	display: none;
 	float: left;
 	width: 27.6%;
-	height: 91%;
 	overflow: hidden;
 	padding: 1.4% 2.8%;
 	margin-left: 11%;

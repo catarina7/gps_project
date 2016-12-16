@@ -26,6 +26,7 @@ section #first_login{
 	color: white;
 	overflow: hidden;
 	padding: 20px 1.7%;
+	min-width: 438px;
 }
 #second_login form input[type="text"]{
 	border: 1px solid #aaaaaa;
@@ -44,10 +45,10 @@ section #first_login{
 	font-weight: bold;
 }
 #second_login #third_login {
-	width: 50%;
+	width: 65%;
 	float: left;
 	overflow: hidden;
-	margin-left: 15%;
+	/* margin-left: 15%; */
 }
 #second_login #four_login {
 	width: 35%;
@@ -92,7 +93,7 @@ section #first_login{
 	background-color: #1e2837;
 }
 #first_login #five_login #save_ids {
-	margin-left: 15%;
+	/* margin-left: 15%; */
 }
 #five_login label {
 	color: white;
