@@ -408,11 +408,23 @@ section #game_list {
 	background-color: #1c1d33;
 }
 
+/* 문의하기 창 */
 
-
-
- 
-
+#main_four .main_step2 ul {
+	width: 99%;
+	padding: 10px 0.5%;
+	background-color: #aaaaaa;
+}
+#main_four .main_step2 #tiit {
+	font-size: 15px;
+}
+#main_four .main_step2 li {
+	padding: 2.5px 0.7%;
+	color: #414141;
+	font-weight: bold;
+	font-size: 12px;
+	text-align: left;
+}
 
 
 #first_footer {

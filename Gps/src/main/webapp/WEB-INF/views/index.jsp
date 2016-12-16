@@ -320,14 +320,22 @@
 					<div id="main_reply">
 						<div class="main_step1">
 							<div class="other">
-								<button id="chat_open_click">상담하기</button>
+								<button id="chat_open_click">문의하기</button>
 							</div>
 							<div class="titi line">
-								<span>운영자와 1:1 상담</span>
+								<span>운영자에게 1:1 문의</span>
 							</div>
 						</div>
 						<div class="main_step2">
-							<%-- <c:import url="/chat/chat" /> --%>
+							<ul>
+								<li id="tiit">※ 1:1 문의 유의사항</li>
+								<li>1. 전 채팅 내용은 재로그인 시 보이지않습니다.</li>
+								<li>(열람을 원하시면 운영자에게 문의부탁드립니다.)</li>
+								<li>2. 게임 추가문의도 1:1문의로 부탁드립니다.</li>
+								<li>3. 비방 및 욕설을 작성 시 불이익을 당하실 수 있습니다.</li>
+								<li>4. 운영시간은 09:00 ~ 20:00 까지 입니다. (일요일 미포함)</li>
+								<li>5. 신속한 답변은 되도록 전화상담을 이용해주시기 바랍니다.</li>
+							</ul>
 						</div>
 					</div>
 				</div>
@@ -340,7 +348,7 @@
 			</div>
 			<div id="chat_open">
 				<div id="chat_title">
-					<h2>실시간 상담창</h2>
+					<h2>실시간 문의창</h2>
 				</div>
 				<div id="chat_contents">
 					<c:import url="/chat/chat" />
