@@ -100,8 +100,8 @@ public class QnaController {
 	}
 	
 	//체크된 이미지 삭제
-	@RequestMapping(value="/qna_mod_img_del", method= {RequestMethod.GET, RequestMethod.POST})
-	public String qnaModDeleteList(@RequestParam(value="valueArr[]") List<Integer> valueArr, int q_num, Model model){
+	@RequestMapping(value="/qna_mod_img_del", method={RequestMethod.POST, RequestMethod.GET})
+	public String qnaModDeleteList(@RequestParam(value="valueArr") List<Integer> valueArr, int q_num, Model model){
 		
 		try {
 			qnaService.qnaModDeleteList(valueArr, q_num, model);

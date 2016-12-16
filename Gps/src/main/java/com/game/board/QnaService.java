@@ -129,7 +129,6 @@ public class QnaService {
 	//체크 이미지 삭제
 	public void qnaModDeleteList(List<Integer> valueArr, int q_num, Model model) throws Exception{
 		qnaDAO.qnaModDeleteList(valueArr);
-		
 		List<QnaFileDTO> modImg = qnaDAO.qnaModImg(q_num);
 		model.addAttribute("qna_mod_img", modImg);
 	}
