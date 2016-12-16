@@ -378,6 +378,31 @@ section #pro_view {
 	opacity: 0.9;
 	display: none;
 }
+#five_pro #admin_btn {
+	width: 100%;
+	padding: 10px 0px;
+	overflow: hidden;
+}
+
+#admin_btn input[type="button"] {
+	border: 1px solid #aaaaaa;
+	border-radius: 5px;
+	background-color: #151c26;
+	color: white;
+	cursor: pointer;
+	padding: 3px 8px;
+	text-shadow: -1px -1px 0px #414141;
+	float: right;
+	overflow: hidden;
+	margin-right: 2%;
+}
+
+#admin_btn input[type="button"]:hover {
+	background-color: white;
+	color: #151c26;
+	text-shadow: -1px -1px 0px #c0c0c0;
+	font-weight: bold;
+}
 
 
 #pro_view #six_pro {

@@ -484,10 +484,12 @@
 					<button class="five_btn" class="cart" id="cart">장바구니</button>
 				</form>
 				
-				<c:if test="${member.m_id eq 'admin'}">
-				<input type="button" id="product_mod" value="수정">
-				<input type="button" id="product_del" value="삭제">
-				</c:if>
+				<div id="admin_btn">
+					<c:if test="${member.m_id eq 'admin'}">
+					<input type="button" id="product_del" value="삭제">
+					<input type="button" id="product_mod" value="수정">
+					</c:if>				
+				</div>
 				
 			</div>
 			
