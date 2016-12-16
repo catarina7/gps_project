@@ -2,15 +2,14 @@
 
 section {
 	width: 100%;
-	padding-top: 155px;
-	padding-bottom: 100px;
+	padding-top: 245px;
+	padding-bottom: 190px;
 	background-color: #666666;
 }
 section #first_login{
 	width: 30%;
 	margin: 0 auto;
 	padding: 72.5px 1.4%;
-	min-width: 432px;
 }
 #first_login #login_tt {
 	width: 97%;
@@ -45,9 +44,10 @@ section #first_login{
 	font-weight: bold;
 }
 #second_login #third_login {
-	width: 65%;
+	width: 50%;
 	float: left;
 	overflow: hidden;
+	margin-left: 15%;
 }
 #second_login #four_login {
 	width: 35%;
@@ -91,6 +91,9 @@ section #first_login{
 #first_login #five_login input[type="button"]:hover {
 	background-color: #1e2837;
 }
+#first_login #five_login #save_ids {
+	margin-left: 15%;
+}
 #five_login label {
 	color: white;
 	font-size: 14px;
@@ -102,7 +105,6 @@ section #first_id_div {
 	position: absolute;
 	background-color: #666666;
 	width: 27.2%;
-	min-width: 432px;
 	border: 2px solid #aaaaaa;
 	border-radius: 4px;
 	overflow: hidden;
@@ -132,7 +134,6 @@ section #first_pw_div {
 	position: absolute;
 	background-color: #666666;
 	width: 27.2%;
-	min-width: 432px;
 	border: 2px solid #aaaaaa;
 	border-radius: 4px;
 	overflow: hidden;
