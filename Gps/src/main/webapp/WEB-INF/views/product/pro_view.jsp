@@ -41,7 +41,7 @@
 	        sSkinURI: "/gps/resources/SE2/SmartEditor2Skin.html",
 	        htParams : {
 	            // 툴바 사용 여부 (true:사용/ false:사용하지 않음)
-	            bUseToolbar : true,             
+	            bUseToolbar : false,             
 	            // 입력창 크기 조절바 사용 여부 (true:사용/ false:사용하지 않음)
 	            bUseVerticalResizer : false,     
 	            // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
@@ -194,7 +194,28 @@
 					<img src="../resources/upload/${pro_main.file_name}">
 				</div>
 				<div id="game_info">${pro_view.pro_contents}</div>
-				<div id="game_evalution"> <h3>평점 :  ${score_avg} </h3> </div>
+				<div id="game_evalution">
+					<span>평점 : </span>
+					<c:if test="${score_avg == 0 }">
+						<img src="${pageContext.request.contextPath}/resources/css/product/img/zero_grade.png">
+					</c:if>
+					<c:if test="${score_avg == 1 }">
+						<img src="${pageContext.request.contextPath}/resources/css/product/img/one_grade.png">
+					</c:if>
+					<c:if test="${score_avg == 2 }">
+						<img src="${pageContext.request.contextPath}/resources/css/product/img/two_grade.png">
+					</c:if>
+					<c:if test="${score_avg == 3 }">
+						<img src="${pageContext.request.contextPath}/resources/css/product/img/three_grade.png">
+					</c:if>
+					<c:if test="${score_avg == 4 }">
+						<img src="${pageContext.request.contextPath}/resources/css/product/img/four_grade.png">
+					</c:if>
+					<c:if test="${score_avg == 5 }">
+						<img src="${pageContext.request.contextPath}/resources/css/product/img/all_grade.png">
+					</c:if>
+				 	<%-- <h3>평점 :  ${score_avg} </h3> --%> 
+				 </div>
 			</div>
 			<!-- sub images -->
 			<div id="third_pro">
@@ -264,7 +285,7 @@
 						</div>
 						<div class="tag">
 							<ul>
-								<li class="discount">${pro_view.discount } %</li>
+								<li class="discount">${pro_view.discount }%</li>
 								<li class="price">
 									<p class="nomal_p">₩ ${pro_view.price}</p> <span>₩ ${pro_view.total_price} </span>
 								</li>
@@ -508,7 +529,30 @@
 							<input type="hidden" name="pro_num" id="pro_num" value="${param.pro_num}">
 							<input type="hidden" name="r_writer" id="r_writer" value="${member.m_id}">
 							<textarea id="smarteditor" name="r_contents"></textarea>
-							평점 : <input type="number" id="r_score" name="r_score">
+							<div id="pro_grades">
+								<table>
+									<colgroup>
+										<col style="width:23%;">
+										<col style="width:75%;">
+									</colgroup>
+									<tr>
+										<td>
+											평점 : 
+										</td>
+										<td>											
+											<!-- <input type="number" id="r_score" name="r_score"> -->
+											<select id="r_score" name="r_score">
+												<option value="0" id="score_0">☆☆☆☆☆</option>
+												<option value="1" id="score_1">★☆☆☆☆</option>
+												<option value="2" id="score_2">★★☆☆☆</option>
+												<option value="3" id="score_3">★★★☆☆</option>
+												<option value="4" id="score_4">★★★★☆</option>
+												<option value="5" id="score_5">★★★★★</option>
+											</select>
+										</td>
+									</tr>
+								</table>							
+							</div>
 						</div>
 						<div class="re_sub">
 							<button id="save">등록</button>

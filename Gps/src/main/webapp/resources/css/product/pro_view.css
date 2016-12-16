@@ -76,12 +76,28 @@ section #pro_view {
 	height: 170px;
 	border: 1px solid #aaaaaa;
 }
-#second_pro #game_evalution {
-	width: 99%;
-	height: 59px;
-	border: 1px solid #aaaaaa;
-}
 
+#second_pro #game_info * {
+	color: white;
+	font-weight: bold;
+}
+#second_pro #game_evalution {
+	width: 79%;
+	height: 39px;
+	border: 1px solid #aaaaaa;
+	padding: 10px 10%;
+	background-color: #3f3f3f;
+}
+#second_pro #game_evalution span {
+	color: white;
+	font-size: 22px;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px black;
+}
+#second_pro #game_evalution img {
+	width: 70%;
+	height: 80%;
+}
 
 
 
@@ -514,15 +530,53 @@ section #pro_view {
 
 
 
+/* 평점 */
 
+.re_contents #pro_grades {
+	width: 25%;
+	padding: 0px 1.4%;
+}
+#pro_grades table {
+	width: 100%;
+	border-collapse: collapse;
+}
+#pro_grades td {
+	padding: 3px 1.4%;
+	color: white;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #414141;
+}
+#pro_grades select {
+	padding: 3px 1.4%;
+	font-size: 17px;
+	color: white;
+	background-color: #3f3f3f;
+	border: 1px solid #aaaaaa;
+	border-radius: 5px;
+}
+#pro_grades option {
+	font-weight: bold;
+	font-size: 17px;
+	color: white;
+	background-color: #3f3f3f;
+}
 
-
-
-
-
-
-
-
+.re_user input[type="button"]{
+	border: 1px solid #aaaaaa;
+	border-radius: 5px;
+	background-color: #151c26;
+	color: white;
+	cursor: pointer;
+	padding: 3px 8px;
+	text-shadow: -1px -1px 0px #414141;
+	margin-right: 2%;
+}
+.re_user input[type="button"]:hover {
+	background-color: white;
+	color: #151c26;
+	text-shadow: -1px -1px 0px #c0c0c0;
+	font-weight: bold;
+}
 
 
 
