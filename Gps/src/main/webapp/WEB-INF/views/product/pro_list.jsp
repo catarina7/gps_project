@@ -22,7 +22,18 @@
 			<div id="pro_list_first">
 				<c:choose>
 				<c:when test="${param.top_category eq null}">
-				<h2>전체 상품</h2>
+				<div id="pro_list_titi">				
+					<h2>전체 상품</h2>
+					<div id="pro_list_selec">
+						<select>
+							<option>최신순으로 정렬</option>
+							<option>이름순으로 정렬</option>
+							<option>평점놈은순으로 정렬</option>
+							<option>높은가격순으로 정렬</option>
+							<option>낮은가격순으로 정렬</option>
+						</select>
+					</div>
+				</div>
 				</c:when>
 				<c:otherwise>
 					<h2 style="text-transform: uppercase;">${param.top_category}</h2>
