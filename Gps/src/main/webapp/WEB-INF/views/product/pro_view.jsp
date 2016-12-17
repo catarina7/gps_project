@@ -114,6 +114,15 @@
 	    	}
 		});
 	    
+	    //관심상품
+	    $("#favorite").click(function(){
+	    	if(confirm("관심상품에 담으시겠습니까?") == true){
+	    		$("#frm1").submit();
+	    	}else{
+	    		return;
+	    	}
+	    });
+	    
 	    //상품 수정하기
 	    $("#product_mod").click(function() {
 	    	location.href="pro_mod?pro_num=${pro_view.pro_num}";
@@ -476,7 +485,12 @@
 						</tr>
 					</table>
 				</div>
-				<button class="five_btn" id="favorite">관심상품</button>
+				
+				<form action="../favorite/favoriteAdd" method="get" id="frm1">
+					<input type="hidden" name="m_id" value="${member.m_id}">
+					<input type="hidden" name="pro_num" value="${pro_view.pro_num}">
+					<button class="five_btn" id="favorite">관심상품</button>
+				</form>
 				
 				<form action="../cart_favorite/cartAdd" method="get" id="frm">
 					<input type="hidden" name="m_id" value="${member.m_id}">

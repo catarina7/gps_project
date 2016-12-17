@@ -16,8 +16,8 @@
 		<property name="password" value="gps"></property>
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>		
 
-		<property name="url" value="jdbc:oracle:thin:@192.168.1.3:1521:xe"></property>
-		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.10.48:1521:xe"></property> -->
+		
+		<property name="url" value="jdbc:oracle:thin:@192.168.10.48:1521:xe"></property>
 		<!-- <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:xe"></property> -->
 
 	</bean>

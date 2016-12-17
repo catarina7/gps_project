@@ -92,7 +92,7 @@
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/member/member_info">마이페이지</a></li>
 						<li><a href="${pageContext.request.contextPath}/cart_favorite/cartList?m_id=${member.m_id}">장바구니</a></li>
-						<li><a href="${pageContext.request.contextPath}/favorite">관심상품</a></li>
+						<li><a href="${pageContext.request.contextPath}/favorite/favoriteList?m_id=${member.m_id}">관심상품</a></li>
 						<li><a href="${pageContext.request.contextPath}/purchase/purchase">구매내역</a></li>
 						<li><a href="#">list</a></li>
 						<li><a href="#">list</a></li>
