@@ -93,6 +93,7 @@ public class ProductService {
 			score_total = score_total + score.get(i).getR_score();
 			score_avg=score_total/score.size();
 		}
+		productDAO.total_score(pro_num, score_avg);
 		
 		model.addAttribute("pageImg", pageMaker);
 		model.addAttribute("pro_view", productDTO);
@@ -195,5 +196,73 @@ public class ProductService {
 		model.addAttribute("pro_list", ar);
 		model.addAttribute("pro_main_img", ar1);
 		model.addAttribute("pageMaker", pageMaker);
+	}
+	
+	//분류별 리스트
+	public void productOrderList(int curPage, int perPage, Model model, String orderKind) throws Exception{
+		//product 글 갯수 가져오기
+		int totalCount=productDAO.productCount();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		
+		if(orderKind.equals("recent")){
+			//최신순
+			List<ProductDTO> ar = productDAO.productListRecent(pageMaker);
+			ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+			for(int i=0;i<ar.size();i++){
+				productDAO.productImgList(ar.get(i).getPro_num());
+				ar1.add(productDAO.productImgList(ar.get(i).getPro_num()));
+			}
+			model.addAttribute("pro_list", ar);
+			model.addAttribute("pro_main_img", ar1);
+			model.addAttribute("pageMaker", pageMaker);
+		}else if(orderKind.equals("name")){
+			//이름순
+			List<ProductDTO> ar = productDAO.productListName(pageMaker);
+			ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+			for(int i=0;i<ar.size();i++){
+				productDAO.productImgList(ar.get(i).getPro_num());
+				ar1.add(productDAO.productImgList(ar.get(i).getPro_num()));
+			}
+			model.addAttribute("pro_list", ar);
+			model.addAttribute("pro_main_img", ar1);
+			model.addAttribute("pageMaker", pageMaker);
+		}else if(orderKind.equals("score")){
+			//평점순
+			List<ProductDTO> ar = productDAO.productListScore(pageMaker);
+			ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+			for(int i=0;i<ar.size();i++){
+				productDAO.productImgList(ar.get(i).getPro_num());
+				ar1.add(productDAO.productImgList(ar.get(i).getPro_num()));
+			}
+			model.addAttribute("pro_list", ar);
+			model.addAttribute("pro_main_img", ar1);
+			model.addAttribute("pageMaker", pageMaker);
+		}else if(orderKind.equals("high")){
+			//높은 가격순
+			List<ProductDTO> ar = productDAO.productListHigh(pageMaker);
+			ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+			for(int i=0;i<ar.size();i++){
+				productDAO.productImgList(ar.get(i).getPro_num());
+				ar1.add(productDAO.productImgList(ar.get(i).getPro_num()));
+			}
+			model.addAttribute("pro_list", ar);
+			model.addAttribute("pro_main_img", ar1);
+			model.addAttribute("pageMaker", pageMaker);
+		}else if(orderKind.equals("low")){
+			//낮은 가격순
+			List<ProductDTO> ar = productDAO.productListLow(pageMaker);
+			ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+			for(int i=0;i<ar.size();i++){
+				productDAO.productImgList(ar.get(i).getPro_num());
+				ar1.add(productDAO.productImgList(ar.get(i).getPro_num()));
+			}
+			model.addAttribute("pro_list", ar);
+			model.addAttribute("pro_main_img", ar1);
+			model.addAttribute("pageMaker", pageMaker);
+		}
 	}
 }

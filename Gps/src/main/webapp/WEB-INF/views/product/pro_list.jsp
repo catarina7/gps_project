@@ -12,6 +12,23 @@
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_list.css">
 </head>
+<script type="text/javascript">
+$(function(){
+	$("#order_kind").change(function(){
+		$.ajax({
+			url: 'pro_list_order',
+			type:'POST',
+			data:{
+				orderKind : $(this).val()
+			},
+			success: function(data){
+				data=data.trim();
+				$("#pro_list_product").html(data);
+			}
+		});
+	});
+});
+</script>
 <body>
 	
 	<c:import url="/header" />
@@ -25,12 +42,12 @@
 				<div id="pro_list_titi">				
 					<h2>전체 상품</h2>
 					<div id="pro_list_selec">
-						<select>
-							<option>최신순으로 정렬</option>
-							<option>이름순으로 정렬</option>
-							<option>평점놈은순으로 정렬</option>
-							<option>높은가격순으로 정렬</option>
-							<option>낮은가격순으로 정렬</option>
+						<select id="order_kind">
+							<option value="recent">최신순으로 정렬</option>
+							<option value="name">이름순으로 정렬</option>
+							<option value="score">평점놈은순으로 정렬</option>
+							<option value="high">높은가격순으로 정렬</option>
+							<option value="low">낮은가격순으로 정렬</option>
 						</select>
 					</div>
 				</div>

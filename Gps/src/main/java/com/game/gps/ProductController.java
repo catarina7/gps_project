@@ -117,6 +117,7 @@ public class ProductController {
 		return "product/pro_list";
 	}
 	
+	//제목 검색
 	@RequestMapping(value="/pro_list_search")
 	public String productSearch(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, String pro_title, Model model){
 		try {
@@ -126,5 +127,18 @@ public class ProductController {
 			e.printStackTrace();
 		}
 		return "product/pro_list";
+	}
+	
+	//분류 최신순, 가격순 등등
+	@RequestMapping(value="/pro_list_order")
+	public String productOrderList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model, String orderKind){
+		System.out.println(orderKind);
+		try {
+			productService.productOrderList(curPage, perPage, model, orderKind);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "product/pro_list_product";
 	}
 }

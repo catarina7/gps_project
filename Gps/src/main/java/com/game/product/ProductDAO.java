@@ -124,6 +124,13 @@ public class ProductDAO {
 		return sqlSession.selectList(namespace+"score", pro_num);
 	}
 	
+	public void total_score(int pro_num, int total_score){
+		Map<String, Object> data  = new HashMap<String, Object>();
+		data.put("pro_num", pro_num);
+		data.put("total_score", total_score);
+		sqlSession.update(namespace+"total_score", data);
+	}
+	
 	//search별 List
 	public List<ProductDTO> productListSearch(PageMaker pageMaker, String pro_title) throws Exception{
 		Map<String, Object> data  = new HashMap<String, Object>();
@@ -135,5 +142,31 @@ public class ProductDAO {
 	//search별 글 갯수
 	public int productCountSearch(String pro_title) throws Exception{
 		return sqlSession.selectOne(namespace+"pro_boardCount_search", pro_title);
+	}
+	
+	//*****************************************************************************************************************
+	//Product 글 리스트 (최신순)
+	public List<ProductDTO> productListRecent(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_list_recent", pageMaker);
+	}
+	
+	//Product 글 리스트 (이름순)
+	public List<ProductDTO> productListName(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_list_name", pageMaker);
+	}
+	
+	//Product 글 리스트 (평점순)
+	public List<ProductDTO> productListScore(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_list_score", pageMaker);
+	}
+	
+	//Product 글 리스트 (높은 가격순)
+	public List<ProductDTO> productListHigh(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_list_high", pageMaker);
+	}
+		
+	//Product 글 리스트 (낮은순)
+	public List<ProductDTO> productListLow(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_list_low", pageMaker);
 	}
 }
