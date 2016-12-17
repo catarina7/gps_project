@@ -88,7 +88,7 @@
 				<div id="first_else">
 					<div id="uu_menu">
 						<a id="e_cart" href="${pageContext.request.contextPath}/cart_favorite/cartList?m_id=${member.m_id}">장바구니</a>
-						<a id="e_favorite" href="${pageContext.request.contextPath}/favorite">관심상품</a>
+						<a id="e_favorite" href="${pageContext.request.contextPath}/favorite/favoriteList?m_id=${member.m_id}">관심상품</a>
 						<a id="e_puchase" href="${pageContext.request.contextPath}/purchase/purchase">구매내역</a>
 					</div>
 				</div>
@@ -127,7 +127,7 @@
 											<input type="hidden" name="c_num" id="c_num${status.index}" value="${cDTO[status.index].c_num}">
 											<input type="hidden" name="pro_num" id="pro_num${status.index}" value="${cDTO[status.index].pro_num}">
 											<input type="hidden" name="m_id" id="m_id${status.index}" value="${member.m_id}">
-											<input class="pro_delete" type="button" value="X" id="one_delete_${status.index}" onclick="one_delete(${status.index})">
+											<input class="pro_delete" type="button" value="X" onclick="one_delete(${status.index})">
 										</td>
 									</tr>
 									<tr>
