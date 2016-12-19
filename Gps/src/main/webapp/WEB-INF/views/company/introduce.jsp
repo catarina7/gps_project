@@ -22,11 +22,21 @@
 	<!-- section -->
 	<section>
 		<!-- 내용 넣기 -->
-		
-		
-		
-		
-		
+		<div id="first_company">
+			
+			<div id="second_company">
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+				<a href=""></a>
+			</div>
+			<div id="third_company">
+				
+			</div>
+			
+		</div>
 	</section>
 	
 	<c:import url="/footer" />
