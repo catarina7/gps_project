@@ -7,4 +7,36 @@ section {
 	background-color: #666666;
 }
 
-
+section #first_company {
+	width: 55%;
+	margin: 0 auto;
+	padding: 10px 1.4%;
+}
+#first_company #second_company {
+	width: 85%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+#second_company a {
+	border: 1px solid #666666;
+	background: #666666;
+	color: white;
+	font-weight: bold;
+	padding: 10px 2%;
+	overflow: hidden;
+	float: left;
+	text-shadow: -1px -1px 0px #414141;
+}
+#second_company a:hover {
+	border: 1px solid #aaaaaa;
+	border-radius: 5px;
+	background-color: #32435c;
+}
+#first_company #third_company {
+	width: 97%;
+	margin-top: 30px;
+	padding: 10px 1.4%;
+	border: 2px solid #aaaaaa;
+	background-color: white;
+	border-radius: 7px;
+}
