@@ -37,7 +37,7 @@
 				<a id="custo_comp" href="${pageContext.request.contextPath}/company/customer">고객센터</a>
 			</div>
 			<div id="third_company">
-				
+				<c:import url="/company/teen" />
 			</div>
 			
 		</div>

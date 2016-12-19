@@ -47,4 +47,9 @@ public class CompanyController {
 	public String agree(){
 		return "/company/com_text/agree";
 	}
+	
+	@RequestMapping(value="/teen")
+	public String teen(){
+		return "/company/com_text/teen";
+	}
 }
