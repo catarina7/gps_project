@@ -36,4 +36,10 @@ public class CompanyController {
 	public String teenager(){
 		return "/company/teenager";
 	}
+	
+	//text file
+	@RequestMapping(value="/intro")
+	public String intro(){
+		return "/company/com_text/intro";
+	}
 }

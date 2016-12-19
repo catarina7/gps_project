@@ -33,10 +33,30 @@ section #first_company {
 	background-color: #32435c;
 }
 #first_company #third_company {
-	width: 97%;
+	width: 95%;
 	margin-top: 30px;
-	padding: 10px 1.4%;
+	padding: 20px 1.4%;
+	background-color: #5d5d5d;
 	border: 2px solid #aaaaaa;
-	background-color: white;
 	border-radius: 7px;
 }
+
+
+
+#first_company h4 {
+	color: #ff7578;
+	text-shadow: -1px -1px 0px #444444;
+	padding: 10px 1.4%;
+	font-size: 15px;
+	font-weight: bold;
+}
+#first_company p {
+	color: white;
+	padding: 5px 2.4%;
+	font-size: 13px;
+}
+
+
+
+
+
