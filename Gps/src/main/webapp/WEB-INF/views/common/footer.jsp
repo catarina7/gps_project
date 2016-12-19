@@ -3,6 +3,28 @@
 <!DOCTYPE html>
 <html>
 <body>
+	<script type="text/javascript">
+		$(function(){			
+			$("#company_intro").click(function(){
+				location.href="${pageContext.request.contextPath}/company/introduce";
+			});
+			$("#company_alliance").click(function(){
+				location.href="${pageContext.request.contextPath}/company/alliance";
+			});
+			$("#company_agree").click(function(){
+				location.href="${pageContext.request.contextPath}/company/agreement";
+			});
+			$("#company_info").click(function(){
+				location.href="${pageContext.request.contextPath}/company/information";
+			});
+			$("#company_teen").click(function(){
+				location.href="${pageContext.request.contextPath}/company/teenager";
+			});
+			$("#company_customer").click(function(){
+				location.href="${pageContext.request.contextPath}/company/customer";
+			});
+		});	
+	</script>
 	<!-- footer -->
 	<footer>
 		<div id="first_footer">
@@ -27,12 +49,12 @@
 				</div>
 				<div id="third_footer">
 					<ul>
-						<li class="design">회사소개</li>
-						<li class="design">제휴제안</li>
-						<li class="design">이용약관</li>
-						<li class="design" id="import">개인정보취급방침</li>
-						<li class="design">청소년보호정책</li>
-						<li>고객센터</li>
+						<li id="company_intro" class="design">회사소개</li>
+						<li id="company_alliance" class="design">제휴제안</li>
+						<li id="company_agree" class="design">이용약관</li>
+						<li id="company_info" class="design" id="import">개인정보취급방침</li>
+						<li id="company_teen" class="design">청소년보호정책</li>
+						<li id="company_customer">고객센터</li>
 					</ul>
 				</div>
 			</div>

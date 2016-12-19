@@ -108,6 +108,7 @@ section #pro_view {
 	margin-top: 20px;
 	margin-left: 4px;
 	overflow: hidden;
+	position: relative;
 }
 
 #third_pro ul {
@@ -115,6 +116,7 @@ section #pro_view {
 	height: 90%;
 	padding: 5px 4px;
 	border: 1px solid #aaaaaa;
+	position: absolute;
 }
 #third_pro li {
 	width: 17.5%;

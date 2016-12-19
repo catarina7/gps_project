@@ -10,7 +10,13 @@
 			<input type="hidden" name="m_id" id="m_id_${status.index}"	value="${rep.r_writer}">
 			<input type="hidden" name="r_num" id="r_num_${status.index}" value="${rep.r_num}">
 			<input type="button" onclick="reply_delete(${status.index})" value="삭제">
-			평점 : <input type="text" value="${rep.r_score}" id="score_${status.index}">
+			평점 : <input type="hidden" value="${rep.r_score}" id="score_${status.index}">
+			<c:if test="${rep.r_score == 0}">☆☆☆☆☆</c:if>
+			<c:if test="${rep.r_score == 1}">★☆☆☆☆</c:if>
+			<c:if test="${rep.r_score == 2}">★★☆☆☆</c:if>
+			<c:if test="${rep.r_score == 3}">★★★☆☆</c:if>
+			<c:if test="${rep.r_score == 4}">★★★★☆</c:if>
+			<c:if test="${rep.r_score == 5}">★★★★★</c:if>
 		</div>
 		<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents}</textarea>
 	</div>

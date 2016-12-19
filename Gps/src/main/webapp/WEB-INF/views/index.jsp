@@ -224,6 +224,33 @@
 					</c:forEach>
 					
 					<!-- <button id="next">▷</button> -->
+					<button>◁</button>
+						<div>
+							<table>
+								<tr>
+									<td rowspan="2">
+										<!-- discount --> <input type="text" readonly="readonly"
+										class="discount" value="할인률 %">
+										<div class="img"></div>
+									</td>
+									<td><input type="text" readonly="readonly" class="discount"
+										value="할인률 %">
+										<div class="img"></div></td>
+									<td><input type="text" readonly="readonly" class="discount"
+										value="할인률 %">
+										<div class="img"></div></td>
+								</tr>
+								<tr>
+									<td><input type="text" readonly="readonly" class="discount"
+										value="할인률 %">
+										<div class="img"></div></td>
+									<td><input type="text" readonly="readonly" class="discount"
+										value="할인률 %">
+										<div class="img"></div></td>
+								</tr>
+							</table>
+						</div>
+					<button>▷</button>
 				</div>
 				<h3>신작 게임</h3>
 				<div id="main_second">
