@@ -16,7 +16,7 @@
 $(function(){
 	$("#order_kind").change(function(){
 		$.ajax({
-			url: 'pro_list_order',
+			url: 'pro_list',
 			type:'POST',
 			data:{
 				orderKind : $(this).val()
@@ -53,7 +53,18 @@ $(function(){
 				</div>
 				</c:when>
 				<c:otherwise>
+					<div id="pro_list_titi">				
 					<h2 style="text-transform: uppercase;">${param.top_category}</h2>
+					<div id="pro_list_selec">
+						<select id="order_kind">
+							<option value="recent">최신순으로 정렬</option>
+							<option value="name">이름순으로 정렬</option>
+							<option value="score">평점놈은순으로 정렬</option>
+							<option value="high">높은가격순으로 정렬</option>
+							<option value="low">낮은가격순으로 정렬</option>
+						</select>
+					</div>
+				</div>
 				</c:otherwise>
 				</c:choose>
 					<div id="pro_list_product">
@@ -62,7 +73,7 @@ $(function(){
 								<a href="pro_view?pro_num=${pro.pro_num}"><img class="game_img" src="../resources/upload/${pro_main_img[status.index].file_name}"></a>
 								<p><span>글 번호 : </span> ${pro.pro_num} </p> 
 								<p><span>게임명 : </span> ${pro.pro_title}</p> 		
-								<p><span>가격 : </span> ${pro.price}</p>
+								<p><span>가격 : </span> ${pro.total_price}</p>
 							    <p><span>회사명 : </span>  ${pro.company}</p>  
 							</div>
 						</c:forEach>

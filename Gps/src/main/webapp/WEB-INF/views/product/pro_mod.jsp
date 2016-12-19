@@ -64,6 +64,23 @@
 			});
 
 		});
+		
+		var num1 = 0;
+		$("#patchPlus").click(function() {
+			if (num1 >= 0) {
+				num1 = num1 * 1 + 1;
+			}
+			//file Tag 생성
+			$("#patchinput").append('<div id="btn_p'+num1+'" class="files_import"><input type="file" name="patches" id="btn_p'+num1+'"> <input type="button" id="btn_p'+num1+'" class="butn_p btn_p" value="삭제"> <br id="btn_p'+num1+'"></div>');
+
+			//삭제 버튼 클릭 시
+			$(".butn_p").click(function() {
+				var n = $(this).attr("id");
+				$("#" + n).remove();
+				$(this).remove();
+			});
+
+		});
 		/* file Tag 추가 및 삭제 끝*/
 		
 		/* input number 부분 숫자 정수로만 제한  */
@@ -215,6 +232,13 @@
 						<td colspan="2"> 
 							<span class="title"></span> <input type="button" id="imgPlus" class="btn" value="추가하기">
 							<div id="fileinput"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="mod_titi"> 패치파일 추가 </td>
+						<td colspan="2"> 
+							<span class="title"></span> <input type="button" id="patchPlus" class="btn" value="추가하기">
+							<div id="patchinput"></div>
 						</td>
 					</tr>
 				</table>

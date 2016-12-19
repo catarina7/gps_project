@@ -171,6 +171,12 @@
 			}
 		});
 	}
+	//다운
+	function patchDownload(i){
+		var patch_name = $("#patch_name_"+i).val();
+		location.href="../resources/upload/"+patch_name;
+		//location.href="pro_down?patch_file_name="+patch_name;
+	}
 </script>
 
 </head>
@@ -480,30 +486,19 @@
 						<tr>
 							<td class="com_title" colspan="2">업데이트 및 패치 파일</td>
 						</tr>
+						<c:forEach items="${pro_patch}" var="patch" varStatus="status">
 						<tr>
-							<td class="com_name"></td>
-							<td>
-								<button>Download</button>
+							<td class="com_name">
+								<p>${patch.patch_origine_name}</p>
+								<input type="hidden" value="${patch.patch_file_name}" id="patch_name_${status.index}">
 							</td>
-						</tr>
-						<tr>
-							<td class="com_name"></td>
 							<td>
-								<button>Download</button>
+								<button onclick="patchDownload(${status.index})">Download</button>
+								<%-- <a href="../resources/upload/${patch.patch_file_name}">${patch.patch_origine_name}</a> --%>
 							</td>
+				
 						</tr>
-						<tr>
-							<td class="com_name"></td>
-							<td>
-								<button>Download</button>
-							</td>
-						</tr>
-						<tr>
-							<td class="com_name"></td>
-							<td>
-								<button>Download</button>
-							</td>
-						</tr>
+						</c:forEach>
 					</table>
 				</div>
 				
@@ -541,6 +536,7 @@
 							<div class="re_user"> ${member.m_id} </div>
 							<!-- textarea -->
 							<input type="hidden" name="pro_num" id="pro_num" value="${param.pro_num}">
+							
 							<input type="hidden" name="r_writer" id="r_writer" value="${member.m_id}">
 							<textarea id="smarteditor" name="r_contents"></textarea>
 							<div id="pro_grades">

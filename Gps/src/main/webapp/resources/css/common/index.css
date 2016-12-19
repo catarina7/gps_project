@@ -85,12 +85,34 @@ section #game_list {
 
 
 #game_list #main_first {
-	width: 99%;
-	height: 290px;
-	padding: 5px 0px;
+	width: 97.5%;
+	height: 190px;
+	padding: 5px 10px;
 	margin-bottom: 40px;
 	overflow: hidden;
 }
+#main_first button {
+	color: white;
+	font-size: 30px;
+	font-weight: bold;
+	text-shadow: 3px 3px #32435c;
+	background-color: #666666;
+	border: 0px;
+	padding: 20px 10px;
+	float: left;
+	margin-top: 50px;
+	cursor: pointer;
+}
+#main_first .product {
+	width: 17%;
+	float: left;
+	height: 85%;
+	padding: 10px 18px;
+	z-index: 1;
+	overflow: hidden;
+}
+
+
 .discount {
 	background:linear-gradient(to top, #43596b, #bee0fe);
 	width: 6.5%;
@@ -102,9 +124,9 @@ section #game_list {
 	position: absolute;
 	z-index: 50;
 }
-.img {
-	width: 100%;
-	height: 100%;
+.product .img {
+	width: 99%;
+	height: 99%;
 	border: 1px solid #aaaaaa;
 	border-radius: 8px;
 }

@@ -106,33 +106,53 @@
 		
 		//카테고리 url 시작
 		$("#action").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=action";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=action";
 		});
 		$("#rpg").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=rpg";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=rpg";
 		});
 		$("#simulation").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=simulation";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=simulation";
 		});
 		$("#adventure").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=adventure";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=adventure";
 		});
 		$("#sports").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=sports";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=sports";
 		});
 		$("#racing").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=racing";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=racing";
 		});
 		$("#casual").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=casual";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=casual";
 		});
 		$("#indi").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=indi";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=indi";
 		});
 		$("#etc").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list_category?top_category=etc";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=etc";
 		});
 		//카테고리 url 끝
+		
+		//인기순
+		$.ajax({
+			url : 'product/pro_main_like',
+			type : 'POST',
+			success : function(data){
+				data=data.trim();
+				$("#main_first").html(data);
+			}
+		});
+		//최신순
+		$.ajax({
+			url : 'product/pro_main_recent',
+			type : 'POST',
+			success : function(data){
+				data=data.trim();
+				$("#main_second").html(data);
+			}
+		});
+		
 	});
 </script>
 </head>
@@ -192,56 +212,32 @@
 				<h3>추천 게임</h3>
 				<div id="main_first">
 					<!-- best game -->
-					<button>◁</button>
-					<table>
-						<tr>
-							<td rowspan="2">
-								<!-- discount --> <input type="text" readonly="readonly"
-								class="discount" value="할인률 %">
-								<div class="img"></div>
-							</td>
-							<td><input type="text" readonly="readonly" class="discount"
-								value="할인률 %">
-								<div class="img"></div></td>
-							<td><input type="text" readonly="readonly" class="discount"
-								value="할인률 %">
-								<div class="img"></div></td>
-						</tr>
-						<tr>
-							<td><input type="text" readonly="readonly" class="discount"
-								value="할인률 %">
-								<div class="img"></div></td>
-							<td><input type="text" readonly="readonly" class="discount"
-								value="할인률 %">
-								<div class="img"></div></td>
-						</tr>
-					</table>
-					<button>▷</button>
+					<!-- <button id="before">◁</button> -->
+
+					<c:forEach items="${pro_list}" var="pro_list" varStatus="status">
+						<div class="product">
+							<input type="text" readonly="readonly" class="discount"	value="${pro_list.discount} %">
+							<div class="img">
+								<img src="resources/upload/${pro_main_img[status.index].file_name }">
+							</div>
+						</div>
+					</c:forEach>
+					
+					<!-- <button id="next">▷</button> -->
 				</div>
 				<h3>신작 게임</h3>
 				<div id="main_second">
 					<!-- new game -->
 					<button>◁</button>
+					<c:forEach items="${pro_list_recent}" var="pro_list" varStatus="status">
 					<div class="product">
 						<input type="text" readonly="readonly" class="discount"
-							value="할인률 %">
-						<div class="img"></div>
+							value="${pro_list.discount}%">
+						<div class="img">
+							<img src="resources/upload/${pro_main_img_recent[status.index].file_name }">
+						</div>
 					</div>
-					<div class="product">
-						<input type="text" readonly="readonly" class="discount"
-							value="할인률 %">
-						<div class="img"></div>
-					</div>
-					<div class="product">
-						<input type="text" readonly="readonly" class="discount"
-							value="할인률 %">
-						<div class="img"></div>
-					</div>
-					<div class="product">
-						<input type="text" readonly="readonly" class="discount"
-							value="할인률 %">
-						<div class="img"></div>
-					</div>
+					</c:forEach>
 					<button>▷</button>
 				</div>
 				<h3>할인 게임</h3>

@@ -99,15 +99,15 @@
 				<div class="H_list" id="product">
 					<ul>
 						<li><a href="#">관심게임</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=action">Action</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=rpg">RPG</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=simulation">Simulation</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=adventure">Adventure</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=sports">Sports</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=racing">Racing</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=casual">Casual</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=indi">INDI</a></li>
-						<li><a href="${pageContext.request.contextPath}/product/pro_list_category?top_category=etc">MMO/ETC</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=action">Action</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=rpg">RPG</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=simulation">Simulation</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=adventure">Adventure</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=sports">Sports</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=racing">Racing</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=casual">Casual</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=indi">INDI</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=etc">MMO/ETC</a></li>
 					</ul>
 				</div>
 				<div class="H_list" id="software">

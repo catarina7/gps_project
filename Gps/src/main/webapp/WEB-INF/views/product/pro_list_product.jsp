@@ -6,7 +6,7 @@
 		<a href="pro_view?pro_num=${pro.pro_num}"><img class="game_img" src="../resources/upload/${pro_main_img[status.index].file_name}"></a>
 		<p><span>글 번호 : </span> ${pro.pro_num} </p> 
 		<p><span>게임명 : </span> ${pro.pro_title}</p> 		
-		<p><span>가격 : </span> ${pro.price}</p>
+		<p><span>가격 : </span> ${pro.total_price}</p>
 	    <p><span>회사명 : </span>  ${pro.company}</p>  
 	</div>
 </c:forEach>

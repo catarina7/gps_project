@@ -21,7 +21,7 @@ public class ProductController {
 	
 	@Autowired
 	private ProductService productService;
-	
+		
 	@RequestMapping(value="/pro_write", method=RequestMethod.GET)
 	public void productWrite(){}
 	
@@ -37,15 +37,23 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value="/pro_list")
-	public String productList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model){
+	public String productList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, String top_category, String orderKind, Model model){
+		String path="";
 		try {
-			//System.out.println("(control)curPage : "+ curPage);
-			productService.productList(curPage, perPage, model);
+			if(orderKind == null){
+				productService.productList(curPage, perPage, top_category, orderKind, model);
+				path="product/pro_list";
+			}else{
+				System.out.println(orderKind);
+				productService.productOrderList(curPage, perPage,  top_category, orderKind, model);
+				path="product/pro_list_product";
+			}
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "product/pro_list";
+		return path;
+
 	}
 		
 	@RequestMapping(value="/pro_view")
@@ -72,8 +80,10 @@ public class ProductController {
 	//post방식 product 수정
 	@RequestMapping(value="/pro_mod", method=RequestMethod.POST)
 	public String productMod(ProductDTO productDTO, int pro_num, MultipartHttpServletRequest mr, HttpSession session, Model model){
+		System.out.println("strt");
 		try {
 			productService.productModify(productDTO, pro_num, mr, session);
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -104,19 +114,7 @@ public class ProductController {
 		}
 		return "redirect:/product/pro_list";
 	}
-	
-	//카테고리별 리스트 뿌리기
-	@RequestMapping(value="/pro_list_category")
-	public String productCategory(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, String top_category, Model model){
-		try {
-			productService.productCategory(curPage, perPage, top_category, model);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "product/pro_list";
-	}
-	
+		
 	//제목 검색
 	@RequestMapping(value="/pro_list_search")
 	public String productSearch(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, String pro_title, Model model){
@@ -129,16 +127,28 @@ public class ProductController {
 		return "product/pro_list";
 	}
 	
-	//분류 최신순, 가격순 등등
-	@RequestMapping(value="/pro_list_order")
-	public String productOrderList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model, String orderKind){
-		System.out.println(orderKind);
+	
+	//인기순으로 뿌리기
+	@RequestMapping(value="/pro_main_like")
+	public String productMainLike(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="1") int perPage, Model model){
 		try {
-			productService.productOrderList(curPage, perPage, model, orderKind);
+			productService.productMainLike(curPage, perPage, model);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "product/pro_list_product";
+		return "product/pro_like";
+	}
+	
+	//최신순으로 뿌리기
+	@RequestMapping(value="/pro_main_recent")
+	public String productMainRecent(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="1") int perPage, Model model){
+		try {
+			productService.productMainRecent(curPage, perPage, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "product/pro_recent";
 	}
 }

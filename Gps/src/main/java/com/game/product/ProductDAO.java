@@ -66,10 +66,14 @@ public class ProductDAO {
 		data.put("pageMaker", pageMaker);
 		return sqlSession.selectList(namespace+"pro_view_img", data);
 	}
-
+	
 	//product View 이미지 갯수 가져오기
 	public int productViewImgCount(int pro_num) throws Exception{
 		return sqlSession.selectOne(namespace+"pro_view_img_count", pro_num);
+	}
+	//product View 패치파일 부분
+	public List<PatchDTO> productViewPatch(int pro_num) throws Exception{
+		return sqlSession.selectList(namespace+"pro_view_patch", pro_num);
 	}
 	
 	//pro_mod에다가 이미지 가져오기
@@ -94,6 +98,17 @@ public class ProductDAO {
 			data.put("file_name", fileNames.get(i));
 			data.put("origine", origineNames.get(i));
 			sqlSession.insert(namespace+"pro_mod_add_img", data);
+		}
+	}
+	
+	//pro_mod에 패치파일 추가
+	public void productModAddPatch(int pro_num, ArrayList<String> patchNames, ArrayList<String> originePatchesNames) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		for(int i=0; i<patchNames.size();i++){
+			data.put("pro_num", pro_num);
+			data.put("patch_file_name", patchNames.get(i));
+			data.put("patch_origine_name", originePatchesNames.get(i));
+			sqlSession.insert(namespace+"pro_mod_add_patch", data);
 		}
 	}
 	
@@ -169,4 +184,56 @@ public class ProductDAO {
 	public List<ProductDTO> productListLow(PageMaker pageMaker) throws Exception{
 		return sqlSession.selectList(namespace+"pro_list_low", pageMaker);
 	}
+	// ********************************************************************************************************
+	
+	//category별 List (최신순)
+	public List<ProductDTO> productListCategoryRecent(PageMaker pageMaker, String top_category) throws Exception{
+		Map<String, Object> data  = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("top_category", top_category);
+		return sqlSession.selectList(namespace+"pro_list_category_recent", data);
+	}
+	
+	//category별 List (이름순)
+	public List<ProductDTO> productListCategoryName(PageMaker pageMaker, String top_category) throws Exception{
+		Map<String, Object> data  = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("top_category", top_category);
+		return sqlSession.selectList(namespace+"pro_list_category_name", data);
+	}
+	
+	//category별 List (평점순)
+	public List<ProductDTO> productListCategoryScore(PageMaker pageMaker, String top_category) throws Exception{
+		Map<String, Object> data  = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("top_category", top_category);
+		return sqlSession.selectList(namespace+"pro_list_category_score", data);
+	}
+	
+	//category별 List (높은 가격순)
+	public List<ProductDTO> productListCategoryHigh(PageMaker pageMaker, String top_category) throws Exception{
+		Map<String, Object> data  = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("top_category", top_category);
+		return sqlSession.selectList(namespace+"pro_list_category_high", data);
+	}	
+	
+	//category별 List (낮은 가격순)
+	public List<ProductDTO> productListCategoryLow(PageMaker pageMaker, String top_category) throws Exception{
+		Map<String, Object> data  = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("top_category", top_category);
+		return sqlSession.selectList(namespace+"pro_list_category_low", data);
+	}
+	
+	//***************************************************************************************
+	//main 인기순으로 뿌리기
+	public List<ProductDTO> productListLikeMain(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_main_like", pageMaker);
+	}
+	
+	//main 최신순 뿌리기
+	public List<ProductDTO> productListRecentMain(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_main_recent", pageMaker);
+	} 
 }

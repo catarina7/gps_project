@@ -60,6 +60,12 @@
 		select count(File_name) from pro_file where pro_num=#{pro_num}
 	</select>
 	
+	<!-- pro_patch파일 -->
+	<select id="pro_view_patch" resultType="com.game.product.PatchDTO" parameterType="int">
+		select * from pro_patch where pro_num=#{pro_num}
+	</select>
+	
+	
 	<!-- pro_mod에서 뿌리는 모든 사진 (PageMaker X) -->
 	<select id="pro_mod_img" resultType="com.game.product.ProductFileDTO" parameterType="int">
 		select * from PRO_FILE where pro_num=#{pro_num} order by file_num asc
@@ -73,6 +79,11 @@
 	<!-- Mod에서 이미지 추가 -->
 	<insert id="pro_mod_add_img" parameterType="java.util.Map">
 		insert into pro_file values(pro_file_seq.nextval, #{pro_num}, #{file_name}, #{origine}, '1')
+	</insert>
+	
+	<!-- Mod에서 패치파일 추가 -->
+	<insert id="pro_mod_add_patch" parameterType="java.util.Map">
+		insert into pro_patch values(pro_patch_seq.nextval, #{pro_num}, #{patch_file_name}, #{patch_origine_name})
 	</insert>
 	
 	<!-- Mod에서 내용 수정 -->
@@ -165,6 +176,68 @@
 		(select rownum R, F.* from 
 		(select * from product order by total_price asc) F) 
 		where R between #{startRowNum} and #{lastRowNum}
+	</select>
+	
+	<!-- ********************************************************************************************** -->
+	
+	<!-- 카테고리별 리스트 뿌리기 시작 ((최신순)) -->
+	<select id="pro_list_category_recent" resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product where top_category=#{top_category} order by pro_num desc) F) 
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	
+	
+	<!-- 카테고리별 리스트 뿌리기 시작  ((이름순)) -->
+	<select id="pro_list_category_name" resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product where top_category=#{top_category} order by pro_title asc) F) 
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	
+	<!-- 카테고리별 리스트 뿌리기 시작  ((평점순)) -->
+	<select id="pro_list_category_score" resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product where top_category=#{top_category} order by total_score desc) F) 
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	
+	<!-- 카테고리별 리스트 뿌리기 시작  ((높은 가격순)) -->
+	<select id="pro_list_category_high" resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product where top_category=#{top_category} order by total_price desc) F) 
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	
+	<!-- 카테고리별 리스트 뿌리기 시작  ((낮은 가격순)) -->
+	<select id="pro_list_category_low" resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product where top_category=#{top_category} order by total_price asc) F) 
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	<!-- 카테고리별 리스트 뿌리기 끝 -->
+	
+	
+	<!-- *******************************************************************************************8 -->
+	<!-- 좋아요로 메인에서 뿌리기 -->
+	<select id="pro_main_like" resultType="com.game.product.ProductDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product order by total_score desc) F) 
+		where R between 1 and 4
+	</select>
+	
+	<!-- 최신순으로 메인에서 뿌리기 -->
+	<select id="pro_main_recent" resultType="com.game.product.ProductDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product order by pro_num desc) F) 
+		where R between 1 and 4
 	</select>
 </mapper>
 
