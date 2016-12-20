@@ -134,15 +134,32 @@ section #game_list {
 }
 .product .game_txt {
 	position: absolute;
-	width: 95%;
-	height: 75%;
-	padding: 20px 5px;
+	width: 79.8%;
+	height: 62%;
+	padding: 30px 20px;
 	z-index: 30;
 	border-radius : 8px;
 	background-color: black;
 	opacity: 0.8;
 	top: 0;
 	cursor: pointer;
+}
+.game_txt p {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 10px 0.7%;
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+}
+.game_txt .linelien {
+	border-bottom: 1px dotted white;	
+}
+.game_txt span {
+	text-decoration: line-through;
+	font-style: italic;
+	font-size: 12px;
 }
 .product img {
 	width: 100%;

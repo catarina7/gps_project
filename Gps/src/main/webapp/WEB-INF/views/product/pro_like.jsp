@@ -11,7 +11,11 @@
 		<div class="img">
 			<img src="resources/upload/${pro_main_img[status.index].file_name }">
 			<div class="game_txt">
-					
+				<p class="linelien">게임명 : ${pro_list.pro_title }</p>
+				<p>
+					가격 : <span>₩ ${pro_list.price }</span><br>
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> ₩ ${pro_list.total_price }
+				</p>
 			</div>
 		</div>
 	</div>
