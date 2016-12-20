@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -10,6 +10,25 @@
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
 <title>QnA</title>
+<script type="text/javascript">
+	$(function(){
+		
+		$("#search_button").click(function(){
+			
+			var search = $("#search_kind").val();
+			
+			if(search == "q_writer"){
+				location.href="${pageContext.request.contextPath}/qna/qnaList_writer?q_writer="+search;
+			}
+			else if(search == "q_title"){
+				location.href="${pageContext.request.contextPath}/qna/qnaList_title?q_title="+search;
+			}
+			else{
+				location.href="${pageContext.request.contextPath}/qna/qnaList_contents?q_contents="+search;
+			}
+		});
+	});
+</script>
 <style type="text/css">
 	.listTable {
 		width: 600px;
@@ -31,7 +50,7 @@
 		<section>
 		<!-- 내용 넣기 -->
 			<form action="qnaList" method="get">
-				<table class="listTable" border="1" cellpadding="0" cellspacing="0" " >
+				<table class="listTable" border="1" cellpadding="0" cellspacing="0" >
 					<tr>
 						<td>번호</td>
 						<td>제목</td>
@@ -76,17 +95,18 @@
 					<a href="qnaList?curPage=${pageMaker.lastNum+1}">[다음]</a>
 					</c:if>
 			</form>
-			<form action="qnaSearch" method="get" name="frm2">
-				<select name="type">
+			<div id="search_input">
+				<select>
 					<option value="q_writer">작성자</option>
 					<option value="q_title">제목</option>
 					<option value="q_contents">내용</option>
 				</select>
-				<input type="text" placeholder="검색어를 입력하세요" id="q_search" name="str">
-				<input type="button" value="검색" id="serBtn">
-			</form>
+				<input type="text" id="search_kind" placeholder="검색어를 입력하세요">
+				<input type="button" id="search_button" value="검색">
+			</div>	
+			<c:if test="${member.m_id != null }">
 				<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/qna/qnaWrite';">
-		
+			</c:if>
 		</section>
 		
 		<c:import url="/footer" />
