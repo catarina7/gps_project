@@ -11,6 +11,9 @@
 		<div class="img">
 			<img src="resources/upload/${pro_main_img[status.index].file_name }">
 		</div>
+		<div class="game_txt">
+				
+		</div>
 	</div>
 </c:forEach>
 

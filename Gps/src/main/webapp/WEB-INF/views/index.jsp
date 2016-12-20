@@ -9,10 +9,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/common/index.css">
-<link rel="stylesheet" type="text/css"
-	href="${pageContext.request.contextPath}/resources/css/common/common.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/index.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
@@ -224,12 +222,12 @@
 					</c:forEach>
 					
 					<!-- <button id="next">▷</button> -->
-					<button>◁</button>
+					<!-- <button>◁</button>
 						<div>
 							<table>
 								<tr>
 									<td rowspan="2">
-										<!-- discount --> <input type="text" readonly="readonly"
+										discount <input type="text" readonly="readonly"
 										class="discount" value="할인률 %">
 										<div class="img"></div>
 									</td>
@@ -250,7 +248,7 @@
 								</tr>
 							</table>
 						</div>
-					<button>▷</button>
+					<button>▷</button> -->
 				</div>
 				<h3>신작 게임</h3>
 				<div id="main_second">
@@ -258,8 +256,10 @@
 					<button>◁</button>
 					<c:forEach items="${pro_list_recent}" var="pro_list" varStatus="status">
 					<div class="product">
-						<input type="text" readonly="readonly" class="discount"
-							value="${pro_list.discount}%">
+						<input type="text" readonly="readonly" class="discount" value="할인률 : ${pro_list.discount}%">
+						<div class="game_txt">
+							
+						</div>
 						<div class="img">
 							<img src="resources/upload/${pro_main_img_recent[status.index].file_name }">
 						</div>
