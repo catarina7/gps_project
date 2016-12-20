@@ -293,7 +293,7 @@
 									</c:when>
 									<c:otherwise>
 										<tr>
-											<td colspan="5" style="text-align: center;">게시된 등록글이
+											<td colspan="2" style="text-align: center;">게시된 등록글이
 												없습니다.</td>
 										</tr>
 									</c:otherwise>
