@@ -18,6 +18,21 @@
     	where file_num=(select min(file_num) from pro_file product where pro_num=#{pro_num})
 	</select>
 	
+	<!-- 쿠폰 만들기 -->
+	<insert id="MakeCupon" parameterType="java.lang.String">
+		insert into cupon values(cupon_seq.nextval, #{cupon}, 10000, 0)
+	</insert>
+	
+	<!-- 쿠폰 확인용 -->
+	<select id="CheckCupon" parameterType="com.game.mart.CuponDTO" resultType="com.game.mart.CuponDTO">
+		select * from cupon where cup_serial=#{cup_serial} and cup_check=0	
+	</select>
+	
+	<!-- 쿠폰 사용 여부 수정 -->
+	<update id="CuponMod" parameterType="com.game.mart.CuponDTO">
+		update cupon set cup_check = #{cup_check} where cup_serial = #{cup_serial}	
+	</update>
+	
 	
 
 </mapper>

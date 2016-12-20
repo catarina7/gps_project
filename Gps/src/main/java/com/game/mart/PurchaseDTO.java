@@ -10,6 +10,8 @@ public class PurchaseDTO {
 	private int total_price;
 	private Date reg_date;
 	private String status;
+	private String pur_kind;
+	private int m_millage;
 	
 	public int getPur_num() {
 		return pur_num;
@@ -47,4 +49,21 @@ public class PurchaseDTO {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	public String getPur_kind() {
+		return pur_kind;
+	}
+	public void setPur_kind(String pur_kind) {
+		this.pur_kind = pur_kind;
+	}
+	public int getM_millage() {
+		return m_millage;
+	}
+	public void setM_millage(int m_millage) {
+		this.m_millage = m_millage;
+	}
+	
+	
+	
+	
+	
 }
