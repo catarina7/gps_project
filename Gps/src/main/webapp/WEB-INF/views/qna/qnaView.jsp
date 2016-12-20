@@ -62,7 +62,7 @@
 						
 							<tr>
 								<td class="title">작성자</td>
-								<td><span class="pro_in">${qnaView.q_writer}</span></td>
+								<td><span class="pro_in">${member.m_name}</span></td>
 							</tr>
 							
 							<tr>

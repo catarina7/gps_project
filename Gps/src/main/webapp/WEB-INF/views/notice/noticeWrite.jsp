@@ -63,7 +63,7 @@ $(function(){
 					</colgroup>
 					<tr>
 						<td class="title">작성자</td>
-						<td><input type="text" class="pro_in" name="n_writer" value="test" readonly="readonly" ></td>
+						<td><input type="text" class="pro_in" name="n_writer" value="${member.m_name}" readonly="readonly" ></td>
 					</tr>
 					
 					<tr>

@@ -1,94 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="QnaMapper">
+	<!-- View -->
+	<select id="qnaView" resultType="com.game.board.QnaDTO"
+		parameterType="int">
+		select * from qna where q_num=#{q_num}
+	</select>
+	<!-- View에 들어갈 이미지 -->
+	<select id="qnaView_img" resultType="com.game.board.QnaFileDTO"
+		parameterType="java.util.Map">
+		select * from
+		(select rownum r, F.* from
+		(select qfile_name from qna_file where q_num=#{q_num}) F)
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+
+	<!-- qnaView에 들어갈 사진 갯수 -->
+	<select id="qnaView_imgCount" resultType="int" parameterType="int">
+		select count(qfile_name) from qna_file where q_num=#{q_num}
+	</select>
+
+	<!-- Write -->
+	<!-- 이미지 없이 글 쓰기 -->
+	<insert id="qnaWrite" parameterType="com.game.board.QnaDTO">
+		insert into qna values(qna_seq.nextval,#{q_writer}, #{q_title},
+		#{q_contents}, sysdate, 0, qna_seq.currval, 0, 0 )
+
+		<!-- q_num 가져오기 (qna_file table) -->
+		<selectKey keyProperty="q_num" resultType="int" order="AFTER">
+			select qna_seq.currval from dual
+		</selectKey>
+	</insert>
+
+	<!-- qna_file 글쓰기(사진넣기) -->
+	<insert id="qna_fileWrite" parameterType="java.util.Map">
+		insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name},
+		#{qorigine_name})
+	</insert>
+
+	<!-- List -->
+	<select id="qnaList" resultType="com.game.board.QnaDTO"
+		parameterType="com.game.util.PageMaker">
+		select * from
+		(select rownum R, F.* from
+		(select * from qna order by ref desc, step asc) F)
+		where R between #{startRowNum} and #{lastRowNum}
+	</select>
+	<!-- Delete -->
+	<delete id="qnaDelete" parameterType="int">
+		delete qna where q_num=#{q_num}
+	</delete>
+
+
+	<!-- 조회수 -->
+	<update id="qnaCounts" parameterType="int">
+		update qna set counts=counts+1 where q_num=#{q_num}
+	</update>
+
+	<!-- pro_list 글전체 갯수 가져오기 -->
+	<select id="qnaCount" resultType="int">
+		select count(q_num) from qna
+	</select>
+
+	<update id="qnaUpdate" parameterType="com.game.board.QnaDTO">
+		update qna set q_title=#{q_title}, q_contents=#{q_contents} where
+		q_num=#{q_num}
+	</update>
+
+	<update id="qnaStep" parameterType="com.game.board.QnaDTO">
+		update qna set step=step +1 where ref=#{ref} and step &gt; #{step}
+	</update>
+
+	<insert id="qnaReply" parameterType="com.game.board.QnaDTO">
+		insert into qna values(qna_seq.nextval, #{q_writer}, #{q_title},
+		#{q_contents}, sysdate, 0, #{ref}, #{step}+1, #{depth}+1)
+	</insert>
+
+	<!-- mod에서 뿌리는 사진 -->
+	<select id="qna_mod_img" resultType="com.game.board.QnaFileDTO"
+		parameterType="int">
+		select * from qna_file where q_num=#{q_num} order by qfile_num asc
+	</select>
+
+	<!-- mod에서 이미지 추가 -->
+	<insert id="qna_mod_add_img" parameterType="java.util.Map">
+		insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name},
+		#{qorigine_name})
+	</insert>
+
+	<!-- mod에서 내용수정 -->
+	<update id="qna_mod" parameterType="com.game.board.QnaDTO">
+		update qna set q_contents=#{q_contents} where q_num=#{q_num}
+	</update>
+
+	<!-- 체크 이미지 삭제 -->
+	<delete id="qna_mod_del_img" parameterType="java.util.Map">
+		delete qna_file where qfile_num=#{qfile_num}
+	</delete>
+
+	<!-- 작성자 검색 -->
+	<select id="qnaList_writer" resultType="com.game.board.QnaDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from
+		(select * from qna where q_writer like '%'||#{q_writer}||'%' order by q_num desc) F)
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	<!-- 작성자 검색 갯수 -->
+	<select id="writer_search" resultType="int" parameterType="java.lang.String">
+		select count(q_num) from qna where q_writer like '%'||#{q_writer}||'%'
+	</select>
 	
-	<mapper namespace="QnaMapper">
-		<!-- View -->
-		<select id="qnaView" resultType="com.game.board.QnaDTO" parameterType="int">
-			select * from qna where q_num=#{q_num}
-		</select>
-		<!-- View에 들어갈 이미지 -->
-		<select id="qnaView_img" resultType="com.game.board.QnaFileDTO" parameterType="java.util.Map">
-			select * from
-			(select rownum r, F.* from
-			(select qfile_name from qna_file where q_num=#{q_num}) F)
-			where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
-		</select>
-		
-		<!-- qnaView에 들어갈 사진 갯수 -->
-		<select id="qnaView_imgCount" resultType="int" parameterType="int">
-			select count(qfile_name) from qna_file where q_num=#{q_num}
-		</select>
-		
-		<!-- Write -->
-		<!-- 이미지 없이 글 쓰기 -->
-		<insert id="qnaWrite" parameterType="com.game.board.QnaDTO">
-			insert into qna values(qna_seq.nextval,#{q_writer}, #{q_title}, #{q_contents}, sysdate, 0, qna_seq.currval, 0, 0 )
-			
-			<!-- q_num 가져오기 (qna_file table) -->
-			<selectKey keyProperty="q_num" resultType="int" order="AFTER">
-				select qna_seq.currval from dual
-			</selectKey>
-		</insert>
-		
-		<!-- qna_file 글쓰기(사진넣기) -->
-		<insert id="qna_fileWrite" parameterType="java.util.Map">
-			insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name}, #{origine})
-		</insert>
-		
-		<!-- List -->
-		<select id="qnaList" resultType="com.game.board.QnaDTO" parameterType="com.game.util.PageMaker">
-			select * from
-			(select rownum R, F.* from
-			(select * from qna order by ref desc, step asc) F)
-			where R between #{startRowNum} and #{lastRowNum}
-		</select>
-		<!-- Delete -->
-		<delete id="qnaDelete" parameterType="int">
-			delete qna where q_num=#{q_num}
-		</delete>
-		
-		
-		<!-- 조회수 -->
-		<update id="qnaCounts" parameterType="int">
-			update qna set counts=counts+1 where q_num=#{q_num}
-		</update>
-		
-		<!-- pro_list 글전체 갯수 가져오기 -->
-		<select id="qnaCount" resultType="int">
-			select count(q_num) from qna
-		</select>
-		
-		<update id="qnaUpdate" parameterType="com.game.board.QnaDTO">
-			update qna set q_title=#{q_title}, q_contents=#{q_contents} where q_num=#{q_num}
-		</update>
-		
-		<update id="qnaStep" parameterType="com.game.board.QnaDTO">
-			update qna set step=step +1 where ref=#{ref} and step &gt; #{step} 
-		</update>
-		
-		<insert id="qnaReply" parameterType="com.game.board.QnaDTO">
-			insert into qna values(qna_seq.nextval, #{q_writer}, #{q_title}, #{q_contents}, sysdate, 0, #{ref}, #{step}+1, #{depth}+1)
-		</insert>
-		
-		<!-- mod에서 뿌리는 사진 -->
-		<select id="qna_mod_img" resultType="com.game.board.QnaFileDTO" parameterType="int">
-			select * from qna_file where q_num=#{q_num} order by qfile_num asc
-		</select>
-		
-		<!-- mod에서 이미지 추가  -->
-		<insert id="qna_mod_add_img" parameterType="java.util.Map">
-			insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name}, #{origine})
-		</insert>
-		
-		<!-- mod에서 내용수정 -->
-		<update id="qna_mod" parameterType="com.game.board.QnaDTO">
-			update qna set q_contents=#{q_contents} where q_num=#{q_num}
-		</update>
-		
-		<!-- 체크 이미지 삭제 -->
-		<delete id="qna_mod_del_img" parameterType="java.util.Map">
-			delete qna_file where qfile_num=#{qfile_num}
-		</delete>
-		
-	</mapper>
+	
+	<!-- 제목 검색 -->
+	<select id="qnaList_title" resultType="com.game.board.QnaDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from
+		(select * from qna where q_title like '%'||#{q_title}||'%' order by q_num desc) F)
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	
+	<!-- 제목 검색 갯수 -->
+	<select id="title_search" resultType="int" parameterType="java.lang.String">
+		select count(q_num) from qna where q_title like '%'||#{q_title}||'%'
+	</select>
+	<!-- 내용 검색 -->
+	<select id="qnaList_contents" resultType="com.game.board.QnaDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from
+		(select * from qna where q_contents like '%'||#{q_contents}||'%' order by q_num desc) F)
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select>
+	<!-- 내용 검색 갯수 -->
+	<select id="contents_search" resultType="int" parameterType="java.lang.String">
+		select count(q_num) from qna where q_contents like '%'||#{q_contents}||'%'
+	</select>
+	
+	
+	
+</mapper>

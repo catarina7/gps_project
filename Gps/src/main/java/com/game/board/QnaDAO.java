@@ -106,5 +106,37 @@ public class QnaDAO {
 	public int qnaReply(QnaDTO qnaDTO) throws Exception{
 		return sqlSession.insert(namespace+"qnaReply", qnaDTO);
 	}
-
+	
+	public List<QnaDTO> qnaList_writer(PageMaker pageMaker, String q_writer) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("q_writer", q_writer);
+		return sqlSession.selectList(namespace+"writer_search", data);
+	}
+	
+	public List<QnaDTO> qnaList_title(PageMaker pageMaker, String q_title) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("q_writer", q_title);
+		return sqlSession.selectList(namespace+"writer_search", data);
+	}
+	
+	public List<QnaDTO> qnaList_contents(PageMaker pageMaker, String q_contents) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("q_writer", q_contents);
+		return sqlSession.selectList(namespace+"writer_search", data);
+	}
+	
+	public int title_search(String q_title) throws Exception{
+		return sqlSession.selectOne(namespace+"writer_search", q_title);
+	}
+	
+	public int contents_search(String q_contents) throws Exception{
+		return sqlSession.selectOne(namespace+"writer_search", q_contents);
+	}
+	
+	public int writer_search(String q_writer) throws Exception{
+		return sqlSession.selectOne(namespace+"writer_search", q_writer);
+	}
 }

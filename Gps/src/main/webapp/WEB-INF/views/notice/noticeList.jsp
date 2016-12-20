@@ -70,9 +70,9 @@
 		<a href="noticeList?curPage=${pageMaker.lastNum+1}">[다음]</a>
 		</c:if>
 	</form>
-		
+		<c:if test="${member.m_id eq 'admin'}">
 		<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/notice/noticeWrite';">
-		
+		</c:if>
 	</center>
 	
 	</section>
