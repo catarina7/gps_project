@@ -130,17 +130,19 @@ section #game_list {
 	height: 99%;
 	border: 1px solid #aaaaaa;
 	border-radius: 8px;
+	position: relative;
 }
 .product .game_txt {
 	position: absolute;
-	width: 80.5%;
-	height: 70%;
+	width: 95%;
+	height: 75%;
 	padding: 20px 5px;
 	z-index: 30;
 	border-radius : 8px;
 	background-color: black;
 	opacity: 0.8;
-	top: 1%;
+	top: 0;
+	cursor: pointer;
 }
 .product img {
 	width: 100%;
