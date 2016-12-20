@@ -148,13 +148,17 @@
 		
 		//마우스오버 함수
 		
-		$(".img").on({
-			mouseenter : function(){
-				$(this).children().first().show();
-			},
-			mouseleave : function(){
-				$(this).children().first().hide();
-			}
+		$("#main_first").on("mouseenter", ".img", function(){
+			$(this).children().last().show();
+		});
+		$("#main_first").on("mouseleave", ".img", function(){
+			$(this).children().last().hide();
+		});
+		$("#main_second").on("mouseenter", ".img", function(){
+			$(this).children().last().show();
+		});
+		$("#main_second").on("mouseleave", ".img", function(){
+			$(this).children().last().hide();
 		});
 		
 	});
