@@ -2,6 +2,7 @@ package com.game.mart;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -33,5 +34,44 @@ public class PurchaseService {
 		
 		
 	}
+	
+	//상품권 생성
+	public void makecupon() throws Exception{
+		
+		for(int k=0;k<10;k++){
+			String password = "";			
+			Random r = new Random();
+			Random r2 = new Random();
+			for(int j =0;j<5;j++){
+				String var = (j>0)?"-":"";
+				int r_num = r2.nextInt(2);
+				password += var;
+				for(int i =0; i<3; i++){
+					if(i == r_num){
+						int rand = r.nextInt(26)+65;
+						password += (char)rand;
+					}else{
+						int rand = r.nextInt(10);
+						password += rand;
+					}
+				}
+			}		
+		int result = purchasedao.makecupon(password);
+		}
+		
+	}
+	
+	 
+	//상품권 정보 확인 
+	public CuponDTO cuponcheck(CuponDTO cupon) throws Exception {
+		return purchasedao.checkcupon(cupon);
+	}
+	
+	//상품권 정보 수정
+	public int cuponMod(CuponDTO cupon) throws Exception{
+		return purchasedao.cuponmod(cupon);
+	}
+	
+	
 
 }

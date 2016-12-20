@@ -59,6 +59,8 @@ $(function(){
 		$("#se_new_pw_input").val("");
 		$("#se_pw_set").val("");
 		$(".pw_modform").hide();
+		$("#pw_check").hide();
+		$("#pw_confirm").hide();
 	});
 	
 	//회원정보 수정하기 폼
@@ -76,6 +78,8 @@ $(function(){
 		$("#pu_tel_input").val("");		
 		$("pu_email_input").val("");
 		$(".modform").hide();
+		$("#telchk").hide();
+		$("#emailchk").hide();
 	});
 	
 });
