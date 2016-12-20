@@ -6,7 +6,7 @@
 	<c:when test="${fn:length(mainList) > 0 }">
 		<c:forEach items="${mainList}" var="m">
 			<tr>
-				<td><a href="noticeView?n_num=${m.n_num}">${m.n_title}</a></td>
+				<td><a href="notice/noticeView?n_num=${m.n_num}">${m.n_title}</a></td>
 				<td>${m.reg_date}</td>
 			</tr>
 		</c:forEach>

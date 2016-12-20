@@ -33,7 +33,7 @@
 		
 		<!-- qna_file 글쓰기(사진넣기) -->
 		<insert id="qna_fileWrite" parameterType="java.util.Map">
-			insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name}, #{qorigine_name})
+			insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name}, #{origine})
 		</insert>
 		
 		<!-- List -->
@@ -47,25 +47,7 @@
 		<delete id="qnaDelete" parameterType="int">
 			delete qna where q_num=#{q_num}
 		</delete>
-		<!-- 내용 Mod-->
-		<update id="qna_mod" parameterType="com.game.board.QnaDTO">
-			update qna set q_contents=#{q_contents} where q_num=#{q_num}
-		</update>
 		
-		<!-- 체크된 이지미 삭제 -->
-		<delete id="qna_mod_del_img" parameterType="java.util.Map">
-			delete qna_file where qfile_num=#{qfile_num}
-		</delete>
-		
-		<!-- Mod에서 이미지 추가 -->
-		<insert id="qna_mod_add_img" parameterType="java.util.Map">
-			insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name}, #{qorigine_name})
-		</insert>
-		
-		<!-- qna_mod에서 뿌리는 모든 사진 -->
-		<select id="qna_mod_img" resultType="com.game.board.QnaFileDTO" parameterType="int">
-			select * from qna_file where q_num=#{q_num} order by qfile_num asc 
-		</select>
 		
 		<!-- 조회수 -->
 		<update id="qnaCounts" parameterType="int">
@@ -89,6 +71,24 @@
 			insert into qna values(qna_seq.nextval, #{q_writer}, #{q_title}, #{q_contents}, sysdate, 0, #{ref}, #{step}+1, #{depth}+1)
 		</insert>
 		
+		<!-- mod에서 뿌리는 사진 -->
+		<select id="qna_mod_img" resultType="com.game.board.QnaFileDTO" parameterType="int">
+			select * from qna_file where q_num=#{q_num} order by qfile_num asc
+		</select>
 		
+		<!-- mod에서 이미지 추가  -->
+		<insert id="qna_mod_add_img" parameterType="java.util.Map">
+			insert into qna_file values(qna_file_seq.nextval, #{q_num}, #{qfile_name}, #{origine})
+		</insert>
+		
+		<!-- mod에서 내용수정 -->
+		<update id="qna_mod" parameterType="com.game.board.QnaDTO">
+			update qna set q_contents=#{q_contents} where q_num=#{q_num}
+		</update>
+		
+		<!-- 체크 이미지 삭제 -->
+		<delete id="qna_mod_del_img" parameterType="java.util.Map">
+			delete qna_file where qfile_num=#{qfile_num}
+		</delete>
 		
 	</mapper>

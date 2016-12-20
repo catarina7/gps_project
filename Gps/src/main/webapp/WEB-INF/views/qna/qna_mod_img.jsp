@@ -10,4 +10,3 @@
 			src="../resources/upload/${img.qfile_name}">
 	</div>
 </c:forEach>
-<input type="button" id="img_delete" value="삭제">

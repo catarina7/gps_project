@@ -93,7 +93,7 @@ public class QnaDAO {
 		for(int i=0;i<fileNames.size();i++){
 			data.put("q_num", q_num);
 			data.put("qfile_name", fileNames.get(i));
-			data.put("qorigine_name", origineNames.get(i));
+			data.put("origine", origineNames.get(i));
 			sqlSession.insert(namespace+"qna_mod_add_img", data);
 		}
 	}

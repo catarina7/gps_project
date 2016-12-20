@@ -86,7 +86,7 @@
 
 		//공지사항 불러오기
 		$.ajax({
-			url : 'mainList',
+			url : 'notice/mainList',
 			type : 'POST',
 			success : function(data) {
 				data = data.trim();
@@ -325,7 +325,7 @@
 									<c:when test="${fn:length(mainList) > 0 }">
 										<c:forEach items="${mainList}" var="m">
 											<tr>
-												<td><a href="noticeView?n_num=${m.n_num}">${m.n_title}</a></td>
+												<td><a href="notice/noticeView?n_num=${m.n_num}">${m.n_title}</a></td>
 												<td>${m.reg_date}</td>
 											</tr>
 										</c:forEach>
