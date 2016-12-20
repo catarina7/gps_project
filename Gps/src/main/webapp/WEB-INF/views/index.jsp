@@ -151,6 +151,7 @@
 			}
 		});
 		
+		
 	});
 </script>
 </head>
@@ -211,7 +212,7 @@
 				<div id="main_first">
 					<!-- best game -->
 					<!-- <button id="before">◁</button> -->
-
+					
 					<c:forEach items="${pro_list}" var="pro_list" varStatus="status">
 						<div class="product">
 							<input type="text" readonly="readonly" class="discount"	value="${pro_list.discount} %">

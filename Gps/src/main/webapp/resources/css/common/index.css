@@ -140,9 +140,10 @@ section #game_list {
 	z-index: 30;
 	border-radius : 8px;
 	background-color: black;
-	opacity: 0.8;
+	opacity: 0.7;
 	top: 0;
 	cursor: pointer;
+	display: none;
 }
 .game_txt p {
 	overflow: hidden;

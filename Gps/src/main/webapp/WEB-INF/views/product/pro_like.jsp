@@ -3,11 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!-- best game -->
 <!-- <button id="before">◁</button> -->
-
 <c:forEach items="${pro_list}" var="pro_list" varStatus="status">
 	<div class="product">
-		<input type="text" readonly="readonly" class="discount"
-			value="할인% : ${pro_list.discount} %">
+		<input type="text" readonly="readonly" class="discount" value="할인% : ${pro_list.discount} %">
 		<div class="img">
 			<img src="resources/upload/${pro_main_img[status.index].file_name }">
 			<div class="game_txt">
