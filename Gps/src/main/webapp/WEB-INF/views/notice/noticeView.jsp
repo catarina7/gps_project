@@ -65,7 +65,7 @@
 							
 							<tr>
 								<td class="title">작성자</td>
-								<td><span class="pro_in">${member.m_name}</span></td>
+								<td><span class="pro_in">${noticeView.n_writer}</span></td>
 							</tr>
 							
 							<tr>
@@ -85,8 +85,8 @@
 							<div id="pro_w_btn">
 								<c:if test="${member.m_id eq 'admin'}">
 									<input type="button" value="수정" id="modBtn" class="btn">
+									<input type="button" value="삭제" id="delBtn" class="btn"> 
 								</c:if>
-								<input type="button" value="삭제" id="delBtn" class="btn"> 
 								<input type="button" value="목록" id="listBtn" class="btn">
 							</div>
 						</form>

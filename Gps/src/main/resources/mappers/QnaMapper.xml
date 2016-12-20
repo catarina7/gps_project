@@ -12,7 +12,7 @@
 	<select id="qnaView_img" resultType="com.game.board.QnaFileDTO"
 		parameterType="java.util.Map">
 		select * from
-		(select rownum r, F.* from
+		(select rownum R, F.* from
 		(select qfile_name from qna_file where q_num=#{q_num}) F)
 		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
 	</select>

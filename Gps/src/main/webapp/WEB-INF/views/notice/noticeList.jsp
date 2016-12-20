@@ -75,9 +75,9 @@
 				</c:if>
 			</div>
 		</form>
-			
-			<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/notice/noticeWrite';">
-		
+			<c:if test="${member.m_id eq 'admin'}">
+				<input type="button" value="글쓰기" onclick="location.href='${pageContext.request.contextPath}/notice/noticeWrite';">
+			</c:if>
 	</div>
 	
 	</section>

@@ -145,9 +145,9 @@
 										<input class="check_box" id="checkbox${status.index}"
 											name="qfile_num" value="${img.qfile_num}" type="checkbox">
 										<input type="hidden" name="qfile_name"
-											id="img_${img.qfile_name}" value="${img.qfile_name }">
-										<img style="width: 100px; height: 100px;"
-											src="../resources/upload/${img.qfile_name}">
+											id="img_${status.index}" value="${img.qfile_name }">
+										<label for="checkbox${status.index}"><img
+											src="../resources/upload/${img.qfile_name}"></label>
 									</div>
 								</c:forEach>
 								<input type="button" id="img_delete" value="삭제">
