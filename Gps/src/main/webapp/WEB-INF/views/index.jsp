@@ -14,7 +14,7 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
-
+		
 		if ($("#pas_kind").val() == 10) {
 			alert("비밀번호 변경을 바로 진행 합니다.");
 			location.href = "member/pw_check?category=2";
@@ -68,16 +68,7 @@
 			$("#pack_3").css("border", "2px solid #666666");
 		});
 
-		//마우스오버 함수
-		$(".product").on({
-			mouseenter : function(){
-				/* $(".img").css("cursor","pointer"); */
-				$(".img").children().first().show();
-			},
-			mouseleave : function(){
-				$(".img").children().first().hide();
-			}
-		});
+		
 		
 		$("#all_list").click(function() {
 			location.href = "${pageContext.request.contextPath}/product/pro_list";
@@ -144,6 +135,7 @@
 			}
 		});
 		//최신순
+	
 		$.ajax({
 			url : 'product/pro_main_recent',
 			type : 'POST',
@@ -153,6 +145,17 @@
 			}
 		});
 		
+		
+		//마우스오버 함수
+		
+		$(".img").on({
+			mouseenter : function(){
+				$(this).children().first().show();
+			},
+			mouseleave : function(){
+				$(this).children().first().hide();
+			}
+		});
 		
 	});
 </script>
@@ -215,60 +218,11 @@
 					<!-- best game -->
 					<!-- <button id="before">◁</button> -->
 					
-					<c:forEach items="${pro_list}" var="pro_list" varStatus="status">
-						<div class="product">
-							<input type="text" readonly="readonly" class="discount"	value="${pro_list.discount} %">
-							<div class="img">
-								<img src="resources/upload/${pro_main_img[status.index].file_name }">
-							</div>
-						</div>
-					</c:forEach>
-					
 					<!-- <button id="next">▷</button> -->
-					<!-- <button>◁</button>
-						<div>
-							<table>
-								<tr>
-									<td rowspan="2">
-										discount <input type="text" readonly="readonly"
-										class="discount" value="할인률 %">
-										<div class="img"></div>
-									</td>
-									<td><input type="text" readonly="readonly" class="discount"
-										value="할인률 %">
-										<div class="img"></div></td>
-									<td><input type="text" readonly="readonly" class="discount"
-										value="할인률 %">
-										<div class="img"></div></td>
-								</tr>
-								<tr>
-									<td><input type="text" readonly="readonly" class="discount"
-										value="할인률 %">
-										<div class="img"></div></td>
-									<td><input type="text" readonly="readonly" class="discount"
-										value="할인률 %">
-										<div class="img"></div></td>
-								</tr>
-							</table>
-						</div>
-					<button>▷</button> -->
 				</div>
 				<h3>신작 게임</h3>
 				<div id="main_second">
 					<!-- new game -->
-					<button>◁</button>
-					<c:forEach items="${pro_list_recent}" var="pro_list" varStatus="status">
-					<div class="product">
-						<input type="text" readonly="readonly" class="discount" value="할인률 : ${pro_list.discount}%">
-						<div class="game_txt">
-							
-						</div>
-						<div class="img">
-							<img src="resources/upload/${pro_main_img_recent[status.index].file_name }">
-						</div>
-					</div>
-					</c:forEach>
-					<button>▷</button>
 				</div>
 				<h3>할인 게임</h3>
 				<div id="main_third">
