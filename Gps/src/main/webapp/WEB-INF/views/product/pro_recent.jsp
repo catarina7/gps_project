@@ -12,8 +12,13 @@
 			<div class="game_txt">
 				<p class="linelien">게임명 : ${pro_list.pro_title }</p>
 				<p>
-					가격 : <span>₩ ${pro_list.price }</span><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> ₩ ${pro_list.total_price }
+					<c:if test="${pro_list.total_price == 0 }">					
+						가격 : ₩ ${pro_list.price }
+					</c:if>
+					<c:if test="${pro_list.total_price != 0 }">
+						가격 : <span>₩ ${pro_list.price }</span><br>
+						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;--> ₩ ${pro_list.total_price }
+					</c:if>
 				</p>
 			</div>
 		</div>
