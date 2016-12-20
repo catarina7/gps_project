@@ -1,0 +1,59 @@
+Ω≈¿€ ∞‘¿”
+
+
+<c:forEach items="${pro_list_recent}" var="pro_list" varStatus="status">
+					<div class="product">
+						<input type="text" readonly="readonly" class="discount" value="«“¿Œ∑¸ : ${pro_list.discount}%">
+						<div class="game_txt">
+							
+						</div>
+						<div class="img">
+							<img src="resources/upload/${pro_main_img_recent[status.index].file_name }">
+						</div>
+					</div>
+					</c:forEach>
+					<button>¢π</button>
+
+
+√ﬂ√µ ∞‘¿”
+
+
+<button>¢∑</button>
+						<div>
+							<table>
+								<tr>
+									<td rowspan="2">
+										discount <input type="text" readonly="readonly"
+										class="discount" value="«“¿Œ∑¸ %">
+										<div class="img"></div>
+									</td>
+									<td><input type="text" readonly="readonly" class="discount"
+										value="«“¿Œ∑¸ %">
+										<div class="img"></div></td>
+									<td><input type="text" readonly="readonly" class="discount"
+										value="«“¿Œ∑¸ %">
+										<div class="img"></div></td>
+								</tr>
+								<tr>
+									<td><input type="text" readonly="readonly" class="discount"
+										value="«“¿Œ∑¸ %">
+										<div class="img"></div></td>
+									<td><input type="text" readonly="readonly" class="discount"
+										value="«“¿Œ∑¸ %">
+										<div class="img"></div></td>
+								</tr>
+							</table>
+						</div>
+					<button>¢π</button>
+
+
+
+
+<c:forEach items="${pro_list}" var="pro_list" varStatus="status">
+						<div class="product">
+							<input type="text" readonly="readonly" class="discount"	value="${pro_list.discount} %">
+							<div class="img">
+								<img src="resources/upload/${pro_main_img[status.index].file_name }">
+							</div>
+						</div>
+					</c:forEach>
