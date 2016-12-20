@@ -68,19 +68,20 @@
 			$("#pack_3").css("border", "2px solid #666666");
 		});
 
-		$(".img").mouseenter(function() {
-			$(this).css("cursor", "pointer");
-			$(this).css("border", "2px solid #aaaaaa");
-			$(".img").mouseout(function() {
-				$(this).css("border", "1px solid #aaaaaa");
-			});
+		//마우스오버 함수
+		$(".product").on({
+			mouseenter : function(){
+				/* $(".img").css("cursor","pointer"); */
+				$(".img").children().first().show();
+			},
+			mouseleave : function(){
+				$(".img").children().first().hide();
+			}
 		});
-
-		$("#all_list")
-				.click(
-						function() {
-							location.href = "${pageContext.request.contextPath}/product/pro_list";
-						});
+		
+		$("#all_list").click(function() {
+			location.href = "${pageContext.request.contextPath}/product/pro_list";
+		});
 
 		//공지사항 불러오기
 		$.ajax({
@@ -92,7 +93,7 @@
 			}
 		});
 		
-		 $("#chat_open_click").click(function(){
+		$("#chat_open_click").click(function(){
 			 $("#chat_open").show();
 		 });
 		$("#chat_closes").click(function(){
@@ -131,6 +132,7 @@
 			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=etc";
 		});
 		//카테고리 url 끝
+		
 		
 		//인기순
 		$.ajax({
