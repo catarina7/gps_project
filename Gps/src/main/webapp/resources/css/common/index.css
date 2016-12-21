@@ -287,8 +287,9 @@ section #game_list {
 	overflow: hidden;
 }
 #sub_first .discount_sub_contents {
-	width: 60%;
-	height: 100%;
+	width: 70%;
+	height: 95%;
+	padding: 7px 1.4%;
 	float: left;
 	overflow: hidden;
 	cursor: pointer;
