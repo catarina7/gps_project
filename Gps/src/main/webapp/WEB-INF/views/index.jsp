@@ -157,6 +157,13 @@
 		$("#main_second").on("mouseleave", ".img", function(){
 			$(this).children().last().hide();
 		});
+		
+		
+		
+		
+		
+		
+		
 		//초특가
 		$.ajax({
 			url : 'product/pro_sub_discount',
