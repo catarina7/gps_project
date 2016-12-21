@@ -24,7 +24,7 @@ section #board_w {
 }
 
 #board_w form {
-	width: 65%;
+	width: 70%;
 	margin: 0 auto;
 	padding: 10px 1.4%;
 	overflow: hidden;
@@ -46,14 +46,14 @@ section #board_w {
 }
 
 #board_w .title {
-	text-shadow: -1px -1px 0px #414141;
+	text-shadow: -1px -1px 0px black;
 	font-size: 15px;
 	font-weight: bold;
 	text-align: right;
 	border-right: 2px solid #aaaaaa;
 }
 #board_w #titi {
-	text-shadow: -1px -1px 0px #414141;
+	text-shadow: -1px -1px 0px black;
 	font-size: 15px;
 	font-weight: bold;
 	text-align: center;
