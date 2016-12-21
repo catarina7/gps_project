@@ -1,0 +1,89 @@
+@CHARSET "UTF-8";
+
+section {
+	width: 100%;
+	padding-top: 245px;
+	padding-bottom: 190px;
+	background-color: #666666;
+}
+
+section #board_w {
+	width: 60%;
+	margin: 0 auto;
+	padding: 20px 10px;
+}
+#board_w h2 {
+	width: 78%;
+	margin: 0 auto;
+	padding: 30px 5px;
+	color: white;
+	text-shadow: -1px -1px 0px #454545;
+}
+#board_w table {
+	width: 75%;
+	margin: 0 auto;
+	border-collapse: collapse;
+	border: 2px solid #aaaaaa;
+}
+#board_w td {
+	padding: 15px 10px;
+	background-color: #595959;
+}
+#board_w .title {
+	font-weight: bold;
+	color: white;
+	text-align: right;
+	text-shadow: -1px -1px 0px black;
+}
+#board_w input[type="text"] {
+	width: 80%;
+	border-radius: 5px;
+	border: 1px solid #aaaaaa;
+	padding: 5px 3px;
+}
+#board_w .board_in {
+	width: 40%;
+}
+#board_w #board_w_btn {
+	width: 75%;
+	padding: 20px 5px;
+	margin: 0 auto;
+}
+
+#board_w #n_textarea {
+	width: 99.8%;
+}
+
+
+
+#board_w_btn #savebutton {
+	float: right;
+	padding: 8px 25px;
+	border: 2px solid black;
+	background-color: #32435c;
+	color: white;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #232f41;
+	overflow: hidden;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#board_w_btn #savebutton:hover {
+	background-color: #222e40;
+}
+#board_w .files_import {
+	padding: 5px 5px;
+}
+#board_w .btn {
+	padding: 5px 10px;
+	border: 1px solid black;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	color: white;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #232f41;
+	border-radius: 5px;
+	cursor: pointer;
+}
+#board_w .btn:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
