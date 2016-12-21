@@ -225,6 +225,7 @@ section #game_list {
 
 
 
+/* discount game */
 
 #game_list #main_third {
 	width: 97%;
@@ -233,6 +234,11 @@ section #game_list {
 	border: 2px solid #373e48;
 	border-radius : 8px;
 	overflow: hidden;
+}
+#main_third img {
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
 }
 #main_third button {
 	padding: 9px 15px;
@@ -263,11 +269,27 @@ section #game_list {
 }
 #sub_first table {
 	width: 100%;
+	overflow: hidden;
 }
 #sub_first td {
 	border: 2px solid #aaaaaa;
 	width: 99.8%;
 	height: 70px;
+}
+#sub_first .discount_sub_img {
+	width: 23%;
+	height: 99.5%;
+	padding: 3px 0.8%;
+	float: left;
+	overflow: hidden;
+	cursor: pointer;
+}
+#sub_first .discount_sub_contents {
+	width: 60%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	cursor: pointer;
 }
 #sub_cate #sub_second {
 	width: 26%;
