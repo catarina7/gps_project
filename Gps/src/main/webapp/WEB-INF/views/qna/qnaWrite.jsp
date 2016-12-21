@@ -9,7 +9,7 @@
 <title>QnA</title>
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_write.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/board_write.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
 <script type="text/javascript">
@@ -70,22 +70,22 @@ $(function(){
 	<c:import url="/header" />
 	<section>
 		<c:import url="/user_menu_bar"/>
-		<div id="pro_w">
+		<div id="board_w">
 		<h2 style="text-align: center;">※운영진에게 물어봐※</h2>
 			<form action="qnaWrite" method="post" id="frm" enctype="multipart/form-data">
 				<table>
 					<colgroup>
-						<col style="width:20%;">
-						<col style="width:80%;">
+						<col style="width:15%;">
+						<col style="width:89%;">
 					</colgroup>
 					<tr>
 						<td class="title">작성자</td>
-						<td><input type="text" class="pro_in" name="q_writer" value="${member.m_name}" readonly="readonly" ></td>
+						<td><input type="text" class="board_in" name="q_writer" value="${member.m_name}" readonly="readonly" ></td>
 					</tr>
 					
 					<tr>
 						<td class="title">제목</td>
-						<td><input type="text" class="pro_in" name="q_title"></td>
+						<td><input type="text" class="board" name="q_title"></td>
 					</tr>
 					
 					<tr>
@@ -108,7 +108,7 @@ $(function(){
 				
 					</tr>
 				</table>
-				<div id="pro_w_btn">
+				<div id="board_w_btn">
 					<input type="button" value="작성완료" class="btn" id="savebutton">
 					<input type="button" class="btn" value="목록" onclick="location.href='${pageContext.request.contextPath}/qna/qnaList';">
 				</div>
