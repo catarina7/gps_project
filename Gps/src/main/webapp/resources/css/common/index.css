@@ -271,6 +271,9 @@ section #game_list {
 	width: 100%;
 	overflow: hidden;
 }
+#sub_first tr:hover {
+	background-color: #9fd0ee;
+}
 #sub_first td {
 	border: 2px solid #aaaaaa;
 	width: 99.8%;
@@ -305,6 +308,7 @@ section #game_list {
 	float: left;
 	padding: 18px 0px;
 	overflow: hidden;
+	background-color: #9fd0ee;
 }
 #sub_second .sub_secon_img {
 	width: 80%;
