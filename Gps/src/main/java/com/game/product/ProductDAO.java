@@ -236,4 +236,18 @@ public class ProductDAO {
 	public List<ProductDTO> productListRecentMain(PageMaker pageMaker) throws Exception{
 		return sqlSession.selectList(namespace+"pro_main_recent", pageMaker);
 	} 
+	
+	//초특가
+	public List<ProductDTO> productSubDiscount(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_sub_discount", pageMaker);
+	}
+	
+	//이미지 4개 뿌리기 
+	public List<ProductFileDTO> productViewImgMain(PageMaker pageMaker, int pro_num) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pro_num", pro_num);
+		data.put("pageMaker", pageMaker);
+		return sqlSession.selectList(namespace+"pro_view_img_main", data);
+	}
+	
 }
