@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -62,7 +62,7 @@ $(function(){
 					</colgroup>
 					<tr>
 						<td class="title">작성자</td>
-						<td><input type="text" class="pro_in" name="q_writer" value="test" readonly="readonly" ></td>
+						<td><input type="text" class="pro_in" name="q_writer" value="${member.m_name}" readonly="readonly" ></td>
 					</tr>
 					
 					<tr>
@@ -81,7 +81,7 @@ $(function(){
 					
 				</table>
 				<div id="pro_w_btn">
-					<input type="button" value="답글등록" class="btn" id="savebutton">
+					<input type="submit" value="답글등록" class="btn" id="savebutton">
 					<input type="button" class="btn" value="목록" onclick="location.href='${pageContext.request.contextPath}/qna/qnaList';">
 				</div>
 			</form>

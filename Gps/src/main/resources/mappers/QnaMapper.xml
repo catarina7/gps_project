@@ -99,44 +99,5 @@
 	<delete id="qna_mod_del_img" parameterType="java.util.Map">
 		delete qna_file where qfile_num=#{qfile_num}
 	</delete>
-
-	<!-- 작성자 검색 -->
-	<select id="qnaList_writer" resultType="com.game.board.QnaDTO" parameterType="java.util.Map">
-		select * from 
-		(select rownum R, F.* from
-		(select * from qna where q_writer like '%'||#{q_writer}||'%' order by q_num desc) F)
-		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
-	</select>
-	<!-- 작성자 검색 갯수 -->
-	<select id="writer_search" resultType="int" parameterType="java.lang.String">
-		select count(q_num) from qna where q_writer like '%'||#{q_writer}||'%'
-	</select>
-	
-	
-	<!-- 제목 검색 -->
-	<select id="qnaList_title" resultType="com.game.board.QnaDTO" parameterType="java.util.Map">
-		select * from 
-		(select rownum R, F.* from
-		(select * from qna where q_title like '%'||#{q_title}||'%' order by q_num desc) F)
-		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
-	</select>
-	
-	<!-- 제목 검색 갯수 -->
-	<select id="title_search" resultType="int" parameterType="java.lang.String">
-		select count(q_num) from qna where q_title like '%'||#{q_title}||'%'
-	</select>
-	<!-- 내용 검색 -->
-	<select id="qnaList_contents" resultType="com.game.board.QnaDTO" parameterType="java.util.Map">
-		select * from 
-		(select rownum R, F.* from
-		(select * from qna where q_contents like '%'||#{q_contents}||'%' order by q_num desc) F)
-		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
-	</select>
-	<!-- 내용 검색 갯수 -->
-	<select id="contents_search" resultType="int" parameterType="java.lang.String">
-		select count(q_num) from qna where q_contents like '%'||#{q_contents}||'%'
-	</select>
-	
-	
 	
 </mapper>
