@@ -64,8 +64,12 @@
 							</tr>
 							
 							<tr>
-								<td class="title">제목 : </td>
+								<td class="title">제목</td>
 								<td><span class="pro_in">${noticeView.n_title}</span></td>
+							</tr>
+							<tr>
+								<td class="title">작성날짜</td>
+								<td><span class="pro_in">${noticeView.reg_date}</span></td>
 							</tr>
 							
 							<tr>

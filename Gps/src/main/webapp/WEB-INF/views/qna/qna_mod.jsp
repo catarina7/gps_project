@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>QnA 수정하기</title>
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/common/common.css">
@@ -73,31 +73,30 @@
 		/* file Tag 추가 및 삭제 끝*/
 
 		/* smarteditor 끝 */
-	$(document).ready(function() {
-		$("#img_delete").on("click", function() {
-			var checkArr = [];
+		$(document).ready(function() {
+			$("#img_delete").on("click", function() {
+				var checkArr = [];
 
-			$("#input[name='qfile_num']:checked").each(function() {
-				checkArr.push($(this).val());
-			});
+				$("#input[name='qfile_num']:checked").each(function() {
+					checkArr.push($(this).val());
+				});
 
-			$.ajax({
-				url : 'qna_mod_img_del',
-				type : 'POST',
-				dataType : 'text',
-				data : {
-					valueArr : checkArr,
-					q_num : $("#q_num").val()
-				},
-				success : function(data) {
-					data = data.trim();
-					$("#img_delete_div").html(data);
-				}
+				$.ajax({
+					url : 'qna_mod_img_del',
+					type : 'POST',
+					dataType : 'text',
+					data : {
+						valueArr : checkArr,
+						q_num : $("#q_num").val()
+					},
+					success : function(data) {
+						data = data.trim();
+						$("#img_delete_div").html(data);
+					}
+				});
 			});
 		});
 	});
-});
-
 </script>
 </head>
 <body>
@@ -105,7 +104,7 @@
 	<section>
 		<c:import url="/user_menu_bar" />
 		<div id="pro_w">
-			<h2 style="text-align: center;">※운영진에게 물어봐※</h2>
+			<h2 style="text-align: center;">※QnA※</h2>
 			<form action="qna_mod" method="post" id="frm"
 				enctype="multipart/form-data">
 				<table>
@@ -150,8 +149,8 @@
 											src="../resources/upload/${img.qfile_name}"></label>
 									</div>
 								</c:forEach>
-								<input type="button" id="img_delete" value="삭제">
 							</div>
+									<input type="button" id="img_delete" value="삭제">
 						</td>
 					</tr>
 
