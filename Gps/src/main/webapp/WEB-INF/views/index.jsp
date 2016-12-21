@@ -259,8 +259,12 @@
 					<!-- <button id="next">▷</button> -->
 				</div>
 				<h3>신작 게임</h3>
-				<div id="main_second">
-					<!-- new game -->
+				<div id="main_second_div">	
+					<button id="new_before">◁</button>			
+					<button id="new_next">▷</button>
+					<div id="main_second">
+						<!-- new game -->
+					</div>
 				</div>
 				<h3>할인 게임</h3>
 				<div id="main_third">
