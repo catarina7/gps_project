@@ -1,0 +1,107 @@
+@CHARSET "UTF-8";
+
+section {
+	width: 100%;
+	padding-top: 245px;
+	padding-bottom: 190px;
+	background-color: #666666;
+}
+
+section #board_w {
+	width: 50%;
+	margin: 0 auto;
+	padding: 40px 1.4%;
+}
+
+#board_w h1 {
+	width: 90%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 40px 1.4%;
+	color: white;
+	font-size: 28px;
+	text-shadow: -1px -1px 0px #414141;
+}
+
+#board_w form {
+	width: 65%;
+	margin: 0 auto;
+	padding: 10px 1.4%;
+	overflow: hidden;
+}
+
+#board_w table {
+	width: 100%;
+	border: 2px solid #aaaaaa;
+	border-collapse: collapse;
+}
+
+#board_w td {
+	padding: 10px 2.5%;
+	color: white;
+	background-color: #4d4d4d;
+	font-size: 14px;
+	border-bottom: 1px dotted #aaaaaa;
+	
+}
+
+#board_w .title {
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: right;
+	border-right: 2px solid #aaaaaa;
+}
+#board_w #titi {
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 15px;
+	font-weight: bold;
+	text-align: center;
+	border-top: 2px solid #aaaaaa;
+}
+
+#board_w #board_w_btn {
+	padding: 20px 1.4%;
+	float: right;
+	overflow: hidden;
+}
+
+#board_w_btn input[type="button"] {
+	padding: 5px 15px;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border: 1px solid black;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+#board_w_btn input[type="button"]:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
