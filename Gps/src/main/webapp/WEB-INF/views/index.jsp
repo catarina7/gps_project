@@ -20,9 +20,6 @@
 			location.href = "member/pw_check?category=2";
 		}
 
-		$(window).scroll(function() {
-
-		});
 
 		$("#pack_1").click(function() {
 			$(this).css("background-color", "#777777");
