@@ -58,8 +58,8 @@ $(function(){
 			<div>
 				<c:import url="/user_menu_bar"/>
 			</div>
-			<div id="pro_w">
-				<h2 style="text-align: center;">※공지사항※</h2>
+			<div id="board_w">
+				<h2>※ 공지사항 ※</h2>
 				<form action="noticeMod" method="post" id="frm">
 					<table>
 						<colgroup>
@@ -67,13 +67,13 @@ $(function(){
 							<col style="width:80%;">
 						</colgroup>
 						<tr>
-							<td class="title">작성자</td>
-							<td><input type="text" class="pro_in" name="n_writer" value="${param.n_writer }" readonly="readonly" ></td>
+							<td class="title">작성자 : </td>
+							<td><input type="text" class="board_in" name="n_writer" value="${param.n_writer }" readonly="readonly" ></td>
 						</tr>
 						
 						<tr>
-							<td class="title">제목</td>
-							<td><input type="text" class="pro_in" name="n_title" value="${param.n_title}"></td>
+							<td class="title">제목 : </td>
+							<td><input type="text" name="n_title" value="${param.n_title}"></td>
 						</tr>
 						
 						<tr>
@@ -86,7 +86,7 @@ $(function(){
 						</tr>
 						
 					</table>
-					<div id="pro_w_btn">
+					<div id="board_w_btn">
 						<input type="hidden" value="${param.n_num}" name="n_num">
 						<input type="button" value="수정완료" class="btn" id="savebutton">
 						<input type="button" class="btn" value="목록" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList';">
