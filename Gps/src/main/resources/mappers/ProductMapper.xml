@@ -229,7 +229,7 @@
 		select * from 
 		(select rownum R, F.* from 
 		(select * from product order by total_score desc) F) 
-		where R between 1 and 4
+		where R between 1 and 12
 	</select>
 	
 	<!-- 최신순으로 메인에서 뿌리기 -->
@@ -237,9 +237,10 @@
 		select * from 
 		(select rownum R, F.* from 
 		(select * from product order by pro_num desc) F) 
-		where R between 1 and 4
+		where R between 1 and 12
 	</select>
 	
+	<!-- 초특가 -->
 	<select id="pro_sub_discount" resultType="com.game.product.ProductDTO" parameterType="com.game.util.PageMaker">
 		select * from 
 		(select rownum R, F.* from 
@@ -247,6 +248,7 @@
 		where R between 1 and 5
 	</select>
 	
+	<!-- 이미지 4개 뿌리기 -->
 	<select id="pro_view_img_main" resultType="com.game.product.ProductFileDTO" parameterType="java.util.Map">
 		select * from 
 		(select rownum r, F.* from 
