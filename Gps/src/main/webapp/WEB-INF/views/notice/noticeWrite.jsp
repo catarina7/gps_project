@@ -2,14 +2,14 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>공지사항</title>
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_write.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/board_write.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
 
@@ -53,22 +53,22 @@ $(function(){
 		<c:import url="/header" />
 		<section>
 		<c:import url="/user_menu_bar"/>
-		<div id="pro_w">
-		<h2 style="text-align: center;">※공지사항※</h2>
+		<div id="board_w">
+		<h2 style="text-align: center;">※ 공지사항 ※</h2>
 			<form action="noticeWrite" method="post" id="frm">
 				<table>
 					<colgroup>
-						<col style="width:20%;">
-						<col style="width:80%;">
+						<col style="width:15%;">
+						<col style="width:89%;">
 					</colgroup>
 					<tr>
-						<td class="title">작성자</td>
-						<td><input type="text" class="pro_in" name="n_writer" value="${member.m_name}" readonly="readonly" ></td>
+						<td class="title">작성자 : </td>
+						<td><input type="text" class="board_in" name="n_writer" value="${member.m_name}" readonly="readonly" ></td>
 					</tr>
 					
 					<tr>
-						<td class="title">제목</td>
-						<td><input type="text" class="pro_in" name="n_title" placeholder="제목을 입력하세요."></td>
+						<td class="title">제목 : </td>
+						<td><input type="text" name="n_title" placeholder="제목을 입력하세요."></td>
 					</tr>
 					
 					<tr>
@@ -81,7 +81,7 @@ $(function(){
 					</tr>
 					
 				</table>
-				<div id="pro_w_btn">
+				<div id="board_w_btn">
 					<input type="button" value="작성완료" class="btn" id="savebutton">
 					<input type="button" class="btn" value="목록" onclick="location.href='${pageContext.request.contextPath}/notice/noticeList';">
 				</div>

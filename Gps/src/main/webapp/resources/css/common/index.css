@@ -335,13 +335,23 @@ section #game_list {
 	width: 100%;
 	border-collapse: collapse;
 }
+#main_notice tr {
+	border-bottom: 1px dashed #aaaaaa;
+}
 #main_notice td {
 	padding: 5px 1.4%;
-	border-bottom: 1px dashed #aaaaaa;
 }
 #main_notice a {
 	color: white;
 	font-weight: bold;
+	font-size: 13px;
+}
+#main_notice .a_title {
+	width: 250px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	display: inline-block;
+	overflow: hidden;
 }
 #main_notice a:hover {
 	color: #ff8e92;

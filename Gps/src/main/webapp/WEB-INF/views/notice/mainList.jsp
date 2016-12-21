@@ -4,14 +4,14 @@
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <table>
 	<colgroup>
-		<col style="width:46%">
-		<col style="width:46%">
+		<col style="width:72%">
+		<col style="width:26%">
 	</colgroup>
 	<c:choose>
 		<c:when test="${fn:length(mainList) > 0 }">
 			<c:forEach items="${mainList}" var="m">
 				<tr>
-					<td><a href="notice/noticeView?n_num=${m.n_num}">${m.n_title}</a></td>
+					<td class="a_title"><a href="notice/noticeView?n_num=${m.n_num}">${m.n_title}</a></td>
 					<td>${m.reg_date}</td>
 				</tr>
 			</c:forEach>
