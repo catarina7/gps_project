@@ -24,9 +24,7 @@ public class QnaController {
 
 	// Write
 	@RequestMapping(value = "/qnaWrite", method = RequestMethod.GET)
-	public void qnaWrite() {
-	}
-
+	public void qnaWrite() {}
 	@RequestMapping(value = "/qnaWrite", method = RequestMethod.POST)
 	public String qnaWrite(QnaDTO qnaDTO, MultipartHttpServletRequest mr, HttpSession session) {
 
@@ -104,7 +102,7 @@ public class QnaController {
 	}
 
 	// 체크된 이미지 삭제
-	@RequestMapping(value = "/qna_mod_img_del", method = RequestMethod.POST)
+	@RequestMapping(value = "/qna_mod_img_del", method = {RequestMethod.POST, RequestMethod.GET})
 	public String qnaModDeleteList(@RequestParam(value = "valueArr[]") List<Integer> valueArr, int q_num, Model model) {
 
 		try {
@@ -117,10 +115,8 @@ public class QnaController {
 	}
 
 	@RequestMapping(value = "/qnaReply", method = RequestMethod.GET)
-	public void qnaReply() {
-	}
-
-	@RequestMapping(value = "/qnaReply", method = RequestMethod.POST)
+	public void qnaReply() {}
+	@RequestMapping(value = "/qnaReply")
 	public String qnaReply(QnaDTO qnaDTO) {
 
 		try {
@@ -132,42 +128,5 @@ public class QnaController {
 		return "redirect:/qna/qnaList";
 	}
 
-	// 작성자
-	@RequestMapping(value = "/qnaList_writer")
-	public String qnaList_writer(@RequestParam(defaultValue = "1") int curPage,
-			@RequestParam(defaultValue = "20") int perPage, String q_writer, Model model) {
-		try {
-			qnaService.qnaList_writer(curPage, perPage, q_writer, model);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "qna/qnaList";
-	}
-
-	// 제목
-	@RequestMapping(value = "/qnaList_title")
-	public String qnaList_title(@RequestParam(defaultValue = "1") int curPage,
-			@RequestParam(defaultValue = "20") int perPage, String q_title, Model model) {
-		try {
-			qnaService.qnaList_writer(curPage, perPage, q_title, model);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "qna/qnaList";
-	}
-
-	// 내용
-	@RequestMapping(value = "/qnaList_contents")
-	public String qnaList_contents(@RequestParam(defaultValue = "1") int curPage,
-			@RequestParam(defaultValue = "20") int perPage, String q_contents, Model model) {
-		try {
-			qnaService.qnaList_writer(curPage, perPage, q_contents, model);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return "qna/qnaList";
-	}
+	
 }

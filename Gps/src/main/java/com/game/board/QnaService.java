@@ -134,47 +134,8 @@ public class QnaService {
 	}
 	
 	public int qnaReply(QnaDTO qnaDTO) throws Exception{
+		this.qnaDAO.qnaStep(qnaDTO);
 		return qnaDAO.qnaReply(qnaDTO);
 	}
 	
-	//작성자
-	public void qnaList_writer(int curPage, int perPage, String q_writer, Model model) throws Exception{
-		int totalCount = qnaDAO.writer_search(q_writer);
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCurPage(curPage);
-		pageMaker.setPerPage(perPage);
-		pageMaker.makeRow();
-		pageMaker.makePage(totalCount);
-		
-		List<QnaDTO> ar = qnaDAO.qnaList_writer(pageMaker, q_writer);
-		model.addAttribute("qnaLsit", ar);
-		model.addAttribute("pageMaker", pageMaker);
-	}
-	
-	//제목
-		public void qnaList_title(int curPage, int perPage, String q_title, Model model) throws Exception{
-			int totalCount = qnaDAO.writer_search(q_title);
-			PageMaker pageMaker = new PageMaker();
-			pageMaker.setCurPage(curPage);
-			pageMaker.setPerPage(perPage);
-			pageMaker.makeRow();
-			pageMaker.makePage(totalCount);
-			
-			List<QnaDTO> ar = qnaDAO.qnaList_writer(pageMaker, q_title);
-			model.addAttribute("qnaLsit", ar);
-			model.addAttribute("pageMaker", pageMaker);
-		}
-		//내용
-		public void qnaList_contents(int curPage, int perPage, String q_contents, Model model) throws Exception{
-			int totalCount = qnaDAO.writer_search(q_contents);
-			PageMaker pageMaker = new PageMaker();
-			pageMaker.setCurPage(curPage);
-			pageMaker.setPerPage(perPage);
-			pageMaker.makeRow();
-			pageMaker.makePage(totalCount);
-			
-			List<QnaDTO> ar = qnaDAO.qnaList_writer(pageMaker, q_contents);
-			model.addAttribute("qnaLsit", ar);
-			model.addAttribute("pageMaker", pageMaker);
-		}
 }

@@ -73,8 +73,6 @@
 		/* file Tag 추가 및 삭제 끝*/
 
 		/* smarteditor 끝 */
-	});
-
 	$(document).ready(function() {
 		$("#img_delete").on("click", function() {
 			var checkArr = [];
@@ -98,6 +96,8 @@
 			});
 		});
 	});
+});
+
 </script>
 </head>
 <body>
