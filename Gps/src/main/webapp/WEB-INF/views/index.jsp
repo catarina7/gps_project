@@ -157,6 +157,31 @@
 		$("#main_second").on("mouseleave", ".img", function(){
 			$(this).children().last().hide();
 		});
+		
+		var count = 0;
+		var max_height = 0 - 382;
+		
+		//신작 게임 세로 슬라이드
+		$("#new_next").click(function(){
+			if(count == max_height){
+				$("#main_second").css("top", "0px");
+				count = 0;
+			}else {
+				count = count - 191;
+				$("#main_second").css("top", count+"px");
+			}
+		});
+		
+		$("#new_before").click(function(){
+			if(count == 0){
+				$("#main_second").css("top", max_height);
+				count = max_height;
+			}else {
+				count = count + 191;
+				$("#main_second").css("top", count+"px");
+			}
+		});
+		
 		//초특가
 		$.ajax({
 			url : 'product/pro_sub_discount',
@@ -259,8 +284,14 @@
 					<!-- <button id="next">▷</button> -->
 				</div>
 				<h3>신작 게임</h3>
-				<div id="main_second">
-					<!-- new game -->
+				<div id="main_second_div">	
+					<button id="new_before">◁</button>			
+					<button id="new_next">▷</button>
+					<div id="main_second_screen">						
+						<div id="main_second">
+							<!-- new game -->
+						</div>
+					</div>
 				</div>
 				<h3>할인 게임</h3>
 				<div id="main_third">
