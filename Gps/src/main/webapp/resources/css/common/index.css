@@ -282,7 +282,6 @@ section #game_list {
 	padding: 3px 0.8%;
 	float: left;
 	overflow: hidden;
-	cursor: pointer;
 }
 #sub_first .discount_sub_contents {
 	width: 60%;
@@ -290,6 +289,12 @@ section #game_list {
 	float: left;
 	overflow: hidden;
 	cursor: pointer;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+}
+.discount_sub_contents span {
+	font-weight: bold;
+	color: #ffb3b5;
 }
 #sub_cate #sub_second {
 	width: 26%;

@@ -9,10 +9,10 @@
 					<div class="discount_sub_img">						
 						<img src="resources/upload/${pro_main_img_sub_discount[status.index].file_name}">
 					</div>
-					<div class="discount_sub_contents">
+					<div class="discount_sub_contents" onclick="location.href='product/pro_view?pro_num=${discount.pro_num}'">
 						<input type="hidden" id="check_${status.index}" value="${discount.pro_num}"> 
-						제목: ${discount.pro_title} <br>
-						내용: ${discount.pro_contents}						
+						<span>게임 : </span> ${discount.pro_title} <br>
+						${discount.pro_contents}						
 					</div>
 				</td>
 				<%-- <td>
