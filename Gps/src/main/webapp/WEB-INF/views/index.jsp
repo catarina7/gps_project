@@ -152,8 +152,45 @@
 				$("#main_second").html(data);
 			}
 		});
+		//초특가
+		$.ajax({
+			url : 'product/pro_sub_discount',
+			type : 'POST',
+			success : function(data){
+				data=data.trim();
+				$("#sub_first").html(data);
+			}
+		});
 		
 	});
+	//초특가
+	$(document).ready(function(){
+		$("#pack_1").on("click", function(){
+			$.ajax({
+				url : 'product/pro_sub_discount',
+				type : 'POST',
+				success : function(data){
+					data=data.trim();
+					$("#sub_first").html(data);
+				}
+			});
+		});
+	});
+	
+	function mouse(i){
+		var pro_num = $("#check_"+i).val();
+		$.ajax({
+			url: 'product/pro_view_img_main',
+			type: 'POST',
+			data:{
+				pro_num: pro_num
+			},
+			success: function(data){
+				data=data.trim();
+				$("#sub_second").html(data);
+			}
+		});
+	}
 </script>
 </head>
 <body>
@@ -249,33 +286,28 @@
 					<!-- category discount game -->
 					<div id="sub_cate">
 						<div id="sub_first">
-							<table>
+							<c:forEach items="${pro_list_sub_discount}" var="discount" varStatus="status">
+								<div onmouseover="mouse(${status.index})">
+								<table>
 								<tr>
-									<td></td>
+									<td><img src="resources/upload/${pro_main_img_sub_discount[status.index].file_name}" > </td>
+									<td>
+										<input type="hidden" id="check_${status.index}" value="${discount.pro_num}">
+										제목: ${discount.pro_title} <br>
+										내용: ${discount.pro_contents}
+									</td>
 								</tr>
-								<tr>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-								</tr>
-							</table>
+								</table>
+								</div>	
+							</c:forEach>
 						</div>
 						<div id="sub_second">
 							<!-- image -->
-							<div class="sub_secon_img"></div>
-							<div class="sub_secon_img"></div>
-							<div class="sub_secon_img"></div>
-							<div class="sub_secon_img"></div>
+							<c:forEach items="${pro_img_main}" var="img">
+								<div class="sub_secon_img">
+									<img src="resources/upload/${img.file_name}">
+								</div>
+							</c:forEach>
 						</div>
 					</div>
 				</div>

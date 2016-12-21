@@ -239,5 +239,19 @@
 		(select * from product order by pro_num desc) F) 
 		where R between 1 and 4
 	</select>
+	
+	<select id="pro_sub_discount" resultType="com.game.product.ProductDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product order by discount desc) F) 
+		where R between 1 and 5
+	</select>
+	
+	<select id="pro_view_img_main" resultType="com.game.product.ProductFileDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum r, F.* from 
+		(select FILE_NAME from PRO_FILE where pro_num=#{pro_num}) F) 
+		where R between 1 and 4
+	</select>
 </mapper>
 
