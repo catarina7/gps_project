@@ -64,4 +64,10 @@ public class CartService {
 		model.addAttribute("cart_list_img", ar1);
 		model.addAttribute("cDTO", ar2);
 	}
+	
+	
+	//하나 구매시 삭제 
+	public int purchaseDel(PurchaseDTO purchase) throws Exception{
+		return cartDAO.purchaseDel(purchase);
+	}
 }

@@ -41,5 +41,6 @@
 	<context:component-scan base-package="com.game.member" />
 	<context:component-scan base-package="com.game.mart"/>
 	<context:component-scan base-package="com.game.chat"/>
+	<context:component-scan base-package="com.game.cd"/>
 	
 </beans:beans>

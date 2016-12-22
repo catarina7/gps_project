@@ -17,6 +17,7 @@
 		$(".pg_cart").css("color","#666666");
 		$(".pg_buy").css("color","white");
 		$("#pg_comple").css("color","#666666");
+		$("#forhidden").css("display","hidden");
 		
 		$("#coments").keyup(function(){
 			if($(this).val().length > 50){
@@ -214,7 +215,7 @@
 							<td>
 								<!-- 최종 합계 가격 -->
 								<span id="total_price">
-								<!-- post_total -->
+  								<!-- post_total -->
 									<!-- 결제금액 -->
 									<input type="hidden" id="total_input">	
 									<input type="text" id="post_total"> 
@@ -331,12 +332,13 @@
 							<input type="button" id="pin_check" value="등록">
 						</div>
 						<div class="cc">
-							<input type="hidden" id="cup_check" class="c_price" value="0"> 
+							<input type="hidden" id="cup_check" class="c_price" value="0">
+							
 							<input type="text" id="cup_price" class="c_price"><span> 원</span> <!-- 등록한 상품권의 금액 -->
 							<!-- 쿠폰 사용 취소 버튼 -->
 							<input type="button" id="pin_del" class="c_login" value="사용취소">
 							<!-- 쿠폰 재사용 버튼 -->
-							<input type="button" id="pin_re" class="c_login" value="쿠폰 등록">
+							<!-- <input type="button" id="pin_re" class="c_login" value="쿠폰 등록"> -->
 						</div> 
 					</div>
 				</div>
@@ -350,7 +352,7 @@
 							<dl>
 								<dt>적립 될 마일리지</dt>
 								
-								<dd> <span> ${productOne.millage} point</span></dd>
+								<dd> <input type="hidden" id="pro_millage_pur" value="${productOne.millage}"><span> ${productOne.millage} point</span></dd>
 							</dl>
 						</div>	
 						<div>
@@ -368,7 +370,8 @@
 				</div>
 			</div>
 			<button id="last_buy">결제하기</button>
-		</div>
+		</div>		
+		
 	</section>
 	
 	<c:import url="/footer" />

@@ -48,5 +48,9 @@ public class PurchaseDAO {
 		return sqlsession.update(namespaceP+"CuponMod", cupon);
 	}
 	
+	//구매정보 입력
+	public int purchasing(PurchaseDTO purchase) throws Exception{
+		return sqlsession.insert(namespaceP+"Purchasing", purchase);
+	}
 
 }

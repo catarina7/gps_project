@@ -13,6 +13,12 @@ $(function(){
 		post_total = (parseInt(total_input)-parseInt(millage_count)-parseInt(cup_check));
 		return post_total;
 	}
+	//cupon carculate
+	function cuponcal(){
+		
+		
+		
+	}
 	
 	//cupon function
 	function cuponin(){
@@ -254,11 +260,11 @@ $(function(){
 	});
 	
 	//쿠폰 재 등록
-	$("#pin_re").click(function(){		
+	/*$("#pin_re").click(function(){		
 		$(".c").show();
 		$(".cc").hide();		
 	});
-	
+	*/
 	
 	//결제 수단 체크
 	$("input:radio[name=choice]").click(function(){	
@@ -279,17 +285,34 @@ $(function(){
 		}else if(purchk == 0){
 			alert("결제 인증 필요합니다.");
 		}else{
-			alert("ajax 로 진행 될 예정");
-			/*$ajax({
-				url : "",
+			var status="";
+			var m_millage =0;
+			if($("input:radio[name=choice]:checked").val() == "bank"){
+				alert("무통장 입금시 구매에 시간이 걸릴 수 있습니다.");
+				status="결재대기";
+			}else{
+				status="결재요청";
+			}			
+			m_millage = parseInt($("#pro_millage_pur").val())+parseInt($("#cup_check").val())-parseInt($("#millage_count").val());
+			$.ajax({
+				url : "Purchase_pro",
 				data : {
-					id : $("#id_input").val()
+					m_id : $("#m_id").val(),
+					pro_num : $("#pro_num").val(),
+					total_price : $("#post_total").val(),
+					status : status,
+					pur_kind : $("input:radio[name=choice]:checked").val(),
+					m_millage: m_millage
 					},
-				type : "post",
+					type : "post",
 				success : function(result){
-					
+					if(result>0){						
+						location.href="purResult";						
+					}else {
+						alert("구매 정보를 확인해 주세요.");
+					}
 				}
-			});*/
+			});
 			
 		}
 		
