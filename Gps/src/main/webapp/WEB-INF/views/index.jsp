@@ -147,10 +147,13 @@
 		
 		$("#main_first").on("mouseenter", ".img", function(){
 			$(this).children().last().show();
+			$("#main_first").stop();
 		});
 		$("#main_first").on("mouseleave", ".img", function(){
 			$(this).children().last().hide();
+			setInterval();
 		});
+		
 		$("#main_second").on("mouseenter", ".img", function(){
 			$(this).children().last().show();
 		});
@@ -158,10 +161,58 @@
 			$(this).children().last().hide();
 		});
 		
+		//추천 게임 세로 슬라이드
+		var fav_count = 0;
+		var fav_max_height = 0 - 382;
+		
+		var auto_count = 0;
+		
+		setInterval(function() {
+            if(fav_count == 0 || fav_count != fav_max_height){            	
+            	if(auto_count == 1){
+            		fav_count = fav_count + 191;
+    				$("#main_first").animate({top : fav_count+'px'},"slow");
+    				auto_count = 0;
+            	}else{            		
+		            fav_count = fav_count - 191;
+			        $("#main_first").animate({top : fav_count+'px'},"slow");
+            	}
+            }else{
+				fav_count = fav_count + 191;
+				$("#main_first").animate({top : fav_count+'px'},"slow");
+				auto_count = 1;
+            }
+			
+        }, 5000);
+		
+		//클릭 이벤트
+		
+		$("#next").click(function(){
+			$("#main_first").stop();
+			if(fav_count == fav_max_height){
+				$("#main_first").animate({top : '0px'});
+				fav_count = 0;
+			}else {
+				fav_count = fav_count - 191;
+				$("#main_first").animate({top : fav_count+'px'});
+			}
+		});
+		
+		$("#before").click(function(){
+			$("#main_first").stop();
+			if(fav_count == 0){
+				$("#main_first").animate({top : fav_max_height});
+				fav_count = fav_max_height;
+			}else {
+				fav_count = fav_count + 191;
+				$("#main_first").animate({top : fav_count+'px'});
+			}
+		});
+		
+		//신작 게임 넘기기
 		var count = 0;
 		var max_height = 0 - 382;
 		
-		//신작 게임 세로 슬라이드
 		$("#new_next").click(function(){
 			if(count == max_height){
 				$("#main_second").css("top", "0px");
@@ -290,11 +341,14 @@
 			<div id="game_list">
 
 				<h3>추천 게임</h3>
-				<div id="main_first">
-					<!-- best game -->
-					<!-- <button id="before">◁</button> -->
-					
-					<!-- <button id="next">▷</button> -->
+				<div id="main_first_div">
+					<button id="before">◁</button>
+					<button id="next">▷</button>
+					<div id="main_first_screen">
+						<div id="main_first">
+							<!-- best game -->
+						</div>
+					</div>
 				</div>
 				<h3>신작 게임</h3>
 				<div id="main_second_div">	
