@@ -15,10 +15,32 @@
 	$(function(){
 		
 		
+		//pro_view에서 사용할 cookie 저장
+		var cookie_check = true;
+		var i = 0;
 		
+		while(cookie_check){
+			if(getCookie("recent_"+i) == ""){			
+				setCookie("recent_"+i, "${pro_view.pro_num}", 1);
+				cookie_check = false;
+				break;
+			}else {
+				i++;
+			}			
+		}
 		
+		//이 페이지에서 쿠키 불러오기
+		var cookie_list;
+		var coo_check = true;
+		var j = 0;
 		
-		
+		while(coo_check){
+			if(getCookie("recent_"+j) != ""){
+				var cookie_list = getCookie("recent_"+j);
+			}else {
+				coo_check = false;
+			}
+		}
 		
 		
 		
@@ -29,7 +51,7 @@
 		    var exdate = new Date();
 		    exdate.setDate(exdate.getDate() + exdays);
 		    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
-		    document.cookie = cookieName + "=" + cookieValue+"; path=/vitanature";
+		    document.cookie = cookieName + "=" + cookieValue+"; path=/";
 		}
 		
 		//쿠키 가져오기
@@ -67,7 +89,11 @@
 		
 		
 		<!-- cookie를 이용한 최근 본 상품 띄우기  -->
-		
+		<div>
+			<div>
+				
+			</div>
+		</div>
 		
 	</section>
 	
