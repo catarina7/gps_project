@@ -69,5 +69,10 @@ public class HomeController {
 		return "/List/productList";
 	}
 	
+	@RequestMapping(value="/top_btn")
+	public String top_btn(){
+		return "/common/top_btn";
+	}
+	
 }
 

@@ -15,6 +15,8 @@
 <script type="text/javascript">
 	$(function() {
 		
+		
+		
 		if ($("#pas_kind").val() == 10) {
 			alert("비밀번호 변경을 바로 진행 합니다.");
 			location.href = "member/pw_check?category=2";
@@ -491,6 +493,7 @@
 					<button id="chat_top">위로 올리기</button>
 				</div>
 			</div>
+			<c:import url="/top_btn" />
 			<c:import url="/footer" />
 		</div>
 	</section>
