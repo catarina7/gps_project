@@ -138,7 +138,7 @@
 		var check = true;
 			
 		if(check){			
-			setCookie("recent_"+, "${pro_view.pro_num}" , 1);
+			setCookie("recent_"+"", "${pro_view.pro_num}" , 1);
 		}
 	    
 	});
