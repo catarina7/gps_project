@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.game.computer.Pro_ComputerDTO;
 import com.game.product.ProductDTO;
 import com.game.product.ProductService;
 
@@ -83,7 +84,6 @@ public class ProductController {
 		System.out.println("strt");
 		try {
 			productService.productModify(productDTO, pro_num, mr, session);
-			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -174,5 +174,12 @@ public class ProductController {
 			e.printStackTrace();
 		}
 		return "product/pro_view_img";
+	}
+	
+	//pc사양 넣기
+	@RequestMapping(value="/product_computer")
+	public String productComputer(Pro_ComputerDTO pro_ComputerDTO, int pro_num, Model model){
+		productService.productComputer(pro_ComputerDTO, pro_num);
+		return "product/pro_computer";
 	}
 }

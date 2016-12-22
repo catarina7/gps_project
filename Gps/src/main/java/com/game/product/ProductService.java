@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.game.computer.Pro_ComputerDTO;
 import com.game.util.PageMaker;
 
 @Service
@@ -116,13 +117,18 @@ public class ProductService {
 			score_avg=score_total/score.size();
 		}
 		productDAO.total_score(pro_num, score_avg);
-
+		Pro_ComputerDTO pro_ComputerDTO = productDAO.productComputerSelect(pro_num);
+		
+		model.addAttribute("computer", pro_ComputerDTO);
 		model.addAttribute("pageImg", pageMaker);
 		model.addAttribute("pro_view", productDTO);
 		model.addAttribute("pro_main", pro_main);
 		model.addAttribute("pro_img", ar);
 		model.addAttribute("pro_patch", patch);
 		model.addAttribute("score_avg", score_avg);
+	
+		int replyCount = productDAO.replyCount(pro_num);
+		model.addAttribute("reply_count1", replyCount);
 	}
 
 	//modify 할때 기본적으로 가져오는것들
@@ -130,6 +136,8 @@ public class ProductService {
 		//productView 일반
 		ProductDTO productDTO = productDAO.productView(pro_num);
 		List<ProductFileDTO> modImg = productDAO.productModImg(pro_num);
+		Pro_ComputerDTO pro_ComputerDTO = productDAO.productComputerSelect(pro_num);
+		model.addAttribute("computer", pro_ComputerDTO);
 		model.addAttribute("pro_view", productDTO);
 		model.addAttribute("pro_mod_img", modImg);
 	}
@@ -431,4 +439,8 @@ public class ProductService {
 		List<ProductFileDTO> ar = productDAO.productViewImgMain(pageMaker, pro_num);
 		model.addAttribute("pro_img_main", ar);
 	}
+	public void productComputer(Pro_ComputerDTO pro_ComputerDTO, int pro_num){
+		productDAO.productComputer(pro_ComputerDTO, pro_num);
+	}
+
 }

@@ -87,4 +87,8 @@ public class ReplyDAO {
 		sqlSession.selectOne(namespace+"replyLike_cancel", data);
 	}
 	
+	//댓글 갯수
+	public ReplyDTO replyCount(int pro_num){
+		return sqlSession.selectOne(namespace+"replyCount", pro_num);
+	}
 }

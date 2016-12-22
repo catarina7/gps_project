@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.game.computer.Pro_ComputerDTO;
 import com.game.util.PageMaker;
 
 @Repository
@@ -250,4 +251,21 @@ public class ProductDAO {
 		return sqlSession.selectList(namespace+"pro_view_img_main", data);
 	}
 	
+	
+	//pc_computer 사양
+	public void productComputer(Pro_ComputerDTO pro_ComputerDTO, int pro_num){
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pro_num", pro_num);
+		data.put("pro_com", pro_ComputerDTO);
+		sqlSession.insert(namespace+"pro_computer_add", data);
+	}
+	
+	public Pro_ComputerDTO productComputerSelect(int pro_num){
+		return sqlSession.selectOne(namespace+"pro_computer_select", pro_num);
+	}
+	
+	//댓글 갯수
+	public int replyCount(int pro_num){
+		return sqlSession.selectOne(namespace+"replyCount", pro_num);
+	}
 }
