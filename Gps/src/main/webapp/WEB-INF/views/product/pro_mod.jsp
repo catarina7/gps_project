@@ -118,7 +118,7 @@
 		$("#img_delete").on("click", function(){
 			var checkArr = [];
 			
-			$("#input[name='file_num']:checked").each(function() {
+			$("input[name='file_num']:checked").each(function() {
 				checkArr.push($(this).val());
 			});
 			
@@ -178,6 +178,7 @@
 						<col style="width:10%;">
 					</colgroup>
 					<tr>
+						<td><input type="hidden" name="pro_num" id="pro_num" value="${pro_view.pro_num}"></td>
 						<td class="mod_titi"> 게임명 : </td>
 						<td colspan="2"> <input type="text" name="pro_title" value="${pro_view.pro_title}"> </td>
 					</tr>
@@ -237,7 +238,6 @@
 						<td class="mod_titi"> 이미지 삭제 </td>
 						<td colspan="2">
 							<div id="img_delete_div">
-								<input type="hidden" name="pro_num" id="pro_num" value="${pro_view.pro_num}">
 									<c:forEach items="${pro_mod_img}" var="img" varStatus="status">
 										<div id="pro_mod_images">
 											<input class="check_box" id="checkbox${status.index}" name="file_num" value="${img.file_num}" type="checkbox">
