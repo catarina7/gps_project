@@ -158,10 +158,34 @@
 			$(this).children().last().hide();
 		});
 		
+		//추천 게임 세로 슬라이드
+		var fav_count = 0;
+		var fav_max_height = 0 - 382;
+		
+		$("#next").click(function(){
+			if(fav_count == fav_max_height){
+				$("#main_first").animate({top : '0px'});
+				fav_count = 0;
+			}else {
+				fav_count = fav_count - 191;
+				$("#main_first").animate({top : fav_count+'px'});
+			}
+		});
+		
+		$("#before").click(function(){
+			if(fav_count == 0){
+				$("#main_first").animate({top : fav_max_height});
+				fav_count = fav_max_height;
+			}else {
+				fav_count = fav_count + 191;
+				$("#main_first").animate({top : fav_count+'px'});
+			}
+		});
+		
+		//신작 게임 넘기기
 		var count = 0;
 		var max_height = 0 - 382;
 		
-		//신작 게임 세로 슬라이드
 		$("#new_next").click(function(){
 			if(count == max_height){
 				$("#main_second").css("top", "0px");
@@ -277,11 +301,14 @@
 			<div id="game_list">
 
 				<h3>추천 게임</h3>
-				<div id="main_first">
-					<!-- best game -->
-					<!-- <button id="before">◁</button> -->
-					
-					<!-- <button id="next">▷</button> -->
+				<div id="main_first_div">
+					<button id="before">◁</button>
+					<button id="next">▷</button>
+					<div id="main_first_screen">
+						<div id="main_first">
+							<!-- best game -->
+						</div>
+					</div>
 				</div>
 				<h3>신작 게임</h3>
 				<div id="main_second_div">	

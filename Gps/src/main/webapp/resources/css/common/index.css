@@ -82,16 +82,28 @@ section #game_list {
 }
 
 
-
-
-#game_list #main_first {
+#game_list #main_first_div{
 	width: 97.5%;
 	height: 190px;
 	padding: 5px 10px;
 	margin-bottom: 40px;
 	overflow: hidden;
 }
-#main_first button {
+#game_list #main_first_screen {
+	width: 95%;
+	height: 100%;
+	margin-left: 4.5%;
+	overflow: hidden;
+	position: relative;
+}
+
+#game_list #main_first {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	z-index: 9;
+}
+#main_first_div button {
 	color: white;
 	font-size: 30px;
 	font-weight: bold;
@@ -102,6 +114,17 @@ section #game_list {
 	float: left;
 	margin-top: 50px;
 	cursor: pointer;
+	position: absolute;
+	z-index: 99;
+}
+#main_first_div #before {
+	float: left;
+	overflow: hidden;
+}
+#main_first_div #next {
+	float: right;
+	overflow: hidden;
+	margin-left: 50.5%;
 }
 #main_first .product {
 	width: 17%;
@@ -170,7 +193,7 @@ section #game_list {
 	border-radius : 8px;
 	cursor: pointer;
 }
-#main_first button {
+/* #main_first button {
 	color: white;
 	font-size: 30px;
 	font-weight: bold;
@@ -182,7 +205,8 @@ section #game_list {
 	margin-top: 90px;
 	cursor: pointer;
 	overflow: hidden;
-}
+	z-index: 99;
+} */
 #main_first table {
 	float: left;
 	width: 86%;
@@ -243,7 +267,7 @@ section #game_list {
 #main_second_div #new_next {
 	float: right;
 	overflow: hidden;
-	right: 20%;
+	margin-left: 50.5%;
 }
 #main_second .product {
 	width: 17%;
