@@ -151,6 +151,7 @@
 		$("#main_first").on("mouseleave", ".img", function(){
 			$(this).children().last().hide();
 		});
+		
 		$("#main_second").on("mouseenter", ".img", function(){
 			$(this).children().last().show();
 		});
@@ -161,6 +162,7 @@
 		//추천 게임 세로 슬라이드
 		var fav_count = 0;
 		var fav_max_height = 0 - 382;
+		
 		
 		$("#next").click(function(){
 			if(fav_count == fav_max_height){
