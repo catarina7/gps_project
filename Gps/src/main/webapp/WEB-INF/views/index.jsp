@@ -147,9 +147,11 @@
 		
 		$("#main_first").on("mouseenter", ".img", function(){
 			$(this).children().last().show();
+			$("#main_first").stop();
 		});
 		$("#main_first").on("mouseleave", ".img", function(){
 			$(this).children().last().hide();
+			setInterval();
 		});
 		
 		$("#main_second").on("mouseenter", ".img", function(){
@@ -163,8 +165,30 @@
 		var fav_count = 0;
 		var fav_max_height = 0 - 382;
 		
+		var auto_count = 0;
+		
+		setInterval(function() {
+            if(fav_count == 0 || fav_count != fav_max_height){            	
+            	if(auto_count == 1){
+            		fav_count = fav_count + 191;
+    				$("#main_first").animate({top : fav_count+'px'},"slow");
+    				auto_count = 0;
+            	}else{            		
+		            fav_count = fav_count - 191;
+			        $("#main_first").animate({top : fav_count+'px'},"slow");
+            	}
+            }else{
+				fav_count = fav_count + 191;
+				$("#main_first").animate({top : fav_count+'px'},"slow");
+				auto_count = 1;
+            }
+			
+        }, 5000);
+		
+		//클릭 이벤트
 		
 		$("#next").click(function(){
+			$("#main_first").stop();
 			if(fav_count == fav_max_height){
 				$("#main_first").animate({top : '0px'});
 				fav_count = 0;
@@ -175,6 +199,7 @@
 		});
 		
 		$("#before").click(function(){
+			$("#main_first").stop();
 			if(fav_count == 0){
 				$("#main_first").animate({top : fav_max_height});
 				fav_count = fav_max_height;
