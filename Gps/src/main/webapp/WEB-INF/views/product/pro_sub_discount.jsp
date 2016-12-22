@@ -12,7 +12,7 @@
 					<div class="discount_sub_contents" onclick="location.href='product/pro_view?pro_num=${discount.pro_num}'">
 						<input type="hidden" id="check_${status.index}" value="${discount.pro_num}"> 
 						<span>게임 : </span> ${discount.pro_title} <br>
-						${discount.pro_contents}						
+						<p>${discount.pro_contents}</p>						
 					</div>
 				</td>
 				<%-- <td>
