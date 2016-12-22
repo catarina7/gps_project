@@ -98,7 +98,7 @@
 				</div>
 				<div class="H_list" id="product">
 					<ul>
-						<li><a href="#">관심게임</a></li>
+						<li><a href="#">내가 본 게임</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=action">Action</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=rpg">RPG</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=simulation">Simulation</a></li>
@@ -112,10 +112,8 @@
 				</div>
 				<div class="H_list" id="software">
 					<ul>
-						<li><a href="#">한글패치</a></li>
+						<li><a href="#">관리자 페이지</a></li>
 						<li><a href="${pageContext.request.contextPath}/purchase/buy">결제창</a></li>
-						<li><a href="#">list</a></li>
-						<li><a href="#">list</a></li>
 					</ul>
 				</div>
 		</div>
