@@ -194,4 +194,10 @@ public class ProductController {
 		productService.productComputer(pro_ComputerDTO, pro_num);
 		return "product/pro_computer";
 	}
+	
+	//최근본 상품 넣기
+	@RequestMapping(value="/fav_product")
+	public String fav_product(){
+		return "product/fav_product";
+	}
 }

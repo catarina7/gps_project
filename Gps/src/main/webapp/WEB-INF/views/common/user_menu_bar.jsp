@@ -98,7 +98,7 @@
 				</div>
 				<div class="H_list" id="product">
 					<ul>
-						<li><a href="#">내가 본 게임</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/fav_product">내가 본 게임</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=action">Action</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=rpg">RPG</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=simulation">Simulation</a></li>
