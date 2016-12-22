@@ -329,7 +329,7 @@ section #game_list {
 	overflow: hidden;
 }
 #sub_first tr:hover {
-	background-color: #9fd0ee;
+	background-color: #444444;
 }
 #sub_first td {
 	border: 2px solid #aaaaaa;
@@ -353,6 +353,11 @@ section #game_list {
 	color: white;
 	text-shadow: -1px -1px 0px #414141;
 }
+.discount_sub_contents p {
+	font-size: 13px;
+	padding: 2px 0px;
+	color: #d0e2e8;
+}
 .discount_sub_contents span {
 	font-weight: bold;
 	color: #ffb3b5;
@@ -366,7 +371,7 @@ section #game_list {
 	float: left;
 	padding: 18px 0px;
 	overflow: hidden;
-	background-color: #9fd0ee;
+	background-color: #444444;
 }
 #sub_second .sub_secon_img {
 	width: 80%;
