@@ -77,7 +77,7 @@
 			$("#img_delete").on("click", function() {
 				var checkArr = [];
 
-				$("#input[name='qfile_num']:checked").each(function() {
+				$("input[name='qfile_num']:checked").each(function() {
 					checkArr.push($(this).val());
 				});
 
