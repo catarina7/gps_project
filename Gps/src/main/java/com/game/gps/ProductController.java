@@ -81,7 +81,7 @@ public class ProductController {
 	//post방식 product 수정
 	@RequestMapping(value="/pro_mod", method=RequestMethod.POST)
 	public String productMod(ProductDTO productDTO, int pro_num, MultipartHttpServletRequest mr, HttpSession session, Model model){
-		System.out.println("strt");
+		System.out.println(pro_num);
 		try {
 			productService.productModify(productDTO, pro_num, mr, session);
 		} catch (Exception e) {
@@ -92,7 +92,7 @@ public class ProductController {
 	}
 	
 	//pro_mod에서 이미지 삭제할때 check 된거
-	@RequestMapping(value="/pro_mod_img_del", method=RequestMethod.POST)
+	@RequestMapping(value="/pro_mod_img_del")
 	public String productModDeleteList(@RequestParam(value="valueArr[]") List<Integer> valueArr, int pro_num , Model model){
 		try {
 			productService.productModDeleteList(valueArr, pro_num, model);
