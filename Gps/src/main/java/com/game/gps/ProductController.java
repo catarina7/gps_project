@@ -164,6 +164,18 @@ public class ProductController {
 		return "product/pro_sub_discount";
 	}
 	
+	//인기
+	@RequestMapping(value="/pro_sub_favor")
+	public String productSubFavor(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="10") int perPage, Model model){
+		try {
+			productService.productSubFavor(curPage, perPage, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "product/pro_sub_favor";
+	}
+	
 	//이미지 4개뿌리기
 	@RequestMapping(value="/pro_view_img_main")
 	public String productViewImgMain(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="1") int perPage, @RequestParam("pro_num") int pro_num, Model model){

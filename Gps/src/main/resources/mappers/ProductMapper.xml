@@ -248,6 +248,14 @@
 		where R between 1 and 5
 	</select>
 	
+	<!-- 인기 -->
+	<select id="pro_sub_favor" resultType="com.game.product.ProductDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product order by total_score desc) F) 
+		where R between 1 and 5
+	</select>
+	
 	<!-- 이미지 4개 뿌리기 -->
 	<select id="pro_view_img_main" resultType="com.game.product.ProductFileDTO" parameterType="java.util.Map">
 		select * from 
@@ -256,10 +264,11 @@
 		where R between 1 and 4
 	</select>
 	
+	<!-- 컴퓨터 사양 추가 -->
 	<insert id="pro_computer_add" parameterType="java.util.Map">
 		insert into pro_computer values(pro_computer_seq.nextval, #{pro_com.pro_num}, #{pro_com.pc_os}, #{pro_com.pc_process}, #{pro_com.pc_memory}, #{pro_com.pc_graphic}, #{pro_com.pc_directx}, #{pro_com.pc_space}, 'empty')
 	</insert>
-	
+	<!-- 컴퓨터 사양 추가 -->
 	<select id="pro_computer_select" resultType="com.game.computer.Pro_ComputerDTO" parameterType="int">
 		 select * from pro_computer where pro_num=#{pro_num}
 	</select>

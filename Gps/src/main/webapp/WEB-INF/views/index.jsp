@@ -207,6 +207,19 @@
 		});
 	});
 	
+	$(document).ready(function(){
+		$("#pack_2").on("click", function(){
+			$.ajax({
+				url: 'product/pro_sub_favor',
+				type: 'POST',
+				success: function(data){
+					data=data.trim();
+					$("#sub_first").html(data);
+				}
+			});
+		});
+	});
+	
 	function mouse(i){
 		var pro_num = $("#check_"+i).val();
 		$.ajax({
@@ -303,18 +316,40 @@
 					<div id="sub_cate">
 						<div id="sub_first">
 							<c:forEach items="${pro_list_sub_discount}" var="discount" varStatus="status">
-								<div onmouseover="mouse(${status.index})">
+							<div onmouseover="mouse(${status.index})">
 								<table>
 								<tr>
-									<td><img src="resources/upload/${pro_main_img_sub_discount[status.index].file_name}" > </td>
-									<td>
-										<input type="hidden" id="check_${status.index}" value="${discount.pro_num}">
-										제목: ${discount.pro_title} <br>
-										내용: ${discount.pro_contents}
+									<td colspan="2">
+										<div class="discount_sub_img">						
+											<img src="resources/upload/${pro_main_img_sub_discount[status.index].file_name}">
+										</div>
+									<div class="discount_sub_contents" onclick="location.href='product/pro_view?pro_num=${discount.pro_num}'">
+										<input type="hidden" id="check_${status.index}" value="${discount.pro_num}"> 
+										<span>게임 : </span> ${discount.pro_title} <br>
+											${discount.pro_contents}						
+									</div>
 									</td>
 								</tr>
 								</table>
-								</div>	
+							</div>
+							</c:forEach>
+							<c:forEach items="${pro_list_sub_favor}" var="favor" varStatus="status">
+							<div onmouseover="mouse(${status.index})">
+								<table>
+								<tr>
+									<td colspan="2">
+										<div class="discount_sub_img">						
+											<img src="resources/upload/${pro_main_img_sub_favor[status.index].file_name}">
+										</div>
+									<div class="discount_sub_contents" onclick="location.href='product/pro_view?pro_num=${favor.pro_num}'">
+										<input type="hidden" id="check_${status.index}" value="${favor.pro_num}"> 
+										<span>게임 : </span> ${favor.pro_title} <br>
+											${favor.pro_contents}						
+									</div>
+									</td>
+								</tr>
+								</table>
+							</div>
 							</c:forEach>
 						</div>
 						<div id="sub_second">

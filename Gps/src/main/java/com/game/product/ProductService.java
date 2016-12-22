@@ -426,6 +426,26 @@ public class ProductService {
 		model.addAttribute("pageMaker", pageMaker);
 	}
 	
+	//인기
+	public void productSubFavor(int curPage, int perPage, Model model) throws Exception{
+		int totalCount=productDAO.productCount();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		List<ProductDTO> ar = productDAO.productSubFavor(pageMaker);
+		ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+		for(int i=0;i<ar.size();i++){
+			productDAO.productImgList(ar.get(i).getPro_num());
+			ar1.add(productDAO.productImgList(ar.get(i).getPro_num()));
+		}
+		model.addAttribute("pro_list_sub_favor", ar);
+		model.addAttribute("pro_main_img_sub_favor", ar1);
+		model.addAttribute("pageMaker", pageMaker);
+	}
+	
+	
 	//이미지 4개 뿌리기
 	public void productViewImgMain(int curPage, int perPage, int pro_num, Model model) throws Exception{
 		int totalCount = productDAO.productViewImgCount(pro_num);
