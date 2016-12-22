@@ -132,8 +132,8 @@
 	    	location.href="pro_del?pro_num=${pro_view.pro_num}";
 	    });
 	    
+	    
 	});
-	
 	
 	//댓글 삭제
 	function reply_delete(i){
