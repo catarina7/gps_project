@@ -15,19 +15,6 @@
 <script type="text/javascript">
 	$(function() {
 		
-		/* top 스크롤 js */
-		$( window ).scroll( function() {
-				if ($(this).scrollTop() > 200 ) {
-					$( '.jcm-top' ).fadeIn();
-				} else {
-					$( '.jcm-top' ).fadeOut();
-				}
-		});
-		$( '.jcm-top' ).click( function() {
-			$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
-			return false;
-		});
-		
 		
 		
 		if ($("#pas_kind").val() == 10) {
@@ -506,9 +493,9 @@
 					<button id="chat_top">위로 올리기</button>
 				</div>
 			</div>
+			<c:import url="/top_btn" />
 			<c:import url="/footer" />
 		</div>
-		<a href="#" class="jcm-top hidden-xs hidden-sm">TOP</a>
 	</section>
 
 
