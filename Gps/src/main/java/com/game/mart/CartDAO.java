@@ -83,4 +83,8 @@ public class CartDAO {
 			sqlSession.delete(namespace+"cart_del_list", data);
 		}
 	}
+	
+	public int purchaseDel(PurchaseDTO purchase) throws Exception{
+		return sqlSession.delete(namespace+"pur_del", purchase);
+	}
 }

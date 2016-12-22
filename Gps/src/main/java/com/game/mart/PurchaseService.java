@@ -72,6 +72,9 @@ public class PurchaseService {
 		return purchasedao.cuponmod(cupon);
 	}
 	
-	
+	//구매 정보 입력
+	public int purchasing (PurchaseDTO purchase) throws Exception{
+		return purchasedao.purchasing(purchase);
+	}
 
 }

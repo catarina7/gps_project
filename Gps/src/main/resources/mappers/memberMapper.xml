@@ -75,6 +75,9 @@
 			<if test="m_kind != 0">
 				m_kind = #{m_kind}
 			</if>
+			<if test="millage !=0">
+				millage = millage + #{millage}
+			</if>
 		</trim>
 		where m_id = #{m_id}
 	</update>

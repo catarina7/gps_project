@@ -33,6 +33,11 @@
 		update cupon set cup_check = #{cup_check} where cup_serial = #{cup_serial}	
 	</update>
 	
+	<!-- 구매정보 입력 -->
+	<insert id="Purchasing" parameterType="com.game.mart.PurchaseDTO">
+		insert into purchase values(purchase_seq.nextval, #{m_id}, #{pro_num}, #{total_price}, sysdate, #{status}, #{pur_kind}, #{m_millage})	
+	</insert>	
+	
 	
 
 </mapper>
