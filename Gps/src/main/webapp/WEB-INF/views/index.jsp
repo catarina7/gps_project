@@ -15,6 +15,21 @@
 <script type="text/javascript">
 	$(function() {
 		
+		/* top 스크롤 js */
+		$( window ).scroll( function() {
+				if ($(this).scrollTop() > 200 ) {
+					$( '.jcm-top' ).fadeIn();
+				} else {
+					$( '.jcm-top' ).fadeOut();
+				}
+		});
+		$( '.jcm-top' ).click( function() {
+			$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+			return false;
+		});
+		
+		
+		
 		if ($("#pas_kind").val() == 10) {
 			alert("비밀번호 변경을 바로 진행 합니다.");
 			location.href = "member/pw_check?category=2";
@@ -493,6 +508,7 @@
 			</div>
 			<c:import url="/footer" />
 		</div>
+		<a href="#" class="jcm-top hidden-xs hidden-sm">TOP</a>
 	</section>
 
 
