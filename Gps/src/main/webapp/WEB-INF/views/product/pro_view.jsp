@@ -452,28 +452,28 @@
 						</tr>
 						<tr>
 							<td class="com_name">운영체제</td>
-							<td></td>
+							<td> ${computer.pc_os }</td>
 						</tr>
 						<tr>
 							<td class="com_name">CPU</td>
-							<td></td>
+							<td>  ${computer.pc_process }</td>
 						</tr>
 						<tr>
 							<td class="com_name">메모리(RAM)</td>
-							<td></td>
+							<td>  ${computer.pc_memory}</td>
 						</tr>
 						<tr>
 							<td class="com_name">그래픽 카드</td>
-							<td></td>
+							<td>  ${computer.pc_graphic }</td>
 						</tr>
 						<tr>
 							<td class="com_name">Direct X버전</td>
-							<td></td>
+							<td>  ${computer.pc_directx}</td>
 						</tr>
 						<tr>
 							<td class="com_name">하드디스크 <br> 여유공간
 							</td>
-							<td></td>
+							<td>  ${computer.pc_space}</td>
 						</tr>
 					</table>
 				</div>
@@ -528,7 +528,7 @@
 				<div id="pro_grade"></div>
 				<div id="reply_write">
 					<div class="re_title">
-						<span>의견 쓰기</span> <span id="review_count">0</span>
+						<span>의견 쓰기</span> <span id="review_count"> ${reply_count1} </span>
 					</div>
 
 		
@@ -583,7 +583,7 @@
 									<input type="button" onclick="reply_delete(${status.index})" value="삭제">
 									<input type="text" value="${rep.r_score }" id="score_${status.index}">
 								</div>
-								<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents}</textarea>
+								<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents} </textarea>
 							</div>
 							<div class="re_sub">
 								<div class="like" onclick="reply_like(${status.index})">

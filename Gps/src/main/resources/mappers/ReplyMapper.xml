@@ -69,4 +69,9 @@
 	<delete id="replyLike_cancel" parameterType="java.util.Map">
 		delete from like_hate where r_num=#{r_num} and m_id=#{m_id}
 	</delete>
+	
+	<!-- 댓글 갯수 -->
+	<select id="replyCount" resultType="com.game.product.ReplyDTO" parameterType="int">
+		select count(rownum) from reply where pro_num=#{pro_num}
+	</select>
 </mapper>

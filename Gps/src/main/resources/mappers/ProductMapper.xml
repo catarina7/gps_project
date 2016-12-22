@@ -255,5 +255,18 @@
 		(select FILE_NAME from PRO_FILE where pro_num=#{pro_num}) F) 
 		where R between 1 and 4
 	</select>
+	
+	<insert id="pro_computer_add" parameterType="java.util.Map">
+		insert into pro_computer values(pro_computer_seq.nextval, #{pro_com.pro_num}, #{pro_com.pc_os}, #{pro_com.pc_process}, #{pro_com.pc_memory}, #{pro_com.pc_graphic}, #{pro_com.pc_directx}, #{pro_com.pc_space}, 'empty')
+	</insert>
+	
+	<select id="pro_computer_select" resultType="com.game.computer.Pro_ComputerDTO" parameterType="int">
+		 select * from pro_computer where pro_num=#{pro_num}
+	</select>
+	
+	<!-- 댓글 갯수 -->
+	<select id="replyCount" resultType="int" parameterType="int">
+		select count(pro_num) from reply where pro_num=#{pro_num}
+	</select>
 </mapper>
 

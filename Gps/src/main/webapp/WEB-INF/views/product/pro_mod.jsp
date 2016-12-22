@@ -137,6 +137,28 @@
 			});
 		});
 	});
+	
+	$(document).ready(function(){
+		$("#pc_computer").on("click", function(){
+			$.ajax({
+				url: 'product_computer',
+				type:'POST',
+				data:{				
+					pro_num : $("#pro_num").val(),
+					pc_os : $("#pc_os").val(),
+					pc_process : $("#pc_process").val(),
+					pc_memory : $("#pc_memory").val(),
+					pc_graphic : $("#pc_graphic").val(),
+					pc_directx : $("#pc_directx").val(),
+					pc_space : $("#pc_space").val()
+				},
+				success:function(data){
+					data=data.trim();
+					$("#pc_com_ajax").html(data);
+				}
+			});
+		});
+	});
 </script>
 </head>
 <body>
@@ -243,6 +265,41 @@
 					</tr>
 				</table>
 			</form>
+			<div id="pc_com_ajax">
+			<table>
+				<tr>
+						<td colspan="2"> ** 게임 컴퓨터 사양 추가 ** </td>
+				</tr>
+				<tr>
+					<td class="mod_titi"> 운영체제 </td>
+					<td> <input type="text" name="pc_os" id="pc_os" value="${computer.pc_os }"> </td>
+				</tr>
+				<tr>
+					<td class="mod_titi"> CPU </td>
+					<td> <input type="text" name="pc_process" id="pc_process" value="${computer.pc_process }"> </td> 
+				</tr>
+				<tr>
+					<td class="mod_titi"> 메모리(RAM) </td>
+					<td> <input type="text" name="pc_memory" id="pc_memory" value="${computer.pc_memory}"> </td>
+				</tr>
+				<tr>
+					<td class="mod_titi"> 그래픽카드 </td>
+					<td> <input type="text" name="pc_graphic" id="pc_graphic" value="${computer.pc_graphic}"> </td>
+				</tr>
+				<tr>
+					<td class="mod_titi"> Direct X </td>
+					<td> <input type="text" name="pc_directx" id="pc_directx" value="${computer.pc_directx}"> </td>
+				</tr>
+				<tr>
+					<td class="mod_titi"> 하드디스크 여유 공간 </td>
+					<td> <input type="text" name="pc_space" id="pc_space" value="${computer.pc_space}"> </td>
+				</tr>
+				<tr>
+				<td></td>
+				<td><input type="button" class="btn" id="pc_computer" value="컴퓨터사양  완료"></td>
+				</tr>
+			</table>
+			</div>
 			<input type="button" class="btn" id="savebutton" value="글수정">
 		</div>
 	</div>
