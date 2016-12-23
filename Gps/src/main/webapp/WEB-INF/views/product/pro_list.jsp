@@ -107,6 +107,7 @@ $(function(){
 				</div>
 			</div>
 	</section>
+	<c:import url="/top_btn" />
 	<c:import url="/footer" />
 	
 	
