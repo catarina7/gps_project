@@ -41,12 +41,10 @@ section #first_admin {
 	opacity: 0.7;
 }
 #first_admin #third_admin {
-	width: 79.17%;
+	width: 70%;
 	float: left;
 	overflow: hidden;
 	padding: 30px 1.4%;
-}
-#third_admin p {
-	width: 100%;
-	height: 914px;
+	margin-left: 5%;
+	margin-top: 3%;
 }

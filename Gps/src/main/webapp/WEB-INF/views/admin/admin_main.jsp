@@ -38,9 +38,7 @@
 			</div>
 			<div id="liline"></div>
 			<div id="third_admin">
-				<p>
-					
-				</p>
+				
 			</div>
 		</div>
 		
