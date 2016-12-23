@@ -78,26 +78,26 @@
 					<!-- menu list -->
 					<ul id="main_list">
 						<li><a class="store" href="${pageContext.request.contextPath}/product/pro_list">STORE</a></li>
-						<li><a class="s_list">menu</a></li>
-						<li><a href="#">menu</a></li>
-						<li><a href="#">menu</a></li>
+						<!-- <li><a class="s_list">menu</a></li> -->
+						<li><a href="#">ABOUT</a></li>
+						<li><a href="#">SUPPORT</a></li>
 					</ul>
 					<div class="M_list" id="Store_list">
 						<ul>
 							<li><a href="#">전체상품</a></li>
-							<li><a href="#">list</a></li>
-							<li><a href="#">list</a></li>
-							<li><a href="#">list</a></li>
+							<li><a href="#">패키지 게임</a></li>
+							<li><a href="#">공지사항</a></li>
+							<li><a href="#">FAQ</a></li>
 						</ul>
 					</div>
-					<div class="M_list" id="S_list">
+					<!-- <div class="M_list" id="S_list">
 						<ul>
 							<li><a href="#">빈메뉴</a></li>
 							<li><a href="#">list</a></li>
 							<li><a href="#">list</a></li>
 							<li><a href="#">list</a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 				<div id="four_div">
 					<!-- login, join button -->
