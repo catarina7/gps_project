@@ -40,9 +40,10 @@ section #menu_bar {
 	margin-left: 10%;
 	border: 2px solid #32435c;
 	border-radius: 15px; 
-	padding: 15px 10px;
+	padding: 30px 10px;
 	float: left;
 	overflow: hidden;
+	background-color: #585858;
 }
 #menu_bar p {
 	width: 100%;
@@ -50,6 +51,7 @@ section #menu_bar {
 	font-weight: bold;
 	color: #ffbbbd;
 	padding: 5px 0px;
+	padding-top: 15px;
 	text-shadow: -1px -1px 0px black;
 }
 #menu_bar ul {

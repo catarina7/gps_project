@@ -72,7 +72,12 @@
 		$("#all_list").click(function() {
 			location.href = "${pageContext.request.contextPath}/product/pro_list";
 		});
-
+		$("#mem_cart").click(function(){
+			location.href = "${pageContext.request.contextPath}/cart_favorite/cartList?m_id=${member.m_id}";
+		});
+		$("#mem_fav").click(function(){
+			location.href = "${pageContext.request.contextPath}/favorite/favoriteList?m_id=${member.m_id}";
+		});
 		//공지사항 불러오기
 		$.ajax({
 			url : 'notice/mainList',
@@ -308,16 +313,16 @@
 			<c:import url="/user_menu_bar" />
 			<div id="menu_bar">
 				<!-- menu -->
-				<p>RECOMMENDED</p>
+				<!-- <p>RECOMMENDED</p>
 				<ul>
 					<li>list</li>
 					<li>list</li>
 					<li>list</li>
-				</ul>
+				</ul> -->
 				<p>BEST/NEW</p>
 				<ul>
-					<li>list</li>
-					<li>list</li>
+					<li>인기 게임</li>
+					<li>최신 게임</li>
 				</ul>
 				<p>CATEGORY</p>
 				<ul>
@@ -335,8 +340,8 @@
 				</ul>
 				<p>USER SERVICE</p>
 				<ul>
-					<li>list</li>
-					<li>list</li>
+					<li id="mem_cart">장바구니</li>
+					<li id="mem_fav">관심상품</li>
 				</ul>
 			</div>
 
@@ -366,7 +371,7 @@
 				<div id="main_third">
 					<button id="pack_1">초특가</button>
 					<button id="pack_2">인기</button>
-					<button id="pack_3">예약</button>
+					<button id="pack_3">출시예정 게임</button>
 					<button id="pack_4">패키지</button>
 					<!-- category discount game -->
 					<div id="sub_cate">
