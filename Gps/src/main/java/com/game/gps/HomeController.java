@@ -74,5 +74,9 @@ public class HomeController {
 		return "/common/top_btn";
 	}
 	
+	@RequestMapping(value="/admin_main")
+	public String admin_main(){
+		return "/admin/admin_main";
+	}
 }
 

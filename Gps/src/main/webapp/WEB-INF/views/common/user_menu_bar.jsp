@@ -112,7 +112,7 @@
 				</div>
 				<div class="H_list" id="software">
 					<ul>
-						<li><a href="#">관리자 페이지</a></li>
+						<li><a href="${pageContext.request.contextPath}/admin_main">관리자 페이지</a></li>
 						<li><a href="${pageContext.request.contextPath}/purchase/buy">결제창</a></li>
 					</ul>
 				</div>
