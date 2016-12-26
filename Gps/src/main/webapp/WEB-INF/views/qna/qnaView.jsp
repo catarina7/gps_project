@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,7 +13,8 @@
 	href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/board/board_view.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>${qnaView.q_title}</title>
@@ -52,6 +53,19 @@
 							}
 						});
 
+		/* $(".qimg").mouseleave(function() {
+			$("#viewModal").hide();
+		}); */
+		
+		$(".qimg").click(function() {
+			$("#viewModal").show();
+			$("#img1").attr("src", $(this).attr("src"));
+			$("#viewCaption").html($(this).attr("alt"));
+		});
+
+		$(".close").click(function() {
+			$("#viewModal").hide();
+		});
 	});
 </script>
 </head>
@@ -61,13 +75,13 @@
 	<!-- section -->
 	<section>
 
-	<div id="user_menu">
-		<c:import url="/user_menu_bar" />
-	</div>
+		<div id="user_menu">
+			<c:import url="/user_menu_bar" />
+		</div>
 
-	<div id="board_w">
-	<!-- qna글 -->
-		
+		<div id="board_w">
+			<!-- qna글 -->
+
 			<form action="qnaView" method="post">
 				<table>
 					<colgroup>
@@ -99,17 +113,17 @@
 						</td>
 					</tr>
 				</table>
-		<!-- 이미지 -->
-		<div id="first_pro">
-			<div id="main_img" class="w3-content">
-			<ul>
-				<c:forEach items="${qnaImg}" var="img">
-					<li><img src="../resources/upload/${img.qfile_name}"></li>
-				</c:forEach>
-				</ul>
-			</div>
-		</div>
-		<div id="board_w_btn">
+				<!-- 이미지 -->
+				<div>
+					<ul>
+						<c:forEach items="${qnaImg}" var="img">
+							<li><img src="../resources/upload/${img.qfile_name}"
+								class="qimg"></li>
+						</c:forEach>
+					</ul>
+
+				</div>
+				<div id="board_w_btn">
 					<c:if test="${member.m_id != null }">
 						<input type="button" value="답글" id="reBtn" class="btn">
 					</c:if>
@@ -122,8 +136,15 @@
 				</div>
 			</form>
 
-		
-	</div>
+			<!-- Modal -->
+			<div id="viewModal" class="vModal">
+				<span class="close">x</span> 
+				<img id="img1">
+				<div id="viewCaption"></div>
+			</div>
+
+
+		</div>
 	</section>
 </body>
 </html>
