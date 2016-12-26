@@ -9,4 +9,8 @@
 		update product_member set cd_serial = #{cd_serial} where m_id = #{m_id} and pro_num = #{pro_num}	
 	</update>
 	
+	<select id="PMSearchList" parameterType="com.game.member.MemberDTO" resultType="com.game.cd.Product_memberDTO">
+		select * from product_member where m_id=#{m_id}
+	</select>
+	
 </mapper>

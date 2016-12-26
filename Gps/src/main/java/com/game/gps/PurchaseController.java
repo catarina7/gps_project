@@ -1,12 +1,19 @@
 package com.game.gps;
 
+import java.util.ArrayList;
+import java.util.StringTokenizer;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.game.cd.Product_memberDTO;
@@ -35,22 +42,66 @@ public class PurchaseController {
 	
 	//구매내역
 	@RequestMapping(value="/purchase")
-	public String purchaseList(){				
+	public String purchaseList(HttpSession session, Model model){				
+		
+		if(session.getAttribute("member") != null){
+			try {
+				purchaseservice.purchasedList(session, model);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		};
 		
 		return "/purchase/purchase";
 	}
 	
 	//구매하기 
 	@RequestMapping(value="/buy")
-	public String buy(CartDTO cartDto, Model model){
+	public String buy(@RequestParam String c_num, @RequestParam(defaultValue="") String pro_num, Model model){
+		
+		ArrayList<Integer> c_nar = new ArrayList<Integer>();
+		ArrayList<Integer> p_nar = new ArrayList<Integer>();
+		ArrayList<CartDTO> cart_ar = new ArrayList<CartDTO>();
+		
+		StringTokenizer st = new StringTokenizer(c_num, ",");
+		while(st.hasMoreTokens()){
+			c_nar.add(Integer.parseInt(st.nextToken()));
+		}
+		StringTokenizer st2 = new StringTokenizer(pro_num, ",");
+		while(st2.hasMoreTokens()){
+			p_nar.add(Integer.parseInt(st2.nextToken()));
+		}
+		for(int i=0;i<c_nar.size();i++){
+			CartDTO cartDto = new CartDTO();
+			cartDto.setC_num(c_nar.get(i));
+			cartDto.setPro_num(p_nar.get(i));
+			cart_ar.add(cartDto);
+		}
+		
 		
 		try {
-			
-			purchaseservice.purchaseList(cartDto, model);
+			purchaseservice.purchaseList(cart_ar, model);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		/*if(c_nar.size()==1){
+			CartDTO cartDto = new CartDTO();
+			cartDto.setC_num(c_nar.get(0));
+			cartDto.setPro_num(p_nar.get(0));
+			try {
+				purchaseservice.purchaseList(cartDto, model);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}else{
+			
+			System.out.println(c_nar.size());
+			
+		}*/
 		
 		return "/purchase/buy";
 	}
@@ -98,25 +149,31 @@ public class PurchaseController {
 	//결제 입력
 		@RequestMapping(value="/Purchase_pro", method = RequestMethod.POST , produces="application/json; charset=utf-8")
 		@ResponseBody
-		public ResponseEntity<Integer> purchasing(PurchaseDTO purchase){
+		public ResponseEntity<Integer> purchasing(PurchaseDTO purchase, @RequestParam(defaultValue="") String prolist){
 			int result=0;
-			MemberDTO mDto = new MemberDTO();
+			StringTokenizer st = new StringTokenizer(prolist, ",");
+			ArrayList<Integer> p_nar = new ArrayList<Integer>();
+			while(st.hasMoreTokens()){
+				p_nar.add(Integer.parseInt(st.nextToken()));
+			}
+			System.out.println(p_nar.get(0));
+			/*MemberDTO mDto = new MemberDTO();
 			mDto.setM_id(purchase.getM_id());
 			mDto.setMillage(purchase.getM_millage());
 			Product_memberDTO pro_mem = new Product_memberDTO();
 			pro_mem.setM_id(purchase.getM_id());
-			pro_mem.setPro_num(purchase.getPro_num());
+			pro_mem.setPro_num(purchase.getPro_num());*/
 			
 			try {
 				
-				//purchaseservice 구매정보 입력
+				/*//purchaseservice 구매정보 입력
 				result = purchaseservice.purchasing(purchase);
 				//memberservice 마일리지 정보 수정
 				MemberService.memMod(mDto);
 				//cartservice 카트 정보 수정
 				cartservice.purchaseDel(purchase);
 				//product_member 정보 입력
-				pro_memService.pro_meminsert(pro_mem);				
+				pro_memService.pro_meminsert(pro_mem);	*/			
 				
 				
 			} catch (Exception e) {

@@ -16,6 +16,10 @@
 		$("#e_cart").css("background-color","#2b394f");
 		/* 체크박스 체크 */
 		$(".check_box").prop("checked",true);
+		
+		
+		
+		
 
 	});
 	
@@ -73,6 +77,28 @@
 		location.href="/gps/purchase/buy?c_num="+c_num+"&pro_num="+pro_num;
 	}
 	
+	$(function(){
+		
+		//선택 구매 
+		$("#choise_buy").on("click", function(){
+			var check_box = [];
+			var index_num = [];
+			$("input[class=check_box]:checked").each(function(){				
+				check_box.push($(this).val());
+				index_num.push($(this).attr("id").substring(8))
+			});
+			var cart_num = check_box;
+			var pro_box =[];
+			for(var i=0;i<index_num.length;i++){
+				pro_box.push($("#pro_num"+index_num[i]).val());
+			}			
+			var pro_num = pro_box;
+			location.href="/gps/purchase/buy?c_num="+cart_num+"&pro_num="+pro_num; 
+		});
+		
+	});
+
+	
 
 </script>
 </head>
@@ -125,7 +151,7 @@
 										</td>
 										<td>
 											<input type="hidden" name="c_num" id="c_num${status.index}" value="${cDTO[status.index].c_num}">
-											<input type="hidden" name="pro_num" id="pro_num${status.index}" value="${cDTO[status.index].pro_num}">
+											<input type="hidden" name="pro_num" id="pro_num${status.index}" value="${cDTO[status.index].pro_num}" class="check_pro_num">
 											<input type="hidden" name="m_id" id="m_id${status.index}" value="${member.m_id}">
 											<input class="pro_delete" type="button" value="X" onclick="one_delete(${status.index})">
 										</td>
@@ -151,7 +177,7 @@
 					</c:forEach>
 				</div>
 				<div id="third_else">
-					<button>선택 구매</button>
+					<button id="choise_buy">선택 구매</button>
 					<button id="all_delete">모두 빼기</button>
 				</div>
 			</div>

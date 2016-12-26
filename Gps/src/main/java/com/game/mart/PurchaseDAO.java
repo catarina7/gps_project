@@ -2,10 +2,14 @@ package com.game.mart;
 
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.game.member.MemberDTO;
 import com.game.product.ProductDTO;
 import com.game.product.ProductFileDTO;
 
@@ -17,7 +21,13 @@ public class PurchaseDAO {
 	private String namespaceP="PurchaseMapper.";
 	
 	
-	// 구매 목록 가져오기
+	// 구매 확인 목록 가져오기
+	public ArrayList<PurchaseDTO> purchaseList(MemberDTO mDto){
+		ArrayList<PurchaseDTO> purar = new ArrayList<PurchaseDTO>();
+		List<PurchaseDTO> plist = sqlsession.selectList(namespaceP+"purchaseList", mDto);
+		purar.addAll(plist);
+		return purar;
+	}
 	
 	
 	// 구매상품 정보 가져오기

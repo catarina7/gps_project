@@ -5,6 +5,9 @@
 <mapper namespace="PurchaseMapper">
 
 	<!-- 구매목록 가져오기  -->
+	<select id="purchaseList" parameterType="com.game.member.MemberDTO" resultType="com.game.mart.PurchaseDTO">
+		select * from purchase where m_id=#{m_id} order by reg_date desc
+	</select>
 	
 	
 	<!-- 상품정보 가져오기 -->

@@ -3,6 +3,32 @@ $(function(){
 	var price_input = 0;
 	var post_total = 0;
 	
+	//구매액수 확인
+	var pricelist = [];
+	$("input[name=total_price]").each(function(){
+		pricelist.push($(this).val());
+	});
+	
+	var listsum =0;
+	for(var i=0;i<pricelist.length;i++){
+		listsum = listsum*1 + parseInt(pricelist[i]);
+	}
+	
+	$("#price_input").val(listsum);
+	//상품 마일리지
+	var promilist =[];
+	$("input[name=pro_millage]").each(function(){
+		promilist.push($(this).val());
+	});
+	
+	var milsum=0;
+	for(var i=0;i<promilist.length;i++){
+		milsum = milsum*1 + parseInt(promilist[i]);
+	}
+	$("#pro_millage_pur").val(milsum);
+	$("#span_millage").html(milsum);
+	//마일리지 합계
+	
 	
 	
 	//millage function
@@ -13,12 +39,7 @@ $(function(){
 		post_total = (parseInt(total_input)-parseInt(millage_count)-parseInt(cup_check));
 		return post_total;
 	}
-	//cupon carculate
-	function cuponcal(){
-		
-		
-		
-	}
+	
 	
 	//cupon function
 	function cuponin(){
@@ -294,15 +315,21 @@ $(function(){
 				status="결재요청";
 			}			
 			m_millage = parseInt($("#pro_millage_pur").val())+parseInt($("#cup_check").val())-parseInt($("#millage_count").val());
+			var pro_numli = [];
+			$("input[name=pro_num]").each(function(){
+				pro_numli.push($(this).val());
+			});
+			var prolist = pro_numli;
 			$.ajax({
 				url : "Purchase_pro",
 				data : {
 					m_id : $("#m_id").val(),
-					pro_num : $("#pro_num").val(),
+					pro_num : 0,
 					total_price : $("#post_total").val(),
 					status : status,
 					pur_kind : $("input:radio[name=choice]:checked").val(),
-					m_millage: m_millage
+					m_millage: m_millage,
+					prolist: prolist
 					},
 					type : "post",
 				success : function(result){

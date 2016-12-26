@@ -51,6 +51,7 @@
 	<c:import url="/header" />
 	
 	<!-- section -->
+	
 	<section id="my_page">
 		
 		<c:import url="/user_menu_bar" />
