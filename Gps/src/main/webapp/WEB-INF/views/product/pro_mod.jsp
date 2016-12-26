@@ -268,7 +268,8 @@
 			<div id="pc_com_ajax">
 			<table>
 				<tr>
-						<td colspan="2"> ** 게임 컴퓨터 사양 추가 ** </td>
+					<td id="comcom_ti"> ** 게임 컴퓨터 사양 추가 ** </td>
+					<td></td>
 				</tr>
 				<tr>
 					<td class="mod_titi"> 운영체제 </td>

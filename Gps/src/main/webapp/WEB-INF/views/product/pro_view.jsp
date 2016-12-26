@@ -147,6 +147,50 @@
 	    });
 	    
 	    
+	    
+	    //pro_view에서 사용할 cookie 저장
+		var cookie_check = true;
+		var cookie_in = false;
+		var i = 0;
+		
+		//처음 10개의 쿠키를 저장
+		while(cookie_check){
+			for(i=0; i<10; i++){
+				if(getCookie("recent_9") == ""){					
+					if(getCookie("recent_"+i) == ""){			
+						setCookie("recent_"+i, "${pro_view.pro_num}", 1);
+						cookie_check = false;
+						break;
+					}
+				}else {
+					cookie_in = true;
+					cookie_check = false;
+					break;
+				}
+			}
+		}
+		
+		var k = 0;
+		
+		while(cookie_in){
+			//총 10개의 쿠키를 이용하여 저장
+			for(k=0; k<9; k++){
+				deleteCookie("recent_"+k); //쿠키를 삭제하고
+				
+				var one = getCookie("recent_"+(k*1+1*1)); //다음 쿠키를 저장해 둔 뒤
+				
+				setCookie("recent_"+k, one, 1); //쿠키를 집어넣는다
+			}
+			
+			
+				deleteCookie("recent_9"); //가장 최신 쿠키를 삭제하고
+				
+				setCookie("recent_9", "${pro_view.pro_num}", 1); //현재 보고있는 쿠키를 넣는다
+				
+				cookie_in = false;
+				break;
+		}
+	    
 	});
 	
 	//댓글 삭제
@@ -190,6 +234,36 @@
 		var patch_name = $("#patch_name_"+i).val();
 		location.href="../resources/upload/"+patch_name;
 		//location.href="pro_down?patch_file_name="+patch_name;
+	}
+	
+	
+	//쿠키 저장
+	function setCookie(cookieName, value, exdays){
+	    var exdate = new Date();
+	    exdate.setDate(exdate.getDate() + exdays);
+	    var cookieValue = escape(value) + ((exdays==null) ? "" : "; expires=" + exdate.toGMTString());
+	    document.cookie = cookieName + "=" + cookieValue+"; path=/";
+	}
+	
+	//쿠키 가져오기
+	function getCookie(cookieName) {
+	    cookieName = cookieName + '=';
+	    var cookieData = document.cookie;
+	    var start = cookieData.indexOf(cookieName);
+	    var cookieValue = '';
+	    if(start != -1){
+	        start += cookieName.length;
+	        var end = cookieData.indexOf(';', start);
+	        if(end == -1)end = cookieData.length;
+	        cookieValue = cookieData.substring(start, end);
+	    }
+	    return unescape(cookieValue);
+	}
+	
+	function deleteCookie(cookieName){
+	    var expireDate = new Date();
+	    expireDate.setDate(expireDate.getDate() - 1);
+	    document.cookie = cookieName + "= " + "; expires=" + expireDate.toGMTString();
 	}
 </script>
 
@@ -379,11 +453,18 @@
 					<span>연관 추천 게임</span>
 					<ul>
 						<c:forEach items="${mapping}" var="mapping" varStatus="status">
-						<li>
+						<li onclick="location.href='${pageContext.request.contextPath}/product/pro_view?pro_num=${mapping.pro_num }'">
 							<dl>
 								<dt> <img class="game_img" src="../resources/upload/${mapping_img[status.index].file_name}"> </dt>
 								<dd class="rel_name">${mapping.pro_title }</dd>
-								<dd> ${mapping.total_price} </dd>
+								<dd>
+									<c:if test="${mapping.total_price == '' }">
+										₩ ${mapping.price }
+									</c:if> 
+									<c:if test="${mapping.total_price != '' }">
+										₩ ${mapping.total_price} 
+									</c:if>
+								</dd>
 							</dl>
 						</li>
 						</c:forEach>
@@ -606,7 +687,7 @@
 
 
 
-
+	<c:import url="/top_btn" />
 	<c:import url="/footer" />
 
 </body>

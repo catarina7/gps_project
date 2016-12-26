@@ -196,6 +196,7 @@ section #pro_view {
 #relationship dl {
 	width: 100%;
 	height: 100%;
+	cursor: pointer;
 }
 #relationship dt {
 	width: 100%;
