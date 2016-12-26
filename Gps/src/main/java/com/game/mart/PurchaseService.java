@@ -114,5 +114,11 @@ public class PurchaseService {
 		model.addAttribute("ProductFile_List", filear);	
 		
 	}
+	
+	public ProductDTO productcheck(int p_nar) throws Exception{
+		ProductDTO pdDto = productDao.productView(p_nar);		
+		return pdDto;
+	}
+	
 
 }
