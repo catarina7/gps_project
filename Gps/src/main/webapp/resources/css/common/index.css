@@ -288,7 +288,7 @@ section #game_list {
 
 #game_list #main_third {
 	width: 97%;
-	height: 520px;
+	/* height: 520px; */
 	padding: 5px 10px;
 	border: 2px solid #373e48;
 	border-radius : 8px;
@@ -315,10 +315,11 @@ section #game_list {
 }
 #main_third #sub_cate {
 	width: 97.5%;
-	height: 457px;
+	/* height: 457px; */
 	margin-top: 40px;
 	background-color: #777777;
 	padding: 10px 10px;
+	overflow: hidden;
 }
 #sub_cate #sub_first {
 	width: 69%;
