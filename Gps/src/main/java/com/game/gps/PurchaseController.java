@@ -149,31 +149,31 @@ public class PurchaseController {
 	//결제 입력
 		@RequestMapping(value="/Purchase_pro", method = RequestMethod.POST , produces="application/json; charset=utf-8")
 		@ResponseBody
-		public ResponseEntity<Integer> purchasing(PurchaseDTO purchase, @RequestParam(defaultValue="") String prolist){
+		public ResponseEntity<Integer> purchasing(PurchaseDTO purchase){
 			int result=0;
-			StringTokenizer st = new StringTokenizer(prolist, ",");
+			/*StringTokenizer st = new StringTokenizer(prolist, ",");
 			ArrayList<Integer> p_nar = new ArrayList<Integer>();
 			while(st.hasMoreTokens()){
 				p_nar.add(Integer.parseInt(st.nextToken()));
 			}
-			System.out.println(p_nar.get(0));
-			/*MemberDTO mDto = new MemberDTO();
+			System.out.println(p_nar.get(0));*/
+			MemberDTO mDto = new MemberDTO();
 			mDto.setM_id(purchase.getM_id());
 			mDto.setMillage(purchase.getM_millage());
 			Product_memberDTO pro_mem = new Product_memberDTO();
 			pro_mem.setM_id(purchase.getM_id());
-			pro_mem.setPro_num(purchase.getPro_num());*/
+			pro_mem.setPro_num(purchase.getPro_num());
 			
 			try {
 				
-				/*//purchaseservice 구매정보 입력
+				//purchaseservice 구매정보 입력
 				result = purchaseservice.purchasing(purchase);
 				//memberservice 마일리지 정보 수정
 				MemberService.memMod(mDto);
 				//cartservice 카트 정보 수정
 				cartservice.purchaseDel(purchase);
 				//product_member 정보 입력
-				pro_memService.pro_meminsert(pro_mem);	*/			
+				pro_memService.pro_meminsert(pro_mem);			
 				
 				
 			} catch (Exception e) {

@@ -324,7 +324,7 @@ $(function(){
 				url : "Purchase_pro",
 				data : {
 					m_id : $("#m_id").val(),
-					pro_num : 0,
+					pro_num : parseInt(prolist),
 					total_price : $("#post_total").val(),
 					status : status,
 					pur_kind : $("input:radio[name=choice]:checked").val(),
