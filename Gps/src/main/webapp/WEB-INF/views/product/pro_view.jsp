@@ -383,7 +383,14 @@
 							<dl>
 								<dt> <img class="game_img" src="../resources/upload/${mapping_img[status.index].file_name}"> </dt>
 								<dd class="rel_name">${mapping.pro_title }</dd>
-								<dd> ${mapping.total_price} </dd>
+								<dd>
+									<c:if test="${mapping.total_price == '' }">
+										₩ ${mapping.price }
+									</c:if> 
+									<c:if test="${mapping.total_price != '' }">
+										₩ ${mapping.total_price} 
+									</c:if>
+								</dd>
 							</dl>
 						</li>
 						</c:forEach>
