@@ -27,6 +27,7 @@
 
 /* Modal Content (image) */
 .viewModal-content {
+	padding: 100px 0px;
 	margin: auto;
 	display: block;
 	width: 80%;

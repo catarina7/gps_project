@@ -28,6 +28,7 @@ section #board_w {
 	margin: 0 auto;
 	padding: 10px 1.4%;
 	overflow: hidden;
+	margin-top: 100px;
 }
 
 #board_w table {
