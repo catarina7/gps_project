@@ -128,7 +128,33 @@
 		});
 		//카테고리 url 끝
 		
+		$("#new_game").click(function(){
+			/* $.ajax({
+				url: 'product/pro_list',
+				type:'POST',
+				data:{
+					orderKind : "recent"
+				},
+				success: function(data){
+					data=data.trim();
+					$("#pro_list_product").html(data);
+				}
+			}); */
+		});
 		
+		$("#fav_game").click(function(){
+			/* $.ajax({
+				url: 'product/pro_list',
+				type:'POST',
+				data:{
+					orderKind : "score"
+				},
+				success: function(data){
+					data=data.trim();
+					$("#pro_list_product").html(data);
+				}
+			}); */
+		});
 		//인기순
 		$.ajax({
 			url : 'product/pro_main_like',
@@ -321,8 +347,8 @@
 				</ul> -->
 				<p>BEST/NEW</p>
 				<ul>
-					<li>인기 게임</li>
-					<li>최신 게임</li>
+					<li id="fav_game">인기 게임</li>
+					<li id="new_game">최신 게임</li>
 				</ul>
 				<p>CATEGORY</p>
 				<ul>
