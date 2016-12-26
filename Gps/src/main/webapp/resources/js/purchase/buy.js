@@ -316,28 +316,35 @@ $(function(){
 			}			
 			m_millage = parseInt($("#pro_millage_pur").val())+parseInt($("#cup_check").val())-parseInt($("#millage_count").val());
 			var pro_numli = [];
+			var promlist = "";
 			$("input[name=pro_num]").each(function(){
 				pro_numli.push($(this).val());
-			});
-			var prolist = pro_numli;
+			});			
+			for(var i=0;i<pro_numli.length;i++){
+				var s = ((i>0)?",":"")+pro_numli[i];
+				promlist += s; 
+			}
 			$.ajax({
 				url : "Purchase_pro",
 				data : {
 					m_id : $("#m_id").val(),
-					pro_num : parseInt(prolist),
+					pro_num : parseInt(1),
 					total_price : $("#post_total").val(),
 					status : status,
 					pur_kind : $("input:radio[name=choice]:checked").val(),
 					m_millage: m_millage,
-					prolist: prolist
+					promlist: promlist
 					},
 					type : "post",
 				success : function(result){
 					if(result>0){						
-						location.href="purResult";						
+						location.href="purResult";				
 					}else {
 						alert("구매 정보를 확인해 주세요.");
 					}
+				},
+				error:function(e){
+					alert("not working");
 				}
 			});
 			

@@ -152,14 +152,27 @@
 								</table>
 							</div>
 							<div class="tag">
-							<input type="hidden" name="total_price" id="total_price${status.index}" value="${pro.total_price}">
-								<ul>
-									<li class="discount">${pro.discount} %</li>
-									<li class="price">
-										<p class="nomal_p">${pro.price}</p>
-										<span>${pro.total_price }</span>
-									</li>
-								</ul>
+							
+								<c:if test="${pro.total_price != 0}">
+									<input type="hidden" name="total_price" id="total_price${status.index}" value="${pro.total_price}">
+									<ul>
+										<li class="discount">${pro.discount} %</li>
+										<li class="price">
+											<p class="nomal_p">${pro.price}</p>
+											<span>${pro.total_price }</span>
+										</li>
+									</ul>
+								</c:if>
+								<c:if test="${pro.total_price == 0}">
+									<input type="hidden" name="total_price" id="total_price${status.index}" value="${pro.price}">
+									<ul>
+										<li class="discount">${pro.discount} %</li>
+										<li class="price">
+											<p class="nomal_p">${pro.price}</p>
+											<span>${pro.price}</span>
+										</li>
+									</ul>
+								</c:if>
 							</div>
 						</div>
 					</c:forEach>
