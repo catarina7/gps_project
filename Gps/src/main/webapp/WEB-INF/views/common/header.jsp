@@ -77,7 +77,7 @@
 				<div id="third_div">
 					<!-- menu list -->
 					<ul id="main_list">
-						<li><a class="store" href="${pageContext.request.contextPath}/product/pro_list">STORE</a></li>
+						<li><a class="store">STORE</a></li>
 						<!-- <li><a class="s_list">menu</a></li> -->
 						<li><a href="#">ABOUT</a></li>
 						<li><a href="#">SUPPORT</a></li>

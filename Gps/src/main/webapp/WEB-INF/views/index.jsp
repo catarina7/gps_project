@@ -319,29 +319,29 @@
 					<li>list</li>
 					<li>list</li>
 				</ul> -->
-				<p>USER SERVICE</p>
-				<ul>
-					<li id="mem_cart">장바구니</li>
-					<li id="mem_fav">관심상품</li>
-				</ul>
 				<p>CATEGORY</p>
 				<ul>
-					<li id="all_list">전체 상품</li>
-					<li id="action">Action</li>
+					<li id="all_list">전체 게임</li>
+					<li id="action">액션</li>
 					<li id="rpg">RPG</li>
-					<li id="simulation">Simulation</li>
-					<li id="strategy">Strategy</li>
-					<li id="adventure">Adventure</li>
-					<li id="sports">Sports</li>
-					<li id="racing">Racing</li>
-					<li id="casual">Casual</li>
-					<li id="indi">INDI</li>
+					<li id="simulation">시뮬레이션</li>
+					<li id="strategy">전략</li>
+					<li id="adventure">모험</li>
+					<li id="sports">스포츠</li>
+					<li id="racing">레이싱</li>
+					<li id="casual">캐주얼</li>
+					<li id="indi">인디</li>
 					<li id="etc">MMO/ETC</li>
 				</ul>
 				<p>COMMUNICATE</p>
 				<ul>
 					<li>공지사항</li>
 					<li>FAQ</li>
+				</ul>
+				<p>USER SERVICE</p>
+				<ul>
+					<li id="mem_cart">장바구니</li>
+					<li id="mem_fav">관심상품</li>
 				</ul>
 			</div>
 
