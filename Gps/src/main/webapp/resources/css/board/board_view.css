@@ -24,7 +24,7 @@ section #board_w {
 }
 
 #board_w form {
-	width: 70%;
+	width: 85%;
 	margin: 0 auto;
 	padding: 10px 1.4%;
 	overflow: hidden;
@@ -80,15 +80,41 @@ section #board_w {
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
 }
 
+#board_images {
+	padding: 10px 0.7%;
+}
 
+#board_images h4 {
+	color: white;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 15px;
+	padding: 5px 1.4%;
+}
 
+#board_images #main_img{
+	overflow: hidden;
+}
 
+#board_images ul {
+	width: 100%;
+	overflow: hidden;
+	padding: 3px 0.5%;
+}
 
+#board_images li {
+	width: 25%;
+	float: left;
+	overflow: hidden;
+	padding: 2px 0.4%;
+}
 
-
-
-
-
+#board_images img {
+	width: 100%;
+	height: 100%;
+	border: 1px solid black;
+	border-radius: 5px;
+}
 
 
 
