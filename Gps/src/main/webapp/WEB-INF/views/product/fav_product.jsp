@@ -52,13 +52,27 @@
 	<!-- section -->
 	<section>
 		<!-- 내용 넣기 -->
-		
+		<div>
+			<c:import url="/user_menu_bar" />
+		</div>
 		
 		<!-- cookie를 이용한 최근 본 상품 띄우기  -->
 		<div id="fav_first">
 			<div>
+				<h4> ※  오늘 본 상품</h4>
 				<c:forEach var="i" begin="0" end="9">
-					${i }번째 게임 : <input type="text" id="cookie_${i }"><br>
+					<%-- <c:if test="${cookie.recent_i}"> --%>					
+						<div id="fav_items">
+							
+							<input type="hidden" name="pro_num" id="cookie_${i }">
+							<div id="items_first">
+								<img src="">
+							</div>
+							<div id="items_second">
+								
+							</div>
+						</div>
+					<%-- </c:if> --%>
 				</c:forEach>
 			</div>
 		</div>
