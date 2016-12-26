@@ -18,7 +18,7 @@
 	href="${pageContext.request.contextPath}/resources/css/board/board_view.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
-
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/viewModal.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>${qnaView.q_title}</title>
@@ -123,24 +123,12 @@
 			<div id="main_img" class="w3-content">
 			<ul>
 				<c:forEach items="${qnaImg}" var="img">
-					<li><img src="../resources/upload/${img.qfile_name}"></li>
+					<li><img src="../resources/upload/${img.qfile_name}" class="qimg"></li>
 				</c:forEach>
 				</ul>
 			</div>
 		</div>
-		<div id="board_w_btn">
 
-				<!-- 이미지 -->
-				<div>
-					<ul>
-						<c:forEach items="${qnaImg}" var="img">
-							<li><img src="../resources/upload/${img.qfile_name}"
-								class="qimg"></li>
-						</c:forEach>
-					</ul>
-
-				</div>
-				</div>
 				<div id="board_w_btn">
 
 					<c:if test="${member.m_id != null }">
@@ -159,7 +147,7 @@
 			<!-- Modal -->
 			<div id="viewModal" class="vModal">
 				<span class="close">x</span> 
-				<img id="img1">
+				<img id="img1" class="viewModal-content">
 				<div id="viewCaption"></div>
 			</div>
 
