@@ -94,7 +94,12 @@ section #pro_mod_first h2 {
 	padding: 5px 15px;
 }
 
-
+#pc_com_ajax #comcom_ti {
+	text-align: right;
+	color: #ffc1c2;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px black;
+}
 
 
 
