@@ -29,7 +29,10 @@ section #fav_first {
 	overflow: hidden;
 	margin-bottom: 20px;
 }
-
+#fav_first #fav_items:hover {
+	background-color: #444444;
+	cursor: pointer;
+}
 #fav_items #items_first {
 	width: 18%;
 	height: 70px;
@@ -41,13 +44,12 @@ section #fav_first {
 }
 #items_first img {
 	width: 99%;
-	height: 99%;
+	height: 98%;
 	border-radius: 7px;
 	border: 1px solid #aaaaaa;
 }
 #fav_items #items_second {
 	width: 75%;
-	height: 70px;
 	float: left;
 	overflow: hidden;
 	margin-left: 2.5%;
@@ -56,9 +58,29 @@ section #fav_first {
 	border-radius : 7px;
 }
 
-
-
-
+#items_second span {
+	color: white;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 16px;
+	padding: 2px 0.5%;
+}
+#items_second p {
+	width: 96%;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 3px 1.4%;
+	font-size: 13px;
+	color: #d0e2e8;
+	text-shadow: -1px -1px 0px #414141;
+}
+#items_second #cookie_price {
+	margin-left: 85%;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+}
 
 
 

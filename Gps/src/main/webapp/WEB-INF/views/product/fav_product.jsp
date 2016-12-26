@@ -69,7 +69,9 @@
 								<img src="">
 							</div>
 							<div id="items_second">
-								
+								<span>game name</span>
+								<p>contents</p>
+								<p id="cookie_price">₩ price</p>
 							</div>
 						</div>
 					<%-- </c:if> --%>
