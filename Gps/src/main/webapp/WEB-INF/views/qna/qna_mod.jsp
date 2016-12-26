@@ -12,6 +12,8 @@
 	href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/product/pro_write.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/product/pro_mod.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript"
@@ -140,7 +142,7 @@
 								<input type="hidden" name="q_num" id="q_num"
 									value="${qnaView.q_num}">
 								<c:forEach items="${qna_mod_img}" var="img" varStatus="status">
-									<div>
+									<div id="pro_mod_images">
 										<input class="check_box" id="checkbox${status.index}"
 											name="qfile_num" value="${img.qfile_num}" type="checkbox">
 										<input type="hidden" name="qfile_name"
@@ -149,8 +151,7 @@
 											src="../resources/upload/${img.qfile_name}"></label>
 									</div>
 								</c:forEach>
-							</div>
-									<input type="button" id="img_delete" value="삭제">
+							</div> <input type="button" id="img_delete" value="삭제">
 						</td>
 					</tr>
 

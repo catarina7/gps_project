@@ -263,6 +263,14 @@
 				}
 			});
 		});
+		
+		$("#noticeList").click(function(){
+			location.href="${pageContext.request.contextPath}/notice/noticeList";
+		});
+		
+		$("#qnaList").click(function(){
+			location.href="${pageContext.request.contextPath}/qna/qnaList";
+		});
 	});
 	
 	$(document).ready(function(){
@@ -335,8 +343,8 @@
 				</ul>
 				<p>COMMUNICATE</p>
 				<ul>
-					<li>공지사항</li>
-					<li>FAQ</li>
+					<li id="noticeList">공지사항</li>
+					<li id="qnaList">FAQ</li>
 				</ul>
 				<p>USER SERVICE</p>
 				<ul>
