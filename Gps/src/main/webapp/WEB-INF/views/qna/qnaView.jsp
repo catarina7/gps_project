@@ -13,7 +13,7 @@
 	href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/board/board_view.css">
-
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>${qnaView.q_title}</title>
@@ -57,11 +57,17 @@
 </head>
 <body>
 	<c:import url="/header" />
+
 	<!-- section -->
-	<section> <!-- section 내용 --> <c:import url="/user_menu_bar" />
+	<section>
+
+	<div id="user_menu">
+		<c:import url="/user_menu_bar" />
+	</div>
+
 	<div id="board_w">
-		<center>
-			<h1>QnA</h1>
+	<!-- qna글 -->
+		
 			<form action="qnaView" method="post">
 				<table>
 					<colgroup>
@@ -92,17 +98,18 @@
 							<div id="n_textarea">${qnaView.q_contents}</div>
 						</td>
 					</tr>
-
-					<!-- 이미지 View 해야함 -->
-					<tr>
-						<td class="title">이미지</td>
-						<c:forEach items="${qnaImg}" var="img">
-							<td><img style="width: 100px; height: 100px;" alt=""
-								src="../resources/upload/${img.qfile_name}"></td>
-						</c:forEach>
-					</tr>
 				</table>
-				<div id="board_w_btn">
+		<!-- 이미지 -->
+		<div id="first_pro">
+			<div id="main_img" class="w3-content">
+			<ul>
+				<c:forEach items="${qnaImg}" var="img">
+					<li><img src="../resources/upload/${img.qfile_name}"></li>
+				</c:forEach>
+				</ul>
+			</div>
+		</div>
+		<div id="board_w_btn">
 					<c:if test="${member.m_id != null }">
 						<input type="button" value="답글" id="reBtn" class="btn">
 					</c:if>
@@ -114,10 +121,9 @@
 					<input type="button" value="목록" id="listBtn" class="btn">
 				</div>
 			</form>
-		</center>
+
+		
 	</div>
 	</section>
-	<c:import url="/footer" />
-
 </body>
 </html>
