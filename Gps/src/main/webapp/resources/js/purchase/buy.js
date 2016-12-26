@@ -319,25 +319,29 @@ $(function(){
 			$("input[name=pro_num]").each(function(){
 				pro_numli.push($(this).val());
 			});
-			var prolist = pro_numli;
+			var promlist = pro_numli;
+			alert(promlist);
+			var pro_num=0;
 			$.ajax({
 				url : "Purchase_pro",
 				data : {
 					m_id : $("#m_id").val(),
-					pro_num : 0,
+					pro_num : parseInt(pro_numli),
 					total_price : $("#post_total").val(),
 					status : status,
 					pur_kind : $("input:radio[name=choice]:checked").val(),
-					m_millage: m_millage,
-					prolist: prolist
+					m_millage: m_millage
 					},
 					type : "post",
 				success : function(result){
 					if(result>0){						
-						location.href="purResult";						
+						location.href="purResult";				
 					}else {
 						alert("구매 정보를 확인해 주세요.");
 					}
+				},
+				error:function(e){
+					alert("not working");
 				}
 			});
 			
