@@ -87,8 +87,13 @@ public class ReplyDAO {
 		sqlSession.selectOne(namespace+"replyLike_cancel", data);
 	}
 	
-	//댓글 갯수
-	public ReplyDTO replyCount(int pro_num){
-		return sqlSession.selectOne(namespace+"replyCount", pro_num);
+	
+	public int replyIdCheck(int pro_num, String r_writer){
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pro_num", pro_num);
+		data.put("r_writer", r_writer);
+		int result=sqlSession.selectOne(namespace+"replyIdCheck", data);
+		System.out.println("dao"+result);
+		return result;
 	}
 }

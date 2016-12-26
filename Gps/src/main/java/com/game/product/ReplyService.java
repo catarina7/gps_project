@@ -27,7 +27,6 @@ public class ReplyService {
 		}
 		model.addAttribute("replyList", ar);
 		model.addAttribute("reply_like_count", ar1);
-		model.addAttribute("reply_count", replyDAO.replyCount(pro_num));
 	}
 
 	//댓글 리스트
@@ -43,7 +42,6 @@ public class ReplyService {
 		//System.out.println("평점:"+score_avg);
 		model.addAttribute("replyList", ar);
 		model.addAttribute("reply_like_count", ar1);
-		model.addAttribute("reply_count", replyDAO.replyCount(pro_num));
 	}
 
 	//댓글 삭제
@@ -58,7 +56,6 @@ public class ReplyService {
 		}
 		model.addAttribute("replyList", ar);
 		model.addAttribute("reply_like_count", ar1);
-		model.addAttribute("reply_count", replyDAO.replyCount(pro_num));
 	}
 
 	//좋아요 기능
@@ -120,6 +117,12 @@ public class ReplyService {
 			model.addAttribute("replyList", ar);
 			model.addAttribute("reply_like_count", ar1);
 		}
+	}
+	
+	public int replyIdCheck(int pro_num, String r_writer){
+		int result= replyDAO.replyIdCheck(pro_num, r_writer);
+		System.out.println("ser"+result);
+		return result;
 	}
 	
 }

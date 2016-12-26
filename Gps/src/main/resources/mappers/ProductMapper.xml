@@ -277,5 +277,17 @@
 	<select id="replyCount" resultType="int" parameterType="int">
 		select count(pro_num) from reply where pro_num=#{pro_num}
 	</select>
+	
+	<!-- 연관게임 찾기 -->
+	<select id="mapping_category_search" resultType="java.lang.String" parameterType="int">
+		select sub_category from product where pro_num=#{pro_num}
+	</select>
+	
+	<select id="mapping_category"  resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from product where sub_category=#{sub_category} order by pro_num desc) F) 
+		where R between 1 and 5
+	</select>
 </mapper>
 

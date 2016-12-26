@@ -9,7 +9,9 @@
 			${rep.r_writer} 
 			<input type="hidden" name="m_id" id="m_id_${status.index}"	value="${rep.r_writer}">
 			<input type="hidden" name="r_num" id="r_num_${status.index}" value="${rep.r_num}">
-			<input type="button" onclick="reply_delete(${status.index})" value="삭제">
+			<c:if test="${member.m_id eq rep.r_writer}">
+				<input type="button" onclick="reply_delete(${status.index})" value="삭제">
+			</c:if>
 			평점 : <input type="hidden" value="${rep.r_score}" id="score_${status.index}">
 			<c:if test="${rep.r_score == 0}">☆☆☆☆☆</c:if>
 			<c:if test="${rep.r_score == 1}">★☆☆☆☆</c:if>
