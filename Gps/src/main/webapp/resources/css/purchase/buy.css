@@ -384,13 +384,156 @@ section .complete {
 
 
 
+/* 상품 리스트 CSS */
+
+#second_buy #product_list_view {
+	width: 100%;
+}
 
 
 
+#product_list_view .item {
+	width: 98%;
+	height: 94px;
+	background-color: #474747;
+	margin-top: 7px;
+	margin-bottom: 55px;
+	border: 3px solid #aaaaaa;
+	border-radius: 5px;
+}
+#product_list_view .item .four_contents {
+	width: 95%;
+	margin: 0 auto;
+	height: 60px;
+	padding: 5px 0px;
+}
+#product_list_view .four_contents .f_g_check {
+	width: 4%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+	position: relative;
+}
+.f_g_check input[type="checkbox"]{
+  width:1px; 
+  height:1px; 
+  padding:0; 
+  border:0 none; 
+  margin:0; 
+  position:absolute; 
+  left:0; 
+  top:0; 
+  overflow:hidden;
+  clip:rect(0 0 0 0);
+}
+.f_g_check label{
+  height:15px; 
+  line-height:15px; 
+  padding-left:20px; 
+  display:inline-block; 
+  background:url(http://csscheckbox.com/checkboxes/lite-plus.png) no-repeat 0 0; 
+  font-size:15px; 
+  vertical-align:middle; 
+  cursor:pointer;
+}
 
-
-
-
+.f_g_check input[type="checkbox"]:checked + label{
+  background-position: 0 -15px;
+}
+#product_list_view .four_contents .f_g_img {
+	background-color: white;
+	height: 100%;
+	width: 15%;
+	float: left;
+	overflow: hidden;
+	margin-right: 2%;
+	margin-top: 5px;
+	border: 1px solid #aaaaaa;
+	border-radius: 4px;
+}
+.f_g_img img{
+	width: 99.5%;
+	height: 100%;
+}
+#product_list_view .four_contents table {
+	width: 78.5%;
+}
+#product_list_view .four_contents .f_g_name {
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+}
+#product_list_view .four_contents .f_g_ex {
+	color: silver;
+	font-size: 14px;
+}
+#product_list_view .pro_delete {
+	color: white;
+	font-weight: bold;
+	background-color: #474747;
+	border: 0px;
+	font-size: 20px;
+	cursor: pointer;
+	float: right;
+	overflow: hidden;
+}
+#product_list_view .pro_delete:hover {
+	color: #aaaaaa;
+}
+#product_list_view .tag {
+	position: absolute;
+	background-color: black;
+	margin-top: 5px;
+	border: 2px solid #aaaaaa;
+	border-radius: 7px;
+	right: 21%;
+}
+.tag .discount {
+	background-color: #32435c;
+	border-radius : 4px;
+	padding: 9px 10px;
+	border-right: 1px dashed white;
+	font-size: 20px;
+}
+.tag .price {
+	border-right: 1px dashed white;
+	padding: 2px 10px;
+}
+.tag .price span{
+	font-size: 18px;
+	line-height: 3px;
+}
+.tag .price .nomal_p {
+	font-size: 14px;
+	color: silver;
+	text-decoration: line-through;
+	font-style: italic;
+}
+.tag li {
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+	float: left;
+	overflow: hidden;
+	text-align: center;
+}
+.tag input {
+	padding: 5px 12px;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: -1px -1px 0px #1f2938;
+	border: 0px;
+	font-weight: bold;
+	font-size: 17px;
+}
+.tag input:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
 
 
 

@@ -10,7 +10,6 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/purchase/buy.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/cart_favorite/cart_favorite.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
@@ -111,7 +110,10 @@
 			<!-- 구매하고자 하는 게임 리스트 -->
 			<div class="title"><span>◎</span> 구매 게임</div>
 			<div id="second_buy">
-				<div>					
+				<div id="product_list_view">	
+				
+				
+						<!-- 상품 리스트 -->			
 						<c:forEach items="${productOne}" var="pro" varStatus="status">
 						<div class="item">
 							<div class="four_contents">
