@@ -69,7 +69,7 @@
 				<span id="product_tag" class="h_icon">▼</span>
 			</div>
 			<div class="h_menu" id="software_tx">
-				<span>SoftWare</span>
+				<span>Others</span>
 				<span id="software_tag" class="h_icon">▼</span>
 			</div>
 			<div id="blink_tx">
