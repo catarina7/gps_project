@@ -128,33 +128,7 @@
 		});
 		//카테고리 url 끝
 		
-		$("#new_game").click(function(){
-			/* $.ajax({
-				url: 'product/pro_list',
-				type:'POST',
-				data:{
-					orderKind : "recent"
-				},
-				success: function(data){
-					data=data.trim();
-					$("#pro_list_product").html(data);
-				}
-			}); */
-		});
 		
-		$("#fav_game").click(function(){
-			/* $.ajax({
-				url: 'product/pro_list',
-				type:'POST',
-				data:{
-					orderKind : "score"
-				},
-				success: function(data){
-					data=data.trim();
-					$("#pro_list_product").html(data);
-				}
-			}); */
-		});
 		//인기순
 		$.ajax({
 			url : 'product/pro_main_like',
@@ -345,10 +319,10 @@
 					<li>list</li>
 					<li>list</li>
 				</ul> -->
-				<p>BEST/NEW</p>
+				<p>USER SERVICE</p>
 				<ul>
-					<li id="fav_game">인기 게임</li>
-					<li id="new_game">최신 게임</li>
+					<li id="mem_cart">장바구니</li>
+					<li id="mem_fav">관심상품</li>
 				</ul>
 				<p>CATEGORY</p>
 				<ul>
@@ -364,10 +338,10 @@
 					<li id="indi">INDI</li>
 					<li id="etc">MMO/ETC</li>
 				</ul>
-				<p>USER SERVICE</p>
+				<p>COMMUNICATE</p>
 				<ul>
-					<li id="mem_cart">장바구니</li>
-					<li id="mem_fav">관심상품</li>
+					<li>공지사항</li>
+					<li>FAQ</li>
 				</ul>
 			</div>
 

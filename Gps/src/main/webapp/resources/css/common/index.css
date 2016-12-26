@@ -356,9 +356,12 @@ section #game_list {
 	text-shadow: -1px -1px 0px #414141;
 }
 .discount_sub_contents p {
-	font-size: 13px;
+	width: 100%;
 	padding: 2px 0px;
+	font-size: 13px;
 	color: #d0e2e8;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .discount_sub_contents span {
 	font-weight: bold;
