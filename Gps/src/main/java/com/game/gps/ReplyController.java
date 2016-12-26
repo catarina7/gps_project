@@ -1,10 +1,13 @@
 package com.game.gps;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.game.product.ReplyDTO;
 import com.game.product.ReplyService;
@@ -63,5 +66,14 @@ public class ReplyController {
 			e.printStackTrace();
 		}
 		return "reply/reply_result";
+	}
+	
+	//댓글 아이디 확인
+	@RequestMapping(value="/reply_id_check", method = RequestMethod.POST, produces="application/json; charset=utf-8")
+	@ResponseBody
+	public ResponseEntity<Integer> replyIdCheck(int pro_num, String r_writer){
+		int result=replyService.replyIdCheck(pro_num, r_writer);
+		System.out.println(result);
+		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
 }

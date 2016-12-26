@@ -273,4 +273,14 @@ public class ProductDAO {
 	public int replyCount(int pro_num){
 		return sqlSession.selectOne(namespace+"replyCount", pro_num);
 	}
+	
+	//연관 게임 찾기
+	public List<ProductDTO> mappingCategory(int pro_num, PageMaker pageMaker){
+		String sub_category = sqlSession.selectOne(namespace+"mapping_category_search", pro_num);
+		
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pageMaker", pageMaker);
+		data.put("sub_category", sub_category);
+		return sqlSession.selectList(namespace+"mapping_category", data);
+	}
 }

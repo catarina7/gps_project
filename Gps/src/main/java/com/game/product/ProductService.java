@@ -116,8 +116,21 @@ public class ProductService {
 			score_total = score_total + score.get(i).getR_score();
 			score_avg=score_total/score.size();
 		}
+		//평점가져오기
 		productDAO.total_score(pro_num, score_avg);
+		//컴퓨터 사양 가져오기
 		Pro_ComputerDTO pro_ComputerDTO = productDAO.productComputerSelect(pro_num);
+		//연관 검색 가져오기
+		List<ProductDTO> mapping = productDAO.mappingCategory(pro_num, pageMaker);
+		
+		ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+		for(int i=0;i<mapping.size();i++){
+			System.out.println(mapping.get(i).getPro_num());
+			int mapping_num=mapping.get(i).getPro_num();
+			productDAO.productImgList(mapping_num);
+			ar1.add(productDAO.productImgList(mapping_num));
+			
+		}
 		
 		model.addAttribute("computer", pro_ComputerDTO);
 		model.addAttribute("pageImg", pageMaker);
@@ -129,6 +142,10 @@ public class ProductService {
 	
 		int replyCount = productDAO.replyCount(pro_num);
 		model.addAttribute("reply_count1", replyCount);
+		
+		model.addAttribute("mapping", mapping);
+		model.addAttribute("mapping_img", ar1);
+		
 	}
 
 	//modify 할때 기본적으로 가져오는것들

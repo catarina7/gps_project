@@ -69,21 +69,35 @@
 	        //id가 smarteditor인 textarea에 에디터에서 대입
 	        editor_object.getById["smarteditor"].exec("UPDATE_CONTENTS_FIELD", []);
 	         
-	        // 이부분에 에디터 validation 검증
 	        $.ajax({
-    			url: '../reply/reply_write',
-    			type: 'POST',
-    			data:{
-    				pro_num: $("#pro_num").val(),
-    				r_writer: $("#r_writer").val(),
-    				r_contents: $("#smarteditor").val(),
-    				r_score: $("#r_score").val()
-    			},
-    			success:function(data){
-    				data=data.trim();
-    				$("#reply_contents").html(data);
-    			}
-    		});
+	        	url: '../reply/reply_id_check',
+	        	type: 'POST',
+	        	data:{
+	        		r_writer: $("#r_writer").val(),
+	        		pro_num: $("#pro_num").val()	
+	        	},
+	        	success:function(result){
+	        		if(result>0){
+	        			alert("공정심사때문에 글을 작성할수 없습니다.");
+	        		}else{
+	        			 // 이부분에 에디터 validation 검증
+	    		        $.ajax({
+	    	    			url: '../reply/reply_write',
+	    	    			type: 'POST',
+	    	    			data:{
+	    	    				pro_num: $("#pro_num").val(),
+	    	    				r_writer: $("#r_writer").val(),
+	    	    				r_contents: $("#smarteditor").val(),
+	    	    				r_score: $("#r_score").val()
+	    	    			},
+	    	    			success:function(data){
+	    	    				data=data.trim();
+	    	    				$("#reply_contents").html(data);
+	    	    			}
+	    	    		});
+	        		}
+	        	}
+	        });
 	    });
 	    /* smarteditor 끝 */
 		
@@ -364,41 +378,15 @@
 				<div id="relationship">
 					<span>연관 추천 게임</span>
 					<ul>
+						<c:forEach items="${mapping}" var="mapping" varStatus="status">
 						<li>
 							<dl>
-								<dt></dt>
-								<dd class="rel_name">게임 이름</dd>
-								<dd>가격</dd>
+								<dt> <img class="game_img" src="../resources/upload/${mapping_img[status.index].file_name}"> </dt>
+								<dd class="rel_name">${mapping.pro_title }</dd>
+								<dd> ${mapping.total_price} </dd>
 							</dl>
 						</li>
-						<li>
-							<dl>
-								<dt></dt>
-								<dd class="rel_name">게임 이름</dd>
-								<dd>가격</dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt></dt>
-								<dd class="rel_name">게임 이름</dd>
-								<dd>가격</dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt></dt>
-								<dd class="rel_name">게임 이름</dd>
-								<dd>가격</dd>
-							</dl>
-						</li>
-						<li>
-							<dl>
-								<dt></dt>
-								<dd class="rel_name">게임 이름</dd>
-								<dd>가격</dd>
-							</dl>
-						</li>
+						</c:forEach>
 					</ul>
 				</div>
 			</div>
@@ -580,7 +568,9 @@
 									${rep.r_writer} 
 									<input type="hidden" name="m_id" id="m_id_${status.index}" value="${rep.r_writer}">
 									<input type="hidden" name="r_num" id="r_num_${status.index}" value="${rep.r_num}">
-									<input type="button" onclick="reply_delete(${status.index})" value="삭제">
+									<c:if test="${member.m_id eq rep.r_writer}">
+										<input type="button" onclick="reply_delete(${status.index})" value="삭제">
+									</c:if>
 									<input type="text" value="${rep.r_score }" id="score_${status.index}">
 								</div>
 								<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents} </textarea>

@@ -199,8 +199,11 @@ section #pro_view {
 }
 #relationship dt {
 	width: 100%;
-	padding-top: 65px;
-	padding-bottom: 5px;
+	height: 80px;
+}
+#relationship dt img {
+	width: 100%;
+	height: 100%;
 }
 #relationship .rel_name {
 	border-bottom: 1px solid #aaaaaa;
