@@ -69,7 +69,7 @@
 				<span id="product_tag" class="h_icon">▼</span>
 			</div>
 			<div class="h_menu" id="software_tx">
-				<span>SoftWare</span>
+				<span>Others</span>
 				<span id="software_tag" class="h_icon">▼</span>
 			</div>
 			<div id="blink_tx">
@@ -101,6 +101,7 @@
 						<li><a href="${pageContext.request.contextPath}/product/fav_product">내가 본 게임</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=action">Action</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=rpg">RPG</a></li>
+						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=strategy">Strategy</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=simulation">Simulation</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=adventure">Adventure</a></li>
 						<li><a href="${pageContext.request.contextPath}/product/pro_list?top_category=sports">Sports</a></li>

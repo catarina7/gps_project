@@ -319,10 +319,10 @@
 					<li>list</li>
 					<li>list</li>
 				</ul> -->
-				<p>BEST/NEW</p>
+				<p>USER SERVICE</p>
 				<ul>
-					<li>인기 게임</li>
-					<li>최신 게임</li>
+					<li id="mem_cart">장바구니</li>
+					<li id="mem_fav">관심상품</li>
 				</ul>
 				<p>CATEGORY</p>
 				<ul>
@@ -338,10 +338,10 @@
 					<li id="indi">INDI</li>
 					<li id="etc">MMO/ETC</li>
 				</ul>
-				<p>USER SERVICE</p>
+				<p>COMMUNICATE</p>
 				<ul>
-					<li id="mem_cart">장바구니</li>
-					<li id="mem_fav">관심상품</li>
+					<li>공지사항</li>
+					<li>FAQ</li>
 				</ul>
 			</div>
 
