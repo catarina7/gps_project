@@ -379,7 +379,7 @@
 					<span>연관 추천 게임</span>
 					<ul>
 						<c:forEach items="${mapping}" var="mapping" varStatus="status">
-						<li>
+						<li onclick="location.href='${pageContext.request.contextPath}/product/pro_view?pro_num=${mapping.pro_num }'">
 							<dl>
 								<dt> <img class="game_img" src="../resources/upload/${mapping_img[status.index].file_name}"> </dt>
 								<dd class="rel_name">${mapping.pro_title }</dd>
