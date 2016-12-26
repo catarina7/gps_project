@@ -84,6 +84,7 @@ public class CartDAO {
 		}
 	}
 	
+	//구매시 카드 삭제
 	public int purchaseDel(PurchaseDTO purchase) throws Exception{
 		return sqlSession.delete(namespace+"pur_del", purchase);
 	}

@@ -15,10 +15,10 @@ $(function(){
 		location.href="pw_check?category=3";
 	});	
 	
-	//마일이지 정보 확인.
 	
 	
-	//computer 정보 수정.
+	
+	
 	
 	
 	

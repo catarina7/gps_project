@@ -83,6 +83,7 @@
 	<c:import url="/header" />
 	
 	<!-- section -->
+	<input type="hidden" name="m_id" id="m_id" value="${member.m_id}">
 	
 	<section>
 		<c:import url="/user_menu_bar" />
@@ -105,17 +106,21 @@
 				<span class="pg_buy">></span>
 				<span id="pg_comple">결제완료</span>
 			</p>
-		</div>
+		</div> 
 		<div id="first_buy">
 			<!-- 구매하고자 하는 게임 리스트 -->
 			<div class="title"><span>◎</span> 구매 게임</div>
 			<div id="second_buy">
-				<div>
-					
+				<div>					
+						<c:forEach items="${productOne}" var="pro" varStatus="status">
 						<div class="item">
 							<div class="four_contents">
+								<div class="f_g_check">
+									
+									
+								</div>
 								<div class="f_g_img">
-									<img src="../resources/upload/${proFileOne.file_name}">
+									<img src="../resources/upload/${proFileOne[status.index].file_name}">
 								</div>
 								<table>
 									<colgroup>
@@ -124,7 +129,7 @@
 										<col style="width:10%;">
 									</colgroup>
 									<tr>
-										<td class="f_g_name">${productOne.pro_title}</td>
+										<td class="f_g_name">${pro.pro_title}</td>
 										<td>
 											<span class="window">
 												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
@@ -135,16 +140,29 @@
 										</td>
 										<td>
 											
-											<input type="hidden" name="pro_num" id="pro_num" value="${productOne.pro_num}">
-											<input type="hidden" name="m_id" id="m_id" value="${member.m_id}">										
+											<input type="hidden" name="pro_num" id="pro_num${status.index}" value="${pro.pro_num}" class="check_pro_num">
+											<input type="hidden" name="pro_millage" id="pro_millage${status.index}" value="${pro.millage}">  
+											<input type="hidden" name="m_id" id="m_id${status.index}" value="${member.m_id}">
+											
 										</td>
 									</tr>
 									<tr>
-										<td class="f_g_ex" colspan="3">${productOne.pro_contents}</td>
+										<td class="f_g_ex" colspan="3">${pro.pro_contents}</td>
 									</tr>
 								</table>
-							</div>							
+							</div>
+							<div class="tag">
+							<input type="hidden" name="total_price" id="total_price${status.index}" value="${pro.total_price}">
+								<ul>
+									<li class="discount">${pro.discount} %</li>
+									<li class="price">
+										<p class="nomal_p">${pro.price}</p>
+										<span>${pro.total_price }</span>
+									</li>
+								</ul>
+							</div>
 						</div>
+					</c:forEach>
 							
 				</div>
 			</div><!-- end of game list -->
@@ -174,7 +192,7 @@
 								<!-- 상품의 합계가격 -->
 								<span id="pro_price">
 								<!-- price_input -->
-									<input type="text" id="price_input" value="${productOne.total_price}">  
+									<input type="text" id="price_input" value="">  
 								</span>
 							</td>
 							<td>
@@ -348,11 +366,11 @@
 						<!-- 변동 가격 -->
 						<div>
 							<!-- 적립될 마일리지  -->
-							<input type="hidden" id="pro_millage" value="${productOne.millage}">
+							
 							<dl>
 								<dt>적립 될 마일리지</dt>
 								
-								<dd> <input type="hidden" id="pro_millage_pur" value="${productOne.millage}"><span> ${productOne.millage} point</span></dd>
+								<dd> <input type="hidden" id="pro_millage_pur" value=""><span> <span id="span_millage"></span>  point</span></dd>
 							</dl>
 						</div>	
 						<div>
