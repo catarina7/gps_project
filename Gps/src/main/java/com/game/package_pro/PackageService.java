@@ -1,5 +1,6 @@
 package com.game.package_pro;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,12 +28,12 @@ public class PackageService {
 	}
 	
 	//서브 카테고리로 패키지게임 목록 가져오기
-	public List<PackageDTO> packList(String sub_category) throws Exception{
+	public ArrayList<PackageDTO> packList(String sub_category) throws Exception{
 		return packageDAO.packageList(sub_category);
 	}
 	
 	//패키지 구매 시 가져오기
-	public List<PackageDTO> packBuy(int pack_num) throws Exception{
+	public PackageDTO packBuy(int pack_num) throws Exception{
 		return packageDAO.packageBuy(pack_num);
 	}
 	

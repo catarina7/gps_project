@@ -1,5 +1,6 @@
 package com.game.package_pro;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -29,13 +30,18 @@ public class PackageDAO {
 	}
 	
 	//서브 카테고리로 패키지 게임 목록 가져오기
-	public List<PackageDTO> packageList(String sub_category) throws Exception {
-		return sqlSession.selectList(namespace+"packList", sub_category);
+	public ArrayList<PackageDTO> packageList(String sub_category) throws Exception {
+		
+		ArrayList<PackageDTO> pack = new ArrayList<>();
+		List<PackageDTO> packageList = sqlSession.selectList(namespace+"packList", sub_category);
+		pack.addAll(packageList);
+		
+		return pack;
 	}
 	
 	//구매 시 패키지 가져오기
-	public List<PackageDTO> packageBuy(int pack_num) throws Exception{
-		return sqlSession.selectList(namespace+"packBuy", pack_num);
+	public PackageDTO packageBuy(int pack_num) throws Exception{
+		return sqlSession.selectOne(namespace+"packBuy", pack_num);
 	}
 	
 	
