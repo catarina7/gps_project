@@ -561,7 +561,12 @@
 						<tr>
 							<td class="com_title" colspan="2">업데이트 및 패치 파일</td>
 						</tr>
+
 						<c:forEach items="${pro_patch}" var="patch" varStatus="status">
+
+
+							<c:forEach items="${pro_patch}" var="patch" varStatus="status">
+
 							<tr>
 								<td class="com_name">
 									<p>${patch.patch_origine_name}</p>
@@ -574,7 +579,12 @@
 					
 							</tr>
 							</c:forEach>
+
 						<%-- <c:forEach items="${pro_patch}" var="patch" varStatus="status">
+
+
+						<c:forEach items="${pro_patch}" var="patch" varStatus="status">
+
 							<tr>
 								<td class="com_name">
 									<p>${patch.patch_origine_name}</p> <input type="hidden"
@@ -587,7 +597,12 @@
 								</td>
 
 							</tr>
+
 						</c:forEach> --%>
+
+						</c:forEach>
+
+
 					</table>
 				</div>
 

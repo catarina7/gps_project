@@ -21,11 +21,10 @@
 </head>
 <body>
 	<c:import url="/header" />
-
 	<!-- section -->
 	<section>
 		<!-- 내용 넣기 -->
-		<div>
+		<div id="user_menu">
 			<c:import url="/user_menu_bar" />
 		</div>
 		<div id="notice_first">

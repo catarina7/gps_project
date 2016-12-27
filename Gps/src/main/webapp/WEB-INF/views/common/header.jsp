@@ -85,7 +85,15 @@
 					<div class="M_list" id="Store_list">
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/product/pro_list">전체상품</a></li>
+
 							<li><a href="#">패키지 게임</a></li>
+
+							<li><a href="#">패키지 게임</a></li>
+
+							<li><a href="${pageContext.request.contextPath}/notice/noticeList">공지사항</a></li>
+							<li><a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a></li>
+
+
 						</ul>
 					</div>
 					<!-- <div class="M_list" id="S_list">
