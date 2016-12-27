@@ -1,12 +1,16 @@
 package com.game.gps;
 
+import java.awt.Dialog.ModalExclusionType;
 import java.util.ArrayList;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import com.game.package_pro.PackageDTO;
 import com.game.package_pro.PackageService;
@@ -23,19 +27,17 @@ public class PackageController {
 		return "/package_pro/pack_write";
 	} 
 	
-	@RequestMapping(value="/packWrite")
-	public int packWrite(PackageDTO packageDTO){
-		
-		int result = 0;
+	@RequestMapping(value="/packWrite", method=RequestMethod.POST)
+	public String packWrite(PackageDTO packageDTO){
 		
 		try {
-			result = packageService.packWrite(packageDTO);
+			 packageService.packWrite(packageDTO);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return result;
+		return "redirect:/package_pro/pack_write";
 	}
 	
 	@RequestMapping(value="/pack_mod")
@@ -43,53 +45,48 @@ public class PackageController {
 		return "/package_pro/pack_mod";
 	}
 	
-	@RequestMapping(value="/packMod")
-	public int packMod(PackageDTO packageDTO){
-		int result = 0;
+	@RequestMapping(value="/packMod", method=RequestMethod.POST)
+	public String packMod(PackageDTO packageDTO){
 		try {
-			result = packageService.packMod(packageDTO);
+			packageService.packMod(packageDTO);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return result;
+		return "redirect:/package_pro/pack_mod";
 	}
 	
 	@RequestMapping(value="/packDelete")
-	public int packDelete(@RequestParam int pack_num){
-		int result = 0;
+	public String packDelete(@RequestParam int pack_num){
 		try {
-			result = packageService.packDelete(pack_num);
+			packageService.packDelete(pack_num);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return result;
+		return "redirect:/admin/product_admin";
 	}
 	
 	@RequestMapping(value="/packList")
-	public ArrayList<PackageDTO> packList(@RequestParam String sub_category){
-		ArrayList<PackageDTO> pack = new ArrayList<>();
+	public String packList(@RequestParam String sub_category, Model model){
 		try {
-			pack = packageService.packList(sub_category);
+			packageService.packList(sub_category, model);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return pack;
+		return "/product/pro_view";
 	}
 	
 	@RequestMapping(value="/packBuy")
-	public PackageDTO packBuy(@RequestParam int pack_num){
-		PackageDTO pack = new PackageDTO();
-		
+	public String packBuy(@RequestParam int pack_num, Model model){
 		try {
-			pack = packageService.packBuy(pack_num);
+			packageService.packBuy(pack_num, model);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return pack;
+		return "/purchase/buy";
 	}
 }

@@ -35,4 +35,9 @@
 		]]>
 	</select>
 	
+	<select id="packProduct" resultType="java.lang.String" parameterType="int">
+		<![CDATA[
+			select pro_num from package_pro where pack_num = #{pack_num}
+		]]>
+	</select>
 </mapper>

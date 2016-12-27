@@ -44,5 +44,7 @@ public class PackageDAO {
 		return sqlSession.selectOne(namespace+"packBuy", pack_num);
 	}
 	
-	
+	public String packageProduct(int pack_num) throws Exception {
+		return sqlSession.selectOne(namespace+"packProduct", pack_num);
+	}
 }

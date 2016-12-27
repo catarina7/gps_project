@@ -2,9 +2,11 @@ package com.game.package_pro;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.StringTokenizer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 
 @Service
 public class PackageService {
@@ -28,13 +30,29 @@ public class PackageService {
 	}
 	
 	//서브 카테고리로 패키지게임 목록 가져오기
-	public ArrayList<PackageDTO> packList(String sub_category) throws Exception{
-		return packageDAO.packageList(sub_category);
+	public void packList(String sub_category, Model model) throws Exception{
+		ArrayList<PackageDTO> ar = new ArrayList<>();
+		ar = packageDAO.packageList(sub_category);
+		model.addAttribute("package_pro", ar);
 	}
 	
 	//패키지 구매 시 가져오기
-	public PackageDTO packBuy(int pack_num) throws Exception{
-		return packageDAO.packageBuy(pack_num);
+	public void packBuy(int pack_num, Model model) throws Exception{
+		PackageDTO pack = new PackageDTO();
+		pack = packageDAO.packageBuy(pack_num);
+		
+		String pro_num = packageDAO.packageProduct(pack_num);
+		
+		ArrayList<String> ar = new ArrayList<>();
+		StringTokenizer st = new StringTokenizer(pro_num, ":");
+		
+		while(st.hasMoreTokens()){
+			String product = st.nextToken();
+			ar.add(product);
+		}
+		
+		model.addAttribute("package_product", ar); //상품번호 자른 것
+		model.addAttribute("package_buy", pack); //모든 패키지 정보
 	}
 	
 	
