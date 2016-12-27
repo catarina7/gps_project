@@ -114,6 +114,7 @@
 				<div class="H_list" id="software">
 					<ul>
 						<li><a href="${pageContext.request.contextPath}/product/fav_product">오늘 본 게임</a></li>
+						<li><a href="${pageContext.request.contextPath}/package_pro/pack_write">패키지 게임 등록</a></li>
 						<li><a href="${pageContext.request.contextPath}/qna/qnaList">QnA</a></li>
 						<li><a href="${pageContext.request.contextPath}/admin_main">관리자 페이지</a></li>
 					</ul>
