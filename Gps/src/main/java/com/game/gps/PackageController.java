@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.game.package_pro.PackageDTO;
 import com.game.package_pro.PackageService;
@@ -64,14 +65,14 @@ public class PackageController {
 	}
 	
 	@RequestMapping(value="/packList")
-	public String packList(@RequestParam String sub_category, Model model){
+	public String packList(@RequestParam int pro_num, Model model){
 		try {
-			packageService.packList(sub_category, model);
+			packageService.packList(pro_num, model);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "/product/pro_view";
+		return "package_pro/package_result";
 	}
 	
 	@RequestMapping(value="/packBuy")

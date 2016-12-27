@@ -7,6 +7,7 @@ import java.util.StringTokenizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Service
 public class PackageService {
@@ -30,9 +31,12 @@ public class PackageService {
 	}
 	
 	//서브 카테고리로 패키지게임 목록 가져오기
-	public void packList(String sub_category, Model model) throws Exception{
+	public void packList(int pro_num, Model model) throws Exception{
 		ArrayList<PackageDTO> ar = new ArrayList<>();
+		
+		String sub_category = packageDAO.packageSearch(pro_num);
 		ar = packageDAO.packageList(sub_category);
+		
 		model.addAttribute("package_pro", ar);
 	}
 	

@@ -66,6 +66,18 @@
 			}
 	    });
 	    
+	    //패키지 게임 가져오기
+	    $.ajax({
+	    	url: '../package_pro/packList',
+	    	type: 'POST',
+	    	data:{
+	    		pro_num: $("#pro_num").val()
+	    	},
+	    	success: function(data) {
+	    		data=data.trim();
+	    		$("#package_game").html(data);
+	    	}
+	    });
 	    
 	    //전송버튼 클릭이벤트 (댓글 작성)
 		$("#save").click(function(){
@@ -231,6 +243,7 @@
 				
 			}
 		});
+		
 		
 	}
 	//다운
@@ -405,8 +418,8 @@
 							</ul>
 						</div>
 					</div>
-					<c:forEach items="${package_game }" var="pack" varStatus="status">				
-							<div id="package_game">
+					<div id="package_game">
+						<c:forEach items="${package_game }" var="pack" varStatus="status">				
 								<div class="item">
 									<div class="four_contents">
 										<table>
@@ -433,8 +446,8 @@
 										</ul>
 									</div>
 								</div>
-							</div>
-					</c:forEach>
+							</c:forEach>
+					</div>
 				</div>
 				<div id="relationship">
 					<span>연관 추천 게임</span>

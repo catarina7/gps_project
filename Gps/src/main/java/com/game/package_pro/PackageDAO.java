@@ -29,6 +29,11 @@ public class PackageDAO {
 		return sqlSession.delete(namespace+"packDelete", pack_num);
 	}
 	
+	//product에서 sub_category 가져오기 
+	public String packageSearch(int pro_num) throws Exception{
+		return sqlSession.selectOne(namespace+"packSearch", pro_num);
+	}
+	
 	//서브 카테고리로 패키지 게임 목록 가져오기
 	public ArrayList<PackageDTO> packageList(String sub_category) throws Exception {
 		

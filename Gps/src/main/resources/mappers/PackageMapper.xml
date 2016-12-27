@@ -35,9 +35,20 @@
 		]]>
 	</select>
 	
+	<select id="packSearch" resultType="java.lang.String" parameterType="int">
+		<![CDATA[
+			select sub_category from product where pro_num=#{pro_num}
+		]]>
+	</select>
+	
+	
+	
 	<select id="packProduct" resultType="java.lang.String" parameterType="int">
 		<![CDATA[
 			select pro_num from package_pro where pack_num = #{pack_num}
 		]]>
 	</select>
+	
+	
+	
 </mapper>
