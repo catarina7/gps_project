@@ -5,6 +5,7 @@ public class Product_memberDTO {
 	private String m_id;
 	private int pro_num;
 	private String cd_serial;
+	private int pur_num;
 	
 	public int getPm_num() {
 		return pm_num;
@@ -30,4 +31,11 @@ public class Product_memberDTO {
 	public void setCd_serial(String cd_serial) {
 		this.cd_serial = cd_serial;
 	}
+	public int getPur_num() {
+		return pur_num;
+	}
+	public void setPur_num(int pur_num) {
+		this.pur_num = pur_num;
+	}
+	
 }
