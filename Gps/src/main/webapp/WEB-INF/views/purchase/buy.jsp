@@ -160,8 +160,8 @@
 									<ul>
 										<li class="discount">${pro.discount} %</li>
 										<li class="price">
-											<p class="nomal_p">${pro.price}</p>
-											<span>${pro.total_price }</span>
+											<p class="nomal_p">₩ ${pro.price}</p>
+											<span>₩ ${pro.total_price }</span>
 										</li>
 									</ul>
 								</c:if>
@@ -170,8 +170,8 @@
 									<ul>
 										<li class="discount">${pro.discount} %</li>
 										<li class="price">
-											<p class="nomal_p">${pro.price}</p>
-											<span>${pro.price}</span>
+											<p class="nomal_p">₩ ${pro.price}</p>
+											<span>₩ ${pro.price}</span>
 										</li>
 									</ul>
 								</c:if>
@@ -188,13 +188,13 @@
 				<div id="th_contents">
 					<table>
 						<colgroup>
-							<col style="width:15%;">
 							<col style="width:8%;">
-							<col style="width:20%;">
+							<col style="width:12%;">
+							<col style="width:14%;">
+							<col style="width:12%;">
 							<col style="width:8%;">
-							<col style="width:15%;">
-							<col style="width:8%;">
-							<col style="width:20%;">
+							<col style="width:12%;">
+							<col style="width:34%;">
 						</colgroup>
 						<tr>
 							<td class="th_title" colspan="2">결제 금액</td>
@@ -219,13 +219,15 @@
 								<!-- 마일리지 적용 -->
 								<span id="pro_millage">
 								<!-- milage_count -->
-									<span>(마일리지): ${member.millage}</span>
+									<span>(사용 가능 마일리지): ${member.millage}</span>
 									<input type="hidden" id="m_millage" placeholder="millage (히든으로 들어갈 예정)" value="${member.millage}">
 									<input type="number" id="millage_count" value="0">
 								</span>
 								<!-- 마이리지 적용 버튼 -->
-								<button id="mill_cancle">적용 취소</button>
-								<button id="mill_in">전부 적용</button>
+								<div id="purchase_button">
+									<button id="mill_cancle">적용 취소</button>
+									<button id="mill_in">전부 적용</button>
+								</div>
 							</td>
 							<td>
 								<p class="plus">
@@ -238,7 +240,6 @@
 								<!-- vat_input -->
 									<input type="text" id="vat_input">
 								</span>
-								
 							</td>
 							<td>
 								<p class="complete">
@@ -251,7 +252,7 @@
   								<!-- post_total -->
 									<!-- 결제금액 -->
 									<input type="hidden" id="total_input">	
-									<input type="text" id="post_total"> 
+									<input type="text" id="post_total"> 원
 								</span>
 								
 							</td>

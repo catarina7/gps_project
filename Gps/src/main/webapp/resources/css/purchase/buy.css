@@ -84,6 +84,43 @@ section #first_buy {
 	padding: 10px 1.4%;
 	overflow: hidden;
 }
+#third_buy input[type="text"]{
+	padding: 3px 1%;
+	background-color: #666666;
+	color: #ddf2ff;
+	border: 0px;
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 17px;
+	font-weight: bold;
+}
+#third_buy input[type="number"]{
+	padding: 3px 0.4%;
+	background-color: #666666;
+	color: #ddf2ff;
+	border: 0px;
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 17px;
+	font-weight: bold;
+	margin-top: 5px;
+}
+#pro_millage span {
+	font-size: 13px;
+	color: white;
+	padding: 5px 0px;
+}
+#third_buy #total_price {
+	font-weight: bold;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 17px;
+}
+#third_buy #post_total {
+	width: 80%;
+	font-size: 20px;
+	color: #ffaaac;
+}
+
+
 #th_contents table {
 	width: 100%;
 	overflow: hidden;
@@ -125,6 +162,9 @@ section .complete {
 	font-size: 14px;
 	text-shadow: -1px -1px 0px black;
 }
+#th_contents #purchase_button {
+	padding: 5px 0px;
+}
 #th_contents #mill_in {
 	padding: 3px 7px;
 	border: 1px solid black;
@@ -141,6 +181,7 @@ section .complete {
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
 }
 #th_contents #mill_cancle {
+	margin-left: 1%;
 	padding: 3px 7px;
 	border: 1px solid black;
 	color: white;
@@ -362,7 +403,13 @@ section .complete {
 	float: right;
 	overflow: hidden;
 }
-
+#pay_check_2 #span_total {
+	color: #ffe3e4;
+	font-weight: bold;
+	font-size: 22px;
+	text-shadow: -1px -1px 0px #414141;
+	margin-left: 40%;
+}
 
 #first_buy #last_buy {
 	padding: 5px 15px;
@@ -406,39 +453,6 @@ section .complete {
 	margin: 0 auto;
 	height: 60px;
 	padding: 5px 0px;
-}
-#product_list_view .four_contents .f_g_check {
-	width: 4%;
-	height: 100%;
-	float: left;
-	overflow: hidden;
-	position: relative;
-}
-.f_g_check input[type="checkbox"]{
-  width:1px; 
-  height:1px; 
-  padding:0; 
-  border:0 none; 
-  margin:0; 
-  position:absolute; 
-  left:0; 
-  top:0; 
-  overflow:hidden;
-  clip:rect(0 0 0 0);
-}
-.f_g_check label{
-  height:15px; 
-  line-height:15px; 
-  padding-left:20px; 
-  display:inline-block; 
-  background:url(http://csscheckbox.com/checkboxes/lite-plus.png) no-repeat 0 0; 
-  font-size:15px; 
-  vertical-align:middle; 
-  cursor:pointer;
-}
-
-.f_g_check input[type="checkbox"]:checked + label{
-  background-position: 0 -15px;
 }
 #product_list_view .four_contents .f_g_img {
 	background-color: white;
@@ -486,7 +500,7 @@ section .complete {
 	margin-top: 5px;
 	border: 2px solid #aaaaaa;
 	border-radius: 7px;
-	right: 21%;
+	right: 24%;
 }
 .tag .discount {
 	background-color: #32435c;
