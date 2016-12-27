@@ -232,19 +232,6 @@
 			}
 		});
 		
-		/* //연관 패키지 
-	    $.ajax({
-	    	url: '../package_pro/packList',
-	    	type: 'POST',
-	    	data: {
-	    		sub_category: $("${pro_view.sub_category}")
-	    	},
-	    	success: function(data) {
-	    		data=data.trim();
-	    		$("#package_game").html(data);
-	    	}
-	    }); */
-		
 	}
 	//다운
 	function patchDownload(i){
@@ -418,34 +405,36 @@
 							</ul>
 						</div>
 					</div>
-					<div id="package_game">
-						<div class="item">
-							<div class="four_contents">
-								<table>
-									<colgroup>
-										<col style="width: 450px;">
-										<col style="width: 100px;">
-									</colgroup>
-									<tr>
-										<td class="f_g_name">${package_pro.pack_title }</td>
-										<td></td>
-									</tr>
-									<tr>
-										<td class="f_g_ex" colspan="2">${package_pro.pack_contents }</td>
-									</tr>
-								</table>
-							</div>
-							<div class="tag">
-								<ul>
-									<li class="discount">${package_pro.discount }</li>
-									<li class="price">
-										<p class="nomal_p">₩ ${package_pro.price }</p> <span>₩ ${package_pro.total_price }</span>
-									</li>
-									<li><input type="button" value="장바구니 담기"></li>
-								</ul>
+					<c:if test="${package_game != null }">					
+						<div id="package_game">
+							<div class="item">
+								<div class="four_contents">
+									<table>
+										<colgroup>
+											<col style="width: 450px;">
+											<col style="width: 100px;">
+										</colgroup>
+										<tr>
+											<td class="f_g_name">${package_pro.pack_title }</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td class="f_g_ex" colspan="2">${package_pro.pack_contents }</td>
+										</tr>
+									</table>
+								</div>
+								<div class="tag">
+									<ul>
+										<li class="discount">${package_pro.discount }</li>
+										<li class="price">
+											<p class="nomal_p">₩ ${package_pro.price }</p> <span>₩ ${package_pro.total_price }</span>
+										</li>
+										<li><input type="button" value="장바구니 담기"></li>
+									</ul>
+								</div>
 							</div>
 						</div>
-					</div>
+					</c:if>
 				</div>
 				<div id="relationship">
 					<span>연관 추천 게임</span>
@@ -558,7 +547,8 @@
 						</colgroup>
 						<tr>
 							<td class="com_title" colspan="2">업데이트 및 패치 파일</td>
-						</tr><c:forEach items="${pro_patch}" var="patch" varStatus="status">
+						</tr>
+						<c:forEach items="${pro_patch}" var="patch" varStatus="status">
 							<tr>
 								<td class="com_name">
 									<p>${patch.patch_origine_name}</p>
@@ -570,7 +560,8 @@
 								</td>
 					
 							</tr>
-							</c:forEach><c:forEach items="${pro_patch}" var="patch" varStatus="status">
+							</c:forEach>
+						<%-- <c:forEach items="${pro_patch}" var="patch" varStatus="status">
 							<tr>
 								<td class="com_name">
 									<p>${patch.patch_origine_name}</p> <input type="hidden"
@@ -579,11 +570,11 @@
 								</td>
 								<td>
 									<button onclick="patchDownload(${status.index})">Download</button>
-									<%-- <a href="../resources/upload/${patch.patch_file_name}">${patch.patch_origine_name}</a> --%>
+									<a href="../resources/upload/${patch.patch_file_name}">${patch.patch_origine_name}</a>
 								</td>
 
 							</tr>
-						</c:forEach>
+						</c:forEach> --%>
 					</table>
 				</div>
 
@@ -608,7 +599,7 @@
 
 			</div>
 
-			<c:if test="${member.m_id != null}">
+				<c:if test="${member.m_id != null}">
 				<!-- review -->
 				<div id="six_pro">
 					<div id="pro_grade"></div>
@@ -654,7 +645,6 @@
 						</div>
 
 
-
 						<div class="reply_contents" id="reply_contents">
 							<c:forEach items="${replyList}" var="rep" varStatus="status">
 								<div class="re_title"></div>
@@ -695,10 +685,9 @@
 							</c:forEach>
 						</div>
 					</div>
-
 				</div>
-			</c:if>
-		</div>
+				</c:if>
+			</div>
 	</section>
 
 
