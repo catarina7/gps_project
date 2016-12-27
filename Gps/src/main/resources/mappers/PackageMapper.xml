@@ -23,7 +23,7 @@
 		]]>
 	</delete>
 	
-	<select id="packList" resultType="com.game.package_pro.PackageDTO" parameterType="com.game.package_pro.PackageDTO">
+	<select id="packList" resultType="com.game.package_pro.PackageDTO" parameterType="java.lang.String">
 		<![CDATA[
 			select * from package_pro where sub_category = #{sub_category}
 		]]>
