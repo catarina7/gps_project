@@ -13,5 +13,10 @@ public class PackageController {
 	@Autowired
 	private PackageService packageService;
 	
+	@RequestMapping("/pack_write")
+	public String pack_write(){
+		return "/package_pro/pack_write";
+	} 
+	
 	
 }
