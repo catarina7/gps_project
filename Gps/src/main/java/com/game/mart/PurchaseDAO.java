@@ -63,4 +63,10 @@ public class PurchaseDAO {
 		return sqlsession.insert(namespaceP+"Purchasing", purchase);
 	}
 
+
+	public int purcheck() {
+		// TODO Auto-generated method stub
+		return sqlsession.selectOne(namespaceP+"Purcheck");
+	}
+
 }

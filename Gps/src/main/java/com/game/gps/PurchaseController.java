@@ -163,7 +163,7 @@ public class PurchaseController {
 				
 				//purchaseservice 구매정보 입력
 				result += purchaseservice.purchasing(purchase);
-				
+				int pur_num = purchaseservice.purcheck();
 				for(int i=0;i<p_nar.size();i++){
 					
 					CartDTO cart = new CartDTO();
@@ -173,14 +173,15 @@ public class PurchaseController {
 					Product_memberDTO prme = new Product_memberDTO();
 					prme.setM_id(purchase.getM_id());
 					prme.setPro_num(p_nar.get(i));
+					prme.setPur_num(pur_num);
 					pmar.add(prme);
 				}				
 				
 				for(int i=0;i<pmar.size();i++){					
 				//cartservice 카트 정보 수정
-				cartservice.purchaseDel(cartar.get(i));
+					cartservice.purchaseDel(cartar.get(i));
 				//product_member 정보 입력
-				pro_memService.pro_meminsert(pmar.get(i));	
+					pro_memService.pro_meminsert(pmar.get(i));	
 				}
 				
 			} catch (Exception e) {
