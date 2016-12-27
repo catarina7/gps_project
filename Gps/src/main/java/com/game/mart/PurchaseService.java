@@ -3,6 +3,7 @@ package com.game.mart;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.StringTokenizer;
 
 import javax.servlet.http.HttpSession;
 
@@ -101,17 +102,20 @@ public class PurchaseService {
 		ArrayList<ProductDTO> proar = new ArrayList<ProductDTO>();
 		ArrayList<ProductFileDTO> filear = new ArrayList<ProductFileDTO>();
 		
-		for(int i=0;i<purar.size();i++){					
+		ArrayList<Object> ar_ar = new ArrayList<Object>();
+		
+		
+		/*for(int i=0;i<purar.size();i++){					
 			//상품정보 가져오기
-			proar.add(productDao.productView(purar.get(i).getPro_num()));
+			proar.add(productDao.productView(0));
 			//사진 가져오기			
-			filear.add(productDao.productImgList(purar.get(i).getPro_num()));
+			filear.add(productDao.productImgList(0));
 			
-		}
+		}*/
 		
 		model.addAttribute("Purchasing_List", purar);
-		model.addAttribute("ProductPur_List", proar);
-		model.addAttribute("ProductFile_List", filear);	
+		/*model.addAttribute("ProductPur_List", proar);
+		model.addAttribute("ProductFile_List", filear);	*/
 		
 	}
 	

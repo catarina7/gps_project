@@ -37,7 +37,7 @@
 	</delete>
 	
 	<!-- 구매시 삭제 -->
-	<delete id="pur_del" parameterType="com.game.mart.PurchaseDTO">
+	<delete id="pur_del" parameterType="com.game.mart.CartDTO">
 		delete cart where m_id=#{m_id} and pro_num=#{pro_num}	
 	</delete>
 	

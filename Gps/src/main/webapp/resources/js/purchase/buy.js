@@ -310,9 +310,9 @@ $(function(){
 			var m_millage =0;
 			if($("input:radio[name=choice]:checked").val() == "bank"){
 				alert("무통장 입금시 구매에 시간이 걸릴 수 있습니다.");
-				status="결재대기";
+				status="대기";
 			}else{
-				status="결재요청";
+				status="요청";
 			}			
 			m_millage = parseInt($("#pro_millage_pur").val())+parseInt($("#cup_check").val())-parseInt($("#millage_count").val());
 			var pro_numli = [];
@@ -321,19 +321,18 @@ $(function(){
 				pro_numli.push($(this).val());
 			});			
 			for(var i=0;i<pro_numli.length;i++){
-				var s = ((i>0)?",":"")+pro_numli[i];
-				promlist += s; 
+				var s = pro_numli[i]+":";
+				promlist += s;
 			}
 			$.ajax({
 				url : "Purchase_pro",
 				data : {
 					m_id : $("#m_id").val(),
-					pro_num : parseInt(1),
+					pro_num : promlist,
 					total_price : $("#post_total").val(),
 					status : status,
 					pur_kind : $("input:radio[name=choice]:checked").val(),
-					m_millage: m_millage,
-					promlist: promlist
+					m_millage: m_millage
 					},
 					type : "post",
 				success : function(result){

@@ -6,7 +6,7 @@ import java.sql.Date;
 public class PurchaseDTO {
 	private int pur_num;
 	private String m_id;
-	private int pro_num;
+	private String pro_num;
 	private int total_price;
 	private Date reg_date;
 	private String status;
@@ -25,10 +25,10 @@ public class PurchaseDTO {
 	public void setM_id(String m_id) {
 		this.m_id = m_id;
 	}
-	public int getPro_num() {
+	public String getPro_num() {
 		return pro_num;
 	}
-	public void setPro_num(int pro_num) {
+	public void setPro_num(String pro_num) {
 		this.pro_num = pro_num;
 	}
 	public int getTotal_price() {
