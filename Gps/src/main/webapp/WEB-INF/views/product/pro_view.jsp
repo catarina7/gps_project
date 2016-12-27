@@ -12,8 +12,10 @@
 	href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
-<script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
+<script type="text/javascript"
+	src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
 
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
@@ -269,7 +271,7 @@
 
 </head>
 <body>
-	
+
 	<c:import url="/header" />
 
 	<!-- section -->
@@ -300,25 +302,31 @@
 				<div id="game_evalution">
 					<span>평점 : </span>
 					<c:if test="${score_avg == 0 }">
-						<img src="${pageContext.request.contextPath}/resources/css/product/img/zero_grade.png">
+						<img
+							src="${pageContext.request.contextPath}/resources/css/product/img/zero_grade.png">
 					</c:if>
 					<c:if test="${score_avg == 1 }">
-						<img src="${pageContext.request.contextPath}/resources/css/product/img/one_grade.png">
+						<img
+							src="${pageContext.request.contextPath}/resources/css/product/img/one_grade.png">
 					</c:if>
 					<c:if test="${score_avg == 2 }">
-						<img src="${pageContext.request.contextPath}/resources/css/product/img/two_grade.png">
+						<img
+							src="${pageContext.request.contextPath}/resources/css/product/img/two_grade.png">
 					</c:if>
 					<c:if test="${score_avg == 3 }">
-						<img src="${pageContext.request.contextPath}/resources/css/product/img/three_grade.png">
+						<img
+							src="${pageContext.request.contextPath}/resources/css/product/img/three_grade.png">
 					</c:if>
 					<c:if test="${score_avg == 4 }">
-						<img src="${pageContext.request.contextPath}/resources/css/product/img/four_grade.png">
+						<img
+							src="${pageContext.request.contextPath}/resources/css/product/img/four_grade.png">
 					</c:if>
 					<c:if test="${score_avg == 5 }">
-						<img src="${pageContext.request.contextPath}/resources/css/product/img/all_grade.png">
+						<img
+							src="${pageContext.request.contextPath}/resources/css/product/img/all_grade.png">
 					</c:if>
-				 	<%-- <h3>평점 :  ${score_avg} </h3> --%> 
-				 </div>
+					<%-- <h3>평점 :  ${score_avg} </h3> --%>
+				</div>
 			</div>
 			<!-- sub images -->
 			<div id="third_pro">
@@ -331,11 +339,9 @@
 				</c:if>
 				<ul>
 					<c:forEach items="${pro_img}" var="img" varStatus="status">
-						<li><img
-							class="demo w3-opacity w3-hover-opacity-off"
+						<li><img class="demo w3-opacity w3-hover-opacity-off"
 							src="../resources/upload/${img.file_name}"
-							onclick="currentDiv(${status.index+1})">
-						</li>
+							onclick="currentDiv(${status.index+1})"></li>
 					</c:forEach>
 				</ul>
 			</div>
@@ -390,7 +396,8 @@
 							<ul>
 								<li class="discount">${pro_view.discount }%</li>
 								<li class="price">
-									<p class="nomal_p">₩ ${pro_view.price}</p> <span>₩ ${pro_view.total_price} </span>
+									<p class="nomal_p">₩ ${pro_view.price}</p> <span>₩
+										${pro_view.total_price} </span>
 								</li>
 								<li><input type="button" class="cart" value="장바구니 담기"></li>
 							</ul>
@@ -453,20 +460,24 @@
 					<span>연관 추천 게임</span>
 					<ul>
 						<c:forEach items="${mapping}" var="mapping" varStatus="status">
-						<li onclick="location.href='${pageContext.request.contextPath}/product/pro_view?pro_num=${mapping.pro_num }'">
-							<dl>
-								<dt> <img class="game_img" src="../resources/upload/${mapping_img[status.index].file_name}"> </dt>
-								<dd class="rel_name">${mapping.pro_title }</dd>
-								<dd>
-									<c:if test="${mapping.total_price == '' }">
+							<li
+								onclick="location.href='${pageContext.request.contextPath}/product/pro_view?pro_num=${mapping.pro_num }'">
+								<dl>
+									<dt>
+										<img class="game_img"
+											src="../resources/upload/${mapping_img[status.index].file_name}">
+									</dt>
+									<dd class="rel_name">${mapping.pro_title }</dd>
+									<dd>
+										<c:if test="${mapping.total_price == '' }">
 										₩ ${mapping.price }
-									</c:if> 
-									<c:if test="${mapping.total_price != '' }">
+									</c:if>
+										<c:if test="${mapping.total_price != '' }">
 										₩ ${mapping.total_price} 
 									</c:if>
-								</dd>
-							</dl>
-						</li>
+									</dd>
+								</dl>
+							</li>
 						</c:forEach>
 					</ul>
 				</div>
@@ -474,7 +485,9 @@
 			<!-- game software -->
 			<div id="five_pro">
 				<div id="computer">
-					<button id="my_pc_btn">내 사양보기</button>
+					<c:if test="${member.m_id != null}">
+						<button id="my_pc_btn">내 사양보기</button>
+					</c:if>
 					<div id="my_pc">
 						<table>
 							<colgroup>
@@ -521,28 +534,28 @@
 						</tr>
 						<tr>
 							<td class="com_name">운영체제</td>
-							<td> ${computer.pc_os }</td>
+							<td>${computer.pc_os }</td>
 						</tr>
 						<tr>
 							<td class="com_name">CPU</td>
-							<td>  ${computer.pc_process }</td>
+							<td>${computer.pc_process }</td>
 						</tr>
 						<tr>
 							<td class="com_name">메모리(RAM)</td>
-							<td>  ${computer.pc_memory}</td>
+							<td>${computer.pc_memory}</td>
 						</tr>
 						<tr>
 							<td class="com_name">그래픽 카드</td>
-							<td>  ${computer.pc_graphic }</td>
+							<td>${computer.pc_graphic }</td>
 						</tr>
 						<tr>
 							<td class="com_name">Direct X버전</td>
-							<td>  ${computer.pc_directx}</td>
+							<td>${computer.pc_directx}</td>
 						</tr>
 						<tr>
 							<td class="com_name">하드디스크 <br> 여유공간
 							</td>
-							<td>  ${computer.pc_space}</td>
+							<td>${computer.pc_space}</td>
 						</tr>
 					</table>
 				</div>
@@ -556,81 +569,82 @@
 							<td class="com_title" colspan="2">업데이트 및 패치 파일</td>
 						</tr>
 						<c:forEach items="${pro_patch}" var="patch" varStatus="status">
-						<tr>
-							<td class="com_name">
-								<p>${patch.patch_origine_name}</p>
-								<input type="hidden" value="${patch.patch_file_name}" id="patch_name_${status.index}">
-							</td>
-							<td>
-								<button onclick="patchDownload(${status.index})">Download</button>
-								<%-- <a href="../resources/upload/${patch.patch_file_name}">${patch.patch_origine_name}</a> --%>
-							</td>
-				
-						</tr>
+							<tr>
+								<td class="com_name">
+									<p>${patch.patch_origine_name}</p> <input type="hidden"
+									value="${patch.patch_file_name}"
+									id="patch_name_${status.index}">
+								</td>
+								<td>
+									<button onclick="patchDownload(${status.index})">Download</button>
+									<%-- <a href="../resources/upload/${patch.patch_file_name}">${patch.patch_origine_name}</a> --%>
+								</td>
+
+							</tr>
 						</c:forEach>
 					</table>
 				</div>
+
 				
-				<form action="../favorite/favoriteAdd" method="get" id="frm1">
-					<input type="hidden" name="m_id" value="${member.m_id}">
-					<input type="hidden" name="pro_num" value="${pro_view.pro_num}">
-					<button class="five_btn" id="favorite">관심상품</button>
-				</form>
-				
-				<form action="../cart_favorite/cartAdd" method="get" id="frm">
-					<input type="hidden" name="m_id" value="${member.m_id}">
-					<input type="hidden" name="pro_num" value="${pro_view.pro_num}">
-					<button class="five_btn" class="cart" id="cart">장바구니</button>
-				</form>
-				
+					<form action="../favorite/favoriteAdd" method="get" id="frm1">
+						<input type="hidden" name="m_id" value="${member.m_id}"> <input
+							type="hidden" name="pro_num" value="${pro_view.pro_num}">
+						<button class="five_btn" id="favorite">관심상품</button>
+					</form>
+
+					<form action="../cart_favorite/cartAdd" method="get" id="frm">
+						<input type="hidden" name="m_id" value="${member.m_id}"> <input
+							type="hidden" name="pro_num" value="${pro_view.pro_num}">
+						<button class="five_btn" class="cart" id="cart">장바구니</button>
+					</form>
 				<div id="admin_btn">
 					<c:if test="${member.m_id eq 'admin'}">
-					<input type="button" id="product_del" value="삭제">
-					<input type="button" id="product_mod" value="수정">
-					</c:if>				
+						<input type="button" id="product_del" value="삭제">
+						<input type="button" id="product_mod" value="수정">
+					</c:if>
 				</div>
-				
-			</div>
-			
-			<!-- review -->
-			<div id="six_pro">
-				<div id="pro_grade"></div>
-				<div id="reply_write">
-					<div class="re_title">
-						<span>의견 쓰기</span> <span id="review_count"> ${reply_count1} </span>
-					</div>
 
-		
+			</div>
+
+			<c:if test="${member.m_id != null}">
+				<!-- review -->
+				<div id="six_pro">
+					<div id="pro_grade"></div>
+					<div id="reply_write">
+						<div class="re_title">
+							<span>의견 쓰기</span> <span id="review_count">
+								${reply_count1} </span>
+						</div>
+
+
 						<div class="re_contents">
-							<div class="re_user"> ${member.m_id} </div>
+							<div class="re_user">${member.m_id}</div>
 							<!-- textarea -->
-							<input type="hidden" name="pro_num" id="pro_num" value="${param.pro_num}">
-							
-							<input type="hidden" name="r_writer" id="r_writer" value="${member.m_id}">
+							<input type="hidden" name="pro_num" id="pro_num"
+								value="${param.pro_num}"> <input type="hidden"
+								name="r_writer" id="r_writer" value="${member.m_id}">
 							<textarea id="smarteditor" name="r_contents"></textarea>
 							<div id="pro_grades">
 								<table>
 									<colgroup>
-										<col style="width:23%;">
-										<col style="width:75%;">
+										<col style="width: 23%;">
+										<col style="width: 75%;">
 									</colgroup>
 									<tr>
+										<td>평점 :</td>
 										<td>
-											평점 : 
-										</td>
-										<td>											
-											<!-- <input type="number" id="r_score" name="r_score"> -->
-											<select id="r_score" name="r_score">
+											<!-- <input type="number" id="r_score" name="r_score"> --> <select
+											id="r_score" name="r_score">
 												<option value="0" id="score_0">☆☆☆☆☆</option>
 												<option value="1" id="score_1">★☆☆☆☆</option>
 												<option value="2" id="score_2">★★☆☆☆</option>
 												<option value="3" id="score_3">★★★☆☆</option>
 												<option value="4" id="score_4">★★★★☆</option>
 												<option value="5" id="score_5">★★★★★</option>
-											</select>
+										</select>
 										</td>
 									</tr>
-								</table>							
+								</table>
 							</div>
 						</div>
 						<div class="re_sub">
@@ -639,47 +653,49 @@
 
 
 
-					<div class="reply_contents" id="reply_contents">
-						<c:forEach items="${replyList}" var="rep" varStatus="status">
-							<div class="re_title">
-								
-							</div>
-							<div class="re_contents">
-								<div class="re_user"> 
-									${rep.r_writer} 
-									<input type="hidden" name="m_id" id="m_id_${status.index}" value="${rep.r_writer}">
-									<input type="hidden" name="r_num" id="r_num_${status.index}" value="${rep.r_num}">
-									<c:if test="${member.m_id eq rep.r_writer}">
-										<input type="button" onclick="reply_delete(${status.index})" value="삭제">
-									</c:if>
-									<input type="text" value="${rep.r_score }" id="score_${status.index}">
+						<div class="reply_contents" id="reply_contents">
+							<c:forEach items="${replyList}" var="rep" varStatus="status">
+								<div class="re_title"></div>
+								<div class="re_contents">
+									<div class="re_user">
+										${rep.r_writer} <input type="hidden" name="m_id"
+											id="m_id_${status.index}" value="${rep.r_writer}"> <input
+											type="hidden" name="r_num" id="r_num_${status.index}"
+											value="${rep.r_num}">
+										<c:if test="${member.m_id eq rep.r_writer}">
+											<input type="button" onclick="reply_delete(${status.index})"
+												value="삭제">
+										</c:if>
+										<input type="text" value="${rep.r_score }"
+											id="score_${status.index}">
+									</div>
+									<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents} </textarea>
 								</div>
-								<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents} </textarea>
-							</div>
-							<div class="re_sub">
-								<div class="like" onclick="reply_like(${status.index})">
-									<input type="hidden" name="m_id" id="m_id_like_${status.index}" value="${member.m_id}">
-									<span>
-										<img id="liked_check" src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
-									</span>
-									<strong>
-										<c:choose>
-											<c:when test="${empty reply_like_count[status.index].like_count}">
+								<div class="re_sub">
+									<div class="like" onclick="reply_like(${status.index})">
+										<input type="hidden" name="m_id"
+											id="m_id_like_${status.index}" value="${member.m_id}">
+										<span> <img id="liked_check"
+											src="${pageContext.request.contextPath}/resources/css/product/img/thumbs-up.png">
+										</span> <strong> <c:choose>
+												<c:when
+													test="${empty reply_like_count[status.index].like_count}">
 												0
 											</c:when>
-											<c:otherwise>
+												<c:otherwise>
 												${reply_like_count[status.index].like_count}			
 											</c:otherwise>
-										</c:choose>
-									</strong>
+											</c:choose>
+										</strong>
+									</div>
+
 								</div>
-								
-							</div>
-						</c:forEach>	
+							</c:forEach>
+						</div>
 					</div>
+
 				</div>
-				
-			</div>
+			</c:if>
 		</div>
 	</section>
 

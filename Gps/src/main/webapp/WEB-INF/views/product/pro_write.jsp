@@ -132,16 +132,16 @@
 						<td class="title">카테고리</td>
 						<td>
 							<select name="top_category">
-								<option value="action">Action</option>
-								<option value="rpg">RPG</option>
-								<option value="simulation">Simulation</option>
-								<option value="strategy">Strategy</option>
-								<option value="adventure">Adventure</option>
-								<option value="sports">Sports</option>
-								<option value="racing">Racing</option>
-								<option value="casual">Casual</option>
-								<option value="indi">INDI</option>
-								<option value="etc">MMO/ETC</option>
+								<option value="Action">Action</option>
+								<option value="RPG">RPG</option>
+								<option value="Simulation">Simulation</option>
+								<option value="Strategy">Strategy</option>
+								<option value="Adventure">Adventure</option>
+								<option value="Sports">Sports</option>
+								<option value="Racing">Racing</option>
+								<option value="Casual">Casual</option>
+								<option value="INDI">INDI</option>
+								<option value="MMO/ETC">MMO/ETC</option>
 							</select>
 						</td>
 					</tr>

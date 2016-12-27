@@ -137,5 +137,5 @@ public class QnaService {
 		this.qnaDAO.qnaStep(qnaDTO);
 		return qnaDAO.qnaReply(qnaDTO);
 	}
-	
+
 }
