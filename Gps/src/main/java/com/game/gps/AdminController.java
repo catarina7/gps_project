@@ -75,4 +75,15 @@ public class AdminController {
 		return "admin/cd_result";
 	}
 	
+	//배송정보관리 리스트
+	@RequestMapping(value="/send_list",  method=RequestMethod.GET)
+	public String send_list(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model){
+		try {
+			adminService.send_list(curPage, perPage, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "admin/send_admin";
+	}
 }

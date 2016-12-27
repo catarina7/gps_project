@@ -98,30 +98,41 @@ public class PurchaseService {
 		mDto = (MemberDTO)session.getAttribute("member");
 		
 		//구매날짜 가져오기
-		ArrayList<PurchaseDTO> purar = purchasedao.purchaseList(mDto);
-		ArrayList<ProductDTO> proar = new ArrayList<ProductDTO>();
-		ArrayList<ProductFileDTO> filear = new ArrayList<ProductFileDTO>();
+		ArrayList<PurchaseDTO> purar = purchasedao.purchaseList(mDto);		
+		//구매날짜 중복제거
+		//중복 제거 용
+		ArrayList<PurchaseDTO> purar2 = new ArrayList<>();
+		for(int i=0;i<purar.size();i++){			
+			System.out.println("purar: "+purar.get(i).getReg_date());
+		}
+		for(int i=0;i<purar.size()-1;i++){
+			for(int j=1;j<purar.size();j++){
+				if(purar.get(i).getReg_date() == purar.get(j).getReg_date()){
+				
+				}else if(purar.get(i).getReg_date() != purar.get(j).getReg_date()){
+					purar2.add(purar.get(i));
+				}else {
+					purar2.add(purar.get(j));
+				}
+			}
+		}
+		for(int i=0;i<purar2.size();i++){			
+			System.out.println("purar2: "+purar2.get(i).getReg_date());
+		}
+		model.addAttribute("Purchasing_List", purar2);
 		
-		ArrayList<Object> ar_ar = new ArrayList<Object>();
-		
-		
-		/*for(int i=0;i<purar.size();i++){					
-			//상품정보 가져오기
-			proar.add(productDao.productView(0));
-			//사진 가져오기			
-			filear.add(productDao.productImgList(0));
-			
-		}*/
-		
-		model.addAttribute("Purchasing_List", purar);
-		/*model.addAttribute("ProductPur_List", proar);
-		model.addAttribute("ProductFile_List", filear);	*/
 		
 	}
 	
 	public ProductDTO productcheck(int p_nar) throws Exception{
 		ProductDTO pdDto = productDao.productView(p_nar);		
 		return pdDto;
+	}
+
+	public int purcheck() {
+		// TODO Auto-generated method stub
+		int pur_num = purchasedao.purcheck();
+		return pur_num;
 	}
 	
 

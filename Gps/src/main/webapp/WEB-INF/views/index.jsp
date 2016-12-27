@@ -100,31 +100,31 @@
 		
 		//카테고리 url 시작
 		$("#action").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=action";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Action";
 		});
 		$("#rpg").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=rpg";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=RPG";
 		});
 		$("#simulation").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=simulation";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Simulation";
 		});
 		$("#adventure").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=adventure";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Adventure";
 		});
 		$("#sports").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=sports";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Sports";
 		});
 		$("#racing").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=racing";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Racing";
 		});
 		$("#casual").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=casual";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Casual";
 		});
 		$("#indi").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=indi";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=INDI";
 		});
 		$("#etc").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=etc";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=MMO/ETC";
 		});
 		//카테고리 url 끝
 		

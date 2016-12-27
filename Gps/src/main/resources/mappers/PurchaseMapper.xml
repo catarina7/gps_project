@@ -41,6 +41,11 @@
 		insert into purchase values(purchase_seq.nextval, #{m_id}, #{pro_num}, #{total_price}, sysdate, #{status}, #{pur_kind}, #{m_millage})	
 	</insert>	
 	
+	<!-- 결재번호 가져오기 -->
+	<select id="Purcheck" resultType="java.lang.Integer">
+		select max(pur_num) from purchase
+	</select>
+	
 	
 
 </mapper>

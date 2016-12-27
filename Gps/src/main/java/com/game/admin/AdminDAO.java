@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.game.cd.CD_keyDTO;
+import com.game.mart.PurchaseDTO;
 import com.game.product.ProductDTO;
 import com.game.util.PageMaker;
 
@@ -56,5 +57,20 @@ public class AdminDAO {
 	//CD_key 삭제
 	public void cd_keyDelete(int cd_num) throws Exception{
 		sqlSession.delete(namespace+"cd_key_delete", cd_num);
+	}
+	
+	//배송 정보관리 리스트
+	public List<PurchaseDTO> send_list(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"send_list", pageMaker);
+	}
+	
+	//배송정보관리 리스트갯수
+	public int send_list_count() throws Exception{
+		return sqlSession.selectOne(namespace+"send_list_count");
+	}
+	
+	//배송정보관리에서 제목가져오기
+	public String send_list_title(int pro_num) throws Exception{
+		return sqlSession.selectOne(namespace+"send_list_title", pro_num);
 	}
 }
