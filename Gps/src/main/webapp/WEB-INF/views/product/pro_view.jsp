@@ -405,36 +405,36 @@
 							</ul>
 						</div>
 					</div>
-					<c:if test="${package_game != null }">					
-						<div id="package_game">
-							<div class="item">
-								<div class="four_contents">
-									<table>
-										<colgroup>
-											<col style="width: 450px;">
-											<col style="width: 100px;">
-										</colgroup>
-										<tr>
-											<td class="f_g_name">${package_pro.pack_title }</td>
-											<td></td>
-										</tr>
-										<tr>
-											<td class="f_g_ex" colspan="2">${package_pro.pack_contents }</td>
-										</tr>
-									</table>
-								</div>
-								<div class="tag">
-									<ul>
-										<li class="discount">${package_pro.discount }</li>
-										<li class="price">
-											<p class="nomal_p">₩ ${package_pro.price }</p> <span>₩ ${package_pro.total_price }</span>
-										</li>
-										<li><input type="button" value="장바구니 담기"></li>
-									</ul>
+					<c:forEach items="${package_game }" var="pack" varStatus="status">				
+							<div id="package_game">
+								<div class="item">
+									<div class="four_contents">
+										<table>
+											<colgroup>
+												<col style="width: 450px;">
+												<col style="width: 100px;">
+											</colgroup>
+											<tr>
+												<td class="f_g_name">${pack.pack_title }</td>
+												<td></td>
+											</tr>
+											<tr>
+												<td class="f_g_ex" colspan="2">${pack.pack_contents }</td>
+											</tr>
+										</table>
+									</div>
+									<div class="tag">
+										<ul>
+											<li class="discount">${pack.discount }</li>
+											<li class="price">
+												<p class="nomal_p">₩ ${pack.price }</p> <span>₩ ${pack.total_price }</span>
+											</li>
+											<li><input type="button" value="장바구니 담기"></li>
+										</ul>
+									</div>
 								</div>
 							</div>
-						</div>
-					</c:if>
+					</c:forEach>
 				</div>
 				<div id="relationship">
 					<span>연관 추천 게임</span>
