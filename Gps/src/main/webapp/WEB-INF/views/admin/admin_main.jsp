@@ -24,6 +24,10 @@
 		$("#cd-key").click(function(){
 			location.href="${pageContext.request.contextPath}/admin/cd_key_manage";
 		});
+		//배송정보관리
+		$("#send_admin").click(function(){
+			location.href="${pageContext.request.contextPath}/admin/send_list";
+		});
 	});
 </script>
 </head>
@@ -39,7 +43,7 @@
 				 	<li id="main_home">GPS 홈페이지로</li>
 				 	<li>회원정보관리</li>
 				 	<li id="product_admin">상품정보관리</li>
-				 	<li>배송정보관리</li>
+				 	<li id="send_admin">배송정보관리</li>
 				 	<li id="cd-key">CD-key 관리</li>
 				 	<li>매출정보관리</li>
 				 </ul>
