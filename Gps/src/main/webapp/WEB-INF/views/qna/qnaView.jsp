@@ -18,7 +18,8 @@
 	href="${pageContext.request.contextPath}/resources/css/board/board_view.css">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
-<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/viewModal.css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/resources/css/board/viewModal.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>${qnaView.q_title}</title>
@@ -60,7 +61,7 @@
 		/* $(".qimg").mouseleave(function() {
 			$("#viewModal").hide();
 		}); */
-		
+
 		$(".qimg").click(function() {
 			$("#viewModal").show();
 			$("#img1").attr("src", $(this).attr("src"));
@@ -117,17 +118,20 @@
 						</td>
 					</tr>
 				</table>
-		<!-- 이미지 -->
-		<div id="board_images">
-			<h4>- 첨부이미지</h4>
-			<div id="main_img" class="w3-content">
-			<ul>
-				<c:forEach items="${qnaImg}" var="img">
-					<li><img src="../resources/upload/${img.qfile_name}" class="qimg"></li>
-				</c:forEach>
-				</ul>
-			</div>
-		</div>
+				<!-- 이미지 -->
+				<div id="board_images">
+					<c:if test="${qnaImg != null}">
+						<h4>-첨부이미지</h4>
+					</c:if>
+					<div id="main_img" class="w3-content">
+						<ul>
+							<c:forEach items="${qnaImg}" var="img">
+								<li><img src="../resources/upload/${img.qfile_name}"
+									class="qimg"></li>
+							</c:forEach>
+						</ul>
+					</div>
+				</div>
 
 				<div id="board_w_btn">
 
@@ -143,15 +147,14 @@
 				</div>
 			</form>
 
-	</div>
-			<!-- Modal -->
-			<div id="viewModal" class="vModal">
-				<span class="close">x</span> 
-				<img id="img1" class="viewModal-content">
-				<div id="viewCaption"></div>
-			</div>
+		</div>
+		<!-- Modal -->
+		<div id="viewModal" class="vModal">
+			<span class="close">x</span> <img id="img1" class="viewModal-content">
+			<div id="viewCaption"></div>
+		</div>
 
 	</section>
-		<c:import url="/footer" />
+	<c:import url="/footer" />
 </body>
 </html>

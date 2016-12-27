@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
@@ -82,14 +81,14 @@
 					</c:if>
 				</div>
 			</form>
-			<!-- <div id="search_input">
-				<select>
-					<option value="q_writer">작성자</option>
-					<option value="q_title">제목</option>
-					<option value="q_contents">내용</option>
-				</select> <input type="text" id="search_kind" placeholder="검색어를 입력하세요">
-				<input type="button" id="search_button" value="검색">
-			</div> -->
+			<%-- <div id="search_input">
+				<input type="text" id="search_area" placeholder="키워드를 입력해 주세요.">
+				<div id="search_btn">
+					<button id="search_button">
+						<img src="${pageContext.request.contextPath}/resources/css/common/img/search_icon.png">
+					</button>
+				</div>
+			</div> --%>
 			<div>
 				<c:if test="${member.m_id != null }">
 					<input type="button" value="글쓰기"

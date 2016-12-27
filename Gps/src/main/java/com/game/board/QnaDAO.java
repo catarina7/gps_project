@@ -109,7 +109,4 @@ public class QnaDAO {
 	public void qnaMod(QnaDTO qnaDTO){
 		sqlSession.update(namespace+"qna_mod", qnaDTO);
 	}
-	
-	
-	
 }

@@ -100,4 +100,16 @@
 		delete qna_file where qfile_num=#{qfile_num}
 	</delete>
 	
+	<!-- 키워드검색 -->
+	<!-- <select id="qnaList_search" resultType="com.game.board.QnaDTO" parameterType="java.util.Map">
+		select * from 
+		(select rownum R, F.* from
+		(select * from qna where q_title '%'||#{q_title}||'%' order by q_num desc) F)
+		where R between #{pageMaker.startRowNum} and #{pageMaker.lastRowNum}
+	</select> -->
+	
+	<!-- 검색 글 갯수 -->
+	<!-- <select id="qna_boardCount_search" resultType="int" parameterType="java.lang.String">
+		select count(q_num) from qna where q_title like '%'||#{q_title}||'%'
+	</select> -->
 </mapper>
