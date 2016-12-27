@@ -45,4 +45,22 @@
 	<delete id="cd_key_delete" parameterType="int">
 		delete cd_key where cd_num=#{cd_num}
 	</delete>
+	
+	<!-- 배송정보관리 리스트 -->
+	<select id="send_list" resultType="com.game.mart.PurchaseDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from purchase order by pur_num desc) F) 
+		where R between #{startRowNum} and #{lastRowNum}	
+	</select>
+	
+	<!-- 배송정보관리 전체 갯수 -->
+	<select id="send_list_count" resultType="int">
+		select count(pur_num) from purchase
+	</select>
+	
+	<!-- 배송정보관리에서 게임 이름 가져오기 -->
+	<select id="send_list_title" resultType="java.lang.String" parameterType="int">
+		select pro_title from product where pro_num=#{pro_num}
+	</select>
 </mapper>
