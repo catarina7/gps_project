@@ -568,7 +568,7 @@
 						<tr>
 							<td class="com_title" colspan="2">업데이트 및 패치 파일</td>
 						</tr>
-<<<<<<< HEAD
+
 							<c:forEach items="${pro_patch}" var="patch" varStatus="status">
 							<tr>
 								<td class="com_name">
@@ -582,7 +582,7 @@
 					
 							</tr>
 							</c:forEach>
-=======
+
 						<c:forEach items="${pro_patch}" var="patch" varStatus="status">
 							<tr>
 								<td class="com_name">
@@ -597,7 +597,7 @@
 
 							</tr>
 						</c:forEach>
->>>>>>> refs/heads/tmo10
+
 					</table>
 				</div>
 

@@ -76,17 +76,13 @@
 </head>
 <body>
 	<c:import url="/header" />
-
 	<!-- section -->
 	<section>
-
 		<div id="user_menu">
 			<c:import url="/user_menu_bar" />
 		</div>
-
 		<div id="board_w">
 			<!-- qna글 -->
-
 			<form action="qnaView" method="post">
 				<table>
 					<colgroup>

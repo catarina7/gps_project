@@ -20,10 +20,9 @@
 </head>
 <body>
 	<c:import url="/header" />
-
 	<!-- section -->
 	<section>
-		<div>
+		<div id="user_menu">
 			<c:import url="/user_menu_bar" />
 		</div>
 		<!-- 내용 넣기 -->

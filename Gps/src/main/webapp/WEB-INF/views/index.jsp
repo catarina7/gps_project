@@ -100,31 +100,31 @@
 		
 		//카테고리 url 시작
 		$("#action").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Action";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=action";
 		});
 		$("#rpg").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=RPG";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=rpg";
 		});
 		$("#simulation").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Simulation";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=simulation";
 		});
 		$("#adventure").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Adventure";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=adventure";
 		});
 		$("#sports").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Sports";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=sports";
 		});
 		$("#racing").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Racing";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=racing";
 		});
 		$("#casual").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=Casual";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=casual";
 		});
 		$("#indi").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=INDI";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=indi";
 		});
 		$("#etc").click(function(){
-			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=MMO/ETC";
+			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=etc";
 		});
 		//카테고리 url 끝
 		
