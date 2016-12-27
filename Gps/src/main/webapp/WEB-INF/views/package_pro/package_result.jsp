@@ -21,9 +21,14 @@
 				</div>
 				<div class="tag">
 					<ul>
-								<li class="discount">${pack.discount }</li>
+								<li class="discount">${pack.discount } %</li>
 								<li class="price">
-								<p class="nomal_p">₩ ${pack.price }</p> <span>₩ ${pack.total_price }</span>
+								<c:if test="${pack.total_price != 0 }">								
+									<p class="nomal_p">₩ ${pack.price }</p> <span>₩ ${pack.total_price }</span>
+								</c:if>
+								<c:if test="${pack.total_price == 0 }">
+									<p class="nomal_p">₩ ${pack.price }</p><span>₩ ${pack.price }</span>
+								</c:if>
 							</li>
 						<li><input type="button" value="장바구니 담기"></li>
 					</ul>
