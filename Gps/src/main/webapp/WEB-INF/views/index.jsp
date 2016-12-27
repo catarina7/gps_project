@@ -344,7 +344,7 @@
 				<p>COMMUNICATE</p>
 				<ul>
 					<li id="noticeList">공지사항</li>
-					<li id="qnaList">FAQ</li>
+					<li id="qnaList">QnA</li>
 				</ul>
 				<p>USER SERVICE</p>
 				<ul>
