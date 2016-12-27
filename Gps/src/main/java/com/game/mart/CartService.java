@@ -67,7 +67,7 @@ public class CartService {
 	
 	
 	//하나 구매시 삭제 
-	public int purchaseDel(PurchaseDTO purchase) throws Exception{
-		return cartDAO.purchaseDel(purchase);
+	public int purchaseDel(CartDTO cartDTO) throws Exception{
+		return cartDAO.purchaseDel(cartDTO);
 	}
 }

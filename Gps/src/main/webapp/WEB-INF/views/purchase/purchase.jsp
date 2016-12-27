@@ -43,8 +43,8 @@
 		<div id="first_purchase">
 			<!-- 구매한 게임  -->
 			<!-- foreach -->
-			<c:forEach items="${Purchasing_List}" var="purchasing" varStatus="index">
-				<input type="text" value="${purchasing.reg_date}"> 
+			<c:forEach items="${Purchasing_List}" var="purchasing" varStatus="status">
+				<input type="text" value="${purchasing.reg_date}" id="check_regdate${status.index} }"> 
 				
 				<div class="second_purchase">
 					<!-- 구매한 날짜 -->
@@ -55,6 +55,7 @@
 					<div class="third_purchase">
 						<div>
 							<!-- 게임들의 타이틀 이미지 -->
+							
 						</div>
 					</div>
 					<!-- 구체적인 리스트 (게임 정보 및 view로의 링크가 걸린 내용) -->
@@ -62,7 +63,7 @@
 						<div class="item">
 								<div class="four_contents">
 									<div class="f_g_img">
-										
+										<img src="../resources/upload/${ProductFile_List[status.index].file_name}">
 									</div>
 									<table>
 										<colgroup>
@@ -71,7 +72,7 @@
 											<col style="width:10%;">
 										</colgroup>
 										<tr>
-											<td class="f_g_name">GAME PAKAGE NAME</td>
+											<td class="f_g_name">${ProductPur_List[status.index].pro_title}</td>
 											<td>
 												<span class="window">
 													<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
@@ -87,21 +88,34 @@
 									</table>
 								</div>
 								<div class="tag">
+									<c:if test="${ProductPur_List[status.index].total_price != 0}">
 									<ul>
-										<li class="discount">-20%</li>
+										<li class="discount">${ProductPur_List[status.index].discount} %</li>
 										<li class="price">
-											<p class="nomal_p">₩ 17000</p>
-											<span>₩ 15000</span>
+											<p class="nomal_p">₩ ${ProductPur_List[status.index].price}</p>
+											<span>₩ ${ProductPur_List[status.index].total_price}</span>
 										</li>
 										<li>
 											<input type="button" value="재구매">
 										</li>
 									</ul>
+									</c:if>
+									<c:if test="${ProductPur_List[status.index].total_price == 0}">
+									<ul>
+										<li class="discount">${ProductPur_List[status.index].discount} %</li>
+										<li class="price">
+											<p class="nomal_p">₩ ${ProductPur_List[status.index].price}</p>
+											<span>₩ ${ProductPur_List[status.index].price}</span>
+										</li>
+										<li>
+											<input type="button" value="재구매">
+										</li>
+									</ul>
+									</c:if>
 								</div>
 							</div>
 					</div>
 				</div>
-				
 			</c:forEach>
 			<!-- for문 end -->
 			

@@ -136,24 +136,22 @@ public class PurchaseController {
 		@RequestMapping(value="/Purchase_pro", method = RequestMethod.POST , produces="application/json; charset=utf-8")
 		@ResponseBody
 
-		public ResponseEntity<Integer> purchasing(PurchaseDTO purchase, @RequestParam(defaultValue="") String promlist){
+		public ResponseEntity<Integer> purchasing(PurchaseDTO purchase){
 
 			int result=0;
-			StringTokenizer st = new StringTokenizer(promlist, ",");
+			StringTokenizer st = new StringTokenizer(purchase.getPro_num(), ":");
 			ArrayList<Integer> p_nar = new ArrayList<Integer>();
 			while(st.hasMoreTokens()){
 				p_nar.add(Integer.parseInt(st.nextToken()));
 			}
 			
-
 			MemberDTO mDto = new MemberDTO();
 			mDto.setM_id(purchase.getM_id());
 			mDto.setMillage(purchase.getM_millage());
 			
-			//구매상품 정보 용
-			ArrayList<ProductDTO> pdar = new ArrayList<ProductDTO>();
+			
 			//구매정보 입력용
-			ArrayList<PurchaseDTO> purar = new ArrayList<PurchaseDTO>();
+			ArrayList<CartDTO> cartar = new ArrayList<CartDTO>();
 			//상품_맴버 입력용
 			ArrayList<Product_memberDTO> pmar = new ArrayList<Product_memberDTO>();
 
@@ -163,31 +161,24 @@ public class PurchaseController {
 				//memberservice 마일리지 정보 수정(not for)
 				MemberService.memMod(mDto);					
 				
+				//purchaseservice 구매정보 입력
+				result += purchaseservice.purchasing(purchase);
+				
 				for(int i=0;i<p_nar.size();i++){
-					pdar.add(purchaseservice.productcheck(p_nar.get(i)));
-					PurchaseDTO purDTO = new PurchaseDTO();
-					purDTO.setM_id(purchase.getM_id());
-					purDTO.setPro_num(pdar.get(i).getPro_num());
-					if(pdar.get(i).getTotal_price() != 0){
-						purDTO.setTotal_price(pdar.get(i).getTotal_price());
-					}else{
-						purDTO.setTotal_price(pdar.get(i).getPrice());
-					}
-					purDTO.setStatus(purchase.getStatus());
-					purDTO.setPur_kind(purchase.getPur_kind());
-					purDTO.setM_millage(pdar.get(i).getMillage());
-					purar.add(purDTO);
+					
+					CartDTO cart = new CartDTO();
+					cart.setM_id(purchase.getM_id());
+					cart.setPro_num(p_nar.get(i));
+					cartar.add(cart);
 					Product_memberDTO prme = new Product_memberDTO();
 					prme.setM_id(purchase.getM_id());
-					prme.setPro_num(pdar.get(i).getPro_num());
+					prme.setPro_num(p_nar.get(i));
 					pmar.add(prme);
 				}				
 				
-				for(int i=0;i<pmar.size();i++){
-				//purchaseservice 구매정보 입력
-				result += purchaseservice.purchasing(purar.get(i));
+				for(int i=0;i<pmar.size();i++){					
 				//cartservice 카트 정보 수정
-				cartservice.purchaseDel(purar.get(i));
+				cartservice.purchaseDel(cartar.get(i));
 				//product_member 정보 입력
 				pro_memService.pro_meminsert(pmar.get(i));	
 				}
