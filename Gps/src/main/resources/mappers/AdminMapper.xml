@@ -23,7 +23,26 @@
 		delete product where pro_num=#{pro_num}
 	</delete>
 	
-<!-- 	<select id="cd_key_list" resultType="com.game.">
+	<!-- CD_KEY 리스트 -->
+	<select id="cd_key_list" resultType="com.game.cd.CD_keyDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from cd_key order by cd_num desc) F) 
+		where R between #{startRowNum} and #{lastRowNum}
+	</select>
 	
-	</select> -->
+	<!-- CD_key 전체 갯수 가져오기 -->
+	<select id="cd_key_list_count" resultType="int">
+		select count(cd_num) from cd_key
+	</select>
+	
+	<!-- CD_key 추가 -->
+	<insert id="cd_key_add" parameterType="java.util.Map">
+		insert into cd_key values(cd_key_seq.nextval, #{pro_num}, #{cd_serial}, 'nouse')
+	</insert>
+	
+	<!-- CD_key 삭제 -->
+	<delete id="cd_key_delete" parameterType="int">
+		delete cd_key where cd_num=#{cd_num}
+	</delete>
 </mapper>

@@ -40,9 +40,39 @@ public class AdminController {
 		return "redirect:/admin/product_admin";
 	}
 	
-/*	//CD-key 관리
+	//CD-key 관리 리스트
 	@RequestMapping(value="/cd_key_manage", method=RequestMethod.GET)
-	public void cd_key_Manage(Model model){
-		
-	}*/
+	public void cd_key_Manage(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model){
+		try {
+			adminService.cd_keyList(curPage, perPage, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	//CD-key 추가
+	@RequestMapping(value="/cd_key_add")
+	public String cd_key_Add(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model, int pro_num, String cd_serial){
+		try {
+			adminService.cd_keyAdd(curPage, perPage, model, pro_num, cd_serial);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "admin/cd_result";
+	}
+	
+	//CD-key 삭제
+	@RequestMapping(value="/cd_key_delete")
+	public String cd_key_delete(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model, int cd_num){
+		try {
+			adminService.cd_keyDelete(curPage, perPage, model, cd_num);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "admin/cd_result";
+	}
+	
 }
