@@ -56,7 +56,7 @@
 			$("#pack_4").css("border", "2px solid #666666");
 		});
 
-		$("#pack_4").click(function() {
+		/* $("#pack_4").click(function() {
 			$(this).css("background-color", "#777777");
 			$(this).css("border", "2px solid #777777");
 			$("#pack_1").css("background-color", "#666666");
@@ -65,7 +65,7 @@
 			$("#pack_1").css("border", "2px solid #666666");
 			$("#pack_2").css("border", "2px solid #666666");
 			$("#pack_3").css("border", "2px solid #666666");
-		});
+		}); */
 
 		
 		
@@ -344,7 +344,7 @@
 				<p>COMMUNICATE</p>
 				<ul>
 					<li id="noticeList">공지사항</li>
-					<li id="qnaList">FAQ</li>
+					<li id="qnaList">QnA</li>
 				</ul>
 				<p>USER SERVICE</p>
 				<ul>
@@ -379,8 +379,7 @@
 				<div id="main_third">
 					<button id="pack_1">초특가</button>
 					<button id="pack_2">인기</button>
-					<button id="pack_3">출시예정 게임</button>
-					<button id="pack_4">패키지</button>
+					<button id="pack_3">패키지</button>
 					<!-- category discount game -->
 					<div id="sub_cate">
 						<div id="sub_first">
