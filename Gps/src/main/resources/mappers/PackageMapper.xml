@@ -6,7 +6,7 @@
 	
 	<insert id="packAdd" parameterType="com.game.package_pro.PackageDTO">
 		<![CDATA[
-			insert into package_pro values(pack_seq.nextval,#{pro_num}, #{pack_title}, #{pack_contents}, #{price}, #{total_price}, #{discount}, #{sub_category}, #{millage})
+			insert into package_pro values(pack_seq.nextval, #{pro_num}, #{pack_title}, #{pack_contents}, #{price}, 0, 0, #{sub_category}, #{millage})
 		]]>
 	</insert>
 	

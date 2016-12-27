@@ -33,7 +33,7 @@ public class PackageController {
 			e.printStackTrace();
 		}
 		
-		return "redirect:/package_pro/pack_write";
+		return "redirect:/index";
 	}
 	
 	@RequestMapping(value="/pack_mod")

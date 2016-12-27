@@ -7,9 +7,23 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
+		
+			/* input number 부분 숫자 정수로만 제한  */
+			$(".pack_price").change(function(){
+				if($(this).val() < 0){
+					$(".pack_price").val(0);
+				}else {
+					var price = $("#pack_p").val();
+					var millage = ((price*1)/100)*5;
+					millage = millage.toFixed(0);
+					$("#pack_millage").val(millage);
+				}
+			});
+			
 		/* 1. smarteditor 시작 */
 		//전역변수선언
 		var editor_object = [];
@@ -47,31 +61,16 @@
 		
 		
 		
-		
-		/* input number 부분 숫자 정수로만 제한  */
-		$(".pack_price").change(function(){
-			if($(this).val() < 0){
-				$(".pack_price").val(0);
-			}else {
-				var price = $("#pack_p").val();
-				var millage = ((price*1)/100)*5;
-				millage = millage.toFixed(0);
-				$("#pack_millage").val(millage);
-			}
-		});
-		
 	});
 </script>
 </head>
 <body>
-	<form action="/packAdd" method="post">		
-	
+	<form id="frm" action="packWrite" method="post">		
+		
 		등록상품 : <input type="text" name="pro_num"><br>
 		패키지 이름 : <input type="text" name="pack_title"><br>
 		패키지 내용 : <textarea id="smarteditor" name="pack_contents"></textarea><br>
 		가격 : <input type="number" name="price" id="pack_p" class="pack_price"><br>
-		총 가격 : <input type="number" name="total_price" class="pack_price"><br>
-		할인률 : <input type="number" name="dicount" class="pack_price"><br>
 		서브 카테고리 : <input type="text" name="sub_category"><br>
 		마일리지 : <input type="number" name="millage" id="pack_millage" class="pack_price"><br>
 		

@@ -12,7 +12,7 @@ public class PackageDAO {
 	
 	@Autowired
 	private SqlSession sqlSession;
-	private String namespace = "packageMapper.";
+	private String namespace = "PackageMapper.";
 	
 	//패키지 게임 입력
 	public int packageWrite(PackageDTO packageDTO) throws Exception{
