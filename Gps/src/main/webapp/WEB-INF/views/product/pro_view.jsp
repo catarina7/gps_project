@@ -66,6 +66,7 @@
 			}
 	    });
 	    
+	    
 	    //전송버튼 클릭이벤트 (댓글 작성)
 		$("#save").click(function(){
 	        //id가 smarteditor인 textarea에 에디터에서 대입
@@ -230,6 +231,20 @@
 				
 			}
 		});
+		
+		/* //연관 패키지 
+	    $.ajax({
+	    	url: '../package_pro/packList',
+	    	type: 'POST',
+	    	data: {
+	    		sub_category: $("${pro_view.sub_category}")
+	    	},
+	    	success: function(data) {
+	    		data=data.trim();
+	    		$("#package_game").html(data);
+	    	}
+	    }); */
+		
 	}
 	//다운
 	function patchDownload(i){
@@ -403,56 +418,32 @@
 							</ul>
 						</div>
 					</div>
-					<div class="item">
-						<div class="four_contents">
-							<table>
-								<colgroup>
-									<col style="width: 450px;">
-									<col style="width: 100px;">
-								</colgroup>
-								<tr>
-									<td class="f_g_name">GAME PAKAGE NAME</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td class="f_g_ex" colspan="2">game explanation</td>
-								</tr>
-							</table>
-						</div>
-						<div class="tag">
-							<ul>
-								<li class="discount">할인률</li>
-								<li class="price">
-									<p class="nomal_p">기존 가격</p> <span>판매 가격</span>
-								</li>
-								<li><input type="button" value="장바구니 담기"></li>
-							</ul>
-						</div>
-					</div>
-					<div class="item">
-						<div class="four_contents">
-							<table>
-								<colgroup>
-									<col style="width: 450px;">
-									<col style="width: 100px;">
-								</colgroup>
-								<tr>
-									<td class="f_g_name">GAME PAKAGE NAME</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td class="f_g_ex" colspan="2">game explanation</td>
-								</tr>
-							</table>
-						</div>
-						<div class="tag">
-							<ul>
-								<li class="discount">-50%</li>
-								<li class="price">
-									<p class="nomal_p">₩ 20000000</p> <span>₩ 10000000</span>
-								</li>
-								<li><input type="button" value="장바구니 담기"></li>
-							</ul>
+					<div id="package_game">
+						<div class="item">
+							<div class="four_contents">
+								<table>
+									<colgroup>
+										<col style="width: 450px;">
+										<col style="width: 100px;">
+									</colgroup>
+									<tr>
+										<td class="f_g_name">${package_pro.pack_title }</td>
+										<td></td>
+									</tr>
+									<tr>
+										<td class="f_g_ex" colspan="2">${package_pro.pack_contents }</td>
+									</tr>
+								</table>
+							</div>
+							<div class="tag">
+								<ul>
+									<li class="discount">${package_pro.discount }</li>
+									<li class="price">
+										<p class="nomal_p">₩ ${package_pro.price }</p> <span>₩ ${package_pro.total_price }</span>
+									</li>
+									<li><input type="button" value="장바구니 담기"></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -567,9 +558,7 @@
 						</colgroup>
 						<tr>
 							<td class="com_title" colspan="2">업데이트 및 패치 파일</td>
-						</tr>
-<<<<<<< HEAD
-							<c:forEach items="${pro_patch}" var="patch" varStatus="status">
+						</tr><c:forEach items="${pro_patch}" var="patch" varStatus="status">
 							<tr>
 								<td class="com_name">
 									<p>${patch.patch_origine_name}</p>
@@ -581,9 +570,7 @@
 								</td>
 					
 							</tr>
-							</c:forEach>
-=======
-						<c:forEach items="${pro_patch}" var="patch" varStatus="status">
+							</c:forEach><c:forEach items="${pro_patch}" var="patch" varStatus="status">
 							<tr>
 								<td class="com_name">
 									<p>${patch.patch_origine_name}</p> <input type="hidden"
@@ -597,7 +584,6 @@
 
 							</tr>
 						</c:forEach>
->>>>>>> refs/heads/tmo10
 					</table>
 				</div>
 
