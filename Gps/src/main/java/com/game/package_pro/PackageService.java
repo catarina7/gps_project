@@ -7,7 +7,6 @@ import java.util.StringTokenizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Service
 public class PackageService {
@@ -28,6 +27,12 @@ public class PackageService {
 	//패키지 삭제
 	public int packDelete(int pack_num) throws Exception{
 		return packageDAO.packageDelete(pack_num);
+	}
+	
+	//관리자 페이지 패키지 전부 가져오기
+	public void packAllList(Model model) throws Exception{
+		ArrayList<PackageDTO> ars = packageDAO.packAllList();
+		model.addAttribute("packAllList", ars);
 	}
 	
 	//서브 카테고리로 패키지게임 목록 가져오기

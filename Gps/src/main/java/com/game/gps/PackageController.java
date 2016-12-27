@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.game.package_pro.PackageDTO;
 import com.game.package_pro.PackageService;
@@ -38,7 +37,14 @@ public class PackageController {
 	}
 	
 	@RequestMapping(value="/pack_mod")
-	public String pack_mod(){
+	public String pack_mod(@RequestParam int pack_num, Model model){
+		try {
+			packageService.packBuy(pack_num, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		return "/package_pro/pack_mod";
 	}
 	
@@ -63,6 +69,18 @@ public class PackageController {
 		}
 		return "redirect:/admin/product_admin";
 	}
+	
+	@RequestMapping(value="/packAllList")
+	public String packAllList(Model model){
+		try {
+			packageService.packAllList(model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "";
+	}
+	
 	
 	@RequestMapping(value="/packList")
 	public String packList(@RequestParam int pro_num, Model model){

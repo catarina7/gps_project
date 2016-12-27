@@ -29,6 +29,15 @@ public class PackageDAO {
 		return sqlSession.delete(namespace+"packDelete", pack_num);
 	}
 	
+	//패키지 전부 가져오기
+	public ArrayList<PackageDTO> packAllList() throws Exception{
+		ArrayList<PackageDTO> ars = new ArrayList<>();
+		List<PackageDTO> list = sqlSession.selectList(namespace+"packAllList");
+		ars.addAll(list);
+		
+		return ars;
+	}
+	
 	//product에서 sub_category 가져오기 
 	public String packageSearch(int pro_num) throws Exception{
 		return sqlSession.selectOne(namespace+"packSearch", pro_num);
