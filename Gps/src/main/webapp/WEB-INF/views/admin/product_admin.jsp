@@ -46,18 +46,17 @@ function pro_delete(i){
 	</c:forEach>
 		</table>
 		
-	<div id="pro_list_paging">
-		<div class="margins">
-			<c:if test="${pageMaker.curBlock>1}">
-				<a href="product_admin?curPage=${pageMaker.startNum-1}">[이전]</a>
-			</c:if>
-			<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
-				<a href="product_admin?curPage=${i}">${i}</a>
-			</c:forEach>
-			<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">
-				<a href="product_admin?curPage=${pageMaker.lastNum+1}">[다음]</a>
-			</c:if>
-		</div>
+
+	<div>
+		<c:if test="${pageMaker.curBlock>1}">
+			<a href="product_admin?curPage=${pageMaker.startNum-1}">[이전]</a>
+		</c:if>
+		<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
+			<a href="product_admin?curPage=${i}">${i}</a>
+		</c:forEach>
+		<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">
+			<a href="product_admin?curPage=${pageMaker.lastNum+1}">[다음]</a>
+		</c:if>
 	</div>
 	
 	
