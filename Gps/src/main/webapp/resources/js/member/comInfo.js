@@ -5,7 +5,7 @@ $(function(){
 	$(".input").keyup(function(){
 		if (!(event.keyCode >=37 && event.keyCode<=40)) {
 			var inputVal = $(this).val();
-			$(this).val(inputVal.replace(/[^a-z0-9./-]/gi,''));
+			$(this).val(inputVal.replace(/[^ a-zA-Z0-9./-]/gi,''));
 		}
 		if($(this).val() == ""){
 			$("#cominfo_btn").hide();			
