@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/package_pro/pack_write.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
@@ -65,17 +66,57 @@
 </script>
 </head>
 <body>
-	<form id="frm" action="packWrite" method="post">		
-		
-		등록상품 : <input type="text" name="pro_num"><br>
-		패키지 이름 : <input type="text" name="pack_title"><br>
-		패키지 내용 : <textarea id="smarteditor" name="pack_contents"></textarea><br>
-		가격 : <input type="number" name="price" id="pack_p" class="pack_price"><br>
-		서브 카테고리 : <input type="text" name="sub_category"><br>
-		마일리지 : <input type="number" name="millage" id="pack_millage" class="pack_price"><br>
-		
-		<input type="button" value="만들기" id="savebutton">
-	</form>
+	<div id="pack_write">
+		<form id="frm" action="packWrite" method="post">		
+			<table>
+				<colgroup>
+					<col style="width:25%;">
+					<col style="width:70%;">
+				</colgroup>
+				<tr>
+					<td class="pack_title">등록상품 :</td>
+					<td>
+						<input type="text" name="pro_num">
+					</td>
+				</tr>
+				<tr>
+					<td class="pack_title">패키지 이름 :</td>
+					<td>
+						<input type="text" name="pack_title">
+					</td>
+				</tr>
+				<tr>
+					<td class="pack_title">패키지 내용 :</td>
+					<td>
+						<textarea id="smarteditor" name="pack_contents"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="pack_title">가격 :</td>
+					<td>
+						<input type="number" name="price" id="pack_p" class="pack_price" >
+					</td>
+				</tr>
+				<tr>
+					<td class="pack_title">서브 카테고리</td>
+					<td>
+						<input type="text" name="sub_category">
+					</td>
+				</tr>
+				<tr>
+					<td class="pack_title">마일리지 :</td>
+					<td>
+						<input type="number" name="millage" id="pack_millage" class="pack_price">
+					</td>
+				</tr>
+				<tr>
+					<td colspan="2">
+						<input type="button" value="만들기" id="savebutton">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</div>
 	
 </body>
 </html>

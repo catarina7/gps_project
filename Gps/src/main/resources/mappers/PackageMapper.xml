@@ -12,8 +12,7 @@
 	
 	<update id="packMod" parameterType="com.game.package_pro.PackageDTO">
 		<![CDATA[
-			update package_pro set pro_num = #{pro_num}, pack_title = #{pack_title}, pack_contents = #{pack_contents}, price = #{price}, total_price = #{total_price},
-											 discount = #{discount}, sub_category = #{sub_category} where pack_num = #{pack_num}
+			update package_pro set total_price = #{total_price}, discount = #{discount} where pack_num = #{pack_num}
 		]]>
 	</update>
 	
@@ -22,6 +21,13 @@
 			delete from package_pro where pack_num = #{pack_num}
 		]]>
 	</delete>
+	
+	<!-- 관리자 페이지 패키지 목록 전부 불러오기 -->
+	<select id="packAllList" resultType="com.game.package_pro.PackageDTO">
+		<![CDATA[
+			select * from package_pro order by desc
+		]]>
+	</select>
 	
 	<select id="packList" resultType="com.game.package_pro.PackageDTO" parameterType="java.lang.String">
 		<![CDATA[
