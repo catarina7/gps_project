@@ -173,9 +173,13 @@
 			for(i=0; i<10; i++){
 				if(getCookie("recent_9") == ""){					
 					if(getCookie("recent_"+i) == ""){			
-						setCookie("recent_"+i, "${pro_view.pro_num}", 1);
-						cookie_check = false;
-						break;
+						if("recent_"+i == "${pro_view.pro_num}"){
+							break;
+						}else{
+							setCookie("recent_"+i, "${pro_view.pro_num}", 1);
+							cookie_check = false;
+							break;
+						}
 					}
 				}else {
 					cookie_in = true;
@@ -419,34 +423,35 @@
 						</div>
 					</div>
 					<div id="package_game">
-						<c:forEach items="${package_game }" var="pack" varStatus="status">				
-								<div class="item">
-									<div class="four_contents">
-										<table>
-											<colgroup>
-												<col style="width: 450px;">
-												<col style="width: 100px;">
-											</colgroup>
-											<tr>
-												<td class="f_g_name">${pack.pack_title }</td>
-												<td></td>
-											</tr>
-											<tr>
-												<td class="f_g_ex" colspan="2">${pack.pack_contents }</td>
-											</tr>
-										</table>
-									</div>
-									<div class="tag">
-										<ul>
-											<li class="discount">${pack.discount }</li>
-											<li class="price">
-												<p class="nomal_p">₩ ${pack.price }</p> <span>₩ ${pack.total_price }</span>
-											</li>
-											<li><input type="button" value="장바구니 담기"></li>
-										</ul>
-									</div>
+						<c:forEach items="${package_game }" var="pack" varStatus="status">
+							<div class="item">
+								<div class="four_contents">
+									<table>
+										<colgroup>
+											<col style="width: 450px;">
+											<col style="width: 100px;">
+										</colgroup>
+										<tr>
+											<td class="f_g_name">${pack.pack_title }</td>
+											<td></td>
+										</tr>
+										<tr>
+											<td class="f_g_ex" colspan="2">${pack.pack_contents }</td>
+										</tr>
+									</table>
 								</div>
-							</c:forEach>
+								<div class="tag">
+									<ul>
+										<li class="discount">${pack.discount }</li>
+										<li class="price">
+											<p class="nomal_p">₩ ${pack.price }</p> <span>₩
+												${pack.total_price }</span>
+										</li>
+										<li><input type="button" value="장바구니 담기"></li>
+									</ul>
+								</div>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
 				<div id="relationship">
@@ -567,20 +572,21 @@
 
 							<c:forEach items="${pro_patch}" var="patch" varStatus="status">
 
-							<tr>
-								<td class="com_name">
-									<p>${patch.patch_origine_name}</p>
-									<input type="hidden" value="${patch.patch_file_name}" id="patch_name_${status.index}">
-								</td>
-								<td>
-									<button onclick="patchDownload(${status.index})">Download</button>
-									<%-- <a href="../resources/upload/${patch.patch_file_name}">${patch.patch_origine_name}</a> --%>
-								</td>
-					
-							</tr>
+								<tr>
+									<td class="com_name">
+										<p>${patch.patch_origine_name}</p> <input type="hidden"
+										value="${patch.patch_file_name}"
+										id="patch_name_${status.index}">
+									</td>
+									<td>
+										<button onclick="patchDownload(${status.index})">Download</button>
+										<%-- <a href="../resources/upload/${patch.patch_file_name}">${patch.patch_origine_name}</a> --%>
+									</td>
+
+								</tr>
 							</c:forEach>
 
-						<%-- <c:forEach items="${pro_patch}" var="patch" varStatus="status">
+							<%-- <c:forEach items="${pro_patch}" var="patch" varStatus="status">
 
 
 						<c:forEach items="${pro_patch}" var="patch" varStatus="status">
@@ -606,18 +612,18 @@
 					</table>
 				</div>
 
-				
-					<form action="../favorite/favoriteAdd" method="get" id="frm1">
-						<input type="hidden" name="m_id" value="${member.m_id}"> <input
-							type="hidden" name="pro_num" value="${pro_view.pro_num}">
-						<button class="five_btn" id="favorite">관심상품</button>
-					</form>
 
-					<form action="../cart_favorite/cartAdd" method="get" id="frm">
-						<input type="hidden" name="m_id" value="${member.m_id}"> <input
-							type="hidden" name="pro_num" value="${pro_view.pro_num}">
-						<button class="five_btn" class="cart" id="cart">장바구니</button>
-					</form>
+				<form action="../favorite/favoriteAdd" method="get" id="frm1">
+					<input type="hidden" name="m_id" value="${member.m_id}"> <input
+						type="hidden" name="pro_num" value="${pro_view.pro_num}">
+					<button class="five_btn" id="favorite">관심상품</button>
+				</form>
+
+				<form action="../cart_favorite/cartAdd" method="get" id="frm">
+					<input type="hidden" name="m_id" value="${member.m_id}"> <input
+						type="hidden" name="pro_num" value="${pro_view.pro_num}">
+					<button class="five_btn" class="cart" id="cart">장바구니</button>
+				</form>
 				<div id="admin_btn">
 					<c:if test="${member.m_id eq 'admin'}">
 						<input type="button" id="product_del" value="삭제">
@@ -627,7 +633,7 @@
 
 			</div>
 
-				<c:if test="${member.m_id != null}">
+			<c:if test="${member.m_id != null}">
 				<!-- review -->
 				<div id="six_pro">
 					<div id="pro_grade"></div>
@@ -714,8 +720,8 @@
 						</div>
 					</div>
 				</div>
-				</c:if>
-			</div>
+			</c:if>
+		</div>
 	</section>
 
 
