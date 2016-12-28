@@ -13,20 +13,38 @@ section .admin_product_first {
 	width: 100%;
 }
 .admin_product_first h2 {
-	padding: 20px 1.4%;
+	padding: 10px 1.4%;
+	margin-bottom: 10px;
 }
 .admin_product_first td {
-	padding: 5px 0.5%;
+	padding: 3px 0.5%;
 	text-align: center;
 	border-bottom: 1px dotted #aaaaaa;
 }
 .admin_product_first #title td {
 	font-weight: bold;
-	padding: 7px 0.5%;
+	padding: 5px 0.5%;
 	font-size: 17px;
 	border-bottom: 2px solid black;
 }
 
+.admin_product_first input[type="button"]{
+	padding: 3px 10px;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: -1px -1px 0px #1f2938;
+	border: 1px solid black;
+	font-weight: bold;
+	font-size: 14px;
+}
+.admin_product_first input[type="button"]:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
 .admin_product_first .admin_product_pageing {
 	width: 30%;
 	margin: 0 auto;
