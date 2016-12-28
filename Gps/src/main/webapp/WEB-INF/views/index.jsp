@@ -490,7 +490,9 @@
 					</div>
 				</div>
 				<div id="main_company">
-					<div id="main_company_step1"></div>
+					<div id="main_company_step1">
+						<img src="${pageContext.request.contextPath}/resources/css/common/img/phone.png">
+					</div>
 					<div id="main_company_step2">
 						<div id="step2"></div>
 					</div>

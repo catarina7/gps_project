@@ -522,8 +522,12 @@ section #game_list {
 }
 #main_company #main_company_step1 {
 	width: 98.7%;
-	padding: 5px 0.7%;
-	height: 58%;
+	padding: 10px 0.7%;
+	height: 55.5%;
+}
+#main_company_step1 img {
+	width: 100%;
+	height: 100%;
 }
 #main_company #main_company_step2 {
 	width: 98.7%;
