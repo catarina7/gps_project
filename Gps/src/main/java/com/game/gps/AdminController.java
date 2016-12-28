@@ -86,4 +86,10 @@ public class AdminController {
 		}
 		return "admin/send_admin";
 	}
+	
+	//패키지상품관리 리스트
+	@RequestMapping(value="/admin_package")
+	public String admin_package(){
+		return "admin/admin_package";
+	}
 }
