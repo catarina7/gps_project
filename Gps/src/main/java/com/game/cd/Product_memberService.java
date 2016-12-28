@@ -1,7 +1,13 @@
 package com.game.cd;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import com.game.member.MemberDTO;
+import com.game.util.PageMaker;
 
 @Service
 public class Product_memberService {
@@ -13,5 +19,8 @@ public class Product_memberService {
 	public int pro_meminsert(Product_memberDTO pro_mem) throws Exception{
 		return pro_memDao.pro_meminsert(pro_mem);
 	}
+	
+	
+	
 	
 }
