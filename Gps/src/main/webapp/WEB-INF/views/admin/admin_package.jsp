@@ -18,6 +18,9 @@
 		$("#create_pack").on("click","#pack_close", function(){
 			$("#create_pack").hide();
 		});
+		
+		
+		
 	});
 </script>
 </head>
@@ -63,9 +66,48 @@
 						<td>${allList.millage }</td>
 						<td>${allList.sub_category }</td>
 						<td>
-							<input type="button" value="할인">
+							<script type="text/javascript">
+								$(function(){
+									
+									/* input number 부분 숫자 정수로만 제한  */
+									$(".pack_price").change(function(){
+										if($(this).val() < 0){
+											$(".pack_price").val(0);
+										}else {
+											var discount = $("#pack_discount").val();
+											var total_price = ((price*1)/100)*(discount*1);
+											total_price = total_price.toFixed(0);
+											$("#pack_total").val(total_price);
+										}
+									});
+									
+									$("#save_btn_${allList.pack_num}").click(function(){
+										if($("#save_btn_${allList.pack_num}").val() == "닫기"){										
+											$("#total_discount_${allList.pack_num}").hide();
+											$("#save_btn_${allList.pack_num}").val("할인");
+										}else {
+											$("#total_discount_${allList.pack_num}").show();
+											$(this).val("닫기");
+										}
+									});
+								});
+							</script>
+							<input type="button" id="save_btn_${allList.pack_num }" value="할인">
 							<input type="button" onclick="location.href='${pageContext.request.contextPath}/package_pro/packDelete?pack_num=${allList.pack_num }'" value="삭제">
 						</td>
+					</tr>
+					<tr class="total_discount" id="total_discount_${allList.pack_num }">
+						<td colspan="5"></td>
+						<td>
+							<input class="pack_price" id="pack_discount" type="number">
+						</td>
+						<td>
+							<input class="pack_price" id="pack_total" type="number">
+						</td>
+						<td>
+							<input type="button" id="save_btn" value="등록">
+						</td>
+						<td colspan="2"></td>
 					</tr>
 				</c:forEach>
 			</table>

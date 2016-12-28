@@ -64,6 +64,10 @@ section .admin_product_first {
 	width: 100%;
 }
 
+.admin_product_first .total_discount{
+	display: none;
+}
+
 /* 패키지 작성 */
 
 section #create_pack {
@@ -76,6 +80,13 @@ section #create_pack {
 	border-radius : 4px;
 	display: none;
 }
+
+section input[type="number"]{
+	width: 50%;
+	padding: 1px 0.3%;
+}
+
+
 
 
 
