@@ -13,4 +13,11 @@
 		select * from product_member where m_id=#{m_id}
 	</select>
 	
+	<select id="PMCheckList" parameterType="java.util.Map" resultType="com.game.cd.Product_memberDTO">
+		select * from 
+		 (select rownum R, F.* from
+		 (select * from product_member where m_id=#{m_id}) F)
+		where R between  #{pm.startRowNum} and #{pm.lastRowNum}	
+	</select>
+	
 </mapper>

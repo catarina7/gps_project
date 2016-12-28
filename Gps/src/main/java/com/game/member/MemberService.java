@@ -1,5 +1,6 @@
 package com.game.member;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,15 +8,28 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 
+import com.game.cd.Product_MemberDAO;
+import com.game.cd.Product_memberDTO;
 import com.game.computer.ComputerDTO;
+import com.game.product.ProductDAO;
+import com.game.product.ProductDTO;
+import com.game.product.ProductFileDTO;
+import com.game.util.PageMaker;
 
 @Service
 public class MemberService {
 	
 		@Autowired
 		private MemberDAO memberDao;
+		
+		@Autowired
+		private Product_MemberDAO pro_memdao;
+		
+		@Autowired
+		private ProductDAO productdao;
 		
 	
 		//회원가입
@@ -103,6 +117,39 @@ public class MemberService {
 			}
 			
 			return result;
+		}
+		
+		//구매게임 확인하기
+		public void mem_game(HttpSession session,int curPage,int perPage ,Model model) throws Exception{
+			
+			MemberDTO mDto = new MemberDTO();
+			PageMaker pm = new PageMaker();
+			
+			
+			mDto = (MemberDTO)session.getAttribute("member");
+			ArrayList<Product_memberDTO> forcount = pro_memdao.pro_memsearch(mDto);
+			//product_member 긁어 오기
+			
+			pm.setCurPage(curPage);
+			pm.setPerPage(perPage);
+			pm.makeRow();
+			pm.makePage(forcount.size());
+			
+			ArrayList<Product_memberDTO> promemar = pro_memdao.pro_memlist(mDto, pm);
+			ArrayList<ProductDTO> prodtar = new ArrayList<>();
+			ArrayList<ProductFileDTO> filear = new ArrayList<>();
+			for(int i=0;i<promemar.size();i++){
+				prodtar.add(productdao.productView(promemar.get(i).getPro_num()));
+				filear.add(productdao.productImgList(promemar.get(i).getPro_num()));
+			}
+			
+			model.addAttribute("pagemaker", pm);
+			model.addAttribute("pro_member_List", promemar);
+			model.addAttribute("pr_me_List", prodtar);
+			model.addAttribute("productFile", filear);
+			
+				
+			
 		}
 
 }

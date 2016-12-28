@@ -9,8 +9,7 @@ $(function(){
 		}
 		if($(this).val() == ""){
 			$("#cominfo_btn").hide();			
-		}  
-		
+		}  		
 	});
 	
 	$("#space_input").keyup(function(){

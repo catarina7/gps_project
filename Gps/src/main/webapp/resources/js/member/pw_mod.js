@@ -1,7 +1,8 @@
 $(function(){
 	var pwtest=0;
 	var pwchk =0;
-	var pwinchk = 0;
+	var pwinchk =0;
+	
 	
 	//새로운 비밀번호 확인
 	$("#se_new_pw_input").keyup(function(){

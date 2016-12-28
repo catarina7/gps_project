@@ -31,7 +31,17 @@
 			<mapping path="/member/mem_Info"/>
 			<mapping path="/member/pw_Mod"/>
 			<mapping path="/member/mem_Out"/>
+			<mapping path="/purchase/purchase"/>
 			<beans:ref bean="memberCheck"/>
+		</interceptor>
+	</interceptors>
+	
+	<beans:bean id="adminCheck" class="com.game.inter.AdminCheck"></beans:bean>
+	
+	<interceptors>	
+		<interceptor>
+			<mapping path="/product/pro_write"/>
+			<beans:ref bean="adminCheck"/>
 		</interceptor>
 	</interceptors>
 	

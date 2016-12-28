@@ -1,4 +1,4 @@
-package com.game.gps;
+ package com.game.gps;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -209,17 +209,20 @@ public class MemberController {
 	
 	
 	
-	//약정넣기1
+	//약정넣기1 - 회원가입
 	@RequestMapping(value="/contract")
 	public String contract(){
 		return "/member/contract";
 	}
 	
-	//약정넣기2
+	//약정넣기2 - 회원정보 보호
 	@RequestMapping(value="/license")
 	public String license(){
 		return "/member/license";
 	}
+	//약정넣기3 - 
+	
+	//약정넣기4 - 전자상거래
 	
 	
 	//id찾기
@@ -316,7 +319,18 @@ public class MemberController {
 		return new ResponseEntity<Integer>(result, HttpStatus.OK);
 	}
 	
-	
+	//회원 cd_key 확인
+	@RequestMapping(value="mem_game")
+	public String mem_game(HttpSession session,@RequestParam(defaultValue="1") int curPage,@RequestParam(defaultValue="10") int perPage , Model model){
+		
+		try {
+			memberService.mem_game(session,curPage, perPage , model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}		
+		return "/member/mem_game";
+	}
 	
 
 }

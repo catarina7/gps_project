@@ -40,8 +40,13 @@
 		$("#mem_millage").click(function(){
 			location.href="${pageContext.request.contextPath}/member/millage";
 		});
+		
 		$("#mem_computer").click(function(){
 			location.href="${pageContext.request.contextPath}/member/computer_info";
+		});
+		
+		$("#member_game").click(function(){
+			location.href="${pageContext.request.contextPath}/member/mem_game";
 		});
 	});
 </script>
@@ -145,7 +150,7 @@
 				</div>
 				<!-- 내 게임 -->
 					<!-- 보유 게임 -->
-				<div class="mem_game">
+				<div id="member_game" class="mem_game">
 					<div class="information">
 						<dl>
 							<dt></dt>
