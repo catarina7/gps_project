@@ -30,7 +30,7 @@ section {
 	color: #627eaa;
 }
 #first_admin #liline{
-	position: absolute;
+	position: fixed;
 	left: 15.1%;
 	width: 30px;
 	height: 100%;

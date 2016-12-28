@@ -49,6 +49,7 @@ section .admin_product_first {
 	width: 30%;
 	margin: 0 auto;
 	padding: 20px 1.4%;
+	margin-bottom: 40px;
 }
 
 .admin_product_pageing a:hover {
