@@ -5,8 +5,16 @@
 <mapper namespace="PurchaseMapper">
 
 	<!-- 구매목록 가져오기  -->
-	<select id="purchaseList" parameterType="com.game.member.MemberDTO" resultType="com.game.mart.PurchaseDTO">
+	<select id="purchaseList" resultType="com.game.mart.PurchaseDTO" parameterType="com.game.member.MemberDTO">
 		select * from purchase where m_id=#{m_id} order by reg_date desc
+	</select>
+	
+	<!-- 구매목록 페이징 -->
+	<select id="purlist" resultType="com.game.mart.PurchaseDTO" parameterType="java.util.Map">
+		select * from
+		(select rownum R, F.* from
+		(select * from purchase where m_id=#{m_id}) F)
+		where R between #{pm.startRowNum} and #{pm.lastRowNum}
 	</select>
 	
 	

@@ -43,28 +43,33 @@
 		<div id="first_purchase">
 			<!-- 구매한 게임  -->
 			<!-- foreach -->
-			<c:forEach items="${Purchasing_List}" var="purchasing" varStatus="status">
-				<input type="text" value="${purchasing.reg_date}" id="check_regdate${status.index} }"> 
-				
+			<c:forEach items="${pulisted}" var="pur" varStatus="status">
+								
 				<div class="second_purchase">
 					<!-- 구매한 날짜 -->
 					<p class="purchase_day">
-						${purchasing.reg_date}
+						${pur.purchase.reg_date}
 					</p>
 					<!-- 날짜에 따른 구매 리스트 (타이틀 이미지) -->
 					<div class="third_purchase">
+					</div>
 						<div>
 							<!-- 게임들의 타이틀 이미지 -->
-							
+							<c:forEach items="${pur.filelist}" var="mainfile" varStatus="status">
+								<div class="f_g_img">
+									<a href="../product/pro_view?pro_num=${pur.productnum[status.index]}"> <img src="../resources/upload/${mainfile.file_name}"></a>
+								</div>	
+							</c:forEach> 					
 						</div>
-					</div>
+							<!-- total price -->
+						<div>
+							<span>total price: ${pur.purchase.total_price}</span>
+						</div>
 					<!-- 구체적인 리스트 (게임 정보 및 view로의 링크가 걸린 내용) -->
 					<div class="four_purchase">
 						<div class="item">
 								<div class="four_contents">
-									<div class="f_g_img">
-										<img src="../resources/upload/${ProductFile_List[status.index].file_name}">
-									</div>
+									
 									<table>
 										<colgroup>
 											<col style="width:80%;">
@@ -72,7 +77,7 @@
 											<col style="width:10%;">
 										</colgroup>
 										<tr>
-											<td class="f_g_name">${ProductPur_List[status.index].pro_title}</td>
+											<%-- <td class="f_g_name">${ProductPur_List[status.index].pro_title}</td> --%>
 											<td>
 												<span class="window">
 													<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
@@ -88,7 +93,7 @@
 									</table>
 								</div>
 								<div class="tag">
-									<c:if test="${ProductPur_List[status.index].total_price != 0}">
+									<%-- <c:if test="${ProductPur_List[status.index].total_price != 0}">
 									<ul>
 										<li class="discount">${ProductPur_List[status.index].discount} %</li>
 										<li class="price">
@@ -111,7 +116,7 @@
 											<input type="button" value="재구매">
 										</li>
 									</ul>
-									</c:if>
+									</c:if> --%>
 								</div>
 							</div>
 					</div>
