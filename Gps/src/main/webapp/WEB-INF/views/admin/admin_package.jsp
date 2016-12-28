@@ -75,7 +75,8 @@
 											$(".pack_price").val(0);
 										}else {
 											var discount = $("#pack_discount").val();
-											var total_price = ((price*1)/100)*(discount*1);
+											var price = $("#pack_price").val();
+											var total_price = ((price*1)/100)*(100-(discount*1));
 											total_price = total_price.toFixed(0);
 											$("#pack_total").val(total_price);
 										}
@@ -90,6 +91,10 @@
 											$(this).val("닫기");
 										}
 									});
+									
+									$("#save_btn").click(function(){
+										
+									});
 								});
 							</script>
 							<input type="button" id="save_btn_${allList.pack_num }" value="할인">
@@ -97,17 +102,18 @@
 						</td>
 					</tr>
 					<tr class="total_discount" id="total_discount_${allList.pack_num }">
-						<td colspan="5"></td>
-						<td>
-							<input class="pack_price" id="pack_discount" type="number">
+						<td colspan="3"></td>
+						<td colspan="2">
+							할인률 : <input class="pack_price" id="pack_discount" type="number">
 						</td>
-						<td>
+						<td colspan="3">
+							결제 금액 : <input type="hidden" id="pack_price" value="${allList.price }">
 							<input class="pack_price" id="pack_total" type="number">
 						</td>
 						<td>
 							<input type="button" id="save_btn" value="등록">
 						</td>
-						<td colspan="2"></td>
+						<td></td>
 					</tr>
 				</c:forEach>
 			</table>
