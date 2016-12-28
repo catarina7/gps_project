@@ -92,8 +92,18 @@
 										}
 									});
 									
-									$("#save_btn").click(function(){
-										
+									$("#save_btn_${allList.pack_num }").click(function(){
+										$.ajax({
+											url : "packMod",
+											data : {
+												pack_num : $("pack_num").val(),
+												total_price : $("#pack_total").val(),
+												discount : $("#pack_discount").val() 
+											},
+											type : "post",
+											success : function(result){
+											}
+										});
 									});
 								});
 							</script>
@@ -105,13 +115,15 @@
 						<td colspan="3"></td>
 						<td colspan="2">
 							할인률 : <input class="pack_price" id="pack_discount" type="number">
+							<input type="hidden" id="pack_num" value="${allList.pack_num }">
+							
 						</td>
 						<td colspan="3">
-							결제 금액 : <input type="hidden" id="pack_price" value="${allList.price }">
-							<input class="pack_price" id="pack_total" type="number">
+							결제 금액 : <input class="pack_price" id="pack_total" type="number">
+							<input type="hidden" id="pack_price" value="${allList.price }">
 						</td>
 						<td>
-							<input type="button" id="save_btn" value="등록">
+							<input type="button" id="save_btn_${allList.pack_num }" value="등록">
 						</td>
 						<td></td>
 					</tr>
