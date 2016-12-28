@@ -28,17 +28,21 @@
 		$("#send_admin").click(function(){
 			location.href="${pageContext.request.contextPath}/admin/send_list";
 		});
+
 		//매출정보관리
 		$("#sales_admin").click(function(){
 			location.href="${pageContext.request.contextPath}/admin/sales_list";
+		});
+		//패키지 상품관리
+		$("#package_admin").click(function(){
+			location.href="${pageContext.request.contextPath}/package_pro/packAllList";
+
 		});
 	});
 </script>
 </head>
 <body>
 	
-	<!-- section -->
-	<section>
 		<!-- 내용 넣기 -->
 		
 		<div id="first_admin">		
@@ -47,20 +51,15 @@
 				 	<li id="main_home">GPS 홈페이지로</li>
 				 	<li>회원정보관리</li>
 				 	<li id="product_admin">상품정보관리</li>
-				 	<li id="send_admin">배송정보관리</li>
+				 	<li id="package_admin">패키지 상품관리</li>
+				 	<li id="send_admin">CD-Key 발급관리</li>
 				 	<li id="cd-key">CD-key 관리</li>
 				 	<li id="sales_admin">매출정보관리</li>
 				 </ul>
 			</div>
 			<div id="liline"></div>
-			<div id="third_admin">
-				<!-- 관리 내용 집어넣기 -->
-				
-			</div>
 		</div>
 		
-		
-	</section>
 	
 </body>
 </html>

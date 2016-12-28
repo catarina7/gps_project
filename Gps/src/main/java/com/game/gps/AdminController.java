@@ -97,6 +97,7 @@ public class AdminController {
 			e.printStackTrace();
 		}
 		return "admin/send_result";
+
 	}
 	
 	//매출정보관리
@@ -109,5 +110,7 @@ public class AdminController {
 			e.printStackTrace();
 		}
 		return "admin/sales_admin";
-	}
+		}
+
+
 }

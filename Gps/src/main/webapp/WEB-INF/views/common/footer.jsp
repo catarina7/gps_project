@@ -31,7 +31,7 @@
 			<div id="first_footer_1">
 				<div id="second_footer">
 					<div id="footer_logo">
-						<!-- logo_image -->						
+						<img src="${pageContext.request.contextPath}/resources/css/common/img/rogo2.png">						
 					</div>
 					<div id="footer_info">
 						<p>

@@ -93,7 +93,7 @@
 	<update id="status_change" parameterType="int">
 		update purchase set status='완료' where pur_num=#{pur_num}
 	</update>
-	
+
 	<!-- 매출정보관리 모두 뿌리기 -->
 	<select id="sales_list" resultType="com.game.mart.PurchaseDTO" parameterType="com.game.util.PageMaker">
 		select * from 
@@ -111,4 +111,5 @@
 	<select id="sales_list_total_price" resultType="int">
 		select sum(total_price) from purchase
 	</select>
+
 </mapper>

@@ -72,7 +72,7 @@
 			<div id="first_div_1">
 				<div id="second_div" onclick="location.href='${pageContext.request.contextPath}/index'">
 					<!-- rogo image -->
-					<%-- <a href="${pageContext.request.contextPath}/index"><img src=""></a> --%>
+					<img src="${pageContext.request.contextPath}/resources/css/common/img/rogo1.png">
 				</div>
 				<div id="third_div">
 					<!-- menu list -->

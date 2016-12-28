@@ -1,1 +1,64 @@
 @CHARSET "UTF-8";
+
+#pack_write table {
+	border-collapse: collapse;
+	width: 100%;
+}
+
+#pack_write td {
+	padding: 3px 0.7%;
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+#pack_write input[type="text"]{
+	border-radius: 5px;
+	padding: 2px 0.5%;
+	border: 1px solid #aaaaaa;
+}
+
+#pack_write input[type="number"]{
+	border-radius: 5px;
+	padding: 2px 0.5%;
+	border: 1px solid #aaaaaa;
+}
+
+#pack_write input[type="button"]{
+	padding: 3px 10px;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: -1px -1px 0px #1f2938;
+	border: 1px solid black;
+	font-weight: bold;
+	font-size: 14px;
+	float: right;
+	overflow: hidden;
+}
+#pack_write input[type="button"]:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
