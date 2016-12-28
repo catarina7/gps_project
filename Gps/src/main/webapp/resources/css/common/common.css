@@ -18,7 +18,7 @@
 /* header */
 
 #first_div {
-	background-color: #43596b;
+	background-color: #31414f;
 	width: 100%;
 	height: 105px;
 	position: fixed;
@@ -32,12 +32,18 @@
 	padding: 20px 0px;
 }
 #second_div {
-	width: 18%;
+	width: 16%;
 	height: 100%;
 	float: left;
-	background-color: #c4c4e1;
+	border: 1px solid black;
+	border-radius: 3px; 
+	background: linear-gradient(to left, #b9c8d2, #31414f);
 }
-
+#second_div img {
+	width: 100%;
+	height: 100%;
+	border-bottom: 2px solid black;
+}
 #third_div {
 	width: 58%;
 	height: 65%;
@@ -135,9 +141,13 @@
 #footer_logo {
 	width: 16%;
 	height: 88%;
-	border: 3px solid #aaaaaa;
+	border: 3px solid #2c3945;
 	margin-right: 13px;
 	float: left;
+}
+#footer_logo img {
+	width: 100%;
+	height: 100%;
 }
 #second_footer #footer_info {
 	width: 81%;
