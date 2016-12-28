@@ -494,7 +494,9 @@
 						<img src="${pageContext.request.contextPath}/resources/css/common/img/phone.png">
 					</div>
 					<div id="main_company_step2">
-						<div id="step2"></div>
+						<div id="step2">
+							<img src="${pageContext.request.contextPath}/resources/css/common/img/phone_text.png">
+						</div>
 					</div>
 				</div>
 			</div>

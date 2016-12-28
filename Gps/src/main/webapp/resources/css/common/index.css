@@ -542,7 +542,10 @@ section #game_list {
 	background-color: #333333;
 	border: 1px solid #666666;
 }
-
+#main_company #main_company_step2 img {
+	width: 100%;
+	height: 100%;
+}
 
 #main_four #main_reply {
 	width: 33%;
