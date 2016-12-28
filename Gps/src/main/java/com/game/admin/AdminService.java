@@ -2,14 +2,13 @@ package com.game.admin;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
 import com.game.cd.CD_keyDTO;
-import com.game.mart.PurchaseDTO;
+import com.game.cd.Product_memberDTO;
 import com.game.product.ProductDTO;
 import com.game.util.PageMaker;
 
@@ -96,62 +95,76 @@ public class AdminService {
 		pageMaker.makeRow();
 		pageMaker.makePage(totalCount);
 		
-		//리스트에 뿌릴 pro_num >> String
-		ArrayList<String> pro_num_ar = new ArrayList<>();
-		int pro_numI;
-		//리스트에 뿌릴 pro_num >> Integer
-		ArrayList<Integer> pro_num_arI = new ArrayList<>();
+		//배송정보관리 리스트
+		List<Product_memberDTO> send_list = adminDAO.send_list(pageMaker);
+		ArrayList<String> title_ar = new ArrayList<>();
 		
-		//리스트에 뿌릴 m_id
-		ArrayList<String> m_id_ar = new ArrayList<>();
+		//CD_key 있는지 판별해주기
+		ArrayList<Integer> cd_ar = new ArrayList<>();
+		for(int i=0;i<send_list.size();i++){
+			int cd_key = adminDAO.cd_key_nouse(send_list.get(i).getPro_num());
+			cd_ar.add(cd_key);
+		}
 		
-		//리스트에 뿌릴 Status
-		ArrayList<String> status_ar = new ArrayList<>();
-		
-		//리스트에 뿌릴 pro_title
-		ArrayList<String> pro_title_ar = new ArrayList<>();
-		
-		List<PurchaseDTO> send_list = adminDAO.send_list(pageMaker);
 		for(int i=0; i<send_list.size();i++){
-			int sizeNum=0;			
-			//pro_num String
-			String pro_numS = send_list.get(i).getPro_num();
-			
-			//m_id
-			String m_idS= send_list.get(i).getM_id();
-			String status_S= send_list.get(i).getStatus();
-			
-			StringTokenizer st = new StringTokenizer(pro_numS, ":");
-			while(st.hasMoreTokens()){
-				pro_num_ar.add(st.nextToken());
-				sizeNum++;
-			}
-			//System.out.println(sizeNum);
-			for(int j=0;j<sizeNum;j++){
-				status_ar.add(status_S);
-				m_id_ar.add(m_idS);
-			}
+			String productDTO = adminDAO.send_list_title(send_list.get(i).getPro_num());
+			title_ar.add(productDTO);
 		}
 		
-		//pro_num을 integer로 바꾸기
-		for(int i=0;i<pro_num_ar.size();i++){
-			//System.out.println(i+"번째 : "+ pro_num_ar.get(i)+" > " + m_id_ar.get(i));
-			pro_numI=Integer.parseInt(pro_num_ar.get(i));
-			
-			pro_num_arI.add(pro_numI);
-			System.out.println(pro_num_arI.get(i));
-		}
-		
-		//int인 pro_num으로 제목가져오기
-		for(int i=0;i<pro_num_arI.size();i++){
-			int s = pro_num_arI.get(i);
-			String pro_title = adminDAO.send_list_title(s);
-			pro_title_ar.add(pro_title);
-		}
-
-		model.addAttribute("pro_num", pro_num_arI);
-		model.addAttribute("m_id", m_id_ar);
-		model.addAttribute("status_ar", status_ar);
-		model.addAttribute("pro_title", pro_title_ar);
+		model.addAttribute("send_list", send_list);
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("productDTO", title_ar);
+		model.addAttribute("cd_key", cd_ar);
 	}
+	
+	//cd_key 업데이트도 하고 다해줌
+	public void cd_key_nouse(int curPage, int perPage, int pro_num, int pm_num, int pur_num , Model model) throws Exception{
+		List<CD_keyDTO> cd_ar_get = adminDAO.cd_key_get(pro_num);
+		
+		String cd_key_serial="";
+		int cd_num=0;
+		//있는거 이므로 첫번째 CD-Key만 가져온다.
+		for(int i=0;i<1;i++){
+			cd_key_serial = cd_ar_get.get(i).getCd_serial();
+			cd_num = cd_ar_get.get(i).getCd_num();
+		}
+		//System.out.println(cd_key_serial);
+		adminDAO.pm_update(pm_num, cd_key_serial);
+		adminDAO.cd_key_update(cd_num);
+		
+		int totalCount = adminDAO.send_list_count();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		
+		//배송정보관리 리스트
+		List<Product_memberDTO> send_list = adminDAO.send_list(pageMaker);
+		ArrayList<String> title_ar = new ArrayList<>();
+		
+		//CD_key 있는지 판별해주기
+		ArrayList<Integer> cd_ar = new ArrayList<>();
+		for(int i=0;i<send_list.size();i++){
+			int cd_key = adminDAO.cd_key_nouse(send_list.get(i).getPro_num());
+			cd_ar.add(cd_key);
+		}
+		
+		for(int i=0; i<send_list.size();i++){
+			String productDTO = adminDAO.send_list_title(send_list.get(i).getPro_num());
+			title_ar.add(productDTO);
+		}
+		
+		List<Product_memberDTO> cd_check = adminDAO.cd_key_check(pur_num);
+		System.out.println(cd_check.size());
+		if(cd_check.size()==0){
+			adminDAO.status_change(pur_num);
+		}
+		
+		model.addAttribute("send_list", send_list);
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("productDTO", title_ar);
+		model.addAttribute("cd_key", cd_ar);
+	}
+	
 }

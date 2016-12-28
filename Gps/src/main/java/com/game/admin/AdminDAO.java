@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.game.cd.CD_keyDTO;
-import com.game.mart.PurchaseDTO;
+import com.game.cd.Product_memberDTO;
 import com.game.product.ProductDTO;
 import com.game.util.PageMaker;
 
@@ -60,7 +60,7 @@ public class AdminDAO {
 	}
 	
 	//배송 정보관리 리스트
-	public List<PurchaseDTO> send_list(PageMaker pageMaker) throws Exception{
+	public List<Product_memberDTO> send_list(PageMaker pageMaker) throws Exception{
 		return sqlSession.selectList(namespace+"send_list", pageMaker);
 	}
 	
@@ -72,5 +72,38 @@ public class AdminDAO {
 	//배송정보관리에서 제목가져오기
 	public String send_list_title(int pro_num) throws Exception{
 		return sqlSession.selectOne(namespace+"send_list_title", pro_num);
+	}
+	
+	//cd_key 사용안된거 찾기
+	public int cd_key_nouse(int pro_num) throws Exception{
+		return sqlSession.selectOne(namespace+"cd_key_nouse", pro_num);
+	}
+	
+	//cd_key 가져오기 pm에 담으려고
+	public List<CD_keyDTO> cd_key_get(int pro_num) throws Exception{
+		return sqlSession.selectList(namespace+"cd_key_get", pro_num);
+	}
+	
+	//cd_key update
+	public void cd_key_update(int cd_num) throws Exception{
+		sqlSession.update(namespace+"cd_key_update", cd_num);
+	}
+	
+	//product_member에다가 cd_serial 입력하기
+	public void pm_update(int pm_num, String cd_serial) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		data.put("pm_num", pm_num);
+		data.put("cd_serial", cd_serial);
+		sqlSession.update(namespace+"pm_update", data);
+	}
+	
+	//purchase 대기>>완료
+	public List<Product_memberDTO> cd_key_check(int pur_num) throws Exception{
+		return sqlSession.selectList(namespace+"cd_key_check", pur_num);
+	}
+	
+	//purchase update
+	public void status_change(int pur_num) throws Exception{
+		sqlSession.update(namespace+"status_change", pur_num);
 	}
 }

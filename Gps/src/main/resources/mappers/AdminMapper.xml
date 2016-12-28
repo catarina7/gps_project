@@ -47,20 +47,50 @@
 	</delete>
 	
 	<!-- 배송정보관리 리스트 -->
-	<select id="send_list" resultType="com.game.mart.PurchaseDTO" parameterType="com.game.util.PageMaker">
-		select * from 
+	<select id="send_list" resultType="com.game.cd.Product_memberDTO" parameterType="com.game.util.PageMaker">
+    	select * from 
 		(select rownum R, F.* from 
-		(select * from purchase order by pur_num desc) F) 
-		where R between #{startRowNum} and #{lastRowNum}	
+		(select * from product_member order by pm_num desc) F) 
+		where R between #{startRowNum} and #{lastRowNum}
 	</select>
 	
 	<!-- 배송정보관리 전체 갯수 -->
 	<select id="send_list_count" resultType="int">
-		select count(pur_num) from purchase
+		select count(pm_num) from product_member
 	</select>
 	
 	<!-- 배송정보관리에서 게임 이름 가져오기 -->
 	<select id="send_list_title" resultType="java.lang.String" parameterType="int">
 		select pro_title from product where pro_num=#{pro_num}
 	</select>
+	
+	<!-- cd_key 사용안된거 찾기 -->
+	<select id="cd_key_nouse" resultType="int" parameterType="int">
+		select count(cd_num) from cd_key where pro_num=#{pro_num} and cd_check='nouse'
+	</select>
+	
+	<!-- cd_key 사용안된거 가져오기 -->
+	<select id="cd_key_get" resultType="com.game.cd.CD_keyDTO" parameterType="int">
+		select * from cd_key where pro_num=#{pro_num} and cd_check='nouse'
+	</select>
+	
+	<!-- Product_member  CD_Serial 입력 -->
+	<update id="pm_update" parameterType="java.util.Map">
+		update product_member set cd_serial=#{cd_serial} where pm_num=#{pm_num}
+	</update>
+	
+	<!-- CD_key update -->
+	<update id="cd_key_update" parameterType="int">
+		update cd_key set cd_check='use' where cd_num=#{cd_num}
+	</update>
+	
+	<!-- purchase 대기를 바꾸기 -->
+	<select id="cd_key_check" resultType="com.game.cd.Product_memberDTO" parameterType="int">
+		select * from product_member where pur_num=#{pur_num} and cd_serial='null'
+	</select>
+	
+	<!-- purchase update -->
+	<update id="status_change" parameterType="int">
+		update purchase set status='완료' where pur_num=#{pur_num}
+	</update>
 </mapper>
