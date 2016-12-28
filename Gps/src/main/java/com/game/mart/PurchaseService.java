@@ -1,7 +1,9 @@
 package com.game.mart;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.StringTokenizer;
 
@@ -17,6 +19,7 @@ import com.game.member.MemberDTO;
 import com.game.product.ProductDAO;
 import com.game.product.ProductDTO;
 import com.game.product.ProductFileDTO;
+import com.game.util.PageMaker;
 
 @Service
 public class PurchaseService {
@@ -29,6 +32,7 @@ public class PurchaseService {
 	
 	@Autowired
 	private ProductDAO productDao;
+	
 	
 	
 	//구매항목 list
@@ -92,35 +96,41 @@ public class PurchaseService {
 	
 	
 	//구매정보 확인 리스트
-	public void purchasedList(HttpSession session, Model model) throws Exception{
+	public void purchasedList(HttpSession session, Model model, int curPage, int perPage) throws Exception{
 		
 		MemberDTO mDto = new MemberDTO();
+		PageMaker pm = new PageMaker();
 		mDto = (MemberDTO)session.getAttribute("member");
-		
 		//구매날짜 가져오기
-		ArrayList<PurchaseDTO> purar = purchasedao.purchaseList(mDto);		
-		//구매날짜 중복제거
-		//중복 제거 용
-		ArrayList<PurchaseDTO> purar2 = new ArrayList<>();
-		for(int i=0;i<purar.size();i++){			
-			System.out.println("purar: "+purar.get(i).getReg_date());
-		}
-		for(int i=0;i<purar.size()-1;i++){
-			for(int j=1;j<purar.size();j++){
-				if(purar.get(i).getReg_date() == purar.get(j).getReg_date()){
-				
-				}else if(purar.get(i).getReg_date() != purar.get(j).getReg_date()){
-					purar2.add(purar.get(i));
-				}else {
-					purar2.add(purar.get(j));
-				}
-			}
-		}
-		for(int i=0;i<purar2.size();i++){			
-			System.out.println("purar2: "+purar2.get(i).getReg_date());
-		}
-		model.addAttribute("Purchasing_List", purar2);
+		ArrayList<PurchaseDTO> purar = purchasedao.purchaseList(mDto);	
+						
+		pm.setCurPage(curPage);
+		pm.setPerPage(perPage);
+		pm.makeRow();
+		pm.makePage(purar.size());	
 		
+		ArrayList<PurchaseDTO> pulistar = purchasedao.purlist(pm, mDto.getM_id());
+		ArrayList<Map<String, Object>> purlisted = new ArrayList<>();
+		for(int i=0;i<pulistar.size();i++){
+			ArrayList<Integer> promar = new ArrayList<>();
+			ArrayList<ProductFileDTO> filear = new ArrayList<>();
+			StringTokenizer st = new StringTokenizer(pulistar.get(i).getPro_num(), ":");
+			while(st.hasMoreTokens()){
+				promar.add(Integer.parseInt(st.nextToken()));
+			}
+			for(int j=0;j<promar.size();j++){
+				ProductFileDTO file = productDao.productImgList(promar.get(j));
+				filear.add(file);
+			}
+			Map<String, Object> pur = new HashMap<>();
+			pur.put("purchase", pulistar.get(i));
+			pur.put("filelist", filear);
+			pur.put("productnum", promar);		
+			purlisted.add(pur);
+		}
+		
+		model.addAttribute("pagemaker", pm);
+		model.addAttribute("pulisted", purlisted);
 		
 	}
 	

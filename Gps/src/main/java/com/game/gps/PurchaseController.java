@@ -44,11 +44,11 @@ public class PurchaseController {
 	
 	//구매내역
 	@RequestMapping(value="/purchase")
-	public String purchaseList(HttpSession session, Model model){				
+	public String purchaseList(HttpSession session, Model model, @RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="10") int perPage){				
 		
 		if(session.getAttribute("member") != null){
 			try {
-				purchaseservice.purchasedList(session, model);
+				purchaseservice.purchasedList(session, model, curPage, perPage);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

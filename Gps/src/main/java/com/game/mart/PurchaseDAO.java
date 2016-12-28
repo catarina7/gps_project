@@ -3,7 +3,9 @@ package com.game.mart;
 
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Repository;
 import com.game.member.MemberDTO;
 import com.game.product.ProductDTO;
 import com.game.product.ProductFileDTO;
+import com.game.util.PageMaker;
 
 @Repository
 public class PurchaseDAO {
@@ -27,6 +30,17 @@ public class PurchaseDAO {
 		List<PurchaseDTO> plist = sqlsession.selectList(namespaceP+"purchaseList", mDto);
 		purar.addAll(plist);
 		return purar;
+	}
+	
+	// 구매 목록 페이징
+	public ArrayList<PurchaseDTO> purlist(PageMaker pm, String m_id){
+		ArrayList<PurchaseDTO> ar = new ArrayList<>();
+		Map<String, Object> data = new HashMap<>();
+		data.put("m_id", m_id);
+		data.put("pm", pm);
+		List<PurchaseDTO> list = sqlsession.selectList(namespaceP+"purlist", data);
+		ar.addAll(list);
+		return ar;
 	}
 	
 	

@@ -43,85 +43,51 @@
 		<div id="first_purchase">
 			<!-- 구매한 게임  -->
 			<!-- foreach -->
-			<c:forEach items="${Purchasing_List}" var="purchasing" varStatus="status">
-				<input type="text" value="${purchasing.reg_date}" id="check_regdate${status.index} }"> 
-				
+			<c:forEach items="${pulisted}" var="pur" varStatus="status">
+								
 				<div class="second_purchase">
 					<!-- 구매한 날짜 -->
 					<p class="purchase_day">
-						${purchasing.reg_date}
+						${pur.purchase.reg_date}
 					</p>
 					<!-- 날짜에 따른 구매 리스트 (타이틀 이미지) -->
 					<div class="third_purchase">
+					</div>
 						<div>
 							<!-- 게임들의 타이틀 이미지 -->
-							
+							<c:forEach items="${pur.filelist}" var="mainfile" varStatus="status">
+								<div class="f_g_img">
+									<a href="../product/pro_view?pro_num=${pur.productnum[status.index]}"> <img src="../resources/upload/${mainfile.file_name}"></a>
+								</div>	
+							</c:forEach> 					
 						</div>
-					</div>
-					<!-- 구체적인 리스트 (게임 정보 및 view로의 링크가 걸린 내용) -->
-					<div class="four_purchase">
-						<div class="item">
-								<div class="four_contents">
-									<div class="f_g_img">
-										<img src="../resources/upload/${ProductFile_List[status.index].file_name}">
-									</div>
-									<table>
-										<colgroup>
-											<col style="width:80%;">
-											<col style="width:10%;">
-											<col style="width:10%;">
-										</colgroup>
-										<tr>
-											<td class="f_g_name">${ProductPur_List[status.index].pro_title}</td>
-											<td>
-												<span class="window">
-													<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
-												</span>
-												<span class="mac">
-													<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_mac.png">
-												</span>
-											</td>
-										</tr>
-										<tr>
-											<td class="f_g_ex" colspan="2">game explanation</td>
-										</tr>
-									</table>
-								</div>
-								<div class="tag">
-									<c:if test="${ProductPur_List[status.index].total_price != 0}">
-									<ul>
-										<li class="discount">${ProductPur_List[status.index].discount} %</li>
-										<li class="price">
-											<p class="nomal_p">₩ ${ProductPur_List[status.index].price}</p>
-											<span>₩ ${ProductPur_List[status.index].total_price}</span>
-										</li>
-										<li>
-											<input type="button" value="재구매">
-										</li>
-									</ul>
-									</c:if>
-									<c:if test="${ProductPur_List[status.index].total_price == 0}">
-									<ul>
-										<li class="discount">${ProductPur_List[status.index].discount} %</li>
-										<li class="price">
-											<p class="nomal_p">₩ ${ProductPur_List[status.index].price}</p>
-											<span>₩ ${ProductPur_List[status.index].price}</span>
-										</li>
-										<li>
-											<input type="button" value="재구매">
-										</li>
-									</ul>
-									</c:if>
-								</div>
-							</div>
-					</div>
+							<!-- total price -->
+						<div id="purchase_total_price"> 
+							<span>total price: ${pur.purchase.total_price}</span>
+						</div>
+					
+					
 				</div>
 			</c:forEach>
 			<!-- for문 end -->
 			
+			<!-- pageing -->
+			<div id="pro_list_paging">
+				<div class="margins">
+					<c:if test="${pagemaker.curBlock>1}">
+						<a href="purchase?curPage=${pagemaker.startNum-1}">[이전]</a>
+					</c:if>
+					<c:forEach begin="${pagemaker.startNum}" end="${pagemaker.lastNum}"
+						var="i">
+						<a href="purchase?curPage=${i}">${i}</a>
+					</c:forEach>
+					<c:if test="${pagemaker.curBlock<pageMaker.totalBlock}">
+						<a href="purchase?curPage=${pagemaker.lastNum+1}">[다음]</a>
+					</c:if>
+				</div>
+			</div>
 		</div>
-		
-		
+
 	</section>
 	
 	<c:import url="/footer" />

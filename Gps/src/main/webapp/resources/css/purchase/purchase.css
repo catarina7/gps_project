@@ -251,6 +251,12 @@ section #else_list {
 .tag input:hover {
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
 }
+#pro_list_paging{
+	text-align:center;
+	border: 1px solid red;
+	margin: 0 auto;
+	
+}
 
 
 
