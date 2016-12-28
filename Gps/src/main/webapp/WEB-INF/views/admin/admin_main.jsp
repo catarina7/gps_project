@@ -30,7 +30,7 @@
 		});
 		//패키지 상품관리
 		$("#package_admin").click(function(){
-			location.href="${pageContext.request.contextPath}/admin/admin_package";
+			location.href="${pageContext.request.contextPath}/package_pro/packAllList";
 		});
 	});
 </script>

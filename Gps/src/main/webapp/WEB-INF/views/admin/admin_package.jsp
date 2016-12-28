@@ -13,7 +13,7 @@
 	<c:import url="/admin_main" />
 	<section>
 		<div class="admin_product_first">
-			
+			<input type="button" value="패키지 생성">
 		</div>
 	</section>
 </body>
