@@ -93,4 +93,5 @@
 	<update id="status_change" parameterType="int">
 		update purchase set status='완료' where pur_num=#{pur_num}
 	</update>
+
 </mapper>

@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+
+section .admin_product_first {
+	width: 60%;
+	float: left;
+	overflow: hidden;
+	margin-left: 20%;
+	margin-top: 3%;
+}
+
+.admin_product_first table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.admin_product_first h2 {
+	padding: 10px 1.4%;
+	margin-bottom: 10px;
+}
+.admin_product_first td {
+	padding: 3px 0.5%;
+	text-align: center;
+	border-bottom: 1px dotted #aaaaaa;
+	overflow: hidden;
+}
+.admin_product_first #title td {
+	font-weight: bold;
+	padding: 5px 0.5%;
+	font-size: 17px;
+	border-bottom: 2px solid black;
+}
+
+.admin_product_first input[type="button"]{
+	padding: 3px 10px;
+	color: white;
+	background: linear-gradient(to bottom, #5977a4, #32435c);
+	border-radius: 5px;
+	cursor: pointer;
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	text-shadow: -1px -1px 0px #1f2938;
+	border: 1px solid black;
+	font-weight: bold;
+	font-size: 14px;
+	float: right;
+	overflow: hidden;
+}
+.admin_product_first input[type="button"]:hover {
+	background: linear-gradient(to bottom, #738cb3, #3e5271);
+}
+.admin_product_first .admin_product_pageing {
+	width: 30%;
+	margin: 0 auto;
+	padding: 20px 1.4%;
+	margin-bottom: 40px;
+}
+
+.admin_product_pageing a:hover {
+	background-color: #c1c1c1;
+	border-radius: 5px;
+}
+
+.admin_product_first .first_button {
+	width: 100%;
+}
+
+.admin_product_first .total_discount{
+	display: none;
+}
+
+/* 패키지 작성 */
+
+section #create_pack {
+	position: absolute;
+	background-color: #626262;
+	margin-left: 48%;
+	margin-top: 3%;
+	padding: 10px 1.4%;
+	border: 2px solid #aaaaaa;
+	border-radius : 4px;
+	display: none;
+}
+
+section input[type="number"]{
+	padding: 1px 0.3%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
