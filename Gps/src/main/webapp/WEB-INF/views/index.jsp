@@ -108,6 +108,9 @@
 		$("#simulation").click(function(){
 			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=simulation";
 		});
+		$("#strategy").click(function(){
+			location.href="${pageContext.request.contextPath}/product/pro_list?top_category=strategy";
+		});
 		$("#adventure").click(function(){
 			location.href = "${pageContext.request.contextPath}/product/pro_list?top_category=adventure";
 		});

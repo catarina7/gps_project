@@ -45,7 +45,7 @@ $(function(){
 						<select id="order_kind">
 							<option value="recent">최신순으로 정렬</option>
 							<option value="name">이름순으로 정렬</option>
-							<option value="score">평점놈은순으로 정렬</option>
+							<option value="score">평점높은순으로 정렬</option>
 							<option value="high">높은가격순으로 정렬</option>
 							<option value="low">낮은가격순으로 정렬</option>
 						</select>
@@ -59,7 +59,7 @@ $(function(){
 						<select id="order_kind">
 							<option value="recent">최신순으로 정렬</option>
 							<option value="name">이름순으로 정렬</option>
-							<option value="score">평점놈은순으로 정렬</option>
+							<option value="score">평점높은순으로 정렬</option>
 							<option value="high">높은가격순으로 정렬</option>
 							<option value="low">낮은가격순으로 정렬</option>
 						</select>
