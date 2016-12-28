@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 
 import com.game.cd.CD_keyDTO;
 import com.game.cd.Product_memberDTO;
+import com.game.mart.PurchaseDTO;
 import com.game.product.ProductDTO;
 import com.game.util.PageMaker;
 
@@ -105,5 +106,18 @@ public class AdminDAO {
 	//purchase update
 	public void status_change(int pur_num) throws Exception{
 		sqlSession.update(namespace+"status_change", pur_num);
+	}
+	
+	//매출정보관리
+	public List<PurchaseDTO> sales_list(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"sales_list", pageMaker);
+	}
+	//매출정보관리 갯수
+	public int sales_list_count() throws Exception{
+		return sqlSession.selectOne(namespace+"sales_list_count");
+	}
+	//매출정보관리 총가격
+	public int sales_list_total_price() throws Exception{
+		return sqlSession.selectOne(namespace+"sales_list_total_price");
 	}
 }

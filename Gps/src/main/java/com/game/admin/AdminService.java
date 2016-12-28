@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 
 import com.game.cd.CD_keyDTO;
 import com.game.cd.Product_memberDTO;
+import com.game.mart.PurchaseDTO;
 import com.game.product.ProductDTO;
 import com.game.util.PageMaker;
 
@@ -167,4 +168,20 @@ public class AdminService {
 		model.addAttribute("cd_key", cd_ar);
 	}
 	
+	//매출정보관리
+	public void sales_list(int curPage, int perPage, Model model) throws Exception{
+		int totalCount = adminDAO.sales_list_count();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		
+		List<PurchaseDTO> sales_list = adminDAO.sales_list(pageMaker);
+		
+		model.addAttribute("sales_list", sales_list);
+		model.addAttribute("pageMaker", pageMaker);
+		model.addAttribute("total_count", totalCount);
+		model.addAttribute("sum_price", adminDAO.sales_list_total_price());
+	}
 }

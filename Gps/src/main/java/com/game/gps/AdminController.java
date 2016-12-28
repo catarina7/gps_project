@@ -98,4 +98,16 @@ public class AdminController {
 		}
 		return "admin/send_result";
 	}
+	
+	//매출정보관리
+	@RequestMapping(value="/sales_list")
+	public String sales_list(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model){
+		try {
+			adminService.sales_list(curPage, perPage, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "admin/sales_admin";
+	}
 }

@@ -93,4 +93,22 @@
 	<update id="status_change" parameterType="int">
 		update purchase set status='완료' where pur_num=#{pur_num}
 	</update>
+	
+	<!-- 매출정보관리 모두 뿌리기 -->
+	<select id="sales_list" resultType="com.game.mart.PurchaseDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from purchase order by pur_num desc) F) 
+		where R between #{startRowNum} and #{lastRowNum}
+	</select>
+	
+	<!-- 매출정보관리 갯수 가져오기 -->
+	<select id="sales_list_count" resultType="int">
+		select count(pur_num) from purchase
+	</select>
+	
+	<!-- 매출정보관리 가격 모두 가져오기 -->
+	<select id="sales_list_total_price" resultType="int">
+		select sum(total_price) from purchase
+	</select>
 </mapper>

@@ -28,6 +28,10 @@
 		$("#send_admin").click(function(){
 			location.href="${pageContext.request.contextPath}/admin/send_list";
 		});
+		//매출정보관리
+		$("#sales_admin").click(function(){
+			location.href="${pageContext.request.contextPath}/admin/sales_list";
+		});
 	});
 </script>
 </head>
@@ -45,7 +49,7 @@
 				 	<li id="product_admin">상품정보관리</li>
 				 	<li id="send_admin">배송정보관리</li>
 				 	<li id="cd-key">CD-key 관리</li>
-				 	<li>매출정보관리</li>
+				 	<li id="sales_admin">매출정보관리</li>
 				 </ul>
 			</div>
 			<div id="liline"></div>
