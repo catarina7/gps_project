@@ -49,8 +49,6 @@
 				</div>
 				<div id="third_footer">
 					<ul>
-						<li id="company_intro" class="design">회사소개</li>
-						<li id="company_alliance" class="design">제휴제안</li>
 						<li id="company_agree" class="design">이용약관</li>
 						<li id="company_info" class="design" id="import">개인정보취급방침</li>
 						<li id="company_teen" class="design">청소년보호정책</li>
