@@ -33,7 +33,7 @@ public class PackageController {
 			e.printStackTrace();
 		}
 		
-		return "redirect:/index";
+		return "redirect:/package_pro/packAllList";
 	}
 	
 	@RequestMapping(value="/pack_mod")
@@ -56,7 +56,7 @@ public class PackageController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "redirect:/package_pro/pack_mod";
+		return "redirect:/package_pro/packAllList";
 	}
 	
 	@RequestMapping(value="/packDelete")
@@ -67,7 +67,7 @@ public class PackageController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return "redirect:/admin/product_admin";
+		return "redirect:/package_pro/packAllList";
 	}
 	
 	@RequestMapping(value="/packAllList")

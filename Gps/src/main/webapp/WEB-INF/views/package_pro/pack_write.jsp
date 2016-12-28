@@ -98,7 +98,7 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="pack_title">서브 카테고리</td>
+					<td class="pack_title">서브 카테고리 :</td>
 					<td>
 						<input type="text" name="sub_category">
 					</td>
@@ -111,7 +111,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
-						<input type="button" value="만들기" id="savebutton">
+						<input type="button" value="등록" id="savebutton">
 					</td>
 				</tr>
 			</table>

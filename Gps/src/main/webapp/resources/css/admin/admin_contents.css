@@ -20,6 +20,7 @@ section .admin_product_first {
 	padding: 3px 0.5%;
 	text-align: center;
 	border-bottom: 1px dotted #aaaaaa;
+	overflow: hidden;
 }
 .admin_product_first #title td {
 	font-weight: bold;
@@ -41,6 +42,8 @@ section .admin_product_first {
 	border: 1px solid black;
 	font-weight: bold;
 	font-size: 14px;
+	float: right;
+	overflow: hidden;
 }
 .admin_product_first input[type="button"]:hover {
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
@@ -56,3 +59,42 @@ section .admin_product_first {
 	background-color: #c1c1c1;
 	border-radius: 5px;
 }
+
+.admin_product_first .first_button {
+	width: 100%;
+}
+
+/* 패키지 작성 */
+
+section #create_pack {
+	position: absolute;
+	background-color: #626262;
+	margin-left: 48%;
+	margin-top: 3%;
+	padding: 10px 1.4%;
+	border: 2px solid #aaaaaa;
+	border-radius : 4px;
+	/* display: none; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
