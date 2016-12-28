@@ -86,4 +86,16 @@ public class AdminController {
 		}
 		return "admin/send_admin";
 	}
+	
+	//CD_KEY 사용안된거 가져오기
+	@RequestMapping(value="/cd_key_no")
+	public String cd_key_nouse(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, int pro_num , int pm_num, int pur_num, Model model){
+		try {
+			adminService.cd_key_nouse(curPage, perPage, pro_num, pm_num, pur_num, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "admin/send_result";
+	}
 }
