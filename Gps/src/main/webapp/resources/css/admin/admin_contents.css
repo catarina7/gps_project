@@ -1,0 +1,39 @@
+@CHARSET "UTF-8";
+
+section .admin_product_first {
+	width: 60%;
+	float: left;
+	overflow: hidden;
+	margin-left: 20%;
+	margin-top: 3%;
+}
+
+.admin_product_first table {
+	border-collapse: collapse;
+	width: 100%;
+}
+.admin_product_first h2 {
+	padding: 20px 1.4%;
+}
+.admin_product_first td {
+	padding: 5px 0.5%;
+	text-align: center;
+	border-bottom: 1px dotted #aaaaaa;
+}
+.admin_product_first #title td {
+	font-weight: bold;
+	padding: 7px 0.5%;
+	font-size: 17px;
+	border-bottom: 2px solid black;
+}
+
+.admin_product_first .admin_product_pageing {
+	width: 30%;
+	margin: 0 auto;
+	padding: 20px 1.4%;
+}
+
+.admin_product_pageing a:hover {
+	background-color: #c1c1c1;
+	border-radius: 5px;
+}

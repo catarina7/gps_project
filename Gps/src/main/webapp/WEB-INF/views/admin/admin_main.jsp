@@ -33,8 +33,6 @@
 </head>
 <body>
 	
-	<!-- section -->
-	<section>
 		<!-- 내용 넣기 -->
 		
 		<div id="first_admin">		
@@ -49,14 +47,8 @@
 				 </ul>
 			</div>
 			<div id="liline"></div>
-			<div id="third_admin">
-				<!-- 관리 내용 집어넣기 -->
-				
-			</div>
 		</div>
 		
-		
-	</section>
 	
 </body>
 </html>

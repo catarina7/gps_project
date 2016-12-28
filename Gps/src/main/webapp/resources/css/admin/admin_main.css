@@ -2,10 +2,6 @@
 
 section {
 	width: 100%;
-}
-
-section #first_admin {
-	width: 100%;
 	overflow: hidden;
 }
 
@@ -17,6 +13,7 @@ section #first_admin {
 	overflow: hidden;
 	padding: 60px 3%;
 	border-right: 3px solid #030035;
+	position: fixed;
 }
 #second_admin ul {
 	width: 100%;
@@ -39,12 +36,4 @@ section #first_admin {
 	height: 100%;
 	background: linear-gradient(to left, #ffffff, #1b2330);
 	opacity: 0.7;
-}
-#first_admin #third_admin {
-	width: 70%;
-	float: left;
-	overflow: hidden;
-	padding: 30px 1.4%;
-	margin-left: 5%;
-	margin-top: 3%;
 }
