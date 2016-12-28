@@ -111,6 +111,7 @@
 				</tr>
 				<tr>
 					<td colspan="2">
+						<input type="button" value="닫기" id="pack_close">
 						<input type="button" value="등록" id="savebutton">
 					</td>
 				</tr>

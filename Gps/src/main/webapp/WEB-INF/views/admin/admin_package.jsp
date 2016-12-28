@@ -6,12 +6,17 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/admin_contents.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
 		$("#create_package").click(function(){
 			$("#create_pack").show();
+		});
+		
+		$("#create_pack").on("click","#pack_close", function(){
+			$("#create_pack").hide();
 		});
 	});
 </script>
@@ -59,7 +64,7 @@
 						<td>${allList.sub_category }</td>
 						<td>
 							<input type="button" value="할인">
-							<input type="button" onclick="loaction.href='${pageContext.request.contextPath}/package_pro/packDelete'" value="삭제">
+							<input type="button" onclick="location.href='${pageContext.request.contextPath}/package_pro/packDelete?pack_num=${allList.pack_num }'" value="삭제">
 						</td>
 					</tr>
 				</c:forEach>
