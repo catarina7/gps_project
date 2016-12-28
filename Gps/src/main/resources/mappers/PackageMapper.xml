@@ -25,7 +25,7 @@
 	<!-- 관리자 페이지 패키지 목록 전부 불러오기 -->
 	<select id="packAllList" resultType="com.game.package_pro.PackageDTO">
 		<![CDATA[
-			select * from package_pro order by desc
+			select * from package_pro order by pack_num desc
 		]]>
 	</select>
 	

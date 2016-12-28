@@ -63,4 +63,15 @@
 	<select id="send_list_title" resultType="java.lang.String" parameterType="int">
 		select pro_title from product where pro_num=#{pro_num}
 	</select>
+	
+	<!-- 관리자 페이지 패키지 목록 전부 불러오기 -->
+	<select id="packAllList" resultType="com.game.package_pro.PackageDTO">
+		<![CDATA[
+			select * from package_pro order by pack_num desc
+		]]>
+	</select>
+	
+	
+	
+	
 </mapper>
