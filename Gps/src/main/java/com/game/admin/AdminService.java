@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import com.game.cd.CD_keyDTO;
 import com.game.cd.Product_memberDTO;
 import com.game.mart.PurchaseDTO;
+import com.game.member.MemberDTO;
 import com.game.product.ProductDTO;
 import com.game.util.PageMaker;
 
@@ -183,5 +184,37 @@ public class AdminService {
 		model.addAttribute("pageMaker", pageMaker);
 		model.addAttribute("total_count", totalCount);
 		model.addAttribute("sum_price", adminDAO.sales_list_total_price());
+	}
+	
+	//회원정보관리 
+	public void member_list(int curPage, int perPage, Model model) throws Exception{
+		int totalCount = adminDAO.member_list_count();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		
+		List<MemberDTO> member_list = adminDAO.member_list(pageMaker);
+		
+		model.addAttribute("member_list", member_list);
+		model.addAttribute("pageMaker", pageMaker);
+	}
+	
+	//회원탈퇴
+	public void member_delete(int curPage, int perPage, Model model, int m_num) throws Exception{
+		adminDAO.member_delete(m_num);
+		
+		int totalCount = adminDAO.member_list_count();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		
+		List<MemberDTO> member_list = adminDAO.member_list(pageMaker);
+		
+		model.addAttribute("member_list", member_list);
+		model.addAttribute("pageMaker", pageMaker);
 	}
 }

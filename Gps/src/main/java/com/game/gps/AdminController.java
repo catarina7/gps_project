@@ -112,5 +112,27 @@ public class AdminController {
 		return "admin/sales_admin";
 		}
 
+	//회원정보관리
+	@RequestMapping(value="/member_list")
+	public String member_list(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model){
+		try {
+			adminService.member_list(curPage, perPage, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "admin/member_admin";
+	}
 
+	//회원정보 탈퇴
+	@RequestMapping(value="/member_delete")
+	public String member_delete(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, Model model, int m_num){
+		try {
+			adminService.member_delete(curPage, perPage, model, m_num);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "admin/member_result";
+	}
 }

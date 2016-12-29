@@ -36,7 +36,10 @@
 		//패키지 상품관리
 		$("#package_admin").click(function(){
 			location.href="${pageContext.request.contextPath}/package_pro/packAllList";
-
+		});
+		//회원정보관리
+		$("#member_admin").click(function(){
+			location.href="${pageContext.request.contextPath}/admin/member_list";
 		});
 	});
 </script>
@@ -49,7 +52,7 @@
 			<div id="second_admin">
 				 <ul>
 				 	<li id="main_home">GPS 홈페이지로</li>
-				 	<li>회원정보관리</li>
+				 	<li id="member_admin">회원정보관리</li>
 				 	<li id="product_admin">상품정보관리</li>
 				 	<li id="package_admin">패키지 상품관리</li>
 				 	<li id="send_admin">CD-Key 발급관리</li>
