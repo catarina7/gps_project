@@ -34,7 +34,8 @@ section #mem_info_all {
 	overflow: hidden;
 }
 #mem_info_all .information:hover {
-	border: 3px solid #32435c;
+	border: 1px solid #32435c;
+	background-color: #444444;
 }
 #mem_info_all .information dt{
 	width: 100%;
