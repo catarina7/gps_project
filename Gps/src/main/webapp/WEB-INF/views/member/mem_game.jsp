@@ -10,6 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/templete.css">
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/mem_game.css">
 <title>Insert title here</title>
 <script type="text/javascript">
 	
@@ -25,40 +26,42 @@
 		<div id="first">
 			<c:forEach items="${product_member_List}" var="promemlist" varStatus="status">
 				<!-- 구매정보 -->
-				<input type="text" value="${promemlist.pm_num}">
-				<div>
+				<div id="first">
 					<!-- 사진 정보 -->
-					<div>
+					<div id="file_img">
 						<img src="../resources/upload/${productFile[status.index].file_name}">
-						<input type="text" value="number">
 					</div>
 					<!-- 상품정보 -->
-					<div>
+					<div id="product_info">
 						<table>
 							<tr>
 								<td>
 									<!-- title -->
+									<input type="text" value="${pr_me_List[status.index].pro_title}">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<!-- contents -->
+									<p>${pr_me_List[status.index].pro_contents}</p>
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<!-- category -->
+									<input type="text" value="${pr_me_List[status.index].top_category}">
 								</td>
 							</tr>
 							<tr>
 								<td>
 									<!-- company -->
+									<input type="text" value="${pr_me_List[status.index].company}">
 								</td>
 							</tr>
 						</table>
 					</div>
 					<!-- cd_key -->					
-					<div>
+					<div id="cd_key_check">
 						<c:if test="${promemlist.cd_serial != 'null' }">
 							<input type="text" value="${promemlist.cd_serial}">
 						</c:if>
@@ -69,9 +72,8 @@
 				</div>
 			</c:forEach>
 			
-		</div>
 		<!-- pageing -->
-			<div id="pro_list_paging">
+			<div id="pro_game_paging">
 				<div class="margins">
 					<c:if test="${pagemaker.curBlock>1}">
 						<a href="purchase?curPage=${pagemaker.startNum-1}">[이전]</a>
@@ -85,6 +87,10 @@
 					</c:if>
 				</div>
 			</div>
+			
+		</div>
+			
+	
 			
 	</section>
 	

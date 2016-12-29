@@ -51,9 +51,6 @@
 					<!-- pw -->
 					<span>pw : </span> <input type="password" name="m_pw" id="pw_input" class="input"><br>
 					
-					<input type="text" id="pw_check" readonly="readonly"
-							value="비밀번호는 띄어쓰기 없이 8~15자의 영문 대/소문자, 숫자 및 	특수문자 중 2가지 이상 조합으로 입력하셔야 합니다."><br>
-					
 				</div>
 				<div id="mem_out_four">
 					<button id="out_btn">탈퇴합니다.</button>
