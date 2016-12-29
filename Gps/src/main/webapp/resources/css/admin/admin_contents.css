@@ -96,10 +96,26 @@ section input[type="number"]{
 	padding: 1px 0.3%;
 }
 
-
-
-
-
+.admin_product_first .admin_product_save {
+	width: 60%;
+	margin: 0 auto;
+	padding: 5px 1.4%;
+	overflow: hidden;
+}
+.admin_product_first .lineline {
+	border: 2px solid #aaaaaa;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+.admin_product_save p {
+	padding: 5px 0.7%;
+	font-weight: bold;
+}
+.admin_product_save input[type="text"]{
+	padding: 4px 0.7%;
+	border: 1px solid black;
+	border-radius: 5px;
+}
 
 
 
