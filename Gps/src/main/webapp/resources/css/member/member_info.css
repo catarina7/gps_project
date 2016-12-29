@@ -38,7 +38,7 @@ section #mem_info_all {
 }
 #mem_info_all .information dt{
 	width: 100%;
-	margin-top: 44%;
+	padding-top: 44%;
 }
 #mem_info_all .information .title {
 	font-weight: bold;
@@ -121,6 +121,60 @@ section #mem_info_all {
 	padding: 1.4% 2.8%;
 	margin-left: 11%;
 }
+
+/* 이미지 넣기 */
+
+#member_information dt {
+	background-image: url("/gps/resources/css/member/img/member_main.png");
+	background-size: 100% 100%;
+}
+#member_millage dt {
+	/* background-image: url("/gps/resources/css/member/img/"); */
+	background-size: 100% 100%;
+}
+#member_product dt {
+	/* background-image: url("/gps/resources/css/member/img/"); */
+	background-size: 100% 100%;
+}
+
+#meminfo_mod dt {
+	background-image: url("/gps/resources/css/member/img/member_mod.png");
+	background-size: 100% 100%;
+}
+#mempw_mod dt {
+	background-image: url("/gps/resources/css/member/img/member_pw.png");
+	background-size: 100% 100%;
+}
+#mem_dropout dt {
+	background-image: url("/gps/resources/css/member/img/member_delete.png");
+	background-size: 100% 100%;
+}
+#mem_millage dt{
+	background-image: url("/gps/resources/css/member/img/millage.png");
+	background-size: 100% 100%;
+}
+#mem_computer dt {
+	background-image: url("/gps/resources/css/member/img/computer.png");
+	background-size: 100% 100%;
+}
+#member_game dt {
+	background-image: url("/gps/resources/css/member/img/cd_key.png");
+	background-size: 100% 100%;
+}
+#purchase_buy dt {
+	background-image: url("/gps/resources/css/member/img/purchase_file.png");
+	background-size: 100% 100%;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
