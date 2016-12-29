@@ -52,18 +52,22 @@
 					</p>
 					<!-- 날짜에 따른 구매 리스트 (타이틀 이미지) -->
 					<div class="third_purchase">
-					</div>
-						<div>
+						<div id="game_images">
 							<!-- 게임들의 타이틀 이미지 -->
 							<c:forEach items="${pur.filelist}" var="mainfile" varStatus="status">
 								<div class="f_g_img">
 									<a href="../product/pro_view?pro_num=${pur.productnum[status.index]}"> <img src="../resources/upload/${mainfile.file_name}"></a>
-								</div>	
+								</div>
+								<div class="f_g_name">
+									<!-- 상품 이름 넣는 div -->
+									<span>* </span>
+								</div>
 							</c:forEach> 					
 						</div>
-							<!-- total price -->
+					</div>
+						<!-- total price -->
 						<div id="purchase_total_price"> 
-							<span>total price: ${pur.purchase.total_price}</span>
+							<span>결제 금액:</span> ${pur.purchase.total_price} 원
 						</div>
 					
 					
@@ -72,6 +76,7 @@
 			<!-- for문 end -->
 			
 			<!-- pageing -->
+			</div>
 			<div id="pro_list_paging">
 				<div class="margins">
 					<c:if test="${pagemaker.curBlock>1}">
@@ -79,17 +84,16 @@
 					</c:if>
 					<c:forEach begin="${pagemaker.startNum}" end="${pagemaker.lastNum}"
 						var="i">
-						<a href="purchase?curPage=${i}">${i}</a>
+						<a href="purchase?curPage=${i}">[ ${i} ]</a>
 					</c:forEach>
 					<c:if test="${pagemaker.curBlock<pageMaker.totalBlock}">
 						<a href="purchase?curPage=${pagemaker.lastNum+1}">[다음]</a>
 					</c:if>
 				</div>
 			</div>
-		</div>
 
 	</section>
-	
+	<c:import url="/top_btn" />
 	<c:import url="/footer" />
 	
 </body>
