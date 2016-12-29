@@ -25,8 +25,6 @@ section #first_purchase {
 }
 
 
-
-
 section #else_list {
 	width: 65%;
 	margin: 0 auto;
@@ -93,9 +91,15 @@ section #else_list {
 .third_purchase #game_images {
 	float: left;
 	overflow: hidden;
-	width: 18%;
+	width: 100%;
 	height: 100%;
 	margin-left: 1%;
+}
+#game_images .f_g_pro_all {
+	width: 18%;
+	float: left;
+	overflow: hidden;
+	margin-left: 0.5%;
 	border: 1px solid #aaaaaa;
 }
 #game_images img {

@@ -55,12 +55,14 @@
 						<div id="game_images">
 							<!-- 게임들의 타이틀 이미지 -->
 							<c:forEach items="${pur.filelist}" var="mainfile" varStatus="status">
-								<div class="f_g_img">
-									<a href="../product/pro_view?pro_num=${pur.productnum[status.index]}"> <img src="../resources/upload/${mainfile.file_name}"></a>
-								</div>
-								<div class="f_g_name">
-									<!-- 상품 이름 넣는 div -->
-									<span>* </span>
+								<div class="f_g_pro_all">
+									<div class="f_g_img">
+										<a href="../product/pro_view?pro_num=${pur.productnum[status.index]}"> <img src="../resources/upload/${mainfile.file_name}"></a>
+									</div>
+									<div class="f_g_name">
+										<!-- 상품 이름 넣는 div -->
+										<span>* </span>
+									</div>
 								</div>
 							</c:forEach> 					
 						</div>
