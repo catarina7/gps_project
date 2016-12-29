@@ -37,7 +37,7 @@ public class PackageService {
 	
 	//서브 카테고리로 패키지게임 목록 가져오기
 	public void packList(int pro_num, Model model) throws Exception{
-		ArrayList<PackageDTO> ar = new ArrayList<>();
+		ArrayList<PackageDTO> ar = new ArrayList<PackageDTO>();
 		
 		String sub_category = packageDAO.packageSearch(pro_num);
 		ar = packageDAO.packageList(sub_category);
@@ -52,7 +52,7 @@ public class PackageService {
 		
 		String pro_num = packageDAO.packageProduct(pack_num);
 		
-		ArrayList<String> ar = new ArrayList<>();
+		ArrayList<String> ar = new ArrayList<String>();
 		StringTokenizer st = new StringTokenizer(pro_num, ":");
 		
 		while(st.hasMoreTokens()){

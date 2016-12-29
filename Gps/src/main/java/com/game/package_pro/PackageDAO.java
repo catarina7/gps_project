@@ -31,7 +31,7 @@ public class PackageDAO {
 	
 	//패키지 전부 가져오기
 	public ArrayList<PackageDTO> packAllList() throws Exception{
-		ArrayList<PackageDTO> ars = new ArrayList<>();
+		ArrayList<PackageDTO> ars = new ArrayList<PackageDTO>();
 		List<PackageDTO> list = sqlSession.selectList(namespace+"packAllList");
 		ars.addAll(list);
 		
@@ -46,7 +46,7 @@ public class PackageDAO {
 	//서브 카테고리로 패키지 게임 목록 가져오기
 	public ArrayList<PackageDTO> packageList(String sub_category) throws Exception {
 		
-		ArrayList<PackageDTO> pack = new ArrayList<>();
+		ArrayList<PackageDTO> pack = new ArrayList<PackageDTO>();
 		List<PackageDTO> packageList = sqlSession.selectList(namespace+"packList", sub_category);
 		pack.addAll(packageList);
 		

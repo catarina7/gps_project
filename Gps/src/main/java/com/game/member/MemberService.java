@@ -71,7 +71,12 @@ public class MemberService {
 		//회원탈퇴
 		public int memOut(MemberDTO mDto) throws Exception{
 			
+			//컴퓨터 정보 삭제
 			memberDao.comOut(mDto.getM_num());
+			//구매정보 삭제
+			memberDao.purchaseout(mDto);
+			//상품_회원삭제
+			memberDao.pro_memout(mDto);
 			return memberDao.memOut(mDto);
 			
 		}
@@ -136,20 +141,20 @@ public class MemberService {
 			pm.makePage(forcount.size());
 			
 			ArrayList<Product_memberDTO> promemar = pro_memdao.pro_memlist(mDto, pm);
-			ArrayList<ProductDTO> prodtar = new ArrayList<>();
-			ArrayList<ProductFileDTO> filear = new ArrayList<>();
+			ArrayList<ProductDTO> prodtar = new ArrayList<ProductDTO>();
+			ArrayList<ProductFileDTO> filear = new ArrayList<ProductFileDTO>();
 			for(int i=0;i<promemar.size();i++){
 				prodtar.add(productdao.productView(promemar.get(i).getPro_num()));
 				filear.add(productdao.productImgList(promemar.get(i).getPro_num()));
 			}
 			
 			model.addAttribute("pagemaker", pm);
-			model.addAttribute("pro_member_List", promemar);
+			model.addAttribute("product_member_List", promemar);
 			model.addAttribute("pr_me_List", prodtar);
 			model.addAttribute("productFile", filear);
 			
-				
 			
+					
 		}
 
 }

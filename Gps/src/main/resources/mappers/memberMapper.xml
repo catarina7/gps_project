@@ -83,12 +83,22 @@
 	</update>
 	<!-- 회원탈퇴 -->
 	<delete id="memOut" parameterType="com.game.member.MemberDTO">
-		delete member where m_id = #{m_id}
+		delete member where m_id = #{m_id} and m_pw=#{m_pw}
 	</delete>
 	
 	<!-- computerout -->
 	<delete id="comOut" parameterType="java.lang.Integer">
 		delete computer where m_num = #{m_num}
+	</delete>
+	
+	<!-- purchaseOut -->
+	<delete id="purOut" parameterType="com.game.member.MemberDTO">
+		delete purchase where m_id = #{m_id}
+	</delete>
+	
+	<!-- product_memberOut -->
+	<delete id="promemOut" parameterType="com.game.member.MemberDTO">
+		delete product_member where m_id=#{m_id}
 	</delete>
 	    
 	<!-- 회원검색/관리자용 -->

@@ -23,9 +23,9 @@
 	<section>
 		<!-- 내용 넣기 -->
 		<div id="first">
-			<c:forEach items="pro_member_List" var="pro_mem" varStatus="status">
+			<c:forEach items="${product_member_List}" var="promemlist" varStatus="status">
 				<!-- 구매정보 -->
-				
+				<input type="text" value="${promemlist.pm_num}">
 				<div>
 					<!-- 사진 정보 -->
 					<div>
@@ -57,14 +57,34 @@
 							</tr>
 						</table>
 					</div>
-					<!-- cd_key -->
-						<%-- <input type="text" value="${pro_memberList.Cd_serial}">  --%>
+					<!-- cd_key -->					
 					<div>
+						<c:if test="${promemlist.cd_serial != 'null' }">
+							<input type="text" value="${promemlist.cd_serial}">
+						</c:if>
+						<c:if test="${promemlist.cd_serial == 'null' }">
+							<span> 미발급</span>
+						</c:if>
 					</div>
 				</div>
 			</c:forEach>
 			
 		</div>
+		<!-- pageing -->
+			<div id="pro_list_paging">
+				<div class="margins">
+					<c:if test="${pagemaker.curBlock>1}">
+						<a href="purchase?curPage=${pagemaker.startNum-1}">[이전]</a>
+					</c:if>
+					<c:forEach begin="${pagemaker.startNum}" end="${pagemaker.lastNum}"
+						var="i">
+						<a href="purchase?curPage=${i}">${i}</a>
+					</c:forEach>
+					<c:if test="${pagemaker.curBlock<pageMaker.totalBlock}">
+						<a href="purchase?curPage=${pagemaker.lastNum+1}">[다음]</a>
+					</c:if>
+				</div>
+			</div>
 			
 	</section>
 	

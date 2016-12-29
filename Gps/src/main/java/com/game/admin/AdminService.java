@@ -99,10 +99,10 @@ public class AdminService {
 		
 		//배송정보관리 리스트
 		List<Product_memberDTO> send_list = adminDAO.send_list(pageMaker);
-		ArrayList<String> title_ar = new ArrayList<>();
+		ArrayList<String> title_ar = new ArrayList<String>();
 		
 		//CD_key 있는지 판별해주기
-		ArrayList<Integer> cd_ar = new ArrayList<>();
+		ArrayList<Integer> cd_ar = new ArrayList<Integer>();
 		for(int i=0;i<send_list.size();i++){
 			int cd_key = adminDAO.cd_key_nouse(send_list.get(i).getPro_num());
 			cd_ar.add(cd_key);
@@ -143,10 +143,10 @@ public class AdminService {
 		
 		//배송정보관리 리스트
 		List<Product_memberDTO> send_list = adminDAO.send_list(pageMaker);
-		ArrayList<String> title_ar = new ArrayList<>();
+		ArrayList<String> title_ar = new ArrayList<String>();
 		
 		//CD_key 있는지 판별해주기
-		ArrayList<Integer> cd_ar = new ArrayList<>();
+		ArrayList<Integer> cd_ar = new ArrayList<Integer>();
 		for(int i=0;i<send_list.size();i++){
 			int cd_key = adminDAO.cd_key_nouse(send_list.get(i).getPro_num());
 			cd_ar.add(cd_key);
