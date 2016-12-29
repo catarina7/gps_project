@@ -78,5 +78,10 @@ public class HomeController {
 	public String admin_main(){
 		return "/admin/admin_main";
 	}
+	
+	@RequestMapping(value="/support")
+	public String support(){
+		return "/common/support";
+	}
 }
 
