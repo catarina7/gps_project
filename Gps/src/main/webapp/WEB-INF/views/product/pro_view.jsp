@@ -230,6 +230,15 @@
 				cookie_in = false;
 				break;
 		}
+		
+		$("#package_game").on("click", ".pack_btn", function(){
+			var index = $(this).attr("id");
+			var pronumindex = "#pack_num"+index;
+			var packnum = $(pronumindex).val();
+			location.href="${pageContext.request.contextPath}/package_pro/packBuy?pack_num="+packnum;
+			
+		}); 
+		
 	    
 	});
 	
@@ -444,7 +453,7 @@
 						</div>
 					</div>
 					<div id="package_game">
-						<c:forEach items="${package_game }" var="pack" varStatus="status">
+						<c:forEach items="${package_game}" var="pack" varStatus="status">
 							<div class="item">
 								<div class="four_contents">
 									<table>
@@ -460,6 +469,7 @@
 											<td class="f_g_ex" colspan="2">${pack.pack_contents }</td>
 										</tr>
 									</table>
+								
 								</div>
 								<div class="tag">
 									<ul>
@@ -468,7 +478,7 @@
 											<p class="nomal_p">₩ ${pack.price }</p> <span>₩
 												${pack.total_price }</span>
 										</li>
-										<li><input type="button" value="장바구니 담기"></li>
+										<li><input type="button" value="장바구니 담기" ></li>
 									</ul>
 								</div>
 							</div>
@@ -592,7 +602,7 @@
 
 
 							<c:forEach items="${pro_patch}" var="patch" varStatus="status">
-
+ 
 								<tr>
 									<td class="com_name">
 										<p>${patch.patch_origine_name}</p> <input type="hidden"

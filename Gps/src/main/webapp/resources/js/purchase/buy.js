@@ -4,31 +4,34 @@ $(function(){
 	var post_total = 0;
 	
 	//구매액수 확인
-	var pricelist = [];
-	$("input[name=total_price]").each(function(){
-		pricelist.push($(this).val());
-	});
-	
-	var listsum =0;
-	for(var i=0;i<pricelist.length;i++){
-		listsum = listsum*1 + parseInt(pricelist[i]);
+	if($("#packcheck").val()!='1'){
+			var pricelist = [];
+			$("input[name=total_price]").each(function(){
+				pricelist.push($(this).val());
+			});
+			
+			var listsum =0;
+			for(var i=0;i<pricelist.length;i++){
+				listsum = listsum*1 + parseInt(pricelist[i]);
+			}
+			
+			$("#price_input").val(listsum);
+		
+		
+		//상품 마일리지
+		var promilist =[];
+		$("input[name=pro_millage]").each(function(){
+			promilist.push($(this).val());
+		});
+		
+		var milsum=0;
+		for(var i=0;i<promilist.length;i++){
+			milsum = milsum*1 + parseInt(promilist[i]);
+		}
+		$("#pro_millage_pur").val(milsum);
+		$("#span_millage").html(milsum);
+		//마일리지 합계
 	}
-	
-	$("#price_input").val(listsum);
-	//상품 마일리지
-	var promilist =[];
-	$("input[name=pro_millage]").each(function(){
-		promilist.push($(this).val());
-	});
-	
-	var milsum=0;
-	for(var i=0;i<promilist.length;i++){
-		milsum = milsum*1 + parseInt(promilist[i]);
-	}
-	$("#pro_millage_pur").val(milsum);
-	$("#span_millage").html(milsum);
-	//마일리지 합계
-	
 	
 	
 	//millage function
@@ -325,7 +328,7 @@ $(function(){
 				promlist += s;
 			}
 			$.ajax({
-				url : "Purchase_pro",
+				url : "/gps/purchase/Purchase_pro",
 				data : {
 					m_id : $("#m_id").val(),
 					pro_num : promlist,
@@ -337,7 +340,7 @@ $(function(){
 					type : "post",
 				success : function(result){
 					if(result>0){						
-						location.href="purResult";				
+						location.href="/gps/purchase/purResult";				
 					}else {
 						alert("구매 정보를 확인해 주세요.");
 					}

@@ -111,8 +111,10 @@
 			<div class="title"><span>◎</span> 구매 게임</div>
 			<div id="second_buy">
 				<div id="product_list_view">	
-				
-				
+					
+					<!-- 구매 -->
+					<c:if test="${package_buy == null}">
+					<input type="hidden" id="packcheck" value="0">
 						<!-- 상품 리스트 -->			
 						<c:forEach items="${productOne}" var="pro" varStatus="status">
 						<div class="item">
@@ -178,7 +180,80 @@
 							</div>
 						</div>
 					</c:forEach>
+				</c:if>
+				
+				<!-- package 구매 -->
+				<c:if test="${package_buy != null }">
+					<input type="hidden" id="packcheck" value="1">
+					<!-- 상품 리스트 -->			
+						<c:forEach items="${package_prolist}" var="pro" varStatus="status">
+						<div class="item">
+							<div class="four_contents">
+								<div class="f_g_check">
+									
+									
+								</div>
+								<div class="f_g_img">
+									<img src="../resources/upload/${package_filelist[status.index].file_name}">
+								</div>
+								<table>
+									<colgroup>
+										<col style="width:80%;">
+										<col style="width:10%;">
+										<col style="width:10%;">
+									</colgroup>
+									<tr>
+										<td class="f_g_name">${pro.pro_title}</td>
+										<td>
+											<span class="window">
+												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_win.png">
+											</span>
+											<span class="mac">
+												<img src="${pageContext.request.contextPath}/resources/css/cart_favorite/img/icon_platform_mac.png">
+											</span>
+										</td>
+										<td>
+											
+											<input type="hidden" name="pro_num" id="pro_num${status.index}" value="${pro.pro_num}" class="check_pro_num">
+											<input type="hidden" name="pro_millage" id="pro_millage${status.index}" value="${pro.millage}">  
+											<input type="hidden" name="m_id" id="m_id${status.index}" value="${member.m_id}">
+											
+										</td>
+									</tr>
+									<tr>
+										<td class="f_g_ex" colspan="3">${pro.pro_contents}</td>
+									</tr>
+								</table>
+							</div>
+							<div class="tag">
 							
+								<c:if test="${pro.total_price != 0}">
+									<input type="hidden" id="total_price${status.index}" value="${pro.total_price}">
+									<ul>
+										<li class="discount">${pro.discount} %</li>
+										<li class="price">
+											<p class="nomal_p">₩ ${pro.price}</p>
+											<span>₩ ${pro.total_price }</span>
+										</li>
+									</ul>
+								</c:if>
+								<c:if test="${pro.total_price == 0}">
+									<input type="hidden" id="total_price${status.index}" value="${pro.price}">
+									<ul>
+										<li class="discount">${pro.discount} %</li>
+										<li class="price">
+											<p class="nomal_p">₩ ${pro.price}</p>
+											<span>₩ ${pro.price}</span>
+										</li>
+									</ul>
+								</c:if>
+							</div>
+						</div>
+					</c:forEach>
+				</c:if>
+				
+				
+						
 				</div>
 			</div><!-- end of game list -->
 			
@@ -207,7 +282,12 @@
 								<!-- 상품의 합계가격 -->
 								<span id="pro_price">
 								<!-- price_input -->
-									<input type="text" id="price_input" value="">  
+								<c:if test="${package_buy == null }">
+									<input type="text" id="price_input" value="">
+								</c:if>  
+								<c:if test="${package_buy != null }">
+									<input type="text" id="price_input" value="${package_buy.total_price }">
+								</c:if> 
 								</span>
 							</td>
 							<td>
@@ -385,8 +465,12 @@
 							
 							<dl>
 								<dt>적립 될 마일리지</dt>
-								
-								<dd> <input type="hidden" id="pro_millage_pur" value=""><span> <span id="span_millage"></span>  point</span></dd>
+								<c:if test="${package_buy == null }">
+									<dd> <input type="hidden" id="pro_millage_pur" value=""><span> <span id="span_millage"></span>  point</span></dd>
+								</c:if>
+								<c:if test="${package_buy != null }">
+									<dd> <input type="hidden" id="pro_millage_pur" value="${package_buy.millage}"><span> <span id="span_millage"></span> ${package_buy.millage} point</span></dd>
+								</c:if>
 							</dl>
 						</div>	
 						<div>

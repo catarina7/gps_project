@@ -8,11 +8,18 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.game.product.ProductDAO;
+import com.game.product.ProductDTO;
+import com.game.product.ProductFileDTO;
+
 @Service
 public class PackageService {
 	
 	@Autowired
 	private PackageDAO packageDAO;
+	
+	@Autowired
+	private ProductDAO productdao;
 	
 	//패키지 게임 생성
 	public int packWrite(PackageDTO packageDTO) throws Exception{
@@ -53,15 +60,23 @@ public class PackageService {
 		String pro_num = packageDAO.packageProduct(pack_num);
 		
 		ArrayList<String> ar = new ArrayList<String>();
-		StringTokenizer st = new StringTokenizer(pro_num, ",");
+		StringTokenizer st = new StringTokenizer(pro_num, ":");
 		
 		while(st.hasMoreTokens()){
 			String product = st.nextToken();
 			ar.add(product);
 		}
+		ArrayList<ProductDTO> proar = new ArrayList<ProductDTO>();
+		ArrayList<ProductFileDTO> filear = new ArrayList<ProductFileDTO>();
+		for(int i=0;i<ar.size();i++){
+			proar.add(productdao.productView(Integer.parseInt(ar.get(i))));
+			filear.add(productdao.productImgList(Integer.parseInt(ar.get(i))));
+		}
 		
 		model.addAttribute("package_product", ar); //상품번호 자른 것
 		model.addAttribute("package_buy", pack); //모든 패키지 정보
+		model.addAttribute("package_prolist", proar);//상품정보
+		model.addAttribute("package_filelist", filear);//메인사진
 	}
 	
 	
