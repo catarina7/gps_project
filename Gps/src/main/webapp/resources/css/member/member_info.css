@@ -129,11 +129,11 @@ section #mem_info_all {
 	background-size: 100% 100%;
 }
 #member_millage dt {
-	/* background-image: url("/gps/resources/css/member/img/"); */
+	background-image: url("/gps/resources/css/member/img/computer_millage.png");
 	background-size: 100% 100%;
 }
 #member_product dt {
-	/* background-image: url("/gps/resources/css/member/img/"); */
+	background-image: url("/gps/resources/css/member/img/screen.png");
 	background-size: 100% 100%;
 }
 

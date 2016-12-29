@@ -53,7 +53,7 @@
 				</div>
 				<div id="third_mill">
 					<p>
-						
+						<img src="${pageContext.request.contextPath}/resources/css/member/img/millage_card.png">
 					</p>
 				</div>
 				<div id="four_mill">
