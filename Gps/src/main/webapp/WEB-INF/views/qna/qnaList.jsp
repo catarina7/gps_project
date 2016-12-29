@@ -6,6 +6,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
@@ -80,14 +82,6 @@
 					</c:if>
 				</div>
 			</form>
-			<%-- <div id="search_input">
-				<input type="text" id="search_area" placeholder="키워드를 입력해 주세요.">
-				<div id="search_btn">
-					<button id="search_button">
-						<img src="${pageContext.request.contextPath}/resources/css/common/img/search_icon.png">
-					</button>
-				</div>
-			</div> --%>
 			<div>
 				<c:if test="${member.m_id != null }">
 					<input type="button" value="글쓰기"

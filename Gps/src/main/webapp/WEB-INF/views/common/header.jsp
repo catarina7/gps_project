@@ -78,9 +78,10 @@
 					<!-- menu list -->
 					<ul id="main_list">
 						<li><a class="store">STORE</a></li>
-						<li><a class="s_list">ABOUT</a></li>
-						<!-- <li><a href="#">ABOUT</a></li> -->
-						<li><a href="#">SUPPORT</a></li>
+						<!-- <li><a class="s_list">menu</a></li> -->
+						<li><a href="#">ABOUT</a></li>
+						<li><a href="${pageContext.request.contextPath}/support">SUPPORT</a></li>
+
 					</ul>
 					<div class="M_list" id="Store_list">
 						<ul>
