@@ -488,6 +488,15 @@ section #pro_view {
 	background-color: #3f3f3f;
 	resize: none;
 }
+.re_contents #reply_contents{
+	width: 97.8%;
+	height: 90px;
+	color: white;
+	padding: 5px 5px;
+	border: 1px solid #aaaaaa;
+	background-color: #3f3f3f;
+	resize: none;
+}
 .re_sub {
 	width: 98.4%;
 	padding: 5px 5px;

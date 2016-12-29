@@ -19,6 +19,26 @@
 			$("#cookie_"+i).val(getCookie("recent_"+i));
 		}
 		
+		var checkArr=[];
+		
+		$("input[name='pro_num']").each(function(){
+			checkArr.push($(this).val());
+		});
+		
+		alert(checkArr);
+		
+		$.ajax({
+			url: 'fav_list',
+			type: 'POST',
+			dataType: 'text',
+			data:{
+				valueArr : checkArr
+			},
+			success:function(data){
+				data=data.trim();
+				$("#fav_first").html(data);
+			}
+		});		
 	});
 	
 	//쿠키 가져오기
@@ -61,12 +81,15 @@
 			<div>
 				<h4> ※  오늘 본 상품</h4>
 				<c:forEach var="i" begin="0" end="9">				
+					<span><input type="text" name="pro_num" id="cookie_${i}" readonly="readonly"></span>
+				</c:forEach>
+				<c:forEach var="i" begin="0" end="9">				
 						<div id="fav_items">
 							<div id="items_first">
 								<img src="">
 							</div>
 							<div id="items_second">
-								<span><input type="text" name="pro_num" id="cookie_${i }" readonly="readonly"></span>
+								<span><input type="text" name="pro_num" id="cookie_${i}" readonly="readonly"></span>
 								<p>contents</p>
 								<p id="cookie_price">₩ price</p>
 							</div>
