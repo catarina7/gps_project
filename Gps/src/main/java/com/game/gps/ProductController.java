@@ -200,4 +200,12 @@ public class ProductController {
 	public String fav_product(){
 		return "product/fav_product";
 	}
+	
+	//최근 본 상품 뿌리기
+	@RequestMapping(value="/fav_list")
+	public String fav_list(@RequestParam(value="valueArr[]") List<Integer> valueArr, Model model){
+		System.out.println(valueArr);			
+
+		return "";
+	}
 }

@@ -81,38 +81,52 @@
 	    
 	    //전송버튼 클릭이벤트 (댓글 작성)
 		$("#save").click(function(){
+			var r_writer=$("#r_writer").val();
+			var r_score=$("#r_score").val();
+			
 	        //id가 smarteditor인 textarea에 에디터에서 대입
 	        editor_object.getById["smarteditor"].exec("UPDATE_CONTENTS_FIELD", []);
 	         
-	        $.ajax({
-	        	url: '../reply/reply_id_check',
-	        	type: 'POST',
-	        	data:{
-	        		r_writer: $("#r_writer").val(),
-	        		pro_num: $("#pro_num").val()	
-	        	},
-	        	success:function(result){
-	        		if(result>0){
-	        			alert("공정심사때문에 글을 작성할수 없습니다.");
-	        		}else{
-	        			 // 이부분에 에디터 validation 검증
-	    		        $.ajax({
-	    	    			url: '../reply/reply_write',
-	    	    			type: 'POST',
-	    	    			data:{
-	    	    				pro_num: $("#pro_num").val(),
-	    	    				r_writer: $("#r_writer").val(),
-	    	    				r_contents: $("#smarteditor").val(),
-	    	    				r_score: $("#r_score").val()
-	    	    			},
-	    	    			success:function(data){
-	    	    				data=data.trim();
-	    	    				$("#reply_contents").html(data);
-	    	    			}
-	    	    		});
-	        		}
-	        	}
-	        });
+			if(r_writer==""){
+				alert("로그인 후 댓글을 작성해주세요.");
+			}else{
+				if(confirm("이 게임을 "+r_score+"점을 주셨습니다. 댓글을 작성하시겠습니까?")==true){
+					//시작
+			        $.ajax({
+			        	url: '../reply/reply_id_check',
+			        	type: 'POST',
+			        	data:{
+			        		r_writer: $("#r_writer").val(),
+			        		pro_num: $("#pro_num").val()	
+			        	},
+			        	success:function(result){
+			        		if(result>0){
+			        			alert("이미 댓글과 평점을 주셨습니다. \\n 공정심사에 의해 댓글을 작성할 수 없습니다.");
+			        		}else{
+			        			 // 이부분에 에디터 validation 검증
+			    		        $.ajax({
+			    	    			url: '../reply/reply_write',
+			    	    			type: 'POST',
+			    	    			data:{
+			    	    				pro_num: $("#pro_num").val(),
+			    	    				r_writer: $("#r_writer").val(),
+			    	    				r_contents: $("#smarteditor").val(),
+			    	    				r_score: $("#r_score").val()
+			    	    			},
+			    	    			success:function(data){
+			    	    				data=data.trim();
+			    	    				$("#reply_contents").html(data);
+			    	    			}
+			    	    		});
+			        		}
+			        	}
+			        });
+			        //끝
+				}else{
+					return false;
+				}
+				
+			}
 	    });
 	    /* smarteditor 끝 */
 		
@@ -125,21 +139,21 @@
 	    });
 	    
 	    
-	    //장바구니 담기 (클래스)
+	   //장바구니 담기 (클래스)
 	    $(".cart").click(function() {
 	    	if(confirm("장바구니에 담으시겠습니까?") == true){
 	    		$("#frm").submit();
 	    	}else{
 	    		return;
 	    	}
-		});
-	    
+		}); 
+
 	    //장바구니 담기 (아이디)
 	    $("#cart").click(function() {
 	    	if(confirm("장바구니에 담으시겠습니까?") == true){
-	    		$("#frm").submit();
+	    		document.form.submit();
 	    	}else{
-	    		return;
+	    		return false;
 	    	}
 		});
 	    
@@ -148,7 +162,7 @@
 	    	if(confirm("관심상품에 담으시겠습니까?") == true){
 	    		$("#frm1").submit();
 	    	}else{
-	    		return;
+	    		return false;
 	    	}
 	    });
 	    
@@ -490,9 +504,9 @@
 			<!-- game software -->
 			<div id="five_pro">
 				<div id="computer">
-					<c:if test="${member.m_id != null}">
-						<button id="my_pc_btn">내 사양보기</button>
-					</c:if>
+
+					<button id="my_pc_btn">내 사양보기</button>
+			
 					<div id="my_pc">
 						<table>
 							<colgroup>
@@ -629,7 +643,7 @@
 				<form action="../cart_favorite/cartAdd" method="get" id="frm">
 					<input type="hidden" name="m_id" value="${member.m_id}"> <input
 						type="hidden" name="pro_num" value="${pro_view.pro_num}">
-					<button class="five_btn" class="cart" id="cart">장바구니</button>
+					<button class="five_btn" id="cart">장바구니</button>
 				</form>
 				<div id="admin_btn">
 					<c:if test="${member.m_id eq 'admin'}">
@@ -639,8 +653,7 @@
 				</div>
 
 			</div>
-
-			<c:if test="${member.m_id != null}">
+			
 				<!-- review -->
 				<div id="six_pro">
 					<div id="pro_grade"></div>
@@ -702,7 +715,9 @@
 										<input type="text" value="${rep.r_score }"
 											id="score_${status.index}">
 									</div>
-									<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents} </textarea>
+									<div id="reply_contents">
+										${rep.r_contents}
+									</div>
 								</div>
 								<div class="re_sub">
 									<div class="like" onclick="reply_like(${status.index})">
@@ -727,7 +742,6 @@
 						</div>
 					</div>
 				</div>
-			</c:if>
 		</div>
 	</section>
 

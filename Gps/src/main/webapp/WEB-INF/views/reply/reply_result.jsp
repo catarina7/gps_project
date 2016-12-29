@@ -20,7 +20,9 @@
 			<c:if test="${rep.r_score == 4}">★★★★☆</c:if>
 			<c:if test="${rep.r_score == 5}">★★★★★</c:if>
 		</div>
-		<textarea id="smarteditor" readonly="readonly"> ${rep.r_contents}</textarea>
+		<div id="reply_contents">
+			 ${rep.r_contents}
+		 </div>
 	</div>
 	<div class="re_sub">
 		<div class="like" onclick="reply_like(${status.index})">
