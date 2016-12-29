@@ -3,26 +3,33 @@
 section {
 	width: 100%;
 	padding-top: 245px;
-	padding-bottom: 190px;
+	padding-bottom: 250px;
 	background-color: #666666;
 }
 
 section #game_first {
 	width: 67%;
 	margin: 0 auto;
-	padding: 40px 1.4%;
+	padding: 30px 1.4%;
+}
+section h2 {
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	font-weight: bold;
+	font-size: 25px;
+	width: 65%;
+	margin: 0 auto;
+	padding: 30px 3%;
 	margin-top: 60px;
 }
-
 #game_first .game_second {
 	padding: 10px 2.8%;
 	overflow: hidden;
 	border: 2px solid #aaaaaa;
 	border-radius: 5px;
 	background-color: #5d5d5d;
-	margin-bottom: 10px;
+	margin-bottom: 15px;
 }
-
 .game_second #file_img {
 	width: 20%;
 	height: 100%;
@@ -91,10 +98,6 @@ section #game_first {
 	font-size: 17px;
 	font-weight: bold;
 }
-
-
-
-
 
 
 

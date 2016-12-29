@@ -25,6 +25,7 @@
 			<c:import url="/user_menu_bar" />
 		</div>
 		<!-- 내용 넣기 -->
+		<h2>내 CD-KEY</h2>
 		<div id="game_first">
 			<c:forEach items="${product_member_List}" var="promemlist" varStatus="status">
 				<!-- 구매정보 -->
@@ -80,14 +81,14 @@
 			<div id="pro_game_paging">
 				<div class="margins">
 					<c:if test="${pagemaker.curBlock>1}">
-						<a href="purchase?curPage=${pagemaker.startNum-1}">[이전]</a>
+						<a href="mem_game?curPage=${pagemaker.startNum-1}">[이전]</a>
 					</c:if>
 					<c:forEach begin="${pagemaker.startNum}" end="${pagemaker.lastNum}"
 						var="i">
-						<a href="purchase?curPage=${i}">[ ${i} ]</a>
+						<a href="mem_game?curPage=${i}">[ ${i} ]</a>
 					</c:forEach>
 					<c:if test="${pagemaker.curBlock<pageMaker.totalBlock}">
-						<a href="purchase?curPage=${pagemaker.lastNum+1}">[다음]</a>
+						<a href="mem_game?curPage=${pagemaker.lastNum+1}">[다음]</a>
 					</c:if>
 				</div>
 			</div>
@@ -96,7 +97,7 @@
 	
 			
 	</section>
-	
+	<c:import url="/top_btn" />
 	<c:import url="/footer" />
 	
 </body>
