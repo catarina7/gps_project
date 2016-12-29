@@ -7,6 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.game.package_pro.PackageDTO;
 import com.game.package_pro.PackageService;
@@ -36,19 +37,7 @@ public class PackageController {
 		return "redirect:/package_pro/packAllList";
 	}
 	
-	@RequestMapping(value="/pack_mod")
-	public String pack_mod(@RequestParam int pack_num, Model model){
-		try {
-			packageService.packBuy(pack_num, model);
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		return "/package_pro/pack_mod";
-	}
-	
-	@RequestMapping(value="/packMod", method=RequestMethod.POST)
+	@RequestMapping(value="/packMod", method = RequestMethod.POST)
 	public String packMod(PackageDTO packageDTO){
 		try {
 			packageService.packMod(packageDTO);
@@ -56,6 +45,7 @@ public class PackageController {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
 		return "redirect:/package_pro/packAllList";
 	}
 	

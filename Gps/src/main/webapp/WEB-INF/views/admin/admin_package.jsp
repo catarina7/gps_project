@@ -74,11 +74,11 @@
 										if($(this).val() < 0){
 											$(".pack_price").val(0);
 										}else {
-											var discount = $("#pack_discount").val();
-											var price = $("#pack_price").val();
+											var discount = $("#pack_discount_${allList.pack_num }").val();
+											var price = $("#pack_price_${allList.pack_num }").val();
 											var total_price = ((price*1)/100)*(100-(discount*1));
 											total_price = total_price.toFixed(0);
-											$("#pack_total").val(total_price);
+											$("#pack_total_${allList.pack_num }").val(total_price);
 										}
 									});
 									
@@ -92,16 +92,17 @@
 										}
 									});
 									
-									$("#save_btn_${allList.pack_num }").click(function(){
+									$("#mod_btn_${allList.pack_num }").click(function(){
 										$.ajax({
 											url : "packMod",
 											data : {
-												pack_num : $("pack_num").val(),
-												total_price : $("#pack_total").val(),
-												discount : $("#pack_discount").val() 
+												pack_num : $("#pack_num_${allList.pack_num}").val(),
+												total_price : $("#pack_total_${allList.pack_num}").val(),
+												discount : $("#pack_discount_${allList.pack_num}").val()
 											},
-											type : "post",
-											success : function(result){
+											type : "POST", 
+											success: function(result){
+												location.href="${pageContext.request.contextPath}/package_pro/packAllList";
 											}
 										});
 									});
@@ -114,16 +115,16 @@
 					<tr class="total_discount" id="total_discount_${allList.pack_num }">
 						<td colspan="3"></td>
 						<td colspan="2">
-							할인률 : <input class="pack_price" id="pack_discount" type="number">
-							<input type="hidden" id="pack_num" value="${allList.pack_num }">
+							할인률 : <input class="pack_price" id="pack_discount_${allList.pack_num }" type="number" value="${allList.discount }">
+							<input type="hidden" id="pack_num_${allList.pack_num }" value="${allList.pack_num }">
 							
 						</td>
 						<td colspan="3">
-							결제 금액 : <input class="pack_price" id="pack_total" type="number">
-							<input type="hidden" id="pack_price" value="${allList.price }">
+							결제 금액 : <input class="pack_price" id="pack_total_${allList.pack_num }" type="number">
+							<input type="hidden" id="pack_price_${allList.pack_num }" value="${allList.price }">
 						</td>
 						<td>
-							<input type="button" id="save_btn_${allList.pack_num }" value="등록">
+							<input type="button" id="mod_btn_${allList.pack_num }" value="등록">
 						</td>
 						<td></td>
 					</tr>
