@@ -1,8 +1,130 @@
 @CHARSET "UTF-8";
 
-#first{
-	
-	width: 65%;
+section {
+	width: 100%;
+	padding-top: 245px;
+	padding-bottom: 190px;
+	background-color: #666666;
+}
+
+section #game_first {
+	width: 67%;
 	margin: 0 auto;
-	
-}  
+	padding: 40px 1.4%;
+	margin-top: 60px;
+}
+
+#game_first .game_second {
+	padding: 10px 2.8%;
+	overflow: hidden;
+	border: 2px solid #aaaaaa;
+	border-radius: 5px;
+	background-color: #5d5d5d;
+	margin-bottom: 10px;
+}
+
+.game_second #file_img {
+	width: 20%;
+	height: 100%;
+	float: left;
+	overflow: hidden;
+}
+
+.game_second #file_img img {
+	width: 99%;
+	height: 99%;
+	border: 1px solid #aaaaaa;
+}
+.game_second #product_info {
+	float: left;
+	overflow: hidden;
+	margin-left: 1.4%;
+}
+
+.game_second input[type="text"]{
+	padding: 3px 1.4%;
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	background-color: #5d5d5d;
+	border: 0px;
+}
+.game_second table {
+	border-collapse: collapse;
+	overflow: hidden;
+	width: 100%;
+}
+.game_second td {
+	padding: 1px 1.4%;
+}
+
+
+.game_second #title input[type="text"]{
+	font-weight: bold;
+	font-size: 16px;
+}
+.game_second #contents p{
+	color: #ffc6c7;
+	text-shadow: -1px -1px 0px #414141;
+	padding: 2px 1.4%;
+}
+
+
+
+
+.game_second span {
+	color: #a6d5ff;
+	text-shadow: -1px -1px 0px #414141;
+	font-size: 15px;
+}
+
+.game_second #cd_key_check {
+	position: absolute;
+	padding: 5px 1.4%;
+	background-color: #444444;
+	border: 2px solid #aaaaaa;
+	border-radius: 5px;
+	right: 20%;
+}
+#cd_key_check input[type="text"] {
+	width: 60%;
+	background-color: #444444;
+	font-size: 17px;
+	font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#game_first #pro_game_paging {
+	padding: 15px 1.4%;
+	text-align: center;
+}
+
+#pro_game_paging a {
+	color: white;
+	text-shadow: -1px -1px 0px #414141;
+	font-weight: bold;
+}
+
+#pro_game_paging a:hover {
+	color: #55719b;
+}
+
+
+
+
+
+
+
+
