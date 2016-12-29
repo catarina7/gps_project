@@ -53,7 +53,7 @@ public class PackageService {
 		String pro_num = packageDAO.packageProduct(pack_num);
 		
 		ArrayList<String> ar = new ArrayList<String>();
-		StringTokenizer st = new StringTokenizer(pro_num, ":");
+		StringTokenizer st = new StringTokenizer(pro_num, ",");
 		
 		while(st.hasMoreTokens()){
 			String product = st.nextToken();

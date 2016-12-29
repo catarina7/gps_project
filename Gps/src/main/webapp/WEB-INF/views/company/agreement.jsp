@@ -29,8 +29,6 @@
 		<div id="first_company">
 			
 			<div id="second_company">
-				<a id="intro_comp" href="${pageContext.request.contextPath}/company/introduce">회사소개</a>
-				<a id="alli_comp" href="${pageContext.request.contextPath}/company/alliance">제휴제안</a>
 				<a id="agree_comp" href="${pageContext.request.contextPath}/company/agreement">이용약관</a>
 				<a id="info_comp" href="${pageContext.request.contextPath}/company/information">개인정보취급방침</a>
 				<a id="teen_comp" href="${pageContext.request.contextPath}/company/teenager">청소년보호정책</a>
