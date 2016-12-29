@@ -147,10 +147,10 @@ section #pro_view {
 #third_pro #before {
 	background-image: url("/gps/resources/css/product/img/icon_left.png");
 	background-size: 48px 48px;
-	left: 17.4%;
+	left: 0.5%;
 }
 #third_pro #next {
-	right: 43.3%;
+	right: 1%;
 	background-image: url("/gps/resources/css/product/img/icon_right.png");
 	background-size: 48px 48px;
 }
