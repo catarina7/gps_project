@@ -126,10 +126,19 @@ section #show_product {
 	border: 2px solid #aaaaaa;
 	border-radius : 4px;
 	display: none;
+	color: white;
+	text-shadow: -1px -1px 0px black;
 }
-
-
-
+#show_product #pro_titi {
+	font-weight: bold;
+}
+#show_product #pro_title {
+	font-weight: bold;
+	font-size: 13px;
+}
+#show_product td {
+	padding: 5px 1.4%;
+}
 
 
 

@@ -194,11 +194,10 @@ section #else_list {
 	border: 1px solid #aaaaaa;
 	border-radius: 4px;
 }
-.four_purchase .four_contents .f_g_name {
+#game_images .f_g_name {
 	padding: 3px 1.4%;
-	border: 1px solid #aaaaaa;
 	height: 100%;
-	width: 15%;
+	width: 100%;
 	float: left;
 	overflow: hidden;
 }
