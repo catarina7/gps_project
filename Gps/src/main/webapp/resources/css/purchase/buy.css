@@ -452,7 +452,7 @@ section .complete {
 	width: 95%;
 	margin: 0 auto;
 	/* height: 60px; */
-	padding: 5px 0px;
+	padding: 10px 0px;
 	position: relative;
 	overflow: hidden;
 }
