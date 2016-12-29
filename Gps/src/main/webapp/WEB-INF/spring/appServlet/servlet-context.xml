@@ -41,6 +41,15 @@
 	<interceptors>	
 		<interceptor>
 			<mapping path="/product/pro_write"/>
+			<mapping path="/admin_main"/>
+			<mapping path="/admin/product_admin"/>
+			<mapping path="/admin/product_admin_delete"/>
+			<mapping path="/admin/cd_key_manage"/>
+			<mapping path="/admin/cd_key_add"/>
+			<mapping path="/admin/send_list"/>
+			<mapping path="/admin/cd_key_no"/>
+			<mapping path="/admin/sales_list"/>
+			<mapping path="/admin/member_delete"/>
 			<beans:ref bean="adminCheck"/>
 		</interceptor>
 	</interceptors>
