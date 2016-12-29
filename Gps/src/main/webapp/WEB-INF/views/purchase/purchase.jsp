@@ -61,7 +61,7 @@
 									</div>
 									<div class="f_g_name">
 										<!-- 상품 이름 넣는 div -->
-										<span>* </span>
+										<span> ${pur.productinfo[status.index].pro_title} </span>
 									</div>
 								</div>
 							</c:forEach> 					
