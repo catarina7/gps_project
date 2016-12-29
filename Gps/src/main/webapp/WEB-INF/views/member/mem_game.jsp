@@ -43,12 +43,12 @@
 										<span>게임이름 : </span><input type="text" readonly="readonly" value="${pr_me_List[status.index].pro_title}">
 									</td>
 								</tr>
-								<tr>
+								<%-- <tr>
 									<td id="contents">
 										<!-- contents -->
 										<p>${pr_me_List[status.index].pro_contents}</p>
 									</td>
-								</tr>
+								</tr> --%>
 								<tr>
 									<td>
 										<!-- category -->
