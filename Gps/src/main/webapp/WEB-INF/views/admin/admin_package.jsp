@@ -13,10 +13,12 @@
 	$(function(){
 		$("#create_package").click(function(){
 			$("#create_pack").show();
+			$("#show_product").show();
 		});
 		
 		$("#create_pack").on("click","#pack_close", function(){
 			$("#create_pack").hide();
+			$("#show_product").hide();
 		});
 		
 		
@@ -137,6 +139,9 @@
 			<!-- 패키지 정보 작성 -->
 			<div id="create_pack">
 				<c:import url="/package_pro/pack_write" />
+			</div>
+			<div id="show_product">
+				<!-- 상뭎 정보 뿌리기 -->
 			</div>
 	</section>
 </body>
