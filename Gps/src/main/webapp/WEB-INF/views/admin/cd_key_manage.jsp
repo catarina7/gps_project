@@ -2,11 +2,12 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/admin_contents.css">
 <script	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
@@ -76,53 +77,67 @@ function cd_key_del(i){
 </script>
 </head>
 <body>
-<h2> CD_KEY 관리</h2>
-	<input type="button" value="CD_KEY 생성">
-	<div>
-		<p> 상품번호 입력 </p>
-		<input type="text" id="pro_num">
-		<p> CD-Key 입력 </p>
-		<input type="text" class="cd_key" id="cd_key1"> - 
-		<input type="text" class="cd_key" id="cd_key2"> - 
-		<input type="text" class="cd_key" id="cd_key3">
-		<br>
-		<input type="button" onclick="cd_key_create()" value="생성">
-	</div>
-<!-- ajax_div -->
-<div id="cd_result">
-	<table>
-		<tr>
-			<td> CD_NUM </td>
-			<td> 상품번호 </td>
-			<td> CD_KEY </td>
-			<td> CD_KEY 발급여부 </td>
-			<td> 삭제여부 </td>
-		</tr>
-
-<c:forEach items="${cd_key_list}" var="cd_key" varStatus="status">	
-		<tr>
-			<td> ${cd_key.cd_num} </td>
-			<td> ${cd_key.pro_num} </td>
-			<td> ${cd_key.cd_serial} </td>
-			<td> ${cd_key.cd_check} </td>
-			<td>
-				<input type="hidden" id="cd_num_${status.index}" value="${cd_key.cd_num}">
-				<input type="button" onclick="cd_key_del(${status.index})" value="삭제">
-			</td>
-		</tr>	
-</c:forEach>
-	</table>
-</div>
-	<div>
-		<c:if test="${pageMaker.curBlock>1}">
-			<a href="cd_key_manage?curPage=${pageMaker.startNum-1}">[이전]</a>
-		</c:if>
-		<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
-			<a href="cd_key_manage?curPage=${i}">${i}</a>
+<section>
+	<c:import url="/admin_main" />
+	<div class="admin_product_first">
+		<h2> CD_KEY 관리</h2>
+		`	<div class="admin_product_save">
+				<input type="button" value="CD_KEY 생성">
+			</div>
+			<div class="admin_product_save lineline">
+				<p> 상품번호 입력 </p>
+				<input type="text" id="pro_num">
+				<p> CD-Key 입력 </p>
+				<input type="text" class="cd_key" id="cd_key1"> - 
+				<input type="text" class="cd_key" id="cd_key2"> - 
+				<input type="text" class="cd_key" id="cd_key3">
+				<br>
+				<input type="button" onclick="cd_key_create()" value="생성">
+			</div>
+		<!-- ajax_div -->
+		<div id="cd_result">
+			<table>
+				<colgroup>
+					<col style="width:14%;">
+					<col style="width:24%;">
+					<col style="width:19%;">
+					<col style="width:19%;">
+					<col style="width:19%;">
+				</colgroup>
+				<tr id="title">
+					<td> CD_NUM </td>
+					<td> 상품번호 </td>
+					<td> CD_KEY </td>
+					<td> CD_KEY 발급여부 </td>
+					<td> 삭제여부 </td>
+				</tr>
+		
+		<c:forEach items="${cd_key_list}" var="cd_key" varStatus="status">	
+				<tr>
+					<td> ${cd_key.cd_num} </td>
+					<td> ${cd_key.pro_num} </td>
+					<td> ${cd_key.cd_serial} </td>
+					<td> ${cd_key.cd_check} </td>
+					<td>
+						<input type="hidden" id="cd_num_${status.index}" value="${cd_key.cd_num}">
+						<input type="button" onclick="cd_key_del(${status.index})" value="삭제">
+					</td>
+				</tr>	
 		</c:forEach>
-		<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">
-			<a href="cd_key_manage?curPage=${pageMaker.lastNum+1}">[다음]</a>
-		</c:if>
+			</table>
+		</div>
+			<div class="admin_product_pageing">
+				<c:if test="${pageMaker.curBlock>1}">
+					<a href="cd_key_manage?curPage=${pageMaker.startNum-1}">[이전]</a>
+				</c:if>
+				<c:forEach begin="${pageMaker.startNum}" end="${pageMaker.lastNum}" var="i">
+					<a href="cd_key_manage?curPage=${i}">[ ${i} ]</a>
+				</c:forEach>
+				<c:if test="${pageMaker.curBlock<pageMaker.totalBlock}">
+					<a href="cd_key_manage?curPage=${pageMaker.lastNum+1}">[다음]</a>
+				</c:if>
+			</div>
 	</div>
+</section>
 </body>
 </html>

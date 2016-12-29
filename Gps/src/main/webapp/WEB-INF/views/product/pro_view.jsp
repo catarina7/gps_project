@@ -172,11 +172,18 @@
 		while(cookie_check){
 			for(i=0; i<10; i++){
 				if(getCookie("recent_9") == ""){					
-					if(getCookie("recent_"+i) == ""){			
-						if("recent_"+i == "${pro_view.pro_num}"){
-							break;
-						}else{
+					if(getCookie("recent_"+i) == ""){	
+						var cookie_cc = true;
+						for(var j =0; j < i; j++){
+							if(getCookie("recent_"+j) == "${pro_view.pro_num}"){
+								cookie_cc = false;
+							}
+						}
+						if(cookie_cc){							
 							setCookie("recent_"+i, "${pro_view.pro_num}", 1);
+							cookie_check = false;
+							break;
+						}else {
 							cookie_check = false;
 							break;
 						}

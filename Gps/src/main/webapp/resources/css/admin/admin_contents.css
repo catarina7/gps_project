@@ -28,6 +28,17 @@ section .admin_product_first {
 	font-size: 17px;
 	border-bottom: 2px solid black;
 }
+.admin_product_first .tot_price {	
+	text-align: right;
+	font-size: 18px;
+	padding: 5px 1.4%;
+}
+.admin_product_first .tot_price span{
+	font-size: 22px;
+	font-weight: bold;
+	text-shadow: -1px -1px 0px #32435c;
+	padding: 0px 3%;
+}
 
 .admin_product_first input[type="button"]{
 	padding: 3px 10px;
@@ -85,10 +96,26 @@ section input[type="number"]{
 	padding: 1px 0.3%;
 }
 
-
-
-
-
+.admin_product_first .admin_product_save {
+	width: 60%;
+	margin: 0 auto;
+	padding: 5px 1.4%;
+	overflow: hidden;
+}
+.admin_product_first .lineline {
+	border: 2px solid #aaaaaa;
+	border-radius: 5px;
+	margin-bottom: 30px;
+}
+.admin_product_save p {
+	padding: 5px 0.7%;
+	font-weight: bold;
+}
+.admin_product_save input[type="text"]{
+	padding: 4px 0.7%;
+	border: 1px solid black;
+	border-radius: 5px;
+}
 
 
 
