@@ -35,8 +35,8 @@ public class Product_MemberDAO {
 	
 	//구매정보 list
 	public ArrayList<Product_memberDTO> pro_memlist(MemberDTO mDto, PageMaker pm) throws Exception{
-		ArrayList<Product_memberDTO> prm = new ArrayList<>();
-		Map<String, Object> data = new HashMap<>();
+		ArrayList<Product_memberDTO> prm = new ArrayList<Product_memberDTO>();
+		Map<String, Object> data = new HashMap<String, Object>();
 		data.put("m_id", mDto.getM_id());
 		data.put("pm", pm);
 		List<Product_memberDTO> ar = sqlsession.selectList(namespace+"PMCheckList", data);

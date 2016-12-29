@@ -70,6 +70,15 @@ public class MemberDAO {
 	public int comOut(int m_num) throws Exception{
 		return sqlSession.delete(namespace+"comOut", m_num);
 	}
+	//회원탈퇴(purchase)
+	public int purchaseout(MemberDTO mDto) throws Exception{
+		return sqlSession.delete(namespace+"purOut", mDto);
+	}
+	
+	//회원탈퇴(product_member)
+	public int pro_memout(MemberDTO mDto) throws Exception{
+		return sqlSession.delete(namespace+"promemOut", mDto);
+	}
 	
 	
 	//id중복체크

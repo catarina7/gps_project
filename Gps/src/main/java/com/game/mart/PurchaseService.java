@@ -110,10 +110,10 @@ public class PurchaseService {
 		pm.makePage(purar.size());	
 		
 		ArrayList<PurchaseDTO> pulistar = purchasedao.purlist(pm, mDto.getM_id());
-		ArrayList<Map<String, Object>> purlisted = new ArrayList<>();
+		ArrayList<Map<String, Object>> purlisted = new ArrayList<Map<String,Object>>();
 		for(int i=0;i<pulistar.size();i++){
-			ArrayList<Integer> promar = new ArrayList<>();
-			ArrayList<ProductFileDTO> filear = new ArrayList<>();
+			ArrayList<Integer> promar = new ArrayList<Integer>();
+			ArrayList<ProductFileDTO> filear = new ArrayList<ProductFileDTO>();
 			StringTokenizer st = new StringTokenizer(pulistar.get(i).getPro_num(), ":");
 			while(st.hasMoreTokens()){
 				promar.add(Integer.parseInt(st.nextToken()));
@@ -122,7 +122,7 @@ public class PurchaseService {
 				ProductFileDTO file = productDao.productImgList(promar.get(j));
 				filear.add(file);
 			}
-			Map<String, Object> pur = new HashMap<>();
+			Map<String, Object> pur = new HashMap<String, Object>();
 			pur.put("purchase", pulistar.get(i));
 			pur.put("filelist", filear);
 			pur.put("productnum", promar);		
