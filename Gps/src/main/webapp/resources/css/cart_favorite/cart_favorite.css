@@ -63,7 +63,7 @@ section #else_list {
 }
 #second_else .item {
 	width: 98%;
-	height: 94px;
+	/* height: 94px; */
 	background-color: #474747;
 	margin-top: 7px;
 	margin-bottom: 55px;
@@ -73,8 +73,10 @@ section #else_list {
 #second_else .item .four_contents {
 	width: 95%;
 	margin: 0 auto;
-	height: 60px;
-	padding: 5px 0px;
+	/* height: 60px; */
+	padding: 12.5px 0px;
+	position: relative;
+	overflow: hidden;
 }
 #second_else .four_contents .f_g_check {
 	width: 4%;
@@ -152,7 +154,7 @@ section #else_list {
 #second_else .tag {
 	position: absolute;
 	background-color: black;
-	margin-top: 5px;
+	margin-top: -15px;
 	border: 2px solid #aaaaaa;
 	border-radius: 7px;
 	right: 21%;

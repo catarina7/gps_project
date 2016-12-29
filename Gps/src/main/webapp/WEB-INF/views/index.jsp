@@ -21,8 +21,12 @@
 			alert("비밀번호 변경을 바로 진행 합니다.");
 			location.href = "member/pw_check?category=2";
 		}
-
-
+		
+		/* 배너 클릭 */
+		$("#advertisement").click(function(){
+			location.href="${pageContext.request.contextPath}/product/pro_view?pro_num=221";
+		});
+		
 		$("#pack_1").click(function() {
 			$(this).css("background-color", "#777777");
 			$(this).css("border", "2px solid #777777");
@@ -66,7 +70,6 @@
 			$("#pack_2").css("border", "2px solid #666666");
 			$("#pack_3").css("border", "2px solid #666666");
 		}); */
-
 		
 		
 		$("#all_list").click(function() {
