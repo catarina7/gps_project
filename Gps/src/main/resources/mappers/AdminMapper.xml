@@ -112,4 +112,21 @@
 		select sum(total_price) from purchase
 	</select>
 
+	<!-- 회원정보관리 리스트 -->
+	<select id="member_list" resultType="com.game.member.MemberDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(select * from member order by m_num desc) F) 
+		where R between #{startRowNum} and #{lastRowNum}
+	</select>
+	
+	<!-- 회원정보관리 갯수 -->
+	<select id="member_list_count" resultType="int">
+		select count(m_num) from member
+	</select>
+	
+	<!-- 회원 탈퇴 -->
+	<select id="member_delete" parameterType="int">
+		delete member where m_num=#{m_num}
+	</select>
 </mapper>

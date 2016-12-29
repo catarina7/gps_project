@@ -11,6 +11,7 @@ import org.springframework.stereotype.Repository;
 import com.game.cd.CD_keyDTO;
 import com.game.cd.Product_memberDTO;
 import com.game.mart.PurchaseDTO;
+import com.game.member.MemberDTO;
 import com.game.product.ProductDTO;
 import com.game.util.PageMaker;
 
@@ -119,5 +120,18 @@ public class AdminDAO {
 	//매출정보관리 총가격
 	public int sales_list_total_price() throws Exception{
 		return sqlSession.selectOne(namespace+"sales_list_total_price");
+	}
+	
+	//회원정보관리 리스트
+	public List<MemberDTO> member_list(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"member_list", pageMaker);
+	}
+	//회원정보관리 갯수
+	public int member_list_count() throws Exception{
+		return sqlSession.selectOne(namespace+"member_list_count");
+	}
+	
+	public void member_delete(int m_num) throws Exception{
+		sqlSession.delete(namespace+"member_delete", m_num);
 	}
 }
