@@ -25,8 +25,6 @@
 			checkArr.push($(this).val());
 		});
 		
-		alert(checkArr);
-		
 		$.ajax({
 			url: 'fav_list',
 			type: 'POST',
@@ -81,17 +79,18 @@
 			<div>
 				<h4> ※  오늘 본 상품</h4>
 				<c:forEach var="i" begin="0" end="9">				
-					<span><input type="text" name="pro_num" id="cookie_${i}" readonly="readonly"></span>
+					<span><input type="hidden" name="pro_num" id="cookie_${i}" readonly="readonly"></span>
 				</c:forEach>
-				<c:forEach var="i" begin="0" end="9">				
+				<c:forEach items="${fav_list}" var="fav_list">				
 						<div id="fav_items">
 							<div id="items_first">
-								<img src="">
+								<img src="../resources/upload/${fav_list_img[status.index].file_name}">
 							</div>
 							<div id="items_second">
-								<span><input type="text" name="pro_num" id="cookie_${i}" readonly="readonly"></span>
-								<p>contents</p>
-								<p id="cookie_price">₩ price</p>
+								<p id="cookie_price">Num. ${fav_list.pro_num}번 상품</p>
+								<p>${fav_list.pro_title}</p>
+								<p>${fav_list.pro_contents}</p>
+								<p id="cookie_price"> $${fav_list.total_price}</p>
 							</div>
 						</div>
 				</c:forEach>

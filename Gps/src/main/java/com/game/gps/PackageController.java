@@ -7,7 +7,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.game.package_pro.PackageDTO;
 import com.game.package_pro.PackageService;
@@ -94,4 +93,5 @@ public class PackageController {
 		
 		return "/purchase/buy";
 	}
+	
 }

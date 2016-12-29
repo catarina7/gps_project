@@ -9,6 +9,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.game.cd.Product_memberDTO;
 import com.game.computer.Pro_ComputerDTO;
 import com.game.util.PageMaker;
 
@@ -248,6 +249,20 @@ public class ProductDAO {
 		return sqlSession.selectList(namespace+"pro_sub_favor", pageMaker);
 	}
 	
+	//판매량순
+	public List<Product_memberDTO> productSubVolume(PageMaker pageMaker) throws Exception{
+		return sqlSession.selectList(namespace+"pro_sub_volume", pageMaker);
+	}
+	//판매량순 갯수가져오기
+	public int pro_sub_volume_count() throws Exception{
+		return sqlSession.selectOne(namespace+"pro_sub_volume_count");
+	}
+	//판매량 내용 가져오기
+	public ProductDTO pro_sub_volume_title(int pro_num) throws Exception{
+		return sqlSession.selectOne(namespace+"pro_sub_volume_title", pro_num);
+	}
+	
+	
 	//이미지 4개 뿌리기 
 	public List<ProductFileDTO> productViewImgMain(PageMaker pageMaker, int pro_num) throws Exception{
 		Map<String, Object> data = new HashMap<String, Object>();
@@ -283,4 +298,21 @@ public class ProductDAO {
 		data.put("sub_category", sub_category);
 		return sqlSession.selectList(namespace+"mapping_category", data);
 	}
+	
+	//쿠키 내용
+	public List<ProductDTO> fav_list(List<Integer> valueArr) throws Exception{
+		Map<String, Object> data = new HashMap<String, Object>();
+		List<ProductDTO> fav_list = new ArrayList<ProductDTO>();
+		for(int i=0; i<valueArr.size();i++){
+			if(valueArr.get(i) != null){
+				data.put("pro_num", valueArr.get(i));
+				ProductDTO productDTO = sqlSession.selectOne(namespace+"fav_list", data);
+				fav_list.add(productDTO);
+			}else{
+				break;
+			}
+		}
+		return fav_list;
+	}
+		
 }

@@ -1,12 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-
-</body>
-</html>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<div>
+				<h4> ※  오늘 본 상품</h4>
+				<c:forEach var="i" begin="0" end="9">				
+					<span><input type="hidden" name="pro_num" id="cookie_${i}" readonly="readonly"></span>
+				</c:forEach>
+				<c:forEach items="${fav_list}" var="fav_list" varStatus="status">				
+						<div id="fav_items">
+							<div id="items_first">
+								<img src="../resources/upload/${fav_list_img[status.index].file_name}">
+							</div>
+							<div id="items_second">
+								<p id="cookie_price">Num. ${fav_list.pro_num}</p>
+								<p>${fav_list.pro_title}</p>
+								<p>${fav_list.pro_contents}</p>
+								<p id="cookie_price"> $${fav_list.total_price}</p>
+							</div>
+						</div>
+				</c:forEach>
+			</div>

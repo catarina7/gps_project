@@ -7,6 +7,8 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import com.game.product.ProductDTO;
+
 @Repository
 public class PackageDAO {
 	
@@ -60,5 +62,10 @@ public class PackageDAO {
 	
 	public String packageProduct(int pack_num) throws Exception {
 		return sqlSession.selectOne(namespace+"packProduct", pack_num);
+	}
+	
+	//패키지 보기위해 상품정보 모두 가져오기
+	public List<ProductDTO> pakage_list() throws Exception{
+		return sqlSession.selectList(namespace+"package_list");
 	}
 }

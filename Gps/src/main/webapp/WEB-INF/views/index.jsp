@@ -277,9 +277,6 @@
 		$("#qnaList").click(function(){
 			location.href="${pageContext.request.contextPath}/qna/qnaList";
 		});
-	});
-	
-	$(document).ready(function(){
 		$("#pack_2").on("click", function(){
 			$.ajax({
 				url: 'product/pro_sub_favor',
@@ -290,7 +287,19 @@
 				}
 			});
 		});
+		
+		$("#pack_3").on("click", function(){
+			$.ajax({
+				url: 'product/pro_sub_volume',
+				type: 'POST',
+				success: function(data){
+					data=data.trim();
+					$("#sub_first").html(data);
+				}
+			});
+		});
 	});
+	
 	
 	function mouse(i){
 		var pro_num = $("#check_"+i).val();
@@ -385,7 +394,7 @@
 				<div id="main_third">
 					<button id="pack_1">초특가</button>
 					<button id="pack_2">인기</button>
-					<button id="pack_3">패키지</button>
+					<button id="pack_3">판매량</button>
 					<!-- category discount game -->
 					<div id="sub_cate">
 						<div id="sub_first">
@@ -424,6 +433,26 @@
 								</tr>
 								</table>
 							</div>
+							</c:forEach>
+							<c:forEach items="${pro_sub_volume}" var="volume" varStatus="status">
+								<div onmouseover="mouse(${status.index})">
+									<table>
+										<tr>
+											<td colspan="2">
+												<div class="discount_sub_img">
+													<img
+														src="resources/upload/${pro_main_img_sub_volume[status.index].file_name}">
+												</div>
+												<div class="discount_sub_contents"
+													onclick="location.href='product/pro_view?pro_num=${volume.pro_num}'">
+													<input type="hidden" id="check_${status.index}"
+														value="${volume.pro_num}"> <span>게임 : </span>
+													${pro_sub_volume_title[status.index].pro_title} <br> ${pro_sub_volume_title[status.index].pro_contents}
+												</div>
+											</td>
+										</tr>
+									</table>
+								</div>
 							</c:forEach>
 						</div>
 						<div id="sub_second">
