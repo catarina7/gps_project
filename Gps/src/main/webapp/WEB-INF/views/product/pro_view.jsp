@@ -478,7 +478,7 @@
 											<p class="nomal_p">₩ ${pack.price }</p> <span>₩
 												${pack.total_price }</span>
 										</li>
-										<li><input type="button" value="장바구니 담기" ></li>
+										<li><input type="button" value="구매하기" ></li>
 									</ul>
 								</div>
 							</div>

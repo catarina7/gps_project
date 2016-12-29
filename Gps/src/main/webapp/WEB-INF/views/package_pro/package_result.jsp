@@ -32,7 +32,7 @@
 									<p class="nomal_p">₩ ${pack.price }</p><span>₩ ${pack.price }</span>
 								</c:if>
 							</li>
-						<li><input type="button" value="장바구니 담기" id="${status.index}" class="pack_btn"></li>
+						<li><input type="button" value="구매하기" id="${status.index}" class="pack_btn"></li>
 					</ul>
 				</div>
 		</div>
