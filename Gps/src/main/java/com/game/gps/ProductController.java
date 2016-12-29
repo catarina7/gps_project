@@ -176,6 +176,17 @@ public class ProductController {
 		return "product/pro_sub_favor";
 	}
 	
+	@RequestMapping(value="/pro_sub_volume")
+	public String productSubVolume(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="10") int perPage, Model model){
+		try {
+			productService.productSubVolume(curPage, perPage, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "product/pro_sub_volume";
+	}
+	
 	//이미지 4개뿌리기
 	@RequestMapping(value="/pro_view_img_main")
 	public String productViewImgMain(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="1") int perPage, @RequestParam("pro_num") int pro_num, Model model){
@@ -204,8 +215,13 @@ public class ProductController {
 	//최근 본 상품 뿌리기
 	@RequestMapping(value="/fav_list")
 	public String fav_list(@RequestParam(value="valueArr[]") List<Integer> valueArr, Model model){
-		System.out.println(valueArr);			
-
-		return "";
+		//System.out.println(valueArr);			
+		try {
+			productService.fav_list(valueArr, model);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return "product/fav_result";
 	}
 }

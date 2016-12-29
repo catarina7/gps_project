@@ -94,4 +94,5 @@ public class PackageController {
 		
 		return "/purchase/buy";
 	}
+	
 }

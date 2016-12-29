@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 
+import com.game.product.ProductDTO;
+
 @Service
 public class PackageService {
 	
@@ -32,7 +34,10 @@ public class PackageService {
 	//관리자 페이지 패키지 전부 가져오기
 	public void packAllList(Model model) throws Exception{
 		ArrayList<PackageDTO> ars = packageDAO.packAllList();
+		List<ProductDTO> pro_list = packageDAO.pakage_list();
+		
 		model.addAttribute("packAllList", ars);
+		model.addAttribute("pro_list", pro_list);
 	}
 	
 	//서브 카테고리로 패키지게임 목록 가져오기

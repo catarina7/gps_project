@@ -142,6 +142,18 @@
 			</div>
 			<div id="show_product">
 				<!-- 상뭎 정보 뿌리기 -->
+					<table>
+						<tr>
+							<td> 상품 번호 </td>
+							<td> 상품 이름 </td>
+						</tr>
+				<c:forEach items="${pro_list}" var="pro_list">
+						<tr>
+							<td> ${pro_list.pro_num} </td>
+							<td> ${pro_list.pro_title} </td>
+						</tr>
+				</c:forEach>
+					</table>
 			</div>
 	</section>
 </body>

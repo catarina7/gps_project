@@ -130,7 +130,7 @@ public class AdminDAO {
 	public int member_list_count() throws Exception{
 		return sqlSession.selectOne(namespace+"member_list_count");
 	}
-	
+	//회원정보관리 탈퇴
 	public void member_delete(int m_num) throws Exception{
 		sqlSession.delete(namespace+"member_delete", m_num);
 	}

@@ -13,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
+import com.game.cd.Product_memberDTO;
 import com.game.computer.Pro_ComputerDTO;
 import com.game.util.PageMaker;
 
@@ -462,6 +463,28 @@ public class ProductService {
 		model.addAttribute("pageMaker", pageMaker);
 	}
 	
+	//판매량
+	public void productSubVolume(int curPage, int perPage, Model model) throws Exception{
+		int totalCount=productDAO.pro_sub_volume_count();
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCurPage(curPage);
+		pageMaker.setPerPage(perPage);
+		pageMaker.makeRow();
+		pageMaker.makePage(totalCount);
+		List<Product_memberDTO> ar = productDAO.productSubVolume(pageMaker);
+		ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+		ArrayList<ProductDTO> ar2 = new ArrayList<ProductDTO>();
+		for(int i=0;i<ar.size();i++){
+			productDAO.productImgList(ar.get(i).getPro_num());
+			ar1.add(productDAO.productImgList(ar.get(i).getPro_num()));
+			ar2.add(productDAO.pro_sub_volume_title(ar.get(i).getPro_num()));
+		}
+		
+		model.addAttribute("pro_sub_volume", ar);
+		model.addAttribute("pro_main_img_sub_volume", ar1);
+		model.addAttribute("pro_sub_volume_title", ar2);
+	}
+	
 	
 	//이미지 4개 뿌리기
 	public void productViewImgMain(int curPage, int perPage, int pro_num, Model model) throws Exception{
@@ -478,6 +501,18 @@ public class ProductService {
 	}
 	public void productComputer(Pro_ComputerDTO pro_ComputerDTO, int pro_num){
 		productDAO.productComputer(pro_ComputerDTO, pro_num);
+	}
+	
+	//쿠키
+	public void fav_list(List<Integer> valueArr, Model model) throws Exception{
+		List<ProductDTO> fav_list =  productDAO.fav_list(valueArr);
+		ArrayList<ProductFileDTO> ar1 = new ArrayList<ProductFileDTO>();
+		
+		for(int i=0;i<fav_list.size();i++){
+			ar1.add(productDAO.productImgList(fav_list.get(i).getPro_num()));
+		}
+		model.addAttribute("fav_list", fav_list);
+		model.addAttribute("fav_list_img", ar1);
 	}
 
 }

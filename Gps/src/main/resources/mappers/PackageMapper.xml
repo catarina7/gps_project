@@ -55,6 +55,9 @@
 		]]>
 	</select>
 	
-	
+	<!-- 상품 전체 가져오기 -->
+	<select id="package_list" resultType="com.game.product.ProductDTO">
+		select * from product
+	</select>
 	
 </mapper>

@@ -256,6 +256,26 @@
 		where R between 1 and 5
 	</select>
 	
+	<!-- 판매량 순 -->
+	<select id="pro_sub_volume" resultType="com.game.cd.Product_memberDTO" parameterType="com.game.util.PageMaker">
+		select * from 
+		(select rownum R, F.* from 
+		(SELECT pro_num, COUNT(*) FROM product_member GROUP BY pro_num  HAVING COUNT(*)>1 order by count(*) desc) F) 
+		where R between 1 and 5
+	</select>
+	
+	<!-- 판매량순 갯수 가져오기 -->
+	<select id="pro_sub_volume_count" resultType="int">
+		 select count(rownum) from 
+		(select rownum R, F.* from 
+		(SELECT pro_num, COUNT(*) FROM product_member GROUP BY pro_num HAVING COUNT(*)>1) F) 
+	</select>
+	
+	<!-- 판매량 제목, 내용 가져오기 -->
+	<select id="pro_sub_volume_title" resultType="com.game.product.ProductDTO" parameterType="int">
+		select * from product where pro_num=#{pro_num}
+	</select>
+	
 	<!-- 이미지 4개 뿌리기 -->
 	<select id="pro_view_img_main" resultType="com.game.product.ProductFileDTO" parameterType="java.util.Map">
 		select * from 
@@ -289,5 +309,11 @@
 		(select * from product where sub_category=#{sub_category} order by pro_num desc) F) 
 		where R between 1 and 5
 	</select>
+	
+	<!-- 쿠키 내용 -->
+	<select id="fav_list" resultType="com.game.product.ProductDTO" parameterType="java.util.Map">
+		select * from product where pro_num=#{pro_num}
+	</select>	
+	
 </mapper>
 
