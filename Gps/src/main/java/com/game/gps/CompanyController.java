@@ -52,4 +52,8 @@ public class CompanyController {
 	public String teen(){
 		return "/company/com_text/teen";
 	}
+	@RequestMapping(value="/custom")
+	public String custom(){
+		return "/company/com_text/custom";
+	}
 }

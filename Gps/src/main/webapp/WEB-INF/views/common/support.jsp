@@ -5,7 +5,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>이용안내</title>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/company/company.css">
@@ -40,7 +39,7 @@
 </h4>
 <p>
 저희 GPS에서 상품을 구매하는 방법은 크게 6단계 입니다.<br>
-※회원제 운영이기에 비회원은 상품 구매 진행이 불가능 합니다.<br>
+※회원제 운영이기에 비회원은 상품 구매 진행이 불가능 합니다.<br><br>
 
 ①회원 로그인<br>
 ②상품검색<br>

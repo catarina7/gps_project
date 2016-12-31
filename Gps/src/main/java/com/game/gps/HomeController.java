@@ -83,5 +83,6 @@ public class HomeController {
 	public String support(){
 		return "/common/support";
 	}
+	
 }
 
