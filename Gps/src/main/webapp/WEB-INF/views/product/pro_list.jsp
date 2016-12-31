@@ -14,12 +14,18 @@
 </head>
 <script type="text/javascript">
 $(function(){
+	var order_Kind = $("#order_kind").val();
+	var top_category = $("#top_category").val();
+	var curPage = $("#curPage").val();
+	
 	$("#order_kind").change(function(){
 		$.ajax({
 			url: 'pro_list',
 			type:'POST',
 			data:{
-				orderKind : $(this).val()
+				orderKind : $(this).val(),
+				top_category : top_category,
+				curPage : curPage
 			},
 			success: function(data){
 				data=data.trim();
@@ -39,6 +45,7 @@ $(function(){
 			<div id="pro_list_first">
 				<c:choose>
 				<c:when test="${param.top_category eq null}">
+				<input type="hidden" id="curPage" value="${param.curPage}">
 				<div id="pro_list_titi">				
 					<h2>전체 상품</h2>
 					<div id="pro_list_selec">
@@ -55,6 +62,7 @@ $(function(){
 				<c:otherwise>
 					<div id="pro_list_titi">				
 					<h2 style="text-transform: uppercase;">${param.top_category}</h2>
+					<input type="hidden" id="top_category" value="${param.top_category}">
 					<div id="pro_list_selec">
 						<select id="order_kind">
 							<option value="recent">최신순으로 정렬</option>

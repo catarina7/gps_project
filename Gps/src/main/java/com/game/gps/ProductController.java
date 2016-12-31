@@ -40,13 +40,17 @@ public class ProductController {
 	@RequestMapping(value="/pro_list")
 	public String productList(@RequestParam(defaultValue="1") int curPage, @RequestParam(defaultValue="20") int perPage, String top_category, String orderKind, Model model){
 		String path="";
+		//System.out.println(orderKind);
+		//System.out.println("밖"+top_category);
 		try {
 			if(orderKind == null){
+				//System.out.println("안1"+top_category);
 				productService.productList(curPage, perPage, top_category, orderKind, model);
 				path="product/pro_list";
 			}else{
-				System.out.println(orderKind);
-				productService.productOrderList(curPage, perPage,  top_category, orderKind, model);
+				//System.out.println(orderKind);
+				//System.out.println("안2"+top_category);
+				productService.productOrderList(curPage, perPage, top_category, orderKind, model);
 				path="product/pro_list_product";
 			}
 		} catch (Exception e) {

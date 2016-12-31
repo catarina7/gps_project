@@ -249,6 +249,7 @@ public class ProductService {
 	//분류별 리스트
 	public void productOrderList(int curPage, int perPage, String top_category, String orderKind,  Model model) throws Exception{
 		//카테고리 없을때 (전체 상품)
+		System.out.println("service: 밖"+top_category);
 		if(top_category==null){
 			//product 글 갯수 가져오기
 			int totalCount=productDAO.productCount();
@@ -318,11 +319,13 @@ public class ProductService {
 			//카테고리 있을때 
 			//PageMaker
 			int totalCount = productDAO.productCountCategory(top_category);
+			System.out.println("service: 안"+top_category);
 			PageMaker pageMaker = new PageMaker();
 			pageMaker.setCurPage(curPage);
 			pageMaker.setPerPage(perPage);
 			pageMaker.makeRow();
 			pageMaker.makePage(totalCount);
+			System.out.println("카테고리 잇을떄"+totalCount);
 
 			if(orderKind.equals("recent")){
 				//최신순
