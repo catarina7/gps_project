@@ -13,6 +13,7 @@
 <script type="text/javascript">
 	$(function(){
 		
+		
 			/* input number 부분 숫자 정수로만 제한  */
 			$(".pack_price").change(function(){
 				if($(this).val() < 0){
@@ -24,6 +25,9 @@
 					$("#pack_millage").val(millage);
 				}
 			});
+			
+			
+			
 			
 		/* 1. smarteditor 시작 */
 		//전역변수선언
@@ -54,12 +58,21 @@
 					if($(".pack_price").val() < 0){
 						$(".pack_price").val(0);
 					}else {						
+						
+						/* 상품 번호 */
+						var pro_nums = "";
+						var k = 0;
+						for(k=0; k<5; k++){
+							var pros = $("#pro_num_"+k).val();
+							pro_nums = pro_nums + pros + ":";
+							$("#pro_num").val(pro_nums);
+						}
+						
 						//폼 submit
 						$("#frm").submit();
 					}
 				});
 		/* smarteditor 끝 */
-		
 		
 		
 	});
@@ -70,13 +83,23 @@
 		<form id="frm" action="packWrite" method="post">		
 			<table>
 				<colgroup>
-					<col style="width:25%;">
-					<col style="width:70%;">
+					<col style="width:19%;">
+					<col style="width:75%;">
 				</colgroup>
 				<tr>
 					<td class="pack_title">등록상품 :</td>
 					<td>
-						<input type="text" name="pro_num">
+						<input type="number" class="product_lili" id="pro_num_0"> :
+						<input type="number" class="product_lili" id="pro_num_1"> :
+						<input type="number" class="product_lili" id="pro_num_2"> :
+						<input type="number" class="product_lili" id="pro_num_3"> :
+						<input type="number" class="product_lili" id="pro_num_4">
+						<input type="hidden" id="pro_num" name="pro_num">
+					</td>
+				</tr>
+				<tr>
+					<td class="pack_title"></td>
+					<td>
 						<input type="button" value="상품목록보기" id="pack_lis">
 					</td>
 				</tr>
@@ -87,8 +110,11 @@
 					</td>
 				</tr>
 				<tr>
-					<td class="pack_title">패키지 내용 :</td>
-					<td>
+					<td class="pack_title">패키지 내용</td>
+					<td></td>
+				</tr>
+				<tr>
+					<td colspan="2">
 						<textarea id="smarteditor" name="pack_contents"></textarea>
 					</td>
 				</tr>

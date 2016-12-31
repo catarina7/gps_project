@@ -1,8 +1,12 @@
 @CHARSET "UTF-8";
 
+#pack_write {
+	width: 100%;
+}
+
 #pack_write table {
 	border-collapse: collapse;
-	width: 100%;
+	width: 80%;
 }
 
 #pack_write td {
@@ -44,8 +48,9 @@
 	background: linear-gradient(to bottom, #738cb3, #3e5271);
 }
 
-
-
+#pack_write .product_lili {
+	width: 10%;
+}
 
 
 
