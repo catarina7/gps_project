@@ -91,7 +91,8 @@
 		});
 		
 		$("#chat_open_click").click(function(){
-			 $("#chat_open").show();
+			alert("준비중입니다");
+			 /* $("#chat_open").show(); */
 		 });
 		$("#chat_closes").click(function(){
 			$("#chat_open").hide();
