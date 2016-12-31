@@ -128,6 +128,8 @@ section #show_product {
 	display: none;
 	color: white;
 	text-shadow: -1px -1px 0px black;
+	height: 85%;
+	overflow-y: scroll;
 }
 #show_product #pro_titi {
 	font-weight: bold;

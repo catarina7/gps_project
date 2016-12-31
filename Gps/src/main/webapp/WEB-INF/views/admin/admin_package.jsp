@@ -13,7 +13,6 @@
 	$(function(){
 		$("#create_package").click(function(){
 			$("#create_pack").show();
-			$("#show_product").show();
 		});
 		
 		$("#create_pack").on("click","#pack_close", function(){
@@ -21,6 +20,15 @@
 			$("#show_product").hide();
 		});
 		
+		$("#create_pack").on("click","#pack_lis", function(){
+			if($("#pack_lis").val() == "상품목록보기"){				
+				$("#show_product").show();
+				$("#pack_lis").val("상품목록닫기");
+			}else{
+				$("#show_product").hide();
+				$("#pack_lis").val("상품목록보기");
+			}
+		});
 		
 		
 	});

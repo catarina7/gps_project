@@ -77,6 +77,7 @@
 					<td class="pack_title">등록상품 :</td>
 					<td>
 						<input type="text" name="pro_num">
+						<input type="button" value="상품목록보기" id="pack_lis">
 					</td>
 				</tr>
 				<tr>
