@@ -11,7 +11,6 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/index.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
-<title>Insert title here</title>
 <script type="text/javascript">
 	$(function() {
 		

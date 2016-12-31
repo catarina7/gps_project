@@ -6,11 +6,11 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Insert title here</title>
+<title>GPS</title>
 <script type="text/javascript">
 	$(function(){
 		
-		$(".store").mouseenter(function(){
+		/* $(".store").mouseenter(function(){
 			$("#Store_list").show();
 			$("#S_list").hide();
 			
@@ -28,7 +28,7 @@
 					$("#Store_list").hide();
 				});
 			});
-		});
+		}); */
 		
 		$(".s_list").mouseenter(function(){
 			$("#S_list").show();
@@ -77,12 +77,12 @@
 				<div id="third_div">
 					<!-- menu list -->
 					<ul id="main_list">
-						<li><a class="store">STORE</a></li>
+						<li><a class="store" href="${pageContext.request.contextPath}/product/pro_list">STORE</a></li>
 						<li><a class="s_list">CUSTOMER</a></li>
 						<li><a href="${pageContext.request.contextPath}/support">SUPPORT</a></li>
 
 					</ul>
-					<div class="M_list" id="Store_list">
+					<%-- <div class="M_list" id="Store_list">
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/product/pro_list">전체상품</a></li>
 
@@ -90,7 +90,7 @@
 
 
 						</ul>
-					</div>
+					</div> --%>
 					<div class="M_list" id="S_list">
 						<ul>
 							<li><a href="${pageContext.request.contextPath}/notice/noticeList">공지사항</a></li>
