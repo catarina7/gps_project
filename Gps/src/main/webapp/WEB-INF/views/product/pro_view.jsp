@@ -20,7 +20,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
 
-<title>Insert title here</title>
+
 <script type="text/javascript">
 	$(function(){
 		$("#my_pc_btn").click(function(){
@@ -231,11 +231,19 @@
 				break;
 		}
 		
+		
+		//패키지 구매하기
 		$("#package_game").on("click", ".pack_btn", function(){
 			var index = $(this).attr("id");
 			var pronumindex = "#pack_num"+index;
 			var packnum = $(pronumindex).val();
-			location.href="${pageContext.request.contextPath}/package_pro/packBuy?pack_num="+packnum;
+			if($("#frm1_m_id").val()==""){
+				alert("구매는 로그인 후 사용 가능 합니다. 로그인 페이지로 이동 하겠습니다.");
+				location.href="${pageContext.request.contextPath}/package_pro/packBuy?pack_num="+packnum; 
+			}else{
+				location.href="${pageContext.request.contextPath}/package_pro/packBuy?pack_num="+packnum;	
+			}
+			
 			
 		}); 
 		
@@ -645,7 +653,7 @@
 
 
 				<form action="../favorite/favoriteAdd" method="get" id="frm1">
-					<input type="hidden" name="m_id" value="${member.m_id}"> <input
+					<input type="hidden" name="m_id" id="frm1_m_id" value="${member.m_id}"> <input
 						type="hidden" name="pro_num" value="${pro_view.pro_num}">
 					<button class="five_btn" id="favorite">관심상품</button>
 				</form>
@@ -656,7 +664,7 @@
 					<button class="five_btn" id="cart">장바구니</button>
 				</form>
 				<div id="admin_btn">
-					<c:if test="${member.m_id eq 'admin'}">
+					<c:if test="${member.m_kind eq '2'}">
 						<input type="button" id="product_del" value="삭제">
 						<input type="button" id="product_mod" value="수정">
 					</c:if>

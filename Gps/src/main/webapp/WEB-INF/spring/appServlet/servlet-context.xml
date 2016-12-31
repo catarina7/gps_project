@@ -32,6 +32,9 @@
 			<mapping path="/member/pw_Mod"/>
 			<mapping path="/member/mem_Out"/>
 			<mapping path="/purchase/purchase"/>
+			<mapping path="/favorite/favoriteList"/>
+			<mapping path="/cart_favorite/cartList"/>
+			<mapping path="/package_pro/packBuy"/>
 			<beans:ref bean="memberCheck"/>
 		</interceptor>
 	</interceptors>
@@ -50,6 +53,8 @@
 			<mapping path="/admin/cd_key_no"/>
 			<mapping path="/admin/sales_list"/>
 			<mapping path="/admin/member_delete"/>
+			<mapping path="/admin/admin_package"/>
+			<mapping path="/package_pro/packAllList"/>
 			<beans:ref bean="adminCheck"/>
 		</interceptor>
 	</interceptors>
