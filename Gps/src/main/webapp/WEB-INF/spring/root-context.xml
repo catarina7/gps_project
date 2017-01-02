@@ -17,8 +17,8 @@
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>		
 
 
-		<property name="url" value="jdbc:oracle:thin:@172.30.1.49:1521:xe"></property>		
-		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.10.48:1521:xe"></property> -->		
+		<!-- <property name="url" value="jdbc:oracle:thin:@172.30.1.49:1521:xe"></property>		 -->
+		<property name="url" value="jdbc:oracle:thin:@192.168.10.48:1521:xe"></property>		
 		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.40.116:1521:xe"></property>	-->
 
 		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.40.116:1521:xe"></property> -->		
