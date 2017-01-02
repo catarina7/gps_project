@@ -109,7 +109,7 @@ public class ProductService {
 		//productView 대표사진
 		ProductFileDTO pro_main = productDAO.productImgList(pro_num);
 		List<PatchDTO> patch = productDAO.productViewPatch(pro_num);
-		
+
 		int score_total=0;
 		int score_avg=0;
 		List<ReplyDTO> score = productDAO.scored(pro_num);
