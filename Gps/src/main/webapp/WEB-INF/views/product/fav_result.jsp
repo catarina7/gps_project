@@ -9,7 +9,9 @@
 				<c:forEach items="${fav_list}" var="fav_list" varStatus="status">				
 						<div id="fav_items">
 							<div id="items_first">
-								<img src="../resources/upload/${fav_list_img[status.index].file_name}">
+								<a href="${pageContext.request.contextPath}/product/pro_view?pro_num=${fav_list.pro_num}">
+									<img src="../resources/upload/${fav_list_img[status.index].file_name}">
+								</a>
 							</div>
 							<div id="items_second">
 								<p id="cookie_price">Num. ${fav_list.pro_num}</p>
