@@ -55,8 +55,7 @@ public class MemberDAO {
 	}
 	
 	//회원정보 수정
-	public int idMod(MemberDTO mDto) throws Exception{
-		
+	public int idMod(MemberDTO mDto) throws Exception{		
 		return sqlSession.update(namespace+"idMod", mDto);
 		
 	}
@@ -106,19 +105,18 @@ public class MemberDAO {
 		// Google일 경우 smtp.gmail.com 을 입력합니다.
 		String host = "smtp.naver.com";
 		
-		final String username = "";       //네이버 아이디를 입력해주세요. @nave.com은 입력하지 마시구요.
-		final String password = "";   //네이버 이메일 비밀번호를 입력해주세요.
+		final String username = "monkey2224";       //네이버 아이디를 입력해주세요. @nave.com은 입력하지 마시구요.
+		final String password = "jimmyan103350@";   //네이버 이메일 비밀번호를 입력해주세요.
 		int port=465; //포트번호
 		 
 		// 메일 내용
 		String recipient = mDto.getM_email();    //받는 사람의 메일주소를 입력해주세요.
 		String subject = "안녕하세요, gps 입니다."; 					  //메일 제목 입력해주세요.
 		String body = "<html><head>"
-		+ "</head><body><p>"+mDto.getM_id()+" 님의 비밀번호가 변경되었습니다.</p><br>"
+		+ "<p>"+mDto.getM_id()+" 님의 비밀번호가 변경되었습니다.</p><br>"
 		+ "<p>현재 비밀번호 : "+mDto.getM_pw()+"</p><br>"
 		+ "<p>아래의 링크를 클릭하시면 로그인 페이지로 이동합니다.</p><br>"
-		+ "<a href='http://localhost:8461/gps/member/login>로그인 페이지로</a>"
-		+ "</header></body></html>";
+		+ "<a href='http://192.168.10.25:8080/gps>로그인 페이지로</a>";
 		
 		//메일 내용 입력해주세요.
 		 

@@ -73,7 +73,7 @@
 				m_email = #{m_email},
 			</if>			
 			<if test="m_kind != 0">
-				m_kind = #{m_kind}
+				m_kind = #{m_kind},
 			</if>
 			<if test="millage !=0">
 				millage = millage + #{millage}
