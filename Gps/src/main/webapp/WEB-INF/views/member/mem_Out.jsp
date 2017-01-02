@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/member/mem_out.css">
-<title>Insert title here</title>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/css/common/img/icons.ico">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/member/mem_out.js"></script>
 <script type="text/javascript">
 	

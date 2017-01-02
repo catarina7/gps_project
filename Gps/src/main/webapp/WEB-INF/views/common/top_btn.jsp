@@ -9,7 +9,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/top_btn.css">
-<title>Insert title here</title>
 <script type="text/javascript">
 	$(function(){
 		/* top 스크롤 js */

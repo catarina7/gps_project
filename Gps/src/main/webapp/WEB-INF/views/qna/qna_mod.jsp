@@ -8,6 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>QnA 수정하기</title>
 <!-- css 넣는 태그 -->
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/css/common/img/icons.ico">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css"

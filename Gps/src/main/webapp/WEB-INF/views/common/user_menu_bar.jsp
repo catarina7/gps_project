@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/user_menu_bar.css">
-<title>Insert title here</title>
+
 <script type="text/javascript">
 	$(function(){
 		

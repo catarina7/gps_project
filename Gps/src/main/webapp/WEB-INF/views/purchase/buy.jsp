@@ -10,7 +10,8 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/purchase/buy.css">
-<title>Insert title here</title>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/css/common/img/icons.ico">
+
 <script type="text/javascript">
 	$(function(){
 		$(".pg_cart").css("color","#666666");

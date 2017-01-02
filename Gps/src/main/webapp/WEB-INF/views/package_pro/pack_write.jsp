@@ -9,7 +9,7 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script type="text/javascript" src="/gps/resources/SE2/js/HuskyEZCreator.js" charset="utf-8"></script>
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/package_pro/pack_write.css">
-<title>Insert title here</title>
+
 <script type="text/javascript">
 	$(function(){
 		

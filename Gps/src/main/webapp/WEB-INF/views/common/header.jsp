@@ -7,6 +7,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>GPS</title>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/css/common/img/icons.ico">
 <script type="text/javascript">
 	$(function(){
 		

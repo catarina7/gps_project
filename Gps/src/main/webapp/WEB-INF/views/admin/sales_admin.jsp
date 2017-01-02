@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/admin/admin_contents.css">
-<title>Insert title here</title>
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/css/common/img/icons.ico">
 </head>
 <body>
 <section>

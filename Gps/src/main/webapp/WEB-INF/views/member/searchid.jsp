@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!-- css 넣는 태그 -->
-<title>Insert title here</title>
+
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/member/member_search.css">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/member/searchid.js"></script>
 <style type="text/css">

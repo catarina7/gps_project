@@ -10,6 +10,7 @@
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/board/board_view.css">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/css/common/img/icons.ico">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <title>${noticeView.n_title}</title>
 <style type="text/css">

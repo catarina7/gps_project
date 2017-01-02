@@ -11,7 +11,7 @@
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
-
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/css/common/img/icons.ico">
 <link rel="stylesheet" type="text/css"
 	href="${pageContext.request.contextPath}/resources/css/product/pro_view.css">
 <script type="text/javascript"

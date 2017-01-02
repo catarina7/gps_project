@@ -10,8 +10,9 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/common/common.css">
 <!-- css 넣는 태그 -->
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/css/member/member_info.css">
+<link rel="shortcut icon" href="${pageContext.request.contextPath}/resources/css/common/img/icons.ico">
 <script type="text/javascript" src="${pageContext.request.contextPath}/resources/js/member/member_info.js"></script>
-<title>Insert title here</title>
+
 <script type="text/javascript">
 	$(function(){
 		
